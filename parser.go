@@ -165,12 +165,12 @@ type (
 	}
 	String struct {
 		Pos       lexer.Position
-		Fragments []*StringFragment `parser:"StringStart @@* StringEnd"`
+		Fragments []StringFragment `parser:"StringStart @@* StringEnd"`
 	}
 	StringFragment struct {
 		Pos           lexer.Position
-		Text          string     `parser:"@StringFragment+"`
-		Interpolation Expression `parser:"| StringInterpolant @@ ')'"`
+		Text          string      `parser:"@StringFragment+"`
+		Interpolation *Expression `parser:"| StringInterpolant @@ ')'"`
 	}
 
 	TypeValue interface {

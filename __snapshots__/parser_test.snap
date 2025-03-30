@@ -1005,26 +1005,7 @@
        "Value": {
         "Fragments": [
          {
-          "Interpolation": {
-           "BinaryOps": null,
-           "Pos": {
-            "Column": 0,
-            "Filename": "",
-            "Line": 0,
-            "Offset": 0
-           },
-           "Term": {
-            "Invocations": null,
-            "Operand": null,
-            "Pos": {
-             "Column": 0,
-             "Filename": "",
-             "Line": 0,
-             "Offset": 0
-            },
-            "UnaryOps": null
-           }
-          },
+          "Interpolation": null,
           "Pos": {
            "Column": 12,
            "Filename": "",
@@ -1115,26 +1096,7 @@
        "Value": {
         "Fragments": [
          {
-          "Interpolation": {
-           "BinaryOps": null,
-           "Pos": {
-            "Column": 0,
-            "Filename": "",
-            "Line": 0,
-            "Offset": 0
-           },
-           "Term": {
-            "Invocations": null,
-            "Operand": null,
-            "Pos": {
-             "Column": 0,
-             "Filename": "",
-             "Line": 0,
-             "Offset": 0
-            },
-            "UnaryOps": null
-           }
-          },
+          "Interpolation": null,
           "Pos": {
            "Column": 12,
            "Filename": "",
@@ -1183,26 +1145,7 @@
           "Text": ""
          },
          {
-          "Interpolation": {
-           "BinaryOps": null,
-           "Pos": {
-            "Column": 0,
-            "Filename": "",
-            "Line": 0,
-            "Offset": 0
-           },
-           "Term": {
-            "Invocations": null,
-            "Operand": null,
-            "Pos": {
-             "Column": 0,
-             "Filename": "",
-             "Line": 0,
-             "Offset": 0
-            },
-            "UnaryOps": null
-           }
-          },
+          "Interpolation": null,
           "Pos": {
            "Column": 26,
            "Filename": "",
