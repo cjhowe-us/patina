@@ -1,8 +1,9 @@
 package patina
 
 import (
-	"strings"
 	"testing"
+
+	"github.com/gkampitakis/go-snaps/snaps"
 )
 
 func TestParser_Module(t *testing.T) {
@@ -14,20 +15,7 @@ func TestParser_Module(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Unexpected error: %v", err)
 	}
-	if len(root.Statements) != 1 {
-		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
-	}
-
-	module, ok := root.Statements[0].Statement.(Module)
-	if !ok {
-		t.Fatalf("Expected Module, got %T", root.Statements[0].Statement)
-	}
-	if module.Binding.Names[0] != "test" {
-		t.Errorf("Expected module name 'test', got '%s'", module.Binding.Names[0])
-	}
-	if len(module.Body.Statements) != 1 {
-		t.Errorf("Expected 1 statement in block, got %d", len(module.Body.Statements))
-	}
+	snaps.MatchJSON(t, root)
 }
 
 func TestParser_BindStatement(t *testing.T) {
@@ -93,28 +81,7 @@ func TestParser_BindStatement(t *testing.T) {
 			if err != nil {
 				t.Fatalf("Unexpected error: %v", err)
 			}
-			if len(root.Statements) != 1 {
-				t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
-			}
-			bind, ok := root.Statements[0].Statement.(LetStatement)
-			if !ok {
-				t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
-			}
-			if bind.IsStatic != tt.isStatic {
-				t.Errorf("Expected IsStatic=%v, got %v", tt.isStatic, bind.IsStatic)
-			}
-			if bind.IsMutable != tt.isMut {
-				t.Errorf("Expected IsMutable=%v, got %v", tt.isMut, bind.IsMutable)
-			}
-			if bind.Binding.Names[0] != tt.varName {
-				t.Errorf("Expected Name='%s', got '%s'", tt.varName, bind.Binding)
-			}
-			if (bind.Type != nil) != tt.hasType {
-				t.Errorf("Expected hasType=%v, got %v", tt.hasType, bind.Type != nil)
-			}
-			if (bind.Expr != nil) != tt.hasExpr {
-				t.Errorf("Expected hasExpr=%v, got %v", tt.hasExpr, bind.Expr != nil)
-			}
+			snaps.MatchJSON(t, root)
 		})
 	}
 }
@@ -127,28 +94,7 @@ func TestParser_FunctionStatement(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Unexpected error: %v", err)
 	}
-	if len(root.Statements) != 1 {
-		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
-	}
-	fn, ok := root.Statements[0].Statement.(FunctionStatement)
-	if !ok {
-		t.Fatalf("Expected FunctionStatement, got %T", root.Statements[0].Statement)
-	}
-	if fn.Binding.Names[0] != "add" {
-		t.Errorf("Expected name 'add', got '%s'", fn.Binding)
-	}
-	if len(fn.Parameters) != 2 {
-		t.Errorf("Expected 2 parameters, got %d", len(fn.Parameters))
-	}
-	if fn.Parameters[0].Name != "a" {
-		t.Errorf("Expected parameter name 'a', got '%s'", fn.Parameters[0].Name)
-	}
-	if fn.Parameters[1].Name != "b" {
-		t.Errorf("Expected parameter name 'b', got '%s'", fn.Parameters[1].Name)
-	}
-	if len(fn.Block.Statements) != 1 {
-		t.Errorf("Expected 1 statement in block, got %d", len(fn.Block.Statements))
-	}
+	snaps.MatchJSON(t, root)
 }
 
 func TestParser_IfStatement(t *testing.T) {
@@ -162,53 +108,7 @@ func TestParser_IfStatement(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Unexpected error: %v", err)
 	}
-	if len(root.Statements) != 1 {
-		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
-	}
-
-	ifStmt, ok := root.Statements[0].Statement.(IfStatement)
-	if !ok {
-		t.Fatalf("Expected IfStatement, got %T", root.Statements[0].Statement)
-	}
-	if ifStmt.Condition.BinaryOps[0].Operator != ">" {
-		t.Errorf("Expected operator '>', got '%s'", ifStmt.Condition.BinaryOps[0].Operator)
-	}
-	left, ok := ifStmt.Condition.Term.Operand.(Binding)
-	if !ok {
-		t.Fatalf("Expected Binding, got %T", ifStmt.Condition.BinaryOps[0].Term.Operand)
-	}
-	if left.Names[0] != "x" {
-		t.Errorf("Expected binding name 'x', got '%s'", left.Names[0])
-	}
-
-	if ifStmt.Condition.BinaryOps[0].Operator != ">" {
-		t.Errorf("Expected operator '>', got '%s'", ifStmt.Condition.BinaryOps[0].Operator)
-	}
-	rightVal, ok := ifStmt.Condition.BinaryOps[0].Term.Operand.(AtomValue)
-	if !ok {
-		t.Fatalf("Expected AtomValue, got %T", ifStmt.Condition.BinaryOps[0].Term.Operand)
-	}
-	rightInt, ok := rightVal.Value.(Integer)
-	if !ok {
-		t.Fatalf("Expected Integer, got %T", rightVal.Value)
-	}
-	if rightInt.Value != 10 {
-		t.Errorf("Expected right value 10, got %d", rightInt.Value)
-	}
-
-	if len(ifStmt.ElseIfStatements) != 0 {
-		t.Errorf("Expected 0 else-if statements, got %d", len(ifStmt.ElseIfStatements))
-	}
-
-	if len(ifStmt.ThenBlock.Statements) != 1 {
-		t.Errorf("Expected 1 statement in then block, got %d", len(ifStmt.ThenBlock.Statements))
-	}
-	if ifStmt.ElseBlock == nil {
-		t.Errorf("Expected non-nil else block")
-	}
-	if len(ifStmt.ElseBlock.Statements) != 1 {
-		t.Errorf("Expected 1 statement in else block, got %d", len(ifStmt.ElseBlock.Statements))
-	}
+	snaps.MatchJSON(t, root)
 }
 
 func TestParser_String(t *testing.T) {
@@ -218,39 +118,7 @@ func TestParser_String(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Unexpected error: %v", err)
 	}
-	if len(root.Statements) != 1 {
-		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
-	}
-
-	bind, ok := root.Statements[0].Statement.(LetStatement)
-	if !ok {
-		t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
-	}
-	if bind.Binding.Names[0] != "msg" {
-		t.Errorf("Expected name 'msg', got '%s'", bind.Binding)
-	}
-
-	if bind.Expr == nil {
-		t.Fatalf("Expected non-nil Expr")
-	}
-
-	// Extract string value using our new expression hierarchy
-	atom, ok := bind.Expr.Term.Operand.(AtomValue)
-	if !ok {
-		t.Fatalf("Expected AtomValue, got %T", *bind.Expr)
-	}
-
-	str, ok := atom.Value.(String)
-	if !ok {
-		t.Fatalf("Expected String, got %T", atom.Value)
-	}
-
-	if len(str.Fragments) != 1 {
-		t.Fatalf("Expected 1 fragment, got %d", len(str.Fragments))
-	}
-	if str.Fragments[0].Text != "Hello, world!" {
-		t.Errorf("Expected text 'Hello, world!', got '%s'", str.Fragments[0].Text)
-	}
+	snaps.MatchJSON(t, root)
 }
 
 func TestParser_StringInterpolation(t *testing.T) {
@@ -260,43 +128,7 @@ func TestParser_StringInterpolation(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Unexpected error: %v", err)
 	}
-	if len(root.Statements) != 1 {
-		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
-	}
-
-	bind, ok := root.Statements[0].Statement.(LetStatement)
-	if !ok {
-		t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
-	}
-
-	if bind.Expr == nil {
-		t.Fatalf("Expected non-nil Expr")
-	}
-
-	// Extract string value using our new expression hierarchy
-	valExpr, ok := bind.Expr.Term.Operand.(AtomValue)
-	if !ok {
-		t.Fatalf("Expected AtomValue, got %T", bind.Expr.Term.Operand)
-	}
-
-	str, ok := valExpr.Value.(String)
-	if !ok {
-		t.Fatalf("Expected String, got %T", valExpr.Value)
-	}
-
-	if len(str.Fragments) != 3 {
-		t.Fatalf("Expected 3 fragments, got %d", len(str.Fragments))
-	}
-	if str.Fragments[0].Text != "Hello, " {
-		t.Errorf("Expected text 'Hello, ', got '%s'", str.Fragments[0].Text)
-	}
-	binding, ok := str.Fragments[1].Interpolation.Term.Operand.(Binding)
-	if !ok {
-		t.Fatalf("Expected Binding, got %T", str.Fragments[1].Interpolation.Term.Operand)
-	}
-	if binding.Names[0] != "name" {
-		t.Errorf("Expected name 'name', got '%s'", binding.Names[0])
-	}
+	snaps.MatchJSON(t, root)
 }
 
 func TestParser_Comments(t *testing.T) {
@@ -310,23 +142,7 @@ func TestParser_Comments(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Unexpected error: %v", err)
 	}
-	if len(root.Statements) != 1 {
-		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
-	}
-	if !strings.Contains(root.Statements[0].Comments.Fragments[0].Text, " Block comment ") {
-		t.Errorf("Expected doc comment to contain 'Doc comment', got '%s'", root.Statements[0].Comments.Fragments[0].Text)
-	}
-
-	fn, ok := root.Statements[0].Statement.(FunctionStatement)
-	if !ok {
-		t.Fatalf("Expected FunctionStatement, got %T", root.Statements[0].Statement)
-	}
-	if fn.Binding.Names[0] != "test" {
-		t.Errorf("Expected name 'test', got '%s'", fn.Binding)
-	}
-	if len(fn.Block.Statements) != 0 {
-		t.Errorf("Expected 0 statements in block (comment is elided), got %d", len(fn.Block.Statements))
-	}
+	snaps.MatchJSON(t, root)
 }
 
 func TestParser_IntegerType(t *testing.T) {
@@ -336,34 +152,7 @@ func TestParser_IntegerType(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Unexpected error: %v", err)
 	}
-
-	if len(root.Statements) != 1 {
-		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
-	}
-	bind, ok := root.Statements[0].Statement.(LetStatement)
-	if !ok {
-		t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
-	}
-
-	if bind.Expr == nil {
-		t.Fatalf("Expected non-nil Expr")
-	}
-
-	val, ok := bind.Expr.Term.Operand.(AtomValue)
-	if !ok {
-		t.Fatalf("Expected PrimaryValue, got %T", bind.Expr.Term.Operand)
-	}
-	intType, ok := val.Value.(IntegerType)
-	if !ok {
-		t.Fatalf("Expected IntegerType, got %T", val.Value)
-	}
-
-	if !intType.Signed {
-		t.Errorf("Expected signed integer type")
-	}
-	if intType.BitSize != 64 {
-		t.Errorf("Expected bit size of '64', got '%d'", intType.BitSize)
-	}
+	snaps.MatchJSON(t, root)
 }
 
 func TestParser_TypeValue(t *testing.T) {
@@ -376,83 +165,7 @@ func TestParser_TypeValue(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Unexpected error: %v", err)
 	}
-	if len(root.Statements) != 4 {
-		t.Fatalf("Expected 4 statements, got %d", len(root.Statements))
-	}
-
-	// Check integer type
-	bind1, ok := root.Statements[0].Statement.(LetStatement)
-	if !ok {
-		t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
-	}
-	if bind1.Type == nil {
-		t.Fatalf("Expected non-nil Type")
-	}
-	// Instead of asserting the specific type, just check that it exists
-	if *bind1.Type == nil {
-		t.Fatalf("Expected non-nil Type value")
-	}
-
-	// Check pointer type
-	bind2, ok := root.Statements[1].Statement.(LetStatement)
-	if !ok {
-		t.Fatalf("Expected BindStatement, got %T", root.Statements[1].Statement)
-	}
-	if bind2.Type == nil {
-		t.Fatalf("Expected non-nil Type")
-	}
-	ptrType, ok := (*bind2.Type).(PointerType)
-	if !ok {
-		t.Fatalf("Expected PointerType, got %T", *bind2.Type)
-	}
-	if !ptrType.IsMutable {
-		t.Errorf("Expected mutable pointer, got immutable")
-	}
-
-	// Check array type
-	bind3, ok := root.Statements[2].Statement.(LetStatement)
-	if !ok {
-		t.Fatalf("Expected BindStatement, got %T", root.Statements[2].Statement)
-	}
-	if bind3.Type == nil {
-		t.Fatalf("Expected non-nil Type")
-	}
-	arrType, ok := (*bind3.Type).(ArrayType)
-	if !ok {
-		t.Fatalf("Expected ArrayType, got %T", *bind3.Type)
-	}
-	if arrType.Dimension == nil {
-		t.Fatalf("Expected non-nil Dimension")
-	}
-	if *arrType.Dimension != 10 {
-		t.Errorf("Expected array size 10, got %d", *arrType.Dimension)
-	}
-	elementIntType, ok := arrType.ElementType.(IntegerType)
-	if !ok {
-		t.Fatalf("Expected IntegerType for array element, got %T", arrType.ElementType)
-	}
-	if elementIntType.BitSize != 64 {
-		t.Errorf("Expected bit size of '64', got '%d'", elementIntType.BitSize)
-	}
-
-	// Check function type
-	bind4, ok := root.Statements[3].Statement.(LetStatement)
-	if !ok {
-		t.Fatalf("Expected BindStatement, got %T", root.Statements[3].Statement)
-	}
-	if bind4.Type == nil {
-		t.Fatalf("Expected non-nil Type")
-	}
-	fnType, ok := (*bind4.Type).(FunctionType)
-	if !ok {
-		t.Fatalf("Expected FunctionType, got %T", *bind4.Type)
-	}
-	if fnType.Name != "add" {
-		t.Errorf("Expected function name 'add', got '%s'", fnType.Name)
-	}
-	if len(fnType.Parameters) != 2 {
-		t.Errorf("Expected 2 parameters, got %d", len(fnType.Parameters))
-	}
+	snaps.MatchJSON(t, root)
 }
 
 func TestParser_FunctionCall(t *testing.T) {
@@ -462,69 +175,7 @@ func TestParser_FunctionCall(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Unexpected error: %v", err)
 	}
-	if len(root.Statements) != 1 {
-		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
-	}
-	bind, ok := root.Statements[0].Statement.(LetStatement)
-	if !ok {
-		t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
-	}
-	if bind.Expr == nil {
-		t.Fatalf("Expected non-nil Expr")
-	}
-	fnCall := bind.Expr.Term.Invocations[0]
-	if !ok {
-		t.Fatalf("Expected FunctionCall, got %T", *bind.Expr)
-	}
-	binding, ok := (bind.Expr.Term.Operand).(Binding)
-	if !ok {
-		t.Fatalf("Expected Binding, got %T", bind.Expr.Term.Operand)
-	}
-	if binding.Names[0] != "add" {
-		t.Errorf("Expected function name 'add', got '%s'", binding.Names[0])
-	}
-
-	if len(fnCall.Arguments) != 2 {
-		t.Fatalf("Expected 2 arguments, got %d", len(fnCall.Arguments))
-	}
-	atomVal, ok := fnCall.Arguments[0].Term.Operand.(AtomValue)
-	if !ok {
-		t.Fatalf("Expected AtomValue for arg1, got %T", atomVal)
-	}
-	intVal1, ok := atomVal.Value.(Integer)
-	if !ok {
-		t.Fatalf("Expected Integer for arg1, got %T", atomVal.Value)
-	}
-	if intVal1.Value != 1 {
-		t.Errorf("Expected value 1 for arg1, got %d", intVal1.Value)
-	}
-
-	binExpr := fnCall.Arguments[1]
-	leftValue, ok := binExpr.Term.Operand.(AtomValue)
-	if !ok {
-		t.Fatalf("Expected AtomValue for left side, got %T", binExpr.Term.Operand)
-	}
-	if binExpr.BinaryOps[0].Operator != "+" {
-		t.Errorf("Expected operator '+', got '%s'", binExpr.BinaryOps[0].Operator)
-	}
-	intVal2, ok := leftValue.Value.(Integer)
-	if !ok {
-		t.Fatalf("Expected Integer for left side, got %T", leftValue.Value)
-	}
-	if intVal2.Value != 2 {
-		t.Errorf("Expected value 2 for left side, got %d", intVal2.Value)
-	}
-	rightValue, ok := binExpr.BinaryOps[0].Term.Operand.(AtomValue)
-	if !ok {
-		t.Fatalf("Expected AtomValue for right side, got %T", binExpr.BinaryOps[0].Term.Operand)
-	}
-	intVal3, ok := rightValue.Value.(Integer)
-	if !ok {
-		t.Fatalf("Expected Integer for right side, got %T", rightValue.Value)
-	}
-	if intVal3.Value != 3 {
-		t.Errorf("Expected value 3 for right side, got %d", intVal3.Value)
-	}
+	snaps.MatchJSON(t, root)
 }
 
 func TestParser_Lambda(t *testing.T) {
@@ -536,61 +187,7 @@ func TestParser_Lambda(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Unexpected error: %v", err)
 	}
-	if len(root.Statements) != 1 {
-		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
-	}
-
-	bind, ok := root.Statements[0].Statement.(LetStatement)
-	if !ok {
-		t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
-	}
-
-	if bind.Expr == nil {
-		t.Fatalf("Expected non-nil Expr")
-	}
-
-	// Verify the name of the binding
-	if bind.Binding.Names[0] != "adder" {
-		t.Errorf("Expected variable name 'adder', got '%s'", bind.Binding)
-	}
-
-	// Check that we have a lambda expression
-	lambda, ok := bind.Expr.Term.Operand.(Lambda)
-	if !ok {
-		t.Fatalf("Expected Lambda, got %T", *bind.Expr)
-	}
-
-	// Check lambda parameters
-	if len(lambda.Parameters) != 1 {
-		t.Fatalf("Expected 1 parameter, got %d", len(lambda.Parameters))
-	}
-
-	if lambda.Parameters[0].Name != "b" {
-		t.Errorf("Expected parameter name 'b', got '%s'", lambda.Parameters[0].Name)
-	}
-
-	paramType, ok := lambda.Parameters[0].Type.(IntegerType)
-	if !ok {
-		t.Fatalf("Expected IdentType for parameter, got %T", lambda.Parameters[0].Type)
-	}
-	if paramType.BitSize != 32 {
-		t.Errorf("Expected bit size of '32', got '%d'", paramType.BitSize)
-	}
-
-	if lambda.Return != nil {
-		t.Fatalf("Expected nil return type for lambda, got %T", lambda.Return)
-	}
-
-	if len(lambda.Block.Statements) != 1 {
-		t.Fatalf("Expected 1 statement in lambda block, got %d", len(lambda.Block.Statements))
-	}
-	lambdaBindStmt, ok := lambda.Block.Statements[0].Statement.(LetStatement)
-	if !ok {
-		t.Fatalf("Expected BindStatement in lambda block, got %T", lambda.Block.Statements[0].Statement)
-	}
-	if lambdaBindStmt.Binding.Names[0] != "a" {
-		t.Errorf("Expected variable name 'a', got '%s'", lambdaBindStmt.Binding)
-	}
+	snaps.MatchJSON(t, root)
 }
 
 func TestParser_BinaryExpression(t *testing.T) {
@@ -599,55 +196,7 @@ func TestParser_BinaryExpression(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Unexpected error: %v", err)
 	}
-	if len(root.Statements) != 1 {
-		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
-	}
-	bind, ok := root.Statements[0].Statement.(LetStatement)
-	if !ok {
-		t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
-	}
-	if bind.Expr == nil {
-		t.Fatalf("Expected non-nil Expr")
-	}
-
-	leftExpr, ok := bind.Expr.Term.Operand.(AtomValue)
-	if !ok {
-		t.Fatalf("Expected AtomValue on left side, got %T", bind.Expr.Term.Operand)
-	}
-	intValue1, ok := leftExpr.Value.(Integer)
-	if !ok {
-		t.Fatalf("Expected Integer, got %T", leftExpr.Value)
-	}
-	if intValue1.Value != 1 {
-		t.Errorf("Expected left value 1, got %d", intValue1.Value)
-	}
-
-	if bind.Expr.BinaryOps[0].Operator != "+" {
-		t.Errorf("Expected operator '+', got '%s'", bind.Expr.BinaryOps[0].Operator)
-	}
-	middleExpr, ok := bind.Expr.BinaryOps[0].Term.Operand.(AtomValue)
-	if !ok {
-		t.Fatalf("Expected AtomValue on right side, got %T", bind.Expr.BinaryOps[0].Term.Operand)
-	}
-	intValue2, ok := middleExpr.Value.(Integer)
-	if !ok {
-		t.Fatalf("Expected Integer, got %T", leftExpr.Value)
-	}
-	if intValue2.Value != 2 {
-		t.Errorf("Expected middle value 2, got %d", intValue1.Value)
-	}
-
-	rightExpr, ok := bind.Expr.BinaryOps[1].Term.Operand.(AtomValue)
-	if !ok {
-		t.Fatalf("Expected AtomValue on right side of multiplication, got %T", bind.Expr.BinaryOps[0].Term.Operand)
-	}
-	intValue3, ok := rightExpr.Value.(Integer)
-	if !ok {
-		t.Fatalf("Expected Integer, got %T", rightExpr.Value)
-	}
-	if intValue3.Value != 3 {
-		t.Errorf("Expected right value 3, got %d", intValue3.Value)
-	}
+	snaps.MatchJSON(t, root)
 }
 
 func TestParser_ComplexIfStatement(t *testing.T) {
@@ -658,31 +207,7 @@ func TestParser_ComplexIfStatement(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Unexpected error: %v", err)
 	}
-	if len(root.Statements) != 1 {
-		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
-	}
-	// Test the if statement
-	ifStmt, ok := root.Statements[0].Statement.(IfStatement)
-	if !ok {
-		t.Fatalf("Expected IfStatement, got %T", root.Statements[0].Statement)
-	}
-
-	// Test the statement inside the if block
-	if len(ifStmt.ThenBlock.Statements) != 1 {
-		t.Fatalf("Expected 1 statement in if block, got %d", len(ifStmt.ThenBlock.Statements))
-	}
-	bindStmt, ok := ifStmt.ThenBlock.Statements[0].Statement.(LetStatement)
-	if !ok {
-		t.Fatalf("Expected BindStatement, got %T", ifStmt.ThenBlock.Statements[0].Statement)
-	}
-	if bindStmt.Binding.Names[0] != "result" {
-		t.Errorf("Expected variable name 'result', got '%s'", bindStmt.Binding)
-	}
-
-	// Test that the expression (x + y + z) exists
-	if bindStmt.Expr == nil {
-		t.Fatalf("Expected non-nil expression")
-	}
+	snaps.MatchJSON(t, root)
 }
 
 func TestParser_NestedExpressions(t *testing.T) {
@@ -691,32 +216,7 @@ func TestParser_NestedExpressions(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Unexpected error: %v", err)
 	}
-	if len(root.Statements) != 1 {
-		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
-	}
-	bind, ok := root.Statements[0].Statement.(LetStatement)
-	if !ok {
-		t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
-	}
-	if bind.Expr == nil {
-		t.Fatalf("Expected non-nil Expr")
-	}
-
-	// Test binary expression
-
-	// Left side should be a grouped expression
-	groupExpr, ok := bind.Expr.Term.Operand.(GroupedExpression)
-	if !ok {
-		t.Fatalf("Expected GroupedExpression on left side, got %T", bind.Expr.Term.Operand)
-	}
-	if groupExpr.Expression.BinaryOps[0].Operator != "+" {
-		t.Errorf("Expected operator '+', got '%s'", groupExpr.Expression.BinaryOps[0].Operator)
-	}
-
-	// Inside the group should be another binary expression
-	if bind.Expr.BinaryOps[0].Operator != "*" {
-		t.Errorf("Expected operator '*', got '%s'", bind.Expr.BinaryOps[0].Operator)
-	}
+	snaps.MatchJSON(t, root)
 }
 
 func TestParser_IfElseStatement(t *testing.T) {
@@ -729,43 +229,5 @@ func TestParser_IfElseStatement(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Unexpected error: %v", err)
 	}
-	if len(root.Statements) != 1 {
-		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
-	}
-	// Test the main if statement
-	ifStmt, ok := root.Statements[0].Statement.(IfStatement)
-	if !ok {
-		t.Fatalf("Expected IfStatement, got %T", root.Statements[0].Statement)
-	}
-
-	// Test the if block
-	if len(ifStmt.ThenBlock.Statements) != 1 {
-		t.Fatalf("Expected 1 statement in if block, got %d", len(ifStmt.ThenBlock.Statements))
-	}
-
-	// Test the let statement in the if block
-	ifBindStmt, ok := ifStmt.ThenBlock.Statements[0].Statement.(LetStatement)
-	if !ok {
-		t.Fatalf("Expected BindStatement in if block, got %T", ifStmt.ThenBlock.Statements[0].Statement)
-	}
-	if ifBindStmt.Binding.Names[0] != "z" {
-		t.Errorf("Expected variable name 'z', got '%s'", ifBindStmt.Binding)
-	}
-
-	// Test the else branch
-	if ifStmt.ElseBlock == nil {
-		t.Fatalf("Expected non-nil else block")
-	}
-
-	// Test the let statement in the else block
-	if len(ifStmt.ElseBlock.Statements) != 1 {
-		t.Fatalf("Expected 1 statement in else block, got %d", len(ifStmt.ElseBlock.Statements))
-	}
-	elseBindStmt, ok := ifStmt.ElseBlock.Statements[0].Statement.(LetStatement)
-	if !ok {
-		t.Fatalf("Expected BindStatement in else block, got %T", ifStmt.ElseBlock.Statements[0].Statement)
-	}
-	if elseBindStmt.Binding.Names[0] != "z" {
-		t.Errorf("Expected variable name 'z', got '%s'", elseBindStmt.Binding)
-	}
+	snaps.MatchJSON(t, root)
 }
