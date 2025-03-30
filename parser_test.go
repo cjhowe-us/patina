@@ -7,7 +7,7 @@ import (
 
 func TestParser_Module(t *testing.T) {
 	src := `module test {
-		let x = 1
+		let x = *mut i32
 	}`
 
 	root, err := Parser.ParseString("", src)
@@ -22,8 +22,8 @@ func TestParser_Module(t *testing.T) {
 	if !ok {
 		t.Fatalf("Expected Module, got %T", root.Statements[0].Statement)
 	}
-	if module.Name != "test" {
-		t.Errorf("Expected module name 'test', got '%s'", module.Name)
+	if module.Binding.Names[0] != "test" {
+		t.Errorf("Expected module name 'test', got '%s'", module.Binding.Names[0])
 	}
 	if len(module.Body.Statements) != 1 {
 		t.Errorf("Expected 1 statement in block, got %d", len(module.Body.Statements))
@@ -96,7 +96,7 @@ func TestParser_BindStatement(t *testing.T) {
 			if len(root.Statements) != 1 {
 				t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
 			}
-			bind, ok := root.Statements[0].Statement.(BindStatement)
+			bind, ok := root.Statements[0].Statement.(LetStatement)
 			if !ok {
 				t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
 			}
@@ -106,8 +106,8 @@ func TestParser_BindStatement(t *testing.T) {
 			if bind.IsMutable != tt.isMut {
 				t.Errorf("Expected IsMutable=%v, got %v", tt.isMut, bind.IsMutable)
 			}
-			if bind.Name != tt.varName {
-				t.Errorf("Expected Name='%s', got '%s'", tt.varName, bind.Name)
+			if bind.Binding.Names[0] != tt.varName {
+				t.Errorf("Expected Name='%s', got '%s'", tt.varName, bind.Binding)
 			}
 			if (bind.Type != nil) != tt.hasType {
 				t.Errorf("Expected hasType=%v, got %v", tt.hasType, bind.Type != nil)
@@ -134,8 +134,8 @@ func TestParser_FunctionStatement(t *testing.T) {
 	if !ok {
 		t.Fatalf("Expected FunctionStatement, got %T", root.Statements[0].Statement)
 	}
-	if fn.Name != "add" {
-		t.Errorf("Expected name 'add', got '%s'", fn.Name)
+	if fn.Binding.Names[0] != "add" {
+		t.Errorf("Expected name 'add', got '%s'", fn.Binding)
 	}
 	if len(fn.Parameters) != 2 {
 		t.Errorf("Expected 2 parameters, got %d", len(fn.Parameters))
@@ -170,23 +170,23 @@ func TestParser_IfStatement(t *testing.T) {
 	if !ok {
 		t.Fatalf("Expected IfStatement, got %T", root.Statements[0].Statement)
 	}
-	if ifStmt.Condition.Operations[0].Operator != ">" {
-		t.Errorf("Expected operator '>', got '%s'", ifStmt.Condition.Operations[0].Operator)
+	if ifStmt.Condition.BinaryOps[0].Operator != ">" {
+		t.Errorf("Expected operator '>', got '%s'", ifStmt.Condition.BinaryOps[0].Operator)
 	}
-	left, ok := ifStmt.Condition.Operations[0].Operand.(BindingAccess)
+	left, ok := ifStmt.Condition.Term.Operand.(Binding)
 	if !ok {
-		t.Fatalf("Expected BindingAccess, got %T", ifStmt.Condition.Operations[0].Operand)
+		t.Fatalf("Expected Binding, got %T", ifStmt.Condition.BinaryOps[0].Term.Operand)
 	}
-	if left.Name != "x" {
-		t.Errorf("Expected binding name 'x', got '%s'", left.Name)
+	if left.Names[0] != "x" {
+		t.Errorf("Expected binding name 'x', got '%s'", left.Names[0])
 	}
 
-	if ifStmt.Condition.Operations[0].Operator != ">" {
-		t.Errorf("Expected operator '>', got '%s'", ifStmt.Condition.Operations[0].Operator)
+	if ifStmt.Condition.BinaryOps[0].Operator != ">" {
+		t.Errorf("Expected operator '>', got '%s'", ifStmt.Condition.BinaryOps[0].Operator)
 	}
-	rightVal, ok := ifStmt.Condition.Operations[0].Operand.(AtomValue)
+	rightVal, ok := ifStmt.Condition.BinaryOps[0].Term.Operand.(AtomValue)
 	if !ok {
-		t.Fatalf("Expected AtomValue, got %T", ifStmt.Condition.Operations[0].Operand)
+		t.Fatalf("Expected AtomValue, got %T", ifStmt.Condition.BinaryOps[0].Term.Operand)
 	}
 	rightInt, ok := rightVal.Value.(Integer)
 	if !ok {
@@ -222,12 +222,12 @@ func TestParser_String(t *testing.T) {
 		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
 	}
 
-	bind, ok := root.Statements[0].Statement.(BindStatement)
+	bind, ok := root.Statements[0].Statement.(LetStatement)
 	if !ok {
 		t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
 	}
-	if bind.Name != "msg" {
-		t.Errorf("Expected name 'msg', got '%s'", bind.Name)
+	if bind.Binding.Names[0] != "msg" {
+		t.Errorf("Expected name 'msg', got '%s'", bind.Binding)
 	}
 
 	if bind.Expr == nil {
@@ -235,7 +235,7 @@ func TestParser_String(t *testing.T) {
 	}
 
 	// Extract string value using our new expression hierarchy
-	atom, ok := bind.Expr.Operand.(AtomValue)
+	atom, ok := bind.Expr.Term.Operand.(AtomValue)
 	if !ok {
 		t.Fatalf("Expected AtomValue, got %T", *bind.Expr)
 	}
@@ -264,7 +264,7 @@ func TestParser_StringInterpolation(t *testing.T) {
 		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
 	}
 
-	bind, ok := root.Statements[0].Statement.(BindStatement)
+	bind, ok := root.Statements[0].Statement.(LetStatement)
 	if !ok {
 		t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
 	}
@@ -274,9 +274,9 @@ func TestParser_StringInterpolation(t *testing.T) {
 	}
 
 	// Extract string value using our new expression hierarchy
-	valExpr, ok := bind.Expr.Operand.(AtomValue)
+	valExpr, ok := bind.Expr.Term.Operand.(AtomValue)
 	if !ok {
-		t.Fatalf("Expected AtomValue, got %T", bind.Expr.Operand)
+		t.Fatalf("Expected AtomValue, got %T", bind.Expr.Term.Operand)
 	}
 
 	str, ok := valExpr.Value.(String)
@@ -290,17 +290,18 @@ func TestParser_StringInterpolation(t *testing.T) {
 	if str.Fragments[0].Text != "Hello, " {
 		t.Errorf("Expected text 'Hello, ', got '%s'", str.Fragments[0].Text)
 	}
-	if str.Fragments[1].Interpolation == nil {
-		t.Errorf("Expected non-nil interpolation")
+	binding, ok := str.Fragments[1].Interpolation.Term.Operand.(Binding)
+	if !ok {
+		t.Fatalf("Expected Binding, got %T", str.Fragments[1].Interpolation.Term.Operand)
+	}
+	if binding.Names[0] != "name" {
+		t.Errorf("Expected name 'name', got '%s'", binding.Names[0])
 	}
 }
 
 func TestParser_Comments(t *testing.T) {
 	src := `// Line comment
 	/* Block comment */
-	/**
-	 * Doc comment
-	 */
 	fun test() {
 		// Another comment
 	}`
@@ -312,16 +313,16 @@ func TestParser_Comments(t *testing.T) {
 	if len(root.Statements) != 1 {
 		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
 	}
-	if !strings.Contains(root.Statements[0].DocComment, "Doc comment") {
-		t.Errorf("Expected doc comment to contain 'Doc comment', got '%s'", root.Statements[0].DocComment)
+	if !strings.Contains(root.Statements[0].Comments.Fragments[0].Text, " Block comment ") {
+		t.Errorf("Expected doc comment to contain 'Doc comment', got '%s'", root.Statements[0].Comments.Fragments[0].Text)
 	}
 
 	fn, ok := root.Statements[0].Statement.(FunctionStatement)
 	if !ok {
 		t.Fatalf("Expected FunctionStatement, got %T", root.Statements[0].Statement)
 	}
-	if fn.Name != "test" {
-		t.Errorf("Expected name 'test', got '%s'", fn.Name)
+	if fn.Binding.Names[0] != "test" {
+		t.Errorf("Expected name 'test', got '%s'", fn.Binding)
 	}
 	if len(fn.Block.Statements) != 0 {
 		t.Errorf("Expected 0 statements in block (comment is elided), got %d", len(fn.Block.Statements))
@@ -339,7 +340,7 @@ func TestParser_IntegerType(t *testing.T) {
 	if len(root.Statements) != 1 {
 		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
 	}
-	bind, ok := root.Statements[0].Statement.(BindStatement)
+	bind, ok := root.Statements[0].Statement.(LetStatement)
 	if !ok {
 		t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
 	}
@@ -348,17 +349,17 @@ func TestParser_IntegerType(t *testing.T) {
 		t.Fatalf("Expected non-nil Expr")
 	}
 
-	val, ok := bind.Expr.Operand.(AtomValue)
+	val, ok := bind.Expr.Term.Operand.(AtomValue)
 	if !ok {
-		t.Fatalf("Expected PrimaryValue, got %T", bind.Expr.Operand)
+		t.Fatalf("Expected PrimaryValue, got %T", bind.Expr.Term.Operand)
 	}
 	intType, ok := val.Value.(IntegerType)
 	if !ok {
 		t.Fatalf("Expected IntegerType, got %T", val.Value)
 	}
 
-	if intType.Signed {
-		t.Errorf("Expected unsigned integer type")
+	if !intType.Signed {
+		t.Errorf("Expected signed integer type")
 	}
 	if intType.BitSize != 64 {
 		t.Errorf("Expected bit size of '64', got '%d'", intType.BitSize)
@@ -380,7 +381,7 @@ func TestParser_TypeValue(t *testing.T) {
 	}
 
 	// Check integer type
-	bind1, ok := root.Statements[0].Statement.(BindStatement)
+	bind1, ok := root.Statements[0].Statement.(LetStatement)
 	if !ok {
 		t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
 	}
@@ -393,7 +394,7 @@ func TestParser_TypeValue(t *testing.T) {
 	}
 
 	// Check pointer type
-	bind2, ok := root.Statements[1].Statement.(BindStatement)
+	bind2, ok := root.Statements[1].Statement.(LetStatement)
 	if !ok {
 		t.Fatalf("Expected BindStatement, got %T", root.Statements[1].Statement)
 	}
@@ -409,7 +410,7 @@ func TestParser_TypeValue(t *testing.T) {
 	}
 
 	// Check array type
-	bind3, ok := root.Statements[2].Statement.(BindStatement)
+	bind3, ok := root.Statements[2].Statement.(LetStatement)
 	if !ok {
 		t.Fatalf("Expected BindStatement, got %T", root.Statements[2].Statement)
 	}
@@ -420,8 +421,11 @@ func TestParser_TypeValue(t *testing.T) {
 	if !ok {
 		t.Fatalf("Expected ArrayType, got %T", *bind3.Type)
 	}
-	if arrType.Dimensions[0] != 10 {
-		t.Errorf("Expected array size 10, got %d", arrType.Dimensions[0])
+	if arrType.Dimension == nil {
+		t.Fatalf("Expected non-nil Dimension")
+	}
+	if *arrType.Dimension != 10 {
+		t.Errorf("Expected array size 10, got %d", *arrType.Dimension)
 	}
 	elementIntType, ok := arrType.ElementType.(IntegerType)
 	if !ok {
@@ -432,7 +436,7 @@ func TestParser_TypeValue(t *testing.T) {
 	}
 
 	// Check function type
-	bind4, ok := root.Statements[3].Statement.(BindStatement)
+	bind4, ok := root.Statements[3].Statement.(LetStatement)
 	if !ok {
 		t.Fatalf("Expected BindStatement, got %T", root.Statements[3].Statement)
 	}
@@ -461,29 +465,29 @@ func TestParser_FunctionCall(t *testing.T) {
 	if len(root.Statements) != 1 {
 		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
 	}
-	bind, ok := root.Statements[0].Statement.(BindStatement)
+	bind, ok := root.Statements[0].Statement.(LetStatement)
 	if !ok {
 		t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
 	}
 	if bind.Expr == nil {
 		t.Fatalf("Expected non-nil Expr")
 	}
-	fnCall, ok := bind.Expr.Operand.(FunctionCall)
+	fnCall := bind.Expr.Term.Invocations[0]
 	if !ok {
 		t.Fatalf("Expected FunctionCall, got %T", *bind.Expr)
 	}
-	bindingAccess, ok := (fnCall.Target).(BindingAccess)
+	binding, ok := (bind.Expr.Term.Operand).(Binding)
 	if !ok {
-		t.Fatalf("Expected BindingAccess, got %T", fnCall.Target)
+		t.Fatalf("Expected Binding, got %T", bind.Expr.Term.Operand)
 	}
-	if bindingAccess.Name != "add" {
-		t.Errorf("Expected function name 'add', got '%s'", bindingAccess.Name)
+	if binding.Names[0] != "add" {
+		t.Errorf("Expected function name 'add', got '%s'", binding.Names[0])
 	}
 
 	if len(fnCall.Arguments) != 2 {
 		t.Fatalf("Expected 2 arguments, got %d", len(fnCall.Arguments))
 	}
-	atomVal, ok := fnCall.Arguments[0].Operand.(AtomValue)
+	atomVal, ok := fnCall.Arguments[0].Term.Operand.(AtomValue)
 	if !ok {
 		t.Fatalf("Expected AtomValue for arg1, got %T", atomVal)
 	}
@@ -496,12 +500,12 @@ func TestParser_FunctionCall(t *testing.T) {
 	}
 
 	binExpr := fnCall.Arguments[1]
-	leftValue, ok := binExpr.Operand.(AtomValue)
+	leftValue, ok := binExpr.Term.Operand.(AtomValue)
 	if !ok {
-		t.Fatalf("Expected AtomValue for left side, got %T", binExpr.Operand)
+		t.Fatalf("Expected AtomValue for left side, got %T", binExpr.Term.Operand)
 	}
-	if binExpr.Operations[0].Operator != "+" {
-		t.Errorf("Expected operator '+', got '%s'", binExpr.Operations[0].Operator)
+	if binExpr.BinaryOps[0].Operator != "+" {
+		t.Errorf("Expected operator '+', got '%s'", binExpr.BinaryOps[0].Operator)
 	}
 	intVal2, ok := leftValue.Value.(Integer)
 	if !ok {
@@ -510,9 +514,9 @@ func TestParser_FunctionCall(t *testing.T) {
 	if intVal2.Value != 2 {
 		t.Errorf("Expected value 2 for left side, got %d", intVal2.Value)
 	}
-	rightValue, ok := binExpr.Operations[0].Operand.(AtomValue)
+	rightValue, ok := binExpr.BinaryOps[0].Term.Operand.(AtomValue)
 	if !ok {
-		t.Fatalf("Expected AtomValue for right side, got %T", binExpr.Operations[0].Operand)
+		t.Fatalf("Expected AtomValue for right side, got %T", binExpr.BinaryOps[0].Term.Operand)
 	}
 	intVal3, ok := rightValue.Value.(Integer)
 	if !ok {
@@ -536,7 +540,7 @@ func TestParser_Lambda(t *testing.T) {
 		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
 	}
 
-	bind, ok := root.Statements[0].Statement.(BindStatement)
+	bind, ok := root.Statements[0].Statement.(LetStatement)
 	if !ok {
 		t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
 	}
@@ -546,12 +550,12 @@ func TestParser_Lambda(t *testing.T) {
 	}
 
 	// Verify the name of the binding
-	if bind.Name != "adder" {
-		t.Errorf("Expected variable name 'adder', got '%s'", bind.Name)
+	if bind.Binding.Names[0] != "adder" {
+		t.Errorf("Expected variable name 'adder', got '%s'", bind.Binding)
 	}
 
 	// Check that we have a lambda expression
-	lambda, ok := bind.Expr.Operand.(Lambda)
+	lambda, ok := bind.Expr.Term.Operand.(Lambda)
 	if !ok {
 		t.Fatalf("Expected Lambda, got %T", *bind.Expr)
 	}
@@ -580,12 +584,12 @@ func TestParser_Lambda(t *testing.T) {
 	if len(lambda.Block.Statements) != 1 {
 		t.Fatalf("Expected 1 statement in lambda block, got %d", len(lambda.Block.Statements))
 	}
-	lambdaBindStmt, ok := lambda.Block.Statements[0].Statement.(BindStatement)
+	lambdaBindStmt, ok := lambda.Block.Statements[0].Statement.(LetStatement)
 	if !ok {
 		t.Fatalf("Expected BindStatement in lambda block, got %T", lambda.Block.Statements[0].Statement)
 	}
-	if lambdaBindStmt.Name != "a" {
-		t.Errorf("Expected variable name 'a', got '%s'", lambdaBindStmt.Name)
+	if lambdaBindStmt.Binding.Names[0] != "a" {
+		t.Errorf("Expected variable name 'a', got '%s'", lambdaBindStmt.Binding)
 	}
 }
 
@@ -598,7 +602,7 @@ func TestParser_BinaryExpression(t *testing.T) {
 	if len(root.Statements) != 1 {
 		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
 	}
-	bind, ok := root.Statements[0].Statement.(BindStatement)
+	bind, ok := root.Statements[0].Statement.(LetStatement)
 	if !ok {
 		t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
 	}
@@ -606,9 +610,9 @@ func TestParser_BinaryExpression(t *testing.T) {
 		t.Fatalf("Expected non-nil Expr")
 	}
 
-	leftExpr, ok := bind.Expr.Operand.(AtomValue)
+	leftExpr, ok := bind.Expr.Term.Operand.(AtomValue)
 	if !ok {
-		t.Fatalf("Expected AtomValue on left side, got %T", bind.Expr.Operand)
+		t.Fatalf("Expected AtomValue on left side, got %T", bind.Expr.Term.Operand)
 	}
 	intValue1, ok := leftExpr.Value.(Integer)
 	if !ok {
@@ -618,12 +622,12 @@ func TestParser_BinaryExpression(t *testing.T) {
 		t.Errorf("Expected left value 1, got %d", intValue1.Value)
 	}
 
-	if bind.Expr.Operations[0].Operator != "+" {
-		t.Errorf("Expected operator '+', got '%s'", bind.Expr.Operations[0].Operator)
+	if bind.Expr.BinaryOps[0].Operator != "+" {
+		t.Errorf("Expected operator '+', got '%s'", bind.Expr.BinaryOps[0].Operator)
 	}
-	middleExpr, ok := bind.Expr.Operations[0].Operand.(AtomValue)
+	middleExpr, ok := bind.Expr.BinaryOps[0].Term.Operand.(AtomValue)
 	if !ok {
-		t.Fatalf("Expected AtomValue on right side, got %T", bind.Expr.Operations[0].Operand)
+		t.Fatalf("Expected AtomValue on right side, got %T", bind.Expr.BinaryOps[0].Term.Operand)
 	}
 	intValue2, ok := middleExpr.Value.(Integer)
 	if !ok {
@@ -633,9 +637,9 @@ func TestParser_BinaryExpression(t *testing.T) {
 		t.Errorf("Expected middle value 2, got %d", intValue1.Value)
 	}
 
-	rightExpr, ok := bind.Expr.Operations[1].Operand.(AtomValue)
+	rightExpr, ok := bind.Expr.BinaryOps[1].Term.Operand.(AtomValue)
 	if !ok {
-		t.Fatalf("Expected AtomValue on right side of multiplication, got %T", bind.Expr.Operations[1].Operand)
+		t.Fatalf("Expected AtomValue on right side of multiplication, got %T", bind.Expr.BinaryOps[0].Term.Operand)
 	}
 	intValue3, ok := rightExpr.Value.(Integer)
 	if !ok {
@@ -667,12 +671,12 @@ func TestParser_ComplexIfStatement(t *testing.T) {
 	if len(ifStmt.ThenBlock.Statements) != 1 {
 		t.Fatalf("Expected 1 statement in if block, got %d", len(ifStmt.ThenBlock.Statements))
 	}
-	bindStmt, ok := ifStmt.ThenBlock.Statements[0].Statement.(BindStatement)
+	bindStmt, ok := ifStmt.ThenBlock.Statements[0].Statement.(LetStatement)
 	if !ok {
 		t.Fatalf("Expected BindStatement, got %T", ifStmt.ThenBlock.Statements[0].Statement)
 	}
-	if bindStmt.Name != "result" {
-		t.Errorf("Expected variable name 'result', got '%s'", bindStmt.Name)
+	if bindStmt.Binding.Names[0] != "result" {
+		t.Errorf("Expected variable name 'result', got '%s'", bindStmt.Binding)
 	}
 
 	// Test that the expression (x + y + z) exists
@@ -690,7 +694,7 @@ func TestParser_NestedExpressions(t *testing.T) {
 	if len(root.Statements) != 1 {
 		t.Fatalf("Expected 1 statement, got %d", len(root.Statements))
 	}
-	bind, ok := root.Statements[0].Statement.(BindStatement)
+	bind, ok := root.Statements[0].Statement.(LetStatement)
 	if !ok {
 		t.Fatalf("Expected BindStatement, got %T", root.Statements[0].Statement)
 	}
@@ -701,17 +705,17 @@ func TestParser_NestedExpressions(t *testing.T) {
 	// Test binary expression
 
 	// Left side should be a grouped expression
-	groupExpr, ok := bind.Expr.Operand.(GroupedExpression)
+	groupExpr, ok := bind.Expr.Term.Operand.(GroupedExpression)
 	if !ok {
-		t.Fatalf("Expected GroupedExpression on left side, got %T", bind.Expr.Operand)
+		t.Fatalf("Expected GroupedExpression on left side, got %T", bind.Expr.Term.Operand)
 	}
-	if groupExpr.Expression.Operations[0].Operator != "+" {
-		t.Errorf("Expected operator '+', got '%s'", groupExpr.Expression.Operations[0].Operator)
+	if groupExpr.Expression.BinaryOps[0].Operator != "+" {
+		t.Errorf("Expected operator '+', got '%s'", groupExpr.Expression.BinaryOps[0].Operator)
 	}
 
 	// Inside the group should be another binary expression
-	if groupExpr.Expression.Operations[1].Operator != "*" {
-		t.Errorf("Expected operator '*', got '%s'", bind.Expr.Operations[0].Operator)
+	if bind.Expr.BinaryOps[0].Operator != "*" {
+		t.Errorf("Expected operator '*', got '%s'", bind.Expr.BinaryOps[0].Operator)
 	}
 }
 
@@ -740,12 +744,12 @@ func TestParser_IfElseStatement(t *testing.T) {
 	}
 
 	// Test the let statement in the if block
-	ifBindStmt, ok := ifStmt.ThenBlock.Statements[0].Statement.(BindStatement)
+	ifBindStmt, ok := ifStmt.ThenBlock.Statements[0].Statement.(LetStatement)
 	if !ok {
 		t.Fatalf("Expected BindStatement in if block, got %T", ifStmt.ThenBlock.Statements[0].Statement)
 	}
-	if ifBindStmt.Name != "z" {
-		t.Errorf("Expected variable name 'z', got '%s'", ifBindStmt.Name)
+	if ifBindStmt.Binding.Names[0] != "z" {
+		t.Errorf("Expected variable name 'z', got '%s'", ifBindStmt.Binding)
 	}
 
 	// Test the else branch
@@ -757,11 +761,11 @@ func TestParser_IfElseStatement(t *testing.T) {
 	if len(ifStmt.ElseBlock.Statements) != 1 {
 		t.Fatalf("Expected 1 statement in else block, got %d", len(ifStmt.ElseBlock.Statements))
 	}
-	elseBindStmt, ok := ifStmt.ElseBlock.Statements[0].Statement.(BindStatement)
+	elseBindStmt, ok := ifStmt.ElseBlock.Statements[0].Statement.(LetStatement)
 	if !ok {
 		t.Fatalf("Expected BindStatement in else block, got %T", ifStmt.ElseBlock.Statements[0].Statement)
 	}
-	if elseBindStmt.Name != "z" {
-		t.Errorf("Expected variable name 'z', got '%s'", elseBindStmt.Name)
+	if elseBindStmt.Binding.Names[0] != "z" {
+		t.Errorf("Expected variable name 'z', got '%s'", elseBindStmt.Binding)
 	}
 }

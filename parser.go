@@ -1,6 +1,10 @@
 package patina
 
 import (
+	"regexp"
+	"strconv"
+	"strings"
+
 	"github.com/alecthomas/participle/v2"
 	"github.com/alecthomas/participle/v2/lexer"
 )
@@ -8,25 +12,18 @@ import (
 var (
 	lex = lexer.MustStateful(lexer.Rules{
 		"Root": {
+			lexer.Include("BlockCommentStart"),
+			{Name: "WS", Pattern: `[ \t]+`, Action: nil},
+			{Name: "EOL", Pattern: `\n|\r|\r\n`, Action: nil},
+			{Name: "LineComment", Pattern: `(?://)[^\n]*`, Action: nil},
 			{Name: "BracketLeft", Pattern: `[([{]`, Action: lexer.Push("Root")},
 			{Name: "BracketRight", Pattern: `[)\]}]`, Action: lexer.Pop()},
-			{Name: "UnaryOperator", Pattern: `[~!&*-]`, Action: nil},
-			{Name: "BinaryOperator", Pattern: `[~!@#$%^&*\-+=:;<>?|,.\\]{2,}`, Action: nil},
+			{Name: "Symbol", Pattern: `[:,]`, Action: nil},
+			{Name: "Operator", Pattern: `[~!@#$%^&*\-+=:;<>?/|\\]{2,}|[=*\-+<>/\\]`, Action: nil},
+			{Name: "UnaryOperator", Pattern: `[~!@^&\-+]`, Action: nil},
 			{Name: "Integer", Pattern: `\d+`, Action: nil},
 			{Name: "StringStart", Pattern: `"`, Action: lexer.Push("String")},
 			{Name: "Ident", Pattern: "[a-zA-Z_][a-zA-Z0-9_]*|`[^`\\s]*`", Action: nil},
-			{Name: "Whitespace", Pattern: `[ \t\n\r]+`, Action: nil},
-			{Name: "LineComment", Pattern: `(?://)[^\n]*\n?`, Action: nil},
-			lexer.Include("DocCommentStart"),
-			lexer.Include("BlockCommentStart"),
-		},
-		"DocCommentStart": {
-			{Name: "DocCommentStart", Pattern: `/\*\*`, Action: lexer.Push("DocComment")},
-		},
-		"DocComment": {
-			{Name: "DocCommentEnd", Pattern: `\*/`, Action: lexer.Pop()},
-			lexer.Include("DocCommentStart"),
-			{Name: "DocCommentContents", Pattern: `([^*/]|/[^*]|\*[^/])+`, Action: nil},
 		},
 		"BlockCommentStart": {
 			{Name: "BlockCommentStart", Pattern: `/\*`, Action: lexer.Push("BlockComment")},
@@ -42,12 +39,13 @@ var (
 			{Name: "StringFragment", Pattern: `[^"\\]+`, Action: nil},
 		},
 	})
-	Parser = participle.MustBuild[Root](
+	intTypeRegex = regexp.MustCompile(`^([iu])(\d+)`)
+	Parser       = participle.MustBuild[Root](
 		participle.Lexer(lex),
-		participle.Elide("Whitespace", "BlockCommentStart", "BlockCommentContents", "BlockCommentEnd", "LineComment"),
-		participle.UseLookahead(20),
-		participle.Union[Statement](Module{}, Block{}, BindStatement{}, FunctionStatement{}, IfStatement{}, ExpressionStatement{}),
-		participle.Union[Atom](Lambda{}, FunctionCall{}, StaticBlock{}, GroupedExpression{}, UnaryOperation{}, AtomValue{}, BindingAccess{}),
+		participle.UseLookahead(10),
+		participle.Elide("WS", "EOL", "LineComment", "BlockCommentStart", "BlockCommentEnd", "BlockCommentContents"),
+		participle.Union[Statement](Module{}, LetStatement{}, FunctionStatement{}, IfStatement{}, ExpressionStatement{}),
+		participle.Union[Atom](Lambda{}, GroupedExpression{}, AtomValue{}, BlockAtom{}, Binding{}),
 		participle.Union[TypeValue](IntegerType{}, PointerType{}, FunctionType{}, ArrayType{}, TypeExpression{}),
 		participle.Union[Value](Integer{}, String{}, IntegerType{}, PointerType{}, FunctionType{}, ArrayType{}, TypeExpression{}),
 	)
@@ -55,45 +53,59 @@ var (
 
 type (
 	Root struct {
-		Statements []DocumentedStatement `parser:"@@*"`
+		Pos        lexer.Position
+		Statements []*DocumentedStatement `parser:"@@* EOF?"`
 	}
 
-	Statement           interface{ statement() }
+	Statement          interface{ statement() }
+	DocCommentFragment struct {
+		Pos     lexer.Position
+		Text    string      `parser:"@BlockCommentContents"`
+		Comment *DocComment `parser:"| @@"`
+	}
+	DocComment struct {
+		Pos       lexer.Position
+		Fragments []DocCommentFragment `parser:"BlockCommentStart @@* BlockCommentEnd"`
+	}
 	DocumentedStatement struct {
-		Pos        lexer.Position
-		DocComment string    `parser:"@(DocCommentStart DocCommentContents* DocCommentEnd)?"`
-		Statement  Statement `parser:"@@"`
+		Pos       lexer.Position
+		Comments  *DocComment `parser:"@@?"`
+		Statement Statement   `parser:"@@ (?= EOL | EOF | BracketLeft | BracketRight)"`
 	}
 	Block struct {
 		Pos        lexer.Position
-		Statements []DocumentedStatement `parser:"'{' @@* '}'"`
+		Statements []*DocumentedStatement `parser:"'{' @@* '}'"`
 	}
 	Module struct {
-		Pos  lexer.Position
-		Name string `parser:"'module' @Ident"`
-		Body Block  `parser:"@@"`
+		Pos     lexer.Position
+		Binding Binding `parser:"'module' @@"`
+		Body    Block   `parser:"@@"`
 	}
-	BindStatement struct {
+	LetStatement struct {
 		Pos       lexer.Position
 		IsStatic  bool        `parser:"@'static'?"`
 		IsMutable bool        `parser:"'let' @'mut'?"`
-		Name      string      `parser:"@Ident"`
-		Type      *TypeValue  `parser:"(':' @@)?"`
-		Expr      *Expression `parser:"('=' @@)?"`
+		Binding   Binding     `parser:"@@"`
+		Type      *TypeValue  `parser:"([':' @@]"`
+		Expr      *Expression `parser:"['=' @@])!"`
 	}
 	FunctionStatement struct {
 		Pos        lexer.Position
-		Name       string              `parser:"'fun' @Ident"`
-		Parameters []FunctionParameter `parser:"'(' (@@ (',' @@)* ','?)? ')'"`
+		Binding    Binding             `parser:"'fun' @@"`
+		Parameters []FunctionParameter `parser:"'(' [@@ (',' @@)* ','?] ')'"`
 		Return     *TypeValue          `parser:"(':' @@)?"`
 		Block      Block               `parser:"@@"`
 	}
+	ReturnStatement struct {
+		Pos        lexer.Position
+		Expression *Expression `parser:"'return' @@"`
+	}
 	IfStatement struct {
 		Pos              lexer.Position
-		Condition        Expression    `parser:"'if' @@"`
+		Condition        Expression    `parser:"'if' @@ "`
 		ThenBlock        Block         `parser:"@@"`
 		ElseIfStatements []IfStatement `parser:"('else' @@)*"`
-		ElseBlock        *Block        `parser:"('else' @@)?"`
+		ElseBlock        *Block        `parser:"['else' @@]"`
 	}
 	ExpressionStatement struct {
 		Pos        lexer.Position
@@ -101,47 +113,49 @@ type (
 	}
 
 	Expression struct {
-		Pos        lexer.Position
-		Operand    Atom              `parser:"@@"`
-		Operations []BinaryOperation `parser:"@@*"`
+		Pos       lexer.Position
+		Term      Term              `parser:"@@"`
+		BinaryOps []BinaryOperation `parser:"@@*"`
 	}
 	BinaryOperation struct {
-		Operator string `parser:"@(UnaryOperator | BinaryOperator)"`
-		Operand  Atom   `parser:"@@"`
+		Pos      lexer.Position
+		Operator string `parser:"@(UnaryOperator | Operator)"`
+		Term     Term   `parser:"@@"`
+	}
+	Term struct {
+		Pos         lexer.Position
+		UnaryOps    []string     `parser:"@UnaryOperator*"`
+		Operand     Atom         `parser:"@@"`
+		Invocations []Invocation `parser:"@@*"`
+	}
+	Invocation struct {
+		Pos       lexer.Position
+		Arguments []*Expression `parser:"'(' [@@ (',' @@)* ','?] ')'"`
 	}
 
 	Atom   interface{ atom() }
 	Lambda struct {
 		Pos        lexer.Position
-		Parameters []FunctionParameter `parser:"'fun' '(' [ @@ (',' @@)* ','? ] ')'"`
-		Return     *TypeValue          `parser:"[':' @@]"`
-		Block      Block               `parser:"@@"`
-	}
-	FunctionCall struct {
-		Pos       lexer.Position
-		Target    Atom         `parser:"@@"`
-		Arguments []Expression `parser:"'(' [ @@ (',' @@)* ','? ] ')'"`
-	}
-	StaticBlock struct {
-		Pos  lexer.Position
-		Body Block `parser:"'static' @@"`
+		Parameters []*FunctionParameter `parser:"'fun' '(' [@@ (',' @@)* ','?] ')'"`
+		Return     *TypeValue           `parser:"[':' @@]"`
+		Block      Block                `parser:"@@"`
 	}
 	GroupedExpression struct {
 		Pos        lexer.Position
 		Expression Expression `parser:"'(' @@ ')'"`
 	}
-	UnaryOperation struct {
-		Pos      lexer.Position
-		Operator string `parser:"@UnaryOperator"`
-		Operand  Atom   `parser:"@@"`
-	}
 	AtomValue struct {
 		Pos   lexer.Position
 		Value Value `parser:"@@"`
 	}
-	BindingAccess struct {
-		Pos  lexer.Position
-		Name string `parser:"@Ident"`
+	BlockAtom struct {
+		Pos      lexer.Position
+		IsStatic bool  `parser:"@'static'?"`
+		Body     Block `parser:"@@"`
+	}
+	Binding struct {
+		Pos   lexer.Position
+		Names []string `parser:"@Ident ('::' @Ident)*"`
 	}
 
 	Value   interface{ value() }
@@ -151,12 +165,12 @@ type (
 	}
 	String struct {
 		Pos       lexer.Position
-		Fragments []StringFragment `parser:"StringStart @@* StringEnd"`
+		Fragments []*StringFragment `parser:"StringStart @@* StringEnd"`
 	}
 	StringFragment struct {
 		Pos           lexer.Position
-		Text          string      `parser:"@StringFragment+"`
-		Interpolation *Expression `parser:"| StringInterpolant @@ ')'"`
+		Text          string     `parser:"@StringFragment+"`
+		Interpolation Expression `parser:"| StringInterpolant @@ ')'"`
 	}
 
 	TypeValue interface {
@@ -165,25 +179,25 @@ type (
 	}
 	IntegerType struct {
 		Pos     lexer.Position
-		Signed  bool   `parser:"(@'i' | 'u')"`
-		BitSize uint64 `parser:"@Integer"`
+		Signed  bool
+		BitSize uint64
 	}
 	PointerType struct {
 		Pos        lexer.Position
-		IsOwned    bool      `parser:"@'@'"`
-		IsMutable  bool      `parser:"| '*' @'mut'?"`
+		IsOwned    bool      `parser:"(@'@'"`
+		IsMutable  bool      `parser:"| '*' @'mut'?)"`
 		TargetType TypeValue `parser:"@@"`
 	}
 	ArrayType struct {
 		Pos         lexer.Position
-		Dimensions  []uint64  `parser:"'[' (@Integer (',' @Integer)* ','?)? ']'"`
+		Dimension   *uint64   `parser:"'[' @Integer? ']'"`
 		ElementType TypeValue `parser:"@@"`
 	}
 	FunctionType struct {
 		Pos        lexer.Position
 		Name       string              `parser:"'fun' @Ident?"`
-		Parameters []FunctionParameter `parser:"'(' (@@ (',' @@)*)? ')'"`
-		Return     *TypeValue          `parser:"(':' @@)? (?! '{')"`
+		Parameters []FunctionParameter `parser:"'(' [@@ (',' @@)* ','?] ')'"`
+		Return     *TypeValue          `parser:"[':' @@] (?! '{')"`
 	}
 	FunctionParameter struct {
 		Pos  lexer.Position
@@ -198,18 +212,17 @@ type (
 
 func (Module) statement()              {}
 func (Block) statement()               {}
-func (BindStatement) statement()       {}
+func (LetStatement) statement()        {}
 func (FunctionStatement) statement()   {}
+func (ReturnStatement) statement()     {}
 func (IfStatement) statement()         {}
 func (ExpressionStatement) statement() {}
 
-func (StaticBlock) atom()       {}
+func (BlockAtom) atom()         {}
 func (Lambda) atom()            {}
-func (FunctionCall) atom()      {}
 func (GroupedExpression) atom() {}
-func (UnaryOperation) atom()    {}
 func (AtomValue) atom()         {}
-func (BindingAccess) atom()     {}
+func (Binding) atom()           {}
 
 func (Integer) value() {}
 func (String) value()  {}
@@ -224,3 +237,21 @@ func (PointerType) value()         {}
 func (ArrayType) value()           {}
 func (FunctionType) value()        {}
 func (TypeExpression) value()      {}
+
+func (it *IntegerType) Parse(lex *lexer.PeekingLexer) error {
+	token := lex.Peek()
+	matches := intTypeRegex.FindAllStringSubmatch(token.Value, -1)
+	if matches == nil || len(matches) != 1 || len(matches[0]) != 3 {
+		return participle.NextMatch
+	}
+	sign, size := matches[0][1], matches[0][2]
+	bitSize, err := strconv.ParseUint(size, 10, 16)
+	if err != nil {
+		return err
+	}
+	lex.Next()
+	it.Pos = token.Pos
+	it.Signed = strings.Compare(sign, "i") == 0
+	it.BitSize = bitSize
+	return nil
+}
