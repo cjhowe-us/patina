@@ -29,6 +29,7 @@
      }
     },
     "Body": {
+     "Label": "",
      "Pos": {
       "Column": 13,
       "Filename": "",
@@ -541,6 +542,7 @@
      }
     },
     "Block": {
+     "Label": "",
      "Pos": {
       "Column": 30,
       "Filename": "",
@@ -790,6 +792,7 @@
      }
     },
     "ElseBlock": {
+     "Label": "",
      "Pos": {
       "Column": 9,
       "Filename": "",
@@ -874,6 +877,7 @@
      "Offset": 0
     },
     "ThenBlock": {
+     "Label": "",
      "Pos": {
       "Column": 11,
       "Filename": "",
@@ -1236,6 +1240,7 @@
      }
     },
     "Block": {
+     "Label": "",
      "Pos": {
       "Column": 13,
       "Filename": "",
@@ -1918,6 +1923,7 @@
       "Invocations": null,
       "Operand": {
        "Block": {
+        "Label": "",
         "Pos": {
          "Column": 26,
          "Filename": "",
@@ -2457,6 +2463,7 @@
      "Offset": 0
     },
     "ThenBlock": {
+     "Label": "",
      "Pos": {
       "Column": 32,
       "Filename": "",
@@ -2861,6 +2868,7 @@
      }
     },
     "ElseBlock": {
+     "Label": "",
      "Pos": {
       "Column": 9,
       "Filename": "",
@@ -2945,6 +2953,7 @@
      "Offset": 0
     },
     "ThenBlock": {
+     "Label": "",
      "Pos": {
       "Column": 11,
       "Filename": "",

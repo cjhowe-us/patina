@@ -14,6 +14,21 @@
     },
     {
       "type": "go",
+      "label": "update snapshots",
+      "detail": "UPDATE_SNAPS=true go test",
+      "command": "test",
+      "problemMatcher": ["$go"],
+      "group": {
+        "kind": "test"
+      },
+      "options": {
+        "env": {
+          "UPDATE_SNAPS": "true"
+        }
+      }
+    },
+    {
+      "type": "go",
       "label": "build",
       "detail": "go build",
       "command": "build",

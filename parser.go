@@ -74,7 +74,13 @@ type (
 	}
 	Block struct {
 		Pos        lexer.Position
+		Label      string                 `parser:"[@Ident ':']"`
 		Statements []*DocumentedStatement `parser:"'{' @@* '}'"`
+	}
+	BreakStatement struct {
+		Pos        lexer.Position
+		Label      string      `parser:"'break' @Ident?"`
+		Expression *Expression `parser:"@@?"`
 	}
 	Module struct {
 		Pos     lexer.Position
