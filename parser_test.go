@@ -45,8 +45,8 @@ func TestParser(t *testing.T) {
 		{
 			name: "Module",
 			src: `module test {
-		let x = *mut i32
-	}`,
+				let x = *mut i32
+			}`,
 		},
 		{
 			name: "Simple binding",
@@ -71,16 +71,22 @@ func TestParser(t *testing.T) {
 		{
 			name: "Function statement",
 			src: `fun add(a: i64, b: i64): i64 {
-		let c = a + b
-	}`,
+				let c = a + b
+			}`,
+		},
+		{
+			name: "Function statement with annotation",
+			src: `#myTag("hello world", 100, \#quoted) fun add(a: i64, b: i64): i64 {
+				let c = a + b
+			}`,
 		},
 		{
 			name: "If statement",
 			src: `if x > 10 {
-		let y = 1
-	} else {
-		let y = 2
-	}`,
+				let y = 1
+			} else {
+				let y = 2
+			}`,
 		},
 		{
 			name: "String literal",
@@ -93,9 +99,9 @@ func TestParser(t *testing.T) {
 		{
 			name: "Comments",
 			src: `// Line comment
-	/* Block comment */
-	fun test() {
-	}`,
+			/* Block comment */
+			fun test() {
+			}`,
 		},
 		{
 			name: "Integer type",
@@ -104,9 +110,9 @@ func TestParser(t *testing.T) {
 		{
 			name: "Type value",
 			src: `let x: i64 = 10
-	let ptr: *mut i64 = 20
-	let arr: [10]i64
-	let fn: fun add(a: i64, b: i64): i64 = add`,
+			let ptr: *mut i64 = 20
+			let arr: [10]i64
+			let fn: fun add(a: i64, b: i64): i64 = add`,
 		},
 		{
 			name: "Function call",
@@ -115,8 +121,8 @@ func TestParser(t *testing.T) {
 		{
 			name: "Lambda expression",
 			src: `let adder = fun (b: i32) {
-		let a = 1 + b
-	}`,
+				let a = 1 + b
+			}`,
 		},
 		{
 			name: "Binary expression",
@@ -125,8 +131,8 @@ func TestParser(t *testing.T) {
 		{
 			name: "Complex if statement",
 			src: `if x > 10 && y < 20 || z == 30 {
-		let result = x + y + z
-	}`,
+				let result = x + y + z
+			}`,
 		},
 		{
 			name: "Nested expressions",
