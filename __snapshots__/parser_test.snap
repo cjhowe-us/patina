@@ -70,7 +70,7 @@ statements:
                     offset: 26
                     line: 2
                     column: 13
-                  unaryops: []
+                  prefixops: []
                   operand:
                     pos:
                       filename: Module
@@ -141,7 +141,7 @@ statements:
             offset: 8
             line: 1
             column: 9
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: Simple binding
@@ -203,7 +203,7 @@ statements:
             offset: 12
             line: 1
             column: 13
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: Mutable binding
@@ -265,7 +265,7 @@ statements:
             offset: 15
             line: 1
             column: 16
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: Static binding
@@ -334,7 +334,7 @@ statements:
             offset: 13
             line: 1
             column: 14
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: Binding with type
@@ -450,7 +450,7 @@ statements:
               offset: 19
               line: 1
               column: 20
-            signed: true
+            signed: false
             bitsize: 64
       return:
         pos:
@@ -503,7 +503,7 @@ statements:
                     offset: 43
                     line: 2
                     column: 13
-                  unaryops: []
+                  prefixops: []
                   operand:
                     pos:
                       filename: Function statement
@@ -526,7 +526,7 @@ statements:
                         offset: 47
                         line: 2
                         column: 17
-                      unaryops: []
+                      prefixops: []
                       operand:
                         pos:
                           filename: Function statement
@@ -536,6 +536,28 @@ statements:
                         names:
                           - b
                       invocations: []
+          - pos:
+              filename: Function statement
+              offset: 53
+              line: 3
+              column: 5
+            comments: null
+            annotations: []
+            statement:
+              pos:
+                filename: Function statement
+                offset: 53
+                line: 3
+                column: 5
+              tag: null
+              expression:
+                pos:
+                  filename: Function statement
+                  offset: 60
+                  line: 3
+                  column: 12
+                names:
+                  - c
 
 ---
 
@@ -571,7 +593,7 @@ statements:
             offset: 3
             line: 1
             column: 4
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: If statement
@@ -594,7 +616,7 @@ statements:
                 offset: 7
                 line: 1
                 column: 8
-              unaryops: []
+              prefixops: []
               operand:
                 pos:
                   filename: If statement
@@ -652,7 +674,7 @@ statements:
                     offset: 24
                     line: 2
                     column: 13
-                  unaryops: []
+                  prefixops: []
                   operand:
                     pos:
                       filename: If statement
@@ -712,7 +734,7 @@ statements:
                     offset: 50
                     line: 4
                     column: 13
-                  unaryops: []
+                  prefixops: []
                   operand:
                     pos:
                       filename: If statement
@@ -774,7 +796,7 @@ statements:
             offset: 10
             line: 1
             column: 11
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: String literal
@@ -843,7 +865,7 @@ statements:
             offset: 10
             line: 1
             column: 11
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: String interpolation
@@ -882,7 +904,7 @@ statements:
                         offset: 20
                         line: 1
                         column: 21
-                      unaryops: []
+                      prefixops: []
                       operand:
                         pos:
                           filename: String interpolation
@@ -1001,7 +1023,7 @@ statements:
             offset: 8
             line: 1
             column: 9
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: Integer type
@@ -1071,7 +1093,7 @@ statements:
             offset: 13
             line: 1
             column: 14
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: Type value
@@ -1138,7 +1160,7 @@ statements:
             offset: 39
             line: 2
             column: 24
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: Type value
@@ -1272,7 +1294,7 @@ statements:
             offset: 104
             line: 4
             column: 43
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: Type value
@@ -1329,7 +1351,7 @@ statements:
             offset: 13
             line: 1
             column: 14
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: Function call
@@ -1356,7 +1378,7 @@ statements:
                       offset: 17
                       line: 1
                       column: 18
-                    unaryops: []
+                    prefixops: []
                     operand:
                       pos:
                         filename: Function call
@@ -1383,7 +1405,7 @@ statements:
                       offset: 20
                       line: 1
                       column: 21
-                    unaryops: []
+                    prefixops: []
                     operand:
                       pos:
                         filename: Function call
@@ -1411,7 +1433,7 @@ statements:
                           offset: 24
                           line: 1
                           column: 25
-                        unaryops: []
+                        prefixops: []
                         operand:
                           pos:
                             filename: Function call
@@ -1426,6 +1448,7 @@ statements:
                               column: 25
                             value: 3
                         invocations: []
+              postfixops: []
         binaryops: []
 
 ---
@@ -1473,7 +1496,7 @@ statements:
             offset: 12
             line: 1
             column: 13
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: Lambda expression
@@ -1539,7 +1562,7 @@ statements:
                           offset: 39
                           line: 2
                           column: 13
-                        unaryops: []
+                        prefixops: []
                         operand:
                           pos:
                             filename: Lambda expression
@@ -1567,7 +1590,7 @@ statements:
                               offset: 43
                               line: 2
                               column: 17
-                            unaryops: []
+                            prefixops: []
                             operand:
                               pos:
                                 filename: Lambda expression
@@ -1625,7 +1648,7 @@ statements:
             offset: 8
             line: 1
             column: 9
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: Binary expression
@@ -1653,7 +1676,7 @@ statements:
                 offset: 12
                 line: 1
                 column: 13
-              unaryops: []
+              prefixops: []
               operand:
                 pos:
                   filename: Binary expression
@@ -1680,7 +1703,7 @@ statements:
                 offset: 16
                 line: 1
                 column: 17
-              unaryops: []
+              prefixops: []
               operand:
                 pos:
                   filename: Binary expression
@@ -1730,7 +1753,7 @@ statements:
             offset: 3
             line: 1
             column: 4
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: Complex if statement
@@ -1753,7 +1776,7 @@ statements:
                 offset: 7
                 line: 1
                 column: 8
-              unaryops: []
+              prefixops: []
               operand:
                 pos:
                   filename: Complex if statement
@@ -1780,7 +1803,7 @@ statements:
                 offset: 13
                 line: 1
                 column: 14
-              unaryops: []
+              prefixops: []
               operand:
                 pos:
                   filename: Complex if statement
@@ -1802,7 +1825,7 @@ statements:
                 offset: 17
                 line: 1
                 column: 18
-              unaryops: []
+              prefixops: []
               operand:
                 pos:
                   filename: Complex if statement
@@ -1829,7 +1852,7 @@ statements:
                 offset: 23
                 line: 1
                 column: 24
-              unaryops: []
+              prefixops: []
               operand:
                 pos:
                   filename: Complex if statement
@@ -1851,7 +1874,7 @@ statements:
                 offset: 28
                 line: 1
                 column: 29
-              unaryops: []
+              prefixops: []
               operand:
                 pos:
                   filename: Complex if statement
@@ -1909,7 +1932,7 @@ statements:
                     offset: 50
                     line: 2
                     column: 18
-                  unaryops: []
+                  prefixops: []
                   operand:
                     pos:
                       filename: Complex if statement
@@ -1932,7 +1955,7 @@ statements:
                         offset: 54
                         line: 2
                         column: 22
-                      unaryops: []
+                      prefixops: []
                       operand:
                         pos:
                           filename: Complex if statement
@@ -1954,7 +1977,7 @@ statements:
                         offset: 58
                         line: 2
                         column: 26
-                      unaryops: []
+                      prefixops: []
                       operand:
                         pos:
                           filename: Complex if statement
@@ -2012,7 +2035,7 @@ statements:
             offset: 8
             line: 1
             column: 9
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: Nested expressions
@@ -2031,7 +2054,7 @@ statements:
                   offset: 9
                   line: 1
                   column: 10
-                unaryops: []
+                prefixops: []
                 operand:
                   pos:
                     filename: Nested expressions
@@ -2059,7 +2082,7 @@ statements:
                       offset: 13
                       line: 1
                       column: 14
-                    unaryops: []
+                    prefixops: []
                     operand:
                       pos:
                         filename: Nested expressions
@@ -2088,7 +2111,7 @@ statements:
                 offset: 18
                 line: 1
                 column: 19
-              unaryops: []
+              prefixops: []
               operand:
                 pos:
                   filename: Nested expressions
@@ -2138,7 +2161,7 @@ statements:
             offset: 3
             line: 1
             column: 4
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: If-else statement
@@ -2161,7 +2184,7 @@ statements:
                 offset: 7
                 line: 1
                 column: 8
-              unaryops: []
+              prefixops: []
               operand:
                 pos:
                   filename: If-else statement
@@ -2219,7 +2242,7 @@ statements:
                     offset: 24
                     line: 2
                     column: 13
-                  unaryops: []
+                  prefixops: []
                   operand:
                     pos:
                       filename: If-else statement
@@ -2279,7 +2302,7 @@ statements:
                     offset: 50
                     line: 4
                     column: 13
-                  unaryops: []
+                  prefixops: []
                   operand:
                     pos:
                       filename: If-else statement
@@ -2362,7 +2385,7 @@ statements:
               offset: 7
               line: 1
               column: 8
-            unaryops: []
+            prefixops: []
             operand:
               pos:
                 filename: Break with expression
@@ -2390,7 +2413,7 @@ statements:
                   offset: 11
                   line: 1
                   column: 12
-                unaryops: []
+                prefixops: []
                 operand:
                   pos:
                     filename: Break with expression
@@ -2509,7 +2532,7 @@ statements:
               offset: 16
               line: 1
               column: 17
-            unaryops: []
+            prefixops: []
             operand:
               pos:
                 filename: Break with label and expression
@@ -2537,7 +2560,7 @@ statements:
                   offset: 20
                   line: 1
                   column: 21
-                unaryops: []
+                prefixops: []
                 operand:
                   pos:
                     filename: Break with label and expression
@@ -2593,7 +2616,7 @@ statements:
                 offset: 7
                 line: 1
                 column: 8
-              unaryops: []
+              prefixops: []
               operand:
                 pos:
                   filename: Function statement with annotation
@@ -2627,7 +2650,7 @@ statements:
                 offset: 22
                 line: 1
                 column: 23
-              unaryops: []
+              prefixops: []
               operand:
                 pos:
                   filename: Function statement with annotation
@@ -2654,7 +2677,7 @@ statements:
                 offset: 27
                 line: 1
                 column: 28
-              unaryops:
+              prefixops:
                 - "\\"
               operand:
                 pos:
@@ -2759,7 +2782,7 @@ statements:
                     offset: 80
                     line: 2
                     column: 13
-                  unaryops: []
+                  prefixops: []
                   operand:
                     pos:
                       filename: Function statement with annotation
@@ -2782,7 +2805,7 @@ statements:
                         offset: 84
                         line: 2
                         column: 17
-                      unaryops: []
+                      prefixops: []
                       operand:
                         pos:
                           filename: Function statement with annotation
@@ -2827,7 +2850,7 @@ statements:
             offset: 0
             line: 1
             column: 1
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: Block atom
@@ -2879,7 +2902,7 @@ statements:
                           offset: 14
                           line: 2
                           column: 13
-                        unaryops: []
+                        prefixops: []
                         operand:
                           pos:
                             filename: Block atom
@@ -2932,7 +2955,7 @@ statements:
             offset: 0
             line: 1
             column: 1
-          unaryops: []
+          prefixops: []
           operand:
             pos:
               filename: Block atom with tag
@@ -2990,7 +3013,7 @@ statements:
                           offset: 22
                           line: 2
                           column: 13
-                        unaryops: []
+                        prefixops: []
                         operand:
                           pos:
                             filename: Block atom with tag
@@ -3008,5 +3031,1233 @@ statements:
                       binaryops: []
           invocations: []
         binaryops: []
+
+---
+
+[TestParser/Quoted_tag - 1]
+pos:
+  filename: Quoted tag
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Quoted tag
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Quoted tag
+        offset: 0
+        line: 1
+        column: 1
+      expression:
+        pos:
+          filename: Quoted tag
+          offset: 0
+          line: 1
+          column: 1
+        term:
+          pos:
+            filename: Quoted tag
+            offset: 0
+            line: 1
+            column: 1
+          prefixops:
+            - "\\"
+          operand:
+            pos:
+              filename: Quoted tag
+              offset: 1
+              line: 1
+              column: 2
+            tag: "#`myTag`"
+          invocations: []
+        binaryops: []
+
+---
+
+[TestParser/Quoted_path - 1]
+pos:
+  filename: Quoted path
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Quoted path
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Quoted path
+        offset: 0
+        line: 1
+        column: 1
+      expression:
+        pos:
+          filename: Quoted path
+          offset: 0
+          line: 1
+          column: 1
+        term:
+          pos:
+            filename: Quoted path
+            offset: 0
+            line: 1
+            column: 1
+          prefixops:
+            - "\\"
+          operand:
+            pos:
+              filename: Quoted path
+              offset: 1
+              line: 1
+              column: 2
+            names:
+              - my
+              - "`-path`"
+          invocations: []
+        binaryops: []
+
+---
+
+[TestParser/Quoted_expression - 1]
+pos:
+  filename: Quoted expression
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Quoted expression
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Quoted expression
+        offset: 0
+        line: 1
+        column: 1
+      expression:
+        pos:
+          filename: Quoted expression
+          offset: 0
+          line: 1
+          column: 1
+        term:
+          pos:
+            filename: Quoted expression
+            offset: 0
+            line: 1
+            column: 1
+          prefixops:
+            - "\\"
+          operand:
+            pos:
+              filename: Quoted expression
+              offset: 1
+              line: 1
+              column: 2
+            expression:
+              pos:
+                filename: Quoted expression
+                offset: 2
+                line: 1
+                column: 3
+              term:
+                pos:
+                  filename: Quoted expression
+                  offset: 2
+                  line: 1
+                  column: 3
+                prefixops: []
+                operand:
+                  pos:
+                    filename: Quoted expression
+                    offset: 2
+                    line: 1
+                    column: 3
+                  value:
+                    pos:
+                      filename: Quoted expression
+                      offset: 2
+                      line: 1
+                      column: 3
+                    value: 1
+                invocations: []
+              binaryops:
+                - pos:
+                    filename: Quoted expression
+                    offset: 4
+                    line: 1
+                    column: 5
+                  operator: +
+                  term:
+                    pos:
+                      filename: Quoted expression
+                      offset: 6
+                      line: 1
+                      column: 7
+                    prefixops: []
+                    operand:
+                      pos:
+                        filename: Quoted expression
+                        offset: 6
+                        line: 1
+                        column: 7
+                      value:
+                        pos:
+                          filename: Quoted expression
+                          offset: 6
+                          line: 1
+                          column: 7
+                        value: 2
+                    invocations: []
+          invocations: []
+        binaryops: []
+
+---
+
+[TestParser/Prefix_ops - 1]
+pos:
+  filename: Prefix ops
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Prefix ops
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Prefix ops
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      path:
+        pos:
+          filename: Prefix ops
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - x
+      type: null
+      expr:
+        pos:
+          filename: Prefix ops
+          offset: 8
+          line: 1
+          column: 9
+        term:
+          pos:
+            filename: Prefix ops
+            offset: 8
+            line: 1
+            column: 9
+          prefixops:
+            - "!"
+          operand:
+            pos:
+              filename: Prefix ops
+              offset: 9
+              line: 1
+              column: 10
+            names:
+              - "true"
+          invocations: []
+        binaryops: []
+
+---
+
+[TestParser/Postfix_ops - 1]
+pos:
+  filename: Postfix ops
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Postfix ops
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Postfix ops
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      path:
+        pos:
+          filename: Postfix ops
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - x
+      type: null
+      expr:
+        pos:
+          filename: Postfix ops
+          offset: 8
+          line: 1
+          column: 9
+        term:
+          pos:
+            filename: Postfix ops
+            offset: 8
+            line: 1
+            column: 9
+          prefixops: []
+          operand:
+            pos:
+              filename: Postfix ops
+              offset: 8
+              line: 1
+              column: 9
+            names:
+              - "true"
+          invocations:
+            - pos:
+                filename: Postfix ops
+                offset: 12
+                line: 1
+                column: 13
+              arguments: []
+              postfixops:
+                - ?
+        binaryops: []
+
+---
+
+[TestParser/Prefix_and_postfix_ops - 1]
+pos:
+  filename: Prefix and postfix ops
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Prefix and postfix ops
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Prefix and postfix ops
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      path:
+        pos:
+          filename: Prefix and postfix ops
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - x
+      type: null
+      expr:
+        pos:
+          filename: Prefix and postfix ops
+          offset: 8
+          line: 1
+          column: 9
+        term:
+          pos:
+            filename: Prefix and postfix ops
+            offset: 8
+            line: 1
+            column: 9
+          prefixops:
+            - "!"
+          operand:
+            pos:
+              filename: Prefix and postfix ops
+              offset: 9
+              line: 1
+              column: 10
+            names:
+              - "true"
+          invocations:
+            - pos:
+                filename: Prefix and postfix ops
+                offset: 13
+                line: 1
+                column: 14
+              arguments: []
+              postfixops:
+                - ?
+        binaryops: []
+
+---
+
+[TestParser/Invocation - 1]
+pos:
+  filename: Invocation
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Invocation
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Invocation
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      path:
+        pos:
+          filename: Invocation
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - x
+      type: null
+      expr:
+        pos:
+          filename: Invocation
+          offset: 8
+          line: 1
+          column: 9
+        term:
+          pos:
+            filename: Invocation
+            offset: 8
+            line: 1
+            column: 9
+          prefixops: []
+          operand:
+            pos:
+              filename: Invocation
+              offset: 8
+              line: 1
+              column: 9
+            names:
+              - add
+          invocations:
+            - pos:
+                filename: Invocation
+                offset: 11
+                line: 1
+                column: 12
+              arguments:
+                - pos:
+                    filename: Invocation
+                    offset: 12
+                    line: 1
+                    column: 13
+                  term:
+                    pos:
+                      filename: Invocation
+                      offset: 12
+                      line: 1
+                      column: 13
+                    prefixops: []
+                    operand:
+                      pos:
+                        filename: Invocation
+                        offset: 12
+                        line: 1
+                        column: 13
+                      value:
+                        pos:
+                          filename: Invocation
+                          offset: 12
+                          line: 1
+                          column: 13
+                        value: 1
+                    invocations: []
+                  binaryops: []
+                - pos:
+                    filename: Invocation
+                    offset: 15
+                    line: 1
+                    column: 16
+                  term:
+                    pos:
+                      filename: Invocation
+                      offset: 15
+                      line: 1
+                      column: 16
+                    prefixops: []
+                    operand:
+                      pos:
+                        filename: Invocation
+                        offset: 15
+                        line: 1
+                        column: 16
+                      value:
+                        pos:
+                          filename: Invocation
+                          offset: 15
+                          line: 1
+                          column: 16
+                        value: 2
+                    invocations: []
+                  binaryops: []
+              postfixops: []
+        binaryops: []
+
+---
+
+[TestParser/Invocation_with_postfix_op - 1]
+pos:
+  filename: Invocation with postfix op
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Invocation with postfix op
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Invocation with postfix op
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      path:
+        pos:
+          filename: Invocation with postfix op
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - x
+      type: null
+      expr:
+        pos:
+          filename: Invocation with postfix op
+          offset: 8
+          line: 1
+          column: 9
+        term:
+          pos:
+            filename: Invocation with postfix op
+            offset: 8
+            line: 1
+            column: 9
+          prefixops: []
+          operand:
+            pos:
+              filename: Invocation with postfix op
+              offset: 8
+              line: 1
+              column: 9
+            names:
+              - add
+          invocations:
+            - pos:
+                filename: Invocation with postfix op
+                offset: 11
+                line: 1
+                column: 12
+              arguments:
+                - pos:
+                    filename: Invocation with postfix op
+                    offset: 12
+                    line: 1
+                    column: 13
+                  term:
+                    pos:
+                      filename: Invocation with postfix op
+                      offset: 12
+                      line: 1
+                      column: 13
+                    prefixops: []
+                    operand:
+                      pos:
+                        filename: Invocation with postfix op
+                        offset: 12
+                        line: 1
+                        column: 13
+                      value:
+                        pos:
+                          filename: Invocation with postfix op
+                          offset: 12
+                          line: 1
+                          column: 13
+                        value: 1
+                    invocations: []
+                  binaryops: []
+                - pos:
+                    filename: Invocation with postfix op
+                    offset: 15
+                    line: 1
+                    column: 16
+                  term:
+                    pos:
+                      filename: Invocation with postfix op
+                      offset: 15
+                      line: 1
+                      column: 16
+                    prefixops: []
+                    operand:
+                      pos:
+                        filename: Invocation with postfix op
+                        offset: 15
+                        line: 1
+                        column: 16
+                      value:
+                        pos:
+                          filename: Invocation with postfix op
+                          offset: 15
+                          line: 1
+                          column: 16
+                        value: 2
+                    invocations: []
+                  binaryops: []
+              postfixops:
+                - ?
+        binaryops: []
+
+---
+
+[TestParser/Invocation_with_prefix_op - 1]
+pos:
+  filename: Invocation with prefix op
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Invocation with prefix op
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Invocation with prefix op
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      path:
+        pos:
+          filename: Invocation with prefix op
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - x
+      type: null
+      expr:
+        pos:
+          filename: Invocation with prefix op
+          offset: 8
+          line: 1
+          column: 9
+        term:
+          pos:
+            filename: Invocation with prefix op
+            offset: 8
+            line: 1
+            column: 9
+          prefixops:
+            - "!"
+          operand:
+            pos:
+              filename: Invocation with prefix op
+              offset: 9
+              line: 1
+              column: 10
+            names:
+              - add
+          invocations:
+            - pos:
+                filename: Invocation with prefix op
+                offset: 12
+                line: 1
+                column: 13
+              arguments:
+                - pos:
+                    filename: Invocation with prefix op
+                    offset: 13
+                    line: 1
+                    column: 14
+                  term:
+                    pos:
+                      filename: Invocation with prefix op
+                      offset: 13
+                      line: 1
+                      column: 14
+                    prefixops: []
+                    operand:
+                      pos:
+                        filename: Invocation with prefix op
+                        offset: 13
+                        line: 1
+                        column: 14
+                      value:
+                        pos:
+                          filename: Invocation with prefix op
+                          offset: 13
+                          line: 1
+                          column: 14
+                        value: 1
+                    invocations: []
+                  binaryops: []
+                - pos:
+                    filename: Invocation with prefix op
+                    offset: 16
+                    line: 1
+                    column: 17
+                  term:
+                    pos:
+                      filename: Invocation with prefix op
+                      offset: 16
+                      line: 1
+                      column: 17
+                    prefixops: []
+                    operand:
+                      pos:
+                        filename: Invocation with prefix op
+                        offset: 16
+                        line: 1
+                        column: 17
+                      value:
+                        pos:
+                          filename: Invocation with prefix op
+                          offset: 16
+                          line: 1
+                          column: 17
+                        value: 2
+                    invocations: []
+                  binaryops: []
+              postfixops: []
+        binaryops: []
+
+---
+
+[TestParser/Invocation_with_prefix_and_postfix_ops - 1]
+pos:
+  filename: Invocation with prefix and postfix ops
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Invocation with prefix and postfix ops
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Invocation with prefix and postfix ops
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      path:
+        pos:
+          filename: Invocation with prefix and postfix ops
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - x
+      type: null
+      expr:
+        pos:
+          filename: Invocation with prefix and postfix ops
+          offset: 8
+          line: 1
+          column: 9
+        term:
+          pos:
+            filename: Invocation with prefix and postfix ops
+            offset: 8
+            line: 1
+            column: 9
+          prefixops:
+            - "!"
+          operand:
+            pos:
+              filename: Invocation with prefix and postfix ops
+              offset: 9
+              line: 1
+              column: 10
+            names:
+              - add
+          invocations:
+            - pos:
+                filename: Invocation with prefix and postfix ops
+                offset: 12
+                line: 1
+                column: 13
+              arguments:
+                - pos:
+                    filename: Invocation with prefix and postfix ops
+                    offset: 13
+                    line: 1
+                    column: 14
+                  term:
+                    pos:
+                      filename: Invocation with prefix and postfix ops
+                      offset: 13
+                      line: 1
+                      column: 14
+                    prefixops: []
+                    operand:
+                      pos:
+                        filename: Invocation with prefix and postfix ops
+                        offset: 13
+                        line: 1
+                        column: 14
+                      value:
+                        pos:
+                          filename: Invocation with prefix and postfix ops
+                          offset: 13
+                          line: 1
+                          column: 14
+                        value: 1
+                    invocations: []
+                  binaryops: []
+                - pos:
+                    filename: Invocation with prefix and postfix ops
+                    offset: 16
+                    line: 1
+                    column: 17
+                  term:
+                    pos:
+                      filename: Invocation with prefix and postfix ops
+                      offset: 16
+                      line: 1
+                      column: 17
+                    prefixops: []
+                    operand:
+                      pos:
+                        filename: Invocation with prefix and postfix ops
+                        offset: 16
+                        line: 1
+                        column: 17
+                      value:
+                        pos:
+                          filename: Invocation with prefix and postfix ops
+                          offset: 16
+                          line: 1
+                          column: 17
+                        value: 2
+                    invocations: []
+                  binaryops: []
+              postfixops:
+                - ?
+        binaryops: []
+
+---
+
+[TestParser/Invocation_with_prefix,_infix,_and_postfix_ops - 1]
+pos:
+  filename: Invocation with prefix, infix, and postfix ops
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Invocation with prefix, infix, and postfix ops
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Invocation with prefix, infix, and postfix ops
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      path:
+        pos:
+          filename: Invocation with prefix, infix, and postfix ops
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - x
+      type: null
+      expr:
+        pos:
+          filename: Invocation with prefix, infix, and postfix ops
+          offset: 8
+          line: 1
+          column: 9
+        term:
+          pos:
+            filename: Invocation with prefix, infix, and postfix ops
+            offset: 8
+            line: 1
+            column: 9
+          prefixops:
+            - -
+          operand:
+            pos:
+              filename: Invocation with prefix, infix, and postfix ops
+              offset: 9
+              line: 1
+              column: 10
+            names:
+              - add
+          invocations:
+            - pos:
+                filename: Invocation with prefix, infix, and postfix ops
+                offset: 12
+                line: 1
+                column: 13
+              arguments:
+                - pos:
+                    filename: Invocation with prefix, infix, and postfix ops
+                    offset: 13
+                    line: 1
+                    column: 14
+                  term:
+                    pos:
+                      filename: Invocation with prefix, infix, and postfix ops
+                      offset: 13
+                      line: 1
+                      column: 14
+                    prefixops: []
+                    operand:
+                      pos:
+                        filename: Invocation with prefix, infix, and postfix ops
+                        offset: 13
+                        line: 1
+                        column: 14
+                      value:
+                        pos:
+                          filename: Invocation with prefix, infix, and postfix ops
+                          offset: 13
+                          line: 1
+                          column: 14
+                        value: 1
+                    invocations: []
+                  binaryops: []
+                - pos:
+                    filename: Invocation with prefix, infix, and postfix ops
+                    offset: 16
+                    line: 1
+                    column: 17
+                  term:
+                    pos:
+                      filename: Invocation with prefix, infix, and postfix ops
+                      offset: 16
+                      line: 1
+                      column: 17
+                    prefixops: []
+                    operand:
+                      pos:
+                        filename: Invocation with prefix, infix, and postfix ops
+                        offset: 16
+                        line: 1
+                        column: 17
+                      value:
+                        pos:
+                          filename: Invocation with prefix, infix, and postfix ops
+                          offset: 16
+                          line: 1
+                          column: 17
+                        value: 2
+                    invocations: []
+                  binaryops: []
+              postfixops:
+                - ?
+        binaryops:
+          - pos:
+              filename: Invocation with prefix, infix, and postfix ops
+              offset: 20
+              line: 1
+              column: 21
+            operator: +
+            term:
+              pos:
+                filename: Invocation with prefix, infix, and postfix ops
+                offset: 22
+                line: 1
+                column: 23
+              prefixops:
+                - "!"
+              operand:
+                pos:
+                  filename: Invocation with prefix, infix, and postfix ops
+                  offset: 23
+                  line: 1
+                  column: 24
+                names:
+                  - sub
+              invocations:
+                - pos:
+                    filename: Invocation with prefix, infix, and postfix ops
+                    offset: 26
+                    line: 1
+                    column: 27
+                  arguments:
+                    - pos:
+                        filename: Invocation with prefix, infix, and postfix ops
+                        offset: 27
+                        line: 1
+                        column: 28
+                      term:
+                        pos:
+                          filename: Invocation with prefix, infix, and postfix ops
+                          offset: 27
+                          line: 1
+                          column: 28
+                        prefixops: []
+                        operand:
+                          pos:
+                            filename: Invocation with prefix, infix, and postfix ops
+                            offset: 27
+                            line: 1
+                            column: 28
+                          value:
+                            pos:
+                              filename: Invocation with prefix, infix, and postfix ops
+                              offset: 27
+                              line: 1
+                              column: 28
+                            value: 3
+                        invocations: []
+                      binaryops: []
+                    - pos:
+                        filename: Invocation with prefix, infix, and postfix ops
+                        offset: 30
+                        line: 1
+                        column: 31
+                      term:
+                        pos:
+                          filename: Invocation with prefix, infix, and postfix ops
+                          offset: 30
+                          line: 1
+                          column: 31
+                        prefixops: []
+                        operand:
+                          pos:
+                            filename: Invocation with prefix, infix, and postfix ops
+                            offset: 30
+                            line: 1
+                            column: 31
+                          value:
+                            pos:
+                              filename: Invocation with prefix, infix, and postfix ops
+                              offset: 30
+                              line: 1
+                              column: 31
+                            value: 4
+                        invocations: []
+                      binaryops: []
+                  postfixops: []
+
+---
+
+[TestLexer/Tag - 1]
+  - type: -12
+    value: "#tag"
+    pos:
+      filename: Tag
+      offset: 0
+      line: 1
+      column: 1
+  - type: -1
+    value: ""
+    pos:
+      filename: Tag
+      offset: 4
+      line: 1
+      column: 5
+
+---
+
+[TestLexer/Integer - 1]
+  - type: -18
+    value: "123"
+    pos:
+      filename: Integer
+      offset: 0
+      line: 1
+      column: 1
+  - type: -1
+    value: ""
+    pos:
+      filename: Integer
+      offset: 3
+      line: 1
+      column: 4
+
+---
+
+[TestLexer/String - 1]
+  - type: -19
+    value: "\""
+    pos:
+      filename: String
+      offset: 0
+      line: 1
+      column: 1
+  - type: -22
+    value: Hello, world!
+    pos:
+      filename: String
+      offset: 1
+      line: 1
+      column: 2
+  - type: -20
+    value: "\""
+    pos:
+      filename: String
+      offset: 14
+      line: 1
+      column: 15
+  - type: -1
+    value: ""
+    pos:
+      filename: String
+      offset: 15
+      line: 1
+      column: 16
+
+---
+
+[TestLexer/Prefix_operator - 1]
+  - type: -15
+    value: "~"
+    pos:
+      filename: Prefix operator
+      offset: 0
+      line: 1
+      column: 1
+  - type: -1
+    value: ""
+    pos:
+      filename: Prefix operator
+      offset: 1
+      line: 1
+      column: 2
+
+---
+
+[TestLexer/Postfix_operator - 1]
+  - type: -16
+    value: ?
+    pos:
+      filename: Postfix operator
+      offset: 0
+      line: 1
+      column: 1
+  - type: -1
+    value: ""
+    pos:
+      filename: Postfix operator
+      offset: 1
+      line: 1
+      column: 2
+
+---
+
+[TestLexer/Infix_operator - 1]
+  - type: -17
+    value: +
+    pos:
+      filename: Infix operator
+      offset: 0
+      line: 1
+      column: 1
+  - type: -1
+    value: ""
+    pos:
+      filename: Infix operator
+      offset: 1
+      line: 1
+      column: 2
+
+---
+
+[TestLexer/Left_parenthesis - 1]
+  - type: -10
+    value: (
+    pos:
+      filename: Left parenthesis
+      offset: 0
+      line: 1
+      column: 1
+  - type: -1
+    value: ""
+    pos:
+      filename: Left parenthesis
+      offset: 1
+      line: 1
+      column: 2
+
+---
+
+[TestLexer/Parentheses - 1]
+  - type: -10
+    value: (
+    pos:
+      filename: Parentheses
+      offset: 0
+      line: 1
+      column: 1
+  - type: -11
+    value: )
+    pos:
+      filename: Parentheses
+      offset: 1
+      line: 1
+      column: 2
+  - type: -1
+    value: ""
+    pos:
+      filename: Parentheses
+      offset: 2
+      line: 1
+      column: 3
 
 ---

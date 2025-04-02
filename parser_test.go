@@ -15,8 +15,32 @@ func TestLexer(t *testing.T) {
 
 	tests := []lexerTestCase{
 		{
-			name: "Label",
-			src:  "@myLabel",
+			name: "Tag",
+			src:  "#tag",
+		},
+		{
+			name: "Integer",
+			src:  "123",
+		},
+		{
+			name: "String",
+			src:  `"Hello, world!"`,
+		},
+		{
+			name: "Prefix operator",
+			src:  "~",
+		},
+		{
+			name: "Postfix operator",
+			src:  "?",
+		},
+		{
+			name: "Infix operator",
+			src:  "+",
+		},
+		{
+			name: "Parentheses",
+			src:  "()",
 		},
 	}
 
@@ -82,8 +106,9 @@ func TestParser(t *testing.T) {
 		},
 		{
 			name: "Function statement",
-			src: `fun add(a: i64, b: i64): i64 {
+			src: `fun add(a: i64, b: u64): i64 {
 				let c = a + b
+				return c
 			}`,
 		},
 		{
@@ -127,10 +152,6 @@ func TestParser(t *testing.T) {
 			let fn: fun add(a: i64, b: i64): i64 = add`,
 		},
 		{
-			name: "Function call",
-			src:  `let result = add(1, 2 + 3)`,
-		},
-		{
 			name: "Lambda expression",
 			src: `let adder = fun (b: i32) {
 				let a = 1 + b
@@ -149,6 +170,38 @@ func TestParser(t *testing.T) {
 		{
 			name: "Nested expressions",
 			src:  `let x = (1 + 2) * 3`,
+		},
+		{
+			name: "Prefix ops",
+			src:  `let x = !true`,
+		},
+		{
+			name: "Postfix ops",
+			src:  `let x = true?`,
+		},
+		{
+			name: "Prefix and postfix ops",
+			src:  `let x = !true?`,
+		},
+		{
+			name: "Invocation",
+			src:  `let x = add(1, 2)`,
+		},
+		{
+			name: "Invocation with postfix op",
+			src:  `let x = add(1, 2)?`,
+		},
+		{
+			name: "Invocation with prefix op",
+			src:  `let x = !add(1, 2)`,
+		},
+		{
+			name: "Invocation with prefix and postfix ops",
+			src:  `let x = !add(1, 2)?`,
+		},
+		{
+			name: "Invocation with prefix, infix, and postfix ops",
+			src:  `let x = -add(1, 2)? + !sub(3, 4)`,
 		},
 		{
 			name: "If-else statement",
@@ -173,6 +226,18 @@ func TestParser(t *testing.T) {
 		{
 			name: "Break with label and expression",
 			src:  `break #myLabel (3 * 4)`,
+		},
+		{
+			name: "Quoted tag",
+			src:  "\\#`myTag`",
+		},
+		{
+			name: "Quoted path",
+			src:  "\\my.`-path`",
+		},
+		{
+			name: "Quoted expression",
+			src:  "\\(1 + 2)",
 		},
 	}
 

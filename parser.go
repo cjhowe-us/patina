@@ -21,8 +21,9 @@ var (
 			{Name: "Tag", Pattern: "(?:#)([a-zA-Z0-9_]+|(?:`)[^`\\s]+(?:`))", Action: nil},
 			{Name: "Ident", Pattern: "[a-zA-Z_][a-zA-Z0-9_]*|(?:`)[^`\\s]+(?:`)", Action: nil},
 			{Name: "Symbol", Pattern: `[:,]`, Action: nil},
+			{Name: "PrefixOperator", Pattern: `[~!@$\-\\]`, Action: nil},
+			{Name: "PostfixOperator", Pattern: `[?]`, Action: nil},
 			{Name: "Operator", Pattern: `[~!@$%^&*\-=+;:<>?/|\\]{2,}|[%^&*\-=+<>/\.]`, Action: nil},
-			{Name: "UnaryOperator", Pattern: `[~!@$%^&*\-?\\]`, Action: nil},
 			{Name: "Integer", Pattern: `\d+`, Action: nil},
 			{Name: "StringStart", Pattern: `"`, Action: lexer.Push("String")},
 		},
@@ -132,18 +133,19 @@ type (
 	}
 	BinaryOperation struct {
 		Pos      lexer.Position
-		Operator string `parser:"@(UnaryOperator | Operator)"`
+		Operator string `parser:"@(PrefixOperator | Operator)"`
 		Term     Term   `parser:"@@"`
 	}
 	Term struct {
 		Pos         lexer.Position
-		UnaryOps    []string     `parser:"@UnaryOperator*"`
+		PrefixOps   []string     `parser:"@PrefixOperator*"`
 		Operand     Atom         `parser:"@@"`
 		Invocations []Invocation `parser:"@@*"`
 	}
 	Invocation struct {
-		Pos       lexer.Position
-		Arguments []Expression `parser:"'(' [@@ (',' @@)* ','?] ')'"`
+		Pos        lexer.Position
+		Arguments  []Expression `parser:"(['(' [@@ (',' @@)* ','?] ')']"`
+		PostfixOps []string     `parser:"@PostfixOperator*)!"`
 	}
 
 	Atom       interface{ atom() }
@@ -177,7 +179,7 @@ type (
 	}
 	Path struct {
 		Pos   lexer.Position
-		Names []string `parser:"@Ident ('::' @Ident)*"`
+		Names []string `parser:"@Ident ('.' @Ident)*"`
 	}
 
 	Value   interface{ value() }
