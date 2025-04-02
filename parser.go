@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	lex = lexer.MustStateful(lexer.Rules{
+	Lexer = lexer.MustStateful(lexer.Rules{
 		"Root": {
 			lexer.Include("BlockCommentStart"),
 			{Name: "WS", Pattern: `[ \t]+`, Action: nil},
@@ -18,12 +18,13 @@ var (
 			{Name: "LineComment", Pattern: `(?://)[^\n]*`, Action: nil},
 			{Name: "BracketLeft", Pattern: `[([{]`, Action: lexer.Push("Root")},
 			{Name: "BracketRight", Pattern: `[)\]}]`, Action: lexer.Pop()},
+			{Name: "Tag", Pattern: "(?:#)([a-zA-Z0-9_]+|(?:`)[^`\\s]+(?:`))", Action: nil},
+			{Name: "Ident", Pattern: "[a-zA-Z_][a-zA-Z0-9_]*|(?:`)[^`\\s]+(?:`)", Action: nil},
 			{Name: "Symbol", Pattern: `[:,]`, Action: nil},
-			{Name: "Operator", Pattern: `[~!@#$%^&*\-+=:;<>?/|\\]{2,}|[=*\-+<>/\\]`, Action: nil},
-			{Name: "UnaryOperator", Pattern: `[~!@^&\-+]`, Action: nil},
+			{Name: "Operator", Pattern: `[~!@$%^&*\-=+;:<>?/|\\]{2,}|[%^&*\-=+<>/\.]`, Action: nil},
+			{Name: "UnaryOperator", Pattern: `[~!@$%^&*\-?\\]`, Action: nil},
 			{Name: "Integer", Pattern: `\d+`, Action: nil},
 			{Name: "StringStart", Pattern: `"`, Action: lexer.Push("String")},
-			{Name: "Ident", Pattern: "[a-zA-Z_][a-zA-Z0-9_]*|`[^`\\s]*`", Action: nil},
 		},
 		"BlockCommentStart": {
 			{Name: "BlockCommentStart", Pattern: `/\*`, Action: lexer.Push("BlockComment")},
@@ -41,10 +42,10 @@ var (
 	})
 	intTypeRegex = regexp.MustCompile(`^([iu])(\d+)`)
 	Parser       = participle.MustBuild[Root](
-		participle.Lexer(lex),
+		participle.Lexer(Lexer),
 		participle.UseLookahead(10),
 		participle.Elide("WS", "EOL", "LineComment", "BlockCommentStart", "BlockCommentEnd", "BlockCommentContents"),
-		participle.Union[Statement](Module{}, LetStatement{}, FunctionStatement{}, IfStatement{}, ExpressionStatement{}),
+		participle.Union[Statement](Module{}, LetStatement{}, FunctionStatement{}, IfStatement{}, BreakStatement{}, FunctionStatement{}, ReturnStatement{}, ExpressionStatement{}),
 		participle.Union[Atom](Lambda{}, GroupedExpression{}, AtomValue{}, BlockAtom{}, Binding{}),
 		participle.Union[TypeValue](IntegerType{}, PointerType{}, FunctionType{}, ArrayType{}, TypeExpression{}),
 		participle.Union[Value](Integer{}, String{}, IntegerType{}, PointerType{}, FunctionType{}, ArrayType{}, TypeExpression{}),
@@ -54,7 +55,7 @@ var (
 type (
 	Root struct {
 		Pos        lexer.Position
-		Statements []*DocumentedStatement `parser:"@@* EOF?"`
+		Statements []DocumentedStatement `parser:"@@* EOF?"`
 	}
 
 	Statement          interface{ statement() }
@@ -74,13 +75,13 @@ type (
 	}
 	Block struct {
 		Pos        lexer.Position
-		Label      string                 `parser:"[@Ident ':']"`
-		Statements []*DocumentedStatement `parser:"'{' @@* '}'"`
+		Tag        string                `parser:"[@Tag ':']"`
+		Statements []DocumentedStatement `parser:"'{' @@* '}'"`
 	}
 	BreakStatement struct {
-		Pos        lexer.Position
-		Label      string      `parser:"'break' @Ident?"`
-		Expression *Expression `parser:"@@?"`
+		Pos  lexer.Position
+		Tag  string `parser:"'break' @Tag?"`
+		Atom Atom   `parser:"@@?"`
 	}
 	Module struct {
 		Pos     lexer.Position
@@ -104,7 +105,8 @@ type (
 	}
 	ReturnStatement struct {
 		Pos        lexer.Position
-		Expression *Expression `parser:"'return' @@"`
+		Tag        string `parser:"'return' @Tag?"`
+		Expression Atom   `parser:"@@?"`
 	}
 	IfStatement struct {
 		Pos              lexer.Position
@@ -136,15 +138,15 @@ type (
 	}
 	Invocation struct {
 		Pos       lexer.Position
-		Arguments []*Expression `parser:"'(' [@@ (',' @@)* ','?] ')'"`
+		Arguments []Expression `parser:"'(' [@@ (',' @@)* ','?] ')'"`
 	}
 
 	Atom   interface{ atom() }
 	Lambda struct {
 		Pos        lexer.Position
-		Parameters []*FunctionParameter `parser:"'fun' '(' [@@ (',' @@)* ','?] ')'"`
-		Return     *TypeValue           `parser:"[':' @@]"`
-		Block      Block                `parser:"@@"`
+		Parameters []FunctionParameter `parser:"'fun' '(' [@@ (',' @@)* ','?] ')'"`
+		Return     *TypeValue          `parser:"[':' @@]"`
+		Block      Block               `parser:"@@"`
 	}
 	GroupedExpression struct {
 		Pos        lexer.Position
@@ -218,6 +220,7 @@ type (
 
 func (Module) statement()              {}
 func (Block) statement()               {}
+func (BreakStatement) statement()      {}
 func (LetStatement) statement()        {}
 func (FunctionStatement) statement()   {}
 func (ReturnStatement) statement()     {}

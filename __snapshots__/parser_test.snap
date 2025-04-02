@@ -1,3037 +1,2519 @@
 
-[TestParser_Module - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "test"
-     ],
-     "Pos": {
-      "Column": 8,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 7
-     }
-    },
-    "Body": {
-     "Label": "",
-     "Pos": {
-      "Column": 13,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 12
-     },
-     "Statements": [
-      {
-       "Comments": null,
-       "Pos": {
-        "Column": 3,
-        "Filename": "",
-        "Line": 2,
-        "Offset": 16
-       },
-       "Statement": {
-        "Binding": {
-         "Names": [
-          "x"
-         ],
-         "Pos": {
-          "Column": 7,
-          "Filename": "",
-          "Line": 2,
-          "Offset": 20
-         }
-        },
-        "Expr": {
-         "BinaryOps": null,
-         "Pos": {
-          "Column": 11,
-          "Filename": "",
-          "Line": 2,
-          "Offset": 24
-         },
-         "Term": {
-          "Invocations": null,
-          "Operand": {
-           "Pos": {
-            "Column": 11,
-            "Filename": "",
-            "Line": 2,
-            "Offset": 24
-           },
-           "Value": {
-            "IsMutable": true,
-            "IsOwned": false,
-            "Pos": {
-             "Column": 11,
-             "Filename": "",
-             "Line": 2,
-             "Offset": 24
-            },
-            "TargetType": {
-             "BitSize": 32,
-             "Pos": {
-              "Column": 16,
-              "Filename": "",
-              "Line": 2,
-              "Offset": 29
-             },
-             "Signed": true
-            }
-           }
-          },
-          "Pos": {
-           "Column": 11,
-           "Filename": "",
-           "Line": 2,
-           "Offset": 24
-          },
-          "UnaryOps": null
-         }
-        },
-        "IsMutable": false,
-        "IsStatic": false,
-        "Pos": {
-         "Column": 3,
-         "Filename": "",
-         "Line": 2,
-         "Offset": 16
-        },
-        "Type": null
-       }
-      }
-     ]
-    },
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    }
-   }
-  }
- ]
-}
+[TestParser/Module - 1]
+pos:
+  filename: Module
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Module
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Module
+        offset: 0
+        line: 1
+        column: 1
+      binding:
+        pos:
+          filename: Module
+          offset: 7
+          line: 1
+          column: 8
+        names:
+          - test
+      body:
+        pos:
+          filename: Module
+          offset: 12
+          line: 1
+          column: 13
+        tag: ""
+        statements:
+          - pos:
+              filename: Module
+              offset: 16
+              line: 2
+              column: 3
+            comments: null
+            statement:
+              pos:
+                filename: Module
+                offset: 16
+                line: 2
+                column: 3
+              isstatic: false
+              ismutable: false
+              binding:
+                pos:
+                  filename: Module
+                  offset: 20
+                  line: 2
+                  column: 7
+                names:
+                  - x
+              type: null
+              expr:
+                pos:
+                  filename: Module
+                  offset: 24
+                  line: 2
+                  column: 11
+                term:
+                  pos:
+                    filename: Module
+                    offset: 24
+                    line: 2
+                    column: 11
+                  unaryops: []
+                  operand:
+                    pos:
+                      filename: Module
+                      offset: 24
+                      line: 2
+                      column: 11
+                    value:
+                      pos:
+                        filename: Module
+                        offset: 24
+                        line: 2
+                        column: 11
+                      isowned: false
+                      ismutable: true
+                      targettype:
+                        pos:
+                          filename: Module
+                          offset: 29
+                          line: 2
+                          column: 16
+                        signed: true
+                        bitsize: 32
+                  invocations: []
+                binaryops: []
+
 ---
 
-[TestParser_BindStatement/Simple_binding - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "x"
-     ],
-     "Pos": {
-      "Column": 5,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 4
-     }
-    },
-    "Expr": {
-     "BinaryOps": null,
-     "Pos": {
-      "Column": 9,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 8
-     },
-     "Term": {
-      "Invocations": null,
-      "Operand": {
-       "Pos": {
-        "Column": 9,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 8
-       },
-       "Value": {
-        "Pos": {
-         "Column": 9,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 8
-        },
-        "Value": 1
-       }
-      },
-      "Pos": {
-       "Column": 9,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 8
-      },
-      "UnaryOps": null
-     }
-    },
-    "IsMutable": false,
-    "IsStatic": false,
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "Type": null
-   }
-  }
- ]
-}
+[TestParser/Simple_binding - 1]
+pos:
+  filename: Simple binding
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Simple binding
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Simple binding
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      binding:
+        pos:
+          filename: Simple binding
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - x
+      type: null
+      expr:
+        pos:
+          filename: Simple binding
+          offset: 8
+          line: 1
+          column: 9
+        term:
+          pos:
+            filename: Simple binding
+            offset: 8
+            line: 1
+            column: 9
+          unaryops: []
+          operand:
+            pos:
+              filename: Simple binding
+              offset: 8
+              line: 1
+              column: 9
+            value:
+              pos:
+                filename: Simple binding
+                offset: 8
+                line: 1
+                column: 9
+              value: 1
+          invocations: []
+        binaryops: []
+
 ---
 
-[TestParser_BindStatement/Mutable_binding - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "y"
-     ],
-     "Pos": {
-      "Column": 9,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 8
-     }
-    },
-    "Expr": {
-     "BinaryOps": null,
-     "Pos": {
-      "Column": 13,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 12
-     },
-     "Term": {
-      "Invocations": null,
-      "Operand": {
-       "Pos": {
-        "Column": 13,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 12
-       },
-       "Value": {
-        "Pos": {
-         "Column": 13,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 12
-        },
-        "Value": 2
-       }
-      },
-      "Pos": {
-       "Column": 13,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 12
-      },
-      "UnaryOps": null
-     }
-    },
-    "IsMutable": true,
-    "IsStatic": false,
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "Type": null
-   }
-  }
- ]
-}
+[TestParser/Mutable_binding - 1]
+pos:
+  filename: Mutable binding
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Mutable binding
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Mutable binding
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: true
+      binding:
+        pos:
+          filename: Mutable binding
+          offset: 8
+          line: 1
+          column: 9
+        names:
+          - "y"
+      type: null
+      expr:
+        pos:
+          filename: Mutable binding
+          offset: 12
+          line: 1
+          column: 13
+        term:
+          pos:
+            filename: Mutable binding
+            offset: 12
+            line: 1
+            column: 13
+          unaryops: []
+          operand:
+            pos:
+              filename: Mutable binding
+              offset: 12
+              line: 1
+              column: 13
+            value:
+              pos:
+                filename: Mutable binding
+                offset: 12
+                line: 1
+                column: 13
+              value: 2
+          invocations: []
+        binaryops: []
+
 ---
 
-[TestParser_BindStatement/Static_binding - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "z"
-     ],
-     "Pos": {
-      "Column": 12,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 11
-     }
-    },
-    "Expr": {
-     "BinaryOps": null,
-     "Pos": {
-      "Column": 16,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 15
-     },
-     "Term": {
-      "Invocations": null,
-      "Operand": {
-       "Pos": {
-        "Column": 16,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 15
-       },
-       "Value": {
-        "Pos": {
-         "Column": 16,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 15
-        },
-        "Value": 3
-       }
-      },
-      "Pos": {
-       "Column": 16,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 15
-      },
-      "UnaryOps": null
-     }
-    },
-    "IsMutable": false,
-    "IsStatic": true,
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "Type": null
-   }
-  }
- ]
-}
+[TestParser/Static_binding - 1]
+pos:
+  filename: Static binding
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Static binding
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Static binding
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: true
+      ismutable: false
+      binding:
+        pos:
+          filename: Static binding
+          offset: 11
+          line: 1
+          column: 12
+        names:
+          - z
+      type: null
+      expr:
+        pos:
+          filename: Static binding
+          offset: 15
+          line: 1
+          column: 16
+        term:
+          pos:
+            filename: Static binding
+            offset: 15
+            line: 1
+            column: 16
+          unaryops: []
+          operand:
+            pos:
+              filename: Static binding
+              offset: 15
+              line: 1
+              column: 16
+            value:
+              pos:
+                filename: Static binding
+                offset: 15
+                line: 1
+                column: 16
+              value: 3
+          invocations: []
+        binaryops: []
+
 ---
 
-[TestParser_BindStatement/With_type - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "a"
-     ],
-     "Pos": {
-      "Column": 5,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 4
-     }
-    },
-    "Expr": {
-     "BinaryOps": null,
-     "Pos": {
-      "Column": 14,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 13
-     },
-     "Term": {
-      "Invocations": null,
-      "Operand": {
-       "Pos": {
-        "Column": 14,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 13
-       },
-       "Value": {
-        "Pos": {
-         "Column": 14,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 13
-        },
-        "Value": 4
-       }
-      },
-      "Pos": {
-       "Column": 14,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 13
-      },
-      "UnaryOps": null
-     }
-    },
-    "IsMutable": false,
-    "IsStatic": false,
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "Type": {
-     "BitSize": 64,
-     "Pos": {
-      "Column": 8,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 7
-     },
-     "Signed": true
-    }
-   }
-  }
- ]
-}
+[TestParser/Binding_with_type - 1]
+pos:
+  filename: Binding with type
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Binding with type
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Binding with type
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      binding:
+        pos:
+          filename: Binding with type
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - a
+      type:
+        pos:
+          filename: Binding with type
+          offset: 7
+          line: 1
+          column: 8
+        signed: true
+        bitsize: 64
+      expr:
+        pos:
+          filename: Binding with type
+          offset: 13
+          line: 1
+          column: 14
+        term:
+          pos:
+            filename: Binding with type
+            offset: 13
+            line: 1
+            column: 14
+          unaryops: []
+          operand:
+            pos:
+              filename: Binding with type
+              offset: 13
+              line: 1
+              column: 14
+            value:
+              pos:
+                filename: Binding with type
+                offset: 13
+                line: 1
+                column: 14
+              value: 4
+          invocations: []
+        binaryops: []
+
 ---
 
-[TestParser_BindStatement/Without_init - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "b"
-     ],
-     "Pos": {
-      "Column": 5,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 4
-     }
-    },
-    "Expr": null,
-    "IsMutable": false,
-    "IsStatic": false,
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "Type": {
-     "BitSize": 64,
-     "Pos": {
-      "Column": 8,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 7
-     },
-     "Signed": true
-    }
-   }
-  }
- ]
-}
+[TestParser/Binding_without_init - 1]
+pos:
+  filename: Binding without init
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Binding without init
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Binding without init
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      binding:
+        pos:
+          filename: Binding without init
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - b
+      type:
+        pos:
+          filename: Binding without init
+          offset: 7
+          line: 1
+          column: 8
+        signed: true
+        bitsize: 64
+      expr: null
+
 ---
 
-[TestParser_FunctionStatement - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "add"
-     ],
-     "Pos": {
-      "Column": 5,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 4
-     }
-    },
-    "Block": {
-     "Label": "",
-     "Pos": {
-      "Column": 30,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 29
-     },
-     "Statements": [
-      {
-       "Comments": null,
-       "Pos": {
-        "Column": 3,
-        "Filename": "",
-        "Line": 2,
-        "Offset": 33
-       },
-       "Statement": {
-        "Binding": {
-         "Names": [
-          "c"
-         ],
-         "Pos": {
-          "Column": 7,
-          "Filename": "",
-          "Line": 2,
-          "Offset": 37
-         }
-        },
-        "Expr": {
-         "BinaryOps": [
-          {
-           "Operator": "+",
-           "Pos": {
-            "Column": 13,
-            "Filename": "",
-            "Line": 2,
-            "Offset": 43
-           },
-           "Term": {
-            "Invocations": null,
-            "Operand": {
-             "Names": [
-              "b"
-             ],
-             "Pos": {
-              "Column": 15,
-              "Filename": "",
-              "Line": 2,
-              "Offset": 45
-             }
-            },
-            "Pos": {
-             "Column": 15,
-             "Filename": "",
-             "Line": 2,
-             "Offset": 45
-            },
-            "UnaryOps": null
-           }
-          }
-         ],
-         "Pos": {
-          "Column": 11,
-          "Filename": "",
-          "Line": 2,
-          "Offset": 41
-         },
-         "Term": {
-          "Invocations": null,
-          "Operand": {
-           "Names": [
-            "a"
-           ],
-           "Pos": {
-            "Column": 11,
-            "Filename": "",
-            "Line": 2,
-            "Offset": 41
-           }
-          },
-          "Pos": {
-           "Column": 11,
-           "Filename": "",
-           "Line": 2,
-           "Offset": 41
-          },
-          "UnaryOps": null
-         }
-        },
-        "IsMutable": false,
-        "IsStatic": false,
-        "Pos": {
-         "Column": 3,
-         "Filename": "",
-         "Line": 2,
-         "Offset": 33
-        },
-        "Type": null
-       }
-      }
-     ]
-    },
-    "Parameters": [
-     {
-      "Name": "a",
-      "Pos": {
-       "Column": 9,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 8
-      },
-      "Type": {
-       "BitSize": 64,
-       "Pos": {
-        "Column": 12,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 11
-       },
-       "Signed": true
-      }
-     },
-     {
-      "Name": "b",
-      "Pos": {
-       "Column": 17,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 16
-      },
-      "Type": {
-       "BitSize": 64,
-       "Pos": {
-        "Column": 20,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 19
-       },
-       "Signed": true
-      }
-     }
-    ],
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "Return": {
-     "BitSize": 64,
-     "Pos": {
-      "Column": 26,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 25
-     },
-     "Signed": true
-    }
-   }
-  }
- ]
-}
+[TestParser/Function_statement - 1]
+pos:
+  filename: Function statement
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Function statement
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Function statement
+        offset: 0
+        line: 1
+        column: 1
+      binding:
+        pos:
+          filename: Function statement
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - add
+      parameters:
+        - pos:
+            filename: Function statement
+            offset: 8
+            line: 1
+            column: 9
+          name: a
+          type:
+            pos:
+              filename: Function statement
+              offset: 11
+              line: 1
+              column: 12
+            signed: true
+            bitsize: 64
+        - pos:
+            filename: Function statement
+            offset: 16
+            line: 1
+            column: 17
+          name: b
+          type:
+            pos:
+              filename: Function statement
+              offset: 19
+              line: 1
+              column: 20
+            signed: true
+            bitsize: 64
+      return:
+        pos:
+          filename: Function statement
+          offset: 25
+          line: 1
+          column: 26
+        signed: true
+        bitsize: 64
+      block:
+        pos:
+          filename: Function statement
+          offset: 29
+          line: 1
+          column: 30
+        tag: ""
+        statements:
+          - pos:
+              filename: Function statement
+              offset: 33
+              line: 2
+              column: 3
+            comments: null
+            statement:
+              pos:
+                filename: Function statement
+                offset: 33
+                line: 2
+                column: 3
+              isstatic: false
+              ismutable: false
+              binding:
+                pos:
+                  filename: Function statement
+                  offset: 37
+                  line: 2
+                  column: 7
+                names:
+                  - c
+              type: null
+              expr:
+                pos:
+                  filename: Function statement
+                  offset: 41
+                  line: 2
+                  column: 11
+                term:
+                  pos:
+                    filename: Function statement
+                    offset: 41
+                    line: 2
+                    column: 11
+                  unaryops: []
+                  operand:
+                    pos:
+                      filename: Function statement
+                      offset: 41
+                      line: 2
+                      column: 11
+                    names:
+                      - a
+                  invocations: []
+                binaryops:
+                  - pos:
+                      filename: Function statement
+                      offset: 43
+                      line: 2
+                      column: 13
+                    operator: +
+                    term:
+                      pos:
+                        filename: Function statement
+                        offset: 45
+                        line: 2
+                        column: 15
+                      unaryops: []
+                      operand:
+                        pos:
+                          filename: Function statement
+                          offset: 45
+                          line: 2
+                          column: 15
+                        names:
+                          - b
+                      invocations: []
+
 ---
 
-[TestParser_IfStatement - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Condition": {
-     "BinaryOps": [
-      {
-       "Operator": "\u003e",
-       "Pos": {
-        "Column": 6,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 5
-       },
-       "Term": {
-        "Invocations": null,
-        "Operand": {
-         "Pos": {
-          "Column": 8,
-          "Filename": "",
-          "Line": 1,
-          "Offset": 7
-         },
-         "Value": {
-          "Pos": {
-           "Column": 8,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 7
-          },
-          "Value": 10
-         }
-        },
-        "Pos": {
-         "Column": 8,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 7
-        },
-        "UnaryOps": null
-       }
-      }
-     ],
-     "Pos": {
-      "Column": 4,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 3
-     },
-     "Term": {
-      "Invocations": null,
-      "Operand": {
-       "Names": [
-        "x"
-       ],
-       "Pos": {
-        "Column": 4,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 3
-       }
-      },
-      "Pos": {
-       "Column": 4,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 3
-      },
-      "UnaryOps": null
-     }
-    },
-    "ElseBlock": {
-     "Label": "",
-     "Pos": {
-      "Column": 9,
-      "Filename": "",
-      "Line": 3,
-      "Offset": 32
-     },
-     "Statements": [
-      {
-       "Comments": null,
-       "Pos": {
-        "Column": 3,
-        "Filename": "",
-        "Line": 4,
-        "Offset": 36
-       },
-       "Statement": {
-        "Binding": {
-         "Names": [
-          "y"
-         ],
-         "Pos": {
-          "Column": 7,
-          "Filename": "",
-          "Line": 4,
-          "Offset": 40
-         }
-        },
-        "Expr": {
-         "BinaryOps": null,
-         "Pos": {
-          "Column": 11,
-          "Filename": "",
-          "Line": 4,
-          "Offset": 44
-         },
-         "Term": {
-          "Invocations": null,
-          "Operand": {
-           "Pos": {
-            "Column": 11,
-            "Filename": "",
-            "Line": 4,
-            "Offset": 44
-           },
-           "Value": {
-            "Pos": {
-             "Column": 11,
-             "Filename": "",
-             "Line": 4,
-             "Offset": 44
-            },
-            "Value": 2
-           }
-          },
-          "Pos": {
-           "Column": 11,
-           "Filename": "",
-           "Line": 4,
-           "Offset": 44
-          },
-          "UnaryOps": null
-         }
-        },
-        "IsMutable": false,
-        "IsStatic": false,
-        "Pos": {
-         "Column": 3,
-         "Filename": "",
-         "Line": 4,
-         "Offset": 36
-        },
-        "Type": null
-       }
-      }
-     ]
-    },
-    "ElseIfStatements": null,
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "ThenBlock": {
-     "Label": "",
-     "Pos": {
-      "Column": 11,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 10
-     },
-     "Statements": [
-      {
-       "Comments": null,
-       "Pos": {
-        "Column": 3,
-        "Filename": "",
-        "Line": 2,
-        "Offset": 14
-       },
-       "Statement": {
-        "Binding": {
-         "Names": [
-          "y"
-         ],
-         "Pos": {
-          "Column": 7,
-          "Filename": "",
-          "Line": 2,
-          "Offset": 18
-         }
-        },
-        "Expr": {
-         "BinaryOps": null,
-         "Pos": {
-          "Column": 11,
-          "Filename": "",
-          "Line": 2,
-          "Offset": 22
-         },
-         "Term": {
-          "Invocations": null,
-          "Operand": {
-           "Pos": {
-            "Column": 11,
-            "Filename": "",
-            "Line": 2,
-            "Offset": 22
-           },
-           "Value": {
-            "Pos": {
-             "Column": 11,
-             "Filename": "",
-             "Line": 2,
-             "Offset": 22
-            },
-            "Value": 1
-           }
-          },
-          "Pos": {
-           "Column": 11,
-           "Filename": "",
-           "Line": 2,
-           "Offset": 22
-          },
-          "UnaryOps": null
-         }
-        },
-        "IsMutable": false,
-        "IsStatic": false,
-        "Pos": {
-         "Column": 3,
-         "Filename": "",
-         "Line": 2,
-         "Offset": 14
-        },
-        "Type": null
-       }
-      }
-     ]
-    }
-   }
-  }
- ]
-}
+[TestParser/If_statement - 1]
+pos:
+  filename: If statement
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: If statement
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: If statement
+        offset: 0
+        line: 1
+        column: 1
+      condition:
+        pos:
+          filename: If statement
+          offset: 3
+          line: 1
+          column: 4
+        term:
+          pos:
+            filename: If statement
+            offset: 3
+            line: 1
+            column: 4
+          unaryops: []
+          operand:
+            pos:
+              filename: If statement
+              offset: 3
+              line: 1
+              column: 4
+            names:
+              - x
+          invocations: []
+        binaryops:
+          - pos:
+              filename: If statement
+              offset: 5
+              line: 1
+              column: 6
+            operator: ">"
+            term:
+              pos:
+                filename: If statement
+                offset: 7
+                line: 1
+                column: 8
+              unaryops: []
+              operand:
+                pos:
+                  filename: If statement
+                  offset: 7
+                  line: 1
+                  column: 8
+                value:
+                  pos:
+                    filename: If statement
+                    offset: 7
+                    line: 1
+                    column: 8
+                  value: 10
+              invocations: []
+      thenblock:
+        pos:
+          filename: If statement
+          offset: 10
+          line: 1
+          column: 11
+        tag: ""
+        statements:
+          - pos:
+              filename: If statement
+              offset: 14
+              line: 2
+              column: 3
+            comments: null
+            statement:
+              pos:
+                filename: If statement
+                offset: 14
+                line: 2
+                column: 3
+              isstatic: false
+              ismutable: false
+              binding:
+                pos:
+                  filename: If statement
+                  offset: 18
+                  line: 2
+                  column: 7
+                names:
+                  - "y"
+              type: null
+              expr:
+                pos:
+                  filename: If statement
+                  offset: 22
+                  line: 2
+                  column: 11
+                term:
+                  pos:
+                    filename: If statement
+                    offset: 22
+                    line: 2
+                    column: 11
+                  unaryops: []
+                  operand:
+                    pos:
+                      filename: If statement
+                      offset: 22
+                      line: 2
+                      column: 11
+                    value:
+                      pos:
+                        filename: If statement
+                        offset: 22
+                        line: 2
+                        column: 11
+                      value: 1
+                  invocations: []
+                binaryops: []
+      elseifstatements: []
+      elseblock:
+        pos:
+          filename: If statement
+          offset: 32
+          line: 3
+          column: 9
+        tag: ""
+        statements:
+          - pos:
+              filename: If statement
+              offset: 36
+              line: 4
+              column: 3
+            comments: null
+            statement:
+              pos:
+                filename: If statement
+                offset: 36
+                line: 4
+                column: 3
+              isstatic: false
+              ismutable: false
+              binding:
+                pos:
+                  filename: If statement
+                  offset: 40
+                  line: 4
+                  column: 7
+                names:
+                  - "y"
+              type: null
+              expr:
+                pos:
+                  filename: If statement
+                  offset: 44
+                  line: 4
+                  column: 11
+                term:
+                  pos:
+                    filename: If statement
+                    offset: 44
+                    line: 4
+                    column: 11
+                  unaryops: []
+                  operand:
+                    pos:
+                      filename: If statement
+                      offset: 44
+                      line: 4
+                      column: 11
+                    value:
+                      pos:
+                        filename: If statement
+                        offset: 44
+                        line: 4
+                        column: 11
+                      value: 2
+                  invocations: []
+                binaryops: []
+
 ---
 
-[TestParser_String - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "msg"
-     ],
-     "Pos": {
-      "Column": 5,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 4
-     }
-    },
-    "Expr": {
-     "BinaryOps": null,
-     "Pos": {
-      "Column": 11,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 10
-     },
-     "Term": {
-      "Invocations": null,
-      "Operand": {
-       "Pos": {
-        "Column": 11,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 10
-       },
-       "Value": {
-        "Fragments": [
-         {
-          "Interpolation": null,
-          "Pos": {
-           "Column": 12,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 11
-          },
-          "Text": "Hello, world!"
-         }
-        ],
-        "Pos": {
-         "Column": 11,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 10
-        }
-       }
-      },
-      "Pos": {
-       "Column": 11,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 10
-      },
-      "UnaryOps": null
-     }
-    },
-    "IsMutable": false,
-    "IsStatic": false,
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "Type": null
-   }
-  }
- ]
-}
+[TestParser/String_literal - 1]
+pos:
+  filename: String literal
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: String literal
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: String literal
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      binding:
+        pos:
+          filename: String literal
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - msg
+      type: null
+      expr:
+        pos:
+          filename: String literal
+          offset: 10
+          line: 1
+          column: 11
+        term:
+          pos:
+            filename: String literal
+            offset: 10
+            line: 1
+            column: 11
+          unaryops: []
+          operand:
+            pos:
+              filename: String literal
+              offset: 10
+              line: 1
+              column: 11
+            value:
+              pos:
+                filename: String literal
+                offset: 10
+                line: 1
+                column: 11
+              fragments:
+                - pos:
+                    filename: String literal
+                    offset: 11
+                    line: 1
+                    column: 12
+                  text: Hello, world!
+                  interpolation: null
+          invocations: []
+        binaryops: []
+
 ---
 
-[TestParser_StringInterpolation - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "msg"
-     ],
-     "Pos": {
-      "Column": 5,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 4
-     }
-    },
-    "Expr": {
-     "BinaryOps": null,
-     "Pos": {
-      "Column": 11,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 10
-     },
-     "Term": {
-      "Invocations": null,
-      "Operand": {
-       "Pos": {
-        "Column": 11,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 10
-       },
-       "Value": {
-        "Fragments": [
-         {
-          "Interpolation": null,
-          "Pos": {
-           "Column": 12,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 11
-          },
-          "Text": "Hello, "
-         },
-         {
-          "Interpolation": {
-           "BinaryOps": null,
-           "Pos": {
-            "Column": 21,
-            "Filename": "",
-            "Line": 1,
-            "Offset": 20
-           },
-           "Term": {
-            "Invocations": null,
-            "Operand": {
-             "Names": [
-              "name"
-             ],
-             "Pos": {
-              "Column": 21,
-              "Filename": "",
-              "Line": 1,
-              "Offset": 20
-             }
-            },
-            "Pos": {
-             "Column": 21,
-             "Filename": "",
-             "Line": 1,
-             "Offset": 20
-            },
-            "UnaryOps": null
-           }
-          },
-          "Pos": {
-           "Column": 19,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 18
-          },
-          "Text": ""
-         },
-         {
-          "Interpolation": null,
-          "Pos": {
-           "Column": 26,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 25
-          },
-          "Text": "!"
-         }
-        ],
-        "Pos": {
-         "Column": 11,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 10
-        }
-       }
-      },
-      "Pos": {
-       "Column": 11,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 10
-      },
-      "UnaryOps": null
-     }
-    },
-    "IsMutable": false,
-    "IsStatic": false,
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "Type": null
-   }
-  }
- ]
-}
+[TestParser/String_interpolation - 1]
+pos:
+  filename: String interpolation
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: String interpolation
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: String interpolation
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      binding:
+        pos:
+          filename: String interpolation
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - msg
+      type: null
+      expr:
+        pos:
+          filename: String interpolation
+          offset: 10
+          line: 1
+          column: 11
+        term:
+          pos:
+            filename: String interpolation
+            offset: 10
+            line: 1
+            column: 11
+          unaryops: []
+          operand:
+            pos:
+              filename: String interpolation
+              offset: 10
+              line: 1
+              column: 11
+            value:
+              pos:
+                filename: String interpolation
+                offset: 10
+                line: 1
+                column: 11
+              fragments:
+                - pos:
+                    filename: String interpolation
+                    offset: 11
+                    line: 1
+                    column: 12
+                  text: "Hello, "
+                  interpolation: null
+                - pos:
+                    filename: String interpolation
+                    offset: 18
+                    line: 1
+                    column: 19
+                  text: ""
+                  interpolation:
+                    pos:
+                      filename: String interpolation
+                      offset: 20
+                      line: 1
+                      column: 21
+                    term:
+                      pos:
+                        filename: String interpolation
+                        offset: 20
+                        line: 1
+                        column: 21
+                      unaryops: []
+                      operand:
+                        pos:
+                          filename: String interpolation
+                          offset: 20
+                          line: 1
+                          column: 21
+                        names:
+                          - name
+                      invocations: []
+                    binaryops: []
+                - pos:
+                    filename: String interpolation
+                    offset: 25
+                    line: 1
+                    column: 26
+                  text: "!"
+                  interpolation: null
+          invocations: []
+        binaryops: []
+
 ---
 
-[TestParser_Comments - 1]
-{
- "Pos": {
-  "Column": 2,
-  "Filename": "",
-  "Line": 3,
-  "Offset": 38
- },
- "Statements": [
-  {
-   "Comments": {
-    "Fragments": [
-     {
-      "Comment": null,
-      "Pos": {
-       "Column": 2,
-       "Filename": "",
-       "Line": 3,
-       "Offset": 38
-      },
-      "Text": " Block comment "
-     }
-    ],
-    "Pos": {
-     "Column": 2,
-     "Filename": "",
-     "Line": 3,
-     "Offset": 38
-    }
-   },
-   "Pos": {
-    "Column": 2,
-    "Filename": "",
-    "Line": 3,
-    "Offset": 38
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "test"
-     ],
-     "Pos": {
-      "Column": 6,
-      "Filename": "",
-      "Line": 3,
-      "Offset": 42
-     }
-    },
-    "Block": {
-     "Label": "",
-     "Pos": {
-      "Column": 13,
-      "Filename": "",
-      "Line": 3,
-      "Offset": 49
-     },
-     "Statements": null
-    },
-    "Parameters": null,
-    "Pos": {
-     "Column": 2,
-     "Filename": "",
-     "Line": 3,
-     "Offset": 38
-    },
-    "Return": null
-   }
-  }
- ]
-}
+[TestParser/Comments - 1]
+pos:
+  filename: Comments
+  offset: 38
+  line: 3
+  column: 2
+statements:
+  - pos:
+      filename: Comments
+      offset: 38
+      line: 3
+      column: 2
+    comments:
+      pos:
+        filename: Comments
+        offset: 38
+        line: 3
+        column: 2
+      fragments:
+        - pos:
+            filename: Comments
+            offset: 38
+            line: 3
+            column: 2
+          text: " Block comment "
+          comment: null
+    statement:
+      pos:
+        filename: Comments
+        offset: 38
+        line: 3
+        column: 2
+      binding:
+        pos:
+          filename: Comments
+          offset: 42
+          line: 3
+          column: 6
+        names:
+          - test
+      parameters: []
+      return: null
+      block:
+        pos:
+          filename: Comments
+          offset: 49
+          line: 3
+          column: 13
+        tag: ""
+        statements: []
+
 ---
 
-[TestParser_IntegerType - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "x"
-     ],
-     "Pos": {
-      "Column": 5,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 4
-     }
-    },
-    "Expr": {
-     "BinaryOps": null,
-     "Pos": {
-      "Column": 9,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 8
-     },
-     "Term": {
-      "Invocations": null,
-      "Operand": {
-       "Pos": {
-        "Column": 9,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 8
-       },
-       "Value": {
-        "BitSize": 64,
-        "Pos": {
-         "Column": 9,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 8
-        },
-        "Signed": true
-       }
-      },
-      "Pos": {
-       "Column": 9,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 8
-      },
-      "UnaryOps": null
-     }
-    },
-    "IsMutable": false,
-    "IsStatic": false,
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "Type": null
-   }
-  }
- ]
-}
+[TestParser/Integer_type - 1]
+pos:
+  filename: Integer type
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Integer type
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Integer type
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      binding:
+        pos:
+          filename: Integer type
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - x
+      type: null
+      expr:
+        pos:
+          filename: Integer type
+          offset: 8
+          line: 1
+          column: 9
+        term:
+          pos:
+            filename: Integer type
+            offset: 8
+            line: 1
+            column: 9
+          unaryops: []
+          operand:
+            pos:
+              filename: Integer type
+              offset: 8
+              line: 1
+              column: 9
+            value:
+              pos:
+                filename: Integer type
+                offset: 8
+                line: 1
+                column: 9
+              signed: true
+              bitsize: 64
+          invocations: []
+        binaryops: []
+
 ---
 
-[TestParser_TypeValue - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "x"
-     ],
-     "Pos": {
-      "Column": 5,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 4
-     }
-    },
-    "Expr": {
-     "BinaryOps": null,
-     "Pos": {
-      "Column": 14,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 13
-     },
-     "Term": {
-      "Invocations": null,
-      "Operand": {
-       "Pos": {
-        "Column": 14,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 13
-       },
-       "Value": {
-        "Pos": {
-         "Column": 14,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 13
-        },
-        "Value": 10
-       }
-      },
-      "Pos": {
-       "Column": 14,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 13
-      },
-      "UnaryOps": null
-     }
-    },
-    "IsMutable": false,
-    "IsStatic": false,
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "Type": {
-     "BitSize": 64,
-     "Pos": {
-      "Column": 8,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 7
-     },
-     "Signed": true
-    }
-   }
-  },
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 2,
-    "Filename": "",
-    "Line": 2,
-    "Offset": 17
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "ptr"
-     ],
-     "Pos": {
-      "Column": 6,
-      "Filename": "",
-      "Line": 2,
-      "Offset": 21
-     }
-    },
-    "Expr": {
-     "BinaryOps": null,
-     "Pos": {
-      "Column": 22,
-      "Filename": "",
-      "Line": 2,
-      "Offset": 37
-     },
-     "Term": {
-      "Invocations": null,
-      "Operand": {
-       "Pos": {
-        "Column": 22,
-        "Filename": "",
-        "Line": 2,
-        "Offset": 37
-       },
-       "Value": {
-        "Pos": {
-         "Column": 22,
-         "Filename": "",
-         "Line": 2,
-         "Offset": 37
-        },
-        "Value": 20
-       }
-      },
-      "Pos": {
-       "Column": 22,
-       "Filename": "",
-       "Line": 2,
-       "Offset": 37
-      },
-      "UnaryOps": null
-     }
-    },
-    "IsMutable": false,
-    "IsStatic": false,
-    "Pos": {
-     "Column": 2,
-     "Filename": "",
-     "Line": 2,
-     "Offset": 17
-    },
-    "Type": {
-     "IsMutable": true,
-     "IsOwned": false,
-     "Pos": {
-      "Column": 11,
-      "Filename": "",
-      "Line": 2,
-      "Offset": 26
-     },
-     "TargetType": {
-      "BitSize": 64,
-      "Pos": {
-       "Column": 16,
-       "Filename": "",
-       "Line": 2,
-       "Offset": 31
-      },
-      "Signed": true
-     }
-    }
-   }
-  },
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 2,
-    "Filename": "",
-    "Line": 3,
-    "Offset": 41
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "arr"
-     ],
-     "Pos": {
-      "Column": 6,
-      "Filename": "",
-      "Line": 3,
-      "Offset": 45
-     }
-    },
-    "Expr": null,
-    "IsMutable": false,
-    "IsStatic": false,
-    "Pos": {
-     "Column": 2,
-     "Filename": "",
-     "Line": 3,
-     "Offset": 41
-    },
-    "Type": {
-     "Dimension": 10,
-     "ElementType": {
-      "BitSize": 64,
-      "Pos": {
-       "Column": 15,
-       "Filename": "",
-       "Line": 3,
-       "Offset": 54
-      },
-      "Signed": true
-     },
-     "Pos": {
-      "Column": 11,
-      "Filename": "",
-      "Line": 3,
-      "Offset": 50
-     }
-    }
-   }
-  },
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 2,
-    "Filename": "",
-    "Line": 4,
-    "Offset": 59
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "fn"
-     ],
-     "Pos": {
-      "Column": 6,
-      "Filename": "",
-      "Line": 4,
-      "Offset": 63
-     }
-    },
-    "Expr": {
-     "BinaryOps": null,
-     "Pos": {
-      "Column": 41,
-      "Filename": "",
-      "Line": 4,
-      "Offset": 98
-     },
-     "Term": {
-      "Invocations": null,
-      "Operand": {
-       "Names": [
-        "add"
-       ],
-       "Pos": {
-        "Column": 41,
-        "Filename": "",
-        "Line": 4,
-        "Offset": 98
-       }
-      },
-      "Pos": {
-       "Column": 41,
-       "Filename": "",
-       "Line": 4,
-       "Offset": 98
-      },
-      "UnaryOps": null
-     }
-    },
-    "IsMutable": false,
-    "IsStatic": false,
-    "Pos": {
-     "Column": 2,
-     "Filename": "",
-     "Line": 4,
-     "Offset": 59
-    },
-    "Type": {
-     "Name": "add",
-     "Parameters": [
-      {
-       "Name": "a",
-       "Pos": {
-        "Column": 18,
-        "Filename": "",
-        "Line": 4,
-        "Offset": 75
-       },
-       "Type": {
-        "BitSize": 64,
-        "Pos": {
-         "Column": 21,
-         "Filename": "",
-         "Line": 4,
-         "Offset": 78
-        },
-        "Signed": true
-       }
-      },
-      {
-       "Name": "b",
-       "Pos": {
-        "Column": 26,
-        "Filename": "",
-        "Line": 4,
-        "Offset": 83
-       },
-       "Type": {
-        "BitSize": 64,
-        "Pos": {
-         "Column": 29,
-         "Filename": "",
-         "Line": 4,
-         "Offset": 86
-        },
-        "Signed": true
-       }
-      }
-     ],
-     "Pos": {
-      "Column": 10,
-      "Filename": "",
-      "Line": 4,
-      "Offset": 67
-     },
-     "Return": {
-      "BitSize": 64,
-      "Pos": {
-       "Column": 35,
-       "Filename": "",
-       "Line": 4,
-       "Offset": 92
-      },
-      "Signed": true
-     }
-    }
-   }
-  }
- ]
-}
+[TestParser/Type_value - 1]
+pos:
+  filename: Type value
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Type value
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Type value
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      binding:
+        pos:
+          filename: Type value
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - x
+      type:
+        pos:
+          filename: Type value
+          offset: 7
+          line: 1
+          column: 8
+        signed: true
+        bitsize: 64
+      expr:
+        pos:
+          filename: Type value
+          offset: 13
+          line: 1
+          column: 14
+        term:
+          pos:
+            filename: Type value
+            offset: 13
+            line: 1
+            column: 14
+          unaryops: []
+          operand:
+            pos:
+              filename: Type value
+              offset: 13
+              line: 1
+              column: 14
+            value:
+              pos:
+                filename: Type value
+                offset: 13
+                line: 1
+                column: 14
+              value: 10
+          invocations: []
+        binaryops: []
+  - pos:
+      filename: Type value
+      offset: 17
+      line: 2
+      column: 2
+    comments: null
+    statement:
+      pos:
+        filename: Type value
+        offset: 17
+        line: 2
+        column: 2
+      isstatic: false
+      ismutable: false
+      binding:
+        pos:
+          filename: Type value
+          offset: 21
+          line: 2
+          column: 6
+        names:
+          - ptr
+      type:
+        pos:
+          filename: Type value
+          offset: 26
+          line: 2
+          column: 11
+        isowned: false
+        ismutable: true
+        targettype:
+          pos:
+            filename: Type value
+            offset: 31
+            line: 2
+            column: 16
+          signed: true
+          bitsize: 64
+      expr:
+        pos:
+          filename: Type value
+          offset: 37
+          line: 2
+          column: 22
+        term:
+          pos:
+            filename: Type value
+            offset: 37
+            line: 2
+            column: 22
+          unaryops: []
+          operand:
+            pos:
+              filename: Type value
+              offset: 37
+              line: 2
+              column: 22
+            value:
+              pos:
+                filename: Type value
+                offset: 37
+                line: 2
+                column: 22
+              value: 20
+          invocations: []
+        binaryops: []
+  - pos:
+      filename: Type value
+      offset: 41
+      line: 3
+      column: 2
+    comments: null
+    statement:
+      pos:
+        filename: Type value
+        offset: 41
+        line: 3
+        column: 2
+      isstatic: false
+      ismutable: false
+      binding:
+        pos:
+          filename: Type value
+          offset: 45
+          line: 3
+          column: 6
+        names:
+          - arr
+      type:
+        pos:
+          filename: Type value
+          offset: 50
+          line: 3
+          column: 11
+        dimension: 10
+        elementtype:
+          pos:
+            filename: Type value
+            offset: 54
+            line: 3
+            column: 15
+          signed: true
+          bitsize: 64
+      expr: null
+  - pos:
+      filename: Type value
+      offset: 59
+      line: 4
+      column: 2
+    comments: null
+    statement:
+      pos:
+        filename: Type value
+        offset: 59
+        line: 4
+        column: 2
+      isstatic: false
+      ismutable: false
+      binding:
+        pos:
+          filename: Type value
+          offset: 63
+          line: 4
+          column: 6
+        names:
+          - fn
+      type:
+        pos:
+          filename: Type value
+          offset: 67
+          line: 4
+          column: 10
+        name: add
+        parameters:
+          - pos:
+              filename: Type value
+              offset: 75
+              line: 4
+              column: 18
+            name: a
+            type:
+              pos:
+                filename: Type value
+                offset: 78
+                line: 4
+                column: 21
+              signed: true
+              bitsize: 64
+          - pos:
+              filename: Type value
+              offset: 83
+              line: 4
+              column: 26
+            name: b
+            type:
+              pos:
+                filename: Type value
+                offset: 86
+                line: 4
+                column: 29
+              signed: true
+              bitsize: 64
+        return:
+          pos:
+            filename: Type value
+            offset: 92
+            line: 4
+            column: 35
+          signed: true
+          bitsize: 64
+      expr:
+        pos:
+          filename: Type value
+          offset: 98
+          line: 4
+          column: 41
+        term:
+          pos:
+            filename: Type value
+            offset: 98
+            line: 4
+            column: 41
+          unaryops: []
+          operand:
+            pos:
+              filename: Type value
+              offset: 98
+              line: 4
+              column: 41
+            names:
+              - add
+          invocations: []
+        binaryops: []
+
 ---
 
-[TestParser_FunctionCall - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "result"
-     ],
-     "Pos": {
-      "Column": 5,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 4
-     }
-    },
-    "Expr": {
-     "BinaryOps": null,
-     "Pos": {
-      "Column": 14,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 13
-     },
-     "Term": {
-      "Invocations": [
-       {
-        "Arguments": [
-         {
-          "BinaryOps": null,
-          "Pos": {
-           "Column": 18,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 17
-          },
-          "Term": {
-           "Invocations": null,
-           "Operand": {
-            "Pos": {
-             "Column": 18,
-             "Filename": "",
-             "Line": 1,
-             "Offset": 17
-            },
-            "Value": {
-             "Pos": {
-              "Column": 18,
-              "Filename": "",
-              "Line": 1,
-              "Offset": 17
-             },
-             "Value": 1
-            }
-           },
-           "Pos": {
-            "Column": 18,
-            "Filename": "",
-            "Line": 1,
-            "Offset": 17
-           },
-           "UnaryOps": null
-          }
-         },
-         {
-          "BinaryOps": [
-           {
-            "Operator": "+",
-            "Pos": {
-             "Column": 23,
-             "Filename": "",
-             "Line": 1,
-             "Offset": 22
-            },
-            "Term": {
-             "Invocations": null,
-             "Operand": {
-              "Pos": {
-               "Column": 25,
-               "Filename": "",
-               "Line": 1,
-               "Offset": 24
-              },
-              "Value": {
-               "Pos": {
-                "Column": 25,
-                "Filename": "",
-                "Line": 1,
-                "Offset": 24
-               },
-               "Value": 3
-              }
-             },
-             "Pos": {
-              "Column": 25,
-              "Filename": "",
-              "Line": 1,
-              "Offset": 24
-             },
-             "UnaryOps": null
-            }
-           }
-          ],
-          "Pos": {
-           "Column": 21,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 20
-          },
-          "Term": {
-           "Invocations": null,
-           "Operand": {
-            "Pos": {
-             "Column": 21,
-             "Filename": "",
-             "Line": 1,
-             "Offset": 20
-            },
-            "Value": {
-             "Pos": {
-              "Column": 21,
-              "Filename": "",
-              "Line": 1,
-              "Offset": 20
-             },
-             "Value": 2
-            }
-           },
-           "Pos": {
-            "Column": 21,
-            "Filename": "",
-            "Line": 1,
-            "Offset": 20
-           },
-           "UnaryOps": null
-          }
-         }
-        ],
-        "Pos": {
-         "Column": 17,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 16
-        }
-       }
-      ],
-      "Operand": {
-       "Names": [
-        "add"
-       ],
-       "Pos": {
-        "Column": 14,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 13
-       }
-      },
-      "Pos": {
-       "Column": 14,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 13
-      },
-      "UnaryOps": null
-     }
-    },
-    "IsMutable": false,
-    "IsStatic": false,
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "Type": null
-   }
-  }
- ]
-}
+[TestParser/Function_call - 1]
+pos:
+  filename: Function call
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Function call
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Function call
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      binding:
+        pos:
+          filename: Function call
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - result
+      type: null
+      expr:
+        pos:
+          filename: Function call
+          offset: 13
+          line: 1
+          column: 14
+        term:
+          pos:
+            filename: Function call
+            offset: 13
+            line: 1
+            column: 14
+          unaryops: []
+          operand:
+            pos:
+              filename: Function call
+              offset: 13
+              line: 1
+              column: 14
+            names:
+              - add
+          invocations:
+            - pos:
+                filename: Function call
+                offset: 16
+                line: 1
+                column: 17
+              arguments:
+                - pos:
+                    filename: Function call
+                    offset: 17
+                    line: 1
+                    column: 18
+                  term:
+                    pos:
+                      filename: Function call
+                      offset: 17
+                      line: 1
+                      column: 18
+                    unaryops: []
+                    operand:
+                      pos:
+                        filename: Function call
+                        offset: 17
+                        line: 1
+                        column: 18
+                      value:
+                        pos:
+                          filename: Function call
+                          offset: 17
+                          line: 1
+                          column: 18
+                        value: 1
+                    invocations: []
+                  binaryops: []
+                - pos:
+                    filename: Function call
+                    offset: 20
+                    line: 1
+                    column: 21
+                  term:
+                    pos:
+                      filename: Function call
+                      offset: 20
+                      line: 1
+                      column: 21
+                    unaryops: []
+                    operand:
+                      pos:
+                        filename: Function call
+                        offset: 20
+                        line: 1
+                        column: 21
+                      value:
+                        pos:
+                          filename: Function call
+                          offset: 20
+                          line: 1
+                          column: 21
+                        value: 2
+                    invocations: []
+                  binaryops:
+                    - pos:
+                        filename: Function call
+                        offset: 22
+                        line: 1
+                        column: 23
+                      operator: +
+                      term:
+                        pos:
+                          filename: Function call
+                          offset: 24
+                          line: 1
+                          column: 25
+                        unaryops: []
+                        operand:
+                          pos:
+                            filename: Function call
+                            offset: 24
+                            line: 1
+                            column: 25
+                          value:
+                            pos:
+                              filename: Function call
+                              offset: 24
+                              line: 1
+                              column: 25
+                            value: 3
+                        invocations: []
+        binaryops: []
+
 ---
 
-[TestParser_Lambda - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "adder"
-     ],
-     "Pos": {
-      "Column": 5,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 4
-     }
-    },
-    "Expr": {
-     "BinaryOps": null,
-     "Pos": {
-      "Column": 13,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 12
-     },
-     "Term": {
-      "Invocations": null,
-      "Operand": {
-       "Block": {
-        "Label": "",
-        "Pos": {
-         "Column": 26,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 25
-        },
-        "Statements": [
-         {
-          "Comments": null,
-          "Pos": {
-           "Column": 3,
-           "Filename": "",
-           "Line": 2,
-           "Offset": 29
-          },
-          "Statement": {
-           "Binding": {
-            "Names": [
-             "a"
-            ],
-            "Pos": {
-             "Column": 7,
-             "Filename": "",
-             "Line": 2,
-             "Offset": 33
-            }
-           },
-           "Expr": {
-            "BinaryOps": [
-             {
-              "Operator": "+",
-              "Pos": {
-               "Column": 13,
-               "Filename": "",
-               "Line": 2,
-               "Offset": 39
-              },
-              "Term": {
-               "Invocations": null,
-               "Operand": {
-                "Names": [
-                 "b"
-                ],
-                "Pos": {
-                 "Column": 15,
-                 "Filename": "",
-                 "Line": 2,
-                 "Offset": 41
-                }
-               },
-               "Pos": {
-                "Column": 15,
-                "Filename": "",
-                "Line": 2,
-                "Offset": 41
-               },
-               "UnaryOps": null
-              }
-             }
-            ],
-            "Pos": {
-             "Column": 11,
-             "Filename": "",
-             "Line": 2,
-             "Offset": 37
-            },
-            "Term": {
-             "Invocations": null,
-             "Operand": {
-              "Pos": {
-               "Column": 11,
-               "Filename": "",
-               "Line": 2,
-               "Offset": 37
-              },
-              "Value": {
-               "Pos": {
-                "Column": 11,
-                "Filename": "",
-                "Line": 2,
-                "Offset": 37
-               },
-               "Value": 1
-              }
-             },
-             "Pos": {
-              "Column": 11,
-              "Filename": "",
-              "Line": 2,
-              "Offset": 37
-             },
-             "UnaryOps": null
-            }
-           },
-           "IsMutable": false,
-           "IsStatic": false,
-           "Pos": {
-            "Column": 3,
-            "Filename": "",
-            "Line": 2,
-            "Offset": 29
-           },
-           "Type": null
-          }
-         }
-        ]
-       },
-       "Parameters": [
-        {
-         "Name": "b",
-         "Pos": {
-          "Column": 18,
-          "Filename": "",
-          "Line": 1,
-          "Offset": 17
-         },
-         "Type": {
-          "BitSize": 32,
-          "Pos": {
-           "Column": 21,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 20
-          },
-          "Signed": true
-         }
-        }
-       ],
-       "Pos": {
-        "Column": 13,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 12
-       },
-       "Return": null
-      },
-      "Pos": {
-       "Column": 13,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 12
-      },
-      "UnaryOps": null
-     }
-    },
-    "IsMutable": false,
-    "IsStatic": false,
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "Type": null
-   }
-  }
- ]
-}
+[TestParser/Lambda_expression - 1]
+pos:
+  filename: Lambda expression
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Lambda expression
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Lambda expression
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      binding:
+        pos:
+          filename: Lambda expression
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - adder
+      type: null
+      expr:
+        pos:
+          filename: Lambda expression
+          offset: 12
+          line: 1
+          column: 13
+        term:
+          pos:
+            filename: Lambda expression
+            offset: 12
+            line: 1
+            column: 13
+          unaryops: []
+          operand:
+            pos:
+              filename: Lambda expression
+              offset: 12
+              line: 1
+              column: 13
+            parameters:
+              - pos:
+                  filename: Lambda expression
+                  offset: 17
+                  line: 1
+                  column: 18
+                name: b
+                type:
+                  pos:
+                    filename: Lambda expression
+                    offset: 20
+                    line: 1
+                    column: 21
+                  signed: true
+                  bitsize: 32
+            return: null
+            block:
+              pos:
+                filename: Lambda expression
+                offset: 25
+                line: 1
+                column: 26
+              tag: ""
+              statements:
+                - pos:
+                    filename: Lambda expression
+                    offset: 29
+                    line: 2
+                    column: 3
+                  comments: null
+                  statement:
+                    pos:
+                      filename: Lambda expression
+                      offset: 29
+                      line: 2
+                      column: 3
+                    isstatic: false
+                    ismutable: false
+                    binding:
+                      pos:
+                        filename: Lambda expression
+                        offset: 33
+                        line: 2
+                        column: 7
+                      names:
+                        - a
+                    type: null
+                    expr:
+                      pos:
+                        filename: Lambda expression
+                        offset: 37
+                        line: 2
+                        column: 11
+                      term:
+                        pos:
+                          filename: Lambda expression
+                          offset: 37
+                          line: 2
+                          column: 11
+                        unaryops: []
+                        operand:
+                          pos:
+                            filename: Lambda expression
+                            offset: 37
+                            line: 2
+                            column: 11
+                          value:
+                            pos:
+                              filename: Lambda expression
+                              offset: 37
+                              line: 2
+                              column: 11
+                            value: 1
+                        invocations: []
+                      binaryops:
+                        - pos:
+                            filename: Lambda expression
+                            offset: 39
+                            line: 2
+                            column: 13
+                          operator: +
+                          term:
+                            pos:
+                              filename: Lambda expression
+                              offset: 41
+                              line: 2
+                              column: 15
+                            unaryops: []
+                            operand:
+                              pos:
+                                filename: Lambda expression
+                                offset: 41
+                                line: 2
+                                column: 15
+                              names:
+                                - b
+                            invocations: []
+          invocations: []
+        binaryops: []
+
 ---
 
-[TestParser_BinaryExpression - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "x"
-     ],
-     "Pos": {
-      "Column": 5,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 4
-     }
-    },
-    "Expr": {
-     "BinaryOps": [
-      {
-       "Operator": "+",
-       "Pos": {
-        "Column": 11,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 10
-       },
-       "Term": {
-        "Invocations": null,
-        "Operand": {
-         "Pos": {
-          "Column": 13,
-          "Filename": "",
-          "Line": 1,
-          "Offset": 12
-         },
-         "Value": {
-          "Pos": {
-           "Column": 13,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 12
-          },
-          "Value": 2
-         }
-        },
-        "Pos": {
-         "Column": 13,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 12
-        },
-        "UnaryOps": null
-       }
-      },
-      {
-       "Operator": "*",
-       "Pos": {
-        "Column": 15,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 14
-       },
-       "Term": {
-        "Invocations": null,
-        "Operand": {
-         "Pos": {
-          "Column": 17,
-          "Filename": "",
-          "Line": 1,
-          "Offset": 16
-         },
-         "Value": {
-          "Pos": {
-           "Column": 17,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 16
-          },
-          "Value": 3
-         }
-        },
-        "Pos": {
-         "Column": 17,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 16
-        },
-        "UnaryOps": null
-       }
-      }
-     ],
-     "Pos": {
-      "Column": 9,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 8
-     },
-     "Term": {
-      "Invocations": null,
-      "Operand": {
-       "Pos": {
-        "Column": 9,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 8
-       },
-       "Value": {
-        "Pos": {
-         "Column": 9,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 8
-        },
-        "Value": 1
-       }
-      },
-      "Pos": {
-       "Column": 9,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 8
-      },
-      "UnaryOps": null
-     }
-    },
-    "IsMutable": false,
-    "IsStatic": false,
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "Type": null
-   }
-  }
- ]
-}
+[TestParser/Binary_expression - 1]
+pos:
+  filename: Binary expression
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Binary expression
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Binary expression
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      binding:
+        pos:
+          filename: Binary expression
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - x
+      type: null
+      expr:
+        pos:
+          filename: Binary expression
+          offset: 8
+          line: 1
+          column: 9
+        term:
+          pos:
+            filename: Binary expression
+            offset: 8
+            line: 1
+            column: 9
+          unaryops: []
+          operand:
+            pos:
+              filename: Binary expression
+              offset: 8
+              line: 1
+              column: 9
+            value:
+              pos:
+                filename: Binary expression
+                offset: 8
+                line: 1
+                column: 9
+              value: 1
+          invocations: []
+        binaryops:
+          - pos:
+              filename: Binary expression
+              offset: 10
+              line: 1
+              column: 11
+            operator: +
+            term:
+              pos:
+                filename: Binary expression
+                offset: 12
+                line: 1
+                column: 13
+              unaryops: []
+              operand:
+                pos:
+                  filename: Binary expression
+                  offset: 12
+                  line: 1
+                  column: 13
+                value:
+                  pos:
+                    filename: Binary expression
+                    offset: 12
+                    line: 1
+                    column: 13
+                  value: 2
+              invocations: []
+          - pos:
+              filename: Binary expression
+              offset: 14
+              line: 1
+              column: 15
+            operator: "*"
+            term:
+              pos:
+                filename: Binary expression
+                offset: 16
+                line: 1
+                column: 17
+              unaryops: []
+              operand:
+                pos:
+                  filename: Binary expression
+                  offset: 16
+                  line: 1
+                  column: 17
+                value:
+                  pos:
+                    filename: Binary expression
+                    offset: 16
+                    line: 1
+                    column: 17
+                  value: 3
+              invocations: []
+
 ---
 
-[TestParser_ComplexIfStatement - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Condition": {
-     "BinaryOps": [
-      {
-       "Operator": "\u003e",
-       "Pos": {
-        "Column": 6,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 5
-       },
-       "Term": {
-        "Invocations": null,
-        "Operand": {
-         "Pos": {
-          "Column": 8,
-          "Filename": "",
-          "Line": 1,
-          "Offset": 7
-         },
-         "Value": {
-          "Pos": {
-           "Column": 8,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 7
-          },
-          "Value": 10
-         }
-        },
-        "Pos": {
-         "Column": 8,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 7
-        },
-        "UnaryOps": null
-       }
-      },
-      {
-       "Operator": "\u0026\u0026",
-       "Pos": {
-        "Column": 11,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 10
-       },
-       "Term": {
-        "Invocations": null,
-        "Operand": {
-         "Names": [
-          "y"
-         ],
-         "Pos": {
-          "Column": 14,
-          "Filename": "",
-          "Line": 1,
-          "Offset": 13
-         }
-        },
-        "Pos": {
-         "Column": 14,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 13
-        },
-        "UnaryOps": null
-       }
-      },
-      {
-       "Operator": "\u003c",
-       "Pos": {
-        "Column": 16,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 15
-       },
-       "Term": {
-        "Invocations": null,
-        "Operand": {
-         "Pos": {
-          "Column": 18,
-          "Filename": "",
-          "Line": 1,
-          "Offset": 17
-         },
-         "Value": {
-          "Pos": {
-           "Column": 18,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 17
-          },
-          "Value": 20
-         }
-        },
-        "Pos": {
-         "Column": 18,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 17
-        },
-        "UnaryOps": null
-       }
-      },
-      {
-       "Operator": "||",
-       "Pos": {
-        "Column": 21,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 20
-       },
-       "Term": {
-        "Invocations": null,
-        "Operand": {
-         "Names": [
-          "z"
-         ],
-         "Pos": {
-          "Column": 24,
-          "Filename": "",
-          "Line": 1,
-          "Offset": 23
-         }
-        },
-        "Pos": {
-         "Column": 24,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 23
-        },
-        "UnaryOps": null
-       }
-      },
-      {
-       "Operator": "==",
-       "Pos": {
-        "Column": 26,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 25
-       },
-       "Term": {
-        "Invocations": null,
-        "Operand": {
-         "Pos": {
-          "Column": 29,
-          "Filename": "",
-          "Line": 1,
-          "Offset": 28
-         },
-         "Value": {
-          "Pos": {
-           "Column": 29,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 28
-          },
-          "Value": 30
-         }
-        },
-        "Pos": {
-         "Column": 29,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 28
-        },
-        "UnaryOps": null
-       }
-      }
-     ],
-     "Pos": {
-      "Column": 4,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 3
-     },
-     "Term": {
-      "Invocations": null,
-      "Operand": {
-       "Names": [
-        "x"
-       ],
-       "Pos": {
-        "Column": 4,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 3
-       }
-      },
-      "Pos": {
-       "Column": 4,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 3
-      },
-      "UnaryOps": null
-     }
-    },
-    "ElseBlock": null,
-    "ElseIfStatements": null,
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "ThenBlock": {
-     "Label": "",
-     "Pos": {
-      "Column": 32,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 31
-     },
-     "Statements": [
-      {
-       "Comments": null,
-       "Pos": {
-        "Column": 3,
-        "Filename": "",
-        "Line": 2,
-        "Offset": 35
-       },
-       "Statement": {
-        "Binding": {
-         "Names": [
-          "result"
-         ],
-         "Pos": {
-          "Column": 7,
-          "Filename": "",
-          "Line": 2,
-          "Offset": 39
-         }
-        },
-        "Expr": {
-         "BinaryOps": [
-          {
-           "Operator": "+",
-           "Pos": {
-            "Column": 18,
-            "Filename": "",
-            "Line": 2,
-            "Offset": 50
-           },
-           "Term": {
-            "Invocations": null,
-            "Operand": {
-             "Names": [
-              "y"
-             ],
-             "Pos": {
-              "Column": 20,
-              "Filename": "",
-              "Line": 2,
-              "Offset": 52
-             }
-            },
-            "Pos": {
-             "Column": 20,
-             "Filename": "",
-             "Line": 2,
-             "Offset": 52
-            },
-            "UnaryOps": null
-           }
-          },
-          {
-           "Operator": "+",
-           "Pos": {
-            "Column": 22,
-            "Filename": "",
-            "Line": 2,
-            "Offset": 54
-           },
-           "Term": {
-            "Invocations": null,
-            "Operand": {
-             "Names": [
-              "z"
-             ],
-             "Pos": {
-              "Column": 24,
-              "Filename": "",
-              "Line": 2,
-              "Offset": 56
-             }
-            },
-            "Pos": {
-             "Column": 24,
-             "Filename": "",
-             "Line": 2,
-             "Offset": 56
-            },
-            "UnaryOps": null
-           }
-          }
-         ],
-         "Pos": {
-          "Column": 16,
-          "Filename": "",
-          "Line": 2,
-          "Offset": 48
-         },
-         "Term": {
-          "Invocations": null,
-          "Operand": {
-           "Names": [
-            "x"
-           ],
-           "Pos": {
-            "Column": 16,
-            "Filename": "",
-            "Line": 2,
-            "Offset": 48
-           }
-          },
-          "Pos": {
-           "Column": 16,
-           "Filename": "",
-           "Line": 2,
-           "Offset": 48
-          },
-          "UnaryOps": null
-         }
-        },
-        "IsMutable": false,
-        "IsStatic": false,
-        "Pos": {
-         "Column": 3,
-         "Filename": "",
-         "Line": 2,
-         "Offset": 35
-        },
-        "Type": null
-       }
-      }
-     ]
-    }
-   }
-  }
- ]
-}
+[TestParser/Complex_if_statement - 1]
+pos:
+  filename: Complex if statement
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Complex if statement
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Complex if statement
+        offset: 0
+        line: 1
+        column: 1
+      condition:
+        pos:
+          filename: Complex if statement
+          offset: 3
+          line: 1
+          column: 4
+        term:
+          pos:
+            filename: Complex if statement
+            offset: 3
+            line: 1
+            column: 4
+          unaryops: []
+          operand:
+            pos:
+              filename: Complex if statement
+              offset: 3
+              line: 1
+              column: 4
+            names:
+              - x
+          invocations: []
+        binaryops:
+          - pos:
+              filename: Complex if statement
+              offset: 5
+              line: 1
+              column: 6
+            operator: ">"
+            term:
+              pos:
+                filename: Complex if statement
+                offset: 7
+                line: 1
+                column: 8
+              unaryops: []
+              operand:
+                pos:
+                  filename: Complex if statement
+                  offset: 7
+                  line: 1
+                  column: 8
+                value:
+                  pos:
+                    filename: Complex if statement
+                    offset: 7
+                    line: 1
+                    column: 8
+                  value: 10
+              invocations: []
+          - pos:
+              filename: Complex if statement
+              offset: 10
+              line: 1
+              column: 11
+            operator: "&&"
+            term:
+              pos:
+                filename: Complex if statement
+                offset: 13
+                line: 1
+                column: 14
+              unaryops: []
+              operand:
+                pos:
+                  filename: Complex if statement
+                  offset: 13
+                  line: 1
+                  column: 14
+                names:
+                  - "y"
+              invocations: []
+          - pos:
+              filename: Complex if statement
+              offset: 15
+              line: 1
+              column: 16
+            operator: <
+            term:
+              pos:
+                filename: Complex if statement
+                offset: 17
+                line: 1
+                column: 18
+              unaryops: []
+              operand:
+                pos:
+                  filename: Complex if statement
+                  offset: 17
+                  line: 1
+                  column: 18
+                value:
+                  pos:
+                    filename: Complex if statement
+                    offset: 17
+                    line: 1
+                    column: 18
+                  value: 20
+              invocations: []
+          - pos:
+              filename: Complex if statement
+              offset: 20
+              line: 1
+              column: 21
+            operator: "||"
+            term:
+              pos:
+                filename: Complex if statement
+                offset: 23
+                line: 1
+                column: 24
+              unaryops: []
+              operand:
+                pos:
+                  filename: Complex if statement
+                  offset: 23
+                  line: 1
+                  column: 24
+                names:
+                  - z
+              invocations: []
+          - pos:
+              filename: Complex if statement
+              offset: 25
+              line: 1
+              column: 26
+            operator: ==
+            term:
+              pos:
+                filename: Complex if statement
+                offset: 28
+                line: 1
+                column: 29
+              unaryops: []
+              operand:
+                pos:
+                  filename: Complex if statement
+                  offset: 28
+                  line: 1
+                  column: 29
+                value:
+                  pos:
+                    filename: Complex if statement
+                    offset: 28
+                    line: 1
+                    column: 29
+                  value: 30
+              invocations: []
+      thenblock:
+        pos:
+          filename: Complex if statement
+          offset: 31
+          line: 1
+          column: 32
+        tag: ""
+        statements:
+          - pos:
+              filename: Complex if statement
+              offset: 35
+              line: 2
+              column: 3
+            comments: null
+            statement:
+              pos:
+                filename: Complex if statement
+                offset: 35
+                line: 2
+                column: 3
+              isstatic: false
+              ismutable: false
+              binding:
+                pos:
+                  filename: Complex if statement
+                  offset: 39
+                  line: 2
+                  column: 7
+                names:
+                  - result
+              type: null
+              expr:
+                pos:
+                  filename: Complex if statement
+                  offset: 48
+                  line: 2
+                  column: 16
+                term:
+                  pos:
+                    filename: Complex if statement
+                    offset: 48
+                    line: 2
+                    column: 16
+                  unaryops: []
+                  operand:
+                    pos:
+                      filename: Complex if statement
+                      offset: 48
+                      line: 2
+                      column: 16
+                    names:
+                      - x
+                  invocations: []
+                binaryops:
+                  - pos:
+                      filename: Complex if statement
+                      offset: 50
+                      line: 2
+                      column: 18
+                    operator: +
+                    term:
+                      pos:
+                        filename: Complex if statement
+                        offset: 52
+                        line: 2
+                        column: 20
+                      unaryops: []
+                      operand:
+                        pos:
+                          filename: Complex if statement
+                          offset: 52
+                          line: 2
+                          column: 20
+                        names:
+                          - "y"
+                      invocations: []
+                  - pos:
+                      filename: Complex if statement
+                      offset: 54
+                      line: 2
+                      column: 22
+                    operator: +
+                    term:
+                      pos:
+                        filename: Complex if statement
+                        offset: 56
+                        line: 2
+                        column: 24
+                      unaryops: []
+                      operand:
+                        pos:
+                          filename: Complex if statement
+                          offset: 56
+                          line: 2
+                          column: 24
+                        names:
+                          - z
+                      invocations: []
+      elseifstatements: []
+      elseblock: null
+
 ---
 
-[TestParser_NestedExpressions - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Binding": {
-     "Names": [
-      "x"
-     ],
-     "Pos": {
-      "Column": 5,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 4
-     }
-    },
-    "Expr": {
-     "BinaryOps": [
-      {
-       "Operator": "*",
-       "Pos": {
-        "Column": 17,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 16
-       },
-       "Term": {
-        "Invocations": null,
-        "Operand": {
-         "Pos": {
-          "Column": 19,
-          "Filename": "",
-          "Line": 1,
-          "Offset": 18
-         },
-         "Value": {
-          "Pos": {
-           "Column": 19,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 18
-          },
-          "Value": 3
-         }
-        },
-        "Pos": {
-         "Column": 19,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 18
-        },
-        "UnaryOps": null
-       }
-      }
-     ],
-     "Pos": {
-      "Column": 9,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 8
-     },
-     "Term": {
-      "Invocations": null,
-      "Operand": {
-       "Expression": {
-        "BinaryOps": [
-         {
-          "Operator": "+",
-          "Pos": {
-           "Column": 12,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 11
-          },
-          "Term": {
-           "Invocations": null,
-           "Operand": {
-            "Pos": {
-             "Column": 14,
-             "Filename": "",
-             "Line": 1,
-             "Offset": 13
-            },
-            "Value": {
-             "Pos": {
-              "Column": 14,
-              "Filename": "",
-              "Line": 1,
-              "Offset": 13
-             },
-             "Value": 2
-            }
-           },
-           "Pos": {
-            "Column": 14,
-            "Filename": "",
-            "Line": 1,
-            "Offset": 13
-           },
-           "UnaryOps": null
-          }
-         }
-        ],
-        "Pos": {
-         "Column": 10,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 9
-        },
-        "Term": {
-         "Invocations": null,
-         "Operand": {
-          "Pos": {
-           "Column": 10,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 9
-          },
-          "Value": {
-           "Pos": {
-            "Column": 10,
-            "Filename": "",
-            "Line": 1,
-            "Offset": 9
-           },
-           "Value": 1
-          }
-         },
-         "Pos": {
-          "Column": 10,
-          "Filename": "",
-          "Line": 1,
-          "Offset": 9
-         },
-         "UnaryOps": null
-        }
-       },
-       "Pos": {
-        "Column": 9,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 8
-       }
-      },
-      "Pos": {
-       "Column": 9,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 8
-      },
-      "UnaryOps": null
-     }
-    },
-    "IsMutable": false,
-    "IsStatic": false,
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "Type": null
-   }
-  }
- ]
-}
+[TestParser/Nested_expressions - 1]
+pos:
+  filename: Nested expressions
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Nested expressions
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Nested expressions
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      binding:
+        pos:
+          filename: Nested expressions
+          offset: 4
+          line: 1
+          column: 5
+        names:
+          - x
+      type: null
+      expr:
+        pos:
+          filename: Nested expressions
+          offset: 8
+          line: 1
+          column: 9
+        term:
+          pos:
+            filename: Nested expressions
+            offset: 8
+            line: 1
+            column: 9
+          unaryops: []
+          operand:
+            pos:
+              filename: Nested expressions
+              offset: 8
+              line: 1
+              column: 9
+            expression:
+              pos:
+                filename: Nested expressions
+                offset: 9
+                line: 1
+                column: 10
+              term:
+                pos:
+                  filename: Nested expressions
+                  offset: 9
+                  line: 1
+                  column: 10
+                unaryops: []
+                operand:
+                  pos:
+                    filename: Nested expressions
+                    offset: 9
+                    line: 1
+                    column: 10
+                  value:
+                    pos:
+                      filename: Nested expressions
+                      offset: 9
+                      line: 1
+                      column: 10
+                    value: 1
+                invocations: []
+              binaryops:
+                - pos:
+                    filename: Nested expressions
+                    offset: 11
+                    line: 1
+                    column: 12
+                  operator: +
+                  term:
+                    pos:
+                      filename: Nested expressions
+                      offset: 13
+                      line: 1
+                      column: 14
+                    unaryops: []
+                    operand:
+                      pos:
+                        filename: Nested expressions
+                        offset: 13
+                        line: 1
+                        column: 14
+                      value:
+                        pos:
+                          filename: Nested expressions
+                          offset: 13
+                          line: 1
+                          column: 14
+                        value: 2
+                    invocations: []
+          invocations: []
+        binaryops:
+          - pos:
+              filename: Nested expressions
+              offset: 16
+              line: 1
+              column: 17
+            operator: "*"
+            term:
+              pos:
+                filename: Nested expressions
+                offset: 18
+                line: 1
+                column: 19
+              unaryops: []
+              operand:
+                pos:
+                  filename: Nested expressions
+                  offset: 18
+                  line: 1
+                  column: 19
+                value:
+                  pos:
+                    filename: Nested expressions
+                    offset: 18
+                    line: 1
+                    column: 19
+                  value: 3
+              invocations: []
+
 ---
 
-[TestParser_IfElseStatement - 1]
-{
- "Pos": {
-  "Column": 1,
-  "Filename": "",
-  "Line": 1,
-  "Offset": 0
- },
- "Statements": [
-  {
-   "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "",
-    "Line": 1,
-    "Offset": 0
-   },
-   "Statement": {
-    "Condition": {
-     "BinaryOps": [
-      {
-       "Operator": "\u003e",
-       "Pos": {
-        "Column": 6,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 5
-       },
-       "Term": {
-        "Invocations": null,
-        "Operand": {
-         "Pos": {
-          "Column": 8,
-          "Filename": "",
-          "Line": 1,
-          "Offset": 7
-         },
-         "Value": {
-          "Pos": {
-           "Column": 8,
-           "Filename": "",
-           "Line": 1,
-           "Offset": 7
-          },
-          "Value": 10
-         }
-        },
-        "Pos": {
-         "Column": 8,
-         "Filename": "",
-         "Line": 1,
-         "Offset": 7
-        },
-        "UnaryOps": null
-       }
-      }
-     ],
-     "Pos": {
-      "Column": 4,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 3
-     },
-     "Term": {
-      "Invocations": null,
-      "Operand": {
-       "Names": [
-        "x"
-       ],
-       "Pos": {
-        "Column": 4,
-        "Filename": "",
-        "Line": 1,
-        "Offset": 3
-       }
-      },
-      "Pos": {
-       "Column": 4,
-       "Filename": "",
-       "Line": 1,
-       "Offset": 3
-      },
-      "UnaryOps": null
-     }
-    },
-    "ElseBlock": {
-     "Label": "",
-     "Pos": {
-      "Column": 9,
-      "Filename": "",
-      "Line": 3,
-      "Offset": 32
-     },
-     "Statements": [
-      {
-       "Comments": null,
-       "Pos": {
-        "Column": 3,
-        "Filename": "",
-        "Line": 4,
-        "Offset": 36
-       },
-       "Statement": {
-        "Binding": {
-         "Names": [
-          "z"
-         ],
-         "Pos": {
-          "Column": 7,
-          "Filename": "",
-          "Line": 4,
-          "Offset": 40
-         }
-        },
-        "Expr": {
-         "BinaryOps": null,
-         "Pos": {
-          "Column": 11,
-          "Filename": "",
-          "Line": 4,
-          "Offset": 44
-         },
-         "Term": {
-          "Invocations": null,
-          "Operand": {
-           "Pos": {
-            "Column": 11,
-            "Filename": "",
-            "Line": 4,
-            "Offset": 44
-           },
-           "Value": {
-            "Pos": {
-             "Column": 11,
-             "Filename": "",
-             "Line": 4,
-             "Offset": 44
-            },
-            "Value": 3
-           }
-          },
-          "Pos": {
-           "Column": 11,
-           "Filename": "",
-           "Line": 4,
-           "Offset": 44
-          },
-          "UnaryOps": null
-         }
-        },
-        "IsMutable": false,
-        "IsStatic": false,
-        "Pos": {
-         "Column": 3,
-         "Filename": "",
-         "Line": 4,
-         "Offset": 36
-        },
-        "Type": null
-       }
-      }
-     ]
-    },
-    "ElseIfStatements": null,
-    "Pos": {
-     "Column": 1,
-     "Filename": "",
-     "Line": 1,
-     "Offset": 0
-    },
-    "ThenBlock": {
-     "Label": "",
-     "Pos": {
-      "Column": 11,
-      "Filename": "",
-      "Line": 1,
-      "Offset": 10
-     },
-     "Statements": [
-      {
-       "Comments": null,
-       "Pos": {
-        "Column": 3,
-        "Filename": "",
-        "Line": 2,
-        "Offset": 14
-       },
-       "Statement": {
-        "Binding": {
-         "Names": [
-          "z"
-         ],
-         "Pos": {
-          "Column": 7,
-          "Filename": "",
-          "Line": 2,
-          "Offset": 18
-         }
-        },
-        "Expr": {
-         "BinaryOps": null,
-         "Pos": {
-          "Column": 11,
-          "Filename": "",
-          "Line": 2,
-          "Offset": 22
-         },
-         "Term": {
-          "Invocations": null,
-          "Operand": {
-           "Pos": {
-            "Column": 11,
-            "Filename": "",
-            "Line": 2,
-            "Offset": 22
-           },
-           "Value": {
-            "Pos": {
-             "Column": 11,
-             "Filename": "",
-             "Line": 2,
-             "Offset": 22
-            },
-            "Value": 1
-           }
-          },
-          "Pos": {
-           "Column": 11,
-           "Filename": "",
-           "Line": 2,
-           "Offset": 22
-          },
-          "UnaryOps": null
-         }
-        },
-        "IsMutable": false,
-        "IsStatic": false,
-        "Pos": {
-         "Column": 3,
-         "Filename": "",
-         "Line": 2,
-         "Offset": 14
-        },
-        "Type": null
-       }
-      }
-     ]
-    }
-   }
-  }
- ]
-}
+[TestParser/If-else_statement - 1]
+pos:
+  filename: If-else statement
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: If-else statement
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: If-else statement
+        offset: 0
+        line: 1
+        column: 1
+      condition:
+        pos:
+          filename: If-else statement
+          offset: 3
+          line: 1
+          column: 4
+        term:
+          pos:
+            filename: If-else statement
+            offset: 3
+            line: 1
+            column: 4
+          unaryops: []
+          operand:
+            pos:
+              filename: If-else statement
+              offset: 3
+              line: 1
+              column: 4
+            names:
+              - x
+          invocations: []
+        binaryops:
+          - pos:
+              filename: If-else statement
+              offset: 5
+              line: 1
+              column: 6
+            operator: ">"
+            term:
+              pos:
+                filename: If-else statement
+                offset: 7
+                line: 1
+                column: 8
+              unaryops: []
+              operand:
+                pos:
+                  filename: If-else statement
+                  offset: 7
+                  line: 1
+                  column: 8
+                value:
+                  pos:
+                    filename: If-else statement
+                    offset: 7
+                    line: 1
+                    column: 8
+                  value: 10
+              invocations: []
+      thenblock:
+        pos:
+          filename: If-else statement
+          offset: 10
+          line: 1
+          column: 11
+        tag: ""
+        statements:
+          - pos:
+              filename: If-else statement
+              offset: 16
+              line: 2
+              column: 5
+            comments: null
+            statement:
+              pos:
+                filename: If-else statement
+                offset: 16
+                line: 2
+                column: 5
+              isstatic: false
+              ismutable: false
+              binding:
+                pos:
+                  filename: If-else statement
+                  offset: 20
+                  line: 2
+                  column: 9
+                names:
+                  - z
+              type: null
+              expr:
+                pos:
+                  filename: If-else statement
+                  offset: 24
+                  line: 2
+                  column: 13
+                term:
+                  pos:
+                    filename: If-else statement
+                    offset: 24
+                    line: 2
+                    column: 13
+                  unaryops: []
+                  operand:
+                    pos:
+                      filename: If-else statement
+                      offset: 24
+                      line: 2
+                      column: 13
+                    value:
+                      pos:
+                        filename: If-else statement
+                        offset: 24
+                        line: 2
+                        column: 13
+                      value: 1
+                  invocations: []
+                binaryops: []
+      elseifstatements: []
+      elseblock:
+        pos:
+          filename: If-else statement
+          offset: 36
+          line: 3
+          column: 11
+        tag: ""
+        statements:
+          - pos:
+              filename: If-else statement
+              offset: 42
+              line: 4
+              column: 5
+            comments: null
+            statement:
+              pos:
+                filename: If-else statement
+                offset: 42
+                line: 4
+                column: 5
+              isstatic: false
+              ismutable: false
+              binding:
+                pos:
+                  filename: If-else statement
+                  offset: 46
+                  line: 4
+                  column: 9
+                names:
+                  - z
+              type: null
+              expr:
+                pos:
+                  filename: If-else statement
+                  offset: 50
+                  line: 4
+                  column: 13
+                term:
+                  pos:
+                    filename: If-else statement
+                    offset: 50
+                    line: 4
+                    column: 13
+                  unaryops: []
+                  operand:
+                    pos:
+                      filename: If-else statement
+                      offset: 50
+                      line: 4
+                      column: 13
+                    value:
+                      pos:
+                        filename: If-else statement
+                        offset: 50
+                        line: 4
+                        column: 13
+                      value: 3
+                  invocations: []
+                binaryops: []
+
+---
+
+[TestParser/Simple_break - 1]
+pos:
+  filename: Simple break
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Simple break
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Simple break
+        offset: 0
+        line: 1
+        column: 1
+      tag: ""
+      atom: null
+
+---
+
+[TestParser/Break_with_expression - 1]
+pos:
+  filename: Break with expression
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Break with expression
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Break with expression
+        offset: 0
+        line: 1
+        column: 1
+      tag: ""
+      atom:
+        pos:
+          filename: Break with expression
+          offset: 6
+          line: 1
+          column: 7
+        expression:
+          pos:
+            filename: Break with expression
+            offset: 7
+            line: 1
+            column: 8
+          term:
+            pos:
+              filename: Break with expression
+              offset: 7
+              line: 1
+              column: 8
+            unaryops: []
+            operand:
+              pos:
+                filename: Break with expression
+                offset: 7
+                line: 1
+                column: 8
+              value:
+                pos:
+                  filename: Break with expression
+                  offset: 7
+                  line: 1
+                  column: 8
+                value: 1
+            invocations: []
+          binaryops:
+            - pos:
+                filename: Break with expression
+                offset: 9
+                line: 1
+                column: 10
+              operator: +
+              term:
+                pos:
+                  filename: Break with expression
+                  offset: 11
+                  line: 1
+                  column: 12
+                unaryops: []
+                operand:
+                  pos:
+                    filename: Break with expression
+                    offset: 11
+                    line: 1
+                    column: 12
+                  value:
+                    pos:
+                      filename: Break with expression
+                      offset: 11
+                      line: 1
+                      column: 12
+                    value: 2
+                invocations: []
+
+---
+
+[TestLexer/Label - 1]
+  - type: -16
+    value: "@"
+    pos:
+      filename: Label
+      offset: 0
+      line: 1
+      column: 1
+  - type: -13
+    value: myLabel
+    pos:
+      filename: Label
+      offset: 1
+      line: 1
+      column: 2
+  - type: -1
+    value: ""
+    pos:
+      filename: Label
+      offset: 8
+      line: 1
+      column: 9
+
+---
+
+[TestParser/Break_with_label - 1]
+pos:
+  filename: Break with label
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Break with label
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Break with label
+        offset: 0
+        line: 1
+        column: 1
+      tag: "#myLabel"
+      atom: null
+
+---
+
+[TestParser/Break_with_label_and_expression - 1]
+pos:
+  filename: Break with label and expression
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Break with label and expression
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    statement:
+      pos:
+        filename: Break with label and expression
+        offset: 0
+        line: 1
+        column: 1
+      tag: "#myLabel"
+      atom:
+        pos:
+          filename: Break with label and expression
+          offset: 15
+          line: 1
+          column: 16
+        expression:
+          pos:
+            filename: Break with label and expression
+            offset: 16
+            line: 1
+            column: 17
+          term:
+            pos:
+              filename: Break with label and expression
+              offset: 16
+              line: 1
+              column: 17
+            unaryops: []
+            operand:
+              pos:
+                filename: Break with label and expression
+                offset: 16
+                line: 1
+                column: 17
+              value:
+                pos:
+                  filename: Break with label and expression
+                  offset: 16
+                  line: 1
+                  column: 17
+                value: 3
+            invocations: []
+          binaryops:
+            - pos:
+                filename: Break with label and expression
+                offset: 18
+                line: 1
+                column: 19
+              operator: "*"
+              term:
+                pos:
+                  filename: Break with label and expression
+                  offset: 20
+                  line: 1
+                  column: 21
+                unaryops: []
+                operand:
+                  pos:
+                    filename: Break with label and expression
+                    offset: 20
+                    line: 1
+                    column: 21
+                  value:
+                    pos:
+                      filename: Break with label and expression
+                      offset: 20
+                      line: 1
+                      column: 21
+                    value: 4
+                invocations: []
+
 ---
