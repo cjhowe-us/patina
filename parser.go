@@ -70,7 +70,7 @@ type (
 	}
 	Annotation struct {
 		Pos       lexer.Position
-		Tag       *TagAtom     `parser:"@@"`
+		Name      TagAtom      `parser:"@@"`
 		Arguments []Expression `parser:"'(' [@@ (',' @@)* ','?] ')'"`
 	}
 	DecoratedStatement struct {
@@ -161,15 +161,15 @@ type (
 		Pos        lexer.Position
 		Expression Expression `parser:"'(' @@ ')'"`
 	}
-	TagAtom struct {
-		Pos lexer.Position
-		Tag string `parser:"@Tag (?! ':')"`
-	}
 	BlockAtom struct {
 		Pos      lexer.Position
 		Tag      *TagAtom `parser:"[@@ ':']"`
 		IsStatic bool     `parser:"@'static'?"`
 		Body     Block    `parser:"@@"`
+	}
+	TagAtom struct {
+		Pos lexer.Position
+		Tag string `parser:"@Tag"`
 	}
 	AtomValue struct {
 		Pos   lexer.Position

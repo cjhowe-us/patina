@@ -69,6 +69,18 @@ func TestParser(t *testing.T) {
 			src:  "let b: i64",
 		},
 		{
+			name: "Block atom",
+			src: `{
+				let x = 1
+			}`,
+		},
+		{
+			name: "Block atom with tag",
+			src: `#myTag: {
+				let x = 1
+			}`,
+		},
+		{
 			name: "Function statement",
 			src: `fun add(a: i64, b: i64): i64 {
 				let c = a + b

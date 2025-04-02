@@ -2574,7 +2574,7 @@ statements:
           offset: 0
           line: 1
           column: 1
-        tag:
+        name:
           pos:
             filename: Function statement with annotation
             offset: 0
@@ -2792,5 +2792,221 @@ statements:
                         names:
                           - b
                       invocations: []
+
+---
+
+[TestParser/Block_atom - 1]
+pos:
+  filename: Block atom
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Block atom
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Block atom
+        offset: 0
+        line: 1
+        column: 1
+      expression:
+        pos:
+          filename: Block atom
+          offset: 0
+          line: 1
+          column: 1
+        term:
+          pos:
+            filename: Block atom
+            offset: 0
+            line: 1
+            column: 1
+          unaryops: []
+          operand:
+            pos:
+              filename: Block atom
+              offset: 0
+              line: 1
+              column: 1
+            tag: null
+            isstatic: false
+            body:
+              pos:
+                filename: Block atom
+                offset: 0
+                line: 1
+                column: 1
+              statements:
+                - pos:
+                    filename: Block atom
+                    offset: 6
+                    line: 2
+                    column: 5
+                  comments: null
+                  annotations: []
+                  statement:
+                    pos:
+                      filename: Block atom
+                      offset: 6
+                      line: 2
+                      column: 5
+                    isstatic: false
+                    ismutable: false
+                    path:
+                      pos:
+                        filename: Block atom
+                        offset: 10
+                        line: 2
+                        column: 9
+                      names:
+                        - x
+                    type: null
+                    expr:
+                      pos:
+                        filename: Block atom
+                        offset: 14
+                        line: 2
+                        column: 13
+                      term:
+                        pos:
+                          filename: Block atom
+                          offset: 14
+                          line: 2
+                          column: 13
+                        unaryops: []
+                        operand:
+                          pos:
+                            filename: Block atom
+                            offset: 14
+                            line: 2
+                            column: 13
+                          value:
+                            pos:
+                              filename: Block atom
+                              offset: 14
+                              line: 2
+                              column: 13
+                            value: 1
+                        invocations: []
+                      binaryops: []
+          invocations: []
+        binaryops: []
+
+---
+
+[TestParser/Block_atom_with_tag - 1]
+pos:
+  filename: Block atom with tag
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Block atom with tag
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Block atom with tag
+        offset: 0
+        line: 1
+        column: 1
+      expression:
+        pos:
+          filename: Block atom with tag
+          offset: 0
+          line: 1
+          column: 1
+        term:
+          pos:
+            filename: Block atom with tag
+            offset: 0
+            line: 1
+            column: 1
+          unaryops: []
+          operand:
+            pos:
+              filename: Block atom with tag
+              offset: 0
+              line: 1
+              column: 1
+            tag:
+              pos:
+                filename: Block atom with tag
+                offset: 0
+                line: 1
+                column: 1
+              tag: "#myTag"
+            isstatic: false
+            body:
+              pos:
+                filename: Block atom with tag
+                offset: 8
+                line: 1
+                column: 9
+              statements:
+                - pos:
+                    filename: Block atom with tag
+                    offset: 14
+                    line: 2
+                    column: 5
+                  comments: null
+                  annotations: []
+                  statement:
+                    pos:
+                      filename: Block atom with tag
+                      offset: 14
+                      line: 2
+                      column: 5
+                    isstatic: false
+                    ismutable: false
+                    path:
+                      pos:
+                        filename: Block atom with tag
+                        offset: 18
+                        line: 2
+                        column: 9
+                      names:
+                        - x
+                    type: null
+                    expr:
+                      pos:
+                        filename: Block atom with tag
+                        offset: 22
+                        line: 2
+                        column: 13
+                      term:
+                        pos:
+                          filename: Block atom with tag
+                          offset: 22
+                          line: 2
+                          column: 13
+                        unaryops: []
+                        operand:
+                          pos:
+                            filename: Block atom with tag
+                            offset: 22
+                            line: 2
+                            column: 13
+                          value:
+                            pos:
+                              filename: Block atom with tag
+                              offset: 22
+                              line: 2
+                              column: 13
+                            value: 1
+                        invocations: []
+                      binaryops: []
+          invocations: []
+        binaryops: []
 
 ---
