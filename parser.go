@@ -47,7 +47,7 @@ var (
 		participle.UseLookahead(10),
 		participle.Elide("WS", "EOL", "LineComment", "BlockCommentStart", "BlockCommentEnd", "BlockCommentContents"),
 		participle.Union[Statement](Module{}, LetStatement{}, FunctionStatement{}, IfStatement{}, BreakStatement{}, FunctionStatement{}, ReturnStatement{}, ExpressionStatement{}),
-		participle.Union[Atom](QuotedAtom{}, BlockAtom{}, TagAtom{}, Lambda{}, GroupedExpression{}, AtomValue{}, Path{}),
+		participle.Union[Atom](QuotedExpression{}, GroupedExpression{}, BlockAtom{}, TagAtom{}, Lambda{}, AtomValue{}, Binding{}),
 		participle.Union[TypeValue](IntegerType{}, PointerType{}, FunctionType{}, ArrayType{}, TypeExpression{}),
 		participle.Union[Value](Integer{}, String{}, IntegerType{}, PointerType{}, FunctionType{}, ArrayType{}, TypeExpression{}),
 	)
@@ -90,21 +90,21 @@ type (
 		Atom Atom     `parser:"@@?"`
 	}
 	Module struct {
-		Pos  lexer.Position
-		Path Path  `parser:"'module' @@"`
-		Body Block `parser:"@@"`
+		Pos   lexer.Position
+		Ident string `parser:"'module' @Ident"`
+		Body  Block  `parser:"@@"`
 	}
 	LetStatement struct {
 		Pos       lexer.Position
 		IsStatic  bool        `parser:"@'static'?"`
 		IsMutable bool        `parser:"'let' @'mut'?"`
-		Path      Path        `parser:"@@"`
+		Ident     string      `parser:"@Ident"`
 		Type      *TypeValue  `parser:"([':' @@]"`
 		Expr      *Expression `parser:"['=' @@])!"`
 	}
 	FunctionStatement struct {
 		Pos        lexer.Position
-		Path       Path                `parser:"'fun' @@"`
+		Ident      string              `parser:"'fun' @Ident"`
 		Parameters []FunctionParameter `parser:"'(' [@@ (',' @@)* ','?] ')'"`
 		Return     *TypeValue          `parser:"(':' @@)?"`
 		Block      Block               `parser:"@@"`
@@ -148,20 +148,20 @@ type (
 		PostfixOps []string     `parser:"@PostfixOperator*)!"`
 	}
 
-	Atom       interface{ atom() }
-	QuotedAtom struct {
-		Pos     lexer.Position
-		Content Atom `parser:"'\\\\' @@"`
+	Atom             interface{ atom() }
+	QuotedExpression struct {
+		Pos        lexer.Position
+		Expression Expression `parser:"'\\\\' '(' @@ ')'"`
+	}
+	GroupedExpression struct {
+		Pos        lexer.Position
+		Expression Expression `parser:"'(' @@ ')'"`
 	}
 	Lambda struct {
 		Pos        lexer.Position
 		Parameters []FunctionParameter `parser:"'fun' '(' [@@ (',' @@)* ','?] ')'"`
 		Return     *TypeValue          `parser:"[':' @@]"`
 		Block      Block               `parser:"@@"`
-	}
-	GroupedExpression struct {
-		Pos        lexer.Position
-		Expression Expression `parser:"'(' @@ ')'"`
 	}
 	BlockAtom struct {
 		Pos      lexer.Position
@@ -177,9 +177,9 @@ type (
 		Pos   lexer.Position
 		Value Value `parser:"@@"`
 	}
-	Path struct {
+	Binding struct {
 		Pos   lexer.Position
-		Names []string `parser:"@Ident ('.' @Ident)*"`
+		Ident string `parser:"@Ident"`
 	}
 
 	Value   interface{ value() }
@@ -243,13 +243,13 @@ func (ReturnStatement) statement()     {}
 func (IfStatement) statement()         {}
 func (ExpressionStatement) statement() {}
 
-func (QuotedAtom) atom()        {}
+func (QuotedExpression) atom()  {}
+func (GroupedExpression) atom() {}
 func (BlockAtom) atom()         {}
 func (TagAtom) atom()           {}
 func (Lambda) atom()            {}
-func (GroupedExpression) atom() {}
 func (AtomValue) atom()         {}
-func (Path) atom()              {}
+func (Binding) atom()           {}
 
 func (Integer) value() {}
 func (String) value()  {}

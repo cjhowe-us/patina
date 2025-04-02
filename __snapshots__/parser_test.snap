@@ -19,14 +19,7 @@ statements:
         offset: 0
         line: 1
         column: 1
-      path:
-        pos:
-          filename: Module
-          offset: 7
-          line: 1
-          column: 8
-        names:
-          - test
+      ident: test
       body:
         pos:
           filename: Module
@@ -49,14 +42,7 @@ statements:
                 column: 5
               isstatic: false
               ismutable: false
-              path:
-                pos:
-                  filename: Module
-                  offset: 22
-                  line: 2
-                  column: 9
-                names:
-                  - x
+              ident: x
               type: null
               expr:
                 pos:
@@ -120,14 +106,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Simple binding
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - x
+      ident: x
       type: null
       expr:
         pos:
@@ -182,14 +161,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: true
-      path:
-        pos:
-          filename: Mutable binding
-          offset: 8
-          line: 1
-          column: 9
-        names:
-          - "y"
+      ident: "y"
       type: null
       expr:
         pos:
@@ -244,14 +216,7 @@ statements:
         column: 1
       isstatic: true
       ismutable: false
-      path:
-        pos:
-          filename: Static binding
-          offset: 11
-          line: 1
-          column: 12
-        names:
-          - z
+      ident: z
       type: null
       expr:
         pos:
@@ -306,14 +271,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Binding with type
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - a
+      ident: a
       type:
         pos:
           filename: Binding with type
@@ -375,14 +333,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Binding without init
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - b
+      ident: b
       type:
         pos:
           filename: Binding without init
@@ -415,14 +366,7 @@ statements:
         offset: 0
         line: 1
         column: 1
-      path:
-        pos:
-          filename: Function statement
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - add
+      ident: add
       parameters:
         - pos:
             filename: Function statement
@@ -482,14 +426,7 @@ statements:
                 column: 5
               isstatic: false
               ismutable: false
-              path:
-                pos:
-                  filename: Function statement
-                  offset: 39
-                  line: 2
-                  column: 9
-                names:
-                  - c
+              ident: c
               type: null
               expr:
                 pos:
@@ -510,8 +447,7 @@ statements:
                       offset: 43
                       line: 2
                       column: 13
-                    names:
-                      - a
+                    ident: a
                   invocations: []
                 binaryops:
                   - pos:
@@ -533,8 +469,7 @@ statements:
                           offset: 47
                           line: 2
                           column: 17
-                        names:
-                          - b
+                        ident: b
                       invocations: []
           - pos:
               filename: Function statement
@@ -556,8 +491,7 @@ statements:
                   offset: 60
                   line: 3
                   column: 12
-                names:
-                  - c
+                ident: c
 
 ---
 
@@ -600,8 +534,7 @@ statements:
               offset: 3
               line: 1
               column: 4
-            names:
-              - x
+            ident: x
           invocations: []
         binaryops:
           - pos:
@@ -653,14 +586,7 @@ statements:
                 column: 5
               isstatic: false
               ismutable: false
-              path:
-                pos:
-                  filename: If statement
-                  offset: 20
-                  line: 2
-                  column: 9
-                names:
-                  - "y"
+              ident: "y"
               type: null
               expr:
                 pos:
@@ -713,14 +639,7 @@ statements:
                 column: 5
               isstatic: false
               ismutable: false
-              path:
-                pos:
-                  filename: If statement
-                  offset: 46
-                  line: 4
-                  column: 9
-                names:
-                  - "y"
+              ident: "y"
               type: null
               expr:
                 pos:
@@ -775,14 +694,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: String literal
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - msg
+      ident: msg
       type: null
       expr:
         pos:
@@ -844,14 +756,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: String interpolation
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - msg
+      ident: msg
       type: null
       expr:
         pos:
@@ -911,8 +816,7 @@ statements:
                           offset: 20
                           line: 1
                           column: 21
-                        names:
-                          - name
+                        ident: name
                       invocations: []
                     binaryops: []
                 - pos:
@@ -960,14 +864,7 @@ statements:
         offset: 42
         line: 3
         column: 4
-      path:
-        pos:
-          filename: Comments
-          offset: 46
-          line: 3
-          column: 8
-        names:
-          - test
+      ident: test
       parameters: []
       return: null
       block:
@@ -1002,14 +899,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Integer type
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - x
+      ident: x
       type: null
       expr:
         pos:
@@ -1065,14 +955,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Type value
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - x
+      ident: x
       type:
         pos:
           filename: Type value
@@ -1124,14 +1007,7 @@ statements:
         column: 4
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Type value
-          offset: 23
-          line: 2
-          column: 8
-        names:
-          - ptr
+      ident: ptr
       type:
         pos:
           filename: Type value
@@ -1191,14 +1067,7 @@ statements:
         column: 4
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Type value
-          offset: 49
-          line: 3
-          column: 8
-        names:
-          - arr
+      ident: arr
       type:
         pos:
           filename: Type value
@@ -1230,14 +1099,7 @@ statements:
         column: 4
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Type value
-          offset: 69
-          line: 4
-          column: 8
-        names:
-          - fn
+      ident: fn
       type:
         pos:
           filename: Type value
@@ -1301,8 +1163,7 @@ statements:
               offset: 104
               line: 4
               column: 43
-            names:
-              - add
+            ident: add
           invocations: []
         binaryops: []
 
@@ -1475,14 +1336,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Lambda expression
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - adder
+      ident: adder
       type: null
       expr:
         pos:
@@ -1541,14 +1395,7 @@ statements:
                       column: 5
                     isstatic: false
                     ismutable: false
-                    path:
-                      pos:
-                        filename: Lambda expression
-                        offset: 35
-                        line: 2
-                        column: 9
-                      names:
-                        - a
+                    ident: a
                     type: null
                     expr:
                       pos:
@@ -1597,8 +1444,7 @@ statements:
                                 offset: 43
                                 line: 2
                                 column: 17
-                              names:
-                                - b
+                              ident: b
                             invocations: []
           invocations: []
         binaryops: []
@@ -1627,14 +1473,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Binary expression
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - x
+      ident: x
       type: null
       expr:
         pos:
@@ -1760,8 +1599,7 @@ statements:
               offset: 3
               line: 1
               column: 4
-            names:
-              - x
+            ident: x
           invocations: []
         binaryops:
           - pos:
@@ -1810,8 +1648,7 @@ statements:
                   offset: 13
                   line: 1
                   column: 14
-                names:
-                  - "y"
+                ident: "y"
               invocations: []
           - pos:
               filename: Complex if statement
@@ -1859,8 +1696,7 @@ statements:
                   offset: 23
                   line: 1
                   column: 24
-                names:
-                  - z
+                ident: z
               invocations: []
           - pos:
               filename: Complex if statement
@@ -1911,14 +1747,7 @@ statements:
                 column: 5
               isstatic: false
               ismutable: false
-              path:
-                pos:
-                  filename: Complex if statement
-                  offset: 41
-                  line: 2
-                  column: 9
-                names:
-                  - result
+              ident: result
               type: null
               expr:
                 pos:
@@ -1939,8 +1768,7 @@ statements:
                       offset: 50
                       line: 2
                       column: 18
-                    names:
-                      - x
+                    ident: x
                   invocations: []
                 binaryops:
                   - pos:
@@ -1962,8 +1790,7 @@ statements:
                           offset: 54
                           line: 2
                           column: 22
-                        names:
-                          - "y"
+                        ident: "y"
                       invocations: []
                   - pos:
                       filename: Complex if statement
@@ -1984,8 +1811,7 @@ statements:
                           offset: 58
                           line: 2
                           column: 26
-                        names:
-                          - z
+                        ident: z
                       invocations: []
       elseifstatements: []
       elseblock: null
@@ -2014,14 +1840,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Nested expressions
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - x
+      ident: x
       type: null
       expr:
         pos:
@@ -2168,8 +1987,7 @@ statements:
               offset: 3
               line: 1
               column: 4
-            names:
-              - x
+            ident: x
           invocations: []
         binaryops:
           - pos:
@@ -2221,14 +2039,7 @@ statements:
                 column: 5
               isstatic: false
               ismutable: false
-              path:
-                pos:
-                  filename: If-else statement
-                  offset: 20
-                  line: 2
-                  column: 9
-                names:
-                  - z
+              ident: z
               type: null
               expr:
                 pos:
@@ -2281,14 +2092,7 @@ statements:
                 column: 5
               isstatic: false
               ismutable: false
-              path:
-                pos:
-                  filename: If-else statement
-                  offset: 46
-                  line: 4
-                  column: 9
-                names:
-                  - z
+              ident: z
               type: null
               expr:
                 pos:
@@ -2694,14 +2498,7 @@ statements:
         offset: 37
         line: 1
         column: 38
-      path:
-        pos:
-          filename: Function statement with annotation
-          offset: 41
-          line: 1
-          column: 42
-        names:
-          - add
+      ident: add
       parameters:
         - pos:
             filename: Function statement with annotation
@@ -2761,14 +2558,7 @@ statements:
                 column: 5
               isstatic: false
               ismutable: false
-              path:
-                pos:
-                  filename: Function statement with annotation
-                  offset: 76
-                  line: 2
-                  column: 9
-                names:
-                  - c
+              ident: c
               type: null
               expr:
                 pos:
@@ -2789,8 +2579,7 @@ statements:
                       offset: 80
                       line: 2
                       column: 13
-                    names:
-                      - a
+                    ident: a
                   invocations: []
                 binaryops:
                   - pos:
@@ -2812,8 +2601,7 @@ statements:
                           offset: 84
                           line: 2
                           column: 17
-                        names:
-                          - b
+                        ident: b
                       invocations: []
 
 ---
@@ -2881,14 +2669,7 @@ statements:
                       column: 5
                     isstatic: false
                     ismutable: false
-                    path:
-                      pos:
-                        filename: Block atom
-                        offset: 10
-                        line: 2
-                        column: 9
-                      names:
-                        - x
+                    ident: x
                     type: null
                     expr:
                       pos:
@@ -2992,14 +2773,7 @@ statements:
                       column: 5
                     isstatic: false
                     ismutable: false
-                    path:
-                      pos:
-                        filename: Block atom with tag
-                        offset: 18
-                        line: 2
-                        column: 9
-                      names:
-                        - x
+                    ident: x
                     type: null
                     expr:
                       pos:
@@ -3074,7 +2848,28 @@ statements:
               offset: 1
               line: 1
               column: 2
-            tag: "#`myTag`"
+            expression:
+              pos:
+                filename: Quoted tag
+                offset: 2
+                line: 1
+                column: 3
+              term:
+                pos:
+                  filename: Quoted tag
+                  offset: 2
+                  line: 1
+                  column: 3
+                prefixops: []
+                operand:
+                  pos:
+                    filename: Quoted tag
+                    offset: 2
+                    line: 1
+                    column: 3
+                  tag: "#`myTag`"
+                invocations: []
+              binaryops: []
           invocations: []
         binaryops: []
 
@@ -3120,11 +2915,30 @@ statements:
               offset: 1
               line: 1
               column: 2
-            names:
-              - my
-              - "`-path`"
+            ident: my
           invocations: []
-        binaryops: []
+        binaryops:
+          - pos:
+              filename: Quoted path
+              offset: 3
+              line: 1
+              column: 4
+            operator: .
+            term:
+              pos:
+                filename: Quoted path
+                offset: 4
+                line: 1
+                column: 5
+              prefixops: []
+              operand:
+                pos:
+                  filename: Quoted path
+                  offset: 4
+                  line: 1
+                  column: 5
+                ident: "`-path`"
+              invocations: []
 
 ---
 
@@ -3250,14 +3064,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Prefix ops
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - x
+      ident: x
       type: null
       expr:
         pos:
@@ -3279,8 +3086,7 @@ statements:
               offset: 9
               line: 1
               column: 10
-            names:
-              - "true"
+            ident: "true"
           invocations: []
         binaryops: []
 
@@ -3308,14 +3114,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Postfix ops
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - x
+      ident: x
       type: null
       expr:
         pos:
@@ -3336,8 +3135,7 @@ statements:
               offset: 8
               line: 1
               column: 9
-            names:
-              - "true"
+            ident: "true"
           invocations:
             - pos:
                 filename: Postfix ops
@@ -3373,14 +3171,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Prefix and postfix ops
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - x
+      ident: x
       type: null
       expr:
         pos:
@@ -3402,8 +3193,7 @@ statements:
               offset: 9
               line: 1
               column: 10
-            names:
-              - "true"
+            ident: "true"
           invocations:
             - pos:
                 filename: Prefix and postfix ops
@@ -3439,14 +3229,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Invocation
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - x
+      ident: x
       type: null
       expr:
         pos:
@@ -3467,8 +3250,7 @@ statements:
               offset: 8
               line: 1
               column: 9
-            names:
-              - add
+            ident: add
           invocations:
             - pos:
                 filename: Invocation
@@ -3557,14 +3339,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Invocation with postfix op
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - x
+      ident: x
       type: null
       expr:
         pos:
@@ -3585,8 +3360,7 @@ statements:
               offset: 8
               line: 1
               column: 9
-            names:
-              - add
+            ident: add
           invocations:
             - pos:
                 filename: Invocation with postfix op
@@ -3676,14 +3450,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Invocation with prefix op
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - x
+      ident: x
       type: null
       expr:
         pos:
@@ -3705,8 +3472,7 @@ statements:
               offset: 9
               line: 1
               column: 10
-            names:
-              - add
+            ident: add
           invocations:
             - pos:
                 filename: Invocation with prefix op
@@ -3795,14 +3561,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Invocation with prefix and postfix ops
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - x
+      ident: x
       type: null
       expr:
         pos:
@@ -3824,8 +3583,7 @@ statements:
               offset: 9
               line: 1
               column: 10
-            names:
-              - add
+            ident: add
           invocations:
             - pos:
                 filename: Invocation with prefix and postfix ops
@@ -3915,14 +3673,7 @@ statements:
         column: 1
       isstatic: false
       ismutable: false
-      path:
-        pos:
-          filename: Invocation with prefix, infix, and postfix ops
-          offset: 4
-          line: 1
-          column: 5
-        names:
-          - x
+      ident: x
       type: null
       expr:
         pos:
@@ -3944,8 +3695,7 @@ statements:
               offset: 9
               line: 1
               column: 10
-            names:
-              - add
+            ident: add
           invocations:
             - pos:
                 filename: Invocation with prefix, infix, and postfix ops
@@ -4030,8 +3780,7 @@ statements:
                   offset: 23
                   line: 1
                   column: 24
-                names:
-                  - sub
+                ident: sub
               invocations:
                 - pos:
                     filename: Invocation with prefix, infix, and postfix ops
@@ -4259,5 +4008,159 @@ statements:
       offset: 2
       line: 1
       column: 3
+
+---
+
+[TestParser/Binding - 1]
+pos:
+  filename: Binding
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Binding
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Binding
+        offset: 0
+        line: 1
+        column: 1
+      expression:
+        pos:
+          filename: Binding
+          offset: 0
+          line: 1
+          column: 1
+        term:
+          pos:
+            filename: Binding
+            offset: 0
+            line: 1
+            column: 1
+          prefixops: []
+          operand:
+            pos:
+              filename: Binding
+              offset: 0
+              line: 1
+              column: 1
+            ident: my
+          invocations: []
+        binaryops:
+          - pos:
+              filename: Binding
+              offset: 2
+              line: 1
+              column: 3
+            operator: .
+            term:
+              pos:
+                filename: Binding
+                offset: 3
+                line: 1
+                column: 4
+              prefixops: []
+              operand:
+                pos:
+                  filename: Binding
+                  offset: 3
+                  line: 1
+                  column: 4
+                ident: "`-path`"
+              invocations: []
+
+---
+
+[TestParser/Quoted_binding - 1]
+pos:
+  filename: Quoted binding
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Quoted binding
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Quoted binding
+        offset: 0
+        line: 1
+        column: 1
+      expression:
+        pos:
+          filename: Quoted binding
+          offset: 0
+          line: 1
+          column: 1
+        term:
+          pos:
+            filename: Quoted binding
+            offset: 0
+            line: 1
+            column: 1
+          prefixops:
+            - "\\"
+          operand:
+            pos:
+              filename: Quoted binding
+              offset: 1
+              line: 1
+              column: 2
+            expression:
+              pos:
+                filename: Quoted binding
+                offset: 2
+                line: 1
+                column: 3
+              term:
+                pos:
+                  filename: Quoted binding
+                  offset: 2
+                  line: 1
+                  column: 3
+                prefixops: []
+                operand:
+                  pos:
+                    filename: Quoted binding
+                    offset: 2
+                    line: 1
+                    column: 3
+                  ident: my
+                invocations: []
+              binaryops:
+                - pos:
+                    filename: Quoted binding
+                    offset: 4
+                    line: 1
+                    column: 5
+                  operator: .
+                  term:
+                    pos:
+                      filename: Quoted binding
+                      offset: 5
+                      line: 1
+                      column: 6
+                    prefixops: []
+                    operand:
+                      pos:
+                        filename: Quoted binding
+                        offset: 5
+                        line: 1
+                        column: 6
+                      ident: "`-path`"
+                    invocations: []
+          invocations: []
+        binaryops: []
 
 ---

@@ -134,6 +134,10 @@ func TestParser(t *testing.T) {
 			src:  `let msg = "Hello, \(name)!"`,
 		},
 		{
+			name: "Binding",
+			src:  "my.`-path`",
+		},
+		{
 			name: "Comments",
 			src: `// Line comment
 			/* Block comment */
@@ -229,11 +233,11 @@ func TestParser(t *testing.T) {
 		},
 		{
 			name: "Quoted tag",
-			src:  "\\#`myTag`",
+			src:  "\\(#`myTag`)",
 		},
 		{
-			name: "Quoted path",
-			src:  "\\my.`-path`",
+			name: "Quoted binding",
+			src:  "\\(my.`-path`)",
 		},
 		{
 			name: "Quoted expression",
