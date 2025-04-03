@@ -4164,3 +4164,2225 @@ statements:
         binaryops: []
 
 ---
+
+[TestLexer/Block_Comment - 1]
+  - type: -6
+    value: /*
+    pos:
+      filename: Block Comment
+      offset: 0
+      line: 1
+      column: 1
+  - type: -4
+    value: " block comment "
+    pos:
+      filename: Block Comment
+      offset: 2
+      line: 1
+      column: 3
+  - type: -2
+    value: "*/"
+    pos:
+      filename: Block Comment
+      offset: 17
+      line: 1
+      column: 18
+  - type: -1
+    value: ""
+    pos:
+      filename: Block Comment
+      offset: 19
+      line: 1
+      column: 20
+
+---
+
+[TestLexer/Nested_Block_Comment - 1]
+  - type: -6
+    value: /*
+    pos:
+      filename: Nested Block Comment
+      offset: 0
+      line: 1
+      column: 1
+  - type: -4
+    value: " nested "
+    pos:
+      filename: Nested Block Comment
+      offset: 2
+      line: 1
+      column: 3
+  - type: -6
+    value: /*
+    pos:
+      filename: Nested Block Comment
+      offset: 10
+      line: 1
+      column: 11
+  - type: -4
+    value: " block "
+    pos:
+      filename: Nested Block Comment
+      offset: 12
+      line: 1
+      column: 13
+  - type: -2
+    value: "*/"
+    pos:
+      filename: Nested Block Comment
+      offset: 19
+      line: 1
+      column: 20
+  - type: -4
+    value: " comment "
+    pos:
+      filename: Nested Block Comment
+      offset: 21
+      line: 1
+      column: 22
+  - type: -2
+    value: "*/"
+    pos:
+      filename: Nested Block Comment
+      offset: 30
+      line: 1
+      column: 31
+  - type: -1
+    value: ""
+    pos:
+      filename: Nested Block Comment
+      offset: 32
+      line: 1
+      column: 33
+
+---
+
+[TestParser/Doc_comment - 1]
+pos:
+  filename: Doc comment
+  offset: 24
+  line: 2
+  column: 4
+statements:
+  - pos:
+      filename: Doc comment
+      offset: 24
+      line: 2
+      column: 4
+    comments:
+      pos:
+        filename: Doc comment
+        offset: 24
+        line: 2
+        column: 4
+      fragments:
+        - pos:
+            filename: Doc comment
+            offset: 24
+            line: 2
+            column: 4
+          text: " My doc comment "
+          comment: null
+    annotations: []
+    statement:
+      pos:
+        filename: Doc comment
+        offset: 24
+        line: 2
+        column: 4
+      ident: test
+      parameters: []
+      return: null
+      block:
+        pos:
+          filename: Doc comment
+          offset: 35
+          line: 2
+          column: 15
+        statements: []
+
+---
+
+[TestParser/Return_with_tag - 1]
+pos:
+  filename: Return with tag
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Return with tag
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Return with tag
+        offset: 0
+        line: 1
+        column: 1
+      tag:
+        pos:
+          filename: Return with tag
+          offset: 7
+          line: 1
+          column: 8
+        tag: "#myTag"
+      expression: null
+
+---
+
+[TestParser/Return_with_expression - 1]
+pos:
+  filename: Return with expression
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Return with expression
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Return with expression
+        offset: 0
+        line: 1
+        column: 1
+      tag: null
+      expression:
+        pos:
+          filename: Return with expression
+          offset: 7
+          line: 1
+          column: 8
+        expression:
+          pos:
+            filename: Return with expression
+            offset: 8
+            line: 1
+            column: 9
+          term:
+            pos:
+              filename: Return with expression
+              offset: 8
+              line: 1
+              column: 9
+            prefixops: []
+            operand:
+              pos:
+                filename: Return with expression
+                offset: 8
+                line: 1
+                column: 9
+              value:
+                pos:
+                  filename: Return with expression
+                  offset: 8
+                  line: 1
+                  column: 9
+                value: 1
+            invocations: []
+          binaryops:
+            - pos:
+                filename: Return with expression
+                offset: 10
+                line: 1
+                column: 11
+              operator: +
+              term:
+                pos:
+                  filename: Return with expression
+                  offset: 12
+                  line: 1
+                  column: 13
+                prefixops: []
+                operand:
+                  pos:
+                    filename: Return with expression
+                    offset: 12
+                    line: 1
+                    column: 13
+                  value:
+                    pos:
+                      filename: Return with expression
+                      offset: 12
+                      line: 1
+                      column: 13
+                    value: 2
+                invocations: []
+
+---
+
+[TestParser/Return_with_tag_and_expression - 1]
+pos:
+  filename: Return with tag and expression
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Return with tag and expression
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Return with tag and expression
+        offset: 0
+        line: 1
+        column: 1
+      tag:
+        pos:
+          filename: Return with tag and expression
+          offset: 7
+          line: 1
+          column: 8
+        tag: "#myTag"
+      expression:
+        pos:
+          filename: Return with tag and expression
+          offset: 14
+          line: 1
+          column: 15
+        expression:
+          pos:
+            filename: Return with tag and expression
+            offset: 15
+            line: 1
+            column: 16
+          term:
+            pos:
+              filename: Return with tag and expression
+              offset: 15
+              line: 1
+              column: 16
+            prefixops: []
+            operand:
+              pos:
+                filename: Return with tag and expression
+                offset: 15
+                line: 1
+                column: 16
+              value:
+                pos:
+                  filename: Return with tag and expression
+                  offset: 15
+                  line: 1
+                  column: 16
+                value: 3
+            invocations: []
+          binaryops:
+            - pos:
+                filename: Return with tag and expression
+                offset: 17
+                line: 1
+                column: 18
+              operator: "*"
+              term:
+                pos:
+                  filename: Return with tag and expression
+                  offset: 19
+                  line: 1
+                  column: 20
+                prefixops: []
+                operand:
+                  pos:
+                    filename: Return with tag and expression
+                    offset: 19
+                    line: 1
+                    column: 20
+                  value:
+                    pos:
+                      filename: Return with tag and expression
+                      offset: 19
+                      line: 1
+                      column: 20
+                    value: 4
+                invocations: []
+
+---
+
+[TestParser/If-else-if_statement - 1]
+pos:
+  filename: If-else-if statement
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: If-else-if statement
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: If-else-if statement
+        offset: 0
+        line: 1
+        column: 1
+      condition:
+        pos:
+          filename: If-else-if statement
+          offset: 3
+          line: 1
+          column: 4
+        term:
+          pos:
+            filename: If-else-if statement
+            offset: 3
+            line: 1
+            column: 4
+          prefixops: []
+          operand:
+            pos:
+              filename: If-else-if statement
+              offset: 3
+              line: 1
+              column: 4
+            ident: x
+          invocations: []
+        binaryops:
+          - pos:
+              filename: If-else-if statement
+              offset: 5
+              line: 1
+              column: 6
+            operator: ==
+            term:
+              pos:
+                filename: If-else-if statement
+                offset: 8
+                line: 1
+                column: 9
+              prefixops: []
+              operand:
+                pos:
+                  filename: If-else-if statement
+                  offset: 8
+                  line: 1
+                  column: 9
+                value:
+                  pos:
+                    filename: If-else-if statement
+                    offset: 8
+                    line: 1
+                    column: 9
+                  value: 1
+              invocations: []
+      thenblock:
+        pos:
+          filename: If-else-if statement
+          offset: 10
+          line: 1
+          column: 11
+        statements:
+          - pos:
+              filename: If-else-if statement
+              offset: 16
+              line: 2
+              column: 5
+            comments: null
+            annotations: []
+            statement:
+              pos:
+                filename: If-else-if statement
+                offset: 16
+                line: 2
+                column: 5
+              isstatic: false
+              ismutable: false
+              ident: "y"
+              type: null
+              expr:
+                pos:
+                  filename: If-else-if statement
+                  offset: 24
+                  line: 2
+                  column: 13
+                term:
+                  pos:
+                    filename: If-else-if statement
+                    offset: 24
+                    line: 2
+                    column: 13
+                  prefixops: []
+                  operand:
+                    pos:
+                      filename: If-else-if statement
+                      offset: 24
+                      line: 2
+                      column: 13
+                    value:
+                      pos:
+                        filename: If-else-if statement
+                        offset: 24
+                        line: 2
+                        column: 13
+                      value: 1
+                  invocations: []
+                binaryops: []
+      elseifstatements:
+        - pos:
+            filename: If-else-if statement
+            offset: 36
+            line: 3
+            column: 11
+          condition:
+            pos:
+              filename: If-else-if statement
+              offset: 39
+              line: 3
+              column: 14
+            term:
+              pos:
+                filename: If-else-if statement
+                offset: 39
+                line: 3
+                column: 14
+              prefixops: []
+              operand:
+                pos:
+                  filename: If-else-if statement
+                  offset: 39
+                  line: 3
+                  column: 14
+                ident: x
+              invocations: []
+            binaryops:
+              - pos:
+                  filename: If-else-if statement
+                  offset: 41
+                  line: 3
+                  column: 16
+                operator: ==
+                term:
+                  pos:
+                    filename: If-else-if statement
+                    offset: 44
+                    line: 3
+                    column: 19
+                  prefixops: []
+                  operand:
+                    pos:
+                      filename: If-else-if statement
+                      offset: 44
+                      line: 3
+                      column: 19
+                    value:
+                      pos:
+                        filename: If-else-if statement
+                        offset: 44
+                        line: 3
+                        column: 19
+                      value: 2
+                  invocations: []
+          thenblock:
+            pos:
+              filename: If-else-if statement
+              offset: 46
+              line: 3
+              column: 21
+            statements:
+              - pos:
+                  filename: If-else-if statement
+                  offset: 52
+                  line: 4
+                  column: 5
+                comments: null
+                annotations: []
+                statement:
+                  pos:
+                    filename: If-else-if statement
+                    offset: 52
+                    line: 4
+                    column: 5
+                  isstatic: false
+                  ismutable: false
+                  ident: "y"
+                  type: null
+                  expr:
+                    pos:
+                      filename: If-else-if statement
+                      offset: 60
+                      line: 4
+                      column: 13
+                    term:
+                      pos:
+                        filename: If-else-if statement
+                        offset: 60
+                        line: 4
+                        column: 13
+                      prefixops: []
+                      operand:
+                        pos:
+                          filename: If-else-if statement
+                          offset: 60
+                          line: 4
+                          column: 13
+                        value:
+                          pos:
+                            filename: If-else-if statement
+                            offset: 60
+                            line: 4
+                            column: 13
+                          value: 2
+                      invocations: []
+                    binaryops: []
+          elseifstatements: []
+          elseblock:
+            pos:
+              filename: If-else-if statement
+              offset: 72
+              line: 5
+              column: 11
+            statements:
+              - pos:
+                  filename: If-else-if statement
+                  offset: 78
+                  line: 6
+                  column: 5
+                comments: null
+                annotations: []
+                statement:
+                  pos:
+                    filename: If-else-if statement
+                    offset: 78
+                    line: 6
+                    column: 5
+                  isstatic: false
+                  ismutable: false
+                  ident: "y"
+                  type: null
+                  expr:
+                    pos:
+                      filename: If-else-if statement
+                      offset: 86
+                      line: 6
+                      column: 13
+                    term:
+                      pos:
+                        filename: If-else-if statement
+                        offset: 86
+                        line: 6
+                        column: 13
+                      prefixops: []
+                      operand:
+                        pos:
+                          filename: If-else-if statement
+                          offset: 86
+                          line: 6
+                          column: 13
+                        value:
+                          pos:
+                            filename: If-else-if statement
+                            offset: 86
+                            line: 6
+                            column: 13
+                          value: 3
+                      invocations: []
+                    binaryops: []
+      elseblock: null
+
+---
+
+[TestParser/Static_block_atom - 1]
+pos:
+  filename: Static block atom
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Static block atom
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Static block atom
+        offset: 0
+        line: 1
+        column: 1
+      expression:
+        pos:
+          filename: Static block atom
+          offset: 0
+          line: 1
+          column: 1
+        term:
+          pos:
+            filename: Static block atom
+            offset: 0
+            line: 1
+            column: 1
+          prefixops: []
+          operand:
+            pos:
+              filename: Static block atom
+              offset: 0
+              line: 1
+              column: 1
+            tag: null
+            isstatic: true
+            body:
+              pos:
+                filename: Static block atom
+                offset: 7
+                line: 1
+                column: 8
+              statements:
+                - pos:
+                    filename: Static block atom
+                    offset: 13
+                    line: 2
+                    column: 5
+                  comments: null
+                  annotations: []
+                  statement:
+                    pos:
+                      filename: Static block atom
+                      offset: 13
+                      line: 2
+                      column: 5
+                    isstatic: false
+                    ismutable: false
+                    ident: x
+                    type: null
+                    expr:
+                      pos:
+                        filename: Static block atom
+                        offset: 21
+                        line: 2
+                        column: 13
+                      term:
+                        pos:
+                          filename: Static block atom
+                          offset: 21
+                          line: 2
+                          column: 13
+                        prefixops: []
+                        operand:
+                          pos:
+                            filename: Static block atom
+                            offset: 21
+                            line: 2
+                            column: 13
+                          value:
+                            pos:
+                              filename: Static block atom
+                              offset: 21
+                              line: 2
+                              column: 13
+                            value: 1
+                        invocations: []
+                      binaryops: []
+          invocations: []
+        binaryops: []
+
+---
+
+[TestParser/Owned_pointer_type - 1]
+pos:
+  filename: Owned pointer type
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Owned pointer type
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Owned pointer type
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      ident: x
+      type:
+        pos:
+          filename: Owned pointer type
+          offset: 7
+          line: 1
+          column: 8
+        isowned: true
+        ismutable: false
+        targettype:
+          pos:
+            filename: Owned pointer type
+            offset: 8
+            line: 1
+            column: 9
+          signed: true
+          bitsize: 32
+      expr: null
+
+---
+
+[TestParser/Unsized_array_type - 1]
+pos:
+  filename: Unsized array type
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Unsized array type
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Unsized array type
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      ident: x
+      type:
+        pos:
+          filename: Unsized array type
+          offset: 7
+          line: 1
+          column: 8
+        dimension: null
+        elementtype:
+          pos:
+            filename: Unsized array type
+            offset: 9
+            line: 1
+            column: 10
+          signed: true
+          bitsize: 32
+      expr: null
+
+---
+
+[TestParser/Named_function_type - 1]
+pos:
+  filename: Named function type
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Named function type
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Named function type
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      ident: x
+      type:
+        pos:
+          filename: Named function type
+          offset: 7
+          line: 1
+          column: 8
+        name: MyFunc
+        parameters:
+          - pos:
+              filename: Named function type
+              offset: 18
+              line: 1
+              column: 19
+            name: a
+            type:
+              pos:
+                filename: Named function type
+                offset: 21
+                line: 1
+                column: 22
+              signed: true
+              bitsize: 32
+        return:
+          pos:
+            filename: Named function type
+            offset: 27
+            line: 1
+            column: 28
+          signed: true
+          bitsize: 32
+      expr: null
+
+---
+
+[TestLexer/Backtick_Ident - 1]
+  - type: -13
+    value: "`my-ident`"
+    pos:
+      filename: Backtick Ident
+      offset: 0
+      line: 1
+      column: 1
+  - type: -1
+    value: ""
+    pos:
+      filename: Backtick Ident
+      offset: 10
+      line: 1
+      column: 11
+
+---
+
+[TestLexer/Empty_String - 1]
+  - type: -19
+    value: "\""
+    pos:
+      filename: Empty String
+      offset: 0
+      line: 1
+      column: 1
+  - type: -20
+    value: "\""
+    pos:
+      filename: Empty String
+      offset: 1
+      line: 1
+      column: 2
+  - type: -1
+    value: ""
+    pos:
+      filename: Empty String
+      offset: 2
+      line: 1
+      column: 3
+
+---
+
+[TestLexer/Zero_Integer - 1]
+  - type: -18
+    value: "0"
+    pos:
+      filename: Zero Integer
+      offset: 0
+      line: 1
+      column: 1
+  - type: -1
+    value: ""
+    pos:
+      filename: Zero Integer
+      offset: 1
+      line: 1
+      column: 2
+
+---
+
+[TestParser/Empty_input - 1]
+pos:
+  filename: Empty input
+  offset: 0
+  line: 1
+  column: 1
+statements: []
+
+---
+
+[TestParser/Multiple_root_statements - 1]
+pos:
+  filename: Multiple root statements
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Multiple root statements
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Multiple root statements
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      ident: x
+      type: null
+      expr:
+        pos:
+          filename: Multiple root statements
+          offset: 8
+          line: 1
+          column: 9
+        term:
+          pos:
+            filename: Multiple root statements
+            offset: 8
+            line: 1
+            column: 9
+          prefixops: []
+          operand:
+            pos:
+              filename: Multiple root statements
+              offset: 8
+              line: 1
+              column: 9
+            value:
+              pos:
+                filename: Multiple root statements
+                offset: 8
+                line: 1
+                column: 9
+              value: 1
+          invocations: []
+        binaryops: []
+  - pos:
+      filename: Multiple root statements
+      offset: 10
+      line: 2
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Multiple root statements
+        offset: 10
+        line: 2
+        column: 1
+      isstatic: false
+      ismutable: false
+      ident: "y"
+      type: null
+      expr:
+        pos:
+          filename: Multiple root statements
+          offset: 18
+          line: 2
+          column: 9
+        term:
+          pos:
+            filename: Multiple root statements
+            offset: 18
+            line: 2
+            column: 9
+          prefixops: []
+          operand:
+            pos:
+              filename: Multiple root statements
+              offset: 18
+              line: 2
+              column: 9
+            value:
+              pos:
+                filename: Multiple root statements
+                offset: 18
+                line: 2
+                column: 9
+              value: 2
+          invocations: []
+        binaryops: []
+
+---
+
+[TestParser/Pointer_to_array_type - 1]
+pos:
+  filename: Pointer to array type
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Pointer to array type
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Pointer to array type
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      ident: x
+      type:
+        pos:
+          filename: Pointer to array type
+          offset: 7
+          line: 1
+          column: 8
+        isowned: false
+        ismutable: false
+        targettype:
+          pos:
+            filename: Pointer to array type
+            offset: 8
+            line: 1
+            column: 9
+          dimension: 10
+          elementtype:
+            pos:
+              filename: Pointer to array type
+              offset: 12
+              line: 1
+              column: 13
+            signed: true
+            bitsize: 32
+      expr: null
+
+---
+
+[TestParser/Array_of_function_types - 1]
+pos:
+  filename: Array of function types
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Array of function types
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Array of function types
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      ident: x
+      type:
+        pos:
+          filename: Array of function types
+          offset: 7
+          line: 1
+          column: 8
+        dimension: null
+        elementtype:
+          pos:
+            filename: Array of function types
+            offset: 9
+            line: 1
+            column: 10
+          name: ""
+          parameters: []
+          return:
+            pos:
+              filename: Array of function types
+              offset: 16
+              line: 1
+              column: 17
+            signed: true
+            bitsize: 32
+      expr: null
+
+---
+
+[TestParser/Grouped_expression - 1]
+pos:
+  filename: Grouped expression
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Grouped expression
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Grouped expression
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      ident: x
+      type: null
+      expr:
+        pos:
+          filename: Grouped expression
+          offset: 8
+          line: 1
+          column: 9
+        term:
+          pos:
+            filename: Grouped expression
+            offset: 8
+            line: 1
+            column: 9
+          prefixops: []
+          operand:
+            pos:
+              filename: Grouped expression
+              offset: 8
+              line: 1
+              column: 9
+            expression:
+              pos:
+                filename: Grouped expression
+                offset: 9
+                line: 1
+                column: 10
+              term:
+                pos:
+                  filename: Grouped expression
+                  offset: 9
+                  line: 1
+                  column: 10
+                prefixops: []
+                operand:
+                  pos:
+                    filename: Grouped expression
+                    offset: 9
+                    line: 1
+                    column: 10
+                  value:
+                    pos:
+                      filename: Grouped expression
+                      offset: 9
+                      line: 1
+                      column: 10
+                    value: 1
+                invocations: []
+              binaryops:
+                - pos:
+                    filename: Grouped expression
+                    offset: 11
+                    line: 1
+                    column: 12
+                  operator: +
+                  term:
+                    pos:
+                      filename: Grouped expression
+                      offset: 13
+                      line: 1
+                      column: 14
+                    prefixops: []
+                    operand:
+                      pos:
+                        filename: Grouped expression
+                        offset: 13
+                        line: 1
+                        column: 14
+                      value:
+                        pos:
+                          filename: Grouped expression
+                          offset: 13
+                          line: 1
+                          column: 14
+                        value: 2
+                    invocations: []
+          invocations: []
+        binaryops: []
+
+---
+
+[TestParser/Lambda_with_return_type - 1]
+pos:
+  filename: Lambda with return type
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Lambda with return type
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Lambda with return type
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      ident: x
+      type: null
+      expr:
+        pos:
+          filename: Lambda with return type
+          offset: 8
+          line: 1
+          column: 9
+        term:
+          pos:
+            filename: Lambda with return type
+            offset: 8
+            line: 1
+            column: 9
+          prefixops: []
+          operand:
+            pos:
+              filename: Lambda with return type
+              offset: 8
+              line: 1
+              column: 9
+            parameters: []
+            return:
+              pos:
+                filename: Lambda with return type
+                offset: 15
+                line: 1
+                column: 16
+              signed: true
+              bitsize: 32
+            block:
+              pos:
+                filename: Lambda with return type
+                offset: 19
+                line: 1
+                column: 20
+              statements:
+                - pos:
+                    filename: Lambda with return type
+                    offset: 21
+                    line: 1
+                    column: 22
+                  comments: null
+                  annotations: []
+                  statement:
+                    pos:
+                      filename: Lambda with return type
+                      offset: 21
+                      line: 1
+                      column: 22
+                    tag: null
+                    expression:
+                      pos:
+                        filename: Lambda with return type
+                        offset: 28
+                        line: 1
+                        column: 29
+                      value:
+                        pos:
+                          filename: Lambda with return type
+                          offset: 28
+                          line: 1
+                          column: 29
+                        value: 1
+          invocations: []
+        binaryops: []
+
+---
+
+[TestParser/Function_type_without_parameters - 1]
+pos:
+  filename: Function type without parameters
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Function type without parameters
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Function type without parameters
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      ident: x
+      type:
+        pos:
+          filename: Function type without parameters
+          offset: 7
+          line: 1
+          column: 8
+        name: ""
+        parameters: []
+        return:
+          pos:
+            filename: Function type without parameters
+            offset: 14
+            line: 1
+            column: 15
+          signed: true
+          bitsize: 32
+      expr: null
+
+---
+
+[TestParser/Function_type_without_return_type - 1]
+pos:
+  filename: Function type without return type
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Function type without return type
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Function type without return type
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      ident: x
+      type:
+        pos:
+          filename: Function type without return type
+          offset: 7
+          line: 1
+          column: 8
+        name: ""
+        parameters:
+          - pos:
+              filename: Function type without return type
+              offset: 11
+              line: 1
+              column: 12
+            name: a
+            type:
+              pos:
+                filename: Function type without return type
+                offset: 14
+                line: 1
+                column: 15
+              signed: true
+              bitsize: 32
+        return: null
+      expr: null
+
+---
+
+[TestParser/Immutable_pointer_type - 1]
+pos:
+  filename: Immutable pointer type
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Immutable pointer type
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Immutable pointer type
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      ident: x
+      type:
+        pos:
+          filename: Immutable pointer type
+          offset: 7
+          line: 1
+          column: 8
+        isowned: false
+        ismutable: false
+        targettype:
+          pos:
+            filename: Immutable pointer type
+            offset: 8
+            line: 1
+            column: 9
+          signed: true
+          bitsize: 32
+      expr: null
+
+---
+
+[TestParser/Mutable_let_with_type_and_expression - 1]
+pos:
+  filename: Mutable let with type and expression
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Mutable let with type and expression
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Mutable let with type and expression
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: true
+      ident: x
+      type:
+        pos:
+          filename: Mutable let with type and expression
+          offset: 11
+          line: 1
+          column: 12
+        signed: true
+        bitsize: 32
+      expr:
+        pos:
+          filename: Mutable let with type and expression
+          offset: 17
+          line: 1
+          column: 18
+        term:
+          pos:
+            filename: Mutable let with type and expression
+            offset: 17
+            line: 1
+            column: 18
+          prefixops: []
+          operand:
+            pos:
+              filename: Mutable let with type and expression
+              offset: 17
+              line: 1
+              column: 18
+            value:
+              pos:
+                filename: Mutable let with type and expression
+                offset: 17
+                line: 1
+                column: 18
+              value: 1
+          invocations: []
+        binaryops: []
+
+---
+
+[TestParser/Static_let_with_type_and_expression - 1]
+pos:
+  filename: Static let with type and expression
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Static let with type and expression
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Static let with type and expression
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: true
+      ismutable: false
+      ident: x
+      type:
+        pos:
+          filename: Static let with type and expression
+          offset: 14
+          line: 1
+          column: 15
+        signed: true
+        bitsize: 32
+      expr:
+        pos:
+          filename: Static let with type and expression
+          offset: 20
+          line: 1
+          column: 21
+        term:
+          pos:
+            filename: Static let with type and expression
+            offset: 20
+            line: 1
+            column: 21
+          prefixops: []
+          operand:
+            pos:
+              filename: Static let with type and expression
+              offset: 20
+              line: 1
+              column: 21
+            value:
+              pos:
+                filename: Static let with type and expression
+                offset: 20
+                line: 1
+                column: 21
+              value: 1
+          invocations: []
+        binaryops: []
+
+---
+
+[TestParser/If_statement_without_else - 1]
+pos:
+  filename: If statement without else
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: If statement without else
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: If statement without else
+        offset: 0
+        line: 1
+        column: 1
+      condition:
+        pos:
+          filename: If statement without else
+          offset: 3
+          line: 1
+          column: 4
+        term:
+          pos:
+            filename: If statement without else
+            offset: 3
+            line: 1
+            column: 4
+          prefixops: []
+          operand:
+            pos:
+              filename: If statement without else
+              offset: 3
+              line: 1
+              column: 4
+            ident: "true"
+          invocations: []
+        binaryops: []
+      thenblock:
+        pos:
+          filename: If statement without else
+          offset: 8
+          line: 1
+          column: 9
+        statements:
+          - pos:
+              filename: If statement without else
+              offset: 10
+              line: 1
+              column: 11
+            comments: null
+            annotations: []
+            statement:
+              pos:
+                filename: If statement without else
+                offset: 10
+                line: 1
+                column: 11
+              isstatic: false
+              ismutable: false
+              ident: x
+              type: null
+              expr:
+                pos:
+                  filename: If statement without else
+                  offset: 18
+                  line: 1
+                  column: 19
+                term:
+                  pos:
+                    filename: If statement without else
+                    offset: 18
+                    line: 1
+                    column: 19
+                  prefixops: []
+                  operand:
+                    pos:
+                      filename: If statement without else
+                      offset: 18
+                      line: 1
+                      column: 19
+                    value:
+                      pos:
+                        filename: If statement without else
+                        offset: 18
+                        line: 1
+                        column: 19
+                      value: 1
+                  invocations: []
+                binaryops: []
+      elseifstatements: []
+      elseblock: null
+
+---
+
+[TestParser/Trailing_comma_in_function_parameters - 1]
+pos:
+  filename: Trailing comma in function parameters
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Trailing comma in function parameters
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Trailing comma in function parameters
+        offset: 0
+        line: 1
+        column: 1
+      ident: test
+      parameters:
+        - pos:
+            filename: Trailing comma in function parameters
+            offset: 9
+            line: 1
+            column: 10
+          name: a
+          type:
+            pos:
+              filename: Trailing comma in function parameters
+              offset: 12
+              line: 1
+              column: 13
+            signed: true
+            bitsize: 32
+      return: null
+      block:
+        pos:
+          filename: Trailing comma in function parameters
+          offset: 19
+          line: 1
+          column: 20
+        statements: []
+
+---
+
+[TestParser/Trailing_comma_in_function_call_arguments - 1]
+pos:
+  filename: Trailing comma in function call arguments
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Trailing comma in function call arguments
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Trailing comma in function call arguments
+        offset: 0
+        line: 1
+        column: 1
+      expression:
+        pos:
+          filename: Trailing comma in function call arguments
+          offset: 0
+          line: 1
+          column: 1
+        term:
+          pos:
+            filename: Trailing comma in function call arguments
+            offset: 0
+            line: 1
+            column: 1
+          prefixops: []
+          operand:
+            pos:
+              filename: Trailing comma in function call arguments
+              offset: 0
+              line: 1
+              column: 1
+            ident: test
+          invocations:
+            - pos:
+                filename: Trailing comma in function call arguments
+                offset: 4
+                line: 1
+                column: 5
+              arguments:
+                - pos:
+                    filename: Trailing comma in function call arguments
+                    offset: 5
+                    line: 1
+                    column: 6
+                  term:
+                    pos:
+                      filename: Trailing comma in function call arguments
+                      offset: 5
+                      line: 1
+                      column: 6
+                    prefixops: []
+                    operand:
+                      pos:
+                        filename: Trailing comma in function call arguments
+                        offset: 5
+                        line: 1
+                        column: 6
+                      value:
+                        pos:
+                          filename: Trailing comma in function call arguments
+                          offset: 5
+                          line: 1
+                          column: 6
+                        value: 1
+                    invocations: []
+                  binaryops: []
+              postfixops: []
+        binaryops: []
+
+---
+
+[TestParser/Trailing_comma_in_annotation_arguments - 1]
+pos:
+  filename: Trailing comma in annotation arguments
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Trailing comma in annotation arguments
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations:
+      - pos:
+          filename: Trailing comma in annotation arguments
+          offset: 0
+          line: 1
+          column: 1
+        name:
+          pos:
+            filename: Trailing comma in annotation arguments
+            offset: 0
+            line: 1
+            column: 1
+          tag: "#myAnno"
+        arguments:
+          - pos:
+              filename: Trailing comma in annotation arguments
+              offset: 8
+              line: 1
+              column: 9
+            term:
+              pos:
+                filename: Trailing comma in annotation arguments
+                offset: 8
+                line: 1
+                column: 9
+              prefixops: []
+              operand:
+                pos:
+                  filename: Trailing comma in annotation arguments
+                  offset: 8
+                  line: 1
+                  column: 9
+                value:
+                  pos:
+                    filename: Trailing comma in annotation arguments
+                    offset: 8
+                    line: 1
+                    column: 9
+                  value: 1
+              invocations: []
+            binaryops: []
+    statement:
+      pos:
+        filename: Trailing comma in annotation arguments
+        offset: 13
+        line: 1
+        column: 14
+      ident: test
+      parameters: []
+      return: null
+      block:
+        pos:
+          filename: Trailing comma in annotation arguments
+          offset: 24
+          line: 1
+          column: 25
+        statements: []
+
+---
+
+[TestLexer/String_Interpolation - 1]
+  - type: -19
+    value: "\""
+    pos:
+      filename: String Interpolation
+      offset: 0
+      line: 1
+      column: 1
+  - type: -22
+    value: "Hello, "
+    pos:
+      filename: String Interpolation
+      offset: 1
+      line: 1
+      column: 2
+  - type: -21
+    value: "\\("
+    pos:
+      filename: String Interpolation
+      offset: 8
+      line: 1
+      column: 9
+  - type: -13
+    value: name
+    pos:
+      filename: String Interpolation
+      offset: 10
+      line: 1
+      column: 11
+  - type: -11
+    value: )
+    pos:
+      filename: String Interpolation
+      offset: 14
+      line: 1
+      column: 15
+  - type: -22
+    value: "!"
+    pos:
+      filename: String Interpolation
+      offset: 15
+      line: 1
+      column: 16
+  - type: -20
+    value: "\""
+    pos:
+      filename: String Interpolation
+      offset: 16
+      line: 1
+      column: 17
+  - type: -1
+    value: ""
+    pos:
+      filename: String Interpolation
+      offset: 17
+      line: 1
+      column: 18
+
+---
+
+[TestParser/Type_expression - 1]
+pos:
+  filename: Type expression
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Type expression
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Type expression
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      ident: x
+      type:
+        pos:
+          filename: Type expression
+          offset: 7
+          line: 1
+          column: 8
+        expression:
+          pos:
+            filename: Type expression
+            offset: 9
+            line: 1
+            column: 10
+          term:
+            pos:
+              filename: Type expression
+              offset: 9
+              line: 1
+              column: 10
+            prefixops: []
+            operand:
+              pos:
+                filename: Type expression
+                offset: 9
+                line: 1
+                column: 10
+              ident: MyType
+            invocations: []
+          binaryops: []
+      expr: null
+
+---
+
+[TestParser/Multiple_annotations - 1]
+pos:
+  filename: Multiple annotations
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Multiple annotations
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations:
+      - pos:
+          filename: Multiple annotations
+          offset: 0
+          line: 1
+          column: 1
+        name:
+          pos:
+            filename: Multiple annotations
+            offset: 0
+            line: 1
+            column: 1
+          tag: "#anno1"
+        arguments: []
+      - pos:
+          filename: Multiple annotations
+          offset: 9
+          line: 1
+          column: 10
+        name:
+          pos:
+            filename: Multiple annotations
+            offset: 9
+            line: 1
+            column: 10
+          tag: "#anno2"
+        arguments:
+          - pos:
+              filename: Multiple annotations
+              offset: 16
+              line: 1
+              column: 17
+            term:
+              pos:
+                filename: Multiple annotations
+                offset: 16
+                line: 1
+                column: 17
+              prefixops: []
+              operand:
+                pos:
+                  filename: Multiple annotations
+                  offset: 16
+                  line: 1
+                  column: 17
+                ident: "true"
+              invocations: []
+            binaryops: []
+    statement:
+      pos:
+        filename: Multiple annotations
+        offset: 22
+        line: 1
+        column: 23
+      ident: test
+      parameters: []
+      return: null
+      block:
+        pos:
+          filename: Multiple annotations
+          offset: 33
+          line: 1
+          column: 34
+        statements: []
+
+---
+
+[TestParser/Nested_string_interpolation - 1]
+pos:
+  filename: Nested string interpolation
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Nested string interpolation
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Nested string interpolation
+        offset: 0
+        line: 1
+        column: 1
+      expression:
+        pos:
+          filename: Nested string interpolation
+          offset: 0
+          line: 1
+          column: 1
+        term:
+          pos:
+            filename: Nested string interpolation
+            offset: 0
+            line: 1
+            column: 1
+          prefixops: []
+          operand:
+            pos:
+              filename: Nested string interpolation
+              offset: 0
+              line: 1
+              column: 1
+            value:
+              pos:
+                filename: Nested string interpolation
+                offset: 0
+                line: 1
+                column: 1
+              fragments:
+                - pos:
+                    filename: Nested string interpolation
+                    offset: 1
+                    line: 1
+                    column: 2
+                  text: "Hello, "
+                  interpolation: null
+                - pos:
+                    filename: Nested string interpolation
+                    offset: 8
+                    line: 1
+                    column: 9
+                  text: ""
+                  interpolation:
+                    pos:
+                      filename: Nested string interpolation
+                      offset: 10
+                      line: 1
+                      column: 11
+                    term:
+                      pos:
+                        filename: Nested string interpolation
+                        offset: 10
+                        line: 1
+                        column: 11
+                      prefixops: []
+                      operand:
+                        pos:
+                          filename: Nested string interpolation
+                          offset: 10
+                          line: 1
+                          column: 11
+                        value:
+                          pos:
+                            filename: Nested string interpolation
+                            offset: 10
+                            line: 1
+                            column: 11
+                          fragments:
+                            - pos:
+                                filename: Nested string interpolation
+                                offset: 11
+                                line: 1
+                                column: 12
+                              text: "Mr. "
+                              interpolation: null
+                            - pos:
+                                filename: Nested string interpolation
+                                offset: 15
+                                line: 1
+                                column: 16
+                              text: ""
+                              interpolation:
+                                pos:
+                                  filename: Nested string interpolation
+                                  offset: 17
+                                  line: 1
+                                  column: 18
+                                term:
+                                  pos:
+                                    filename: Nested string interpolation
+                                    offset: 17
+                                    line: 1
+                                    column: 18
+                                  prefixops: []
+                                  operand:
+                                    pos:
+                                      filename: Nested string interpolation
+                                      offset: 17
+                                      line: 1
+                                      column: 18
+                                    ident: lastName
+                                  invocations: []
+                                binaryops: []
+                      invocations: []
+                    binaryops: []
+                - pos:
+                    filename: Nested string interpolation
+                    offset: 28
+                    line: 1
+                    column: 29
+                  text: "!"
+                  interpolation: null
+          invocations: []
+        binaryops: []
+
+---

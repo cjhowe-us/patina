@@ -42,6 +42,30 @@ func TestLexer(t *testing.T) {
 			name: "Parentheses",
 			src:  "()",
 		},
+		{
+			name: "Backtick Ident",
+			src:  "`my-ident`",
+		},
+		{
+			name: "Empty String",
+			src:  `""`,
+		},
+		{
+			name: "Zero Integer",
+			src:  "0",
+		},
+		{
+			name: "Block Comment",
+			src:  "/* block comment */",
+		},
+		{
+			name: "Nested Block Comment",
+			src:  "/* nested /* block */ comment */",
+		},
+		{
+			name: "String Interpolation",
+			src:  `"Hello, \(name)!"`,
+		},
 	}
 
 	for _, tt := range tests {
@@ -242,6 +266,123 @@ func TestParser(t *testing.T) {
 		{
 			name: "Quoted expression",
 			src:  "\\(1 + 2)",
+		},
+		{
+			name: "Doc comment",
+			src: `/* My doc comment */
+			fun test() {}`,
+		},
+		{
+			name: "Return with tag",
+			src:  `return #myTag`,
+		},
+		{
+			name: "Return with expression",
+			src:  `return (1 + 2)`,
+		},
+		{
+			name: "Return with tag and expression",
+			src:  `return #myTag (3 * 4)`,
+		},
+		{
+			name: "If-else-if statement",
+			src: `if x == 1 {
+				let y = 1
+			} else if x == 2 {
+				let y = 2
+			} else {
+				let y = 3
+			}`,
+		},
+		{
+			name: "Static block atom",
+			src: `static {
+				let x = 1
+			}`,
+		},
+		{
+			name: "Owned pointer type",
+			src:  `let x: @i32`,
+		},
+		{
+			name: "Unsized array type",
+			src:  `let x: []i32`,
+		},
+		{
+			name: "Named function type",
+			src:  `let x: fun MyFunc(a: i32): i32`,
+		},
+		{
+			name: "Type expression",
+			src:  `let x: \(MyType)`,
+		},
+		{
+			name: "Empty input",
+			src:  "",
+		},
+		{
+			name: "Multiple root statements",
+			src:  "let x = 1\nlet y = 2",
+		},
+		{
+			name: "Pointer to array type",
+			src:  "let x: *[10]i32",
+		},
+		{
+			name: "Array of function types",
+			src:  "let x: []fun(): i32",
+		},
+		{
+			name: "Nested string interpolation",
+			src:  `"Hello, \("Mr. \(lastName)")!"`,
+		},
+		{
+			name: "Multiple annotations",
+			src:  "#anno1() #anno2(true) fun test() {}",
+		},
+		{
+			name: "Grouped expression",
+			src:  "let x = (1 + 2)",
+		},
+		{
+			name: "Lambda with return type",
+			src:  "let x = fun(): i32 { return 1 }",
+		},
+		{
+			name: "Function type without parameters",
+			src:  "let x: fun(): i32",
+		},
+		{
+			name: "Function type without return type",
+			src:  "let x: fun(a: i32)",
+		},
+		{
+			name: "Immutable pointer type",
+			src:  "let x: *i32",
+		},
+		{
+			name: "Mutable let with type and expression",
+			src:  "let mut x: i32 = 1",
+		},
+		{
+			name: "Static let with type and expression",
+			src:  "static let x: i32 = 1",
+		},
+		{
+			name: "If statement without else",
+			src:  "if true { let x = 1 }",
+		},
+		{
+			name: "Trailing comma in function parameters",
+			src:  "fun test(a: i32, ) {}",
+		},
+		{
+			name: "Trailing comma in function call arguments",
+			src:  "test(1, )",
+		},
+		{
+			name: "Trailing comma in annotation arguments",
+			src:  "#myAnno(1, ) fun test() {}",
 		},
 	}
 
