@@ -48,7 +48,7 @@ var (
 		participle.UseLookahead(10),
 		participle.Elide("WS", "EOL", "LineComment", "BlockCommentStart", "BlockCommentEnd", "BlockCommentContents"),
 		participle.Union[Statement](Module{}, FunctionStatement{}, ReturnStatement{}, LetStatement{}, BreakStatement{}, ExpressionStatement{}),
-		participle.Union[Expression](QuotedExpression{}, IfExpression{}, CaseExpression{}, Lambda{}, BlockExpression{}, Operation{}),
+		participle.Union[Expression](QuotedExpression{}, IfExpression{}, CaseExpression{}, Lambda{}, StaticExpression{}, Block{}, Operation{}),
 		participle.Union[Atom](GroupedExpression{}, AtomValue{}, Binding{}),
 		participle.Union[TypeValue](PointerType{}, FunctionType{}, ArrayType{}, IntegerType{}, TypeExpression{}),
 		participle.Union[Value](Integer{}, String{}, PointerType{}, FunctionType{}, ArrayType{}, IntegerType{}, TypeExpression{}),
@@ -119,9 +119,9 @@ type (
 	}
 
 	BreakStatement struct {
-		Pos        lexer.Position
-		Label      string     `parser:"'break' @Label?"`
-		Expression Expression `parser:"@@?"`
+		Pos   lexer.Position
+		Label string     `parser:"'break' @Label?"`
+		Value Expression `parser:"@@?"`
 	}
 
 	ExpressionStatement struct {
@@ -144,8 +144,8 @@ type (
 	}
 
 	QuotedExpression struct {
-		Pos        lexer.Position
-		Expression Expression `parser:"'\\\\' '(' @@ ')'"`
+		Pos    lexer.Position
+		Quoted Expression `parser:"'\\\\' '(' @@ ')'"`
 	}
 
 	IfExpression struct {
@@ -174,13 +174,12 @@ type (
 		Pos        lexer.Position
 		Parameters []FunctionParameter `parser:"'fun' '(' [@@ (',' @@)* ','?] ')'"`
 		Return     TypeValue           `parser:"[':' @@]"`
-		Block      Block               `parser:"@@"`
+		Body       Block               `parser:"@@"`
 	}
 
-	BlockExpression struct {
-		Pos      lexer.Position
-		IsStatic bool  `parser:"@'static'?"`
-		Body     Block `parser:"@@"`
+	StaticExpression struct {
+		Pos    lexer.Position
+		Static Expression `parser:"'static' @@"`
 	}
 
 	Operation struct {
@@ -192,13 +191,13 @@ type (
 	Operand struct {
 		Pos             lexer.Position
 		PrefixOperators []string           `parser:"@PrefixOperator*"`
-		Atom            Atom               `parser:"@@"`
+		Operand         Atom               `parser:"@@"`
 		PostfixOps      []PostfixOperation `parser:"@@*"`
 	}
 	PostfixOperation struct {
-		Pos        lexer.Position
-		Invocation Expression `parser:"('(' [@@ (',' @@)* ','?] ')'"`
-		Operator   string     `parser:"| @PostfixOperator)"`
+		Pos             lexer.Position
+		Invocation      Expression `parser:"('(' [@@ (',' @@)* ','?] ')'"`
+		PostfixOperator string     `parser:"| @PostfixOperator)"`
 	}
 )
 
@@ -206,7 +205,8 @@ func (QuotedExpression) expression() {}
 func (IfExpression) expression()     {}
 func (CaseExpression) expression()   {}
 func (Lambda) expression()           {}
-func (BlockExpression) expression()  {}
+func (StaticExpression) expression() {}
+func (Block) expression()            {}
 func (Operation) expression()        {}
 
 type (

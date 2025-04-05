@@ -294,9 +294,9 @@ func TestParser(t *testing.T) {
 			src:  `return :label (3 * 4)`,
 		},
 		{
-			name: "Static block atom",
-			src: `static {
-				let x = 1
+			name: "Static labeled block expression",
+			src: `let x = static :labeled {
+				break :labeled 5
 			}`,
 		},
 		{
