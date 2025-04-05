@@ -7174,11 +7174,11 @@ statements:
                   offset: 91
                   line: 4
                   column: 32
-                label: ""
+                label: :test
                 statements:
                   - pos:
                       filename: Using if shortcut with block
-                      offset: 100
+                      offset: 106
                       line: 5
                       column: 8
                     comments: null
@@ -7186,30 +7186,36 @@ statements:
                     statement:
                       pos:
                         filename: Using if shortcut with block
-                        offset: 100
+                        offset: 106
                         line: 5
                         column: 8
-                      label: ""
+                      label: :test
                       expression:
                         pos:
                           filename: Using if shortcut with block
-                          offset: 106
+                          offset: 118
                           line: 5
-                          column: 14
+                          column: 20
                         operand:
                           pos:
                             filename: Using if shortcut with block
-                            offset: 106
+                            offset: 118
                             line: 5
-                            column: 14
+                            column: 20
                           prefixoperators: []
                           atom:
                             pos:
                               filename: Using if shortcut with block
-                              offset: 106
+                              offset: 118
                               line: 5
-                              column: 14
-                            ident: glooblefarble
+                              column: 20
+                            value:
+                              pos:
+                                filename: Using if shortcut with block
+                                offset: 118
+                                line: 5
+                                column: 20
+                              value: 5
                           postfixops: []
                         infixoperator: ""
                         infixoperation: null
