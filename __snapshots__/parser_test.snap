@@ -372,6 +372,7 @@ statements:
         offset: 0
         line: 1
         column: 1
+      isstatic: false
       name: add
       parameters:
         - pos:
@@ -893,6 +894,7 @@ statements:
         offset: 42
         line: 3
         column: 4
+      isstatic: false
       name: test
       parameters: []
       return: null
@@ -2553,6 +2555,7 @@ statements:
         offset: 41
         line: 1
         column: 42
+      isstatic: false
       name: add
       parameters:
         - pos:
@@ -4170,6 +4173,7 @@ statements:
         offset: 24
         line: 2
         column: 4
+      isstatic: false
       name: test
       parameters: []
       return: null
@@ -5781,6 +5785,7 @@ statements:
         offset: 0
         line: 1
         column: 1
+      isstatic: false
       name: test
       parameters:
         - pos:
@@ -5945,6 +5950,7 @@ statements:
         offset: 13
         line: 1
         column: 14
+      isstatic: false
       name: test
       parameters: []
       return: null
@@ -6131,6 +6137,7 @@ statements:
         offset: 20
         line: 1
         column: 21
+      isstatic: false
       name: test
       parameters: []
       return: null

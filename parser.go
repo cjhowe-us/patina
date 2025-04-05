@@ -98,6 +98,7 @@ type (
 
 	FunctionStatement struct {
 		Pos        lexer.Position
+		IsStatic   bool                `parser:"@'static'?"`
 		Name       string              `parser:"'fun' @Ident"`
 		Parameters []FunctionParameter `parser:"'(' [@@ (',' @@)* ','?] ')'"`
 		Return     *TypeValue          `parser:"(':' @@)?"`
@@ -131,7 +132,6 @@ type (
 )
 
 func (Module) statement()              {}
-func (Block) statement()               {}
 func (FunctionStatement) statement()   {}
 func (ReturnStatement) statement()     {}
 func (LetStatement) statement()        {}
