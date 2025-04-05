@@ -48,7 +48,7 @@ var (
 		participle.UseLookahead(10),
 		participle.Elide("WS", "EOL", "LineComment", "BlockCommentStart", "BlockCommentEnd", "BlockCommentContents"),
 		participle.Union[Statement](Module{}, FunctionStatement{}, ReturnStatement{}, LetStatement{}, BreakStatement{}, ExpressionStatement{}),
-		participle.Union[Expression](QuotedExpression{}, CaseAnalysis{}, CaseIfBranch{}, Lambda{}, BlockExpression{}, Operation{}),
+		participle.Union[Expression](QuotedExpression{}, IfExpression{}, CaseExpression{}, Lambda{}, BlockExpression{}, Operation{}),
 		participle.Union[Atom](GroupedExpression{}, AtomValue{}, Binding{}),
 		participle.Union[TypeValue](PointerType{}, FunctionType{}, ArrayType{}, IntegerType{}, TypeExpression{}),
 		participle.Union[Value](Integer{}, String{}, PointerType{}, FunctionType{}, ArrayType{}, IntegerType{}, TypeExpression{}),
@@ -130,6 +130,14 @@ type (
 	}
 )
 
+func (Module) statement()              {}
+func (Block) statement()               {}
+func (FunctionStatement) statement()   {}
+func (ReturnStatement) statement()     {}
+func (LetStatement) statement()        {}
+func (BreakStatement) statement()      {}
+func (ExpressionStatement) statement() {}
+
 type (
 	Expression interface {
 		expression()
@@ -140,20 +148,27 @@ type (
 		Expression Expression `parser:"'\\\\' '(' @@ ')'"`
 	}
 
-	CaseAnalysis struct {
+	IfExpression struct {
+		Pos     lexer.Position
+		If      IfBranch   `parser:"@@"`
+		ElseIfs []IfBranch `parser:"('else' @@)*"`
+		Else    Expression `parser:"['else' @@]"`
+	}
+	IfBranch struct {
+		Pos       lexer.Position
+		Condition Expression `parser:"'if' @@"`
+		Block     *Block     `parser:"(@@"`
+		Then      Expression `parser:"| 'then' @@)"`
+	}
+
+	CaseExpression struct {
 		Pos      lexer.Position
 		Branches []CaseBranch `parser:"'case' '{' @@+ '}'"`
 	}
 	CaseBranch struct {
 		Pos  lexer.Position
-		If   CaseIfBranch `parser:"@@"`
-		Else Expression   `parser:"| 'else' @@"`
-	}
-	CaseIfBranch struct {
-		Pos       lexer.Position
-		Condition Expression `parser:"'if' @@"`
-		Block     *Block     `parser:"(@@"`
-		Then      Expression `parser:"| 'then' @@)"`
+		If   *IfBranch  `parser:"(@@"`
+		Else Expression `parser:"| 'else' @@)"`
 	}
 
 	Lambda struct {
@@ -188,6 +203,13 @@ type (
 	}
 )
 
+func (QuotedExpression) expression() {}
+func (IfExpression) expression()     {}
+func (CaseExpression) expression()   {}
+func (Lambda) expression()           {}
+func (BlockExpression) expression()  {}
+func (Operation) expression()        {}
+
 type (
 	Atom              interface{ atom() }
 	GroupedExpression struct {
@@ -203,6 +225,10 @@ type (
 		Ident string `parser:"@Ident"`
 	}
 )
+
+func (GroupedExpression) atom() {}
+func (AtomValue) atom()         {}
+func (Binding) atom()           {}
 
 type (
 	Value   interface{ value() }
@@ -220,6 +246,9 @@ type (
 		Interpolation Expression `parser:"| StringInterpolant @@ ')'"`
 	}
 )
+
+func (Integer) value() {}
+func (String) value()  {}
 
 type (
 	TypeValue interface {
@@ -258,28 +287,6 @@ type (
 		Expression Expression `parser:"'\\\\' '(' @@ ')'"`
 	}
 )
-
-func (Module) statement()              {}
-func (Block) statement()               {}
-func (FunctionStatement) statement()   {}
-func (ReturnStatement) statement()     {}
-func (LetStatement) statement()        {}
-func (BreakStatement) statement()      {}
-func (ExpressionStatement) statement() {}
-
-func (QuotedExpression) expression() {}
-func (CaseIfBranch) expression()     {}
-func (CaseAnalysis) expression()     {}
-func (Lambda) expression()           {}
-func (BlockExpression) expression()  {}
-func (Operation) expression()        {}
-
-func (GroupedExpression) atom() {}
-func (AtomValue) atom()         {}
-func (Binding) atom()           {}
-
-func (Integer) value() {}
-func (String) value()  {}
 
 func (IntegerType) type_value()    {}
 func (PointerType) type_value()    {}
