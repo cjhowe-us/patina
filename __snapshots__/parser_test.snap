@@ -7122,7 +7122,203 @@ statements:
                         infixoperator: ""
                         infixoperation: null
           then: null
-        elseifs: []
-        else: null
+        elseifs:
+          - pos:
+              filename: Using if shortcut with block
+              offset: 68
+              line: 4
+              column: 11
+            condition:
+              pos:
+                filename: Using if shortcut with block
+                offset: 71
+                line: 4
+                column: 14
+              operand:
+                pos:
+                  filename: Using if shortcut with block
+                  offset: 71
+                  line: 4
+                  column: 14
+                prefixoperators: []
+                atom:
+                  pos:
+                    filename: Using if shortcut with block
+                    offset: 71
+                    line: 4
+                    column: 14
+                  ident: interlockable
+                postfixops:
+                  - pos:
+                      filename: Using if shortcut with block
+                      offset: 84
+                      line: 4
+                      column: 27
+                    invocation: null
+                    operator: ""
+              infixoperator: ""
+              infixoperation: null
+            block:
+              pos:
+                filename: Using if shortcut with block
+                offset: 87
+                line: 4
+                column: 30
+              label: ""
+              statements:
+                - pos:
+                    filename: Using if shortcut with block
+                    offset: 96
+                    line: 5
+                    column: 8
+                  comments: null
+                  annotations: []
+                  statement:
+                    pos:
+                      filename: Using if shortcut with block
+                      offset: 96
+                      line: 5
+                      column: 8
+                    label: ""
+                    expression:
+                      pos:
+                        filename: Using if shortcut with block
+                        offset: 102
+                        line: 5
+                        column: 14
+                      operand:
+                        pos:
+                          filename: Using if shortcut with block
+                          offset: 102
+                          line: 5
+                          column: 14
+                        prefixoperators: []
+                        atom:
+                          pos:
+                            filename: Using if shortcut with block
+                            offset: 102
+                            line: 5
+                            column: 14
+                          ident: glooblefarble
+                        postfixops: []
+                      infixoperator: ""
+                      infixoperation: null
+            then: null
+        else:
+          pos:
+            filename: Using if shortcut with block
+            offset: 126
+            line: 6
+            column: 11
+          isstatic: false
+          body:
+            pos:
+              filename: Using if shortcut with block
+              offset: 126
+              line: 6
+              column: 11
+            label: ""
+            statements:
+              - pos:
+                  filename: Using if shortcut with block
+                  offset: 135
+                  line: 7
+                  column: 8
+                comments: null
+                annotations: []
+                statement:
+                  pos:
+                    filename: Using if shortcut with block
+                    offset: 135
+                    line: 7
+                    column: 8
+                  expression:
+                    pos:
+                      filename: Using if shortcut with block
+                      offset: 135
+                      line: 7
+                      column: 8
+                    operand:
+                      pos:
+                        filename: Using if shortcut with block
+                        offset: 135
+                        line: 7
+                        column: 8
+                      prefixoperators: []
+                      atom:
+                        pos:
+                          filename: Using if shortcut with block
+                          offset: 135
+                          line: 7
+                          column: 8
+                        ident: takeOver
+                      postfixops:
+                        - pos:
+                            filename: Using if shortcut with block
+                            offset: 143
+                            line: 7
+                            column: 16
+                          invocation:
+                            pos:
+                              filename: Using if shortcut with block
+                              offset: 144
+                              line: 7
+                              column: 17
+                            operand:
+                              pos:
+                                filename: Using if shortcut with block
+                                offset: 144
+                                line: 7
+                                column: 17
+                              prefixoperators: []
+                              atom:
+                                pos:
+                                  filename: Using if shortcut with block
+                                  offset: 144
+                                  line: 7
+                                  column: 17
+                                ident: world
+                              postfixops: []
+                            infixoperator: ""
+                            infixoperation: null
+                          operator: ""
+                        - pos:
+                            filename: Using if shortcut with block
+                            offset: 150
+                            line: 7
+                            column: 23
+                          invocation: null
+                          operator: ?
+                    infixoperator: .
+                    infixoperation:
+                      pos:
+                        filename: Using if shortcut with block
+                        offset: 152
+                        line: 7
+                        column: 25
+                      operand:
+                        pos:
+                          filename: Using if shortcut with block
+                          offset: 152
+                          line: 7
+                          column: 25
+                        prefixoperators: []
+                        atom:
+                          pos:
+                            filename: Using if shortcut with block
+                            offset: 152
+                            line: 7
+                            column: 25
+                          ident: destroy
+                        postfixops:
+                          - pos:
+                              filename: Using if shortcut with block
+                              offset: 159
+                              line: 7
+                              column: 32
+                            invocation: null
+                            operator: ""
+                      infixoperator: ""
+                      infixoperation: null
 
 ---

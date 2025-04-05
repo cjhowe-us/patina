@@ -165,6 +165,10 @@ func TestParser(t *testing.T) {
 			src: `
 			if x > 10 && y < 20 || z == 30 {
 				return x + y + z
+			} else if interlockable() {
+			    break glooblefarble
+			} else {
+			    takeOver(world)?.destroy()
 			}
 			`,
 		},
