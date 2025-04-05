@@ -15,8 +15,12 @@ func TestLexer(t *testing.T) {
 
 	tests := []lexerTestCase{
 		{
+			name: "Label",
+			src:  ":label",
+		},
+		{
 			name: "Tag",
-			src:  "#tag",
+			src:  "@ns.tag",
 		},
 		{
 			name: "Integer",
@@ -123,8 +127,8 @@ func TestParser(t *testing.T) {
 			}`,
 		},
 		{
-			name: "Block atom with tag",
-			src: `#myTag: {
+			name: "Block atom with label",
+			src: `:my_label {
 				let x = 1
 			}`,
 		},
@@ -137,17 +141,32 @@ func TestParser(t *testing.T) {
 		},
 		{
 			name: "Function statement with annotation",
-			src: `#myTag("hello world", 100, \#quoted) fun add(a: i64, b: i64): i64 {
+			src: `@tag.anno("hello world", 100, \(quoted)) fun add(a: i64, b: i64): i64 {
 				let c = a + b
 			}`,
 		},
 		{
-			name: "If statement",
-			src: `if x > 10 {
-				let y = 1
-			} else {
-				let y = 2
+			name: "case statement",
+			src: `case {
+				if x > 10 then 1
+			    else 2
 			}`,
+		},
+		{
+			name: "Case statement with many branches",
+			src: `case {
+				if x == 1 then 1
+				if x == 2 then 2
+				else 3
+			}`,
+		},
+		{
+			name: "Using if shortcut with block",
+			src: `
+			if x > 10 && y < 20 || z == 30 {
+				return x + y + z
+			}
+			`,
 		},
 		{
 			name: "String literal",
@@ -190,12 +209,6 @@ func TestParser(t *testing.T) {
 			src:  `let x = 1 + 2 * 3`,
 		},
 		{
-			name: "Complex if statement",
-			src: `if x > 10 && y < 20 || z == 30 {
-				let result = x + y + z
-			}`,
-		},
-		{
 			name: "Nested expressions",
 			src:  `let x = (1 + 2) * 3`,
 		},
@@ -232,20 +245,12 @@ func TestParser(t *testing.T) {
 			src:  `let x = -add(1, 2)? + !sub(3, 4)`,
 		},
 		{
-			name: "If-else statement",
-			src: `if x > 10 {
-				let z = 1
-			} else {
-				let z = 3
-			}`,
-		},
-		{
 			name: "Simple break",
 			src:  `break`,
 		},
 		{
 			name: "Break with label",
-			src:  `break #myLabel`,
+			src:  `break :myLabel`,
 		},
 		{
 			name: "Break with expression",
@@ -253,11 +258,11 @@ func TestParser(t *testing.T) {
 		},
 		{
 			name: "Break with label and expression",
-			src:  `break #myLabel (3 * 4)`,
+			src:  `break :myLabel (3 * 4)`,
 		},
 		{
-			name: "Quoted tag",
-			src:  "\\(#`myTag`)",
+			name: "Quoted label and tag",
+			src:  "\\(:my_label { @my.tag break :my_label })",
 		},
 		{
 			name: "Quoted binding",
@@ -274,7 +279,7 @@ func TestParser(t *testing.T) {
 		},
 		{
 			name: "Return with tag",
-			src:  `return #myTag`,
+			src:  `return :label`,
 		},
 		{
 			name: "Return with expression",
@@ -282,17 +287,7 @@ func TestParser(t *testing.T) {
 		},
 		{
 			name: "Return with tag and expression",
-			src:  `return #myTag (3 * 4)`,
-		},
-		{
-			name: "If-else-if statement",
-			src: `if x == 1 {
-				let y = 1
-			} else if x == 2 {
-				let y = 2
-			} else {
-				let y = 3
-			}`,
+			src:  `return :label (3 * 4)`,
 		},
 		{
 			name: "Static block atom",
@@ -302,7 +297,7 @@ func TestParser(t *testing.T) {
 		},
 		{
 			name: "Owned pointer type",
-			src:  `let x: @i32`,
+			src:  `let x: *own i32`,
 		},
 		{
 			name: "Unsized array type",
@@ -338,7 +333,7 @@ func TestParser(t *testing.T) {
 		},
 		{
 			name: "Multiple annotations",
-			src:  "#anno1() #anno2(true) fun test() {}",
+			src:  "@anno1 @anno2(true) fun test() {}",
 		},
 		{
 			name: "Grouped expression",
@@ -369,10 +364,6 @@ func TestParser(t *testing.T) {
 			src:  "static let x: i32 = 1",
 		},
 		{
-			name: "If statement without else",
-			src:  "if true { let x = 1 }",
-		},
-		{
 			name: "Trailing comma in function parameters",
 			src:  "fun test(a: i32, ) {}",
 		},
@@ -382,7 +373,7 @@ func TestParser(t *testing.T) {
 		},
 		{
 			name: "Trailing comma in annotation arguments",
-			src:  "#myAnno(1, ) fun test() {}",
+			src:  "@myAnno(1, ) fun test() {}",
 		},
 	}
 
