@@ -183,10 +183,13 @@ type (
 	}
 
 	Operation struct {
-		Pos            lexer.Position
-		Operand        Operand    `parser:"@@"`
-		InfixOperator  string     `parser:"[@(PrefixOperator | Operator)"`
-		InfixOperation *Operation `parser:"@@]"`
+		Pos      lexer.Position
+		Operand  Operand          `parser:"@@"`
+		InfixOps []InfixOperation `parser:"@@*"`
+	}
+	InfixOperation struct {
+		InfixOperator string  `parser:"@(PrefixOperator | Operator)"`
+		Operand       Operand `parser:"@@"`
 	}
 	Operand struct {
 		Pos             lexer.Position

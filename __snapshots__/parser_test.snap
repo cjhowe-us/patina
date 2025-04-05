@@ -81,8 +81,7 @@ statements:
                         signed: true
                         bitsize: 32
                   postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                infixops: []
 
 ---
 
@@ -137,8 +136,7 @@ statements:
                 column: 9
               value: 1
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -193,8 +191,7 @@ statements:
                 column: 13
               value: 2
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -249,8 +246,7 @@ statements:
                 column: 16
               value: 3
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -312,8 +308,7 @@ statements:
                 column: 14
               value: 4
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -457,30 +452,23 @@ statements:
                       column: 13
                     ident: a
                   postfixops: []
-                infixoperator: +
-                infixoperation:
-                  pos:
-                    filename: Function statement
-                    offset: 47
-                    line: 2
-                    column: 17
-                  operand:
-                    pos:
-                      filename: Function statement
-                      offset: 47
-                      line: 2
-                      column: 17
-                    prefixoperators: []
+                infixops:
+                  - infixoperator: +
                     operand:
                       pos:
                         filename: Function statement
                         offset: 47
                         line: 2
                         column: 17
-                      ident: b
-                    postfixops: []
-                  infixoperator: ""
-                  infixoperation: null
+                      prefixoperators: []
+                      operand:
+                        pos:
+                          filename: Function statement
+                          offset: 47
+                          line: 2
+                          column: 17
+                        ident: b
+                      postfixops: []
           - pos:
               filename: Function statement
               offset: 53
@@ -516,8 +504,7 @@ statements:
                       column: 12
                     ident: c
                   postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                infixops: []
 
 ---
 
@@ -757,8 +744,7 @@ statements:
                   text: Hello, world!
                   interpolation: null
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -846,8 +832,7 @@ statements:
                           column: 21
                         ident: name
                       postfixops: []
-                    infixoperator: ""
-                    infixoperation: null
+                    infixops: []
                 - pos:
                     filename: String interpolation
                     offset: 25
@@ -856,8 +841,7 @@ statements:
                   text: "!"
                   interpolation: null
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -961,8 +945,7 @@ statements:
               signed: true
               bitsize: 64
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -1024,8 +1007,7 @@ statements:
                 column: 14
               value: 10
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
   - pos:
       filename: Type value
       offset: 19
@@ -1085,8 +1067,7 @@ statements:
                 column: 24
               value: 20
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
   - pos:
       filename: Type value
       offset: 45
@@ -1200,8 +1181,7 @@ statements:
               column: 43
             ident: add
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -1448,30 +1428,23 @@ statements:
                           column: 13
                         value: 1
                     postfixops: []
-                  infixoperator: +
-                  infixoperation:
-                    pos:
-                      filename: Lambda expression
-                      offset: 43
-                      line: 2
-                      column: 17
-                    operand:
-                      pos:
-                        filename: Lambda expression
-                        offset: 43
-                        line: 2
-                        column: 17
-                      prefixoperators: []
+                  infixops:
+                    - infixoperator: +
                       operand:
                         pos:
                           filename: Lambda expression
                           offset: 43
                           line: 2
                           column: 17
-                        ident: b
-                      postfixops: []
-                    infixoperator: ""
-                    infixoperation: null
+                        prefixoperators: []
+                        operand:
+                          pos:
+                            filename: Lambda expression
+                            offset: 43
+                            line: 2
+                            column: 17
+                          ident: b
+                        postfixops: []
 
 ---
 
@@ -1526,41 +1499,30 @@ statements:
                 column: 9
               value: 1
           postfixops: []
-        infixoperator: +
-        infixoperation:
-          pos:
-            filename: Binary expression
-            offset: 12
-            line: 1
-            column: 13
-          operand:
-            pos:
-              filename: Binary expression
-              offset: 12
-              line: 1
-              column: 13
-            prefixoperators: []
+        infixops:
+          - infixoperator: +
             operand:
               pos:
                 filename: Binary expression
                 offset: 12
                 line: 1
                 column: 13
-              value:
+              prefixoperators: []
+              operand:
                 pos:
                   filename: Binary expression
                   offset: 12
                   line: 1
                   column: 13
-                value: 2
-            postfixops: []
-          infixoperator: "*"
-          infixoperation:
-            pos:
-              filename: Binary expression
-              offset: 16
-              line: 1
-              column: 17
+                value:
+                  pos:
+                    filename: Binary expression
+                    offset: 12
+                    line: 1
+                    column: 13
+                  value: 2
+              postfixops: []
+          - infixoperator: "*"
             operand:
               pos:
                 filename: Binary expression
@@ -1582,8 +1544,6 @@ statements:
                     column: 17
                   value: 3
               postfixops: []
-            infixoperator: ""
-            infixoperation: null
 
 ---
 
@@ -1921,67 +1881,53 @@ statements:
                       column: 10
                     value: 1
                 postfixops: []
-              infixoperator: +
-              infixoperation:
-                pos:
-                  filename: Nested expressions
-                  offset: 13
-                  line: 1
-                  column: 14
-                operand:
-                  pos:
-                    filename: Nested expressions
-                    offset: 13
-                    line: 1
-                    column: 14
-                  prefixoperators: []
+              infixops:
+                - infixoperator: +
                   operand:
                     pos:
                       filename: Nested expressions
                       offset: 13
                       line: 1
                       column: 14
-                    value:
+                    prefixoperators: []
+                    operand:
                       pos:
                         filename: Nested expressions
                         offset: 13
                         line: 1
                         column: 14
-                      value: 2
-                  postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                      value:
+                        pos:
+                          filename: Nested expressions
+                          offset: 13
+                          line: 1
+                          column: 14
+                        value: 2
+                    postfixops: []
           postfixops: []
-        infixoperator: "*"
-        infixoperation:
-          pos:
-            filename: Nested expressions
-            offset: 18
-            line: 1
-            column: 19
-          operand:
-            pos:
-              filename: Nested expressions
-              offset: 18
-              line: 1
-              column: 19
-            prefixoperators: []
+        infixops:
+          - infixoperator: "*"
             operand:
               pos:
                 filename: Nested expressions
                 offset: 18
                 line: 1
                 column: 19
-              value:
+              prefixoperators: []
+              operand:
                 pos:
                   filename: Nested expressions
                   offset: 18
                   line: 1
                   column: 19
-                value: 3
-            postfixops: []
-          infixoperator: ""
-          infixoperation: null
+                value:
+                  pos:
+                    filename: Nested expressions
+                    offset: 18
+                    line: 1
+                    column: 19
+                  value: 3
+              postfixops: []
 
 ---
 
@@ -2255,39 +2201,31 @@ statements:
                       column: 8
                     value: 1
                 postfixops: []
-              infixoperator: +
-              infixoperation:
-                pos:
-                  filename: Break with expression
-                  offset: 11
-                  line: 1
-                  column: 12
-                operand:
-                  pos:
-                    filename: Break with expression
-                    offset: 11
-                    line: 1
-                    column: 12
-                  prefixoperators: []
+              infixops:
+                - infixoperator: +
                   operand:
                     pos:
                       filename: Break with expression
                       offset: 11
                       line: 1
                       column: 12
-                    value:
+                    prefixoperators: []
+                    operand:
                       pos:
                         filename: Break with expression
                         offset: 11
                         line: 1
                         column: 12
-                      value: 2
-                  postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                      value:
+                        pos:
+                          filename: Break with expression
+                          offset: 11
+                          line: 1
+                          column: 12
+                        value: 2
+                    postfixops: []
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -2401,39 +2339,31 @@ statements:
                       column: 17
                     value: 3
                 postfixops: []
-              infixoperator: "*"
-              infixoperation:
-                pos:
-                  filename: Break with label and expression
-                  offset: 20
-                  line: 1
-                  column: 21
-                operand:
-                  pos:
-                    filename: Break with label and expression
-                    offset: 20
-                    line: 1
-                    column: 21
-                  prefixoperators: []
+              infixops:
+                - infixoperator: "*"
                   operand:
                     pos:
                       filename: Break with label and expression
                       offset: 20
                       line: 1
                       column: 21
-                    value:
+                    prefixoperators: []
+                    operand:
                       pos:
                         filename: Break with label and expression
                         offset: 20
                         line: 1
                         column: 21
-                      value: 4
-                  postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                      value:
+                        pos:
+                          filename: Break with label and expression
+                          offset: 20
+                          line: 1
+                          column: 21
+                        value: 4
+                    postfixops: []
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -2491,8 +2421,7 @@ statements:
                       text: hello world
                       interpolation: null
               postfixops: []
-            infixoperator: ""
-            infixoperation: null
+            infixops: []
           - pos:
               filename: Function statement with annotation
               offset: 25
@@ -2519,8 +2448,7 @@ statements:
                     column: 26
                   value: 100
               postfixops: []
-            infixoperator: ""
-            infixoperation: null
+            infixops: []
           - pos:
               filename: Function statement with annotation
               offset: 30
@@ -2547,8 +2475,7 @@ statements:
                     column: 33
                   ident: quoted
                 postfixops: []
-              infixoperator: ""
-              infixoperation: null
+              infixops: []
     statement:
       pos:
         filename: Function statement with annotation
@@ -2640,30 +2567,23 @@ statements:
                       column: 13
                     ident: a
                   postfixops: []
-                infixoperator: +
-                infixoperation:
-                  pos:
-                    filename: Function statement with annotation
-                    offset: 88
-                    line: 2
-                    column: 17
-                  operand:
-                    pos:
-                      filename: Function statement with annotation
-                      offset: 88
-                      line: 2
-                      column: 17
-                    prefixoperators: []
+                infixops:
+                  - infixoperator: +
                     operand:
                       pos:
                         filename: Function statement with annotation
                         offset: 88
                         line: 2
                         column: 17
-                      ident: b
-                    postfixops: []
-                  infixoperator: ""
-                  infixoperation: null
+                      prefixoperators: []
+                      operand:
+                        pos:
+                          filename: Function statement with annotation
+                          offset: 88
+                          line: 2
+                          column: 17
+                        ident: b
+                      postfixops: []
 
 ---
 
@@ -2739,8 +2659,7 @@ statements:
                         column: 13
                       value: 1
                   postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                infixops: []
 
 ---
 
@@ -3035,36 +2954,29 @@ statements:
                   column: 3
                 value: 1
             postfixops: []
-          infixoperator: +
-          infixoperation:
-            pos:
-              filename: Quoted expression
-              offset: 6
-              line: 1
-              column: 7
-            operand:
-              pos:
-                filename: Quoted expression
-                offset: 6
-                line: 1
-                column: 7
-              prefixoperators: []
+          infixops:
+            - infixoperator: +
               operand:
                 pos:
                   filename: Quoted expression
                   offset: 6
                   line: 1
                   column: 7
-                value:
+                prefixoperators: []
+                operand:
                   pos:
                     filename: Quoted expression
                     offset: 6
                     line: 1
                     column: 7
-                  value: 2
-              postfixops: []
-            infixoperator: ""
-            infixoperation: null
+                  value:
+                    pos:
+                      filename: Quoted expression
+                      offset: 6
+                      line: 1
+                      column: 7
+                    value: 2
+                postfixops: []
 
 ---
 
@@ -3114,8 +3026,7 @@ statements:
               column: 10
             ident: "true"
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -3171,8 +3082,7 @@ statements:
                 column: 13
               invocation: null
               postfixoperator: ?
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -3229,8 +3139,7 @@ statements:
                 column: 14
               invocation: null
               postfixoperator: ?
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -3311,11 +3220,9 @@ statements:
                         column: 16
                       value: 2
                   postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                infixops: []
               postfixoperator: ""
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -3396,8 +3303,7 @@ statements:
                         column: 16
                       value: 2
                   postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                infixops: []
               postfixoperator: ""
             - pos:
                 filename: Invocation with postfix op
@@ -3406,8 +3312,7 @@ statements:
                 column: 18
               invocation: null
               postfixoperator: ?
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -3489,11 +3394,9 @@ statements:
                         column: 17
                       value: 2
                   postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                infixops: []
               postfixoperator: ""
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -3575,8 +3478,7 @@ statements:
                         column: 17
                       value: 2
                   postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                infixops: []
               postfixoperator: ""
             - pos:
                 filename: Invocation with prefix and postfix ops
@@ -3585,8 +3487,7 @@ statements:
                 column: 19
               invocation: null
               postfixoperator: ?
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -3668,8 +3569,7 @@ statements:
                         column: 17
                       value: 2
                   postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                infixops: []
               postfixoperator: ""
             - pos:
                 filename: Invocation with prefix, infix, and postfix ops
@@ -3678,66 +3578,58 @@ statements:
                 column: 19
               invocation: null
               postfixoperator: ?
-        infixoperator: +
-        infixoperation:
-          pos:
-            filename: Invocation with prefix, infix, and postfix ops
-            offset: 22
-            line: 1
-            column: 23
-          operand:
-            pos:
-              filename: Invocation with prefix, infix, and postfix ops
-              offset: 22
-              line: 1
-              column: 23
-            prefixoperators:
-              - "!"
+        infixops:
+          - infixoperator: +
             operand:
               pos:
                 filename: Invocation with prefix, infix, and postfix ops
-                offset: 23
+                offset: 22
                 line: 1
-                column: 24
-              ident: sub
-            postfixops:
-              - pos:
+                column: 23
+              prefixoperators:
+                - "!"
+              operand:
+                pos:
                   filename: Invocation with prefix, infix, and postfix ops
-                  offset: 26
+                  offset: 23
                   line: 1
-                  column: 27
-                invocation:
-                  pos:
+                  column: 24
+                ident: sub
+              postfixops:
+                - pos:
                     filename: Invocation with prefix, infix, and postfix ops
-                    offset: 30
+                    offset: 26
                     line: 1
-                    column: 31
-                  operand:
+                    column: 27
+                  invocation:
                     pos:
                       filename: Invocation with prefix, infix, and postfix ops
                       offset: 30
                       line: 1
                       column: 31
-                    prefixoperators: []
                     operand:
                       pos:
                         filename: Invocation with prefix, infix, and postfix ops
                         offset: 30
                         line: 1
                         column: 31
-                      value:
+                      prefixoperators: []
+                      operand:
                         pos:
                           filename: Invocation with prefix, infix, and postfix ops
                           offset: 30
                           line: 1
                           column: 31
-                        value: 4
-                    postfixops: []
-                  infixoperator: ""
-                  infixoperation: null
-                postfixoperator: ""
-          infixoperator: ""
-          infixoperation: null
+                        value:
+                          pos:
+                            filename: Invocation with prefix, infix, and postfix ops
+                            offset: 30
+                            line: 1
+                            column: 31
+                          value: 4
+                      postfixops: []
+                    infixops: []
+                  postfixoperator: ""
 
 ---
 
@@ -3947,30 +3839,23 @@ statements:
               column: 1
             ident: my
           postfixops: []
-        infixoperator: .
-        infixoperation:
-          pos:
-            filename: Binding
-            offset: 3
-            line: 1
-            column: 4
-          operand:
-            pos:
-              filename: Binding
-              offset: 3
-              line: 1
-              column: 4
-            prefixoperators: []
+        infixops:
+          - infixoperator: .
             operand:
               pos:
                 filename: Binding
                 offset: 3
                 line: 1
                 column: 4
-              ident: "`-path`"
-            postfixops: []
-          infixoperator: ""
-          infixoperation: null
+              prefixoperators: []
+              operand:
+                pos:
+                  filename: Binding
+                  offset: 3
+                  line: 1
+                  column: 4
+                ident: "`-path`"
+              postfixops: []
 
 ---
 
@@ -4021,30 +3906,23 @@ statements:
                 column: 3
               ident: my
             postfixops: []
-          infixoperator: .
-          infixoperation:
-            pos:
-              filename: Quoted binding
-              offset: 5
-              line: 1
-              column: 6
-            operand:
-              pos:
-                filename: Quoted binding
-                offset: 5
-                line: 1
-                column: 6
-              prefixoperators: []
+          infixops:
+            - infixoperator: .
               operand:
                 pos:
                   filename: Quoted binding
                   offset: 5
                   line: 1
                   column: 6
-                ident: "`-path`"
-              postfixops: []
-            infixoperator: ""
-            infixoperation: null
+                prefixoperators: []
+                operand:
+                  pos:
+                    filename: Quoted binding
+                    offset: 5
+                    line: 1
+                    column: 6
+                  ident: "`-path`"
+                postfixops: []
 
 ---
 
@@ -4280,39 +4158,31 @@ statements:
                       column: 9
                     value: 1
                 postfixops: []
-              infixoperator: +
-              infixoperation:
-                pos:
-                  filename: Return with expression
-                  offset: 12
-                  line: 1
-                  column: 13
-                operand:
-                  pos:
-                    filename: Return with expression
-                    offset: 12
-                    line: 1
-                    column: 13
-                  prefixoperators: []
+              infixops:
+                - infixoperator: +
                   operand:
                     pos:
                       filename: Return with expression
                       offset: 12
                       line: 1
                       column: 13
-                    value:
+                    prefixoperators: []
+                    operand:
                       pos:
                         filename: Return with expression
                         offset: 12
                         line: 1
                         column: 13
-                      value: 2
-                  postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                      value:
+                        pos:
+                          filename: Return with expression
+                          offset: 12
+                          line: 1
+                          column: 13
+                        value: 2
+                    postfixops: []
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -4383,39 +4253,31 @@ statements:
                       column: 16
                     value: 3
                 postfixops: []
-              infixoperator: "*"
-              infixoperation:
-                pos:
-                  filename: Return with tag and expression
-                  offset: 19
-                  line: 1
-                  column: 20
-                operand:
-                  pos:
-                    filename: Return with tag and expression
-                    offset: 19
-                    line: 1
-                    column: 20
-                  prefixoperators: []
+              infixops:
+                - infixoperator: "*"
                   operand:
                     pos:
                       filename: Return with tag and expression
                       offset: 19
                       line: 1
                       column: 20
-                    value:
+                    prefixoperators: []
+                    operand:
                       pos:
                         filename: Return with tag and expression
                         offset: 19
                         line: 1
                         column: 20
-                      value: 4
-                  postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                      value:
+                        pos:
+                          filename: Return with tag and expression
+                          offset: 19
+                          line: 1
+                          column: 20
+                        value: 4
+                    postfixops: []
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -5053,8 +4915,7 @@ statements:
                 column: 9
               value: 1
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
   - pos:
       filename: Multiple root statements
       offset: 10
@@ -5099,8 +4960,7 @@ statements:
                 column: 9
               value: 2
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -5274,39 +5134,31 @@ statements:
                       column: 10
                     value: 1
                 postfixops: []
-              infixoperator: +
-              infixoperation:
-                pos:
-                  filename: Grouped expression
-                  offset: 13
-                  line: 1
-                  column: 14
-                operand:
-                  pos:
-                    filename: Grouped expression
-                    offset: 13
-                    line: 1
-                    column: 14
-                  prefixoperators: []
+              infixops:
+                - infixoperator: +
                   operand:
                     pos:
                       filename: Grouped expression
                       offset: 13
                       line: 1
                       column: 14
-                    value:
+                    prefixoperators: []
+                    operand:
                       pos:
                         filename: Grouped expression
                         offset: 13
                         line: 1
                         column: 14
-                      value: 2
-                  postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                      value:
+                        pos:
+                          filename: Grouped expression
+                          offset: 13
+                          line: 1
+                          column: 14
+                        value: 2
+                    postfixops: []
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -5398,8 +5250,7 @@ statements:
                           column: 29
                         value: 1
                     postfixops: []
-                  infixoperator: ""
-                  infixoperation: null
+                  infixops: []
 
 ---
 
@@ -5597,8 +5448,7 @@ statements:
                 column: 18
               value: 1
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -5660,8 +5510,7 @@ statements:
                 column: 21
               value: 1
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -5887,11 +5736,9 @@ statements:
                         column: 6
                       value: 1
                   postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                infixops: []
               postfixoperator: ""
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -5942,8 +5789,7 @@ statements:
                     column: 9
                   value: 1
               postfixops: []
-            infixoperator: ""
-            infixoperation: null
+            infixops: []
     statement:
       pos:
         filename: Trailing comma in annotation arguments
@@ -6075,8 +5921,7 @@ statements:
                 column: 10
               ident: MyType
             postfixops: []
-          infixoperator: ""
-          infixoperation: null
+          infixops: []
       value: null
 
 ---
@@ -6129,8 +5974,7 @@ statements:
                   column: 15
                 ident: "true"
               postfixops: []
-            infixoperator: ""
-            infixoperation: null
+            infixops: []
     statement:
       pos:
         filename: Multiple annotations
@@ -6271,11 +6115,9 @@ statements:
                                       column: 18
                                     ident: lastName
                                   postfixops: []
-                                infixoperator: ""
-                                infixoperation: null
+                                infixops: []
                       postfixops: []
-                    infixoperator: ""
-                    infixoperation: null
+                    infixops: []
                 - pos:
                     filename: Nested string interpolation
                     offset: 28
@@ -6284,8 +6126,7 @@ statements:
                   text: "!"
                   interpolation: null
           postfixops: []
-        infixoperator: ""
-        infixoperation: null
+        infixops: []
 
 ---
 
@@ -6361,8 +6202,7 @@ statements:
                         column: 13
                       value: 1
                   postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                infixops: []
 
 ---
 
@@ -6484,36 +6324,29 @@ statements:
                       column: 9
                     ident: x
                   postfixops: []
-                infixoperator: ">"
-                infixoperation:
-                  pos:
-                    filename: case statement
-                    offset: 19
-                    line: 2
-                    column: 13
-                  operand:
-                    pos:
-                      filename: case statement
-                      offset: 19
-                      line: 2
-                      column: 13
-                    prefixoperators: []
+                infixops:
+                  - infixoperator: ">"
                     operand:
                       pos:
                         filename: case statement
                         offset: 19
                         line: 2
                         column: 13
-                      value:
+                      prefixoperators: []
+                      operand:
                         pos:
                           filename: case statement
                           offset: 19
                           line: 2
                           column: 13
-                        value: 10
-                    postfixops: []
-                  infixoperator: ""
-                  infixoperation: null
+                        value:
+                          pos:
+                            filename: case statement
+                            offset: 19
+                            line: 2
+                            column: 13
+                          value: 10
+                      postfixops: []
               then:
                 pos:
                   filename: case statement
@@ -6541,8 +6374,7 @@ statements:
                         column: 17
                       value: 1
                   postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                infixops: []
             else: null
           - pos:
               filename: case statement
@@ -6577,8 +6409,7 @@ statements:
                       column: 13
                     value: 2
                 postfixops: []
-              infixoperator: ""
-              infixoperation: null
+              infixops: []
 
 ---
 
@@ -6641,36 +6472,29 @@ statements:
                       column: 9
                     ident: x
                   postfixops: []
-                infixoperator: ==
-                infixoperation:
-                  pos:
-                    filename: Case statement with many branches
-                    offset: 20
-                    line: 2
-                    column: 14
-                  operand:
-                    pos:
-                      filename: Case statement with many branches
-                      offset: 20
-                      line: 2
-                      column: 14
-                    prefixoperators: []
+                infixops:
+                  - infixoperator: ==
                     operand:
                       pos:
                         filename: Case statement with many branches
                         offset: 20
                         line: 2
                         column: 14
-                      value:
+                      prefixoperators: []
+                      operand:
                         pos:
                           filename: Case statement with many branches
                           offset: 20
                           line: 2
                           column: 14
-                        value: 1
-                    postfixops: []
-                  infixoperator: ""
-                  infixoperation: null
+                        value:
+                          pos:
+                            filename: Case statement with many branches
+                            offset: 20
+                            line: 2
+                            column: 14
+                          value: 1
+                      postfixops: []
               then:
                 pos:
                   filename: Case statement with many branches
@@ -6698,8 +6522,7 @@ statements:
                         column: 17
                       value: 1
                   postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                infixops: []
             else: null
           - pos:
               filename: Case statement with many branches
@@ -6733,36 +6556,29 @@ statements:
                       column: 9
                     ident: x
                   postfixops: []
-                infixoperator: ==
-                infixoperation:
-                  pos:
-                    filename: Case statement with many branches
-                    offset: 38
-                    line: 3
-                    column: 14
-                  operand:
-                    pos:
-                      filename: Case statement with many branches
-                      offset: 38
-                      line: 3
-                      column: 14
-                    prefixoperators: []
+                infixops:
+                  - infixoperator: ==
                     operand:
                       pos:
                         filename: Case statement with many branches
                         offset: 38
                         line: 3
                         column: 14
-                      value:
+                      prefixoperators: []
+                      operand:
                         pos:
                           filename: Case statement with many branches
                           offset: 38
                           line: 3
                           column: 14
-                        value: 2
-                    postfixops: []
-                  infixoperator: ""
-                  infixoperation: null
+                        value:
+                          pos:
+                            filename: Case statement with many branches
+                            offset: 38
+                            line: 3
+                            column: 14
+                          value: 2
+                      postfixops: []
               then:
                 pos:
                   filename: Case statement with many branches
@@ -6790,8 +6606,7 @@ statements:
                         column: 17
                       value: 2
                   postfixops: []
-                infixoperator: ""
-                infixoperation: null
+                infixops: []
             else: null
           - pos:
               filename: Case statement with many branches
@@ -6826,8 +6641,7 @@ statements:
                       column: 10
                     value: 3
                 postfixops: []
-              infixoperator: ""
-              infixoperation: null
+              infixops: []
 
 ---
 
@@ -6884,41 +6698,30 @@ statements:
                   column: 8
                 ident: x
               postfixops: []
-            infixoperator: ">"
-            infixoperation:
-              pos:
-                filename: Using if shortcut with block
-                offset: 12
-                line: 2
-                column: 12
-              operand:
-                pos:
-                  filename: Using if shortcut with block
-                  offset: 12
-                  line: 2
-                  column: 12
-                prefixoperators: []
+            infixops:
+              - infixoperator: ">"
                 operand:
                   pos:
                     filename: Using if shortcut with block
                     offset: 12
                     line: 2
                     column: 12
-                  value:
+                  prefixoperators: []
+                  operand:
                     pos:
                       filename: Using if shortcut with block
                       offset: 12
                       line: 2
                       column: 12
-                    value: 10
-                postfixops: []
-              infixoperator: "&&"
-              infixoperation:
-                pos:
-                  filename: Using if shortcut with block
-                  offset: 18
-                  line: 2
-                  column: 18
+                    value:
+                      pos:
+                        filename: Using if shortcut with block
+                        offset: 12
+                        line: 2
+                        column: 12
+                      value: 10
+                  postfixops: []
+              - infixoperator: "&&"
                 operand:
                   pos:
                     filename: Using if shortcut with block
@@ -6934,86 +6737,66 @@ statements:
                       column: 18
                     ident: "y"
                   postfixops: []
-                infixoperator: <
-                infixoperation:
+              - infixoperator: <
+                operand:
                   pos:
                     filename: Using if shortcut with block
                     offset: 22
                     line: 2
                     column: 22
+                  prefixoperators: []
                   operand:
                     pos:
                       filename: Using if shortcut with block
                       offset: 22
                       line: 2
                       column: 22
-                    prefixoperators: []
-                    operand:
+                    value:
                       pos:
                         filename: Using if shortcut with block
                         offset: 22
                         line: 2
                         column: 22
-                      value:
-                        pos:
-                          filename: Using if shortcut with block
-                          offset: 22
-                          line: 2
-                          column: 22
-                        value: 20
-                    postfixops: []
-                  infixoperator: "||"
-                  infixoperation:
+                      value: 20
+                  postfixops: []
+              - infixoperator: "||"
+                operand:
+                  pos:
+                    filename: Using if shortcut with block
+                    offset: 28
+                    line: 2
+                    column: 28
+                  prefixoperators: []
+                  operand:
                     pos:
                       filename: Using if shortcut with block
                       offset: 28
                       line: 2
                       column: 28
-                    operand:
-                      pos:
-                        filename: Using if shortcut with block
-                        offset: 28
-                        line: 2
-                        column: 28
-                      prefixoperators: []
-                      operand:
-                        pos:
-                          filename: Using if shortcut with block
-                          offset: 28
-                          line: 2
-                          column: 28
-                        ident: z
-                      postfixops: []
-                    infixoperator: ==
-                    infixoperation:
+                    ident: z
+                  postfixops: []
+              - infixoperator: ==
+                operand:
+                  pos:
+                    filename: Using if shortcut with block
+                    offset: 33
+                    line: 2
+                    column: 33
+                  prefixoperators: []
+                  operand:
+                    pos:
+                      filename: Using if shortcut with block
+                      offset: 33
+                      line: 2
+                      column: 33
+                    value:
                       pos:
                         filename: Using if shortcut with block
                         offset: 33
                         line: 2
                         column: 33
-                      operand:
-                        pos:
-                          filename: Using if shortcut with block
-                          offset: 33
-                          line: 2
-                          column: 33
-                        prefixoperators: []
-                        operand:
-                          pos:
-                            filename: Using if shortcut with block
-                            offset: 33
-                            line: 2
-                            column: 33
-                          value:
-                            pos:
-                              filename: Using if shortcut with block
-                              offset: 33
-                              line: 2
-                              column: 33
-                            value: 30
-                        postfixops: []
-                      infixoperator: ""
-                      infixoperation: null
+                      value: 30
+                  postfixops: []
           then:
             pos:
               filename: Using if shortcut with block
@@ -7057,35 +6840,24 @@ statements:
                           column: 12
                         ident: x
                       postfixops: []
-                    infixoperator: +
-                    infixoperation:
-                      pos:
-                        filename: Using if shortcut with block
-                        offset: 54
-                        line: 3
-                        column: 16
-                      operand:
-                        pos:
-                          filename: Using if shortcut with block
-                          offset: 54
-                          line: 3
-                          column: 16
-                        prefixoperators: []
+                    infixops:
+                      - infixoperator: +
                         operand:
                           pos:
                             filename: Using if shortcut with block
                             offset: 54
                             line: 3
                             column: 16
-                          ident: "y"
-                        postfixops: []
-                      infixoperator: +
-                      infixoperation:
-                        pos:
-                          filename: Using if shortcut with block
-                          offset: 58
-                          line: 3
-                          column: 20
+                          prefixoperators: []
+                          operand:
+                            pos:
+                              filename: Using if shortcut with block
+                              offset: 54
+                              line: 3
+                              column: 16
+                            ident: "y"
+                          postfixops: []
+                      - infixoperator: +
                         operand:
                           pos:
                             filename: Using if shortcut with block
@@ -7101,8 +6873,6 @@ statements:
                               column: 20
                             ident: z
                           postfixops: []
-                        infixoperator: ""
-                        infixoperation: null
         elseifs:
           - pos:
               filename: Using if shortcut with block
@@ -7137,8 +6907,7 @@ statements:
                       column: 28
                     invocation: null
                     postfixoperator: ""
-              infixoperator: ""
-              infixoperation: null
+              infixops: []
             then:
               pos:
                 filename: Using if shortcut with block
@@ -7188,8 +6957,7 @@ statements:
                               column: 20
                             value: 5
                         postfixops: []
-                      infixoperator: ""
-                      infixoperation: null
+                      infixops: []
         else:
           pos:
             filename: Using if shortcut with block
@@ -7258,8 +7026,7 @@ statements:
                                 column: 17
                               ident: world
                             postfixops: []
-                          infixoperator: ""
-                          infixoperation: null
+                          infixops: []
                         postfixoperator: ""
                       - pos:
                           filename: Using if shortcut with block
@@ -7268,37 +7035,30 @@ statements:
                           column: 23
                         invocation: null
                         postfixoperator: ?
-                  infixoperator: .
-                  infixoperation:
-                    pos:
-                      filename: Using if shortcut with block
-                      offset: 156
-                      line: 7
-                      column: 25
-                    operand:
-                      pos:
-                        filename: Using if shortcut with block
-                        offset: 156
-                        line: 7
-                        column: 25
-                      prefixoperators: []
+                  infixops:
+                    - infixoperator: .
                       operand:
                         pos:
                           filename: Using if shortcut with block
                           offset: 156
                           line: 7
                           column: 25
-                        ident: destroy
-                      postfixops:
-                        - pos:
+                        prefixoperators: []
+                        operand:
+                          pos:
                             filename: Using if shortcut with block
-                            offset: 163
+                            offset: 156
                             line: 7
-                            column: 32
-                          invocation: null
-                          postfixoperator: ""
-                    infixoperator: ""
-                    infixoperation: null
+                            column: 25
+                          ident: destroy
+                        postfixops:
+                          - pos:
+                              filename: Using if shortcut with block
+                              offset: 163
+                              line: 7
+                              column: 32
+                            invocation: null
+                            postfixoperator: ""
 
 ---
 
@@ -7381,7 +7141,6 @@ statements:
                           column: 20
                         value: 5
                     postfixops: []
-                  infixoperator: ""
-                  infixoperation: null
+                  infixops: []
 
 ---
