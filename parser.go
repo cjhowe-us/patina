@@ -45,7 +45,7 @@ var (
 	intTypeRegex = regexp.MustCompile(`^([iu])(\d+)`)
 	Parser       = participle.MustBuild[Root](
 		participle.Lexer(Lexer),
-		participle.UseLookahead(10),
+		participle.UseLookahead(5),
 		participle.Elide("WS", "EOL", "LineComment", "BlockCommentStart", "BlockCommentEnd", "BlockCommentContents"),
 		participle.Union[Statement](Module{}, FunctionStatement{}, ReturnStatement{}, LetStatement{}, BreakStatement{}, ExpressionStatement{}),
 		participle.Union[Expression](QuotedExpression{}, IfExpression{}, CaseExpression{}, Lambda{}, StaticExpression{}, Block{}, Operation{}),
