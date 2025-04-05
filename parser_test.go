@@ -148,24 +148,24 @@ func TestParser(t *testing.T) {
 		{
 			name: "case statement",
 			src: `case {
-				if x > 10 then 1
+				if (x > 10) 1
 			    else 2
 			}`,
 		},
 		{
 			name: "Case statement with many branches",
 			src: `case {
-				if x == 1 then 1
-				if x == 2 then 2
+				if (x == 1) 1
+				if (x == 2) 2
 				else 3
 			}`,
 		},
 		{
 			name: "Using if shortcut with block",
 			src: `
-			if x > 10 && y < 20 || z == 30 {
+			if (x > 10 && y < 20 || z == 30) {
 				return x + y + z
-			} else if interlockable() {
+			} else if (interlockable()) {
 			    break glooblefarble
 			} else {
 			    takeOver(world)?.destroy()

@@ -156,9 +156,8 @@ type (
 	}
 	IfBranch struct {
 		Pos       lexer.Position
-		Condition Expression `parser:"'if' @@"`
-		Block     *Block     `parser:"(@@"`
-		Then      Expression `parser:"| 'then' @@)"`
+		Condition Expression `parser:"'if' '(' @@ ')'"`
+		Then      Expression `parser:"@@"`
 	}
 
 	CaseExpression struct {
@@ -167,8 +166,8 @@ type (
 	}
 	CaseBranch struct {
 		Pos  lexer.Position
-		If   *IfBranch  `parser:"(@@"`
-		Else Expression `parser:"| 'else' @@)"`
+		If   *IfBranch  `parser:"@@"`
+		Else Expression `parser:"| 'else' @@"`
 	}
 
 	Lambda struct {
