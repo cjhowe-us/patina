@@ -71,6 +71,7 @@ statements:
                         line: 2
                         column: 13
                       isowned: false
+                      israw: false
                       ismutable: true
                       targettype:
                         pos:
@@ -1031,6 +1032,7 @@ statements:
           line: 2
           column: 13
         isowned: false
+        israw: false
         ismutable: true
         targettype:
           pos:
@@ -4681,6 +4683,7 @@ statements:
           line: 1
           column: 8
         isowned: true
+        israw: false
         ismutable: false
         targettype:
           pos:
@@ -4994,6 +4997,7 @@ statements:
           line: 1
           column: 8
         isowned: false
+        israw: false
         ismutable: false
         targettype:
           pos:
@@ -5377,6 +5381,7 @@ statements:
           line: 1
           column: 8
         isowned: false
+        israw: false
         ismutable: false
         targettype:
           pos:
@@ -7142,5 +7147,49 @@ statements:
                         value: 5
                     postfixops: []
                   infixops: []
+
+---
+
+[TestParser/Raw_pointer_type - 1]
+pos:
+  filename: Raw pointer type
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Raw pointer type
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Raw pointer type
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: x
+      type:
+        pos:
+          filename: Raw pointer type
+          offset: 7
+          line: 1
+          column: 8
+        isowned: false
+        israw: true
+        ismutable: false
+        targettype:
+          pos:
+            filename: Raw pointer type
+            offset: 12
+            line: 1
+            column: 13
+          signed: true
+          bitsize: 32
+      value: null
 
 ---

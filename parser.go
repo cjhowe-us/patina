@@ -265,8 +265,9 @@ type (
 	PointerType struct {
 		Pos        lexer.Position
 		IsOwned    bool      `parser:"'*' (@'own'"`
-		IsMutable  bool      `parser:"| @'mut')?"`
-		TargetType TypeValue `parser:"@@"`
+		IsRaw      bool      `parser:"| @'raw'"`
+		IsMutable  bool      `parser:"| @'mut'"`
+		TargetType TypeValue `parser:")? @@"`
 	}
 	ArrayType struct {
 		Pos         lexer.Position

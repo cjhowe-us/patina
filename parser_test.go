@@ -300,6 +300,10 @@ func TestParser(t *testing.T) {
 			}`,
 		},
 		{
+			name: "Raw pointer type",
+			src:  `let x: *raw i32`,
+		},
+		{
 			name: "Owned pointer type",
 			src:  `let x: *own i32`,
 		},
