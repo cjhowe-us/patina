@@ -22,8 +22,8 @@ var (
 			{Name: "Tag", Pattern: "@[a-zA-Z0-9_\\.]+", Action: nil},
 			{Name: "Ident", Pattern: "[a-zA-Z_][a-zA-Z0-9_]*|(?:`)[^`\\s]+(?:`)", Action: nil},
 			{Name: "Symbol", Pattern: `[:,]`, Action: nil},
-			{Name: "Operator", Pattern: `[~!@#$%^&*\-=+:<>?/|\\]{2,}|[%^&*=+<>/\.]`, Action: nil},
-			{Name: "PrefixOrInfixOperator", Pattern: `[\-]`, Action: nil},
+			{Name: "Operator", Pattern: `[~!@#$%^&*\-=+:<>?/|\\]{2,}|[%^=+<>/\.]`, Action: nil},
+			{Name: "PrefixOrInfixOperator", Pattern: `[&*\-]`, Action: nil},
 			{Name: "PrefixOperator", Pattern: `[~!#$\\]`, Action: nil},
 			{Name: "PostfixOperator", Pattern: `[?]`, Action: nil},
 			{Name: "Integer", Pattern: `\d+`, Action: nil},
@@ -46,10 +46,10 @@ var (
 	intTypeRegex = regexp.MustCompile(`^([iu])(\d+)`)
 	Parser       = participle.MustBuild[Root](
 		participle.Lexer(Lexer),
-		participle.UseLookahead(5),
+		participle.UseLookahead(4),
 		participle.Elide("WS", "EOL", "LineComment", "BlockCommentStart", "BlockCommentEnd", "BlockCommentContents"),
 		participle.Union[Statement](Module{}, FunctionStatement{}, ReturnStatement{}, LetStatement{}, BreakStatement{}, ExpressionStatement{}),
-		participle.Union[Expression](QuotedExpression{}, IfExpression{}, CaseExpression{}, Lambda{}, StaticExpression{}, Block{}, Operation{}, TypeExpression{}),
+		participle.Union[Expression](QuotedExpression{}, IfExpression{}, CaseExpression{}, Lambda{}, StaticExpression{}, Block{}, TypeExpression{}, Operation{}),
 		participle.Union[Atom](GroupedExpression{}, AtomValue{}, Binding{}),
 		participle.Union[TypeValue](PointerType{}, FunctionType{}, ArrayType{}, IntegerType{}),
 		participle.Union[Value](Integer{}, String{}, PointerType{}, FunctionType{}, ArrayType{}, IntegerType{}),
@@ -206,7 +206,7 @@ type (
 
 	TypeExpression struct {
 		Pos  lexer.Position
-		Atom Atom `parser:"@@"`
+		Type TypeValue `parser:"@@"`
 	}
 )
 

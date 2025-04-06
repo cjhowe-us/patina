@@ -51,38 +51,23 @@ statements:
                   offset: 26
                   line: 2
                   column: 13
-                operand:
+                type:
                   pos:
                     filename: Module
                     offset: 26
                     line: 2
                     column: 13
-                  prefixoperators: []
-                  operand:
+                  isowned: false
+                  israw: false
+                  ismutable: true
+                  targettype:
                     pos:
                       filename: Module
-                      offset: 26
+                      offset: 31
                       line: 2
-                      column: 13
-                    value:
-                      pos:
-                        filename: Module
-                        offset: 26
-                        line: 2
-                        column: 13
-                      isowned: false
-                      israw: false
-                      ismutable: true
-                      targettype:
-                        pos:
-                          filename: Module
-                          offset: 31
-                          line: 2
-                          column: 18
-                        signed: true
-                        bitsize: 32
-                  postfixops: []
-                infixops: []
+                      column: 18
+                    signed: true
+                    bitsize: 32
 
 ---
 
@@ -924,29 +909,14 @@ statements:
           offset: 8
           line: 1
           column: 9
-        operand:
+        type:
           pos:
             filename: Integer type
             offset: 8
             line: 1
             column: 9
-          prefixoperators: []
-          operand:
-            pos:
-              filename: Integer type
-              offset: 8
-              line: 1
-              column: 9
-            value:
-              pos:
-                filename: Integer type
-                offset: 8
-                line: 1
-                column: 9
-              signed: true
-              bitsize: 64
-          postfixops: []
-        infixops: []
+          signed: true
+          bitsize: 64
 
 ---
 
