@@ -3654,7 +3654,7 @@ statements:
 ---
 
 [TestLexer/Integer - 1]
-  - type: -19
+  - type: -20
     value: "123"
     pos:
       filename: Integer
@@ -3672,21 +3672,21 @@ statements:
 ---
 
 [TestLexer/String - 1]
-  - type: -20
+  - type: -21
     value: "\""
     pos:
       filename: String
       offset: 0
       line: 1
       column: 1
-  - type: -23
+  - type: -24
     value: Hello, world!
     pos:
       filename: String
       offset: 1
       line: 1
       column: 2
-  - type: -21
+  - type: -22
     value: "\""
     pos:
       filename: String
@@ -3704,7 +3704,7 @@ statements:
 ---
 
 [TestLexer/Prefix_operator - 1]
-  - type: -16
+  - type: -18
     value: "~"
     pos:
       filename: Prefix operator
@@ -3722,7 +3722,7 @@ statements:
 ---
 
 [TestLexer/Postfix_operator - 1]
-  - type: -17
+  - type: -19
     value: ?
     pos:
       filename: Postfix operator
@@ -3740,7 +3740,7 @@ statements:
 ---
 
 [TestLexer/Infix_operator - 1]
-  - type: -18
+  - type: -16
     value: +
     pos:
       filename: Infix operator
@@ -4815,14 +4815,14 @@ statements:
 ---
 
 [TestLexer/Empty_String - 1]
-  - type: -20
+  - type: -21
     value: "\""
     pos:
       filename: Empty String
       offset: 0
       line: 1
       column: 1
-  - type: -21
+  - type: -22
     value: "\""
     pos:
       filename: Empty String
@@ -4840,7 +4840,7 @@ statements:
 ---
 
 [TestLexer/Zero_Integer - 1]
-  - type: -19
+  - type: -20
     value: "0"
     pos:
       filename: Zero Integer
@@ -5817,21 +5817,21 @@ statements:
 ---
 
 [TestLexer/String_Interpolation - 1]
-  - type: -20
+  - type: -21
     value: "\""
     pos:
       filename: String Interpolation
       offset: 0
       line: 1
       column: 1
-  - type: -23
+  - type: -24
     value: "Hello, "
     pos:
       filename: String Interpolation
       offset: 1
       line: 1
       column: 2
-  - type: -22
+  - type: -23
     value: "\\("
     pos:
       filename: String Interpolation
@@ -5852,14 +5852,14 @@ statements:
       offset: 14
       line: 1
       column: 15
-  - type: -23
+  - type: -24
     value: "!"
     pos:
       filename: String Interpolation
       offset: 15
       line: 1
       column: 16
-  - type: -21
+  - type: -22
     value: "\""
     pos:
       filename: String Interpolation

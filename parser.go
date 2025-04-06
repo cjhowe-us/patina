@@ -22,9 +22,10 @@ var (
 			{Name: "Tag", Pattern: "@[a-zA-Z0-9_\\.]+", Action: nil},
 			{Name: "Ident", Pattern: "[a-zA-Z_][a-zA-Z0-9_]*|(?:`)[^`\\s]+(?:`)", Action: nil},
 			{Name: "Symbol", Pattern: `[:,]`, Action: nil},
-			{Name: "PrefixOperator", Pattern: `[~!#$\-\\]`, Action: nil},
+			{Name: "Operator", Pattern: `[~!@#$%^&*\-=+:<>?/|\\]{2,}|[%^&*=+<>/\.]`, Action: nil},
+			{Name: "PrefixOrInfixOperator", Pattern: `[\-]`, Action: nil},
+			{Name: "PrefixOperator", Pattern: `[~!#$\\]`, Action: nil},
 			{Name: "PostfixOperator", Pattern: `[?]`, Action: nil},
-			{Name: "Operator", Pattern: `[~!@$%^&*\-=+;:<>?/|\\]{2,}|[%^&*\-=+<>/\.]`, Action: nil},
 			{Name: "Integer", Pattern: `\d+`, Action: nil},
 			{Name: "StringStart", Pattern: `"`, Action: lexer.Push("String")},
 		},
@@ -48,10 +49,10 @@ var (
 		participle.UseLookahead(5),
 		participle.Elide("WS", "EOL", "LineComment", "BlockCommentStart", "BlockCommentEnd", "BlockCommentContents"),
 		participle.Union[Statement](Module{}, FunctionStatement{}, ReturnStatement{}, LetStatement{}, BreakStatement{}, ExpressionStatement{}),
-		participle.Union[Expression](QuotedExpression{}, IfExpression{}, CaseExpression{}, Lambda{}, StaticExpression{}, Block{}, Operation{}),
+		participle.Union[Expression](QuotedExpression{}, IfExpression{}, CaseExpression{}, Lambda{}, StaticExpression{}, Block{}, Operation{}, TypeExpression{}),
 		participle.Union[Atom](GroupedExpression{}, AtomValue{}, Binding{}),
-		participle.Union[TypeValue](PointerType{}, FunctionType{}, ArrayType{}, IntegerType{}, TypeExpression{}),
-		participle.Union[Value](Integer{}, String{}, PointerType{}, FunctionType{}, ArrayType{}, IntegerType{}, TypeExpression{}),
+		participle.Union[TypeValue](PointerType{}, FunctionType{}, ArrayType{}, IntegerType{}),
+		participle.Union[Value](Integer{}, String{}, PointerType{}, FunctionType{}, ArrayType{}, IntegerType{}),
 	)
 )
 
@@ -188,12 +189,12 @@ type (
 		InfixOps []InfixOperation `parser:"@@*"`
 	}
 	InfixOperation struct {
-		InfixOperator string  `parser:"@(PrefixOperator | Operator)"`
+		InfixOperator string  `parser:"@(PrefixOrInfixOperator | Operator)"`
 		Operand       Operand `parser:"@@"`
 	}
 	Operand struct {
 		Pos             lexer.Position
-		PrefixOperators []string           `parser:"@PrefixOperator*"`
+		PrefixOperators []string           `parser:"@(PrefixOperator | PrefixOrInfixOperator)*"`
 		Operand         Atom               `parser:"@@"`
 		PostfixOps      []PostfixOperation `parser:"@@*"`
 	}
@@ -201,6 +202,11 @@ type (
 		Pos             lexer.Position
 		Invocation      Expression `parser:"('(' [@@ (',' @@)* ','?] ')'"`
 		PostfixOperator string     `parser:"| @PostfixOperator)"`
+	}
+
+	TypeExpression struct {
+		Pos  lexer.Position
+		Atom Atom `parser:"@@"`
 	}
 )
 
@@ -211,6 +217,7 @@ func (Lambda) expression()           {}
 func (StaticExpression) expression() {}
 func (Block) expression()            {}
 func (Operation) expression()        {}
+func (TypeExpression) expression()   {}
 
 type (
 	Atom              interface{ atom() }
@@ -285,22 +292,16 @@ type (
 		Name string    `parser:"@Ident"`
 		Type TypeValue `parser:"':' @@"`
 	}
-	TypeExpression struct {
-		Pos        lexer.Position
-		Expression Expression `parser:"'\\\\' '(' @@ ')'"`
-	}
 )
 
-func (IntegerType) type_value()    {}
-func (PointerType) type_value()    {}
-func (ArrayType) type_value()      {}
-func (FunctionType) type_value()   {}
-func (TypeExpression) type_value() {}
-func (IntegerType) value()         {}
-func (PointerType) value()         {}
-func (ArrayType) value()           {}
-func (FunctionType) value()        {}
-func (TypeExpression) value()      {}
+func (IntegerType) type_value()  {}
+func (PointerType) type_value()  {}
+func (ArrayType) type_value()    {}
+func (FunctionType) type_value() {}
+func (IntegerType) value()       {}
+func (PointerType) value()       {}
+func (ArrayType) value()         {}
+func (FunctionType) value()      {}
 
 func (it *IntegerType) Parse(lex *lexer.PeekingLexer) error {
 	token := lex.Peek()

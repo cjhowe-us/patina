@@ -316,10 +316,6 @@ func TestParser(t *testing.T) {
 			src:  `let x: fun MyFunc(a: i32): i32`,
 		},
 		{
-			name: "Type expression",
-			src:  `let x: \(MyType)`,
-		},
-		{
 			name: "Empty input",
 			src:  "",
 		},
