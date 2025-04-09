@@ -3688,7 +3688,7 @@ statements:
                 offset: 3
                 line: 1
                 column: 4
-              ident: "`-path`"
+              ident: -path
             postfix: []
 
 ---
@@ -3748,7 +3748,7 @@ statements:
                   offset: 5
                   line: 1
                   column: 6
-                ident: "`-path`"
+                ident: -path
               postfix: []
 
 ---

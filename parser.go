@@ -64,6 +64,8 @@ var (
 		participle.Map(func(token lexer.Token) (lexer.Token, error) {
 			if slices.Contains(keywords, token.Value) {
 				token.Type = keywordType
+			} else {
+				token.Value = strings.TrimPrefix(strings.TrimSuffix(token.Value, "`"), "`")
 			}
 			return token, nil
 		}, "Ident"),
