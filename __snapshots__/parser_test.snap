@@ -51,17 +51,29 @@ statements:
                   offset: 26
                   line: 2
                   column: 13
-                isowned: false
-                israw: false
-                ismutable: true
-                targettype:
+                type:
                   pos:
                     filename: Module
-                    offset: 31
+                    offset: 26
                     line: 2
-                    column: 18
-                  signed: true
-                  bitsize: 32
+                    column: 13
+                  isowned: false
+                  israw: false
+                  ismutable: true
+                  target:
+                    pos:
+                      filename: Module
+                      offset: 31
+                      line: 2
+                      column: 18
+                    type:
+                      pos:
+                        filename: Module
+                        offset: 31
+                        line: 2
+                        column: 18
+                      signed: true
+                      bitsize: 32
 
 ---
 
@@ -241,8 +253,14 @@ statements:
           offset: 7
           line: 1
           column: 8
-        signed: true
-        bitsize: 64
+        type:
+          pos:
+            filename: Binding with type
+            offset: 7
+            line: 1
+            column: 8
+          signed: true
+          bitsize: 64
       value:
         pos:
           filename: Binding with type
@@ -297,8 +315,14 @@ statements:
           offset: 7
           line: 1
           column: 8
-        signed: true
-        bitsize: 64
+        type:
+          pos:
+            filename: Binding without init
+            offset: 7
+            line: 1
+            column: 8
+          signed: true
+          bitsize: 64
       value: null
 
 ---
@@ -338,8 +362,14 @@ statements:
               offset: 11
               line: 1
               column: 12
-            signed: true
-            bitsize: 64
+            type:
+              pos:
+                filename: Function statement
+                offset: 11
+                line: 1
+                column: 12
+              signed: true
+              bitsize: 64
         - pos:
             filename: Function statement
             offset: 16
@@ -352,16 +382,28 @@ statements:
               offset: 19
               line: 1
               column: 20
-            signed: false
-            bitsize: 64
+            type:
+              pos:
+                filename: Function statement
+                offset: 19
+                line: 1
+                column: 20
+              signed: false
+              bitsize: 64
       return:
         pos:
           filename: Function statement
           offset: 25
           line: 1
           column: 26
-        signed: true
-        bitsize: 64
+        type:
+          pos:
+            filename: Function statement
+            offset: 25
+            line: 1
+            column: 26
+          signed: true
+          bitsize: 64
       block:
         pos:
           filename: Function statement
@@ -848,8 +890,14 @@ statements:
           offset: 8
           line: 1
           column: 9
-        signed: true
-        bitsize: 64
+        type:
+          pos:
+            filename: Integer type
+            offset: 8
+            line: 1
+            column: 9
+          signed: true
+          bitsize: 64
 
 ---
 
@@ -882,8 +930,14 @@ statements:
           offset: 11
           line: 2
           column: 11
-        signed: true
-        bitsize: 64
+        type:
+          pos:
+            filename: Type value
+            offset: 11
+            line: 2
+            column: 11
+          signed: true
+          bitsize: 64
       value:
         pos:
           filename: Type value
@@ -928,17 +982,29 @@ statements:
           offset: 32
           line: 3
           column: 13
-        isowned: false
-        israw: false
-        ismutable: true
-        targettype:
+        type:
           pos:
             filename: Type value
-            offset: 37
+            offset: 32
             line: 3
-            column: 18
-          signed: true
-          bitsize: 64
+            column: 13
+          isowned: false
+          israw: false
+          ismutable: true
+          target:
+            pos:
+              filename: Type value
+              offset: 37
+              line: 3
+              column: 18
+            type:
+              pos:
+                filename: Type value
+                offset: 37
+                line: 3
+                column: 18
+              signed: true
+              bitsize: 64
       value:
         pos:
           filename: Type value
@@ -983,15 +1049,27 @@ statements:
           offset: 58
           line: 4
           column: 13
-        dimension: 10
-        elementtype:
+        type:
           pos:
             filename: Type value
-            offset: 62
+            offset: 58
             line: 4
-            column: 17
-          signed: true
-          bitsize: 64
+            column: 13
+          dimension: 10
+          element:
+            pos:
+              filename: Type value
+              offset: 62
+              line: 4
+              column: 17
+            type:
+              pos:
+                filename: Type value
+                offset: 62
+                line: 4
+                column: 17
+              signed: true
+              bitsize: 64
       value: null
   - pos:
       filename: Type value
@@ -1015,44 +1093,68 @@ statements:
           offset: 77
           line: 5
           column: 12
-        name: add
-        parameters:
-          - pos:
-              filename: Type value
-              offset: 85
-              line: 5
-              column: 20
-            name: a
-            type:
-              pos:
-                filename: Type value
-                offset: 88
-                line: 5
-                column: 23
-              signed: true
-              bitsize: 64
-          - pos:
-              filename: Type value
-              offset: 93
-              line: 5
-              column: 28
-            name: b
-            type:
-              pos:
-                filename: Type value
-                offset: 96
-                line: 5
-                column: 31
-              signed: true
-              bitsize: 64
-        return:
+        type:
           pos:
             filename: Type value
-            offset: 102
+            offset: 77
             line: 5
-            column: 37
-          signed: true
-          bitsize: 64
+            column: 12
+          name: add
+          parameters:
+            - pos:
+                filename: Type value
+                offset: 85
+                line: 5
+                column: 20
+              name: a
+              type:
+                pos:
+                  filename: Type value
+                  offset: 88
+                  line: 5
+                  column: 23
+                type:
+                  pos:
+                    filename: Type value
+                    offset: 88
+                    line: 5
+                    column: 23
+                  signed: true
+                  bitsize: 64
+            - pos:
+                filename: Type value
+                offset: 93
+                line: 5
+                column: 28
+              name: b
+              type:
+                pos:
+                  filename: Type value
+                  offset: 96
+                  line: 5
+                  column: 31
+                type:
+                  pos:
+                    filename: Type value
+                    offset: 96
+                    line: 5
+                    column: 31
+                  signed: true
+                  bitsize: 64
+          return:
+            pos:
+              filename: Type value
+              offset: 102
+              line: 5
+              column: 37
+            type:
+              pos:
+                filename: Type value
+                offset: 102
+                line: 5
+                column: 37
+              signed: true
+              bitsize: 64
       value:
         pos:
           filename: Type value
@@ -1260,8 +1362,14 @@ statements:
                 offset: 20
                 line: 1
                 column: 21
-              signed: true
-              bitsize: 32
+              type:
+                pos:
+                  filename: Lambda expression
+                  offset: 20
+                  line: 1
+                  column: 21
+                signed: true
+                bitsize: 32
         return: null
         body:
           pos:
@@ -2274,22 +2382,32 @@ statements:
               offset: 30
               line: 1
               column: 31
-            quoted:
-              pos:
-                filename: Function statement with annotation
-                offset: 32
-                line: 1
-                column: 33
-              prefix: []
-              operands:
-                - atom:
+            prefix:
+              - "\\"
+            operands:
+              - atom:
+                  pos:
+                    filename: Function statement with annotation
+                    offset: 31
+                    line: 1
+                    column: 32
+                  expression:
                     pos:
                       filename: Function statement with annotation
                       offset: 32
                       line: 1
                       column: 33
-                    ident: quoted
-                  postfix: []
+                    prefix: []
+                    operands:
+                      - atom:
+                          pos:
+                            filename: Function statement with annotation
+                            offset: 32
+                            line: 1
+                            column: 33
+                          ident: quoted
+                        postfix: []
+                postfix: []
     statement:
       pos:
         filename: Function statement with annotation
@@ -2311,8 +2429,14 @@ statements:
               offset: 52
               line: 1
               column: 53
-            signed: true
-            bitsize: 64
+            type:
+              pos:
+                filename: Function statement with annotation
+                offset: 52
+                line: 1
+                column: 53
+              signed: true
+              bitsize: 64
         - pos:
             filename: Function statement with annotation
             offset: 57
@@ -2325,16 +2449,28 @@ statements:
               offset: 60
               line: 1
               column: 61
-            signed: true
-            bitsize: 64
+            type:
+              pos:
+                filename: Function statement with annotation
+                offset: 60
+                line: 1
+                column: 61
+              signed: true
+              bitsize: 64
       return:
         pos:
           filename: Function statement with annotation
           offset: 66
           line: 1
           column: 67
-        signed: true
-        bitsize: 64
+        type:
+          pos:
+            filename: Function statement with annotation
+            offset: 66
+            line: 1
+            column: 67
+          signed: true
+          bitsize: 64
       block:
         pos:
           filename: Function statement with annotation
@@ -2728,49 +2864,59 @@ statements:
           offset: 0
           line: 1
           column: 1
-        quoted:
-          pos:
-            filename: Quoted expression
-            offset: 2
-            line: 1
-            column: 3
-          prefix: []
-          operands:
-            - atom:
+        prefix:
+          - "\\"
+        operands:
+          - atom:
+              pos:
+                filename: Quoted expression
+                offset: 1
+                line: 1
+                column: 2
+              expression:
                 pos:
                   filename: Quoted expression
                   offset: 2
                   line: 1
                   column: 3
-                value:
-                  pos:
-                    filename: Quoted expression
-                    offset: 2
-                    line: 1
-                    column: 3
-                  value: 1
-              postfix:
-                - pos:
-                    filename: Quoted expression
-                    offset: 4
-                    line: 1
-                    column: 5
-                  invocation: []
-                  operator: +
-            - atom:
-                pos:
-                  filename: Quoted expression
-                  offset: 6
-                  line: 1
-                  column: 7
-                value:
-                  pos:
-                    filename: Quoted expression
-                    offset: 6
-                    line: 1
-                    column: 7
-                  value: 2
-              postfix: []
+                prefix: []
+                operands:
+                  - atom:
+                      pos:
+                        filename: Quoted expression
+                        offset: 2
+                        line: 1
+                        column: 3
+                      value:
+                        pos:
+                          filename: Quoted expression
+                          offset: 2
+                          line: 1
+                          column: 3
+                        value: 1
+                    postfix:
+                      - pos:
+                          filename: Quoted expression
+                          offset: 4
+                          line: 1
+                          column: 5
+                        invocation: []
+                        operator: +
+                  - atom:
+                      pos:
+                        filename: Quoted expression
+                        offset: 6
+                        line: 1
+                        column: 7
+                      value:
+                        pos:
+                          filename: Quoted expression
+                          offset: 6
+                          line: 1
+                          column: 7
+                        value: 2
+                    postfix: []
+            postfix: []
 
 ---
 
@@ -3719,37 +3865,47 @@ statements:
           offset: 0
           line: 1
           column: 1
-        quoted:
-          pos:
-            filename: Quoted binding
-            offset: 2
-            line: 1
-            column: 3
-          prefix: []
-          operands:
-            - atom:
+        prefix:
+          - "\\"
+        operands:
+          - atom:
+              pos:
+                filename: Quoted binding
+                offset: 1
+                line: 1
+                column: 2
+              expression:
                 pos:
                   filename: Quoted binding
                   offset: 2
                   line: 1
                   column: 3
-                ident: my
-              postfix:
-                - pos:
-                    filename: Quoted binding
-                    offset: 4
-                    line: 1
-                    column: 5
-                  invocation: []
-                  operator: .
-            - atom:
-                pos:
-                  filename: Quoted binding
-                  offset: 5
-                  line: 1
-                  column: 6
-                ident: -path
-              postfix: []
+                prefix: []
+                operands:
+                  - atom:
+                      pos:
+                        filename: Quoted binding
+                        offset: 2
+                        line: 1
+                        column: 3
+                      ident: my
+                    postfix:
+                      - pos:
+                          filename: Quoted binding
+                          offset: 4
+                          line: 1
+                          column: 5
+                        invocation: []
+                        operator: .
+                  - atom:
+                      pos:
+                        filename: Quoted binding
+                        offset: 5
+                        line: 1
+                        column: 6
+                      ident: -path
+                    postfix: []
+            postfix: []
 
 ---
 
@@ -4481,17 +4637,29 @@ statements:
           offset: 7
           line: 1
           column: 8
-        isowned: true
-        israw: false
-        ismutable: false
-        targettype:
+        type:
           pos:
             filename: Owned pointer type
-            offset: 12
+            offset: 7
             line: 1
-            column: 13
-          signed: true
-          bitsize: 32
+            column: 8
+          isowned: true
+          israw: false
+          ismutable: false
+          target:
+            pos:
+              filename: Owned pointer type
+              offset: 12
+              line: 1
+              column: 13
+            type:
+              pos:
+                filename: Owned pointer type
+                offset: 12
+                line: 1
+                column: 13
+              signed: true
+              bitsize: 32
       value: null
 
 ---
@@ -4525,15 +4693,27 @@ statements:
           offset: 7
           line: 1
           column: 8
-        dimension: null
-        elementtype:
+        type:
           pos:
             filename: Unsized array type
-            offset: 9
+            offset: 7
             line: 1
-            column: 10
-          signed: true
-          bitsize: 32
+            column: 8
+          dimension: null
+          element:
+            pos:
+              filename: Unsized array type
+              offset: 9
+              line: 1
+              column: 10
+            type:
+              pos:
+                filename: Unsized array type
+                offset: 9
+                line: 1
+                column: 10
+              signed: true
+              bitsize: 32
       value: null
 
 ---
@@ -4567,30 +4747,48 @@ statements:
           offset: 7
           line: 1
           column: 8
-        name: MyFunc
-        parameters:
-          - pos:
+        type:
+          pos:
+            filename: Named function type
+            offset: 7
+            line: 1
+            column: 8
+          name: MyFunc
+          parameters:
+            - pos:
+                filename: Named function type
+                offset: 18
+                line: 1
+                column: 19
+              name: a
+              type:
+                pos:
+                  filename: Named function type
+                  offset: 21
+                  line: 1
+                  column: 22
+                type:
+                  pos:
+                    filename: Named function type
+                    offset: 21
+                    line: 1
+                    column: 22
+                  signed: true
+                  bitsize: 32
+          return:
+            pos:
               filename: Named function type
-              offset: 18
+              offset: 27
               line: 1
-              column: 19
-            name: a
+              column: 28
             type:
               pos:
                 filename: Named function type
-                offset: 21
+                offset: 27
                 line: 1
-                column: 22
+                column: 28
               signed: true
               bitsize: 32
-        return:
-          pos:
-            filename: Named function type
-            offset: 27
-            line: 1
-            column: 28
-          signed: true
-          bitsize: 32
       value: null
 
 ---
@@ -4783,24 +4981,42 @@ statements:
           offset: 7
           line: 1
           column: 8
-        isowned: false
-        israw: false
-        ismutable: false
-        targettype:
+        type:
           pos:
             filename: Pointer to array type
-            offset: 8
+            offset: 7
             line: 1
-            column: 9
-          dimension: 10
-          elementtype:
+            column: 8
+          isowned: false
+          israw: false
+          ismutable: false
+          target:
             pos:
               filename: Pointer to array type
-              offset: 12
+              offset: 8
               line: 1
-              column: 13
-            signed: true
-            bitsize: 32
+              column: 9
+            type:
+              pos:
+                filename: Pointer to array type
+                offset: 8
+                line: 1
+                column: 9
+              dimension: 10
+              element:
+                pos:
+                  filename: Pointer to array type
+                  offset: 12
+                  line: 1
+                  column: 13
+                type:
+                  pos:
+                    filename: Pointer to array type
+                    offset: 12
+                    line: 1
+                    column: 13
+                  signed: true
+                  bitsize: 32
       value: null
 
 ---
@@ -4834,23 +5050,41 @@ statements:
           offset: 7
           line: 1
           column: 8
-        dimension: null
-        elementtype:
+        type:
           pos:
             filename: Array of function types
-            offset: 9
+            offset: 7
             line: 1
-            column: 10
-          name: ""
-          parameters: []
-          return:
+            column: 8
+          dimension: null
+          element:
             pos:
               filename: Array of function types
-              offset: 16
+              offset: 9
               line: 1
-              column: 17
-            signed: true
-            bitsize: 32
+              column: 10
+            type:
+              pos:
+                filename: Array of function types
+                offset: 9
+                line: 1
+                column: 10
+              name: ""
+              parameters: []
+              return:
+                pos:
+                  filename: Array of function types
+                  offset: 16
+                  line: 1
+                  column: 17
+                type:
+                  pos:
+                    filename: Array of function types
+                    offset: 16
+                    line: 1
+                    column: 17
+                  signed: true
+                  bitsize: 32
       value: null
 
 ---
@@ -4977,8 +5211,14 @@ statements:
             offset: 15
             line: 1
             column: 16
-          signed: true
-          bitsize: 32
+          type:
+            pos:
+              filename: Lambda with return type
+              offset: 15
+              line: 1
+              column: 16
+            signed: true
+            bitsize: 32
         body:
           pos:
             filename: Lambda with return type
@@ -5055,16 +5295,28 @@ statements:
           offset: 7
           line: 1
           column: 8
-        name: ""
-        parameters: []
-        return:
+        type:
           pos:
             filename: Function type without parameters
-            offset: 14
+            offset: 7
             line: 1
-            column: 15
-          signed: true
-          bitsize: 32
+            column: 8
+          name: ""
+          parameters: []
+          return:
+            pos:
+              filename: Function type without parameters
+              offset: 14
+              line: 1
+              column: 15
+            type:
+              pos:
+                filename: Function type without parameters
+                offset: 14
+                line: 1
+                column: 15
+              signed: true
+              bitsize: 32
       value: null
 
 ---
@@ -5098,23 +5350,35 @@ statements:
           offset: 7
           line: 1
           column: 8
-        name: ""
-        parameters:
-          - pos:
-              filename: Function type without return type
-              offset: 11
-              line: 1
-              column: 12
-            name: a
-            type:
-              pos:
+        type:
+          pos:
+            filename: Function type without return type
+            offset: 7
+            line: 1
+            column: 8
+          name: ""
+          parameters:
+            - pos:
                 filename: Function type without return type
-                offset: 14
+                offset: 11
                 line: 1
-                column: 15
-              signed: true
-              bitsize: 32
-        return: null
+                column: 12
+              name: a
+              type:
+                pos:
+                  filename: Function type without return type
+                  offset: 14
+                  line: 1
+                  column: 15
+                type:
+                  pos:
+                    filename: Function type without return type
+                    offset: 14
+                    line: 1
+                    column: 15
+                  signed: true
+                  bitsize: 32
+          return: null
       value: null
 
 ---
@@ -5148,17 +5412,29 @@ statements:
           offset: 7
           line: 1
           column: 8
-        isowned: false
-        israw: false
-        ismutable: false
-        targettype:
+        type:
           pos:
             filename: Immutable pointer type
-            offset: 8
+            offset: 7
             line: 1
-            column: 9
-          signed: true
-          bitsize: 32
+            column: 8
+          isowned: false
+          israw: false
+          ismutable: false
+          target:
+            pos:
+              filename: Immutable pointer type
+              offset: 8
+              line: 1
+              column: 9
+            type:
+              pos:
+                filename: Immutable pointer type
+                offset: 8
+                line: 1
+                column: 9
+              signed: true
+              bitsize: 32
       value: null
 
 ---
@@ -5192,8 +5468,14 @@ statements:
           offset: 11
           line: 1
           column: 12
-        signed: true
-        bitsize: 32
+        type:
+          pos:
+            filename: Mutable let with type and expression
+            offset: 11
+            line: 1
+            column: 12
+          signed: true
+          bitsize: 32
       value:
         pos:
           filename: Mutable let with type and expression
@@ -5248,8 +5530,14 @@ statements:
           offset: 14
           line: 1
           column: 15
-        signed: true
-        bitsize: 32
+        type:
+          pos:
+            filename: Static let with type and expression
+            offset: 14
+            line: 1
+            column: 15
+          signed: true
+          bitsize: 32
       value:
         pos:
           filename: Static let with type and expression
@@ -5410,8 +5698,14 @@ statements:
               offset: 12
               line: 1
               column: 13
-            signed: true
-            bitsize: 32
+            type:
+              pos:
+                filename: Trailing comma in function parameters
+                offset: 12
+                line: 1
+                column: 13
+              signed: true
+              bitsize: 32
       return: null
       block:
         pos:
@@ -5945,36 +6239,46 @@ statements:
           offset: 0
           line: 1
           column: 1
-        quoted:
-          pos:
-            filename: Quoted label and tag
-            offset: 2
-            line: 1
-            column: 3
-          label: :my_label
-          statements:
-            - pos:
+        prefix:
+          - "\\"
+        operands:
+          - atom:
+              pos:
                 filename: Quoted label and tag
-                offset: 14
+                offset: 1
                 line: 1
-                column: 15
-              comments: null
-              annotations:
-                - pos:
-                    filename: Quoted label and tag
-                    offset: 14
-                    line: 1
-                    column: 15
-                  name: "@my.tag"
-                  arguments: []
-              statement:
+                column: 2
+              expression:
                 pos:
                   filename: Quoted label and tag
-                  offset: 22
+                  offset: 2
                   line: 1
-                  column: 23
+                  column: 3
                 label: :my_label
-                value: null
+                statements:
+                  - pos:
+                      filename: Quoted label and tag
+                      offset: 14
+                      line: 1
+                      column: 15
+                    comments: null
+                    annotations:
+                      - pos:
+                          filename: Quoted label and tag
+                          offset: 14
+                          line: 1
+                          column: 15
+                        name: "@my.tag"
+                        arguments: []
+                    statement:
+                      pos:
+                        filename: Quoted label and tag
+                        offset: 22
+                        line: 1
+                        column: 23
+                      label: :my_label
+                      value: null
+            postfix: []
 
 ---
 
@@ -6786,17 +7090,29 @@ statements:
           offset: 7
           line: 1
           column: 8
-        isowned: false
-        israw: true
-        ismutable: false
-        targettype:
+        type:
           pos:
             filename: Raw pointer type
-            offset: 12
+            offset: 7
             line: 1
-            column: 13
-          signed: true
-          bitsize: 32
+            column: 8
+          isowned: false
+          israw: true
+          ismutable: false
+          target:
+            pos:
+              filename: Raw pointer type
+              offset: 12
+              line: 1
+              column: 13
+            type:
+              pos:
+                filename: Raw pointer type
+                offset: 12
+                line: 1
+                column: 13
+              signed: true
+              bitsize: 32
       value: null
 
 ---
@@ -6955,17 +7271,29 @@ statements:
                   offset: 27
                   line: 3
                   column: 12
-                isowned: false
-                israw: false
-                ismutable: false
-                targettype:
+                type:
                   pos:
                     filename: Block atom with multiple statements
-                    offset: 28
+                    offset: 27
                     line: 3
-                    column: 13
-                  signed: true
-                  bitsize: 32
+                    column: 12
+                  isowned: false
+                  israw: false
+                  ismutable: false
+                  target:
+                    pos:
+                      filename: Block atom with multiple statements
+                      offset: 28
+                      line: 3
+                      column: 13
+                    type:
+                      pos:
+                        filename: Block atom with multiple statements
+                        offset: 28
+                        line: 3
+                        column: 13
+                      signed: true
+                      bitsize: 32
               value:
                 pos:
                   filename: Block atom with multiple statements
@@ -7065,17 +7393,29 @@ statements:
           offset: 9
           line: 1
           column: 10
-        isowned: false
-        israw: false
-        ismutable: true
-        targettype:
+        type:
           pos:
             filename: Pointer type
-            offset: 14
+            offset: 9
             line: 1
-            column: 15
-          signed: true
-          bitsize: 64
+            column: 10
+          isowned: false
+          israw: false
+          ismutable: true
+          target:
+            pos:
+              filename: Pointer type
+              offset: 14
+              line: 1
+              column: 15
+            type:
+              pos:
+                filename: Pointer type
+                offset: 14
+                line: 1
+                column: 15
+              signed: true
+              bitsize: 64
       value:
         pos:
           filename: Pointer type

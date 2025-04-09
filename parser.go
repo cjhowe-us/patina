@@ -1,6 +1,7 @@
 package patina
 
 import (
+	"fmt"
 	"regexp"
 	"slices"
 	"strconv"
@@ -42,7 +43,8 @@ var (
 			{Name: "StringFragment", Pattern: `[^"\\]+`, Action: nil},
 		},
 	})
-	keywords = []string{
+	keywordType = Lexer.Symbols()["Keyword"]
+	keywords    = []string{
 		"module",
 		"fun",
 		"return",
@@ -56,9 +58,7 @@ var (
 		"case",
 		"static",
 	}
-	keywordType  = Lexer.Symbols()["Keyword"]
-	intTypeRegex = regexp.MustCompile(`^([iu])(\d+)`)
-	Parser       = participle.MustBuild[Root](
+	Parser = participle.MustBuild[Root](
 		participle.UseLookahead(4),
 		participle.Lexer(Lexer),
 		participle.Map(func(token lexer.Token) (lexer.Token, error) {
@@ -70,23 +70,23 @@ var (
 			return token, nil
 		}, "Ident"),
 		participle.Elide("WS", "EOL", "LineComment", "BlockCommentStart", "BlockCommentEnd", "BlockCommentContents"),
-		participle.Union[Statement](Module{}, FunctionStatement{}, ReturnStatement{}, LetStatement{}, BreakStatement{}, ExpressionStatement{}),
-		participle.Union[Expression](QuotedExpression{}, IfExpression{}, CaseExpression{}, Lambda{}, StaticExpression{}, Block{}, PointerType{}, ArrayType{}, IntegerType{}, FunctionType{}, Operation{}),
-		participle.Union[Atom](GroupedExpression{}, AtomValue{}, Binding{}),
-		participle.Union[TypeValue](PointerType{}, ArrayType{}, IntegerType{}, FunctionType{}),
-		participle.Union[Value](Integer{}, String{}, PointerType{}, ArrayType{}, IntegerType{}, FunctionType{}),
+		participle.Union[Statement](Module{}, LetStatement{}, FunctionStatement{}, ReturnStatement{}, BreakStatement{}, ExpressionStatement{}),
+		participle.Union[Expression](IfExpression{}, CaseExpression{}, Lambda{}, StaticExpression{}, TypeExpression{}, Block{}, Operation{}),
+		participle.Union[Atom](GroupedExpression{}, AtomicType{}, AtomicValue{}, Binding{}),
+		participle.Union[Value](Integer{}, String{}),
+		participle.Union[Type](IntegerType{}, PointerType{}, ArrayType{}, FunctionType{}),
 	)
 )
 
 type (
 	Root struct {
 		Pos        lexer.Position
-		Statements []DecoratedStatement `parser:"[@@ (EOL @@)*] EOF"`
+		Statements []DecoratedStatement `parser:"(@@ (EOL @@)*)? EOF"`
 	}
 	Block struct {
 		Pos        lexer.Position
 		Label      string               `parser:"@Label?"`
-		Statements []DecoratedStatement `parser:"'{' [@@ (EOL @@)*] '}'"`
+		Statements []DecoratedStatement `parser:"'{' (@@ (EOL @@)*)? '}'"`
 	}
 	DecoratedStatement struct {
 		Pos         lexer.Position
@@ -106,7 +106,7 @@ type (
 	Annotation struct {
 		Pos       lexer.Position
 		Name      string       `parser:"@Tag"`
-		Arguments []Expression `parser:"['(' [@@ (',' @@)* ','?] ')']"`
+		Arguments []Expression `parser:"('(' (@@ (',' @@)* ','?)? ')')?"`
 	}
 )
 
@@ -123,9 +123,14 @@ type (
 		Pos        lexer.Position
 		IsStatic   bool                `parser:"@'static'?"`
 		Name       string              `parser:"'fun' @Ident"`
-		Parameters []FunctionParameter `parser:"'(' [@@ (',' @@)* ','?] ')'"`
-		Return     *TypeValue          `parser:"(':' @@)?"`
+		Parameters []FunctionParameter `parser:"'(' (@@ (',' @@)* ','?)? ')'"`
+		Return     Atom                `parser:"(':' @@)?"`
 		Block      Block               `parser:"@@"`
+	}
+	FunctionParameter struct {
+		Pos  lexer.Position
+		Name string `parser:"@Ident"`
+		Type Atom   `parser:"':' @@"`
 	}
 	ReturnStatement struct {
 		Pos   lexer.Position
@@ -138,8 +143,8 @@ type (
 		IsStatic  bool       `parser:"@'static'?"`
 		IsMutable bool       `parser:"'let' @'mut'?"`
 		Name      string     `parser:"@Ident"`
-		Type      TypeValue  `parser:"[':' @@]"`
-		Value     Expression `parser:"['=' @@]"`
+		Type      Atom       `parser:"(':' @@)?"`
+		Value     Expression `parser:"('=' @@)? (?= EOL | EOF)"`
 	}
 
 	BreakStatement struct {
@@ -166,16 +171,11 @@ type (
 		expression()
 	}
 
-	QuotedExpression struct {
-		Pos    lexer.Position
-		Quoted Expression `parser:"'\\\\' '(' @@ ')'"`
-	}
-
 	IfExpression struct {
 		Pos     lexer.Position
 		If      IfBranch   `parser:"@@"`
 		ElseIfs []IfBranch `parser:"('else' @@)*"`
-		Else    Expression `parser:"['else' @@]"`
+		Else    Expression `parser:"('else' @@)?"`
 	}
 	IfBranch struct {
 		Pos       lexer.Position
@@ -195,14 +195,18 @@ type (
 
 	Lambda struct {
 		Pos        lexer.Position
-		Parameters []FunctionParameter `parser:"'fun' '(' [@@ (',' @@)* ','?] ')'"`
-		Return     TypeValue           `parser:"[':' @@]"`
+		Parameters []FunctionParameter `parser:"'fun' '(' (@@ (',' @@)* ','?)? ')'"`
+		Return     Atom                `parser:"(':' @@)?"`
 		Body       Block               `parser:"@@"`
 	}
 
 	StaticExpression struct {
 		Pos    lexer.Position
 		Static Expression `parser:"'static' @@"`
+	}
+	TypeExpression struct {
+		Pos  lexer.Position
+		Type Type `parser:"@@"`
 	}
 
 	Operation struct {
@@ -216,16 +220,16 @@ type (
 	}
 	Postfix struct {
 		Pos        lexer.Position
-		Invocation []Expression `parser:"'(' [@@ (',' @@)* ','?] ')'"`
+		Invocation []Expression `parser:"'(' (@@ (',' @@)* ','?)? ')'"`
 		Operator   string       `parser:"| @Operator"`
 	}
 )
 
-func (QuotedExpression) expression() {}
 func (IfExpression) expression()     {}
 func (CaseExpression) expression()   {}
 func (Lambda) expression()           {}
 func (StaticExpression) expression() {}
+func (TypeExpression) expression()   {}
 func (Block) expression()            {}
 func (Operation) expression()        {}
 
@@ -233,9 +237,13 @@ type (
 	Atom              interface{ atom() }
 	GroupedExpression struct {
 		Pos        lexer.Position
-		Expression Operation `parser:"'(' @@ ')'"`
+		Expression Expression `parser:"'(' @@ ')'"`
 	}
-	AtomValue struct {
+	AtomicType struct {
+		Pos  lexer.Position
+		Type Type `parser:"@@"`
+	}
+	AtomicValue struct {
 		Pos   lexer.Position
 		Value Value `parser:"@@"`
 	}
@@ -246,7 +254,8 @@ type (
 )
 
 func (GroupedExpression) atom() {}
-func (AtomValue) atom()         {}
+func (AtomicType) atom()        {}
+func (AtomicValue) atom()       {}
 func (Binding) atom()           {}
 
 type (
@@ -270,22 +279,20 @@ func (Integer) value() {}
 func (String) value()  {}
 
 type (
-	TypeValue interface {
-		Expression
-		Value
-		type_value()
+	Type interface {
+		is_type()
 	}
 	PointerType struct {
-		Pos        lexer.Position
-		IsOwned    bool      `parser:"'*' (@'own'"`
-		IsRaw      bool      `parser:"| @'raw'"`
-		IsMutable  bool      `parser:"| @'mut')?"`
-		TargetType TypeValue `parser:"@@"`
+		Pos       lexer.Position
+		IsOwned   bool `parser:"'*' (@'own'"`
+		IsRaw     bool `parser:"| @'raw'"`
+		IsMutable bool `parser:"| @'mut')?"`
+		Target    Atom `parser:"@@"`
 	}
 	ArrayType struct {
-		Pos         lexer.Position
-		Dimension   *uint64   `parser:"'[' @Integer? ']'"`
-		ElementType TypeValue `parser:"@@"`
+		Pos       lexer.Position
+		Dimension *uint64 `parser:"'[' @Integer? ']'"`
+		Element   Atom    `parser:"@@"`
 	}
 	IntegerType struct {
 		Pos     lexer.Position
@@ -295,43 +302,45 @@ type (
 	FunctionType struct {
 		Pos        lexer.Position
 		Name       string              `parser:"'fun' @Ident?"`
-		Parameters []FunctionParameter `parser:"'(' [@@ (',' @@)* ','?] ')'"`
-		Return     *TypeValue          `parser:"[':' @@] (?! '{')"`
-	}
-	FunctionParameter struct {
-		Pos  lexer.Position
-		Name string    `parser:"@Ident"`
-		Type TypeValue `parser:"':' @@"`
+		Parameters []FunctionParameter `parser:"'(' (@@ (',' @@)* ','?)? ')'"`
+		Return     Atom                `parser:"(':' @@)? (?! '{')"`
 	}
 )
 
-func (PointerType) expression()  {}
-func (ArrayType) expression()    {}
-func (IntegerType) expression()  {}
-func (FunctionType) expression() {}
-func (PointerType) type_value()  {}
-func (ArrayType) type_value()    {}
-func (IntegerType) type_value()  {}
-func (FunctionType) type_value() {}
-func (PointerType) value()       {}
-func (ArrayType) value()         {}
-func (IntegerType) value()       {}
-func (FunctionType) value()      {}
+func (PointerType) is_type()  {}
+func (ArrayType) is_type()    {}
+func (IntegerType) is_type()  {}
+func (FunctionType) is_type() {}
 
 func (it *IntegerType) Parse(lex *lexer.PeekingLexer) error {
 	token := lex.Peek()
-	matches := intTypeRegex.FindAllStringSubmatch(token.Value, -1)
-	if matches == nil || len(matches) != 1 || len(matches[0]) != 3 {
+	matches := intTypeRegex.FindStringSubmatch(token.Value)
+	if matches == nil {
 		return participle.NextMatch
 	}
-	sign, size := matches[0][1], matches[0][2]
-	bitSize, err := strconv.ParseUint(size, 10, 16)
-	if err != nil {
-		return err
+
+	sign, sizeStr := matches[1], matches[2]
+	bitSize, err := strconv.ParseUint(sizeStr, IntegerWidthBase, IntegerWidthBitSize)
+	if err != nil || bitSize == 0 {
+		return participle.Wrapf(token.Pos, err, "Integer width of '%s' is out of range: %s", token.Value, intWidthRange)
 	}
+
 	lex.Next()
 	it.Pos = token.Pos
-	it.Signed = strings.Compare(sign, "i") == 0
+	it.Signed = (sign == intSignedPrefix)
 	it.BitSize = bitSize
 	return nil
 }
+
+const (
+	IntegerWidthBase    = 10
+	IntegerWidthBitSize = 16
+	IntegerWidthMin     = 1
+	IntegerWidthMax     = (1 << IntegerWidthBitSize) - 1
+	intSignedPrefix     = "i"
+)
+
+var (
+	intWidthRange = fmt.Sprintf("[%d, %d]", IntegerWidthMin, IntegerWidthMax)
+	intTypeRegex  = regexp.MustCompile(`^([iu])(\d+)`)
+)
