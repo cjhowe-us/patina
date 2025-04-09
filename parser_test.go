@@ -263,6 +263,30 @@ func TestParser(t *testing.T) {
 			src:  `let x = -add(1, 2)? + !sub(3, 4)`,
 		},
 		{
+			name: "Indexing",
+			src:  `let x = arr[1]`,
+		},
+		{
+			name: "Indexing with prefix op",
+			src:  `let x = !arr[1]`,
+		},
+		{
+			name: "Indexing with postfix op",
+			src:  `let x = arr[1]?`,
+		},
+		{
+			name: "Indexing with prefix and postfix ops",
+			src:  `let x = !arr[1]?`,
+		},
+		{
+			name: "Indexing with prefix, infix, and postfix ops",
+			src:  `let x = -arr[1]? + !arr[2]`,
+		},
+		{
+			name: "Indexing with invocations and nesting",
+			src:  `let x = arr[1 + 2](1 + 2)?`,
+		},
+		{
 			name: "Simple break",
 			src:  `break`,
 		},

@@ -221,6 +221,7 @@ type (
 	Postfix struct {
 		Pos        lexer.Position
 		Invocation []Expression `parser:"'(' (@@ (',' @@)* ','?)? ')'"`
+		Index      Expression   `parser:"| '[' @@ ']'"`
 		Operator   string       `parser:"| @Operator"`
 	}
 )

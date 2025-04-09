@@ -451,6 +451,7 @@ statements:
                           line: 2
                           column: 15
                         invocation: []
+                        index: null
                         operator: +
                   - atom:
                       pos:
@@ -1424,6 +1425,7 @@ statements:
                             line: 2
                             column: 15
                           invocation: []
+                          index: null
                           operator: +
                     - atom:
                         pos:
@@ -1488,6 +1490,7 @@ statements:
                   line: 1
                   column: 11
                 invocation: []
+                index: null
                 operator: +
           - atom:
               pos:
@@ -1509,6 +1512,7 @@ statements:
                   line: 1
                   column: 15
                 invocation: []
+                index: null
                 operator: "*"
           - atom:
               pos:
@@ -1857,6 +1861,7 @@ statements:
                           line: 1
                           column: 12
                         invocation: []
+                        index: null
                         operator: +
                   - atom:
                       pos:
@@ -1879,6 +1884,7 @@ statements:
                   line: 1
                   column: 17
                 invocation: []
+                index: null
                 operator: "*"
           - atom:
               pos:
@@ -2163,6 +2169,7 @@ statements:
                           line: 1
                           column: 10
                         invocation: []
+                        index: null
                         operator: +
                   - atom:
                       pos:
@@ -2288,6 +2295,7 @@ statements:
                           line: 1
                           column: 19
                         invocation: []
+                        index: null
                         operator: "*"
                   - atom:
                       pos:
@@ -2518,6 +2526,7 @@ statements:
                           line: 2
                           column: 15
                         invocation: []
+                        index: null
                         operator: +
                   - atom:
                       pos:
@@ -2901,6 +2910,7 @@ statements:
                           line: 1
                           column: 5
                         invocation: []
+                        index: null
                         operator: +
                   - atom:
                       pos:
@@ -3010,6 +3020,7 @@ statements:
                   line: 1
                   column: 13
                 invocation: []
+                index: null
                 operator: ?
 
 ---
@@ -3061,6 +3072,7 @@ statements:
                   line: 1
                   column: 14
                 invocation: []
+                index: null
                 operator: ?
 
 ---
@@ -3153,6 +3165,7 @@ statements:
                               column: 16
                             value: 2
                         postfix: []
+                index: null
                 operator: ""
 
 ---
@@ -3245,6 +3258,7 @@ statements:
                               column: 16
                             value: 2
                         postfix: []
+                index: null
                 operator: ""
               - pos:
                   filename: Invocation with postfix op
@@ -3252,6 +3266,7 @@ statements:
                   line: 1
                   column: 18
                 invocation: []
+                index: null
                 operator: ?
 
 ---
@@ -3345,6 +3360,7 @@ statements:
                               column: 17
                             value: 2
                         postfix: []
+                index: null
                 operator: ""
 
 ---
@@ -3438,6 +3454,7 @@ statements:
                               column: 17
                             value: 2
                         postfix: []
+                index: null
                 operator: ""
               - pos:
                   filename: Invocation with prefix and postfix ops
@@ -3445,6 +3462,7 @@ statements:
                   line: 1
                   column: 19
                 invocation: []
+                index: null
                 operator: ?
 
 ---
@@ -3538,6 +3556,7 @@ statements:
                               column: 17
                             value: 2
                         postfix: []
+                index: null
                 operator: ""
               - pos:
                   filename: Invocation with prefix, infix, and postfix ops
@@ -3545,6 +3564,7 @@ statements:
                   line: 1
                   column: 19
                 invocation: []
+                index: null
                 operator: ?
               - pos:
                   filename: Invocation with prefix, infix, and postfix ops
@@ -3552,6 +3572,7 @@ statements:
                   line: 1
                   column: 21
                 invocation: []
+                index: null
                 operator: +
               - pos:
                   filename: Invocation with prefix, infix, and postfix ops
@@ -3559,6 +3580,7 @@ statements:
                   line: 1
                   column: 23
                 invocation: []
+                index: null
                 operator: "!"
           - atom:
               pos:
@@ -3616,6 +3638,7 @@ statements:
                               column: 31
                             value: 4
                         postfix: []
+                index: null
                 operator: ""
 
 ---
@@ -3827,6 +3850,7 @@ statements:
                   line: 1
                   column: 3
                 invocation: []
+                index: null
                 operator: .
           - atom:
               pos:
@@ -3896,6 +3920,7 @@ statements:
                           line: 1
                           column: 5
                         invocation: []
+                        index: null
                         operator: .
                   - atom:
                       pos:
@@ -4137,6 +4162,7 @@ statements:
                           line: 1
                           column: 11
                         invocation: []
+                        index: null
                         operator: +
                   - atom:
                       pos:
@@ -4219,6 +4245,7 @@ statements:
                           line: 1
                           column: 18
                         invocation: []
+                        index: null
                         operator: "*"
                   - atom:
                       pos:
@@ -5155,6 +5182,7 @@ statements:
                           line: 1
                           column: 12
                         invocation: []
+                        index: null
                         operator: +
                   - atom:
                       pos:
@@ -5781,6 +5809,7 @@ statements:
                               column: 6
                             value: 1
                         postfix: []
+                index: null
                 operator: ""
 
 ---
@@ -6342,6 +6371,7 @@ statements:
                           line: 2
                           column: 11
                         invocation: []
+                        index: null
                         operator: ">"
                   - atom:
                       pos:
@@ -6471,6 +6501,7 @@ statements:
                           line: 2
                           column: 11
                         invocation: []
+                        index: null
                         operator: ==
                   - atom:
                       pos:
@@ -6542,6 +6573,7 @@ statements:
                           line: 3
                           column: 11
                         invocation: []
+                        index: null
                         operator: ==
                   - atom:
                       pos:
@@ -6665,6 +6697,7 @@ statements:
                       line: 2
                       column: 10
                     invocation: []
+                    index: null
                     operator: ">"
               - atom:
                   pos:
@@ -6686,6 +6719,7 @@ statements:
                       line: 2
                       column: 15
                     invocation: []
+                    index: null
                     operator: "&&"
               - atom:
                   pos:
@@ -6701,6 +6735,7 @@ statements:
                       line: 2
                       column: 20
                     invocation: []
+                    index: null
                     operator: <
               - atom:
                   pos:
@@ -6722,6 +6757,7 @@ statements:
                       line: 2
                       column: 25
                     invocation: []
+                    index: null
                     operator: "||"
               - atom:
                   pos:
@@ -6737,6 +6773,7 @@ statements:
                       line: 2
                       column: 30
                     invocation: []
+                    index: null
                     operator: ==
               - atom:
                   pos:
@@ -6796,6 +6833,7 @@ statements:
                               line: 3
                               column: 14
                             invocation: []
+                            index: null
                             operator: +
                       - atom:
                           pos:
@@ -6811,6 +6849,7 @@ statements:
                               line: 3
                               column: 18
                             invocation: []
+                            index: null
                             operator: +
                       - atom:
                           pos:
@@ -6848,6 +6887,7 @@ statements:
                         line: 4
                         column: 28
                       invocation: []
+                      index: null
                       operator: ""
             then:
               pos:
@@ -6951,6 +6991,7 @@ statements:
                                       column: 17
                                     ident: world
                                   postfix: []
+                          index: null
                           operator: ""
                         - pos:
                             filename: Using if shortcut with block
@@ -6958,6 +6999,7 @@ statements:
                             line: 7
                             column: 23
                           invocation: []
+                          index: null
                           operator: ?
                         - pos:
                             filename: Using if shortcut with block
@@ -6965,6 +7007,7 @@ statements:
                             line: 7
                             column: 24
                           invocation: []
+                          index: null
                           operator: .
                     - atom:
                         pos:
@@ -6980,6 +7023,7 @@ statements:
                             line: 7
                             column: 32
                           invocation: []
+                          index: null
                           operator: ""
 
 ---
@@ -7352,6 +7396,7 @@ statements:
                           line: 4
                           column: 13
                         invocation: []
+                        index: null
                         operator: +
                   - atom:
                       pos:
@@ -7438,5 +7483,598 @@ statements:
                   column: 21
                 value: 20
             postfix: []
+
+---
+
+[TestParser/Indexing - 1]
+pos:
+  filename: Indexing
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Indexing
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Indexing
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: x
+      type: null
+      value:
+        pos:
+          filename: Indexing
+          offset: 8
+          line: 1
+          column: 9
+        prefix: []
+        operands:
+          - atom:
+              pos:
+                filename: Indexing
+                offset: 8
+                line: 1
+                column: 9
+              ident: arr
+            postfix:
+              - pos:
+                  filename: Indexing
+                  offset: 11
+                  line: 1
+                  column: 12
+                invocation: []
+                index:
+                  pos:
+                    filename: Indexing
+                    offset: 12
+                    line: 1
+                    column: 13
+                  prefix: []
+                  operands:
+                    - atom:
+                        pos:
+                          filename: Indexing
+                          offset: 12
+                          line: 1
+                          column: 13
+                        value:
+                          pos:
+                            filename: Indexing
+                            offset: 12
+                            line: 1
+                            column: 13
+                          value: 1
+                      postfix: []
+                operator: ""
+
+---
+
+[TestParser/Indexing_with_prefix_op - 1]
+pos:
+  filename: Indexing with prefix op
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Indexing with prefix op
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Indexing with prefix op
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: x
+      type: null
+      value:
+        pos:
+          filename: Indexing with prefix op
+          offset: 8
+          line: 1
+          column: 9
+        prefix:
+          - "!"
+        operands:
+          - atom:
+              pos:
+                filename: Indexing with prefix op
+                offset: 9
+                line: 1
+                column: 10
+              ident: arr
+            postfix:
+              - pos:
+                  filename: Indexing with prefix op
+                  offset: 12
+                  line: 1
+                  column: 13
+                invocation: []
+                index:
+                  pos:
+                    filename: Indexing with prefix op
+                    offset: 13
+                    line: 1
+                    column: 14
+                  prefix: []
+                  operands:
+                    - atom:
+                        pos:
+                          filename: Indexing with prefix op
+                          offset: 13
+                          line: 1
+                          column: 14
+                        value:
+                          pos:
+                            filename: Indexing with prefix op
+                            offset: 13
+                            line: 1
+                            column: 14
+                          value: 1
+                      postfix: []
+                operator: ""
+
+---
+
+[TestParser/Indexing_with_postfix_op - 1]
+pos:
+  filename: Indexing with postfix op
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Indexing with postfix op
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Indexing with postfix op
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: x
+      type: null
+      value:
+        pos:
+          filename: Indexing with postfix op
+          offset: 8
+          line: 1
+          column: 9
+        prefix: []
+        operands:
+          - atom:
+              pos:
+                filename: Indexing with postfix op
+                offset: 8
+                line: 1
+                column: 9
+              ident: arr
+            postfix:
+              - pos:
+                  filename: Indexing with postfix op
+                  offset: 11
+                  line: 1
+                  column: 12
+                invocation: []
+                index:
+                  pos:
+                    filename: Indexing with postfix op
+                    offset: 12
+                    line: 1
+                    column: 13
+                  prefix: []
+                  operands:
+                    - atom:
+                        pos:
+                          filename: Indexing with postfix op
+                          offset: 12
+                          line: 1
+                          column: 13
+                        value:
+                          pos:
+                            filename: Indexing with postfix op
+                            offset: 12
+                            line: 1
+                            column: 13
+                          value: 1
+                      postfix: []
+                operator: ""
+              - pos:
+                  filename: Indexing with postfix op
+                  offset: 14
+                  line: 1
+                  column: 15
+                invocation: []
+                index: null
+                operator: ?
+
+---
+
+[TestParser/Indexing_with_prefix_and_postfix_ops - 1]
+pos:
+  filename: Indexing with prefix and postfix ops
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Indexing with prefix and postfix ops
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Indexing with prefix and postfix ops
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: x
+      type: null
+      value:
+        pos:
+          filename: Indexing with prefix and postfix ops
+          offset: 8
+          line: 1
+          column: 9
+        prefix:
+          - "!"
+        operands:
+          - atom:
+              pos:
+                filename: Indexing with prefix and postfix ops
+                offset: 9
+                line: 1
+                column: 10
+              ident: arr
+            postfix:
+              - pos:
+                  filename: Indexing with prefix and postfix ops
+                  offset: 12
+                  line: 1
+                  column: 13
+                invocation: []
+                index:
+                  pos:
+                    filename: Indexing with prefix and postfix ops
+                    offset: 13
+                    line: 1
+                    column: 14
+                  prefix: []
+                  operands:
+                    - atom:
+                        pos:
+                          filename: Indexing with prefix and postfix ops
+                          offset: 13
+                          line: 1
+                          column: 14
+                        value:
+                          pos:
+                            filename: Indexing with prefix and postfix ops
+                            offset: 13
+                            line: 1
+                            column: 14
+                          value: 1
+                      postfix: []
+                operator: ""
+              - pos:
+                  filename: Indexing with prefix and postfix ops
+                  offset: 15
+                  line: 1
+                  column: 16
+                invocation: []
+                index: null
+                operator: ?
+
+---
+
+[TestParser/Indexing_with_prefix,_infix,_and_postfix_ops - 1]
+pos:
+  filename: Indexing with prefix, infix, and postfix ops
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Indexing with prefix, infix, and postfix ops
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Indexing with prefix, infix, and postfix ops
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: x
+      type: null
+      value:
+        pos:
+          filename: Indexing with prefix, infix, and postfix ops
+          offset: 8
+          line: 1
+          column: 9
+        prefix:
+          - -
+        operands:
+          - atom:
+              pos:
+                filename: Indexing with prefix, infix, and postfix ops
+                offset: 9
+                line: 1
+                column: 10
+              ident: arr
+            postfix:
+              - pos:
+                  filename: Indexing with prefix, infix, and postfix ops
+                  offset: 12
+                  line: 1
+                  column: 13
+                invocation: []
+                index:
+                  pos:
+                    filename: Indexing with prefix, infix, and postfix ops
+                    offset: 13
+                    line: 1
+                    column: 14
+                  prefix: []
+                  operands:
+                    - atom:
+                        pos:
+                          filename: Indexing with prefix, infix, and postfix ops
+                          offset: 13
+                          line: 1
+                          column: 14
+                        value:
+                          pos:
+                            filename: Indexing with prefix, infix, and postfix ops
+                            offset: 13
+                            line: 1
+                            column: 14
+                          value: 1
+                      postfix: []
+                operator: ""
+              - pos:
+                  filename: Indexing with prefix, infix, and postfix ops
+                  offset: 15
+                  line: 1
+                  column: 16
+                invocation: []
+                index: null
+                operator: ?
+              - pos:
+                  filename: Indexing with prefix, infix, and postfix ops
+                  offset: 17
+                  line: 1
+                  column: 18
+                invocation: []
+                index: null
+                operator: +
+              - pos:
+                  filename: Indexing with prefix, infix, and postfix ops
+                  offset: 19
+                  line: 1
+                  column: 20
+                invocation: []
+                index: null
+                operator: "!"
+          - atom:
+              pos:
+                filename: Indexing with prefix, infix, and postfix ops
+                offset: 20
+                line: 1
+                column: 21
+              ident: arr
+            postfix:
+              - pos:
+                  filename: Indexing with prefix, infix, and postfix ops
+                  offset: 23
+                  line: 1
+                  column: 24
+                invocation: []
+                index:
+                  pos:
+                    filename: Indexing with prefix, infix, and postfix ops
+                    offset: 24
+                    line: 1
+                    column: 25
+                  prefix: []
+                  operands:
+                    - atom:
+                        pos:
+                          filename: Indexing with prefix, infix, and postfix ops
+                          offset: 24
+                          line: 1
+                          column: 25
+                        value:
+                          pos:
+                            filename: Indexing with prefix, infix, and postfix ops
+                            offset: 24
+                            line: 1
+                            column: 25
+                          value: 2
+                      postfix: []
+                operator: ""
+
+---
+
+[TestParser/Indexing_with_invocations_and_nesting - 1]
+pos:
+  filename: Indexing with invocations and nesting
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Indexing with invocations and nesting
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Indexing with invocations and nesting
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: x
+      type: null
+      value:
+        pos:
+          filename: Indexing with invocations and nesting
+          offset: 8
+          line: 1
+          column: 9
+        prefix: []
+        operands:
+          - atom:
+              pos:
+                filename: Indexing with invocations and nesting
+                offset: 8
+                line: 1
+                column: 9
+              ident: arr
+            postfix:
+              - pos:
+                  filename: Indexing with invocations and nesting
+                  offset: 11
+                  line: 1
+                  column: 12
+                invocation: []
+                index:
+                  pos:
+                    filename: Indexing with invocations and nesting
+                    offset: 12
+                    line: 1
+                    column: 13
+                  prefix: []
+                  operands:
+                    - atom:
+                        pos:
+                          filename: Indexing with invocations and nesting
+                          offset: 12
+                          line: 1
+                          column: 13
+                        value:
+                          pos:
+                            filename: Indexing with invocations and nesting
+                            offset: 12
+                            line: 1
+                            column: 13
+                          value: 1
+                      postfix:
+                        - pos:
+                            filename: Indexing with invocations and nesting
+                            offset: 14
+                            line: 1
+                            column: 15
+                          invocation: []
+                          index: null
+                          operator: +
+                    - atom:
+                        pos:
+                          filename: Indexing with invocations and nesting
+                          offset: 16
+                          line: 1
+                          column: 17
+                        value:
+                          pos:
+                            filename: Indexing with invocations and nesting
+                            offset: 16
+                            line: 1
+                            column: 17
+                          value: 2
+                      postfix: []
+                operator: ""
+              - pos:
+                  filename: Indexing with invocations and nesting
+                  offset: 18
+                  line: 1
+                  column: 19
+                invocation:
+                  - pos:
+                      filename: Indexing with invocations and nesting
+                      offset: 19
+                      line: 1
+                      column: 20
+                    prefix: []
+                    operands:
+                      - atom:
+                          pos:
+                            filename: Indexing with invocations and nesting
+                            offset: 19
+                            line: 1
+                            column: 20
+                          value:
+                            pos:
+                              filename: Indexing with invocations and nesting
+                              offset: 19
+                              line: 1
+                              column: 20
+                            value: 1
+                        postfix:
+                          - pos:
+                              filename: Indexing with invocations and nesting
+                              offset: 21
+                              line: 1
+                              column: 22
+                            invocation: []
+                            index: null
+                            operator: +
+                      - atom:
+                          pos:
+                            filename: Indexing with invocations and nesting
+                            offset: 23
+                            line: 1
+                            column: 24
+                          value:
+                            pos:
+                              filename: Indexing with invocations and nesting
+                              offset: 23
+                              line: 1
+                              column: 24
+                            value: 2
+                        postfix: []
+                index: null
+                operator: ""
+              - pos:
+                  filename: Indexing with invocations and nesting
+                  offset: 25
+                  line: 1
+                  column: 26
+                invocation: []
+                index: null
+                operator: ?
 
 ---
