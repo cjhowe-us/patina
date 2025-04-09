@@ -27,8 +27,7 @@
         "panel": "dedicated",
         "showReuseMessage": false,
         "clear": false,
-        "close": false,
-        "revealProblems": "onProblem"
+        "close": false
       }
     },
     {

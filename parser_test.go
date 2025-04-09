@@ -133,6 +133,14 @@ func TestParser(t *testing.T) {
 			}`,
 		},
 		{
+			name: "Block atom with multiple statements",
+			src: `{
+				let x = 1
+				let y: *i32 = 2
+				break x + y
+			}`,
+		},
+		{
 			name: "Function statement",
 			src: `fun add(a: i64, b: u64): i64 {
 				let c = a + b
@@ -197,10 +205,16 @@ func TestParser(t *testing.T) {
 		},
 		{
 			name: "Type value",
-			src: `let x: i64 = 10
+			src: `
+			let x: i64 = 10
 			let ptr: *mut i64 = 20
 			let arr: [10]i64
-			let fn: fun add(a: i64, b: i64): i64 = add`,
+			let fn: fun add(a: i64, b: i64): i64 = add
+			`,
+		},
+		{
+			name: "Pointer type",
+			src:  `let ptr: *mut i64 = 20`,
 		},
 		{
 			name: "Lambda expression",
