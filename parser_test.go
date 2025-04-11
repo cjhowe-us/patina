@@ -586,10 +586,7 @@ func TestParserErrors(t *testing.T) {
 				t.Fatalf("Expected error, but got none\n%s", tt.src)
 			}
 
-			snaps.MatchYAML(t, map[string]string{
-				"error": err.Error(),
-				"src":   tt.src,
-			})
+			snaps.MatchSnapshot(t, err.Error())
 		})
 	}
 }

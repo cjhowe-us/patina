@@ -8635,91 +8635,61 @@ statements:
 ---
 
 [TestParserErrors/Mismatched_parentheses - 1]
-error: "Mismatched parentheses:1:1: unexpected token \"let\" (expected <eof>)"
-src: let x = (1 + 2
-
+Mismatched parentheses:1:1: unexpected token "let" (expected <eof>)
 ---
 
 [TestParserErrors/Mismatched_braces - 1]
-error: "Mismatched braces:1:13: unexpected token \"<EOF>\" (expected \"}\")"
-src: fun test() {
-
+Mismatched braces:1:13: unexpected token "<EOF>" (expected "}")
 ---
 
 [TestParserErrors/Mismatched_brackets - 1]
-error: "Mismatched brackets:1:1: unexpected token \"let\" (expected <eof>)"
-src: let x = arr[1
-
+Mismatched brackets:1:1: unexpected token "let" (expected <eof>)
 ---
 
 [TestParserErrors/Invalid_function_parameter_syntax - 1]
-error: "Invalid function parameter syntax:1:1: unexpected token \"fun\" (expected <eof>)"
-src: "fun test(a b: i32) {}"
-
+Invalid function parameter syntax:1:1: unexpected token "fun" (expected <eof>)
 ---
 
 [TestParserErrors/Missing_colon_in_parameter - 1]
-error: "Missing colon in parameter:1:1: unexpected token \"fun\" (expected <eof>)"
-src: fun test(a i32) {}
-
+Missing colon in parameter:1:1: unexpected token "fun" (expected <eof>)
 ---
 
 [TestParserErrors/Invalid_let_syntax - 1]
-error: "Invalid let syntax:1:1: unexpected token \"let\" (expected <eof>)"
-src: let = 5
-
+Invalid let syntax:1:1: unexpected token "let" (expected <eof>)
 ---
 
 [TestParserErrors/Invalid_type_syntax - 1]
-error: "Invalid type syntax:1:1: unexpected token \"let\" (expected <eof>)"
-src: "let x: * {}"
-
+Invalid type syntax:1:1: unexpected token "let" (expected <eof>)
 ---
 
 [TestParserErrors/Invalid_break_syntax - 1]
-error: "Invalid break syntax:1:7: unexpected token \":\" (expected <eof>)"
-src: "break :"
-
+Invalid break syntax:1:7: unexpected token ":" (expected <eof>)
 ---
 
 [TestParserErrors/Invalid_return_syntax - 1]
-error: "Invalid return syntax:1:8: unexpected token \":\" (expected <eof>)"
-src: "return :"
-
+Invalid return syntax:1:8: unexpected token ":" (expected <eof>)
 ---
 
 [TestParserErrors/Invalid_module_syntax - 1]
-error: "Invalid module syntax:1:1: unexpected token \"module\" (expected <eof>)"
-src: module {}
-
+Invalid module syntax:1:1: unexpected token "module" (expected <eof>)
 ---
 
 [TestParserErrors/Incomplete_string - 1]
-error: "Incomplete string:1:1: unexpected token \"let\" (expected <eof>)"
-src: let x = "hello
-
+Incomplete string:1:1: unexpected token "let" (expected <eof>)
 ---
 
 [TestParserErrors/Incomplete_string_interpolation - 1]
-error: "Incomplete string interpolation:1:1: unexpected token \"let\" (expected <eof>)"
-src: "let x = \"hello \\(name\""
-
+Incomplete string interpolation:1:1: unexpected token "let" (expected <eof>)
 ---
 
 [TestParserErrors/Multiple_modifiers_on_pointers - 1]
-error: "Multiple modifiers on pointers:1:1: unexpected token \"let\" (expected <eof>)"
-src: "let x: *own mut i32"
-
+Multiple modifiers on pointers:1:1: unexpected token "let" (expected <eof>)
 ---
 
 [TestParserErrors/Invalid_array_dimension - 1]
-error: "Invalid array dimension:1:1: unexpected token \"let\" (expected <eof>)"
-src: "let x: [-1]i32"
-
+Invalid array dimension:1:1: unexpected token "let" (expected <eof>)
 ---
 
 [TestParserErrors/Invalid_function_call - 1]
-error: "Invalid function call:1:1: unexpected token \"let\" (expected <eof>)"
-src: let x = f(,)
-
+Invalid function call:1:1: unexpected token "let" (expected <eof>)
 ---
