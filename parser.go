@@ -71,27 +71,7 @@ var (
 	Parser                    = participle.MustBuild[Root](
 		participle.UseLookahead(4),
 		participle.Lexer(Lexer),
-		participle.Map(func(token lexer.Token) (lexer.Token, error) {
-			if slices.Contains(keywords, token.Value) {
-				token.Type = keywordType
-			}
-
-			typeString, ok := strippedTokenTypeToString[token.Type]
-			if !ok {
-				return token, nil
-			}
-			strip, ok := stripTokensByType[typeString]
-			if !ok {
-				return token, nil
-			}
-			if strip.Prefix != "" {
-				token.Value = strings.TrimPrefix(token.Value, strip.Prefix)
-			}
-			if strip.Suffix != "" {
-				token.Value = strings.TrimSuffix(token.Value, strip.Suffix)
-			}
-			return token, nil
-		}, strippedTokenTypeStrings...),
+		participle.Map(stripTokensAndMapKeywords, strippedTokenTypeStrings...),
 		participle.Elide("WS", "EOL", "LineComment", "BlockCommentStart", "BlockCommentEnd", "BlockCommentContents"),
 		participle.Union[Statement](Module{}, LetStatement{}, FunctionStatement{}, ReturnStatement{}, BreakStatement{}, ExpressionStatement{}),
 		participle.Union[Expression](IfExpression{}, CaseExpression{}, Lambda{}, StaticExpression{}, TypeExpression{}, Block{}, Operation{}),
@@ -107,6 +87,28 @@ func init() {
 		strippedTokenTypeToString[tokenType] = tokenTypeString
 		strippedTokenTypeStrings = append(strippedTokenTypeStrings, tokenTypeString)
 	}
+}
+
+func stripTokensAndMapKeywords(token lexer.Token) (lexer.Token, error) {
+	if slices.Contains(keywords, token.Value) {
+		token.Type = keywordType
+	}
+
+	typeString, ok := strippedTokenTypeToString[token.Type]
+	if !ok {
+		return token, nil
+	}
+	strip, ok := stripTokensByType[typeString]
+	if !ok {
+		return token, nil
+	}
+	if strip.Prefix != "" {
+		token.Value = strings.TrimPrefix(token.Value, strip.Prefix)
+	}
+	if strip.Suffix != "" {
+		token.Value = strings.TrimSuffix(token.Value, strip.Suffix)
+	}
+	return token, nil
 }
 
 type (
