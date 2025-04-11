@@ -15,18 +15,39 @@
         "instanceLimit": 1,
         "reevaluateOnRerun": true
       },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "showReuseMessage": false,
+        "clear": false,
+        "close": false
+      }
+    },
+    {
+      "type": "go",
+      "label": "update snapshots",
+      "detail": "UPDATE_SNAPS=true go test",
+      "command": "test",
+      "problemMatcher": ["$go"],
+      "group": {
+        "kind": "test"
+      },
+      "runOptions": {
+        "instanceLimit": 1,
+        "reevaluateOnRerun": true
+      },
       "options": {
         "env": {
-          "UPDATE_SNAPS": "${input:updateSnaps}"
+          "UPDATE_SNAPS": "true"
         }
       },
       "presentation": {
         "echo": true,
-        "reveal": "always",
+        "reveal": "silent",
         "focus": false,
-        "panel": "dedicated",
         "showReuseMessage": false,
-        "clear": false,
+        "clear": true,
         "close": false
       }
     },
@@ -50,15 +71,6 @@
         "close": false,
         "revealProblems": "onProblem"
       }
-    }
-  ],
-  "inputs": [
-    {
-      "id": "updateSnaps",
-      "description": "Whether to update snapshots",
-      "type": "pickString",
-      "options": ["true", "false"],
-      "default": "false"
     }
   ]
 }
