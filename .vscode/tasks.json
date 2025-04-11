@@ -4,8 +4,9 @@
     {
       "type": "go",
       "label": "test",
-      "detail": "go test",
+      "detail": "go test -v",
       "command": "test",
+      "args": ["-v"],
       "problemMatcher": ["$go"],
       "group": {
         "kind": "test",
@@ -27,8 +28,9 @@
     {
       "type": "go",
       "label": "update snapshots",
-      "detail": "UPDATE_SNAPS=true go test",
+      "detail": "UPDATE_SNAPS=true go test -v",
       "command": "test",
+      "args": ["-v"],
       "problemMatcher": ["$go"],
       "group": {
         "kind": "test"
@@ -54,8 +56,9 @@
     {
       "type": "go",
       "label": "build",
-      "detail": "go build",
+      "detail": "go build -v",
       "command": "build",
+      "args": ["-v"],
       "problemMatcher": ["$go"],
       "group": {
         "kind": "build",
@@ -63,7 +66,7 @@
       },
       "presentation": {
         "echo": true,
-        "reveal": "always",
+        "reveal": "never",
         "focus": false,
         "panel": "dedicated",
         "showReuseMessage": false,

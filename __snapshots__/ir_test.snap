@@ -1,0 +1,4882 @@
+
+[TestIRConverter/Module_at_CompileTime - 1]
+pos:
+  filename: Module at CompileTime
+  offset: 0
+  line: 1
+  column: 1
+modules:
+  - pos:
+      filename: Module at CompileTime
+      offset: 0
+      line: 1
+      column: 1
+    name: test
+    block:
+      pos:
+        filename: Module at CompileTime
+        offset: 12
+        line: 1
+        column: 13
+      label: ""
+      statements:
+        - pos:
+            filename: Module at CompileTime
+            offset: 18
+            line: 2
+            column: 5
+          comments: []
+          annotations: []
+          kind:
+            pos:
+              filename: Module at CompileTime
+              offset: 18
+              line: 2
+              column: 5
+            name: x
+            type: null
+            value:
+              pos:
+                filename: Module at CompileTime
+                offset: 26
+                line: 2
+                column: 13
+              kind:
+                block:
+                  pos:
+                    filename: Module at CompileTime
+                    offset: 26
+                    line: 2
+                    column: 13
+                  label: ""
+                  statements:
+                    - pos:
+                        filename: Module at CompileTime
+                        offset: 26
+                        line: 2
+                        column: 13
+                      comments: []
+                      annotations: []
+                      kind:
+                        pos:
+                          filename: Module at CompileTime
+                          offset: 26
+                          line: 2
+                          column: 13
+                        expression:
+                          pos:
+                            filename: Module at CompileTime
+                            offset: 26
+                            line: 2
+                            column: 13
+                          kind:
+                            expression:
+                              pos:
+                                filename: Module at CompileTime
+                                offset: 26
+                                line: 2
+                                column: 13
+                              kind:
+                                pos:
+                                  filename: Module at CompileTime
+                                  offset: 26
+                                  line: 2
+                                  column: 13
+                                kind:
+                                  isowned: false
+                                  israw: false
+                                  ismutable: true
+                                  target:
+                                    pos:
+                                      filename: Module at CompileTime
+                                      offset: 31
+                                      line: 2
+                                      column: 18
+                                    kind:
+                                      signed: true
+                                      bitsize: 32
+                              stage: 1
+                              type: null
+                          stage: 0
+                          type: null
+                        stage: 0
+                      stage: 0
+                  stage: 0
+              stage: 0
+              type: null
+            isstatic: false
+            ismutable: false
+            stage: 0
+          stage: 0
+      stage: 0
+    stage: 0
+    comments: []
+toplevel:
+  pos:
+    filename: Module at CompileTime
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements: []
+  stage: 0
+
+---
+
+[TestIRConverter/Module_at_Runtime - 1]
+pos:
+  filename: Module at Runtime
+  offset: 0
+  line: 1
+  column: 1
+modules:
+  - pos:
+      filename: Module at Runtime
+      offset: 0
+      line: 1
+      column: 1
+    name: test
+    block:
+      pos:
+        filename: Module at Runtime
+        offset: 12
+        line: 1
+        column: 13
+      label: ""
+      statements:
+        - pos:
+            filename: Module at Runtime
+            offset: 18
+            line: 2
+            column: 5
+          comments: []
+          annotations: []
+          kind:
+            pos:
+              filename: Module at Runtime
+              offset: 18
+              line: 2
+              column: 5
+            name: x
+            type: null
+            value:
+              pos:
+                filename: Module at Runtime
+                offset: 26
+                line: 2
+                column: 13
+              kind:
+                block:
+                  pos:
+                    filename: Module at Runtime
+                    offset: 26
+                    line: 2
+                    column: 13
+                  label: ""
+                  statements:
+                    - pos:
+                        filename: Module at Runtime
+                        offset: 26
+                        line: 2
+                        column: 13
+                      comments: []
+                      annotations: []
+                      kind:
+                        pos:
+                          filename: Module at Runtime
+                          offset: 26
+                          line: 2
+                          column: 13
+                        expression:
+                          pos:
+                            filename: Module at Runtime
+                            offset: 26
+                            line: 2
+                            column: 13
+                          kind:
+                            expression:
+                              pos:
+                                filename: Module at Runtime
+                                offset: 26
+                                line: 2
+                                column: 13
+                              kind:
+                                pos:
+                                  filename: Module at Runtime
+                                  offset: 26
+                                  line: 2
+                                  column: 13
+                                kind:
+                                  isowned: false
+                                  israw: false
+                                  ismutable: true
+                                  target:
+                                    pos:
+                                      filename: Module at Runtime
+                                      offset: 31
+                                      line: 2
+                                      column: 18
+                                    kind:
+                                      signed: true
+                                      bitsize: 32
+                              stage: 1
+                              type: null
+                          stage: 0
+                          type: null
+                        stage: 0
+                      stage: 0
+                  stage: 0
+              stage: 1
+              type: null
+            isstatic: false
+            ismutable: false
+            stage: 1
+          stage: 1
+      stage: 1
+    stage: 1
+    comments: []
+toplevel:
+  pos:
+    filename: Module at Runtime
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements: []
+  stage: 1
+
+---
+
+[TestIRConverter/Simple_binding - 1]
+pos:
+  filename: Simple binding
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Simple binding
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Simple binding
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Simple binding
+          offset: 0
+          line: 1
+          column: 1
+        name: x
+        type: null
+        value:
+          pos:
+            filename: Simple binding
+            offset: 8
+            line: 1
+            column: 9
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Simple binding
+                    offset: 8
+                    line: 1
+                    column: 9
+                  kind:
+                    kind:
+                      value: 1
+                    stage: 1
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Mutable_binding - 1]
+pos:
+  filename: Mutable binding
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Mutable binding
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Mutable binding
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Mutable binding
+          offset: 0
+          line: 1
+          column: 1
+        name: "y"
+        type: null
+        value:
+          pos:
+            filename: Mutable binding
+            offset: 12
+            line: 1
+            column: 13
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Mutable binding
+                    offset: 12
+                    line: 1
+                    column: 13
+                  kind:
+                    kind:
+                      value: 2
+                    stage: 1
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: true
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Static_binding - 1]
+pos:
+  filename: Static binding
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Static binding
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Static binding
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Static binding
+          offset: 0
+          line: 1
+          column: 1
+        name: z
+        type: null
+        value:
+          pos:
+            filename: Static binding
+            offset: 15
+            line: 1
+            column: 16
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Static binding
+                    offset: 15
+                    line: 1
+                    column: 16
+                  kind:
+                    kind:
+                      value: 3
+                    stage: 1
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: true
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Binding_with_type - 1]
+pos:
+  filename: Binding with type
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Binding with type
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Binding with type
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Binding with type
+          offset: 0
+          line: 1
+          column: 1
+        name: a
+        type:
+          pos:
+            filename: Binding with type
+            offset: 7
+            line: 1
+            column: 8
+          kind:
+            signed: true
+            bitsize: 64
+        value:
+          pos:
+            filename: Binding with type
+            offset: 13
+            line: 1
+            column: 14
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Binding with type
+                    offset: 13
+                    line: 1
+                    column: 14
+                  kind:
+                    kind:
+                      value: 4
+                    stage: 1
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Binding_without_init - 1]
+pos:
+  filename: Binding without init
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Binding without init
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Binding without init
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Binding without init
+          offset: 0
+          line: 1
+          column: 1
+        name: b
+        type:
+          pos:
+            filename: Binding without init
+            offset: 7
+            line: 1
+            column: 8
+          kind:
+            signed: true
+            bitsize: 64
+        value: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Block_atom - 1]
+pos:
+  filename: Block atom
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Block atom
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Block atom
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Block atom
+          offset: 0
+          line: 1
+          column: 1
+        expression:
+          pos:
+            filename: Block atom
+            offset: 0
+            line: 1
+            column: 1
+          kind:
+            block:
+              pos:
+                filename: Block atom
+                offset: 0
+                line: 1
+                column: 1
+              label: ""
+              statements:
+                - pos:
+                    filename: Block atom
+                    offset: 6
+                    line: 2
+                    column: 5
+                  comments: []
+                  annotations: []
+                  kind:
+                    pos:
+                      filename: Block atom
+                      offset: 6
+                      line: 2
+                      column: 5
+                    name: x
+                    type: null
+                    value:
+                      pos:
+                        filename: Block atom
+                        offset: 14
+                        line: 2
+                        column: 13
+                      kind:
+                        prefix: []
+                        operands:
+                          - atom:
+                              pos:
+                                filename: Block atom
+                                offset: 14
+                                line: 2
+                                column: 13
+                              kind:
+                                kind:
+                                  value: 1
+                                stage: 1
+                              type: null
+                            postfix: []
+                            stage: 1
+                      stage: 1
+                      type: null
+                    isstatic: false
+                    ismutable: false
+                    stage: 1
+                  stage: 1
+              stage: 1
+          stage: 1
+          type: null
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Block_atom_with_label - 1]
+pos:
+  filename: Block atom with label
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Block atom with label
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Block atom with label
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Block atom with label
+          offset: 0
+          line: 1
+          column: 1
+        expression:
+          pos:
+            filename: Block atom with label
+            offset: 0
+            line: 1
+            column: 1
+          kind:
+            block:
+              pos:
+                filename: Block atom with label
+                offset: 0
+                line: 1
+                column: 1
+              label: my_label
+              statements:
+                - pos:
+                    filename: Block atom with label
+                    offset: 16
+                    line: 2
+                    column: 5
+                  comments: []
+                  annotations: []
+                  kind:
+                    pos:
+                      filename: Block atom with label
+                      offset: 16
+                      line: 2
+                      column: 5
+                    name: x
+                    type: null
+                    value:
+                      pos:
+                        filename: Block atom with label
+                        offset: 24
+                        line: 2
+                        column: 13
+                      kind:
+                        prefix: []
+                        operands:
+                          - atom:
+                              pos:
+                                filename: Block atom with label
+                                offset: 24
+                                line: 2
+                                column: 13
+                              kind:
+                                kind:
+                                  value: 1
+                                stage: 1
+                              type: null
+                            postfix: []
+                            stage: 1
+                      stage: 1
+                      type: null
+                    isstatic: false
+                    ismutable: false
+                    stage: 1
+                  stage: 1
+              stage: 1
+          stage: 1
+          type: null
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Block_atom_with_multiple_statements - 1]
+pos:
+  filename: Block atom with multiple statements
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Block atom with multiple statements
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Block atom with multiple statements
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Block atom with multiple statements
+          offset: 0
+          line: 1
+          column: 1
+        expression:
+          pos:
+            filename: Block atom with multiple statements
+            offset: 0
+            line: 1
+            column: 1
+          kind:
+            block:
+              pos:
+                filename: Block atom with multiple statements
+                offset: 0
+                line: 1
+                column: 1
+              label: ""
+              statements:
+                - pos:
+                    filename: Block atom with multiple statements
+                    offset: 6
+                    line: 2
+                    column: 5
+                  comments: []
+                  annotations: []
+                  kind:
+                    pos:
+                      filename: Block atom with multiple statements
+                      offset: 6
+                      line: 2
+                      column: 5
+                    name: x
+                    type: null
+                    value:
+                      pos:
+                        filename: Block atom with multiple statements
+                        offset: 14
+                        line: 2
+                        column: 13
+                      kind:
+                        prefix: []
+                        operands:
+                          - atom:
+                              pos:
+                                filename: Block atom with multiple statements
+                                offset: 14
+                                line: 2
+                                column: 13
+                              kind:
+                                kind:
+                                  value: 1
+                                stage: 1
+                              type: null
+                            postfix: []
+                            stage: 1
+                      stage: 1
+                      type: null
+                    isstatic: false
+                    ismutable: false
+                    stage: 1
+                  stage: 1
+                - pos:
+                    filename: Block atom with multiple statements
+                    offset: 20
+                    line: 3
+                    column: 5
+                  comments: []
+                  annotations: []
+                  kind:
+                    pos:
+                      filename: Block atom with multiple statements
+                      offset: 20
+                      line: 3
+                      column: 5
+                    name: "y"
+                    type:
+                      pos:
+                        filename: Block atom with multiple statements
+                        offset: 27
+                        line: 3
+                        column: 12
+                      kind:
+                        isowned: false
+                        israw: false
+                        ismutable: false
+                        target:
+                          pos:
+                            filename: Block atom with multiple statements
+                            offset: 28
+                            line: 3
+                            column: 13
+                          kind:
+                            signed: true
+                            bitsize: 32
+                    value:
+                      pos:
+                        filename: Block atom with multiple statements
+                        offset: 34
+                        line: 3
+                        column: 19
+                      kind:
+                        prefix: []
+                        operands:
+                          - atom:
+                              pos:
+                                filename: Block atom with multiple statements
+                                offset: 34
+                                line: 3
+                                column: 19
+                              kind:
+                                kind:
+                                  value: 2
+                                stage: 1
+                              type: null
+                            postfix: []
+                            stage: 1
+                      stage: 1
+                      type: null
+                    isstatic: false
+                    ismutable: false
+                    stage: 1
+                  stage: 1
+                - pos:
+                    filename: Block atom with multiple statements
+                    offset: 40
+                    line: 4
+                    column: 5
+                  comments: []
+                  annotations: []
+                  kind:
+                    pos:
+                      filename: Block atom with multiple statements
+                      offset: 40
+                      line: 4
+                      column: 5
+                    label: ""
+                    value:
+                      pos:
+                        filename: Block atom with multiple statements
+                        offset: 46
+                        line: 4
+                        column: 11
+                      kind:
+                        prefix: []
+                        operands:
+                          - atom:
+                              pos:
+                                filename: Block atom with multiple statements
+                                offset: 46
+                                line: 4
+                                column: 11
+                              kind:
+                                name: x
+                              type: null
+                            postfix:
+                              - invocation: []
+                                index: null
+                                operator: +
+                                stage: 1
+                            stage: 1
+                          - atom:
+                              pos:
+                                filename: Block atom with multiple statements
+                                offset: 50
+                                line: 4
+                                column: 15
+                              kind:
+                                name: "y"
+                              type: null
+                            postfix: []
+                            stage: 1
+                      stage: 1
+                      type: null
+                    stage: 1
+                  stage: 1
+              stage: 1
+          stage: 1
+          type: null
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Function_statement - 1]
+pos:
+  filename: Function statement
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Function statement
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Function statement
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Function statement
+          offset: 0
+          line: 1
+          column: 1
+        name: add
+        parameters:
+          - pos:
+              filename: Function statement
+              offset: 8
+              line: 1
+              column: 9
+            name: a
+            type:
+              pos:
+                filename: Function statement
+                offset: 11
+                line: 1
+                column: 12
+              kind:
+                signed: true
+                bitsize: 64
+            stage: 1
+          - pos:
+              filename: Function statement
+              offset: 16
+              line: 1
+              column: 17
+            name: b
+            type:
+              pos:
+                filename: Function statement
+                offset: 19
+                line: 1
+                column: 20
+              kind:
+                signed: false
+                bitsize: 64
+            stage: 1
+        return:
+          pos:
+            filename: Function statement
+            offset: 25
+            line: 1
+            column: 26
+          kind:
+            signed: true
+            bitsize: 64
+        body:
+          pos:
+            filename: Function statement
+            offset: 29
+            line: 1
+            column: 30
+          label: ""
+          statements:
+            - pos:
+                filename: Function statement
+                offset: 35
+                line: 2
+                column: 5
+              comments: []
+              annotations: []
+              kind:
+                pos:
+                  filename: Function statement
+                  offset: 35
+                  line: 2
+                  column: 5
+                name: c
+                type: null
+                value:
+                  pos:
+                    filename: Function statement
+                    offset: 43
+                    line: 2
+                    column: 13
+                  kind:
+                    prefix: []
+                    operands:
+                      - atom:
+                          pos:
+                            filename: Function statement
+                            offset: 43
+                            line: 2
+                            column: 13
+                          kind:
+                            name: a
+                          type: null
+                        postfix:
+                          - invocation: []
+                            index: null
+                            operator: +
+                            stage: 1
+                        stage: 1
+                      - atom:
+                          pos:
+                            filename: Function statement
+                            offset: 47
+                            line: 2
+                            column: 17
+                          kind:
+                            name: b
+                          type: null
+                        postfix: []
+                        stage: 1
+                  stage: 1
+                  type: null
+                isstatic: false
+                ismutable: false
+                stage: 1
+              stage: 1
+            - pos:
+                filename: Function statement
+                offset: 53
+                line: 3
+                column: 5
+              comments: []
+              annotations: []
+              kind:
+                pos:
+                  filename: Function statement
+                  offset: 53
+                  line: 3
+                  column: 5
+                label: ""
+                value:
+                  pos:
+                    filename: Function statement
+                    offset: 60
+                    line: 3
+                    column: 12
+                  kind:
+                    prefix: []
+                    operands:
+                      - atom:
+                          pos:
+                            filename: Function statement
+                            offset: 60
+                            line: 3
+                            column: 12
+                          kind:
+                            name: c
+                          type: null
+                        postfix: []
+                        stage: 1
+                  stage: 1
+                  type: null
+                stage: 1
+              stage: 1
+          stage: 1
+        isstatic: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Function_statement_with_annotation - 1]
+pos:
+  filename: Function statement with annotation
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Function statement with annotation
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Function statement with annotation
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations:
+        - pos:
+            filename: Function statement with annotation
+            offset: 0
+            line: 1
+            column: 1
+          name: tag.anno
+          arguments:
+            - pos:
+                filename: Function statement with annotation
+                offset: 10
+                line: 1
+                column: 11
+              kind:
+                prefix: []
+                operands:
+                  - atom:
+                      pos:
+                        filename: Function statement with annotation
+                        offset: 10
+                        line: 1
+                        column: 11
+                      kind:
+                        kind:
+                          fragments:
+                            - text: hello world
+                              interpolation: null
+                        stage: 1
+                      type: null
+                    postfix: []
+                    stage: 1
+              stage: 1
+              type: null
+            - pos:
+                filename: Function statement with annotation
+                offset: 25
+                line: 1
+                column: 26
+              kind:
+                prefix: []
+                operands:
+                  - atom:
+                      pos:
+                        filename: Function statement with annotation
+                        offset: 25
+                        line: 1
+                        column: 26
+                      kind:
+                        kind:
+                          value: 100
+                        stage: 1
+                      type: null
+                    postfix: []
+                    stage: 1
+              stage: 1
+              type: null
+          stage: 1
+      kind:
+        pos:
+          filename: Function statement with annotation
+          offset: 30
+          line: 1
+          column: 31
+        name: add
+        parameters:
+          - pos:
+              filename: Function statement with annotation
+              offset: 38
+              line: 1
+              column: 39
+            name: a
+            type:
+              pos:
+                filename: Function statement with annotation
+                offset: 41
+                line: 1
+                column: 42
+              kind:
+                signed: true
+                bitsize: 64
+            stage: 1
+          - pos:
+              filename: Function statement with annotation
+              offset: 46
+              line: 1
+              column: 47
+            name: b
+            type:
+              pos:
+                filename: Function statement with annotation
+                offset: 49
+                line: 1
+                column: 50
+              kind:
+                signed: true
+                bitsize: 64
+            stage: 1
+        return:
+          pos:
+            filename: Function statement with annotation
+            offset: 55
+            line: 1
+            column: 56
+          kind:
+            signed: true
+            bitsize: 64
+        body:
+          pos:
+            filename: Function statement with annotation
+            offset: 59
+            line: 1
+            column: 60
+          label: ""
+          statements:
+            - pos:
+                filename: Function statement with annotation
+                offset: 65
+                line: 2
+                column: 5
+              comments: []
+              annotations: []
+              kind:
+                pos:
+                  filename: Function statement with annotation
+                  offset: 65
+                  line: 2
+                  column: 5
+                name: c
+                type: null
+                value:
+                  pos:
+                    filename: Function statement with annotation
+                    offset: 73
+                    line: 2
+                    column: 13
+                  kind:
+                    prefix: []
+                    operands:
+                      - atom:
+                          pos:
+                            filename: Function statement with annotation
+                            offset: 73
+                            line: 2
+                            column: 13
+                          kind:
+                            name: a
+                          type: null
+                        postfix:
+                          - invocation: []
+                            index: null
+                            operator: +
+                            stage: 1
+                        stage: 1
+                      - atom:
+                          pos:
+                            filename: Function statement with annotation
+                            offset: 77
+                            line: 2
+                            column: 17
+                          kind:
+                            name: b
+                          type: null
+                        postfix: []
+                        stage: 1
+                  stage: 1
+                  type: null
+                isstatic: false
+                ismutable: false
+                stage: 1
+              stage: 1
+          stage: 1
+        isstatic: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Case_statement - 1]
+pos:
+  filename: Case statement
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Case statement
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Case statement
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Case statement
+          offset: 0
+          line: 1
+          column: 1
+        expression:
+          pos:
+            filename: Case statement
+            offset: 0
+            line: 1
+            column: 1
+          kind:
+            branches:
+              - if:
+                  condition:
+                    pos:
+                      filename: Case statement
+                      offset: 15
+                      line: 2
+                      column: 9
+                    kind:
+                      prefix: []
+                      operands:
+                        - atom:
+                            pos:
+                              filename: Case statement
+                              offset: 15
+                              line: 2
+                              column: 9
+                            kind:
+                              name: x
+                            type: null
+                          postfix:
+                            - invocation: []
+                              index: null
+                              operator: ">"
+                              stage: 1
+                          stage: 1
+                        - atom:
+                            pos:
+                              filename: Case statement
+                              offset: 19
+                              line: 2
+                              column: 13
+                            kind:
+                              kind:
+                                value: 10
+                              stage: 1
+                            type: null
+                          postfix: []
+                          stage: 1
+                    stage: 1
+                    type: null
+                  then:
+                    pos:
+                      filename: Case statement
+                      offset: 23
+                      line: 2
+                      column: 17
+                    kind:
+                      prefix: []
+                      operands:
+                        - atom:
+                            pos:
+                              filename: Case statement
+                              offset: 23
+                              line: 2
+                              column: 17
+                            kind:
+                              kind:
+                                value: 1
+                              stage: 1
+                            type: null
+                          postfix: []
+                          stage: 1
+                    stage: 1
+                    type: null
+                  stage: 1
+                else: null
+              - if: null
+                else:
+                  pos:
+                    filename: Case statement
+                    offset: 34
+                    line: 3
+                    column: 10
+                  kind:
+                    prefix: []
+                    operands:
+                      - atom:
+                          pos:
+                            filename: Case statement
+                            offset: 34
+                            line: 3
+                            column: 10
+                          kind:
+                            kind:
+                              value: 2
+                            stage: 1
+                          type: null
+                        postfix: []
+                        stage: 1
+                  stage: 1
+                  type: null
+          stage: 1
+          type: null
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/If_expression - 1]
+pos:
+  filename: If expression
+  offset: 4
+  line: 2
+  column: 4
+modules: []
+toplevel:
+  pos:
+    filename: If expression
+    offset: 4
+    line: 2
+    column: 4
+  label: ""
+  statements:
+    - pos:
+        filename: If expression
+        offset: 4
+        line: 2
+        column: 4
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: If expression
+          offset: 4
+          line: 2
+          column: 4
+        expression:
+          pos:
+            filename: If expression
+            offset: 4
+            line: 2
+            column: 4
+          kind:
+            if:
+              condition:
+                pos:
+                  filename: If expression
+                  offset: 8
+                  line: 2
+                  column: 8
+                kind:
+                  prefix: []
+                  operands:
+                    - atom:
+                        pos:
+                          filename: If expression
+                          offset: 8
+                          line: 2
+                          column: 8
+                        kind:
+                          name: x
+                        type: null
+                      postfix:
+                        - invocation: []
+                          index: null
+                          operator: ">"
+                          stage: 1
+                      stage: 1
+                    - atom:
+                        pos:
+                          filename: If expression
+                          offset: 12
+                          line: 2
+                          column: 12
+                        kind:
+                          kind:
+                            value: 10
+                          stage: 1
+                        type: null
+                      postfix:
+                        - invocation: []
+                          index: null
+                          operator: "&&"
+                          stage: 1
+                      stage: 1
+                    - atom:
+                        pos:
+                          filename: If expression
+                          offset: 18
+                          line: 2
+                          column: 18
+                        kind:
+                          name: "y"
+                        type: null
+                      postfix:
+                        - invocation: []
+                          index: null
+                          operator: <
+                          stage: 1
+                      stage: 1
+                    - atom:
+                        pos:
+                          filename: If expression
+                          offset: 22
+                          line: 2
+                          column: 22
+                        kind:
+                          kind:
+                            value: 20
+                          stage: 1
+                        type: null
+                      postfix:
+                        - invocation: []
+                          index: null
+                          operator: "||"
+                          stage: 1
+                      stage: 1
+                    - atom:
+                        pos:
+                          filename: If expression
+                          offset: 28
+                          line: 2
+                          column: 28
+                        kind:
+                          name: z
+                        type: null
+                      postfix:
+                        - invocation: []
+                          index: null
+                          operator: ==
+                          stage: 1
+                      stage: 1
+                    - atom:
+                        pos:
+                          filename: If expression
+                          offset: 33
+                          line: 2
+                          column: 33
+                        kind:
+                          kind:
+                            value: 30
+                          stage: 1
+                        type: null
+                      postfix: []
+                      stage: 1
+                stage: 1
+                type: null
+              then:
+                pos:
+                  filename: If expression
+                  offset: 37
+                  line: 2
+                  column: 37
+                kind:
+                  block:
+                    pos:
+                      filename: If expression
+                      offset: 37
+                      line: 2
+                      column: 37
+                    label: ""
+                    statements:
+                      - pos:
+                          filename: If expression
+                          offset: 43
+                          line: 3
+                          column: 5
+                        comments: []
+                        annotations: []
+                        kind:
+                          pos:
+                            filename: If expression
+                            offset: 43
+                            line: 3
+                            column: 5
+                          label: ""
+                          value:
+                            pos:
+                              filename: If expression
+                              offset: 50
+                              line: 3
+                              column: 12
+                            kind:
+                              prefix: []
+                              operands:
+                                - atom:
+                                    pos:
+                                      filename: If expression
+                                      offset: 50
+                                      line: 3
+                                      column: 12
+                                    kind:
+                                      name: x
+                                    type: null
+                                  postfix:
+                                    - invocation: []
+                                      index: null
+                                      operator: +
+                                      stage: 1
+                                  stage: 1
+                                - atom:
+                                    pos:
+                                      filename: If expression
+                                      offset: 54
+                                      line: 3
+                                      column: 16
+                                    kind:
+                                      name: "y"
+                                    type: null
+                                  postfix:
+                                    - invocation: []
+                                      index: null
+                                      operator: +
+                                      stage: 1
+                                  stage: 1
+                                - atom:
+                                    pos:
+                                      filename: If expression
+                                      offset: 58
+                                      line: 3
+                                      column: 20
+                                    kind:
+                                      name: z
+                                    type: null
+                                  postfix: []
+                                  stage: 1
+                            stage: 1
+                            type: null
+                          stage: 1
+                        stage: 1
+                    stage: 1
+                stage: 1
+                type: null
+              stage: 1
+            elseifs:
+              - condition:
+                  pos:
+                    filename: If expression
+                    offset: 74
+                    line: 4
+                    column: 15
+                  kind:
+                    prefix: []
+                    operands:
+                      - atom:
+                          pos:
+                            filename: If expression
+                            offset: 74
+                            line: 4
+                            column: 15
+                          kind:
+                            name: interlockable
+                          type: null
+                        postfix:
+                          - invocation: []
+                            index: null
+                            operator: ""
+                            stage: 1
+                        stage: 1
+                  stage: 1
+                  type: null
+                then:
+                  pos:
+                    filename: If expression
+                    offset: 91
+                    line: 4
+                    column: 32
+                  kind:
+                    block:
+                      pos:
+                        filename: If expression
+                        offset: 91
+                        line: 4
+                        column: 32
+                      label: ""
+                      statements:
+                        - pos:
+                            filename: If expression
+                            offset: 97
+                            line: 5
+                            column: 5
+                          comments: []
+                          annotations: []
+                          kind:
+                            pos:
+                              filename: If expression
+                              offset: 97
+                              line: 5
+                              column: 5
+                            label: test
+                            value:
+                              pos:
+                                filename: If expression
+                                offset: 109
+                                line: 5
+                                column: 17
+                              kind:
+                                prefix: []
+                                operands:
+                                  - atom:
+                                      pos:
+                                        filename: If expression
+                                        offset: 109
+                                        line: 5
+                                        column: 17
+                                      kind:
+                                        kind:
+                                          value: 5
+                                        stage: 1
+                                      type: null
+                                    postfix: []
+                                    stage: 1
+                              stage: 1
+                              type: null
+                            stage: 1
+                          stage: 1
+                      stage: 1
+                  stage: 1
+                  type: null
+                stage: 1
+            else:
+              pos:
+                filename: If expression
+                offset: 121
+                line: 6
+                column: 11
+              kind:
+                block:
+                  pos:
+                    filename: If expression
+                    offset: 121
+                    line: 6
+                    column: 11
+                  label: ""
+                  statements:
+                    - pos:
+                        filename: If expression
+                        offset: 127
+                        line: 7
+                        column: 5
+                      comments: []
+                      annotations: []
+                      kind:
+                        pos:
+                          filename: If expression
+                          offset: 127
+                          line: 7
+                          column: 5
+                        expression:
+                          pos:
+                            filename: If expression
+                            offset: 127
+                            line: 7
+                            column: 5
+                          kind:
+                            prefix: []
+                            operands:
+                              - atom:
+                                  pos:
+                                    filename: If expression
+                                    offset: 127
+                                    line: 7
+                                    column: 5
+                                  kind:
+                                    name: takeOver
+                                  type: null
+                                postfix:
+                                  - invocation:
+                                      - pos:
+                                          filename: If expression
+                                          offset: 136
+                                          line: 7
+                                          column: 14
+                                        kind:
+                                          prefix: []
+                                          operands:
+                                            - atom:
+                                                pos:
+                                                  filename: If expression
+                                                  offset: 136
+                                                  line: 7
+                                                  column: 14
+                                                kind:
+                                                  name: world
+                                                type: null
+                                              postfix: []
+                                              stage: 1
+                                        stage: 1
+                                        type: null
+                                    index: null
+                                    operator: ""
+                                    stage: 1
+                                  - invocation: []
+                                    index: null
+                                    operator: ?
+                                    stage: 1
+                                  - invocation: []
+                                    index: null
+                                    operator: .
+                                    stage: 1
+                                stage: 1
+                              - atom:
+                                  pos:
+                                    filename: If expression
+                                    offset: 144
+                                    line: 7
+                                    column: 22
+                                  kind:
+                                    name: destroy
+                                  type: null
+                                postfix:
+                                  - invocation: []
+                                    index: null
+                                    operator: ""
+                                    stage: 1
+                                stage: 1
+                          stage: 1
+                          type: null
+                        stage: 1
+                      stage: 1
+                  stage: 1
+              stage: 1
+              type: null
+          stage: 1
+          type: null
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/String_literal - 1]
+pos:
+  filename: String literal
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: String literal
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: String literal
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: String literal
+          offset: 0
+          line: 1
+          column: 1
+        name: msg
+        type: null
+        value:
+          pos:
+            filename: String literal
+            offset: 10
+            line: 1
+            column: 11
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: String literal
+                    offset: 10
+                    line: 1
+                    column: 11
+                  kind:
+                    kind:
+                      fragments:
+                        - text: Hello, world!
+                          interpolation: null
+                    stage: 1
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/String_interpolation - 1]
+pos:
+  filename: String interpolation
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: String interpolation
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: String interpolation
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: String interpolation
+          offset: 0
+          line: 1
+          column: 1
+        name: msg
+        type: null
+        value:
+          pos:
+            filename: String interpolation
+            offset: 10
+            line: 1
+            column: 11
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: String interpolation
+                    offset: 10
+                    line: 1
+                    column: 11
+                  kind:
+                    kind:
+                      fragments:
+                        - text: "Hello, "
+                          interpolation: null
+                        - text: ""
+                          interpolation:
+                            pos:
+                              filename: String interpolation
+                              offset: 20
+                              line: 1
+                              column: 21
+                            kind:
+                              prefix: []
+                              operands:
+                                - atom:
+                                    pos:
+                                      filename: String interpolation
+                                      offset: 20
+                                      line: 1
+                                      column: 21
+                                    kind:
+                                      name: name
+                                    type: null
+                                  postfix: []
+                                  stage: 1
+                            stage: 1
+                            type: null
+                        - text: "!"
+                          interpolation: null
+                    stage: 1
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Integer_type - 1]
+pos:
+  filename: Integer type
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Integer type
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Integer type
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Integer type
+          offset: 0
+          line: 1
+          column: 1
+        name: x
+        type: null
+        value:
+          pos:
+            filename: Integer type
+            offset: 8
+            line: 1
+            column: 9
+          kind:
+            block:
+              pos:
+                filename: Integer type
+                offset: 8
+                line: 1
+                column: 9
+              label: ""
+              statements:
+                - pos:
+                    filename: Integer type
+                    offset: 8
+                    line: 1
+                    column: 9
+                  comments: []
+                  annotations: []
+                  kind:
+                    pos:
+                      filename: Integer type
+                      offset: 8
+                      line: 1
+                      column: 9
+                    expression:
+                      pos:
+                        filename: Integer type
+                        offset: 8
+                        line: 1
+                        column: 9
+                      kind:
+                        expression:
+                          pos:
+                            filename: Integer type
+                            offset: 8
+                            line: 1
+                            column: 9
+                          kind:
+                            pos:
+                              filename: Integer type
+                              offset: 8
+                              line: 1
+                              column: 9
+                            kind:
+                              signed: true
+                              bitsize: 64
+                          stage: 1
+                          type: null
+                      stage: 0
+                      type: null
+                    stage: 0
+                  stage: 0
+              stage: 0
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Type_values - 1]
+pos:
+  filename: Type values
+  offset: 4
+  line: 2
+  column: 4
+modules: []
+toplevel:
+  pos:
+    filename: Type values
+    offset: 4
+    line: 2
+    column: 4
+  label: ""
+  statements:
+    - pos:
+        filename: Type values
+        offset: 4
+        line: 2
+        column: 4
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Type values
+          offset: 4
+          line: 2
+          column: 4
+        name: x
+        type:
+          pos:
+            filename: Type values
+            offset: 11
+            line: 2
+            column: 11
+          kind:
+            signed: true
+            bitsize: 64
+        value:
+          pos:
+            filename: Type values
+            offset: 17
+            line: 2
+            column: 17
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Type values
+                    offset: 17
+                    line: 2
+                    column: 17
+                  kind:
+                    kind:
+                      value: 10
+                    stage: 1
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+    - pos:
+        filename: Type values
+        offset: 23
+        line: 3
+        column: 4
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Type values
+          offset: 23
+          line: 3
+          column: 4
+        name: ptr
+        type:
+          pos:
+            filename: Type values
+            offset: 32
+            line: 3
+            column: 13
+          kind:
+            isowned: false
+            israw: false
+            ismutable: true
+            target:
+              pos:
+                filename: Type values
+                offset: 37
+                line: 3
+                column: 18
+              kind:
+                signed: true
+                bitsize: 64
+        value:
+          pos:
+            filename: Type values
+            offset: 43
+            line: 3
+            column: 24
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Type values
+                    offset: 43
+                    line: 3
+                    column: 24
+                  kind:
+                    kind:
+                      value: 20
+                    stage: 1
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+    - pos:
+        filename: Type values
+        offset: 49
+        line: 4
+        column: 4
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Type values
+          offset: 49
+          line: 4
+          column: 4
+        name: arr
+        type:
+          pos:
+            filename: Type values
+            offset: 58
+            line: 4
+            column: 13
+          kind:
+            dimension: 10
+            element:
+              pos:
+                filename: Type values
+                offset: 62
+                line: 4
+                column: 17
+              kind:
+                signed: true
+                bitsize: 64
+        value: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+    - pos:
+        filename: Type values
+        offset: 69
+        line: 5
+        column: 4
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Type values
+          offset: 69
+          line: 5
+          column: 4
+        name: fn
+        type:
+          pos:
+            filename: Type values
+            offset: 77
+            line: 5
+            column: 12
+          kind:
+            name: add
+            parameters:
+              - pos:
+                  filename: Type values
+                  offset: 85
+                  line: 5
+                  column: 20
+                name: a
+                type:
+                  pos:
+                    filename: Type values
+                    offset: 88
+                    line: 5
+                    column: 23
+                  kind:
+                    signed: true
+                    bitsize: 64
+                stage: 1
+              - pos:
+                  filename: Type values
+                  offset: 93
+                  line: 5
+                  column: 28
+                name: b
+                type:
+                  pos:
+                    filename: Type values
+                    offset: 96
+                    line: 5
+                    column: 31
+                  kind:
+                    signed: true
+                    bitsize: 64
+                stage: 1
+            return:
+              pos:
+                filename: Type values
+                offset: 102
+                line: 5
+                column: 37
+              kind:
+                signed: true
+                bitsize: 64
+        value:
+          pos:
+            filename: Type values
+            offset: 108
+            line: 5
+            column: 43
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Type values
+                    offset: 108
+                    line: 5
+                    column: 43
+                  kind:
+                    name: add
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Pointer_type - 1]
+pos:
+  filename: Pointer type
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Pointer type
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Pointer type
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Pointer type
+          offset: 0
+          line: 1
+          column: 1
+        name: ptr
+        type:
+          pos:
+            filename: Pointer type
+            offset: 9
+            line: 1
+            column: 10
+          kind:
+            isowned: false
+            israw: false
+            ismutable: true
+            target:
+              pos:
+                filename: Pointer type
+                offset: 14
+                line: 1
+                column: 15
+              kind:
+                signed: true
+                bitsize: 64
+        value:
+          pos:
+            filename: Pointer type
+            offset: 20
+            line: 1
+            column: 21
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Pointer type
+                    offset: 20
+                    line: 1
+                    column: 21
+                  kind:
+                    kind:
+                      value: 20
+                    stage: 1
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Lambda_expression - 1]
+pos:
+  filename: Lambda expression
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Lambda expression
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Lambda expression
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Lambda expression
+          offset: 0
+          line: 1
+          column: 1
+        name: adder
+        type: null
+        value:
+          pos:
+            filename: Lambda expression
+            offset: 12
+            line: 1
+            column: 13
+          kind:
+            parameters:
+              - pos:
+                  filename: Lambda expression
+                  offset: 17
+                  line: 1
+                  column: 18
+                name: b
+                type:
+                  pos:
+                    filename: Lambda expression
+                    offset: 20
+                    line: 1
+                    column: 21
+                  kind:
+                    signed: true
+                    bitsize: 32
+                stage: 1
+            return: null
+            body:
+              pos:
+                filename: Lambda expression
+                offset: 25
+                line: 1
+                column: 26
+              label: ""
+              statements:
+                - pos:
+                    filename: Lambda expression
+                    offset: 31
+                    line: 2
+                    column: 5
+                  comments: []
+                  annotations: []
+                  kind:
+                    pos:
+                      filename: Lambda expression
+                      offset: 31
+                      line: 2
+                      column: 5
+                    name: a
+                    type: null
+                    value:
+                      pos:
+                        filename: Lambda expression
+                        offset: 39
+                        line: 2
+                        column: 13
+                      kind:
+                        prefix: []
+                        operands:
+                          - atom:
+                              pos:
+                                filename: Lambda expression
+                                offset: 39
+                                line: 2
+                                column: 13
+                              kind:
+                                kind:
+                                  value: 1
+                                stage: 1
+                              type: null
+                            postfix:
+                              - invocation: []
+                                index: null
+                                operator: +
+                                stage: 1
+                            stage: 1
+                          - atom:
+                              pos:
+                                filename: Lambda expression
+                                offset: 43
+                                line: 2
+                                column: 17
+                              kind:
+                                name: b
+                              type: null
+                            postfix: []
+                            stage: 1
+                      stage: 1
+                      type: null
+                    isstatic: false
+                    ismutable: false
+                    stage: 1
+                  stage: 1
+              stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Binary_expression - 1]
+pos:
+  filename: Binary expression
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Binary expression
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Binary expression
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Binary expression
+          offset: 0
+          line: 1
+          column: 1
+        name: x
+        type: null
+        value:
+          pos:
+            filename: Binary expression
+            offset: 8
+            line: 1
+            column: 9
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Binary expression
+                    offset: 8
+                    line: 1
+                    column: 9
+                  kind:
+                    kind:
+                      value: 1
+                    stage: 1
+                  type: null
+                postfix:
+                  - invocation: []
+                    index: null
+                    operator: +
+                    stage: 1
+                stage: 1
+              - atom:
+                  pos:
+                    filename: Binary expression
+                    offset: 12
+                    line: 1
+                    column: 13
+                  kind:
+                    kind:
+                      value: 2
+                    stage: 1
+                  type: null
+                postfix:
+                  - invocation: []
+                    index: null
+                    operator: "*"
+                    stage: 1
+                stage: 1
+              - atom:
+                  pos:
+                    filename: Binary expression
+                    offset: 16
+                    line: 1
+                    column: 17
+                  kind:
+                    kind:
+                      value: 3
+                    stage: 1
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Nested_expressions - 1]
+pos:
+  filename: Nested expressions
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Nested expressions
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Nested expressions
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Nested expressions
+          offset: 0
+          line: 1
+          column: 1
+        name: x
+        type: null
+        value:
+          pos:
+            filename: Nested expressions
+            offset: 8
+            line: 1
+            column: 9
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Nested expressions
+                    offset: 8
+                    line: 1
+                    column: 9
+                  kind:
+                    expression:
+                      pos:
+                        filename: Nested expressions
+                        offset: 9
+                        line: 1
+                        column: 10
+                      kind:
+                        prefix: []
+                        operands:
+                          - atom:
+                              pos:
+                                filename: Nested expressions
+                                offset: 9
+                                line: 1
+                                column: 10
+                              kind:
+                                kind:
+                                  value: 1
+                                stage: 1
+                              type: null
+                            postfix:
+                              - invocation: []
+                                index: null
+                                operator: +
+                                stage: 1
+                            stage: 1
+                          - atom:
+                              pos:
+                                filename: Nested expressions
+                                offset: 13
+                                line: 1
+                                column: 14
+                              kind:
+                                kind:
+                                  value: 2
+                                stage: 1
+                              type: null
+                            postfix: []
+                            stage: 1
+                      stage: 1
+                      type: null
+                  type: null
+                postfix:
+                  - invocation: []
+                    index: null
+                    operator: "*"
+                    stage: 1
+                stage: 1
+              - atom:
+                  pos:
+                    filename: Nested expressions
+                    offset: 18
+                    line: 1
+                    column: 19
+                  kind:
+                    kind:
+                      value: 3
+                    stage: 1
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Prefix_ops - 1]
+pos:
+  filename: Prefix ops
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Prefix ops
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Prefix ops
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Prefix ops
+          offset: 0
+          line: 1
+          column: 1
+        name: x
+        type: null
+        value:
+          pos:
+            filename: Prefix ops
+            offset: 8
+            line: 1
+            column: 9
+          kind:
+            prefix:
+              - "!"
+            operands:
+              - atom:
+                  pos:
+                    filename: Prefix ops
+                    offset: 9
+                    line: 1
+                    column: 10
+                  kind:
+                    name: "true"
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Postfix_ops - 1]
+pos:
+  filename: Postfix ops
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Postfix ops
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Postfix ops
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Postfix ops
+          offset: 0
+          line: 1
+          column: 1
+        name: x
+        type: null
+        value:
+          pos:
+            filename: Postfix ops
+            offset: 8
+            line: 1
+            column: 9
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Postfix ops
+                    offset: 8
+                    line: 1
+                    column: 9
+                  kind:
+                    name: "true"
+                  type: null
+                postfix:
+                  - invocation: []
+                    index: null
+                    operator: ?
+                    stage: 1
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Prefix_and_postfix_ops - 1]
+pos:
+  filename: Prefix and postfix ops
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Prefix and postfix ops
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Prefix and postfix ops
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Prefix and postfix ops
+          offset: 0
+          line: 1
+          column: 1
+        name: x
+        type: null
+        value:
+          pos:
+            filename: Prefix and postfix ops
+            offset: 8
+            line: 1
+            column: 9
+          kind:
+            prefix:
+              - "!"
+            operands:
+              - atom:
+                  pos:
+                    filename: Prefix and postfix ops
+                    offset: 9
+                    line: 1
+                    column: 10
+                  kind:
+                    name: "true"
+                  type: null
+                postfix:
+                  - invocation: []
+                    index: null
+                    operator: ?
+                    stage: 1
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Invocation - 1]
+pos:
+  filename: Invocation
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Invocation
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Invocation
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Invocation
+          offset: 0
+          line: 1
+          column: 1
+        name: x
+        type: null
+        value:
+          pos:
+            filename: Invocation
+            offset: 8
+            line: 1
+            column: 9
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Invocation
+                    offset: 8
+                    line: 1
+                    column: 9
+                  kind:
+                    name: add
+                  type: null
+                postfix:
+                  - invocation:
+                      - pos:
+                          filename: Invocation
+                          offset: 12
+                          line: 1
+                          column: 13
+                        kind:
+                          prefix: []
+                          operands:
+                            - atom:
+                                pos:
+                                  filename: Invocation
+                                  offset: 12
+                                  line: 1
+                                  column: 13
+                                kind:
+                                  kind:
+                                    value: 1
+                                  stage: 1
+                                type: null
+                              postfix: []
+                              stage: 1
+                        stage: 1
+                        type: null
+                      - pos:
+                          filename: Invocation
+                          offset: 15
+                          line: 1
+                          column: 16
+                        kind:
+                          prefix: []
+                          operands:
+                            - atom:
+                                pos:
+                                  filename: Invocation
+                                  offset: 15
+                                  line: 1
+                                  column: 16
+                                kind:
+                                  kind:
+                                    value: 2
+                                  stage: 1
+                                type: null
+                              postfix: []
+                              stage: 1
+                        stage: 1
+                        type: null
+                    index: null
+                    operator: ""
+                    stage: 1
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Invocation_with_postfix_op - 1]
+pos:
+  filename: Invocation with postfix op
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Invocation with postfix op
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Invocation with postfix op
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Invocation with postfix op
+          offset: 0
+          line: 1
+          column: 1
+        name: x
+        type: null
+        value:
+          pos:
+            filename: Invocation with postfix op
+            offset: 8
+            line: 1
+            column: 9
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Invocation with postfix op
+                    offset: 8
+                    line: 1
+                    column: 9
+                  kind:
+                    name: add
+                  type: null
+                postfix:
+                  - invocation:
+                      - pos:
+                          filename: Invocation with postfix op
+                          offset: 12
+                          line: 1
+                          column: 13
+                        kind:
+                          prefix: []
+                          operands:
+                            - atom:
+                                pos:
+                                  filename: Invocation with postfix op
+                                  offset: 12
+                                  line: 1
+                                  column: 13
+                                kind:
+                                  kind:
+                                    value: 1
+                                  stage: 1
+                                type: null
+                              postfix: []
+                              stage: 1
+                        stage: 1
+                        type: null
+                      - pos:
+                          filename: Invocation with postfix op
+                          offset: 15
+                          line: 1
+                          column: 16
+                        kind:
+                          prefix: []
+                          operands:
+                            - atom:
+                                pos:
+                                  filename: Invocation with postfix op
+                                  offset: 15
+                                  line: 1
+                                  column: 16
+                                kind:
+                                  kind:
+                                    value: 2
+                                  stage: 1
+                                type: null
+                              postfix: []
+                              stage: 1
+                        stage: 1
+                        type: null
+                    index: null
+                    operator: ""
+                    stage: 1
+                  - invocation: []
+                    index: null
+                    operator: ?
+                    stage: 1
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Invocation_with_prefix_op - 1]
+pos:
+  filename: Invocation with prefix op
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Invocation with prefix op
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Invocation with prefix op
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Invocation with prefix op
+          offset: 0
+          line: 1
+          column: 1
+        name: x
+        type: null
+        value:
+          pos:
+            filename: Invocation with prefix op
+            offset: 8
+            line: 1
+            column: 9
+          kind:
+            prefix:
+              - "!"
+            operands:
+              - atom:
+                  pos:
+                    filename: Invocation with prefix op
+                    offset: 9
+                    line: 1
+                    column: 10
+                  kind:
+                    name: add
+                  type: null
+                postfix:
+                  - invocation:
+                      - pos:
+                          filename: Invocation with prefix op
+                          offset: 13
+                          line: 1
+                          column: 14
+                        kind:
+                          prefix: []
+                          operands:
+                            - atom:
+                                pos:
+                                  filename: Invocation with prefix op
+                                  offset: 13
+                                  line: 1
+                                  column: 14
+                                kind:
+                                  kind:
+                                    value: 1
+                                  stage: 1
+                                type: null
+                              postfix: []
+                              stage: 1
+                        stage: 1
+                        type: null
+                      - pos:
+                          filename: Invocation with prefix op
+                          offset: 16
+                          line: 1
+                          column: 17
+                        kind:
+                          prefix: []
+                          operands:
+                            - atom:
+                                pos:
+                                  filename: Invocation with prefix op
+                                  offset: 16
+                                  line: 1
+                                  column: 17
+                                kind:
+                                  kind:
+                                    value: 2
+                                  stage: 1
+                                type: null
+                              postfix: []
+                              stage: 1
+                        stage: 1
+                        type: null
+                    index: null
+                    operator: ""
+                    stage: 1
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Indexing - 1]
+pos:
+  filename: Indexing
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Indexing
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Indexing
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Indexing
+          offset: 0
+          line: 1
+          column: 1
+        name: x
+        type: null
+        value:
+          pos:
+            filename: Indexing
+            offset: 8
+            line: 1
+            column: 9
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Indexing
+                    offset: 8
+                    line: 1
+                    column: 9
+                  kind:
+                    name: arr
+                  type: null
+                postfix:
+                  - invocation: []
+                    index:
+                      pos:
+                        filename: Indexing
+                        offset: 12
+                        line: 1
+                        column: 13
+                      kind:
+                        prefix: []
+                        operands:
+                          - atom:
+                              pos:
+                                filename: Indexing
+                                offset: 12
+                                line: 1
+                                column: 13
+                              kind:
+                                kind:
+                                  value: 1
+                                stage: 1
+                              type: null
+                            postfix: []
+                            stage: 1
+                      stage: 1
+                      type: null
+                    operator: ""
+                    stage: 1
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Break_statement - 1]
+pos:
+  filename: Break statement
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Break statement
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Break statement
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Break statement
+          offset: 0
+          line: 1
+          column: 1
+        label: myLabel
+        value:
+          pos:
+            filename: Break statement
+            offset: 15
+            line: 1
+            column: 16
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Break statement
+                    offset: 15
+                    line: 1
+                    column: 16
+                  kind:
+                    kind:
+                      value: 42
+                    stage: 1
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 1
+          type: null
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Doc_comment - 1]
+pos:
+  filename: Doc comment
+  offset: 24
+  line: 2
+  column: 4
+modules: []
+toplevel:
+  pos:
+    filename: Doc comment
+    offset: 24
+    line: 2
+    column: 4
+  label: ""
+  statements:
+    - pos:
+        filename: Doc comment
+        offset: 24
+        line: 2
+        column: 4
+      comments:
+        - " My doc comment "
+      annotations: []
+      kind:
+        pos:
+          filename: Doc comment
+          offset: 24
+          line: 2
+          column: 4
+        name: test
+        parameters: []
+        return: null
+        body:
+          pos:
+            filename: Doc comment
+            offset: 35
+            line: 2
+            column: 15
+          label: ""
+          statements: []
+          stage: 1
+        isstatic: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Static_expression - 1]
+pos:
+  filename: Static expression
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Static expression
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Static expression
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Static expression
+          offset: 0
+          line: 1
+          column: 1
+        name: x
+        type: null
+        value:
+          pos:
+            filename: Static expression
+            offset: 8
+            line: 1
+            column: 9
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Static expression
+                    offset: 15
+                    line: 1
+                    column: 16
+                  kind:
+                    kind:
+                      value: 42
+                    stage: 1
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 0
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverter/Empty_input - 1]
+stages:
+  - level: 0
+    root:
+      pos:
+        filename: Empty input
+        offset: 0
+        line: 1
+        column: 1
+      statements: []
+    crossstagevalues: []
+    generatedfragments: []
+  - level: 9223372036854775807
+    root:
+      pos:
+        filename: Empty input
+        offset: 0
+        line: 1
+        column: 1
+      statements: []
+    crossstagevalues: []
+    generatedfragments: []
+
+---
+
+[TestIRConverter/Multiple_root_statements - 1]
+pos:
+  filename: Multiple root statements
+  offset: 0
+  line: 1
+  column: 1
+modules: []
+toplevel:
+  pos:
+    filename: Multiple root statements
+    offset: 0
+    line: 1
+    column: 1
+  label: ""
+  statements:
+    - pos:
+        filename: Multiple root statements
+        offset: 0
+        line: 1
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Multiple root statements
+          offset: 0
+          line: 1
+          column: 1
+        name: x
+        type: null
+        value:
+          pos:
+            filename: Multiple root statements
+            offset: 8
+            line: 1
+            column: 9
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Multiple root statements
+                    offset: 8
+                    line: 1
+                    column: 9
+                  kind:
+                    kind:
+                      value: 1
+                    stage: 1
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+    - pos:
+        filename: Multiple root statements
+        offset: 10
+        line: 2
+        column: 1
+      comments: []
+      annotations: []
+      kind:
+        pos:
+          filename: Multiple root statements
+          offset: 10
+          line: 2
+          column: 1
+        name: "y"
+        type: null
+        value:
+          pos:
+            filename: Multiple root statements
+            offset: 18
+            line: 2
+            column: 9
+          kind:
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Multiple root statements
+                    offset: 18
+                    line: 2
+                    column: 9
+                  kind:
+                    kind:
+                      value: 2
+                    stage: 1
+                  type: null
+                postfix: []
+                stage: 1
+          stage: 1
+          type: null
+        isstatic: false
+        ismutable: false
+        stage: 1
+      stage: 1
+  stage: 1
+
+---
+
+[TestIRConverterErrors/Nil_root - 1]
+cannot convert nil root
+---
+
+[TestIRConverterErrors/Module_inside_block - 1]
+unexpected module statement within block
+---
+
+[TestIRConverterErrors/Invalid_type_for_function_return - 1]
+expected type expression for function return, got *patina.IRValue
+---
+
+[TestIRConverter/Complex_case_with_multiple_stages - 1]
+pos:
+  filename: Complex case with multiple stages
+  offset: 4
+  line: 2
+  column: 4
+modules:
+  - pos:
+      filename: Complex case with multiple stages
+      offset: 4
+      line: 2
+      column: 4
+    name: test
+    block:
+      pos:
+        filename: Complex case with multiple stages
+        offset: 16
+        line: 2
+        column: 16
+      label: ""
+      statements:
+        - pos:
+            filename: Complex case with multiple stages
+            offset: 22
+            line: 3
+            column: 5
+          comments: []
+          annotations: []
+          kind:
+            pos:
+              filename: Complex case with multiple stages
+              offset: 22
+              line: 3
+              column: 5
+            name: generateCode
+            parameters: []
+            return: null
+            body:
+              pos:
+                filename: Complex case with multiple stages
+                offset: 48
+                line: 3
+                column: 31
+              label: ""
+              statements:
+                - pos:
+                    filename: Complex case with multiple stages
+                    offset: 98
+                    line: 5
+                    column: 6
+                  comments: []
+                  annotations: []
+                  kind:
+                    pos:
+                      filename: Complex case with multiple stages
+                      offset: 98
+                      line: 5
+                      column: 6
+                    name: runtime_code
+                    type: null
+                    value:
+                      pos:
+                        filename: Complex case with multiple stages
+                        offset: 117
+                        line: 5
+                        column: 25
+                      kind:
+                        block:
+                          pos:
+                            filename: Complex case with multiple stages
+                            offset: 124
+                            line: 5
+                            column: 32
+                          label: ""
+                          statements:
+                            - pos:
+                                filename: Complex case with multiple stages
+                                offset: 184
+                                line: 7
+                                column: 7
+                              comments: []
+                              annotations: []
+                              kind:
+                                pos:
+                                  filename: Complex case with multiple stages
+                                  offset: 184
+                                  line: 7
+                                  column: 7
+                                name: main
+                                parameters: []
+                                return: null
+                                body:
+                                  pos:
+                                    filename: Complex case with multiple stages
+                                    offset: 195
+                                    line: 7
+                                    column: 18
+                                  label: ""
+                                  statements:
+                                    - pos:
+                                        filename: Complex case with multiple stages
+                                        offset: 204
+                                        line: 8
+                                        column: 8
+                                      comments: []
+                                      annotations: []
+                                      kind:
+                                        pos:
+                                          filename: Complex case with multiple stages
+                                          offset: 204
+                                          line: 8
+                                          column: 8
+                                        expression:
+                                          pos:
+                                            filename: Complex case with multiple stages
+                                            offset: 204
+                                            line: 8
+                                            column: 8
+                                          kind:
+                                            prefix: []
+                                            operands:
+                                              - atom:
+                                                  pos:
+                                                    filename: Complex case with multiple stages
+                                                    offset: 204
+                                                    line: 8
+                                                    column: 8
+                                                  kind:
+                                                    name: print
+                                                  type: null
+                                                postfix:
+                                                  - invocation:
+                                                      - pos:
+                                                          filename: Complex case with multiple stages
+                                                          offset: 210
+                                                          line: 8
+                                                          column: 14
+                                                        kind:
+                                                          prefix: []
+                                                          operands:
+                                                            - atom:
+                                                                pos:
+                                                                  filename: Complex case with multiple stages
+                                                                  offset: 210
+                                                                  line: 8
+                                                                  column: 14
+                                                                kind:
+                                                                  kind:
+                                                                    fragments:
+                                                                      - text: Hello from runtime!
+                                                                        interpolation: null
+                                                                  stage: 0
+                                                                type: null
+                                                              postfix: []
+                                                              stage: 0
+                                                        stage: 0
+                                                        type: null
+                                                    index: null
+                                                    operator: ""
+                                                    stage: 0
+                                                stage: 0
+                                          stage: 0
+                                          type: null
+                                        stage: 0
+                                      stage: 0
+                                  stage: 0
+                                isstatic: false
+                                stage: 0
+                              stage: 0
+                          stage: 0
+                      stage: 0
+                      type: null
+                    isstatic: false
+                    ismutable: false
+                    stage: 0
+                  stage: 0
+                - pos:
+                    filename: Complex case with multiple stages
+                    offset: 253
+                    line: 11
+                    column: 6
+                  comments: []
+                  annotations: []
+                  kind:
+                    pos:
+                      filename: Complex case with multiple stages
+                      offset: 253
+                      line: 11
+                      column: 6
+                    label: ""
+                    value:
+                      pos:
+                        filename: Complex case with multiple stages
+                        offset: 260
+                        line: 11
+                        column: 13
+                      kind:
+                        prefix: []
+                        operands:
+                          - atom:
+                              pos:
+                                filename: Complex case with multiple stages
+                                offset: 260
+                                line: 11
+                                column: 13
+                              kind:
+                                name: runtime_code
+                              type: null
+                            postfix: []
+                            stage: 0
+                      stage: 0
+                      type: null
+                    stage: 0
+                  stage: 0
+              stage: 0
+            isstatic: true
+            stage: 0
+          stage: 0
+        - pos:
+            filename: Complex case with multiple stages
+            offset: 322
+            line: 15
+            column: 5
+          comments: []
+          annotations: []
+          kind:
+            pos:
+              filename: Complex case with multiple stages
+              offset: 322
+              line: 15
+              column: 5
+            expression:
+              pos:
+                filename: Complex case with multiple stages
+                offset: 322
+                line: 15
+                column: 5
+              kind:
+                prefix: []
+                operands:
+                  - atom:
+                      pos:
+                        filename: Complex case with multiple stages
+                        offset: 329
+                        line: 15
+                        column: 12
+                      kind:
+                        name: generateCode
+                      type: null
+                    postfix:
+                      - invocation: []
+                        index: null
+                        operator: ""
+                        stage: 0
+                    stage: 0
+              stage: 0
+              type: null
+            stage: 0
+          stage: 0
+      stage: 0
+    stage: 0
+    comments: []
+toplevel:
+  pos:
+    filename: Complex case with multiple stages
+    offset: 4
+    line: 2
+    column: 4
+  label: ""
+  statements: []
+  stage: 0
+
+---
+
+[TestIRConverter/Module_with_stage_separation - 1]
+stages:
+  - level: 0
+    root:
+      pos:
+        filename: Module with stage separation
+        offset: 0
+        line: 1
+        column: 1
+      statements: []
+    crossstagevalues: []
+    generatedfragments: []
+  - level: 9223372036854775807
+    root:
+      pos:
+        filename: Module with stage separation
+        offset: 0
+        line: 1
+        column: 1
+      statements:
+        - pos:
+            filename: Module with stage separation
+            offset: 0
+            line: 1
+            column: 1
+          comments: null
+          annotations: []
+          statement:
+            pos:
+              filename: Module with stage separation
+              offset: 0
+              line: 1
+              column: 1
+            name: test
+            body:
+              pos:
+                filename: Module with stage separation
+                offset: 12
+                line: 1
+                column: 13
+              label: ""
+              statements:
+                - pos:
+                    filename: Module with stage separation
+                    offset: 18
+                    line: 2
+                    column: 5
+                  comments: null
+                  annotations: []
+                  statement:
+                    pos:
+                      filename: Module with stage separation
+                      offset: 18
+                      line: 2
+                      column: 5
+                    isstatic: true
+                    ismutable: false
+                    name: x
+                    type: null
+                    value:
+                      pos:
+                        filename: Module with stage separation
+                        offset: 33
+                        line: 2
+                        column: 20
+                      type:
+                        pos:
+                          filename: Module with stage separation
+                          offset: 33
+                          line: 2
+                          column: 20
+                        isowned: false
+                        israw: false
+                        ismutable: true
+                        target:
+                          pos:
+                            filename: Module with stage separation
+                            offset: 38
+                            line: 2
+                            column: 25
+                          type:
+                            pos:
+                              filename: Module with stage separation
+                              offset: 38
+                              line: 2
+                              column: 25
+                            signed: true
+                            bitsize: 32
+                - pos:
+                    filename: Module with stage separation
+                    offset: 46
+                    line: 3
+                    column: 5
+                  comments: null
+                  annotations: []
+                  statement:
+                    pos:
+                      filename: Module with stage separation
+                      offset: 46
+                      line: 3
+                      column: 5
+                    isstatic: false
+                    ismutable: false
+                    name: "y"
+                    type:
+                      pos:
+                        filename: Module with stage separation
+                        offset: 53
+                        line: 3
+                        column: 12
+                      expression:
+                        pos:
+                          filename: Module with stage separation
+                          offset: 54
+                          line: 3
+                          column: 13
+                        static:
+                          pos:
+                            filename: Module with stage separation
+                            offset: 61
+                            line: 3
+                            column: 20
+                          prefix: []
+                          operands:
+                            - atom:
+                                pos:
+                                  filename: Module with stage separation
+                                  offset: 61
+                                  line: 3
+                                  column: 20
+                                ident: x
+                              postfix: []
+                    value:
+                      pos:
+                        filename: Module with stage separation
+                        offset: 66
+                        line: 3
+                        column: 25
+                      prefix: []
+                      operands:
+                        - atom:
+                            pos:
+                              filename: Module with stage separation
+                              offset: 66
+                              line: 3
+                              column: 25
+                            value:
+                              pos:
+                                filename: Module with stage separation
+                                offset: 66
+                                line: 3
+                                column: 25
+                              value: 42
+                          postfix: []
+    crossstagevalues: []
+    generatedfragments: []
+
+---
+
+[TestIRConverter/Simple_binding_across_stages - 1]
+stages:
+  - level: 0
+    root:
+      pos:
+        filename: Simple binding across stages
+        offset: 0
+        line: 1
+        column: 1
+      statements:
+        - pos:
+            filename: Simple binding across stages
+            offset: 0
+            line: 1
+            column: 1
+          comments: null
+          annotations: []
+          statement:
+            pos:
+              filename: Simple binding across stages
+              offset: 0
+              line: 1
+              column: 1
+            isstatic: true
+            ismutable: false
+            name: x
+            type: null
+            value:
+              pos:
+                filename: Simple binding across stages
+                offset: 15
+                line: 1
+                column: 16
+              prefix: []
+              operands:
+                - atom:
+                    pos:
+                      filename: Simple binding across stages
+                      offset: 15
+                      line: 1
+                      column: 16
+                    value:
+                      pos:
+                        filename: Simple binding across stages
+                        offset: 15
+                        line: 1
+                        column: 16
+                      value: 1
+                  postfix: []
+    crossstagevalues: []
+    generatedfragments: []
+  - level: 9223372036854775807
+    root:
+      pos:
+        filename: Simple binding across stages
+        offset: 0
+        line: 1
+        column: 1
+      statements:
+        - pos:
+            filename: Simple binding across stages
+            offset: 17
+            line: 2
+            column: 1
+          comments: null
+          annotations: []
+          statement:
+            pos:
+              filename: Simple binding across stages
+              offset: 17
+              line: 2
+              column: 1
+            isstatic: false
+            ismutable: false
+            name: "y"
+            type: null
+            value:
+              pos:
+                filename: Simple binding across stages
+                offset: 25
+                line: 2
+                column: 9
+              prefix: []
+              operands:
+                - atom:
+                    pos:
+                      filename: Simple binding across stages
+                      offset: 25
+                      line: 2
+                      column: 9
+                    ident: x
+                  postfix: []
+    crossstagevalues: []
+    generatedfragments: []
+
+---
+
+[TestIRConverter/Multi-stage_compilation - 1]
+stages:
+  - level: 0
+    root:
+      pos:
+        filename: Multi-stage compilation
+        offset: 33
+        line: 3
+        column: 4
+      statements:
+        - pos:
+            filename: Multi-stage compilation
+            offset: 33
+            line: 3
+            column: 4
+          comments: null
+          annotations: []
+          statement:
+            pos:
+              filename: Multi-stage compilation
+              offset: 33
+              line: 3
+              column: 4
+            isstatic: true
+            ismutable: false
+            name: compileVal
+            type: null
+            value:
+              pos:
+                filename: Multi-stage compilation
+                offset: 57
+                line: 3
+                column: 28
+              prefix: []
+              operands:
+                - atom:
+                    pos:
+                      filename: Multi-stage compilation
+                      offset: 57
+                      line: 3
+                      column: 28
+                    value:
+                      pos:
+                        filename: Multi-stage compilation
+                        offset: 57
+                        line: 3
+                        column: 28
+                      value: 42
+                  postfix: []
+        - pos:
+            filename: Multi-stage compilation
+            offset: 93
+            line: 6
+            column: 4
+          comments: null
+          annotations: []
+          statement:
+            pos:
+              filename: Multi-stage compilation
+              offset: 93
+              line: 6
+              column: 4
+            isstatic: true
+            ismutable: false
+            name: midVal
+            type: null
+            value:
+              pos:
+                filename: Multi-stage compilation
+                offset: 113
+                line: 6
+                column: 24
+              prefix: []
+              operands:
+                - atom:
+                    pos:
+                      filename: Multi-stage compilation
+                      offset: 113
+                      line: 6
+                      column: 24
+                    ident: compileVal
+                  postfix:
+                    - pos:
+                        filename: Multi-stage compilation
+                        offset: 124
+                        line: 6
+                        column: 35
+                      invocation: []
+                      index: null
+                      operator: +
+                - atom:
+                    pos:
+                      filename: Multi-stage compilation
+                      offset: 126
+                      line: 6
+                      column: 37
+                    value:
+                      pos:
+                        filename: Multi-stage compilation
+                        offset: 126
+                        line: 6
+                        column: 37
+                      value: 1
+                  postfix: []
+    crossstagevalues: []
+    generatedfragments: []
+  - level: 1
+    root:
+      pos:
+        filename: Multi-stage compilation
+        offset: 33
+        line: 3
+        column: 4
+      statements: []
+    crossstagevalues: []
+    generatedfragments: []
+  - level: 9223372036854775807
+    root:
+      pos:
+        filename: Multi-stage compilation
+        offset: 33
+        line: 3
+        column: 4
+      statements:
+        - pos:
+            filename: Multi-stage compilation
+            offset: 152
+            line: 9
+            column: 4
+          comments: null
+          annotations: []
+          statement:
+            pos:
+              filename: Multi-stage compilation
+              offset: 152
+              line: 9
+              column: 4
+            isstatic: false
+            ismutable: false
+            name: runtimeVal
+            type: null
+            value:
+              pos:
+                filename: Multi-stage compilation
+                offset: 169
+                line: 9
+                column: 21
+              prefix: []
+              operands:
+                - atom:
+                    pos:
+                      filename: Multi-stage compilation
+                      offset: 169
+                      line: 9
+                      column: 21
+                    ident: midVal
+                  postfix:
+                    - pos:
+                        filename: Multi-stage compilation
+                        offset: 176
+                        line: 9
+                        column: 28
+                      invocation: []
+                      index: null
+                      operator: "*"
+                - atom:
+                    pos:
+                      filename: Multi-stage compilation
+                      offset: 178
+                      line: 9
+                      column: 30
+                    value:
+                      pos:
+                        filename: Multi-stage compilation
+                        offset: 178
+                        line: 9
+                        column: 30
+                      value: 2
+                  postfix: []
+    crossstagevalues: []
+    generatedfragments: []
+
+---
+
+[TestIRConverter/Static_function_generating_code - 1]
+stages:
+  - level: 0
+    root:
+      pos:
+        filename: Static function generating code
+        offset: 4
+        line: 2
+        column: 4
+      statements:
+        - pos:
+            filename: Static function generating code
+            offset: 4
+            line: 2
+            column: 4
+          comments: null
+          annotations: []
+          statement:
+            pos:
+              filename: Static function generating code
+              offset: 4
+              line: 2
+              column: 4
+            isstatic: true
+            name: generateCode
+            parameters: []
+            return: null
+            block:
+              pos:
+                filename: Static function generating code
+                offset: 30
+                line: 2
+                column: 30
+              label: ""
+              statements:
+                - pos:
+                    filename: Static function generating code
+                    offset: 78
+                    line: 4
+                    column: 5
+                  comments: null
+                  annotations: []
+                  statement:
+                    pos:
+                      filename: Static function generating code
+                      offset: 78
+                      line: 4
+                      column: 5
+                    isstatic: false
+                    ismutable: false
+                    name: runtime_code
+                    type: null
+                    value:
+                      pos:
+                        filename: Static function generating code
+                        offset: 97
+                        line: 4
+                        column: 24
+                      static:
+                        pos:
+                          filename: Static function generating code
+                          offset: 104
+                          line: 4
+                          column: 31
+                        label: ""
+                        statements:
+                          - pos:
+                              filename: Static function generating code
+                              offset: 162
+                              line: 6
+                              column: 6
+                            comments: null
+                            annotations: []
+                            statement:
+                              pos:
+                                filename: Static function generating code
+                                offset: 162
+                                line: 6
+                                column: 6
+                              isstatic: false
+                              name: main
+                              parameters: []
+                              return: null
+                              block:
+                                pos:
+                                  filename: Static function generating code
+                                  offset: 173
+                                  line: 6
+                                  column: 17
+                                label: ""
+                                statements:
+                                  - pos:
+                                      filename: Static function generating code
+                                      offset: 181
+                                      line: 7
+                                      column: 7
+                                    comments: null
+                                    annotations: []
+                                    statement:
+                                      pos:
+                                        filename: Static function generating code
+                                        offset: 181
+                                        line: 7
+                                        column: 7
+                                      expression:
+                                        pos:
+                                          filename: Static function generating code
+                                          offset: 181
+                                          line: 7
+                                          column: 7
+                                        prefix: []
+                                        operands:
+                                          - atom:
+                                              pos:
+                                                filename: Static function generating code
+                                                offset: 181
+                                                line: 7
+                                                column: 7
+                                              ident: print
+                                            postfix:
+                                              - pos:
+                                                  filename: Static function generating code
+                                                  offset: 186
+                                                  line: 7
+                                                  column: 12
+                                                invocation:
+                                                  - pos:
+                                                      filename: Static function generating code
+                                                      offset: 187
+                                                      line: 7
+                                                      column: 13
+                                                    prefix: []
+                                                    operands:
+                                                      - atom:
+                                                          pos:
+                                                            filename: Static function generating code
+                                                            offset: 187
+                                                            line: 7
+                                                            column: 13
+                                                          value:
+                                                            pos:
+                                                              filename: Static function generating code
+                                                              offset: 187
+                                                              line: 7
+                                                              column: 13
+                                                            fragments:
+                                                              - pos:
+                                                                  filename: Static function generating code
+                                                                  offset: 188
+                                                                  line: 7
+                                                                  column: 14
+                                                                text: Hello from runtime!
+                                                                interpolation: null
+                                                        postfix: []
+                                                index: null
+                                                operator: ""
+                - pos:
+                    filename: Static function generating code
+                    offset: 227
+                    line: 10
+                    column: 5
+                  comments: null
+                  annotations: []
+                  statement:
+                    pos:
+                      filename: Static function generating code
+                      offset: 227
+                      line: 10
+                      column: 5
+                    label: ""
+                    value:
+                      pos:
+                        filename: Static function generating code
+                        offset: 234
+                        line: 10
+                        column: 12
+                      prefix: []
+                      operands:
+                        - atom:
+                            pos:
+                              filename: Static function generating code
+                              offset: 234
+                              line: 10
+                              column: 12
+                            ident: runtime_code
+                          postfix: []
+    crossstagevalues: []
+    generatedfragments: []
+  - level: 9223372036854775807
+    root:
+      pos:
+        filename: Static function generating code
+        offset: 4
+        line: 2
+        column: 4
+      statements:
+        - pos:
+            filename: Static function generating code
+            offset: 293
+            line: 14
+            column: 4
+          comments: null
+          annotations: []
+          statement:
+            pos:
+              filename: Static function generating code
+              offset: 293
+              line: 14
+              column: 4
+            expression:
+              pos:
+                filename: Static function generating code
+                offset: 293
+                line: 14
+                column: 4
+              static:
+                pos:
+                  filename: Static function generating code
+                  offset: 300
+                  line: 14
+                  column: 11
+                prefix: []
+                operands:
+                  - atom:
+                      pos:
+                        filename: Static function generating code
+                        offset: 300
+                        line: 14
+                        column: 11
+                      ident: generateCode
+                    postfix:
+                      - pos:
+                          filename: Static function generating code
+                          offset: 312
+                          line: 14
+                          column: 23
+                        invocation: []
+                        index: null
+                        operator: ""
+    crossstagevalues:
+      - pos:
+          filename: Static function generating code
+          offset: 293
+          line: 14
+          column: 4
+        identifier: static_expr_0
+        value:
+          pos:
+            filename: Static function generating code
+            offset: 300
+            line: 14
+            column: 11
+          prefix: []
+          operands:
+            - atom:
+                pos:
+                  filename: Static function generating code
+                  offset: 300
+                  line: 14
+                  column: 11
+                ident: generateCode
+              postfix:
+                - pos:
+                    filename: Static function generating code
+                    offset: 312
+                    line: 14
+                    column: 23
+                  invocation: []
+                  index: null
+                  operator: ""
+        fromstage: 0
+        tostage: 9223372036854775807
+    generatedfragments: []
+
+---
+
+[TestIRConverter/Type_expressions_across_stages - 1]
+stages:
+  - level: 0
+    root:
+      pos:
+        filename: Type expressions across stages
+        offset: 4
+        line: 2
+        column: 4
+      statements:
+        - pos:
+            filename: Type expressions across stages
+            offset: 4
+            line: 2
+            column: 4
+          comments: null
+          annotations: []
+          statement:
+            pos:
+              filename: Type expressions across stages
+              offset: 4
+              line: 2
+              column: 4
+            isstatic: true
+            ismutable: false
+            name: IntType
+            type: null
+            value:
+              pos:
+                filename: Type expressions across stages
+                offset: 25
+                line: 2
+                column: 25
+              type:
+                pos:
+                  filename: Type expressions across stages
+                  offset: 25
+                  line: 2
+                  column: 25
+                signed: true
+                bitsize: 64
+    crossstagevalues: []
+    generatedfragments: []
+  - level: 9223372036854775807
+    root:
+      pos:
+        filename: Type expressions across stages
+        offset: 4
+        line: 2
+        column: 4
+      statements:
+        - pos:
+            filename: Type expressions across stages
+            offset: 32
+            line: 3
+            column: 4
+          comments: null
+          annotations: []
+          statement:
+            pos:
+              filename: Type expressions across stages
+              offset: 32
+              line: 3
+              column: 4
+            isstatic: false
+            ismutable: false
+            name: x
+            type:
+              pos:
+                filename: Type expressions across stages
+                offset: 39
+                line: 3
+                column: 11
+              expression:
+                pos:
+                  filename: Type expressions across stages
+                  offset: 40
+                  line: 3
+                  column: 12
+                prefix: []
+                operands:
+                  - atom:
+                      pos:
+                        filename: Type expressions across stages
+                        offset: 40
+                        line: 3
+                        column: 12
+                      ident: IntType
+                    postfix: []
+            value:
+              pos:
+                filename: Type expressions across stages
+                offset: 51
+                line: 3
+                column: 23
+              prefix: []
+              operands:
+                - atom:
+                    pos:
+                      filename: Type expressions across stages
+                      offset: 51
+                      line: 3
+                      column: 23
+                    value:
+                      pos:
+                        filename: Type expressions across stages
+                        offset: 51
+                        line: 3
+                        column: 23
+                      value: 42
+                  postfix: []
+    crossstagevalues: []
+    generatedfragments:
+      - pos:
+          filename: Type expressions across stages
+          offset: 25
+          line: 2
+          column: 25
+        identifier: type_0
+        source:
+          pos:
+            filename: Type expressions across stages
+            offset: 25
+            line: 2
+            column: 25
+          expression:
+            pos:
+              filename: Type expressions across stages
+              offset: 25
+              line: 2
+              column: 25
+            type:
+              pos:
+                filename: Type expressions across stages
+                offset: 25
+                line: 2
+                column: 25
+              signed: true
+              bitsize: 64
+          fromstage: 0
+          tostage: 9223372036854775807
+        destination: 9223372036854775807
+
+---
+
+[TestIRConverterErrors/Stage_reference_exceeding_configured_stages - 1]
+statement requires stage 2 but only 1 compile stages are configured
+---
