@@ -6467,3 +6467,2259 @@ statements:
         statements: []
 
 ---
+
+[TestParser/Complex_nested_expressions - 1]
+pos:
+  filename: Complex nested expressions
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Complex nested expressions
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Complex nested expressions
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: x
+      type: null
+      value:
+        pos:
+          filename: Complex nested expressions
+          offset: 8
+          line: 1
+          column: 9
+        prefix: []
+        operands:
+          - atom:
+              pos:
+                filename: Complex nested expressions
+                offset: 8
+                line: 1
+                column: 9
+              expression:
+                pos:
+                  filename: Complex nested expressions
+                  offset: 9
+                  line: 1
+                  column: 10
+                prefix: []
+                operands:
+                  - atom:
+                      pos:
+                        filename: Complex nested expressions
+                        offset: 9
+                        line: 1
+                        column: 10
+                      value:
+                        pos:
+                          filename: Complex nested expressions
+                          offset: 9
+                          line: 1
+                          column: 10
+                        value: 1
+                    postfix:
+                      - pos:
+                          filename: Complex nested expressions
+                          offset: 11
+                          line: 1
+                          column: 12
+                        invocation: []
+                        index: null
+                        operator: +
+                      - pos:
+                          filename: Complex nested expressions
+                          offset: 13
+                          line: 1
+                          column: 14
+                        invocation:
+                          - pos:
+                              filename: Complex nested expressions
+                              offset: 14
+                              line: 1
+                              column: 15
+                            prefix: []
+                            operands:
+                              - atom:
+                                  pos:
+                                    filename: Complex nested expressions
+                                    offset: 14
+                                    line: 1
+                                    column: 15
+                                  value:
+                                    pos:
+                                      filename: Complex nested expressions
+                                      offset: 14
+                                      line: 1
+                                      column: 15
+                                    value: 2
+                                postfix:
+                                  - pos:
+                                      filename: Complex nested expressions
+                                      offset: 16
+                                      line: 1
+                                      column: 17
+                                    invocation: []
+                                    index: null
+                                    operator: "*"
+                                  - pos:
+                                      filename: Complex nested expressions
+                                      offset: 18
+                                      line: 1
+                                      column: 19
+                                    invocation:
+                                      - pos:
+                                          filename: Complex nested expressions
+                                          offset: 19
+                                          line: 1
+                                          column: 20
+                                        prefix: []
+                                        operands:
+                                          - atom:
+                                              pos:
+                                                filename: Complex nested expressions
+                                                offset: 19
+                                                line: 1
+                                                column: 20
+                                              value:
+                                                pos:
+                                                  filename: Complex nested expressions
+                                                  offset: 19
+                                                  line: 1
+                                                  column: 20
+                                                value: 3
+                                            postfix:
+                                              - pos:
+                                                  filename: Complex nested expressions
+                                                  offset: 21
+                                                  line: 1
+                                                  column: 22
+                                                invocation: []
+                                                index: null
+                                                operator: -
+                                              - pos:
+                                                  filename: Complex nested expressions
+                                                  offset: 23
+                                                  line: 1
+                                                  column: 24
+                                                invocation:
+                                                  - pos:
+                                                      filename: Complex nested expressions
+                                                      offset: 24
+                                                      line: 1
+                                                      column: 25
+                                                    prefix: []
+                                                    operands:
+                                                      - atom:
+                                                          pos:
+                                                            filename: Complex nested expressions
+                                                            offset: 24
+                                                            line: 1
+                                                            column: 25
+                                                          value:
+                                                            pos:
+                                                              filename: Complex nested expressions
+                                                              offset: 24
+                                                              line: 1
+                                                              column: 25
+                                                            value: 4
+                                                        postfix:
+                                                          - pos:
+                                                              filename: Complex nested expressions
+                                                              offset: 26
+                                                              line: 1
+                                                              column: 27
+                                                            invocation: []
+                                                            index: null
+                                                            operator: /
+                                                      - atom:
+                                                          pos:
+                                                            filename: Complex nested expressions
+                                                            offset: 28
+                                                            line: 1
+                                                            column: 29
+                                                          value:
+                                                            pos:
+                                                              filename: Complex nested expressions
+                                                              offset: 28
+                                                              line: 1
+                                                              column: 29
+                                                            value: 5
+                                                        postfix: []
+                                                index: null
+                                                operator: ""
+                                    index: null
+                                    operator: ""
+                        index: null
+                        operator: ""
+            postfix:
+              - pos:
+                  filename: Complex nested expressions
+                  offset: 33
+                  line: 1
+                  column: 34
+                invocation: []
+                index: null
+                operator: "\\"
+          - atom:
+              pos:
+                filename: Complex nested expressions
+                offset: 34
+                line: 1
+                column: 35
+              ident: nlet
+            postfix: []
+          - atom:
+              pos:
+                filename: Complex nested expressions
+                offset: 39
+                line: 1
+                column: 40
+              ident: "y"
+            postfix:
+              - pos:
+                  filename: Complex nested expressions
+                  offset: 41
+                  line: 1
+                  column: 42
+                invocation: []
+                index: null
+                operator: =
+              - pos:
+                  filename: Complex nested expressions
+                  offset: 43
+                  line: 1
+                  column: 44
+                invocation:
+                  - pos:
+                      filename: Complex nested expressions
+                      offset: 44
+                      line: 1
+                      column: 45
+                    prefix: []
+                    operands:
+                      - atom:
+                          pos:
+                            filename: Complex nested expressions
+                            offset: 44
+                            line: 1
+                            column: 45
+                          expression:
+                            pos:
+                              filename: Complex nested expressions
+                              offset: 45
+                              line: 1
+                              column: 46
+                            prefix: []
+                            operands:
+                              - atom:
+                                  pos:
+                                    filename: Complex nested expressions
+                                    offset: 45
+                                    line: 1
+                                    column: 46
+                                  expression:
+                                    pos:
+                                      filename: Complex nested expressions
+                                      offset: 46
+                                      line: 1
+                                      column: 47
+                                    prefix: []
+                                    operands:
+                                      - atom:
+                                          pos:
+                                            filename: Complex nested expressions
+                                            offset: 46
+                                            line: 1
+                                            column: 47
+                                          expression:
+                                            pos:
+                                              filename: Complex nested expressions
+                                              offset: 47
+                                              line: 1
+                                              column: 48
+                                            prefix: []
+                                            operands:
+                                              - atom:
+                                                  pos:
+                                                    filename: Complex nested expressions
+                                                    offset: 47
+                                                    line: 1
+                                                    column: 48
+                                                  value:
+                                                    pos:
+                                                      filename: Complex nested expressions
+                                                      offset: 47
+                                                      line: 1
+                                                      column: 48
+                                                    value: 1
+                                                postfix:
+                                                  - pos:
+                                                      filename: Complex nested expressions
+                                                      offset: 49
+                                                      line: 1
+                                                      column: 50
+                                                    invocation: []
+                                                    index: null
+                                                    operator: +
+                                              - atom:
+                                                  pos:
+                                                    filename: Complex nested expressions
+                                                    offset: 51
+                                                    line: 1
+                                                    column: 52
+                                                  value:
+                                                    pos:
+                                                      filename: Complex nested expressions
+                                                      offset: 51
+                                                      line: 1
+                                                      column: 52
+                                                    value: 2
+                                                postfix: []
+                                        postfix:
+                                          - pos:
+                                              filename: Complex nested expressions
+                                              offset: 54
+                                              line: 1
+                                              column: 55
+                                            invocation: []
+                                            index: null
+                                            operator: "*"
+                                      - atom:
+                                          pos:
+                                            filename: Complex nested expressions
+                                            offset: 56
+                                            line: 1
+                                            column: 57
+                                          value:
+                                            pos:
+                                              filename: Complex nested expressions
+                                              offset: 56
+                                              line: 1
+                                              column: 57
+                                            value: 3
+                                        postfix: []
+                                postfix:
+                                  - pos:
+                                      filename: Complex nested expressions
+                                      offset: 59
+                                      line: 1
+                                      column: 60
+                                    invocation: []
+                                    index: null
+                                    operator: -
+                              - atom:
+                                  pos:
+                                    filename: Complex nested expressions
+                                    offset: 61
+                                    line: 1
+                                    column: 62
+                                  value:
+                                    pos:
+                                      filename: Complex nested expressions
+                                      offset: 61
+                                      line: 1
+                                      column: 62
+                                    value: 4
+                                postfix: []
+                        postfix:
+                          - pos:
+                              filename: Complex nested expressions
+                              offset: 64
+                              line: 1
+                              column: 65
+                            invocation: []
+                            index: null
+                            operator: /
+                      - atom:
+                          pos:
+                            filename: Complex nested expressions
+                            offset: 66
+                            line: 1
+                            column: 67
+                          value:
+                            pos:
+                              filename: Complex nested expressions
+                              offset: 66
+                              line: 1
+                              column: 67
+                            value: 5
+                        postfix: []
+                index: null
+                operator: ""
+
+---
+
+[TestParser/Multi-line_block_comment - 1]
+pos:
+  filename: Multi-line block comment
+  offset: 89
+  line: 5
+  column: 4
+statements:
+  - pos:
+      filename: Multi-line block comment
+      offset: 89
+      line: 5
+      column: 4
+    comments:
+      pos:
+        filename: Multi-line block comment
+        offset: 89
+        line: 5
+        column: 4
+      fragments:
+        - pos:
+            filename: Multi-line block comment
+            offset: 89
+            line: 5
+            column: 4
+          text: " This is a\n\t\t\t   multi-line\n\t\t\t   comment with "
+          comment: null
+        - pos:
+            filename: Multi-line block comment
+            offset: 89
+            line: 5
+            column: 4
+          text: " nesting "
+          comment: null
+        - pos:
+            filename: Multi-line block comment
+            offset: 89
+            line: 5
+            column: 4
+          text: "\n\t\t\t   and more text "
+          comment: null
+    annotations: []
+    statement:
+      pos:
+        filename: Multi-line block comment
+        offset: 89
+        line: 5
+        column: 4
+      isstatic: false
+      ismutable: false
+      name: x
+      type: null
+      value:
+        pos:
+          filename: Multi-line block comment
+          offset: 97
+          line: 5
+          column: 12
+        prefix: []
+        operands:
+          - atom:
+              pos:
+                filename: Multi-line block comment
+                offset: 97
+                line: 5
+                column: 12
+              value:
+                pos:
+                  filename: Multi-line block comment
+                  offset: 97
+                  line: 5
+                  column: 12
+                value: 1
+            postfix: []
+
+---
+
+[TestParser/Complex_function_type - 1]
+pos:
+  filename: Complex function type
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Complex function type
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Complex function type
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: x
+      type:
+        pos:
+          filename: Complex function type
+          offset: 7
+          line: 1
+          column: 8
+        type:
+          pos:
+            filename: Complex function type
+            offset: 7
+            line: 1
+            column: 8
+          name: ""
+          parameters:
+            - pos:
+                filename: Complex function type
+                offset: 11
+                line: 1
+                column: 12
+              name: cb
+              type:
+                pos:
+                  filename: Complex function type
+                  offset: 15
+                  line: 1
+                  column: 16
+                type:
+                  pos:
+                    filename: Complex function type
+                    offset: 15
+                    line: 1
+                    column: 16
+                  name: ""
+                  parameters:
+                    - pos:
+                        filename: Complex function type
+                        offset: 19
+                        line: 1
+                        column: 20
+                      name: a
+                      type:
+                        pos:
+                          filename: Complex function type
+                          offset: 22
+                          line: 1
+                          column: 23
+                        type:
+                          pos:
+                            filename: Complex function type
+                            offset: 22
+                            line: 1
+                            column: 23
+                          signed: true
+                          bitsize: 32
+                    - pos:
+                        filename: Complex function type
+                        offset: 27
+                        line: 1
+                        column: 28
+                      name: b
+                      type:
+                        pos:
+                          filename: Complex function type
+                          offset: 30
+                          line: 1
+                          column: 31
+                        type:
+                          pos:
+                            filename: Complex function type
+                            offset: 30
+                            line: 1
+                            column: 31
+                          signed: true
+                          bitsize: 32
+                  return:
+                    pos:
+                      filename: Complex function type
+                      offset: 36
+                      line: 1
+                      column: 37
+                    type:
+                      pos:
+                        filename: Complex function type
+                        offset: 36
+                        line: 1
+                        column: 37
+                      name: ""
+                      parameters: []
+                      return:
+                        pos:
+                          filename: Complex function type
+                          offset: 43
+                          line: 1
+                          column: 44
+                        type:
+                          pos:
+                            filename: Complex function type
+                            offset: 43
+                            line: 1
+                            column: 44
+                          signed: true
+                          bitsize: 32
+          return:
+            pos:
+              filename: Complex function type
+              offset: 49
+              line: 1
+              column: 50
+            type:
+              pos:
+                filename: Complex function type
+                offset: 49
+                line: 1
+                column: 50
+              signed: true
+              bitsize: 32
+      value: null
+
+---
+
+[TestParser/Multiple_annotations_with_expressions - 1]
+pos:
+  filename: Multiple annotations with expressions
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Multiple annotations with expressions
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations:
+      - pos:
+          filename: Multiple annotations with expressions
+          offset: 0
+          line: 1
+          column: 1
+        name: tag1
+        arguments:
+          - pos:
+              filename: Multiple annotations with expressions
+              offset: 6
+              line: 1
+              column: 7
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Multiple annotations with expressions
+                    offset: 6
+                    line: 1
+                    column: 7
+                  value:
+                    pos:
+                      filename: Multiple annotations with expressions
+                      offset: 6
+                      line: 1
+                      column: 7
+                    value: 1
+                postfix:
+                  - pos:
+                      filename: Multiple annotations with expressions
+                      offset: 8
+                      line: 1
+                      column: 9
+                    invocation: []
+                    index: null
+                    operator: +
+              - atom:
+                  pos:
+                    filename: Multiple annotations with expressions
+                    offset: 10
+                    line: 1
+                    column: 11
+                  value:
+                    pos:
+                      filename: Multiple annotations with expressions
+                      offset: 10
+                      line: 1
+                      column: 11
+                    value: 2
+                postfix: []
+      - pos:
+          filename: Multiple annotations with expressions
+          offset: 13
+          line: 1
+          column: 14
+        name: tag2
+        arguments:
+          - pos:
+              filename: Multiple annotations with expressions
+              offset: 19
+              line: 1
+              column: 20
+            prefix: []
+            operands:
+              - atom:
+                  pos:
+                    filename: Multiple annotations with expressions
+                    offset: 19
+                    line: 1
+                    column: 20
+                  ident: x
+                postfix:
+                  - pos:
+                      filename: Multiple annotations with expressions
+                      offset: 20
+                      line: 1
+                      column: 21
+                    invocation: []
+                    index: null
+                    operator: .
+              - atom:
+                  pos:
+                    filename: Multiple annotations with expressions
+                    offset: 21
+                    line: 1
+                    column: 22
+                  ident: "y"
+                postfix:
+                  - pos:
+                      filename: Multiple annotations with expressions
+                      offset: 22
+                      line: 1
+                      column: 23
+                    invocation: []
+                    index:
+                      pos:
+                        filename: Multiple annotations with expressions
+                        offset: 23
+                        line: 1
+                        column: 24
+                      prefix: []
+                      operands:
+                        - atom:
+                            pos:
+                              filename: Multiple annotations with expressions
+                              offset: 23
+                              line: 1
+                              column: 24
+                            value:
+                              pos:
+                                filename: Multiple annotations with expressions
+                                offset: 23
+                                line: 1
+                                column: 24
+                              value: 3
+                          postfix: []
+                    operator: ""
+                  - pos:
+                      filename: Multiple annotations with expressions
+                      offset: 25
+                      line: 1
+                      column: 26
+                    invocation: []
+                    index: null
+                    operator: ?
+                  - pos:
+                      filename: Multiple annotations with expressions
+                      offset: 26
+                      line: 1
+                      column: 27
+                    invocation: []
+                    index: null
+                    operator: .
+              - atom:
+                  pos:
+                    filename: Multiple annotations with expressions
+                    offset: 27
+                    line: 1
+                    column: 28
+                  ident: z
+                postfix:
+                  - pos:
+                      filename: Multiple annotations with expressions
+                      offset: 28
+                      line: 1
+                      column: 29
+                    invocation: []
+                    index: null
+                    operator: ""
+    statement:
+      pos:
+        filename: Multiple annotations with expressions
+        offset: 32
+        line: 1
+        column: 33
+      isstatic: false
+      name: test
+      parameters: []
+      return: null
+      block:
+        pos:
+          filename: Multiple annotations with expressions
+          offset: 43
+          line: 1
+          column: 44
+        label: ""
+        statements: []
+
+---
+
+[TestParser/Deeply_nested_blocks - 1]
+pos:
+  filename: Deeply nested blocks
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Deeply nested blocks
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Deeply nested blocks
+        offset: 0
+        line: 1
+        column: 1
+      expression:
+        pos:
+          filename: Deeply nested blocks
+          offset: 0
+          line: 1
+          column: 1
+        label: ""
+        statements:
+          - pos:
+              filename: Deeply nested blocks
+              offset: 6
+              line: 2
+              column: 5
+            comments: null
+            annotations: []
+            statement:
+              pos:
+                filename: Deeply nested blocks
+                offset: 6
+                line: 2
+                column: 5
+              expression:
+                pos:
+                  filename: Deeply nested blocks
+                  offset: 6
+                  line: 2
+                  column: 5
+                label: ""
+                statements:
+                  - pos:
+                      filename: Deeply nested blocks
+                      offset: 13
+                      line: 3
+                      column: 6
+                    comments: null
+                    annotations: []
+                    statement:
+                      pos:
+                        filename: Deeply nested blocks
+                        offset: 13
+                        line: 3
+                        column: 6
+                      expression:
+                        pos:
+                          filename: Deeply nested blocks
+                          offset: 13
+                          line: 3
+                          column: 6
+                        label: ""
+                        statements:
+                          - pos:
+                              filename: Deeply nested blocks
+                              offset: 21
+                              line: 4
+                              column: 7
+                            comments: null
+                            annotations: []
+                            statement:
+                              pos:
+                                filename: Deeply nested blocks
+                                offset: 21
+                                line: 4
+                                column: 7
+                              expression:
+                                pos:
+                                  filename: Deeply nested blocks
+                                  offset: 21
+                                  line: 4
+                                  column: 7
+                                label: ""
+                                statements:
+                                  - pos:
+                                      filename: Deeply nested blocks
+                                      offset: 30
+                                      line: 5
+                                      column: 8
+                                    comments: null
+                                    annotations: []
+                                    statement:
+                                      pos:
+                                        filename: Deeply nested blocks
+                                        offset: 30
+                                        line: 5
+                                        column: 8
+                                      isstatic: false
+                                      ismutable: false
+                                      name: x
+                                      type: null
+                                      value:
+                                        pos:
+                                          filename: Deeply nested blocks
+                                          offset: 38
+                                          line: 5
+                                          column: 16
+                                        prefix: []
+                                        operands:
+                                          - atom:
+                                              pos:
+                                                filename: Deeply nested blocks
+                                                offset: 38
+                                                line: 5
+                                                column: 16
+                                              value:
+                                                pos:
+                                                  filename: Deeply nested blocks
+                                                  offset: 38
+                                                  line: 5
+                                                  column: 16
+                                                value: 1
+                                            postfix: []
+                                  - pos:
+                                      filename: Deeply nested blocks
+                                      offset: 47
+                                      line: 6
+                                      column: 8
+                                    comments: null
+                                    annotations: []
+                                    statement:
+                                      pos:
+                                        filename: Deeply nested blocks
+                                        offset: 47
+                                        line: 6
+                                        column: 8
+                                      expression:
+                                        pos:
+                                          filename: Deeply nested blocks
+                                          offset: 47
+                                          line: 6
+                                          column: 8
+                                        label: ""
+                                        statements:
+                                          - pos:
+                                              filename: Deeply nested blocks
+                                              offset: 57
+                                              line: 7
+                                              column: 9
+                                            comments: null
+                                            annotations: []
+                                            statement:
+                                              pos:
+                                                filename: Deeply nested blocks
+                                                offset: 57
+                                                line: 7
+                                                column: 9
+                                              isstatic: false
+                                              ismutable: false
+                                              name: "y"
+                                              type: null
+                                              value:
+                                                pos:
+                                                  filename: Deeply nested blocks
+                                                  offset: 65
+                                                  line: 7
+                                                  column: 17
+                                                prefix: []
+                                                operands:
+                                                  - atom:
+                                                      pos:
+                                                        filename: Deeply nested blocks
+                                                        offset: 65
+                                                        line: 7
+                                                        column: 17
+                                                      value:
+                                                        pos:
+                                                          filename: Deeply nested blocks
+                                                          offset: 65
+                                                          line: 7
+                                                          column: 17
+                                                        value: 2
+                                                    postfix: []
+
+---
+
+[TestParser/Empty_blocks_with_labels - 1]
+pos:
+  filename: Empty blocks with labels
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Empty blocks with labels
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Empty blocks with labels
+        offset: 0
+        line: 1
+        column: 1
+      expression:
+        pos:
+          filename: Empty blocks with labels
+          offset: 0
+          line: 1
+          column: 1
+        label: outer
+        statements:
+          - pos:
+              filename: Empty blocks with labels
+              offset: 13
+              line: 2
+              column: 5
+            comments: null
+            annotations: []
+            statement:
+              pos:
+                filename: Empty blocks with labels
+                offset: 13
+                line: 2
+                column: 5
+              expression:
+                pos:
+                  filename: Empty blocks with labels
+                  offset: 13
+                  line: 2
+                  column: 5
+                label: inner
+                statements: []
+
+---
+
+[TestParser/Complex_indexing_chain - 1]
+pos:
+  filename: Complex indexing chain
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Complex indexing chain
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Complex indexing chain
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: x
+      type: null
+      value:
+        pos:
+          filename: Complex indexing chain
+          offset: 8
+          line: 1
+          column: 9
+        prefix: []
+        operands:
+          - atom:
+              pos:
+                filename: Complex indexing chain
+                offset: 8
+                line: 1
+                column: 9
+              ident: arr
+            postfix:
+              - pos:
+                  filename: Complex indexing chain
+                  offset: 11
+                  line: 1
+                  column: 12
+                invocation: []
+                index:
+                  pos:
+                    filename: Complex indexing chain
+                    offset: 12
+                    line: 1
+                    column: 13
+                  prefix: []
+                  operands:
+                    - atom:
+                        pos:
+                          filename: Complex indexing chain
+                          offset: 12
+                          line: 1
+                          column: 13
+                        ident: idx1
+                      postfix: []
+                operator: ""
+              - pos:
+                  filename: Complex indexing chain
+                  offset: 17
+                  line: 1
+                  column: 18
+                invocation: []
+                index:
+                  pos:
+                    filename: Complex indexing chain
+                    offset: 18
+                    line: 1
+                    column: 19
+                  prefix: []
+                  operands:
+                    - atom:
+                        pos:
+                          filename: Complex indexing chain
+                          offset: 18
+                          line: 1
+                          column: 19
+                        ident: idx2
+                      postfix: []
+                operator: ""
+              - pos:
+                  filename: Complex indexing chain
+                  offset: 23
+                  line: 1
+                  column: 24
+                invocation: []
+                index:
+                  pos:
+                    filename: Complex indexing chain
+                    offset: 24
+                    line: 1
+                    column: 25
+                  prefix: []
+                  operands:
+                    - atom:
+                        pos:
+                          filename: Complex indexing chain
+                          offset: 24
+                          line: 1
+                          column: 25
+                        ident: fn
+                      postfix:
+                        - pos:
+                            filename: Complex indexing chain
+                            offset: 26
+                            line: 1
+                            column: 27
+                          invocation: []
+                          index: null
+                          operator: ""
+                        - pos:
+                            filename: Complex indexing chain
+                            offset: 28
+                            line: 1
+                            column: 29
+                          invocation: []
+                          index: null
+                          operator: +
+                    - atom:
+                        pos:
+                          filename: Complex indexing chain
+                          offset: 29
+                          line: 1
+                          column: 30
+                        value:
+                          pos:
+                            filename: Complex indexing chain
+                            offset: 29
+                            line: 1
+                            column: 30
+                          value: 3
+                      postfix: []
+                operator: ""
+              - pos:
+                  filename: Complex indexing chain
+                  offset: 31
+                  line: 1
+                  column: 32
+                invocation: []
+                index: null
+                operator: ?
+              - pos:
+                  filename: Complex indexing chain
+                  offset: 32
+                  line: 1
+                  column: 33
+                invocation: []
+                index: null
+                operator: .
+          - atom:
+              pos:
+                filename: Complex indexing chain
+                offset: 33
+                line: 1
+                column: 34
+              ident: member
+            postfix:
+              - pos:
+                  filename: Complex indexing chain
+                  offset: 39
+                  line: 1
+                  column: 40
+                invocation: []
+                index: null
+                operator: ""
+
+---
+
+[TestParser/All_operator_types_combined - 1]
+pos:
+  filename: All operator types combined
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: All operator types combined
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: All operator types combined
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: x
+      type: null
+      value:
+        pos:
+          filename: All operator types combined
+          offset: 8
+          line: 1
+          column: 9
+        prefix:
+          - "!-~"
+        operands:
+          - atom:
+              pos:
+                filename: All operator types combined
+                offset: 11
+                line: 1
+                column: 12
+              expression:
+                pos:
+                  filename: All operator types combined
+                  offset: 12
+                  line: 1
+                  column: 13
+                prefix: []
+                operands:
+                  - atom:
+                      pos:
+                        filename: All operator types combined
+                        offset: 12
+                        line: 1
+                        column: 13
+                      ident: a
+                    postfix:
+                      - pos:
+                          filename: All operator types combined
+                          offset: 14
+                          line: 1
+                          column: 15
+                        invocation: []
+                        index: null
+                        operator: +
+                  - atom:
+                      pos:
+                        filename: All operator types combined
+                        offset: 16
+                        line: 1
+                        column: 17
+                      ident: b
+                    postfix:
+                      - pos:
+                          filename: All operator types combined
+                          offset: 18
+                          line: 1
+                          column: 19
+                        invocation: []
+                        index: null
+                        operator: "*"
+                  - atom:
+                      pos:
+                        filename: All operator types combined
+                        offset: 20
+                        line: 1
+                        column: 21
+                      ident: c
+                    postfix:
+                      - pos:
+                          filename: All operator types combined
+                          offset: 22
+                          line: 1
+                          column: 23
+                        invocation: []
+                        index: null
+                        operator: /
+                  - atom:
+                      pos:
+                        filename: All operator types combined
+                        offset: 24
+                        line: 1
+                        column: 25
+                      ident: d
+                    postfix:
+                      - pos:
+                          filename: All operator types combined
+                          offset: 26
+                          line: 1
+                          column: 27
+                        invocation: []
+                        index: null
+                        operator: "%"
+                  - atom:
+                      pos:
+                        filename: All operator types combined
+                        offset: 28
+                        line: 1
+                        column: 29
+                      ident: e
+                    postfix:
+                      - pos:
+                          filename: All operator types combined
+                          offset: 30
+                          line: 1
+                          column: 31
+                        invocation: []
+                        index: null
+                        operator: "&&"
+                  - atom:
+                      pos:
+                        filename: All operator types combined
+                        offset: 33
+                        line: 1
+                        column: 34
+                      ident: f
+                    postfix:
+                      - pos:
+                          filename: All operator types combined
+                          offset: 35
+                          line: 1
+                          column: 36
+                        invocation: []
+                        index: null
+                        operator: "||"
+                  - atom:
+                      pos:
+                        filename: All operator types combined
+                        offset: 38
+                        line: 1
+                        column: 39
+                      ident: g
+                    postfix: []
+            postfix:
+              - pos:
+                  filename: All operator types combined
+                  offset: 41
+                  line: 1
+                  column: 42
+                invocation: []
+                index: null
+                operator: ==
+          - atom:
+              pos:
+                filename: All operator types combined
+                offset: 44
+                line: 1
+                column: 45
+              ident: h
+            postfix:
+              - pos:
+                  filename: All operator types combined
+                  offset: 46
+                  line: 1
+                  column: 47
+                invocation: []
+                index: null
+                operator: "!="
+          - atom:
+              pos:
+                filename: All operator types combined
+                offset: 49
+                line: 1
+                column: 50
+              ident: i
+            postfix:
+              - pos:
+                  filename: All operator types combined
+                  offset: 51
+                  line: 1
+                  column: 52
+                invocation: []
+                index: null
+                operator: <
+          - atom:
+              pos:
+                filename: All operator types combined
+                offset: 53
+                line: 1
+                column: 54
+              ident: j
+            postfix:
+              - pos:
+                  filename: All operator types combined
+                  offset: 55
+                  line: 1
+                  column: 56
+                invocation: []
+                index: null
+                operator: ">"
+          - atom:
+              pos:
+                filename: All operator types combined
+                offset: 57
+                line: 1
+                column: 58
+              ident: k
+            postfix:
+              - pos:
+                  filename: All operator types combined
+                  offset: 59
+                  line: 1
+                  column: 60
+                invocation: []
+                index: null
+                operator: <=
+          - atom:
+              pos:
+                filename: All operator types combined
+                offset: 62
+                line: 1
+                column: 63
+              ident: l
+            postfix:
+              - pos:
+                  filename: All operator types combined
+                  offset: 64
+                  line: 1
+                  column: 65
+                invocation: []
+                index: null
+                operator: ">="
+          - atom:
+              pos:
+                filename: All operator types combined
+                offset: 67
+                line: 1
+                column: 68
+              ident: m
+            postfix:
+              - pos:
+                  filename: All operator types combined
+                  offset: 68
+                  line: 1
+                  column: 69
+                invocation: []
+                index: null
+                operator: ?
+              - pos:
+                  filename: All operator types combined
+                  offset: 69
+                  line: 1
+                  column: 70
+                invocation: []
+                index: null
+                operator: .
+          - atom:
+              pos:
+                filename: All operator types combined
+                offset: 70
+                line: 1
+                column: 71
+              ident: "n"
+            postfix:
+              - pos:
+                  filename: All operator types combined
+                  offset: 71
+                  line: 1
+                  column: 72
+                invocation: []
+                index: null
+                operator: ""
+
+---
+
+[TestParser/Static_function - 1]
+pos:
+  filename: Static function
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Static function
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Static function
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: true
+      name: test
+      parameters: []
+      return:
+        pos:
+          filename: Static function
+          offset: 19
+          line: 1
+          column: 20
+        type:
+          pos:
+            filename: Static function
+            offset: 19
+            line: 1
+            column: 20
+          signed: true
+          bitsize: 32
+      block:
+        pos:
+          filename: Static function
+          offset: 23
+          line: 1
+          column: 24
+        label: ""
+        statements:
+          - pos:
+              filename: Static function
+              offset: 29
+              line: 2
+              column: 5
+            comments: null
+            annotations: []
+            statement:
+              pos:
+                filename: Static function
+                offset: 29
+                line: 2
+                column: 5
+              label: ""
+              value:
+                pos:
+                  filename: Static function
+                  offset: 36
+                  line: 2
+                  column: 12
+                prefix: []
+                operands:
+                  - atom:
+                      pos:
+                        filename: Static function
+                        offset: 36
+                        line: 2
+                        column: 12
+                      value:
+                        pos:
+                          filename: Static function
+                          offset: 36
+                          line: 2
+                          column: 12
+                        value: 42
+                    postfix: []
+
+---
+
+[TestParser/Nested_array_types - 1]
+pos:
+  filename: Nested array types
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Nested array types
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Nested array types
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: x
+      type:
+        pos:
+          filename: Nested array types
+          offset: 7
+          line: 1
+          column: 8
+        type:
+          pos:
+            filename: Nested array types
+            offset: 7
+            line: 1
+            column: 8
+          dimension: 2
+          element:
+            pos:
+              filename: Nested array types
+              offset: 10
+              line: 1
+              column: 11
+            type:
+              pos:
+                filename: Nested array types
+                offset: 10
+                line: 1
+                column: 11
+              dimension: 3
+              element:
+                pos:
+                  filename: Nested array types
+                  offset: 13
+                  line: 1
+                  column: 14
+                type:
+                  pos:
+                    filename: Nested array types
+                    offset: 13
+                    line: 1
+                    column: 14
+                  dimension: 4
+                  element:
+                    pos:
+                      filename: Nested array types
+                      offset: 16
+                      line: 1
+                      column: 17
+                    type:
+                      pos:
+                        filename: Nested array types
+                        offset: 16
+                        line: 1
+                        column: 17
+                      signed: true
+                      bitsize: 32
+      value: null
+
+---
+
+[TestParser/Nested_string_fragments - 1]
+pos:
+  filename: Nested string fragments
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Nested string fragments
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Nested string fragments
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: x
+      type: null
+      value:
+        pos:
+          filename: Nested string fragments
+          offset: 8
+          line: 1
+          column: 9
+        prefix: []
+        operands:
+          - atom:
+              pos:
+                filename: Nested string fragments
+                offset: 8
+                line: 1
+                column: 9
+              value:
+                pos:
+                  filename: Nested string fragments
+                  offset: 8
+                  line: 1
+                  column: 9
+                fragments:
+                  - pos:
+                      filename: Nested string fragments
+                      offset: 9
+                      line: 1
+                      column: 10
+                    text: "begin "
+                    interpolation: null
+                  - pos:
+                      filename: Nested string fragments
+                      offset: 15
+                      line: 1
+                      column: 16
+                    text: ""
+                    interpolation:
+                      pos:
+                        filename: Nested string fragments
+                        offset: 17
+                        line: 1
+                        column: 18
+                      prefix: []
+                      operands:
+                        - atom:
+                            pos:
+                              filename: Nested string fragments
+                              offset: 17
+                              line: 1
+                              column: 18
+                            value:
+                              pos:
+                                filename: Nested string fragments
+                                offset: 17
+                                line: 1
+                                column: 18
+                              fragments:
+                                - pos:
+                                    filename: Nested string fragments
+                                    offset: 18
+                                    line: 1
+                                    column: 19
+                                  text: "nest1 "
+                                  interpolation: null
+                                - pos:
+                                    filename: Nested string fragments
+                                    offset: 24
+                                    line: 1
+                                    column: 25
+                                  text: ""
+                                  interpolation:
+                                    pos:
+                                      filename: Nested string fragments
+                                      offset: 26
+                                      line: 1
+                                      column: 27
+                                    prefix: []
+                                    operands:
+                                      - atom:
+                                          pos:
+                                            filename: Nested string fragments
+                                            offset: 26
+                                            line: 1
+                                            column: 27
+                                          value:
+                                            pos:
+                                              filename: Nested string fragments
+                                              offset: 26
+                                              line: 1
+                                              column: 27
+                                            fragments:
+                                              - pos:
+                                                  filename: Nested string fragments
+                                                  offset: 27
+                                                  line: 1
+                                                  column: 28
+                                                text: "nest2 "
+                                                interpolation: null
+                                              - pos:
+                                                  filename: Nested string fragments
+                                                  offset: 33
+                                                  line: 1
+                                                  column: 34
+                                                text: ""
+                                                interpolation:
+                                                  pos:
+                                                    filename: Nested string fragments
+                                                    offset: 35
+                                                    line: 1
+                                                    column: 36
+                                                  prefix: []
+                                                  operands:
+                                                    - atom:
+                                                        pos:
+                                                          filename: Nested string fragments
+                                                          offset: 35
+                                                          line: 1
+                                                          column: 36
+                                                        value:
+                                                          pos:
+                                                            filename: Nested string fragments
+                                                            offset: 35
+                                                            line: 1
+                                                            column: 36
+                                                          fragments:
+                                                            - pos:
+                                                                filename: Nested string fragments
+                                                                offset: 36
+                                                                line: 1
+                                                                column: 37
+                                                              text: nest3
+                                                              interpolation: null
+                                                      postfix: []
+                                        postfix: []
+                          postfix: []
+            postfix: []
+
+---
+
+[TestParser/Integer_width_edge_cases - 1]
+pos:
+  filename: Integer width edge cases
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Integer width edge cases
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Integer width edge cases
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: min
+      type:
+        pos:
+          filename: Integer width edge cases
+          offset: 9
+          line: 1
+          column: 10
+        type:
+          pos:
+            filename: Integer width edge cases
+            offset: 9
+            line: 1
+            column: 10
+          signed: true
+          bitsize: 1
+      value:
+        pos:
+          filename: Integer width edge cases
+          offset: 14
+          line: 1
+          column: 15
+        prefix: []
+        operands:
+          - atom:
+              pos:
+                filename: Integer width edge cases
+                offset: 14
+                line: 1
+                column: 15
+              value:
+                pos:
+                  filename: Integer width edge cases
+                  offset: 14
+                  line: 1
+                  column: 15
+                value: 0
+            postfix: []
+  - pos:
+      filename: Integer width edge cases
+      offset: 16
+      line: 2
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Integer width edge cases
+        offset: 16
+        line: 2
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: max
+      type:
+        pos:
+          filename: Integer width edge cases
+          offset: 25
+          line: 2
+          column: 10
+        type:
+          pos:
+            filename: Integer width edge cases
+            offset: 25
+            line: 2
+            column: 10
+          signed: false
+          bitsize: 65535
+      value:
+        pos:
+          filename: Integer width edge cases
+          offset: 34
+          line: 2
+          column: 19
+        prefix: []
+        operands:
+          - atom:
+              pos:
+                filename: Integer width edge cases
+                offset: 34
+                line: 2
+                column: 19
+              value:
+                pos:
+                  filename: Integer width edge cases
+                  offset: 34
+                  line: 2
+                  column: 19
+                value: 0
+            postfix: []
+
+---
+
+[TestParser/Mutable_pointer_modifiers - 1]
+pos:
+  filename: Mutable pointer modifiers
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Mutable pointer modifiers
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Mutable pointer modifiers
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: x
+      type:
+        pos:
+          filename: Mutable pointer modifiers
+          offset: 7
+          line: 1
+          column: 8
+        type:
+          pos:
+            filename: Mutable pointer modifiers
+            offset: 7
+            line: 1
+            column: 8
+          isowned: false
+          israw: false
+          ismutable: true
+          target:
+            pos:
+              filename: Mutable pointer modifiers
+              offset: 12
+              line: 1
+              column: 13
+            type:
+              pos:
+                filename: Mutable pointer modifiers
+                offset: 12
+                line: 1
+                column: 13
+              signed: true
+              bitsize: 32
+      value:
+        pos:
+          filename: Mutable pointer modifiers
+          offset: 18
+          line: 1
+          column: 19
+        prefix: []
+        operands:
+          - atom:
+              pos:
+                filename: Mutable pointer modifiers
+                offset: 18
+                line: 1
+                column: 19
+              value:
+                pos:
+                  filename: Mutable pointer modifiers
+                  offset: 18
+                  line: 1
+                  column: 19
+                value: 0
+            postfix: []
+
+---
+
+[TestParser/Raw_pointer_modifiers - 1]
+pos:
+  filename: Raw pointer modifiers
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Raw pointer modifiers
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Raw pointer modifiers
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: x
+      type:
+        pos:
+          filename: Raw pointer modifiers
+          offset: 7
+          line: 1
+          column: 8
+        type:
+          pos:
+            filename: Raw pointer modifiers
+            offset: 7
+            line: 1
+            column: 8
+          isowned: false
+          israw: true
+          ismutable: false
+          target:
+            pos:
+              filename: Raw pointer modifiers
+              offset: 12
+              line: 1
+              column: 13
+            type:
+              pos:
+                filename: Raw pointer modifiers
+                offset: 12
+                line: 1
+                column: 13
+              signed: true
+              bitsize: 32
+      value:
+        pos:
+          filename: Raw pointer modifiers
+          offset: 18
+          line: 1
+          column: 19
+        prefix: []
+        operands:
+          - atom:
+              pos:
+                filename: Raw pointer modifiers
+                offset: 18
+                line: 1
+                column: 19
+              value:
+                pos:
+                  filename: Raw pointer modifiers
+                  offset: 18
+                  line: 1
+                  column: 19
+                value: 0
+            postfix: []
+
+---
+
+[TestParser/Own_pointer_modifiers - 1]
+pos:
+  filename: Own pointer modifiers
+  offset: 0
+  line: 1
+  column: 1
+statements:
+  - pos:
+      filename: Own pointer modifiers
+      offset: 0
+      line: 1
+      column: 1
+    comments: null
+    annotations: []
+    statement:
+      pos:
+        filename: Own pointer modifiers
+        offset: 0
+        line: 1
+        column: 1
+      isstatic: false
+      ismutable: false
+      name: x
+      type:
+        pos:
+          filename: Own pointer modifiers
+          offset: 7
+          line: 1
+          column: 8
+        type:
+          pos:
+            filename: Own pointer modifiers
+            offset: 7
+            line: 1
+            column: 8
+          isowned: true
+          israw: false
+          ismutable: false
+          target:
+            pos:
+              filename: Own pointer modifiers
+              offset: 12
+              line: 1
+              column: 13
+            type:
+              pos:
+                filename: Own pointer modifiers
+                offset: 12
+                line: 1
+                column: 13
+              signed: true
+              bitsize: 32
+      value:
+        pos:
+          filename: Own pointer modifiers
+          offset: 18
+          line: 1
+          column: 19
+        prefix: []
+        operands:
+          - atom:
+              pos:
+                filename: Own pointer modifiers
+                offset: 18
+                line: 1
+                column: 19
+              value:
+                pos:
+                  filename: Own pointer modifiers
+                  offset: 18
+                  line: 1
+                  column: 19
+                value: 0
+            postfix: []
+
+---
+
+[TestParserErrors/Mismatched_parentheses - 1]
+error: "Mismatched parentheses:1:1: unexpected token \"let\" (expected <eof>)"
+src: let x = (1 + 2
+
+---
+
+[TestParserErrors/Mismatched_braces - 1]
+error: "Mismatched braces:1:13: unexpected token \"<EOF>\" (expected \"}\")"
+src: fun test() {
+
+---
+
+[TestParserErrors/Mismatched_brackets - 1]
+error: "Mismatched brackets:1:1: unexpected token \"let\" (expected <eof>)"
+src: let x = arr[1
+
+---
+
+[TestParserErrors/Invalid_function_parameter_syntax - 1]
+error: "Invalid function parameter syntax:1:1: unexpected token \"fun\" (expected <eof>)"
+src: "fun test(a b: i32) {}"
+
+---
+
+[TestParserErrors/Missing_colon_in_parameter - 1]
+error: "Missing colon in parameter:1:1: unexpected token \"fun\" (expected <eof>)"
+src: fun test(a i32) {}
+
+---
+
+[TestParserErrors/Invalid_let_syntax - 1]
+error: "Invalid let syntax:1:1: unexpected token \"let\" (expected <eof>)"
+src: let = 5
+
+---
+
+[TestParserErrors/Invalid_type_syntax - 1]
+error: "Invalid type syntax:1:1: unexpected token \"let\" (expected <eof>)"
+src: "let x: * {}"
+
+---
+
+[TestParserErrors/Invalid_break_syntax - 1]
+error: "Invalid break syntax:1:7: unexpected token \":\" (expected <eof>)"
+src: "break :"
+
+---
+
+[TestParserErrors/Invalid_return_syntax - 1]
+error: "Invalid return syntax:1:8: unexpected token \":\" (expected <eof>)"
+src: "return :"
+
+---
+
+[TestParserErrors/Invalid_module_syntax - 1]
+error: "Invalid module syntax:1:1: unexpected token \"module\" (expected <eof>)"
+src: module {}
+
+---
+
+[TestParserErrors/Incomplete_string - 1]
+error: "Incomplete string:1:1: unexpected token \"let\" (expected <eof>)"
+src: let x = "hello
+
+---
+
+[TestParserErrors/Incomplete_string_interpolation - 1]
+error: "Incomplete string interpolation:1:1: unexpected token \"let\" (expected <eof>)"
+src: "let x = \"hello \\(name\""
+
+---
+
+[TestParserErrors/Multiple_modifiers_on_pointers - 1]
+error: "Multiple modifiers on pointers:1:1: unexpected token \"let\" (expected <eof>)"
+src: "let x: *own mut i32"
+
+---
+
+[TestParserErrors/Invalid_array_dimension - 1]
+error: "Invalid array dimension:1:1: unexpected token \"let\" (expected <eof>)"
+src: "let x: [-1]i32"
+
+---
+
+[TestParserErrors/Invalid_function_call - 1]
+error: "Invalid function call:1:1: unexpected token \"let\" (expected <eof>)"
+src: let x = f(,)
+
+---

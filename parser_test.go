@@ -417,6 +417,86 @@ func TestParser(t *testing.T) {
 			name: "Trailing comma in annotation arguments",
 			src:  "@myAnno(1, ) fun test() {}",
 		},
+		{
+			name: "Integer width edge cases",
+			src: `let min: i1 = 0
+let max: u65535 = 0`,
+		},
+		{
+			name: "Complex nested expressions",
+			src:  `let x = (1 + (2 * (3 - (4 / 5))))\nlet y = ((((1 + 2) * 3) - 4) / 5)`,
+		},
+		{
+			name: "Mutable pointer modifiers",
+			src:  `let x: *mut i32 = 0`,
+		},
+		{
+			name: "Raw pointer modifiers",
+			src:  `let x: *raw i32 = 0`,
+		},
+		{
+			name: "Own pointer modifiers",
+			src:  `let x: *own i32 = 0`,
+		},
+		{
+			name: "Multi-line block comment",
+			src: `/* This is a
+			   multi-line
+			   comment with /* nesting */
+			   and more text */
+			let x = 1`,
+		},
+		{
+			name: "Complex function type",
+			src:  `let x: fun(cb: fun(a: i32, b: i32): fun(): i32): i32`,
+		},
+		{
+			name: "Multiple annotations with expressions",
+			src:  `@tag1(1 + 2) @tag2(x.y[3]?.z()) fun test() {}`,
+		},
+		{
+			name: "Deeply nested blocks",
+			src: `{
+				{
+					{
+						{
+							let x = 1
+							{
+								let y = 2
+							}
+						}
+					}
+				}
+			}`,
+		},
+		{
+			name: "Empty blocks with labels",
+			src: `:outer {
+				:inner {}
+			}`,
+		},
+		{
+			name: "Complex indexing chain",
+			src:  `let x = arr[idx1][idx2][fn()+3]?.member()`,
+		},
+		{
+			name: "All operator types combined",
+			src:  `let x = !-~(a + b * c / d % e && f || g) == h != i < j > k <= l >= m?.n()`,
+		},
+		{
+			name: "Static function",
+			src: `static fun test(): i32 {
+				return 42
+			}`,
+		},
+		{
+			name: "Nested array types",
+			src:  `let x: [2][3][4]i32`,
+		},
+		{
+			name: "Nested string fragments",
+			src:  `let x = "begin \("nest1 \("nest2 \("nest3")")")"`,
+		},
 	}
 
 	for _, tt := range tests {
@@ -426,6 +506,90 @@ func TestParser(t *testing.T) {
 				t.Fatalf("Unexpected error: %v\n%s", err, tt.src)
 			}
 			snaps.MatchYAML(t, root)
+		})
+	}
+}
+
+func TestParserErrors(t *testing.T) {
+	type parserErrorTestCase struct {
+		name string
+		src  string
+	}
+
+	tests := []parserErrorTestCase{
+		{
+			name: "Mismatched parentheses",
+			src:  "let x = (1 + 2",
+		},
+		{
+			name: "Mismatched braces",
+			src:  "fun test() {",
+		},
+		{
+			name: "Mismatched brackets",
+			src:  "let x = arr[1",
+		},
+		{
+			name: "Invalid function parameter syntax",
+			src:  "fun test(a b: i32) {}",
+		},
+		{
+			name: "Missing colon in parameter",
+			src:  "fun test(a i32) {}",
+		},
+		{
+			name: "Invalid let syntax",
+			src:  "let = 5",
+		},
+		{
+			name: "Invalid type syntax",
+			src:  "let x: * {}",
+		},
+		{
+			name: "Invalid break syntax",
+			src:  "break :",
+		},
+		{
+			name: "Invalid return syntax",
+			src:  "return :",
+		},
+		{
+			name: "Invalid module syntax",
+			src:  "module {}",
+		},
+		{
+			name: "Incomplete string",
+			src:  `let x = "hello`,
+		},
+		{
+			name: "Incomplete string interpolation",
+			src:  `let x = "hello \(name"`,
+		},
+		{
+			name: "Multiple modifiers on pointers",
+			src:  "let x: *own mut i32",
+		},
+		{
+			name: "Invalid array dimension",
+			src:  "let x: [-1]i32",
+		},
+		{
+			name: "Invalid function call",
+			src:  "let x = f(,)",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			_, err := Parser.ParseString(tt.name, tt.src)
+			if err == nil {
+				t.Fatalf("Expected error, but got none\n%s", tt.src)
+			}
+
+			snaps.MatchYAML(t, map[string]string{
+				"error": err.Error(),
+				"src":   tt.src,
+			})
 		})
 	}
 }
