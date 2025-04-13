@@ -3658,7 +3658,7 @@ statements:
           line: 1
           column: 9
         prefix:
-          - -
+          - "-"
         operands:
           - atom:
               pos:
@@ -4140,7 +4140,7 @@ statements:
           line: 1
           column: 9
         prefix:
-          - -
+          - "-"
         operands:
           - atom:
               pos:
@@ -6605,7 +6605,7 @@ statements:
                                                   column: 22
                                                 invocation: []
                                                 index: null
-                                                operator: -
+                                                operator: "-"
                                               - pos:
                                                   filename: Complex nested expressions
                                                   offset: 23
@@ -6816,7 +6816,7 @@ statements:
                                       column: 60
                                     invocation: []
                                     index: null
-                                    operator: -
+                                    operator: "-"
                               - atom:
                                   pos:
                                     filename: Complex nested expressions
