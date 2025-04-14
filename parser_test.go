@@ -1,10 +1,10 @@
 package patina
 
 import (
+	"strings"
 	"testing"
 
 	"github.com/alecthomas/participle/v2/lexer"
-	"github.com/gkampitakis/go-snaps/snaps"
 )
 
 func TestLexer(t *testing.T) {
@@ -74,7 +74,8 @@ func TestLexer(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			lex, err := Lexer.LexString(tt.name, tt.src)
+			spaceless_name := strings.ReplaceAll(tt.name, " ", "_")
+			lex, err := Lexer.LexString(spaceless_name, tt.src)
 			if err != nil {
 				t.Fatalf("Unexpected error: %v\n%s", err, tt.src)
 			}
@@ -82,7 +83,7 @@ func TestLexer(t *testing.T) {
 			if err != nil {
 				t.Fatalf("Unexpected error: %v\n%s", err, tt.src)
 			}
-			snaps.MatchYAML(t, tokens)
+			snapsC.MatchJSON(t, tokens)
 		})
 	}
 }
@@ -501,11 +502,12 @@ let max: u65535 = 0`,
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			root, err := Parser.ParseString(tt.name, tt.src)
+			spaceless_name := strings.ReplaceAll(tt.name, " ", "_")
+			root, err := Parser.ParseString(spaceless_name, tt.src)
 			if err != nil {
 				t.Fatalf("Unexpected error: %v\n%s", err, tt.src)
 			}
-			snaps.MatchYAML(t, root)
+			snapsC.MatchJSON(t, root)
 		})
 	}
 }
@@ -581,12 +583,13 @@ func TestParserErrors(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			_, err := Parser.ParseString(tt.name, tt.src)
+			spaceless_name := strings.ReplaceAll(tt.name, " ", "_")
+			_, err := Parser.ParseString(spaceless_name, tt.src)
 			if err == nil {
 				t.Fatalf("Expected error, but got none\n%s", tt.src)
 			}
 
-			snaps.MatchSnapshot(t, err.Error())
+			snapsC.MatchSnapshot(t, err.Error())
 		})
 	}
 }
