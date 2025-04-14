@@ -1,0 +1,248 @@
+
+[TestCalculateStages/branching_dependencies - 1]
+[
+  {
+    "is_static": false,
+    "name": "b",
+    "stage": 18446744073709551615,
+    "usages": null
+  },
+  {
+    "is_static": false,
+    "name": "c",
+    "stage": 18446744073709551615,
+    "usages": null
+  },
+  {
+    "is_static": false,
+    "name": "a",
+    "stage": 0,
+    "usages": ["b", "c"]
+  }
+]
+---
+
+[TestCalculateStages/cyclic_dependencies - 1]
+[
+  {
+    "is_static": false,
+    "name": "a",
+    "stage": 3,
+    "usages": ["b"]
+  },
+  {
+    "is_static": false,
+    "name": "b",
+    "stage": 2,
+    "usages": ["c"]
+  },
+  {
+    "is_static": false,
+    "name": "c",
+    "stage": 1,
+    "usages": ["a"]
+  }
+]
+---
+
+[TestCalculateStages/linear_chain - 1]
+[
+  {
+    "is_static": false,
+    "name": "a",
+    "stage": 1,
+    "usages": ["b"]
+  },
+  {
+    "is_static": false,
+    "name": "b",
+    "stage": 0,
+    "usages": ["c"]
+  },
+  {
+    "is_static": false,
+    "name": "c",
+    "stage": 18446744073709551615,
+    "usages": null
+  }
+]
+---
+
+[TestCalculateStages/nested_scopes - 1]
+[
+  {
+    "is_static": false,
+    "name": "a",
+    "stage": 0,
+    "usages": ["b"]
+  },
+  {
+    "is_static": false,
+    "name": "b",
+    "stage": 18446744073709551615,
+    "usages": null
+  }
+]
+---
+
+[TestCalculateStages/simple_no_dependencies - 1]
+[
+  {
+    "is_static": false,
+    "name": "def2",
+    "stage": 18446744073709551615,
+    "usages": null
+  },
+  {
+    "is_static": true,
+    "name": "def1",
+    "stage": 1,
+    "usages": null
+  }
+]
+---
+
+[TestCalculateStages/static_and_nonstatic_mix - 1]
+[
+  {
+    "is_static": true,
+    "name": "a",
+    "stage": 1,
+    "usages": null
+  },
+  {
+    "is_static": false,
+    "name": "b",
+    "stage": 2,
+    "usages": ["c"]
+  },
+  {
+    "is_static": true,
+    "name": "c",
+    "stage": 1,
+    "usages": null
+  }
+]
+---
+
+[TestStageIntegration/function_calls - 1]
+[
+  {
+    "is_static": false,
+    "name": "a",
+    "stage": 2,
+    "usages": ["b"]
+  },
+  {
+    "is_static": false,
+    "name": "b",
+    "stage": 1,
+    "usages": ["c"]
+  },
+  {
+    "is_static": false,
+    "name": "c",
+    "stage": 0,
+    "usages": ["main"]
+  },
+  {
+    "is_static": false,
+    "name": "main",
+    "stage": 18446744073709551615,
+    "usages": null
+  }
+]
+---
+
+[TestStageIntegration/mixed_dependencies - 1]
+[
+  {
+    "is_static": true,
+    "name": "staticFn",
+    "stage": 0,
+    "usages": ["z"]
+  },
+  {
+    "is_static": false,
+    "name": "z",
+    "stage": 18446744073709551615,
+    "usages": null
+  },
+  {
+    "is_static": false,
+    "name": "x",
+    "stage": 1,
+    "usages": ["getX"]
+  },
+  {
+    "is_static": false,
+    "name": "getX",
+    "stage": 0,
+    "usages": ["y"]
+  },
+  {
+    "is_static": false,
+    "name": "y",
+    "stage": 18446744073709551615,
+    "usages": null
+  }
+]
+---
+
+[TestStageIntegration/simple_variables - 1]
+[
+  {
+    "is_static": false,
+    "name": "a",
+    "stage": 2,
+    "usages": ["b"]
+  },
+  {
+    "is_static": false,
+    "name": "b",
+    "stage": 1,
+    "usages": ["c"]
+  },
+  {
+    "is_static": false,
+    "name": "c",
+    "stage": 0,
+    "usages": ["d"]
+  },
+  {
+    "is_static": false,
+    "name": "main",
+    "stage": 18446744073709551615,
+    "usages": null
+  },
+  {
+    "is_static": false,
+    "name": "d",
+    "stage": 18446744073709551615,
+    "usages": null
+  }
+]
+---
+
+[TestStageIntegration/static_variables - 1]
+[
+  {
+    "is_static": true,
+    "name": "a",
+    "stage": 3,
+    "usages": ["b"]
+  },
+  {
+    "is_static": false,
+    "name": "b",
+    "stage": 2,
+    "usages": ["c"]
+  },
+  {
+    "is_static": true,
+    "name": "c",
+    "stage": 1,
+    "usages": null
+  }
+]
+---
