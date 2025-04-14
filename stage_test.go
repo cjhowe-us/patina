@@ -1,9 +1,25 @@
 package patina
 
 import (
+	"sort"
 	"strings"
 	"testing"
 )
+
+// sortResultsByName sorts a slice of maps by the "name" field for consistent snapshot comparison
+func sortResultsByName(results []map[string]interface{}) {
+	// Sort results by name
+	sort.Slice(results, func(i, j int) bool {
+		return results[i]["name"].(string) < results[j]["name"].(string)
+	})
+
+	// Sort usage names
+	for _, result := range results {
+		if usages, ok := result["usages"].([]string); ok && len(usages) > 0 {
+			sort.Strings(usages)
+		}
+	}
+}
 
 func TestCalculateStages(t *testing.T) {
 	tests := []struct {
@@ -102,42 +118,7 @@ func TestCalculateStages(t *testing.T) {
 				return &Context{Root: root}
 			},
 		},
-		{
-			name: "cyclic_dependencies",
-			setupScopeFunc: func() *Context {
-				// Create a scope with cyclic dependencies: a -> b -> c -> a
-				root := NewScope("root", nil, false)
-				defA := &Definition{
-					Name:     "a",
-					IsStatic: false,
-					Parent:   root,
-					Usages:   nil,
-				}
-				defB := &Definition{
-					Name:     "b",
-					IsStatic: false,
-					Parent:   root,
-					Usages:   nil,
-				}
-				defC := &Definition{
-					Name:     "c",
-					IsStatic: false,
-					Parent:   root,
-					Usages:   nil,
-				}
-
-				// Set up cyclic usage relationships
-				defA.Usages = []*Definition{defB}
-				defB.Usages = []*Definition{defC}
-				defC.Usages = []*Definition{defA}
-
-				root.defs["a"] = defA
-				root.defs["b"] = defB
-				root.defs["c"] = defC
-
-				return &Context{Root: root}
-			},
-		},
+		// Removed cyclic_dependencies test case - moved to TestCyclicDependencies
 		{
 			name: "static_and_nonstatic_mix",
 			setupScopeFunc: func() *Context {
@@ -209,8 +190,11 @@ func TestCalculateStages(t *testing.T) {
 			// Set up the test scope hierarchy
 			ctx := tt.setupScopeFunc()
 
-			// Calculate stages
-			CalculateStages(ctx)
+			// Calculate stages - handle error
+			err := CalculateStages(ctx)
+			if err != nil {
+				t.Fatalf("CalculateStages returned unexpected error: %v", err)
+			}
 
 			// Create a snapshot-friendly representation of the results
 			var results []map[string]interface{}
@@ -225,8 +209,145 @@ func TestCalculateStages(t *testing.T) {
 				results = append(results, result)
 			}
 
+			// Sort results for consistent snapshot comparison
+			sortResultsByName(results)
+
 			// Compare with snapshot using go-snaps
 			snapsC.MatchJSON(t, results)
+		})
+	}
+}
+
+// TestCyclicDependencies checks that cyclic dependencies are detected and reported correctly
+func TestCyclicDependencies(t *testing.T) {
+	tests := []struct {
+		name              string
+		setupScopeFunc    func() *Context
+		expectedErrorText string
+	}{
+		{
+			name: "simple_cycle",
+			setupScopeFunc: func() *Context {
+				// Create a scope with cyclic dependencies: a -> b -> c -> a
+				root := NewScope("root", nil, false)
+				defA := &Definition{
+					Name:     "a",
+					IsStatic: false,
+					Parent:   root,
+					Usages:   nil,
+				}
+				defB := &Definition{
+					Name:     "b",
+					IsStatic: false,
+					Parent:   root,
+					Usages:   nil,
+				}
+				defC := &Definition{
+					Name:     "c",
+					IsStatic: false,
+					Parent:   root,
+					Usages:   nil,
+				}
+
+				// Set up cyclic usage relationships
+				defA.Usages = []*Definition{defB}
+				defB.Usages = []*Definition{defC}
+				defC.Usages = []*Definition{defA}
+
+				root.defs["a"] = defA
+				root.defs["b"] = defB
+				root.defs["c"] = defC
+
+				return &Context{Root: root}
+			},
+			expectedErrorText: "cyclic dependency detected: a -> b -> c -> a",
+		},
+		{
+			name: "self_cycle",
+			setupScopeFunc: func() *Context {
+				// Create a scope with a self-referential cycle: a -> a
+				root := NewScope("root", nil, false)
+				defA := &Definition{
+					Name:     "a",
+					IsStatic: false,
+					Parent:   root,
+					Usages:   nil,
+				}
+
+				// Self-referential usage
+				defA.Usages = []*Definition{defA}
+
+				root.defs["a"] = defA
+
+				return &Context{Root: root}
+			},
+			expectedErrorText: "cyclic dependency detected: a -> a",
+		},
+		{
+			name: "complex_cycle",
+			setupScopeFunc: func() *Context {
+				// Create a more complex dependency cycle: a -> b -> c -> d -> b
+				root := NewScope("root", nil, false)
+				defA := &Definition{
+					Name:     "a",
+					IsStatic: false,
+					Parent:   root,
+					Usages:   nil,
+				}
+				defB := &Definition{
+					Name:     "b",
+					IsStatic: false,
+					Parent:   root,
+					Usages:   nil,
+				}
+				defC := &Definition{
+					Name:     "c",
+					IsStatic: false,
+					Parent:   root,
+					Usages:   nil,
+				}
+				defD := &Definition{
+					Name:     "d",
+					IsStatic: false,
+					Parent:   root,
+					Usages:   nil,
+				}
+
+				// Set up complex cyclic dependencies
+				defA.Usages = []*Definition{defB}
+				defB.Usages = []*Definition{defC}
+				defC.Usages = []*Definition{defD}
+				defD.Usages = []*Definition{defB} // Cycle back to B
+
+				root.defs["a"] = defA
+				root.defs["b"] = defB
+				root.defs["c"] = defC
+				root.defs["d"] = defD
+
+				return &Context{Root: root}
+			},
+			expectedErrorText: "cyclic dependency detected:",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			// Set up the test scope hierarchy
+			ctx := tt.setupScopeFunc()
+
+			// Calculate stages - should return error for cyclic dependencies
+			err := CalculateStages(ctx)
+
+			// Verify error is returned
+			if err == nil {
+				t.Fatalf("Expected error for cyclic dependency, but got nil")
+			}
+
+			// Check error message
+			if !strings.Contains(err.Error(), tt.expectedErrorText) {
+				t.Errorf("Error message didn't match expected text.\nGot: %s\nWanted to contain: %s",
+					err.Error(), tt.expectedErrorText)
+			}
 		})
 	}
 }
@@ -309,6 +430,12 @@ module test {
 			// Discover scopes and calculate stages
 			ctx := DiscoverScopes(root)
 
+			// Calculate stages - handle error
+			err = CalculateStages(ctx)
+			if err != nil {
+				t.Fatalf("CalculateStages returned unexpected error: %v", err)
+			}
+
 			// Create a snapshot-friendly representation of the results
 			var results []map[string]interface{}
 			allDefs := collectAllDefinitions(ctx.Root)
@@ -322,8 +449,78 @@ module test {
 				results = append(results, result)
 			}
 
+			// Sort results for consistent snapshot comparison
+			sortResultsByName(results)
+
 			// Compare with snapshot using go-snaps
 			snapsC.MatchJSON(t, results)
+		})
+	}
+}
+
+func TestCyclicDependenciesInPatinaCode(t *testing.T) {
+	tests := []struct {
+		name              string
+		patinaCode        string
+		expectedErrorText string
+	}{
+		{
+			name: "simple_cycle",
+			patinaCode: `
+module test {
+	let a = b
+	let b = c
+	let c = a
+}
+`,
+			expectedErrorText: "cyclic dependency detected:",
+		},
+		{
+			name: "self_referencing",
+			patinaCode: `
+module test {
+	let a = a
+}
+`,
+			expectedErrorText: "cyclic dependency detected: a -> a",
+		},
+		{
+			name: "function_cycle",
+			patinaCode: `
+module test {
+	fun a() { b() }
+	fun b() { c() }
+	fun c() { a() }
+}
+`,
+			expectedErrorText: "cyclic dependency detected:",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			// Parse the code
+			root, err := Parser.Parse("test.patina", strings.NewReader(tt.patinaCode))
+			if err != nil {
+				t.Fatalf("Failed to parse Patina code: %v", err)
+			}
+
+			// Discover scopes
+			ctx := DiscoverScopes(root)
+
+			// Calculate stages - should return error for cyclic dependencies
+			err = CalculateStages(ctx)
+
+			// Verify error is returned
+			if err == nil {
+				t.Fatalf("Expected error for cyclic dependency, but got nil")
+			}
+
+			// Check error message
+			if !strings.Contains(err.Error(), tt.expectedErrorText) {
+				t.Errorf("Error message didn't match expected text.\nGot: %s\nWanted to contain: %s",
+					err.Error(), tt.expectedErrorText)
+			}
 		})
 	}
 }

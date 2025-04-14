@@ -3,44 +3,21 @@
 [
   {
     "is_static": false,
-    "name": "b",
-    "stage": 18446744073709551615,
-    "usages": null
-  },
-  {
-    "is_static": false,
-    "name": "c",
-    "stage": 18446744073709551615,
-    "usages": null
-  },
-  {
-    "is_static": false,
     "name": "a",
     "stage": 0,
     "usages": ["b", "c"]
-  }
-]
----
-
-[TestCalculateStages/cyclic_dependencies - 1]
-[
-  {
-    "is_static": false,
-    "name": "a",
-    "stage": 3,
-    "usages": ["b"]
   },
   {
     "is_static": false,
     "name": "b",
-    "stage": 2,
-    "usages": ["c"]
+    "stage": 18446744073709551615,
+    "usages": null
   },
   {
     "is_static": false,
     "name": "c",
-    "stage": 1,
-    "usages": ["a"]
+    "stage": 18446744073709551615,
+    "usages": null
   }
 ]
 ---
@@ -88,15 +65,15 @@
 [TestCalculateStages/simple_no_dependencies - 1]
 [
   {
-    "is_static": false,
-    "name": "def2",
-    "stage": 18446744073709551615,
-    "usages": null
-  },
-  {
     "is_static": true,
     "name": "def1",
     "stage": 1,
+    "usages": null
+  },
+  {
+    "is_static": false,
+    "name": "def2",
+    "stage": 18446744073709551615,
     "usages": null
   }
 ]
@@ -157,16 +134,16 @@
 [TestStageIntegration/mixed_dependencies - 1]
 [
   {
+    "is_static": false,
+    "name": "getX",
+    "stage": 0,
+    "usages": ["y"]
+  },
+  {
     "is_static": true,
     "name": "staticFn",
     "stage": 0,
     "usages": ["z"]
-  },
-  {
-    "is_static": false,
-    "name": "z",
-    "stage": 18446744073709551615,
-    "usages": null
   },
   {
     "is_static": false,
@@ -176,13 +153,13 @@
   },
   {
     "is_static": false,
-    "name": "getX",
-    "stage": 0,
-    "usages": ["y"]
+    "name": "y",
+    "stage": 18446744073709551615,
+    "usages": null
   },
   {
     "is_static": false,
-    "name": "y",
+    "name": "z",
     "stage": 18446744073709551615,
     "usages": null
   }
@@ -211,13 +188,13 @@
   },
   {
     "is_static": false,
-    "name": "main",
+    "name": "d",
     "stage": 18446744073709551615,
     "usages": null
   },
   {
     "is_static": false,
-    "name": "d",
+    "name": "main",
     "stage": 18446744073709551615,
     "usages": null
   }

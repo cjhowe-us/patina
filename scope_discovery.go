@@ -241,7 +241,7 @@ func buildUsageRelationships(rootScope *Scope, references []Reference) {
 	for _, ref := range references {
 		// Find the definition being referenced
 		usedDef := findDefinition(ref.Name, ref.Scope)
-		if usedDef != nil && ref.Def != nil && usedDef != ref.Def {
+		if usedDef != nil && ref.Def != nil {
 			// Add the reference to the definition's usage list
 			// This creates a relationship: ref.Def uses usedDef
 			usedDef.Usages = append(usedDef.Usages, ref.Def)

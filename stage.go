@@ -2,8 +2,10 @@
 package patina
 
 import (
+	"fmt"
 	"math"
 	"sort"
+	"strings"
 )
 
 const (
@@ -20,15 +22,98 @@ type defWithDepCount struct {
 }
 
 // CalculateStages calculates the compilation stages for all definitions in the given context.
-func CalculateStages(ctx *Context) {
+// Returns an error if cyclic dependencies are detected.
+func CalculateStages(ctx *Context) error {
 	// First, collect all definitions in the context
 	allDefs := collectAllDefinitions(ctx.Root)
+
+	// Check for cyclic dependencies
+	if cycle := detectCyclicDependencies(allDefs); cycle != nil {
+		// Normalize the cycle to ensure consistent reporting
+		// Find the alphabetically first name in the cycle
+		firstIdx := 0
+		for i, def := range cycle {
+			if def.Name < cycle[firstIdx].Name {
+				firstIdx = i
+			}
+		}
+
+		// Rearrange the cycle to start with the alphabetically first name
+		normalizedCycle := make([]*Definition, len(cycle))
+		for i := 0; i < len(cycle); i++ {
+			normalizedCycle[i] = cycle[(firstIdx+i)%len(cycle)]
+		}
+
+		// Create the error message with the normalized cycle
+		cycleNames := make([]string, len(normalizedCycle))
+		for i, def := range normalizedCycle {
+			cycleNames[i] = def.Name
+		}
+		return fmt.Errorf("cyclic dependency detected: %s", strings.Join(cycleNames, " -> "))
+	}
 
 	// Sort definitions in topological order
 	sortedDefs := sortDefinitionsTopologically(allDefs)
 
 	// Calculate stages for all definitions
 	calculateStagesForDefinitions(sortedDefs)
+
+	return nil
+}
+
+// detectCyclicDependencies checks if there are any cyclic dependencies in the definitions
+// Returns the cycle as a slice of definitions if found, or nil if no cycles exist
+func detectCyclicDependencies(defs []*Definition) []*Definition {
+	// Track visited and currently exploring definitions
+	visited := make(map[*Definition]bool)
+	exploring := make(map[*Definition]bool)
+
+	// Check each definition for cycles
+	for _, def := range defs {
+		if cycle := detectCycleStartingFrom(def, visited, exploring, nil); cycle != nil {
+			return cycle
+		}
+	}
+
+	return nil
+}
+
+// detectCycleStartingFrom performs depth-first search to detect cycles
+// Returns the cycle as a slice if found, or nil if no cycle
+func detectCycleStartingFrom(def *Definition, visited, exploring map[*Definition]bool, path []*Definition) []*Definition {
+	// Skip if already fully explored
+	if visited[def] {
+		return nil
+	}
+
+	// Cycle detected if we're revisiting a definition in the current exploration path
+	if exploring[def] {
+		// Find where in the path this definition appeared before
+		for i, pathDef := range path {
+			if pathDef == def {
+				// Return the cycle (including the current definition again to show the loop)
+				return append(path[i:], def)
+			}
+		}
+		return path
+	}
+
+	// Mark as currently exploring
+	exploring[def] = true
+	path = append(path, def)
+
+	// Recursively check usages
+	for _, usage := range def.Usages {
+		if cycle := detectCycleStartingFrom(usage, visited, exploring, path); cycle != nil {
+			return cycle
+		}
+	}
+
+	// Mark as fully visited and remove from exploring
+	visited[def] = true
+	exploring[def] = false
+
+	return nil
 }
 
 // collectAllDefinitions gathers all definitions from the scope hierarchy
