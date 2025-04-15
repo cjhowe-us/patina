@@ -15,10 +15,8 @@ func TestMain(m *testing.M) {
 	os.Exit(v)
 }
 
-var snapsC = snaps.WithConfig(
-	snaps.JSON(snaps.JSONConfig{
-		Width:    80,
-		Indent:   "  ",
-		SortKeys: true,
-	}),
-)
+var jsonSnapshotConfig = snaps.JSON(snaps.JSONConfig{
+	Width:    80,
+	Indent:   "  ",
+	SortKeys: true,
+})

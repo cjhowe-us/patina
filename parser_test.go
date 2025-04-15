@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	"github.com/alecthomas/participle/v2/lexer"
+	"github.com/gkampitakis/go-snaps/snaps"
 )
 
 func TestLexer(t *testing.T) {
@@ -83,7 +84,9 @@ func TestLexer(t *testing.T) {
 			if err != nil {
 				t.Fatalf("Unexpected error: %v\n%s", err, tt.src)
 			}
-			snapsC.MatchJSON(t, tokens)
+
+			snapsConfig := snaps.WithConfig(jsonSnapshotConfig)
+			snapsConfig.MatchJSON(t, tokens)
 		})
 	}
 }
@@ -507,7 +510,8 @@ let max: u65535 = 0`,
 			if err != nil {
 				t.Fatalf("Unexpected error: %v\n%s", err, tt.src)
 			}
-			snapsC.MatchJSON(t, root)
+			snapsConfig := snaps.WithConfig(jsonSnapshotConfig)
+			snapsConfig.MatchJSON(t, root)
 		})
 	}
 }
@@ -589,7 +593,8 @@ func TestParserErrors(t *testing.T) {
 				t.Fatalf("Expected error, but got none\n%s", tt.src)
 			}
 
-			snapsC.MatchSnapshot(t, err.Error())
+			snapsConfig := snaps.WithConfig(jsonSnapshotConfig)
+			snapsConfig.MatchSnapshot(t, err.Error())
 		})
 	}
 }
