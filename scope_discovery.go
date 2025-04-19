@@ -413,10 +413,6 @@ func buildUsageRelationships(rootScope *Scope) {
 	walkDefs(rootScope)
 }
 
-func collectUsagesForDef(def *Definition, expr Expression, scope *Scope) {
-	collectUsagesFromExpr(def, expr, scope)
-}
-
 func collectUsagesFromStatement(def *Definition, stmt Statement, scope *Scope) {
 	if collector, ok := stmt.(StatementUsageCollector); ok {
 		collector.CollectStatementUsages(def, scope)
@@ -428,24 +424,6 @@ func collectUsagesFromExpr(def *Definition, expr Expression, scope *Scope) {
 	if collector, ok := expr.(ExpressionUsageCollector); ok {
 		collector.CollectExpressionUsages(def, scope)
 		return
-	}
-}
-
-// Special helper function for collectUsagesFromAtom to handle self-references properly
-func collectUsagesFromBinding(def *Definition, ident string, scope *Scope) {
-	usedDef := FindDefinition(ident, scope)
-	if usedDef != nil {
-		// Include usages even if they are self-references
-		already := false
-		for _, u := range def.Usages {
-			if u == usedDef {
-				already = true
-				break
-			}
-		}
-		if !already {
-			def.Usages = append(def.Usages, usedDef)
-		}
 	}
 }
 

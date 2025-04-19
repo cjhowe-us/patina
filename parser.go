@@ -300,7 +300,9 @@ func (AtomicValue) atom()       {}
 func (Binding) atom()           {}
 
 type (
-	Value   interface{ value() }
+	Value interface {
+		value()
+	}
 	Integer struct {
 		Pos   lexer.Position
 		Value uint64 `parser:"@Integer"`
@@ -385,3 +387,65 @@ var (
 	intWidthRange = fmt.Sprintf("[%d, %d]", IntegerWidthMin, IntegerWidthMax)
 	intTypeRegex  = regexp.MustCompile(`^([iu])(\d+)`)
 )
+
+func (n Root) Accept(visitor ASTVisitor) interface{}  { return visitor.VisitRoot(&n) }
+func (n Block) Accept(visitor ASTVisitor) interface{} { return visitor.VisitBlock(&n) }
+func (n DecoratedStatement) Accept(visitor ASTVisitor) interface{} {
+	return visitor.VisitDecoratedStatement(&n)
+}
+func (n DocComment) Accept(visitor ASTVisitor) interface{} { return visitor.VisitDocComment(&n) }
+func (n Annotation) Accept(visitor ASTVisitor) interface{} { return visitor.VisitAnnotation(&n) }
+
+func (n Module) Accept(visitor ASTVisitor) interface{} { return visitor.VisitModule(&n) }
+func (n FunctionStatement) Accept(visitor ASTVisitor) interface{} {
+	return visitor.VisitFunctionStatement(&n)
+}
+func (n ReturnStatement) Accept(visitor ASTVisitor) interface{} {
+	return visitor.VisitReturnStatement(&n)
+}
+func (n LetStatement) Accept(visitor ASTVisitor) interface{} { return visitor.VisitLetStatement(&n) }
+func (n BreakStatement) Accept(visitor ASTVisitor) interface{} {
+	return visitor.VisitBreakStatement(&n)
+}
+func (n ExpressionStatement) Accept(visitor ASTVisitor) interface{} {
+	return visitor.VisitExpressionStatement(&n)
+}
+
+func (n IfExpression) Accept(visitor ASTVisitor) interface{} { return visitor.VisitIfExpression(&n) }
+func (n CaseExpression) Accept(visitor ASTVisitor) interface{} {
+	return visitor.VisitCaseExpression(&n)
+}
+func (n Lambda) Accept(visitor ASTVisitor) interface{} { return visitor.VisitLambda(&n) }
+func (n StaticExpression) Accept(visitor ASTVisitor) interface{} {
+	return visitor.VisitStaticExpression(&n)
+}
+func (n TypeExpression) Accept(visitor ASTVisitor) interface{} {
+	return visitor.VisitTypeExpression(&n)
+}
+func (n Operation) Accept(visitor ASTVisitor) interface{} { return visitor.VisitOperation(&n) }
+
+func (n GroupedExpression) Accept(visitor ASTVisitor) interface{} {
+	return visitor.VisitGroupedExpression(&n)
+}
+func (n AtomicType) Accept(visitor ASTVisitor) interface{}  { return visitor.VisitAtomicType(&n) }
+func (n AtomicValue) Accept(visitor ASTVisitor) interface{} { return visitor.VisitAtomicValue(&n) }
+func (n Binding) Accept(visitor ASTVisitor) interface{}     { return visitor.VisitBinding(&n) }
+
+func (n PointerType) Accept(visitor ASTVisitor) interface{}  { return visitor.VisitPointerType(&n) }
+func (n ArrayType) Accept(visitor ASTVisitor) interface{}    { return visitor.VisitArrayType(&n) }
+func (n IntegerType) Accept(visitor ASTVisitor) interface{}  { return visitor.VisitIntegerType(&n) }
+func (n FunctionType) Accept(visitor ASTVisitor) interface{} { return visitor.VisitFunctionType(&n) }
+
+func (n Integer) Accept(visitor ASTVisitor) interface{} { return visitor.VisitInteger(&n) }
+func (n String) Accept(visitor ASTVisitor) interface{}  { return visitor.VisitString(&n) }
+
+func (n IfBranch) Accept(visitor ASTVisitor) interface{}   { return visitor.VisitIfBranch(&n) }
+func (n CaseBranch) Accept(visitor ASTVisitor) interface{} { return visitor.VisitCaseBranch(&n) }
+func (n StringFragment) Accept(visitor ASTVisitor) interface{} {
+	return visitor.VisitStringFragment(&n)
+}
+func (n FunctionParameter) Accept(visitor ASTVisitor) interface{} {
+	return visitor.VisitFunctionParameter(&n)
+}
+func (n Operand) Accept(visitor ASTVisitor) interface{} { return visitor.VisitOperand(&n) }
+func (n Postfix) Accept(visitor ASTVisitor) interface{} { return visitor.VisitPostfix(&n) }
