@@ -7,9 +7,7 @@ import (
 	"github.com/gkampitakis/go-snaps/snaps"
 )
 
-// createScopeDiscoveryFixture creates a Context from Patina code
 func createScopeDiscoveryFixture(t *testing.T, code string) *Context {
-	// Use Parser.ParseString for consistency with original tests
 	root, err := Parser.ParseString("", code)
 	if err != nil {
 		t.Fatalf("Failed to parse code: %v", err)
@@ -19,7 +17,6 @@ func createScopeDiscoveryFixture(t *testing.T, code string) *Context {
 	return ctx
 }
 
-// Helper function to convert a scope to a map for snapshot testing
 func scopeToMap(scope *Scope) map[string]interface{} {
 	result := map[string]interface{}{
 		"name":     scope.Name,
@@ -28,7 +25,6 @@ func scopeToMap(scope *Scope) map[string]interface{} {
 		"children": map[string]interface{}{},
 	}
 
-	// Add definitions
 	for name, def := range scope.GetDefinitions() {
 		defMap := map[string]interface{}{
 			"name":     def.Name,
@@ -39,7 +35,6 @@ func scopeToMap(scope *Scope) map[string]interface{} {
 		result["defs"].(map[string]interface{})[name] = defMap
 	}
 
-	// Add child scopes recursively
 	for name, childScope := range scope.GetChildren() {
 		result["children"].(map[string]interface{})[name] = scopeToMap(childScope)
 	}
@@ -55,7 +50,6 @@ func TestModuleScope(t *testing.T) {
 	`
 	ctx := createScopeDiscoveryFixture(t, moduleCode)
 
-	// Convert to map for snapshot testing
 	result := scopeToMap(ctx.Root)
 
 	snaps.MatchJSON(t, result)
@@ -75,7 +69,6 @@ func TestFunctionScope(t *testing.T) {
 	`
 	ctx := createScopeDiscoveryFixture(t, functionCode)
 
-	// Convert to map for snapshot testing
 	result := scopeToMap(ctx.Root)
 
 	snaps.MatchJSON(t, result)
@@ -97,7 +90,6 @@ func TestNestedScope(t *testing.T) {
 	`
 	ctx := createScopeDiscoveryFixture(t, nestedCode)
 
-	// Convert to map for snapshot testing
 	result := scopeToMap(ctx.Root)
 
 	snaps.MatchJSON(t, result)
@@ -120,7 +112,6 @@ func TestVariableDefinitionAndUsage(t *testing.T) {
 	`
 	ctx := createScopeDiscoveryFixture(t, usageCode)
 
-	// Convert to map for snapshot testing
 	result := scopeToMap(ctx.Root)
 
 	snaps.MatchJSON(t, result)
@@ -140,7 +131,6 @@ func TestIfExpressionScope(t *testing.T) {
 	`
 	ctx := createScopeDiscoveryFixture(t, ifCode)
 
-	// Convert to map for snapshot testing
 	result := scopeToMap(ctx.Root)
 
 	snaps.MatchJSON(t, result)
@@ -164,7 +154,6 @@ func TestLambdaScope(t *testing.T) {
 	}
 	`
 
-	// Parse using specific parser method for this test
 	root, err := Parser.Parse("test.patina", strings.NewReader(lambdaCode))
 	if err != nil {
 		t.Fatalf("Failed to parse lambda code: %v", err)
@@ -172,7 +161,6 @@ func TestLambdaScope(t *testing.T) {
 
 	ctx := DiscoverScopes(root)
 
-	// Convert to map for snapshot testing
 	result := scopeToMap(ctx.Root)
 
 	snaps.MatchJSON(t, result)
@@ -181,7 +169,6 @@ func TestLambdaScope(t *testing.T) {
 func TestLambdaScopeFixed(t *testing.T) {
 	t.Skip("Skipping due to parsing issues with module syntax")
 
-	// Create a simple lambda scope test that should work with the parser
 	lambdaCode := `
 module test {
 	fun higher(f: fun(i32): i32) {
@@ -196,7 +183,6 @@ module test {
 	}
 }
 `
-	// Parse using the Parse method with a reader
 	root, err := Parser.Parse("test.patina", strings.NewReader(lambdaCode))
 	if err != nil {
 		t.Fatalf("Failed to parse fixed lambda code: %v", err)
@@ -204,7 +190,6 @@ module test {
 
 	ctx := DiscoverScopes(root)
 
-	// Convert to map for snapshot testing
 	result := scopeToMap(ctx.Root)
 
 	snaps.MatchJSON(t, result)
@@ -226,13 +211,11 @@ func TestStaticDefinitionScope(t *testing.T) {
 	`
 	ctx := createScopeDiscoveryFixture(t, staticCode)
 
-	// Convert to map for snapshot testing
 	result := scopeToMap(ctx.Root)
 
 	snaps.MatchJSON(t, result)
 }
 
-// Table-driven test to verify interface-based definition discovery
 func TestDefinitionDiscoveryInterfaces(t *testing.T) {
 	tests := []struct {
 		name string
@@ -320,8 +303,6 @@ func TestDefinitionDiscoveryInterfaces(t *testing.T) {
 	}
 }
 
-// TestComplexExpressionFixedScope contains a fixed version of the complex expression test
-// that avoids the cyclic dependency issue
 func TestComplexExpressionFixedScope(t *testing.T) {
 	complexCode := `
 	module test {
@@ -339,13 +320,11 @@ func TestComplexExpressionFixedScope(t *testing.T) {
 	`
 	ctx := createScopeDiscoveryFixture(t, complexCode)
 
-	// Convert to map for snapshot testing
 	result := scopeToMap(ctx.Root)
 
 	snaps.MatchJSON(t, result)
 }
 
-// TestSimpleExpression tests a simplified expression to help diagnose cyclic dependency issues
 func TestSimpleExpression(t *testing.T) {
 	simpleCode := `
 	module test {
@@ -358,18 +337,12 @@ func TestSimpleExpression(t *testing.T) {
 	`
 	ctx := createScopeDiscoveryFixture(t, simpleCode)
 
-	// Convert to map for snapshot testing
 	result := scopeToMap(ctx.Root)
 
 	snaps.MatchJSON(t, result)
 }
 
-// Stage_test.go tests - fix for the cyclic dependency test cases
-
-// TestCyclicDependenciesWithInterfaces specifically tests cyclic dependencies
-// using our interface-based approach
 func TestCyclicDependenciesWithInterfaces(t *testing.T) {
-	// Create a simple cyclic dependency code example: a -> b -> c -> a
 	cyclicCode := `
 	module test {
 		let a = b
@@ -378,24 +351,19 @@ func TestCyclicDependenciesWithInterfaces(t *testing.T) {
 	}
 	`
 
-	// Parse the code
 	root, err := Parser.Parse("test.patina", strings.NewReader(cyclicCode))
 	if err != nil {
 		t.Fatalf("Failed to parse Patina code: %v", err)
 	}
 
-	// Discover scopes - this should not panic with our updated approach
 	ctx := DiscoverScopes(root)
 
-	// Calculate stages explicitly to check for the error
 	err = CalculateStages(ctx)
 
-	// Verify an error is returned
 	if err == nil {
 		t.Fatalf("Expected error for cyclic dependency, but got nil")
 	}
 
-	// Check that the error message contains the expected text
 	expectedError := "cyclic dependency detected:"
 	if !strings.Contains(err.Error(), expectedError) {
 		t.Errorf("Error message didn't match expected text.\nGot: %s\nWanted to contain: %s",
@@ -403,33 +371,25 @@ func TestCyclicDependenciesWithInterfaces(t *testing.T) {
 	}
 }
 
-// TestSelfCycleWithInterfaces specifically tests self-referential cycles
-// using our interface-based approach
 func TestSelfCycleWithInterfaces(t *testing.T) {
-	// Create a self-referential cycle: a = a
 	selfCycleCode := `
 	module test {
 		let a = a
 	}
 	`
 
-	// Parse the code
 	root, err := Parser.Parse("test.patina", strings.NewReader(selfCycleCode))
 	if err != nil {
 		t.Fatalf("Failed to parse Patina code: %v", err)
 	}
 
-	// Discover scopes - this should not panic with our updated approach
 	ctx := DiscoverScopes(root)
 
-	// Calculate stages explicitly to check for the error
 	err = CalculateStages(ctx)
 
-	// Verify an error is returned
 	if err == nil {
 		t.Errorf("Expected error for self-reference cycle with name 'a', but got nil")
 	} else {
-		// Check that the error message contains the expected text
 		expectedError := "cyclic dependency detected: a -> a"
 		if !strings.Contains(err.Error(), expectedError) {
 			t.Errorf("Error message didn't match expected text.\nGot: %s\nWanted to contain: %s",
@@ -438,15 +398,12 @@ func TestSelfCycleWithInterfaces(t *testing.T) {
 	}
 }
 
-// TestMinimalLambdaScope tests lambda scope discovery with minimal code
 func TestMinimalLambdaScope(t *testing.T) {
-	// Create a minimal function with a lambda
 	code := `fun test() {
 		let f = fun(x: i32): i32 { return x * 2 }
 		return f(10)
 	}`
 
-	// Parse using ParseString
 	root, err := Parser.ParseString("", code)
 	if err != nil {
 		t.Fatalf("Failed to parse minimal lambda code: %v", err)
@@ -454,7 +411,6 @@ func TestMinimalLambdaScope(t *testing.T) {
 
 	ctx := DiscoverScopes(root)
 
-	// Convert to map for snapshot testing
 	result := scopeToMap(ctx.Root)
 
 	snaps.MatchJSON(t, result)

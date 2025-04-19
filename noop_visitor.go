@@ -1,8 +1,5 @@
-// noop_visitor.go
 package patina
 
-// NoopVisitor provides empty implementations of all ASTVisitor methods.
-// It can be embedded in custom visitors to avoid implementing all methods.
 type NoopVisitor struct{}
 
 func (v *NoopVisitor) VisitRoot(node *Root) interface{}                               { return nil }

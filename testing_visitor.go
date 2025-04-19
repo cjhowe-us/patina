@@ -1,27 +1,21 @@
-// testing_visitor.go
 package patina
 
 import "reflect"
 
-// TestingVisitorResult holds the data collected by TestingVisitor for snapshotting.
 type TestingVisitorResult struct {
 	VisitLog        []string               `json:"visitLog"`
 	NodeCount       map[string]int         `json:"nodeCount"`
 	ExtractedValues map[string]interface{} `json:"extractedValues"`
 }
 
-// TestingVisitor implements ASTVisitor for testing.
-// It is non-recursive and relies on an external driver (like RecursiveVisitor).
-// It records visited nodes and extracts basic values for snapshot testing.
 type TestingVisitor struct {
-	NoopVisitor // Embed NoopVisitor to avoid implementing all methods initially
+	NoopVisitor
 
 	VisitLog        []string
 	NodeCount       map[string]int
 	ExtractedValues map[string]interface{}
 }
 
-// NewTestingVisitor creates a new TestingVisitor.
 func NewTestingVisitor() *TestingVisitor {
 	return &TestingVisitor{
 		VisitLog:        make([]string, 0),
@@ -30,15 +24,12 @@ func NewTestingVisitor() *TestingVisitor {
 	}
 }
 
-// logVisit records the visit and increments counts.
 func (v *TestingVisitor) logVisit(node interface{}) {
-	// Use reflection to get the type name without the package prefix
 	nodeType := reflect.TypeOf(node).Elem().Name()
 	v.VisitLog = append(v.VisitLog, nodeType)
 	v.NodeCount[nodeType]++
 }
 
-// Result returns the collected data for snapshotting.
 func (v *TestingVisitor) Result() *TestingVisitorResult {
 	return &TestingVisitorResult{
 		VisitLog:        v.VisitLog,
@@ -46,8 +37,6 @@ func (v *TestingVisitor) Result() *TestingVisitorResult {
 		ExtractedValues: v.ExtractedValues,
 	}
 }
-
-// Implement Visit methods for relevant nodes to log/extract data
 
 func (v *TestingVisitor) VisitRoot(node *Root) interface{} { v.logVisit(node); return nil }
 func (v *TestingVisitor) VisitModule(node *Module) interface{} {
