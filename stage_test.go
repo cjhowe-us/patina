@@ -355,7 +355,7 @@ func TestCyclicDependencies(t *testing.T) {
 	}
 }
 
-// getUsageNames returns the names of all definitions that use the given definition
+// getUsageNames returns the names of all definitions that this definition depends on (dependencies)
 func getUsageNames(def *Definition) []string {
 	var names []string
 	for _, usage := range def.Usages {

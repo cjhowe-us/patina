@@ -107,26 +107,26 @@
   {
     "is_static": false,
     "name": "a",
-    "stage": 2,
-    "usages": ["b"]
+    "stage": 18446744073709551615,
+    "usages": null
   },
   {
     "is_static": false,
     "name": "b",
-    "stage": 1,
-    "usages": ["c"]
+    "stage": 0,
+    "usages": ["a"]
   },
   {
     "is_static": false,
     "name": "c",
-    "stage": 0,
-    "usages": ["main"]
+    "stage": 1,
+    "usages": ["b"]
   },
   {
     "is_static": false,
     "name": "main",
-    "stage": 18446744073709551615,
-    "usages": null
+    "stage": 2,
+    "usages": ["c"]
   }
 ]
 ---
@@ -137,31 +137,31 @@
     "is_static": false,
     "name": "getX",
     "stage": 0,
-    "usages": ["y"]
+    "usages": ["x"]
   },
   {
     "is_static": true,
     "name": "staticFn",
-    "stage": 0,
-    "usages": ["z"]
+    "stage": 1,
+    "usages": null
   },
   {
     "is_static": false,
     "name": "x",
+    "stage": 18446744073709551615,
+    "usages": null
+  },
+  {
+    "is_static": false,
+    "name": "y",
     "stage": 1,
     "usages": ["getX"]
   },
   {
     "is_static": false,
-    "name": "y",
-    "stage": 18446744073709551615,
-    "usages": null
-  },
-  {
-    "is_static": false,
     "name": "z",
-    "stage": 18446744073709551615,
-    "usages": null
+    "stage": 2,
+    "usages": ["staticFn"]
   }
 ]
 ---
@@ -171,32 +171,32 @@
   {
     "is_static": false,
     "name": "a",
-    "stage": 2,
-    "usages": ["b"]
+    "stage": 18446744073709551615,
+    "usages": null
   },
   {
     "is_static": false,
     "name": "b",
-    "stage": 1,
-    "usages": ["c"]
+    "stage": 0,
+    "usages": ["a"]
   },
   {
     "is_static": false,
     "name": "c",
-    "stage": 0,
-    "usages": ["d"]
+    "stage": 1,
+    "usages": ["b"]
   },
   {
     "is_static": false,
     "name": "d",
-    "stage": 18446744073709551615,
-    "usages": null
+    "stage": 2,
+    "usages": ["c"]
   },
   {
     "is_static": false,
     "name": "main",
-    "stage": 18446744073709551615,
-    "usages": null
+    "stage": 2,
+    "usages": ["c"]
   }
 ]
 ---
@@ -206,20 +206,20 @@
   {
     "is_static": true,
     "name": "a",
-    "stage": 3,
-    "usages": ["b"]
+    "stage": 1,
+    "usages": null
   },
   {
     "is_static": false,
     "name": "b",
     "stage": 2,
-    "usages": ["c"]
+    "usages": ["a"]
   },
   {
     "is_static": true,
     "name": "c",
-    "stage": 1,
-    "usages": null
+    "stage": 3,
+    "usages": ["b"]
   }
 ]
 ---

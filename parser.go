@@ -144,7 +144,10 @@ type (
 )
 
 type (
-	Statement interface{ statement() }
+	Statement interface {
+		statement()
+		DefinitionDiscoverer
+	}
 
 	Module struct {
 		Pos  lexer.Position
@@ -202,6 +205,7 @@ func (ExpressionStatement) statement() {}
 type (
 	Expression interface {
 		expression()
+		DefinitionDiscoverer
 	}
 
 	IfExpression struct {
@@ -268,7 +272,10 @@ func (Block) expression()            {}
 func (Operation) expression()        {}
 
 type (
-	Atom              interface{ atom() }
+	Atom interface {
+		atom()
+		DefinitionDiscoverer
+	}
 	GroupedExpression struct {
 		Pos        lexer.Position
 		Expression Expression `parser:"'(' @@ ')'"`
