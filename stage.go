@@ -21,9 +21,6 @@ func CalculateStages(ctx *Context) error {
 	allDefs := collectAllDefinitions(ctx.Root)
 	removeSelfReferences(allDefs)
 	if cycle := detectCyclicDependencies(allDefs); cycle != nil {
-		if len(cycle) == 4 && cycle[0].Name == "a" && cycle[1].Name == "b" && cycle[2].Name == "c" {
-			cycle[3] = cycle[0]
-		}
 		firstIdx := 0
 		for i, def := range cycle {
 			if def.Name < cycle[firstIdx].Name {
@@ -37,6 +34,9 @@ func CalculateStages(ctx *Context) error {
 		cycleNames := make([]string, len(normalizedCycle))
 		for i, def := range normalizedCycle {
 			cycleNames[i] = def.Name
+		}
+		if len(normalizedCycle) > 0 {
+			cycleNames = append(cycleNames, normalizedCycle[0].Name)
 		}
 		return fmt.Errorf("cyclic dependency detected: %s", strings.Join(cycleNames, " -> "))
 	}
@@ -91,17 +91,11 @@ func detectCycleStartingFrom(def *Definition, visited, exploring map[*Definition
 	if exploring[def] {
 		for i, pathDef := range path {
 			if pathDef == def {
-				cycle := append(path[i:], def)
-				if len(cycle) > 2 {
-					firstNode := cycle[0]
-					if firstNode != cycle[len(cycle)-1] {
-						cycle = append(cycle, firstNode)
-					}
-				}
+				cycle := path[i:]
 				return cycle
 			}
 		}
-		return path
+		return nil
 	}
 	exploring[def] = true
 	path = append(path, def)

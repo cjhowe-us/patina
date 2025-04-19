@@ -1,9 +1,6 @@
 
 [TestVisitDispatch/Visit_function_dispatches_correctly - 1]
 {
- "extractedValues": {
-  "BindingName": "testIdentifier"
- },
  "nodeCount": {
   "Binding": 1
  },
@@ -15,9 +12,6 @@
 
 [TestVisitDispatch/Visit_function_dispatches_interface_type_correctly - 1]
 {
- "extractedValues": {
-  "BindingName": "testIdentifier"
- },
  "nodeCount": {
   "Binding": 1
  },
@@ -29,9 +23,6 @@
 
 [TestVisitDispatch/Visit_function_unwraps_statement_interface - 1]
 {
- "extractedValues": {
-  "LetName": "x"
- },
  "nodeCount": {
   "LetStatement": 1
  },
@@ -43,7 +34,6 @@
 
 [TestVisitorWithSnapshots/Complex_nested_expressions - 1]
 {
- "extractedValues": {},
  "nodeCount": {
   "DecoratedStatement": 1,
   "Root": 1
@@ -57,10 +47,6 @@
 
 [TestVisitorWithSnapshots/Doc_comment_and_annotations - 1]
 {
- "extractedValues": {
-  "AnnotationName": "tag.anno",
-  "DocCommentText": " My doc comment "
- },
  "nodeCount": {
   "Annotation": 1,
   "DecoratedStatement": 1,
@@ -78,7 +64,6 @@
 
 [TestVisitorWithSnapshots/Function_statement - 1]
 {
- "extractedValues": {},
  "nodeCount": {
   "DecoratedStatement": 1,
   "Root": 1
@@ -92,7 +77,6 @@
 
 [TestVisitorWithSnapshots/If_expression - 1]
 {
- "extractedValues": {},
  "nodeCount": {
   "DecoratedStatement": 1,
   "Root": 1
@@ -106,7 +90,6 @@
 
 [TestVisitorWithSnapshots/Manual_AST_with_nested_blocks - 1]
 {
- "extractedValues": {},
  "nodeCount": {
   "DecoratedStatement": 1,
   "Root": 1
@@ -120,7 +103,6 @@
 
 [TestVisitorWithSnapshots/Module_with_multiple_statements - 1]
 {
- "extractedValues": {},
  "nodeCount": {
   "DecoratedStatement": 1,
   "Root": 1
@@ -134,7 +116,6 @@
 
 [TestVisitorWithSnapshots/Pointer_type - 1]
 {
- "extractedValues": {},
  "nodeCount": {
   "DecoratedStatement": 1,
   "Root": 1
@@ -148,7 +129,6 @@
 
 [TestVisitorWithSnapshots/Recursive_factorial_function - 1]
 {
- "extractedValues": {},
  "nodeCount": {
   "DecoratedStatement": 1,
   "Root": 1
@@ -162,7 +142,6 @@
 
 [TestVisitorWithSnapshots/Simple_binding - 1]
 {
- "extractedValues": {},
  "nodeCount": {
   "DecoratedStatement": 1,
   "Root": 1
@@ -176,7 +155,6 @@
 
 [TestVisitorWithSnapshots/String_with_interpolation - 1]
 {
- "extractedValues": {},
  "nodeCount": {
   "DecoratedStatement": 1,
   "Root": 1
