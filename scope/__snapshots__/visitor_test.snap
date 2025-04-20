@@ -1,0 +1,54 @@
+
+[TestScopeVisitor/Nested_Blocks - 1]
+{
+ "scope": {
+  "name": "Global",
+  "position": "Nested Blocks.pat:2:4"
+ }
+}
+---
+
+[TestScopeVisitor/Redefinition_Error - 1]
+{
+ "scope": {
+  "name": "Global",
+  "position": "Redefinition Error.pat:2:4"
+ }
+}
+---
+
+[TestScopeVisitor/Param_Redefinition_Error - 1]
+{
+ "scope": {
+  "name": "Global",
+  "position": "Param Redefinition Error.pat:2:4"
+ }
+}
+---
+
+[TestScopeVisitor/Empty_Input - 1]
+{
+ "scope": {
+  "name": "Global",
+  "position": "Empty Input.pat:1:1"
+ }
+}
+---
+
+[TestScopeVisitor/Basic_Module - 1]
+{
+ "scope": {
+  "name": "Global",
+  "position": "Basic Module.pat:2:4"
+ }
+}
+---
+
+[TestScopeVisitor/Variable_and_Param_Same_Name - 1]
+{
+ "scope": {
+  "name": "Global",
+  "position": "Variable and Param Same Name.pat:2:4"
+ }
+}
+---
