@@ -1,0 +1,32 @@
+
+[TestDependencyVisitor/Undefined_Identifier - 1]
+{}
+---
+
+[TestDependencyVisitor/Self_Dependency_(Ignored) - 1]
+{}
+---
+
+[TestDependencyVisitor/Mutual_Dependency - 1]
+{}
+---
+
+[TestDependencyVisitor/Simple_Let - 1]
+{}
+---
+
+[TestDependencyVisitor/Function_Call - 1]
+{}
+---
+
+[TestDependencyVisitor/Transitive_Dependency - 1]
+{}
+---
+
+[TestDependencyVisitor/Type_Dependency - 1]
+{}
+---
+
+[TestDependencyVisitor/Function_Signature_Dependency - 1]
+{}
+---
