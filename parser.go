@@ -73,8 +73,8 @@ var (
 		participle.Lexer(Lexer),
 		participle.Map(stripTokensAndMapKeywords, strippedTokenTypeStrings...),
 		participle.Elide("WS", "EOL", "LineComment", "BlockCommentStart", "BlockCommentEnd", "BlockCommentContents"),
-		participle.Union[Statement](Module{}, LetStatement{}, FunctionStatement{}, ReturnStatement{}, BreakStatement{}, ExpressionStatement{}),
-		participle.Union[Expression](IfExpression{}, CaseExpression{}, Lambda{}, StaticExpression{}, TypeExpression{}, Block{}, Operation{}),
+		participle.Union[Statement](Module{}, FunctionStatement{}, ReturnStatement{}, BreakStatement{}, LetStatement{}, ExpressionStatement{}),
+		participle.Union[Expression](IfExpression{}, CaseExpression{}, Lambda{}, BlockExpression{}, TypeExpression{}, Operation{}),
 		participle.Union[Atom](GroupedExpression{}, AtomicType{}, AtomicValue{}, Binding{}),
 		participle.Union[Value](Integer{}, String{}),
 		participle.Union[Type](IntegerType{}, PointerType{}, ArrayType{}, FunctionType{}),
@@ -123,18 +123,14 @@ type (
 	}
 	DecoratedStatement struct {
 		Pos         lexer.Position
-		Comments    *DocComment  `parser:"@@?"`
+		Comments    *Comment     `parser:"@@*"`
 		Annotations []Annotation `parser:"@@*"`
 		Statement   Statement    `parser:"@@"`
 	}
-	DocComment struct {
-		Pos       lexer.Position
-		Fragments []DocCommentFragment `parser:"BlockCommentStart @@* BlockCommentEnd"`
-	}
-	DocCommentFragment struct {
-		Pos     lexer.Position
-		Text    string      `parser:"@BlockCommentContents"`
-		Comment *DocComment `parser:"| @@"`
+	Comment struct {
+		Pos      lexer.Position
+		Text     string    `parser:"@(LineComment | BlockCommentContents)"`
+		Children []Comment `parser:"| BlockCommentStart @@* BlockCommentEnd"`
 	}
 	Annotation struct {
 		Pos       lexer.Position
@@ -177,7 +173,7 @@ type (
 		IsMutable bool       `parser:"'let' @'mut'?"`
 		Name      string     `parser:"@Ident"`
 		Type      Atom       `parser:"(':' @@)?"`
-		Value     Expression `parser:"('=' @@)? (?= EOL | EOF)"`
+		Value     Expression `parser:"('=' @@)?"`
 	}
 
 	BreakStatement struct {
@@ -233,9 +229,10 @@ type (
 		Body       Block               `parser:"@@"`
 	}
 
-	StaticExpression struct {
-		Pos    lexer.Position
-		Static Expression `parser:"'static' @@"`
+	BlockExpression struct {
+		Pos      lexer.Position
+		IsStatic bool  `parser:"@'static'?"`
+		Block    Block `parser:"@@"`
 	}
 	TypeExpression struct {
 		Pos  lexer.Position
@@ -259,13 +256,12 @@ type (
 	}
 )
 
-func (IfExpression) expression()     {}
-func (CaseExpression) expression()   {}
-func (Lambda) expression()           {}
-func (StaticExpression) expression() {}
-func (TypeExpression) expression()   {}
-func (Block) expression()            {}
-func (Operation) expression()        {}
+func (IfExpression) expression()    {}
+func (CaseExpression) expression()  {}
+func (Lambda) expression()          {}
+func (BlockExpression) expression() {}
+func (TypeExpression) expression()  {}
+func (Operation) expression()       {}
 
 type (
 	Atom              interface{ atom() }

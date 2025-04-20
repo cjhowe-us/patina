@@ -1396,68 +1396,77 @@
       },
       "Statement": {
         "Expression": {
-          "Label": "",
-          "Pos": {
-            "Column": 1,
-            "Filename": "Block_atom",
-            "Line": 1,
-            "Offset": 0
-          },
-          "Statements": [
-            {
-              "Annotations": null,
-              "Comments": null,
-              "Pos": {
-                "Column": 5,
-                "Filename": "Block_atom",
-                "Line": 2,
-                "Offset": 6
-              },
-              "Statement": {
-                "IsMutable": false,
-                "IsStatic": false,
-                "Name": "x",
+          "Block": {
+            "Label": "",
+            "Pos": {
+              "Column": 1,
+              "Filename": "Block_atom",
+              "Line": 1,
+              "Offset": 0
+            },
+            "Statements": [
+              {
+                "Annotations": null,
+                "Comments": null,
                 "Pos": {
                   "Column": 5,
                   "Filename": "Block_atom",
                   "Line": 2,
                   "Offset": 6
                 },
-                "Type": null,
-                "Value": {
-                  "Operands": [
-                    {
-                      "Atom": {
-                        "Pos": {
-                          "Column": 13,
-                          "Filename": "Block_atom",
-                          "Line": 2,
-                          "Offset": 14
-                        },
-                        "Value": {
+                "Statement": {
+                  "IsMutable": false,
+                  "IsStatic": false,
+                  "Name": "x",
+                  "Pos": {
+                    "Column": 5,
+                    "Filename": "Block_atom",
+                    "Line": 2,
+                    "Offset": 6
+                  },
+                  "Type": null,
+                  "Value": {
+                    "Operands": [
+                      {
+                        "Atom": {
                           "Pos": {
                             "Column": 13,
                             "Filename": "Block_atom",
                             "Line": 2,
                             "Offset": 14
                           },
-                          "Value": 1
-                        }
-                      },
-                      "Postfix": null
-                    }
-                  ],
-                  "Pos": {
-                    "Column": 13,
-                    "Filename": "Block_atom",
-                    "Line": 2,
-                    "Offset": 14
-                  },
-                  "Prefix": null
+                          "Value": {
+                            "Pos": {
+                              "Column": 13,
+                              "Filename": "Block_atom",
+                              "Line": 2,
+                              "Offset": 14
+                            },
+                            "Value": 1
+                          }
+                        },
+                        "Postfix": null
+                      }
+                    ],
+                    "Pos": {
+                      "Column": 13,
+                      "Filename": "Block_atom",
+                      "Line": 2,
+                      "Offset": 14
+                    },
+                    "Prefix": null
+                  }
                 }
               }
-            }
-          ]
+            ]
+          },
+          "IsStatic": false,
+          "Pos": {
+            "Column": 1,
+            "Filename": "Block_atom",
+            "Line": 1,
+            "Offset": 0
+          }
         },
         "Pos": {
           "Column": 1,
@@ -1491,68 +1500,77 @@
       },
       "Statement": {
         "Expression": {
-          "Label": "my_label",
-          "Pos": {
-            "Column": 1,
-            "Filename": "Block_atom_with_label",
-            "Line": 1,
-            "Offset": 0
-          },
-          "Statements": [
-            {
-              "Annotations": null,
-              "Comments": null,
-              "Pos": {
-                "Column": 5,
-                "Filename": "Block_atom_with_label",
-                "Line": 2,
-                "Offset": 16
-              },
-              "Statement": {
-                "IsMutable": false,
-                "IsStatic": false,
-                "Name": "x",
+          "Block": {
+            "Label": "my_label",
+            "Pos": {
+              "Column": 1,
+              "Filename": "Block_atom_with_label",
+              "Line": 1,
+              "Offset": 0
+            },
+            "Statements": [
+              {
+                "Annotations": null,
+                "Comments": null,
                 "Pos": {
                   "Column": 5,
                   "Filename": "Block_atom_with_label",
                   "Line": 2,
                   "Offset": 16
                 },
-                "Type": null,
-                "Value": {
-                  "Operands": [
-                    {
-                      "Atom": {
-                        "Pos": {
-                          "Column": 13,
-                          "Filename": "Block_atom_with_label",
-                          "Line": 2,
-                          "Offset": 24
-                        },
-                        "Value": {
+                "Statement": {
+                  "IsMutable": false,
+                  "IsStatic": false,
+                  "Name": "x",
+                  "Pos": {
+                    "Column": 5,
+                    "Filename": "Block_atom_with_label",
+                    "Line": 2,
+                    "Offset": 16
+                  },
+                  "Type": null,
+                  "Value": {
+                    "Operands": [
+                      {
+                        "Atom": {
                           "Pos": {
                             "Column": 13,
                             "Filename": "Block_atom_with_label",
                             "Line": 2,
                             "Offset": 24
                           },
-                          "Value": 1
-                        }
-                      },
-                      "Postfix": null
-                    }
-                  ],
-                  "Pos": {
-                    "Column": 13,
-                    "Filename": "Block_atom_with_label",
-                    "Line": 2,
-                    "Offset": 24
-                  },
-                  "Prefix": null
+                          "Value": {
+                            "Pos": {
+                              "Column": 13,
+                              "Filename": "Block_atom_with_label",
+                              "Line": 2,
+                              "Offset": 24
+                            },
+                            "Value": 1
+                          }
+                        },
+                        "Postfix": null
+                      }
+                    ],
+                    "Pos": {
+                      "Column": 13,
+                      "Filename": "Block_atom_with_label",
+                      "Line": 2,
+                      "Offset": 24
+                    },
+                    "Prefix": null
+                  }
                 }
               }
-            }
-          ]
+            ]
+          },
+          "IsStatic": false,
+          "Pos": {
+            "Column": 1,
+            "Filename": "Block_atom_with_label",
+            "Line": 1,
+            "Offset": 0
+          }
         },
         "Pos": {
           "Column": 1,
@@ -1586,223 +1604,232 @@
       },
       "Statement": {
         "Expression": {
-          "Label": "",
-          "Pos": {
-            "Column": 1,
-            "Filename": "Block_atom_with_multiple_statements",
-            "Line": 1,
-            "Offset": 0
-          },
-          "Statements": [
-            {
-              "Annotations": null,
-              "Comments": null,
-              "Pos": {
-                "Column": 5,
-                "Filename": "Block_atom_with_multiple_statements",
-                "Line": 2,
-                "Offset": 6
-              },
-              "Statement": {
-                "IsMutable": false,
-                "IsStatic": false,
-                "Name": "x",
+          "Block": {
+            "Label": "",
+            "Pos": {
+              "Column": 1,
+              "Filename": "Block_atom_with_multiple_statements",
+              "Line": 1,
+              "Offset": 0
+            },
+            "Statements": [
+              {
+                "Annotations": null,
+                "Comments": null,
                 "Pos": {
                   "Column": 5,
                   "Filename": "Block_atom_with_multiple_statements",
                   "Line": 2,
                   "Offset": 6
                 },
-                "Type": null,
-                "Value": {
-                  "Operands": [
-                    {
-                      "Atom": {
-                        "Pos": {
-                          "Column": 13,
-                          "Filename": "Block_atom_with_multiple_statements",
-                          "Line": 2,
-                          "Offset": 14
-                        },
-                        "Value": {
+                "Statement": {
+                  "IsMutable": false,
+                  "IsStatic": false,
+                  "Name": "x",
+                  "Pos": {
+                    "Column": 5,
+                    "Filename": "Block_atom_with_multiple_statements",
+                    "Line": 2,
+                    "Offset": 6
+                  },
+                  "Type": null,
+                  "Value": {
+                    "Operands": [
+                      {
+                        "Atom": {
                           "Pos": {
                             "Column": 13,
                             "Filename": "Block_atom_with_multiple_statements",
                             "Line": 2,
                             "Offset": 14
                           },
-                          "Value": 1
-                        }
-                      },
-                      "Postfix": null
-                    }
-                  ],
-                  "Pos": {
-                    "Column": 13,
-                    "Filename": "Block_atom_with_multiple_statements",
-                    "Line": 2,
-                    "Offset": 14
-                  },
-                  "Prefix": null
+                          "Value": {
+                            "Pos": {
+                              "Column": 13,
+                              "Filename": "Block_atom_with_multiple_statements",
+                              "Line": 2,
+                              "Offset": 14
+                            },
+                            "Value": 1
+                          }
+                        },
+                        "Postfix": null
+                      }
+                    ],
+                    "Pos": {
+                      "Column": 13,
+                      "Filename": "Block_atom_with_multiple_statements",
+                      "Line": 2,
+                      "Offset": 14
+                    },
+                    "Prefix": null
+                  }
                 }
-              }
-            },
-            {
-              "Annotations": null,
-              "Comments": null,
-              "Pos": {
-                "Column": 5,
-                "Filename": "Block_atom_with_multiple_statements",
-                "Line": 3,
-                "Offset": 20
               },
-              "Statement": {
-                "IsMutable": false,
-                "IsStatic": false,
-                "Name": "y",
+              {
+                "Annotations": null,
+                "Comments": null,
                 "Pos": {
                   "Column": 5,
                   "Filename": "Block_atom_with_multiple_statements",
                   "Line": 3,
                   "Offset": 20
                 },
-                "Type": {
+                "Statement": {
+                  "IsMutable": false,
+                  "IsStatic": false,
+                  "Name": "y",
                   "Pos": {
-                    "Column": 12,
+                    "Column": 5,
                     "Filename": "Block_atom_with_multiple_statements",
                     "Line": 3,
-                    "Offset": 27
+                    "Offset": 20
                   },
                   "Type": {
-                    "IsMutable": false,
-                    "IsOwned": false,
-                    "IsRaw": false,
                     "Pos": {
                       "Column": 12,
                       "Filename": "Block_atom_with_multiple_statements",
                       "Line": 3,
                       "Offset": 27
                     },
-                    "Target": {
+                    "Type": {
+                      "IsMutable": false,
+                      "IsOwned": false,
+                      "IsRaw": false,
                       "Pos": {
-                        "Column": 13,
+                        "Column": 12,
                         "Filename": "Block_atom_with_multiple_statements",
                         "Line": 3,
-                        "Offset": 28
+                        "Offset": 27
                       },
-                      "Type": {
-                        "BitSize": 32,
+                      "Target": {
                         "Pos": {
                           "Column": 13,
                           "Filename": "Block_atom_with_multiple_statements",
                           "Line": 3,
                           "Offset": 28
                         },
-                        "Signed": true
+                        "Type": {
+                          "BitSize": 32,
+                          "Pos": {
+                            "Column": 13,
+                            "Filename": "Block_atom_with_multiple_statements",
+                            "Line": 3,
+                            "Offset": 28
+                          },
+                          "Signed": true
+                        }
                       }
                     }
-                  }
-                },
-                "Value": {
-                  "Operands": [
-                    {
-                      "Atom": {
-                        "Pos": {
-                          "Column": 19,
-                          "Filename": "Block_atom_with_multiple_statements",
-                          "Line": 3,
-                          "Offset": 34
-                        },
-                        "Value": {
+                  },
+                  "Value": {
+                    "Operands": [
+                      {
+                        "Atom": {
                           "Pos": {
                             "Column": 19,
                             "Filename": "Block_atom_with_multiple_statements",
                             "Line": 3,
                             "Offset": 34
                           },
-                          "Value": 2
-                        }
-                      },
-                      "Postfix": null
-                    }
-                  ],
-                  "Pos": {
-                    "Column": 19,
-                    "Filename": "Block_atom_with_multiple_statements",
-                    "Line": 3,
-                    "Offset": 34
-                  },
-                  "Prefix": null
+                          "Value": {
+                            "Pos": {
+                              "Column": 19,
+                              "Filename": "Block_atom_with_multiple_statements",
+                              "Line": 3,
+                              "Offset": 34
+                            },
+                            "Value": 2
+                          }
+                        },
+                        "Postfix": null
+                      }
+                    ],
+                    "Pos": {
+                      "Column": 19,
+                      "Filename": "Block_atom_with_multiple_statements",
+                      "Line": 3,
+                      "Offset": 34
+                    },
+                    "Prefix": null
+                  }
                 }
-              }
-            },
-            {
-              "Annotations": null,
-              "Comments": null,
-              "Pos": {
-                "Column": 5,
-                "Filename": "Block_atom_with_multiple_statements",
-                "Line": 4,
-                "Offset": 40
               },
-              "Statement": {
-                "Label": "",
+              {
+                "Annotations": null,
+                "Comments": null,
                 "Pos": {
                   "Column": 5,
                   "Filename": "Block_atom_with_multiple_statements",
                   "Line": 4,
                   "Offset": 40
                 },
-                "Value": {
-                  "Operands": [
-                    {
-                      "Atom": {
-                        "Ident": "x",
-                        "Pos": {
-                          "Column": 11,
-                          "Filename": "Block_atom_with_multiple_statements",
-                          "Line": 4,
-                          "Offset": 46
-                        }
-                      },
-                      "Postfix": [
-                        {
-                          "Index": null,
-                          "Invocation": null,
-                          "Operator": "+",
-                          "Pos": {
-                            "Column": 13,
-                            "Filename": "Block_atom_with_multiple_statements",
-                            "Line": 4,
-                            "Offset": 48
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "Atom": {
-                        "Ident": "y",
-                        "Pos": {
-                          "Column": 15,
-                          "Filename": "Block_atom_with_multiple_statements",
-                          "Line": 4,
-                          "Offset": 50
-                        }
-                      },
-                      "Postfix": null
-                    }
-                  ],
+                "Statement": {
+                  "Label": "",
                   "Pos": {
-                    "Column": 11,
+                    "Column": 5,
                     "Filename": "Block_atom_with_multiple_statements",
                     "Line": 4,
-                    "Offset": 46
+                    "Offset": 40
                   },
-                  "Prefix": null
+                  "Value": {
+                    "Operands": [
+                      {
+                        "Atom": {
+                          "Ident": "x",
+                          "Pos": {
+                            "Column": 11,
+                            "Filename": "Block_atom_with_multiple_statements",
+                            "Line": 4,
+                            "Offset": 46
+                          }
+                        },
+                        "Postfix": [
+                          {
+                            "Index": null,
+                            "Invocation": null,
+                            "Operator": "+",
+                            "Pos": {
+                              "Column": 13,
+                              "Filename": "Block_atom_with_multiple_statements",
+                              "Line": 4,
+                              "Offset": 48
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Atom": {
+                          "Ident": "y",
+                          "Pos": {
+                            "Column": 15,
+                            "Filename": "Block_atom_with_multiple_statements",
+                            "Line": 4,
+                            "Offset": 50
+                          }
+                        },
+                        "Postfix": null
+                      }
+                    ],
+                    "Pos": {
+                      "Column": 11,
+                      "Filename": "Block_atom_with_multiple_statements",
+                      "Line": 4,
+                      "Offset": 46
+                    },
+                    "Prefix": null
+                  }
                 }
               }
-            }
-          ]
+            ]
+          },
+          "IsStatic": false,
+          "Pos": {
+            "Column": 1,
+            "Filename": "Block_atom_with_multiple_statements",
+            "Line": 1,
+            "Offset": 0
+          }
         },
         "Pos": {
           "Column": 1,
@@ -2382,24 +2409,14 @@
     {
       "Annotations": null,
       "Comments": {
-        "Fragments": [
-          {
-            "Comment": null,
-            "Pos": {
-              "Column": 4,
-              "Filename": "Comments",
-              "Line": 3,
-              "Offset": 42
-            },
-            "Text": " Block comment "
-          }
-        ],
+        "Children": null,
         "Pos": {
           "Column": 4,
           "Filename": "Comments",
           "Line": 3,
           "Offset": 42
-        }
+        },
+        "Text": " Block comment "
       },
       "Pos": {
         "Column": 4,
@@ -3461,161 +3478,93 @@
       },
       "Statement": {
         "Expression": {
-          "Label": "",
-          "Pos": {
-            "Column": 1,
-            "Filename": "Deeply_nested_blocks",
-            "Line": 1,
-            "Offset": 0
-          },
-          "Statements": [
-            {
-              "Annotations": null,
-              "Comments": null,
-              "Pos": {
-                "Column": 5,
-                "Filename": "Deeply_nested_blocks",
-                "Line": 2,
-                "Offset": 6
-              },
-              "Statement": {
-                "Expression": {
-                  "Label": "",
-                  "Pos": {
-                    "Column": 5,
-                    "Filename": "Deeply_nested_blocks",
-                    "Line": 2,
-                    "Offset": 6
-                  },
-                  "Statements": [
-                    {
-                      "Annotations": null,
-                      "Comments": null,
+          "Block": {
+            "Label": "",
+            "Pos": {
+              "Column": 1,
+              "Filename": "Deeply_nested_blocks",
+              "Line": 1,
+              "Offset": 0
+            },
+            "Statements": [
+              {
+                "Annotations": null,
+                "Comments": null,
+                "Pos": {
+                  "Column": 5,
+                  "Filename": "Deeply_nested_blocks",
+                  "Line": 2,
+                  "Offset": 6
+                },
+                "Statement": {
+                  "Expression": {
+                    "Block": {
+                      "Label": "",
                       "Pos": {
-                        "Column": 6,
+                        "Column": 5,
                         "Filename": "Deeply_nested_blocks",
-                        "Line": 3,
-                        "Offset": 13
+                        "Line": 2,
+                        "Offset": 6
                       },
-                      "Statement": {
-                        "Expression": {
-                          "Label": "",
+                      "Statements": [
+                        {
+                          "Annotations": null,
+                          "Comments": null,
                           "Pos": {
                             "Column": 6,
                             "Filename": "Deeply_nested_blocks",
                             "Line": 3,
                             "Offset": 13
                           },
-                          "Statements": [
-                            {
-                              "Annotations": null,
-                              "Comments": null,
-                              "Pos": {
-                                "Column": 7,
-                                "Filename": "Deeply_nested_blocks",
-                                "Line": 4,
-                                "Offset": 21
-                              },
-                              "Statement": {
-                                "Expression": {
-                                  "Label": "",
-                                  "Pos": {
-                                    "Column": 7,
-                                    "Filename": "Deeply_nested_blocks",
-                                    "Line": 4,
-                                    "Offset": 21
-                                  },
-                                  "Statements": [
-                                    {
-                                      "Annotations": null,
-                                      "Comments": null,
-                                      "Pos": {
-                                        "Column": 8,
-                                        "Filename": "Deeply_nested_blocks",
-                                        "Line": 5,
-                                        "Offset": 30
-                                      },
-                                      "Statement": {
-                                        "IsMutable": false,
-                                        "IsStatic": false,
-                                        "Name": "x",
-                                        "Pos": {
-                                          "Column": 8,
-                                          "Filename": "Deeply_nested_blocks",
-                                          "Line": 5,
-                                          "Offset": 30
-                                        },
-                                        "Type": null,
-                                        "Value": {
-                                          "Operands": [
-                                            {
-                                              "Atom": {
-                                                "Pos": {
-                                                  "Column": 16,
-                                                  "Filename": "Deeply_nested_blocks",
-                                                  "Line": 5,
-                                                  "Offset": 38
-                                                },
-                                                "Value": {
-                                                  "Pos": {
-                                                    "Column": 16,
-                                                    "Filename": "Deeply_nested_blocks",
-                                                    "Line": 5,
-                                                    "Offset": 38
-                                                  },
-                                                  "Value": 1
-                                                }
-                                              },
-                                              "Postfix": null
-                                            }
-                                          ],
-                                          "Pos": {
-                                            "Column": 16,
-                                            "Filename": "Deeply_nested_blocks",
-                                            "Line": 5,
-                                            "Offset": 38
-                                          },
-                                          "Prefix": null
-                                        }
-                                      }
+                          "Statement": {
+                            "Expression": {
+                              "Block": {
+                                "Label": "",
+                                "Pos": {
+                                  "Column": 6,
+                                  "Filename": "Deeply_nested_blocks",
+                                  "Line": 3,
+                                  "Offset": 13
+                                },
+                                "Statements": [
+                                  {
+                                    "Annotations": null,
+                                    "Comments": null,
+                                    "Pos": {
+                                      "Column": 7,
+                                      "Filename": "Deeply_nested_blocks",
+                                      "Line": 4,
+                                      "Offset": 21
                                     },
-                                    {
-                                      "Annotations": null,
-                                      "Comments": null,
-                                      "Pos": {
-                                        "Column": 8,
-                                        "Filename": "Deeply_nested_blocks",
-                                        "Line": 6,
-                                        "Offset": 47
-                                      },
-                                      "Statement": {
-                                        "Expression": {
+                                    "Statement": {
+                                      "Expression": {
+                                        "Block": {
                                           "Label": "",
                                           "Pos": {
-                                            "Column": 8,
+                                            "Column": 7,
                                             "Filename": "Deeply_nested_blocks",
-                                            "Line": 6,
-                                            "Offset": 47
+                                            "Line": 4,
+                                            "Offset": 21
                                           },
                                           "Statements": [
                                             {
                                               "Annotations": null,
                                               "Comments": null,
                                               "Pos": {
-                                                "Column": 9,
+                                                "Column": 8,
                                                 "Filename": "Deeply_nested_blocks",
-                                                "Line": 7,
-                                                "Offset": 57
+                                                "Line": 5,
+                                                "Offset": 30
                                               },
                                               "Statement": {
                                                 "IsMutable": false,
                                                 "IsStatic": false,
-                                                "Name": "y",
+                                                "Name": "x",
                                                 "Pos": {
-                                                  "Column": 9,
+                                                  "Column": 8,
                                                   "Filename": "Deeply_nested_blocks",
-                                                  "Line": 7,
-                                                  "Offset": 57
+                                                  "Line": 5,
+                                                  "Offset": 30
                                                 },
                                                 "Type": null,
                                                 "Value": {
@@ -3623,75 +3572,188 @@
                                                     {
                                                       "Atom": {
                                                         "Pos": {
-                                                          "Column": 17,
+                                                          "Column": 16,
                                                           "Filename": "Deeply_nested_blocks",
-                                                          "Line": 7,
-                                                          "Offset": 65
+                                                          "Line": 5,
+                                                          "Offset": 38
                                                         },
                                                         "Value": {
                                                           "Pos": {
-                                                            "Column": 17,
+                                                            "Column": 16,
                                                             "Filename": "Deeply_nested_blocks",
-                                                            "Line": 7,
-                                                            "Offset": 65
+                                                            "Line": 5,
+                                                            "Offset": 38
                                                           },
-                                                          "Value": 2
+                                                          "Value": 1
                                                         }
                                                       },
                                                       "Postfix": null
                                                     }
                                                   ],
                                                   "Pos": {
-                                                    "Column": 17,
+                                                    "Column": 16,
                                                     "Filename": "Deeply_nested_blocks",
-                                                    "Line": 7,
-                                                    "Offset": 65
+                                                    "Line": 5,
+                                                    "Offset": 38
                                                   },
                                                   "Prefix": null
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "Annotations": null,
+                                              "Comments": null,
+                                              "Pos": {
+                                                "Column": 8,
+                                                "Filename": "Deeply_nested_blocks",
+                                                "Line": 6,
+                                                "Offset": 47
+                                              },
+                                              "Statement": {
+                                                "Expression": {
+                                                  "Block": {
+                                                    "Label": "",
+                                                    "Pos": {
+                                                      "Column": 8,
+                                                      "Filename": "Deeply_nested_blocks",
+                                                      "Line": 6,
+                                                      "Offset": 47
+                                                    },
+                                                    "Statements": [
+                                                      {
+                                                        "Annotations": null,
+                                                        "Comments": null,
+                                                        "Pos": {
+                                                          "Column": 9,
+                                                          "Filename": "Deeply_nested_blocks",
+                                                          "Line": 7,
+                                                          "Offset": 57
+                                                        },
+                                                        "Statement": {
+                                                          "IsMutable": false,
+                                                          "IsStatic": false,
+                                                          "Name": "y",
+                                                          "Pos": {
+                                                            "Column": 9,
+                                                            "Filename": "Deeply_nested_blocks",
+                                                            "Line": 7,
+                                                            "Offset": 57
+                                                          },
+                                                          "Type": null,
+                                                          "Value": {
+                                                            "Operands": [
+                                                              {
+                                                                "Atom": {
+                                                                  "Pos": {
+                                                                    "Column": 17,
+                                                                    "Filename": "Deeply_nested_blocks",
+                                                                    "Line": 7,
+                                                                    "Offset": 65
+                                                                  },
+                                                                  "Value": {
+                                                                    "Pos": {
+                                                                      "Column": 17,
+                                                                      "Filename": "Deeply_nested_blocks",
+                                                                      "Line": 7,
+                                                                      "Offset": 65
+                                                                    },
+                                                                    "Value": 2
+                                                                  }
+                                                                },
+                                                                "Postfix": null
+                                                              }
+                                                            ],
+                                                            "Pos": {
+                                                              "Column": 17,
+                                                              "Filename": "Deeply_nested_blocks",
+                                                              "Line": 7,
+                                                              "Offset": 65
+                                                            },
+                                                            "Prefix": null
+                                                          }
+                                                        }
+                                                      }
+                                                    ]
+                                                  },
+                                                  "IsStatic": false,
+                                                  "Pos": {
+                                                    "Column": 8,
+                                                    "Filename": "Deeply_nested_blocks",
+                                                    "Line": 6,
+                                                    "Offset": 47
+                                                  }
+                                                },
+                                                "Pos": {
+                                                  "Column": 8,
+                                                  "Filename": "Deeply_nested_blocks",
+                                                  "Line": 6,
+                                                  "Offset": 47
                                                 }
                                               }
                                             }
                                           ]
                                         },
+                                        "IsStatic": false,
                                         "Pos": {
-                                          "Column": 8,
+                                          "Column": 7,
                                           "Filename": "Deeply_nested_blocks",
-                                          "Line": 6,
-                                          "Offset": 47
+                                          "Line": 4,
+                                          "Offset": 21
                                         }
+                                      },
+                                      "Pos": {
+                                        "Column": 7,
+                                        "Filename": "Deeply_nested_blocks",
+                                        "Line": 4,
+                                        "Offset": 21
                                       }
                                     }
-                                  ]
-                                },
-                                "Pos": {
-                                  "Column": 7,
-                                  "Filename": "Deeply_nested_blocks",
-                                  "Line": 4,
-                                  "Offset": 21
-                                }
+                                  }
+                                ]
+                              },
+                              "IsStatic": false,
+                              "Pos": {
+                                "Column": 6,
+                                "Filename": "Deeply_nested_blocks",
+                                "Line": 3,
+                                "Offset": 13
                               }
+                            },
+                            "Pos": {
+                              "Column": 6,
+                              "Filename": "Deeply_nested_blocks",
+                              "Line": 3,
+                              "Offset": 13
                             }
-                          ]
-                        },
-                        "Pos": {
-                          "Column": 6,
-                          "Filename": "Deeply_nested_blocks",
-                          "Line": 3,
-                          "Offset": 13
+                          }
                         }
-                      }
+                      ]
+                    },
+                    "IsStatic": false,
+                    "Pos": {
+                      "Column": 5,
+                      "Filename": "Deeply_nested_blocks",
+                      "Line": 2,
+                      "Offset": 6
                     }
-                  ]
-                },
-                "Pos": {
-                  "Column": 5,
-                  "Filename": "Deeply_nested_blocks",
-                  "Line": 2,
-                  "Offset": 6
+                  },
+                  "Pos": {
+                    "Column": 5,
+                    "Filename": "Deeply_nested_blocks",
+                    "Line": 2,
+                    "Offset": 6
+                  }
                 }
               }
-            }
-          ]
+            ]
+          },
+          "IsStatic": false,
+          "Pos": {
+            "Column": 1,
+            "Filename": "Deeply_nested_blocks",
+            "Line": 1,
+            "Offset": 0
+          }
         },
         "Pos": {
           "Column": 1,
@@ -3717,24 +3779,14 @@
     {
       "Annotations": null,
       "Comments": {
-        "Fragments": [
-          {
-            "Comment": null,
-            "Pos": {
-              "Column": 4,
-              "Filename": "Doc_comment",
-              "Line": 2,
-              "Offset": 24
-            },
-            "Text": " My doc comment "
-          }
-        ],
+        "Children": null,
         "Pos": {
           "Column": 4,
           "Filename": "Doc_comment",
           "Line": 2,
           "Offset": 24
-        }
+        },
+        "Text": " My doc comment "
       },
       "Pos": {
         "Column": 4,
@@ -3789,43 +3841,61 @@
       },
       "Statement": {
         "Expression": {
-          "Label": "outer",
-          "Pos": {
-            "Column": 1,
-            "Filename": "Empty_blocks_with_labels",
-            "Line": 1,
-            "Offset": 0
-          },
-          "Statements": [
-            {
-              "Annotations": null,
-              "Comments": null,
-              "Pos": {
-                "Column": 5,
-                "Filename": "Empty_blocks_with_labels",
-                "Line": 2,
-                "Offset": 13
-              },
-              "Statement": {
-                "Expression": {
-                  "Label": "inner",
-                  "Pos": {
-                    "Column": 5,
-                    "Filename": "Empty_blocks_with_labels",
-                    "Line": 2,
-                    "Offset": 13
-                  },
-                  "Statements": null
-                },
+          "Block": {
+            "Label": "outer",
+            "Pos": {
+              "Column": 1,
+              "Filename": "Empty_blocks_with_labels",
+              "Line": 1,
+              "Offset": 0
+            },
+            "Statements": [
+              {
+                "Annotations": null,
+                "Comments": null,
                 "Pos": {
                   "Column": 5,
                   "Filename": "Empty_blocks_with_labels",
                   "Line": 2,
                   "Offset": 13
+                },
+                "Statement": {
+                  "Expression": {
+                    "Block": {
+                      "Label": "inner",
+                      "Pos": {
+                        "Column": 5,
+                        "Filename": "Empty_blocks_with_labels",
+                        "Line": 2,
+                        "Offset": 13
+                      },
+                      "Statements": null
+                    },
+                    "IsStatic": false,
+                    "Pos": {
+                      "Column": 5,
+                      "Filename": "Empty_blocks_with_labels",
+                      "Line": 2,
+                      "Offset": 13
+                    }
+                  },
+                  "Pos": {
+                    "Column": 5,
+                    "Filename": "Empty_blocks_with_labels",
+                    "Line": 2,
+                    "Offset": 13
+                  }
                 }
               }
-            }
-          ]
+            ]
+          },
+          "IsStatic": false,
+          "Pos": {
+            "Column": 1,
+            "Filename": "Empty_blocks_with_labels",
+            "Line": 1,
+            "Offset": 0
+          }
         },
         "Pos": {
           "Column": 1,
@@ -6980,44 +7050,14 @@
     {
       "Annotations": null,
       "Comments": {
-        "Fragments": [
-          {
-            "Comment": null,
-            "Pos": {
-              "Column": 4,
-              "Filename": "Multi-line_block_comment",
-              "Line": 5,
-              "Offset": 89
-            },
-            "Text": " This is a\n\t\t\t   multi-line\n\t\t\t   comment with "
-          },
-          {
-            "Comment": null,
-            "Pos": {
-              "Column": 4,
-              "Filename": "Multi-line_block_comment",
-              "Line": 5,
-              "Offset": 89
-            },
-            "Text": " nesting "
-          },
-          {
-            "Comment": null,
-            "Pos": {
-              "Column": 4,
-              "Filename": "Multi-line_block_comment",
-              "Line": 5,
-              "Offset": 89
-            },
-            "Text": "\n\t\t\t   and more text "
-          }
-        ],
+        "Children": null,
         "Pos": {
           "Column": 4,
           "Filename": "Multi-line_block_comment",
           "Line": 5,
           "Offset": 89
-        }
+        },
+        "Text": "\n\t\t\t   and more text "
       },
       "Pos": {
         "Column": 4,
@@ -9353,46 +9393,55 @@
             {
               "Atom": {
                 "Expression": {
-                  "Label": "my_label",
+                  "Block": {
+                    "Label": "my_label",
+                    "Pos": {
+                      "Column": 3,
+                      "Filename": "Quoted_label_and_tag",
+                      "Line": 1,
+                      "Offset": 2
+                    },
+                    "Statements": [
+                      {
+                        "Annotations": [
+                          {
+                            "Arguments": null,
+                            "Name": "my.tag",
+                            "Pos": {
+                              "Column": 15,
+                              "Filename": "Quoted_label_and_tag",
+                              "Line": 1,
+                              "Offset": 14
+                            }
+                          }
+                        ],
+                        "Comments": null,
+                        "Pos": {
+                          "Column": 15,
+                          "Filename": "Quoted_label_and_tag",
+                          "Line": 1,
+                          "Offset": 14
+                        },
+                        "Statement": {
+                          "Label": "my_label",
+                          "Pos": {
+                            "Column": 23,
+                            "Filename": "Quoted_label_and_tag",
+                            "Line": 1,
+                            "Offset": 22
+                          },
+                          "Value": null
+                        }
+                      }
+                    ]
+                  },
+                  "IsStatic": false,
                   "Pos": {
                     "Column": 3,
                     "Filename": "Quoted_label_and_tag",
                     "Line": 1,
                     "Offset": 2
-                  },
-                  "Statements": [
-                    {
-                      "Annotations": [
-                        {
-                          "Arguments": null,
-                          "Name": "my.tag",
-                          "Pos": {
-                            "Column": 15,
-                            "Filename": "Quoted_label_and_tag",
-                            "Line": 1,
-                            "Offset": 14
-                          }
-                        }
-                      ],
-                      "Comments": null,
-                      "Pos": {
-                        "Column": 15,
-                        "Filename": "Quoted_label_and_tag",
-                        "Line": 1,
-                        "Offset": 14
-                      },
-                      "Statement": {
-                        "Label": "my_label",
-                        "Pos": {
-                          "Column": 23,
-                          "Filename": "Quoted_label_and_tag",
-                          "Line": 1,
-                          "Offset": 22
-                        },
-                        "Value": null
-                      }
-                    }
-                  ]
+                  }
                 },
                 "Pos": {
                   "Column": 2,
@@ -10173,13 +10222,7 @@
         },
         "Type": null,
         "Value": {
-          "Pos": {
-            "Column": 9,
-            "Filename": "Static_labeled_block_expression",
-            "Line": 1,
-            "Offset": 8
-          },
-          "Static": {
+          "Block": {
             "Label": "labeled",
             "Pos": {
               "Column": 16,
@@ -10239,6 +10282,13 @@
                 }
               }
             ]
+          },
+          "IsStatic": true,
+          "Pos": {
+            "Column": 9,
+            "Filename": "Static_labeled_block_expression",
+            "Line": 1,
+            "Offset": 8
           }
         }
       }
@@ -11240,138 +11290,147 @@
       "Statement": {
         "Expression": {
           "Else": {
-            "Label": "",
-            "Pos": {
-              "Column": 11,
-              "Filename": "Using_if_shortcut_with_block",
-              "Line": 6,
-              "Offset": 130
-            },
-            "Statements": [
-              {
-                "Annotations": null,
-                "Comments": null,
-                "Pos": {
-                  "Column": 8,
-                  "Filename": "Using_if_shortcut_with_block",
-                  "Line": 7,
-                  "Offset": 139
-                },
-                "Statement": {
-                  "Expression": {
-                    "Operands": [
-                      {
-                        "Atom": {
-                          "Ident": "takeOver",
-                          "Pos": {
-                            "Column": 8,
-                            "Filename": "Using_if_shortcut_with_block",
-                            "Line": 7,
-                            "Offset": 139
-                          }
-                        },
-                        "Postfix": [
-                          {
-                            "Index": null,
-                            "Invocation": [
-                              {
-                                "Operands": [
-                                  {
-                                    "Atom": {
-                                      "Ident": "world",
-                                      "Pos": {
-                                        "Column": 17,
-                                        "Filename": "Using_if_shortcut_with_block",
-                                        "Line": 7,
-                                        "Offset": 148
-                                      }
-                                    },
-                                    "Postfix": null
-                                  }
-                                ],
-                                "Pos": {
-                                  "Column": 17,
-                                  "Filename": "Using_if_shortcut_with_block",
-                                  "Line": 7,
-                                  "Offset": 148
-                                },
-                                "Prefix": null
-                              }
-                            ],
-                            "Operator": "",
-                            "Pos": {
-                              "Column": 16,
-                              "Filename": "Using_if_shortcut_with_block",
-                              "Line": 7,
-                              "Offset": 147
-                            }
-                          },
-                          {
-                            "Index": null,
-                            "Invocation": null,
-                            "Operator": "?",
-                            "Pos": {
-                              "Column": 23,
-                              "Filename": "Using_if_shortcut_with_block",
-                              "Line": 7,
-                              "Offset": 154
-                            }
-                          },
-                          {
-                            "Index": null,
-                            "Invocation": null,
-                            "Operator": ".",
-                            "Pos": {
-                              "Column": 24,
-                              "Filename": "Using_if_shortcut_with_block",
-                              "Line": 7,
-                              "Offset": 155
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "Atom": {
-                          "Ident": "destroy",
-                          "Pos": {
-                            "Column": 25,
-                            "Filename": "Using_if_shortcut_with_block",
-                            "Line": 7,
-                            "Offset": 156
-                          }
-                        },
-                        "Postfix": [
-                          {
-                            "Index": null,
-                            "Invocation": null,
-                            "Operator": "",
-                            "Pos": {
-                              "Column": 32,
-                              "Filename": "Using_if_shortcut_with_block",
-                              "Line": 7,
-                              "Offset": 163
-                            }
-                          }
-                        ]
-                      }
-                    ],
-                    "Pos": {
-                      "Column": 8,
-                      "Filename": "Using_if_shortcut_with_block",
-                      "Line": 7,
-                      "Offset": 139
-                    },
-                    "Prefix": null
-                  },
+            "Block": {
+              "Label": "",
+              "Pos": {
+                "Column": 11,
+                "Filename": "Using_if_shortcut_with_block",
+                "Line": 6,
+                "Offset": 130
+              },
+              "Statements": [
+                {
+                  "Annotations": null,
+                  "Comments": null,
                   "Pos": {
                     "Column": 8,
                     "Filename": "Using_if_shortcut_with_block",
                     "Line": 7,
                     "Offset": 139
+                  },
+                  "Statement": {
+                    "Expression": {
+                      "Operands": [
+                        {
+                          "Atom": {
+                            "Ident": "takeOver",
+                            "Pos": {
+                              "Column": 8,
+                              "Filename": "Using_if_shortcut_with_block",
+                              "Line": 7,
+                              "Offset": 139
+                            }
+                          },
+                          "Postfix": [
+                            {
+                              "Index": null,
+                              "Invocation": [
+                                {
+                                  "Operands": [
+                                    {
+                                      "Atom": {
+                                        "Ident": "world",
+                                        "Pos": {
+                                          "Column": 17,
+                                          "Filename": "Using_if_shortcut_with_block",
+                                          "Line": 7,
+                                          "Offset": 148
+                                        }
+                                      },
+                                      "Postfix": null
+                                    }
+                                  ],
+                                  "Pos": {
+                                    "Column": 17,
+                                    "Filename": "Using_if_shortcut_with_block",
+                                    "Line": 7,
+                                    "Offset": 148
+                                  },
+                                  "Prefix": null
+                                }
+                              ],
+                              "Operator": "",
+                              "Pos": {
+                                "Column": 16,
+                                "Filename": "Using_if_shortcut_with_block",
+                                "Line": 7,
+                                "Offset": 147
+                              }
+                            },
+                            {
+                              "Index": null,
+                              "Invocation": null,
+                              "Operator": "?",
+                              "Pos": {
+                                "Column": 23,
+                                "Filename": "Using_if_shortcut_with_block",
+                                "Line": 7,
+                                "Offset": 154
+                              }
+                            },
+                            {
+                              "Index": null,
+                              "Invocation": null,
+                              "Operator": ".",
+                              "Pos": {
+                                "Column": 24,
+                                "Filename": "Using_if_shortcut_with_block",
+                                "Line": 7,
+                                "Offset": 155
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "Atom": {
+                            "Ident": "destroy",
+                            "Pos": {
+                              "Column": 25,
+                              "Filename": "Using_if_shortcut_with_block",
+                              "Line": 7,
+                              "Offset": 156
+                            }
+                          },
+                          "Postfix": [
+                            {
+                              "Index": null,
+                              "Invocation": null,
+                              "Operator": "",
+                              "Pos": {
+                                "Column": 32,
+                                "Filename": "Using_if_shortcut_with_block",
+                                "Line": 7,
+                                "Offset": 163
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "Pos": {
+                        "Column": 8,
+                        "Filename": "Using_if_shortcut_with_block",
+                        "Line": 7,
+                        "Offset": 139
+                      },
+                      "Prefix": null
+                    },
+                    "Pos": {
+                      "Column": 8,
+                      "Filename": "Using_if_shortcut_with_block",
+                      "Line": 7,
+                      "Offset": 139
+                    }
                   }
                 }
-              }
-            ]
+              ]
+            },
+            "IsStatic": false,
+            "Pos": {
+              "Column": 11,
+              "Filename": "Using_if_shortcut_with_block",
+              "Line": 6,
+              "Offset": 130
+            }
           },
           "ElseIfs": [
             {
@@ -11417,65 +11476,74 @@
                 "Offset": 70
               },
               "Then": {
-                "Label": "test",
-                "Pos": {
-                  "Column": 32,
-                  "Filename": "Using_if_shortcut_with_block",
-                  "Line": 4,
-                  "Offset": 91
-                },
-                "Statements": [
-                  {
-                    "Annotations": null,
-                    "Comments": null,
-                    "Pos": {
-                      "Column": 8,
-                      "Filename": "Using_if_shortcut_with_block",
-                      "Line": 5,
-                      "Offset": 106
-                    },
-                    "Statement": {
-                      "Label": "test",
+                "Block": {
+                  "Label": "test",
+                  "Pos": {
+                    "Column": 32,
+                    "Filename": "Using_if_shortcut_with_block",
+                    "Line": 4,
+                    "Offset": 91
+                  },
+                  "Statements": [
+                    {
+                      "Annotations": null,
+                      "Comments": null,
                       "Pos": {
                         "Column": 8,
                         "Filename": "Using_if_shortcut_with_block",
                         "Line": 5,
                         "Offset": 106
                       },
-                      "Value": {
-                        "Operands": [
-                          {
-                            "Atom": {
-                              "Pos": {
-                                "Column": 20,
-                                "Filename": "Using_if_shortcut_with_block",
-                                "Line": 5,
-                                "Offset": 118
-                              },
-                              "Value": {
+                      "Statement": {
+                        "Label": "test",
+                        "Pos": {
+                          "Column": 8,
+                          "Filename": "Using_if_shortcut_with_block",
+                          "Line": 5,
+                          "Offset": 106
+                        },
+                        "Value": {
+                          "Operands": [
+                            {
+                              "Atom": {
                                 "Pos": {
                                   "Column": 20,
                                   "Filename": "Using_if_shortcut_with_block",
                                   "Line": 5,
                                   "Offset": 118
                                 },
-                                "Value": 5
-                              }
-                            },
-                            "Postfix": null
-                          }
-                        ],
-                        "Pos": {
-                          "Column": 20,
-                          "Filename": "Using_if_shortcut_with_block",
-                          "Line": 5,
-                          "Offset": 118
-                        },
-                        "Prefix": null
+                                "Value": {
+                                  "Pos": {
+                                    "Column": 20,
+                                    "Filename": "Using_if_shortcut_with_block",
+                                    "Line": 5,
+                                    "Offset": 118
+                                  },
+                                  "Value": 5
+                                }
+                              },
+                              "Postfix": null
+                            }
+                          ],
+                          "Pos": {
+                            "Column": 20,
+                            "Filename": "Using_if_shortcut_with_block",
+                            "Line": 5,
+                            "Offset": 118
+                          },
+                          "Prefix": null
+                        }
                       }
                     }
-                  }
-                ]
+                  ]
+                },
+                "IsStatic": false,
+                "Pos": {
+                  "Column": 32,
+                  "Filename": "Using_if_shortcut_with_block",
+                  "Line": 4,
+                  "Offset": 91
+                }
               }
             }
           ],
@@ -11654,105 +11722,114 @@
               "Offset": 4
             },
             "Then": {
-              "Label": "",
-              "Pos": {
-                "Column": 37,
-                "Filename": "Using_if_shortcut_with_block",
-                "Line": 2,
-                "Offset": 37
-              },
-              "Statements": [
-                {
-                  "Annotations": null,
-                  "Comments": null,
-                  "Pos": {
-                    "Column": 5,
-                    "Filename": "Using_if_shortcut_with_block",
-                    "Line": 3,
-                    "Offset": 43
-                  },
-                  "Statement": {
-                    "Label": "",
+              "Block": {
+                "Label": "",
+                "Pos": {
+                  "Column": 37,
+                  "Filename": "Using_if_shortcut_with_block",
+                  "Line": 2,
+                  "Offset": 37
+                },
+                "Statements": [
+                  {
+                    "Annotations": null,
+                    "Comments": null,
                     "Pos": {
                       "Column": 5,
                       "Filename": "Using_if_shortcut_with_block",
                       "Line": 3,
                       "Offset": 43
                     },
-                    "Value": {
-                      "Operands": [
-                        {
-                          "Atom": {
-                            "Ident": "x",
-                            "Pos": {
-                              "Column": 12,
-                              "Filename": "Using_if_shortcut_with_block",
-                              "Line": 3,
-                              "Offset": 50
-                            }
-                          },
-                          "Postfix": [
-                            {
-                              "Index": null,
-                              "Invocation": null,
-                              "Operator": "+",
-                              "Pos": {
-                                "Column": 14,
-                                "Filename": "Using_if_shortcut_with_block",
-                                "Line": 3,
-                                "Offset": 52
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          "Atom": {
-                            "Ident": "y",
-                            "Pos": {
-                              "Column": 16,
-                              "Filename": "Using_if_shortcut_with_block",
-                              "Line": 3,
-                              "Offset": 54
-                            }
-                          },
-                          "Postfix": [
-                            {
-                              "Index": null,
-                              "Invocation": null,
-                              "Operator": "+",
-                              "Pos": {
-                                "Column": 18,
-                                "Filename": "Using_if_shortcut_with_block",
-                                "Line": 3,
-                                "Offset": 56
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          "Atom": {
-                            "Ident": "z",
-                            "Pos": {
-                              "Column": 20,
-                              "Filename": "Using_if_shortcut_with_block",
-                              "Line": 3,
-                              "Offset": 58
-                            }
-                          },
-                          "Postfix": null
-                        }
-                      ],
+                    "Statement": {
+                      "Label": "",
                       "Pos": {
-                        "Column": 12,
+                        "Column": 5,
                         "Filename": "Using_if_shortcut_with_block",
                         "Line": 3,
-                        "Offset": 50
+                        "Offset": 43
                       },
-                      "Prefix": null
+                      "Value": {
+                        "Operands": [
+                          {
+                            "Atom": {
+                              "Ident": "x",
+                              "Pos": {
+                                "Column": 12,
+                                "Filename": "Using_if_shortcut_with_block",
+                                "Line": 3,
+                                "Offset": 50
+                              }
+                            },
+                            "Postfix": [
+                              {
+                                "Index": null,
+                                "Invocation": null,
+                                "Operator": "+",
+                                "Pos": {
+                                  "Column": 14,
+                                  "Filename": "Using_if_shortcut_with_block",
+                                  "Line": 3,
+                                  "Offset": 52
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "Atom": {
+                              "Ident": "y",
+                              "Pos": {
+                                "Column": 16,
+                                "Filename": "Using_if_shortcut_with_block",
+                                "Line": 3,
+                                "Offset": 54
+                              }
+                            },
+                            "Postfix": [
+                              {
+                                "Index": null,
+                                "Invocation": null,
+                                "Operator": "+",
+                                "Pos": {
+                                  "Column": 18,
+                                  "Filename": "Using_if_shortcut_with_block",
+                                  "Line": 3,
+                                  "Offset": 56
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "Atom": {
+                              "Ident": "z",
+                              "Pos": {
+                                "Column": 20,
+                                "Filename": "Using_if_shortcut_with_block",
+                                "Line": 3,
+                                "Offset": 58
+                              }
+                            },
+                            "Postfix": null
+                          }
+                        ],
+                        "Pos": {
+                          "Column": 12,
+                          "Filename": "Using_if_shortcut_with_block",
+                          "Line": 3,
+                          "Offset": 50
+                        },
+                        "Prefix": null
+                      }
                     }
                   }
-                }
-              ]
+                ]
+              },
+              "IsStatic": false,
+              "Pos": {
+                "Column": 37,
+                "Filename": "Using_if_shortcut_with_block",
+                "Line": 2,
+                "Offset": 37
+              }
             }
           },
           "Pos": {
@@ -11959,15 +12036,15 @@
 ---
 
 [TestParserErrors/Incomplete_string - 1]
-Incomplete_string:1:1: unexpected token "let" (expected <eof>)
+Incomplete_string:1:7: unexpected token "=" (expected <eof>)
 ---
 
 [TestParserErrors/Incomplete_string_interpolation - 1]
-Incomplete_string_interpolation:1:1: unexpected token "let" (expected <eof>)
+Incomplete_string_interpolation:1:7: unexpected token "=" (expected <eof>)
 ---
 
 [TestParserErrors/Invalid_array_dimension - 1]
-Invalid_array_dimension:1:1: unexpected token "let" (expected <eof>)
+Invalid_array_dimension:1:6: unexpected token ":" (expected <eof>)
 ---
 
 [TestParserErrors/Invalid_break_syntax - 1]
@@ -11975,7 +12052,7 @@ Invalid_break_syntax:1:7: unexpected token ":" (expected <eof>)
 ---
 
 [TestParserErrors/Invalid_function_call - 1]
-Invalid_function_call:1:1: unexpected token "let" (expected <eof>)
+Invalid_function_call:1:10: unexpected token "(" (expected <eof>)
 ---
 
 [TestParserErrors/Invalid_function_parameter_syntax - 1]
@@ -11995,19 +12072,19 @@ Invalid_return_syntax:1:8: unexpected token ":" (expected <eof>)
 ---
 
 [TestParserErrors/Invalid_type_syntax - 1]
-Invalid_type_syntax:1:1: unexpected token "let" (expected <eof>)
+Invalid_type_syntax:1:6: unexpected token ":" (expected <eof>)
 ---
 
 [TestParserErrors/Mismatched_braces - 1]
-Mismatched_braces:1:13: unexpected token "<EOF>" (expected "}")
+Mismatched_braces:1:1: unexpected token "fun" (expected <eof>)
 ---
 
 [TestParserErrors/Mismatched_brackets - 1]
-Mismatched_brackets:1:1: unexpected token "let" (expected <eof>)
+Mismatched_brackets:1:12: unexpected token "[" (expected <eof>)
 ---
 
 [TestParserErrors/Mismatched_parentheses - 1]
-Mismatched_parentheses:1:1: unexpected token "let" (expected <eof>)
+Mismatched_parentheses:1:7: unexpected token "=" (expected <eof>)
 ---
 
 [TestParserErrors/Missing_colon_in_parameter - 1]
@@ -12015,5 +12092,5 @@ Missing_colon_in_parameter:1:1: unexpected token "fun" (expected <eof>)
 ---
 
 [TestParserErrors/Multiple_modifiers_on_pointers - 1]
-Multiple_modifiers_on_pointers:1:1: unexpected token "let" (expected <eof>)
+Multiple_modifiers_on_pointers:1:6: unexpected token ":" (expected <eof>)
 ---
