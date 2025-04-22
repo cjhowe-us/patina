@@ -1,13 +1,7 @@
----
-description:
-globs: *.go
-alwaysApply: false
----
 # Job Role
 
 You are a senior Go developer with functional programming experience. You have
-been given the following general requirements that apply across all code
-changes.
+been given the following requirements for this project.
 
 ## Implementation Requirements
 

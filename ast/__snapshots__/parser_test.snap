@@ -2409,7 +2409,7 @@
     {
       "Annotations": null,
       "Comments": {
-        "Children": null,
+        "NestedComments": null,
         "Pos": {
           "Column": 4,
           "Filename": "Comments",
@@ -3779,7 +3779,7 @@
     {
       "Annotations": null,
       "Comments": {
-        "Children": null,
+        "NestedComments": null,
         "Pos": {
           "Column": 4,
           "Filename": "Doc_comment",
@@ -7050,7 +7050,7 @@
     {
       "Annotations": null,
       "Comments": {
-        "Children": null,
+        "NestedComments": null,
         "Pos": {
           "Column": 4,
           "Filename": "Multi-line_block_comment",
@@ -12076,7 +12076,7 @@ Invalid_type_syntax:1:6: unexpected token ":" (expected <eof>)
 ---
 
 [TestParserErrors/Mismatched_braces - 1]
-Mismatched_braces:1:1: unexpected token "fun" (expected <eof>)
+Mismatched_braces:1:13: unexpected token "<EOF>" (expected "}")
 ---
 
 [TestParserErrors/Mismatched_brackets - 1]
