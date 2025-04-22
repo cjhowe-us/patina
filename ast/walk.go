@@ -2,14 +2,13 @@ package ast
 
 import (
 	"strings"
-
-	"github.com/cjhowedev/patina/ast"
+	"sync"
 )
 
 // Visitor is the interface implemented by AST visitors.
 type Visitor[Input any, Output any] interface {
-	Enter(node ast.SyntaxNode, request *Input) ([]*Input, error)
-	Exit(node ast.SyntaxNode, childrenOutputs []*Output) (*Output, error)
+	Enter(node SyntaxNode, request *Input) ([]*Input, error)
+	Exit(node SyntaxNode, childrenOutputs []*Output) (*Output, error)
 }
 
 // ErrorList represents a collection of errors that occurred during AST traversal.
@@ -28,7 +27,7 @@ func (el ErrorList) Error() string {
 // traversal starts with the given visitor `v`. The `node` must be the root of the AST subtree to walk. The `input` is
 // passed to the visitor's Enter method. The visitor's Exit method is called with the results of the traversal of the
 // node's children.
-func Walk[Input any, Output any](v Visitor[Input, Output], input *Input, node ast.SyntaxNode) (*Output, error) {
+func Walk[Input any, Output any](v Visitor[Input, Output], input *Input, node SyntaxNode) (*Output, error) {
 	childInputs, err := v.Enter(node, input)
 	if err != nil {
 		return nil, err
@@ -36,9 +35,14 @@ func Walk[Input any, Output any](v Visitor[Input, Output], input *Input, node as
 
 	children := node.Children()
 	childrenResults := make([]*Output, len(children))
+	var waitGroup sync.WaitGroup
+	waitGroup.Add(len(children))
 	errChan := make(chan error, len(children))
+	defer close(errChan)
 	for i, child := range children {
-		go func(i int, child ast.SyntaxNode) {
+		go func(i int, child SyntaxNode) {
+			defer waitGroup.Done()
+
 			var input *Input
 			if i < len(childInputs) {
 				input = childInputs[i]
@@ -48,11 +52,12 @@ func Walk[Input any, Output any](v Visitor[Input, Output], input *Input, node as
 			childResult, err := Walk(v, input, child)
 			if err != nil {
 				errChan <- err
-				return
 			}
 			childrenResults[i] = childResult
 		}(i, child)
 	}
+
+	waitGroup.Wait()
 
 	errs := ErrorList{}
 errloop:

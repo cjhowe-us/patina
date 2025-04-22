@@ -1,0 +1,125 @@
+[
+    {
+        "name": "Simple_Node",
+        "tree": {
+            "id": "root",
+            "line": 1,
+            "column": 1,
+            "children": []
+        },
+        "input": "rootInput"
+    },
+    {
+        "name": "Parent_With_Child",
+        "tree": {
+            "id": "parent",
+            "line": 1,
+            "column": 1,
+            "children": [
+                {
+                    "id": "child",
+                    "line": 2,
+                    "column": 1,
+                    "children": []
+                }
+            ]
+        },
+        "input": "parentInput"
+    },
+    {
+        "name": "Binary_Tree",
+        "tree": {
+            "id": "root",
+            "line": 1,
+            "column": 1,
+            "children": [
+                {
+                    "id": "left",
+                    "line": 2,
+                    "column": 1,
+                    "children": []
+                },
+                {
+                    "id": "right",
+                    "line": 2,
+                    "column": 10,
+                    "children": []
+                }
+            ]
+        },
+        "input": "rootInput"
+    },
+    {
+        "name": "Deep_Tree",
+        "tree": {
+            "id": "level1",
+            "line": 1,
+            "column": 1,
+            "children": [
+                {
+                    "id": "level2_1",
+                    "line": 2,
+                    "column": 1,
+                    "children": [
+                        {
+                            "id": "level3_1",
+                            "line": 3,
+                            "column": 1,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": "level2_2",
+                    "line": 2,
+                    "column": 10,
+                    "children": [
+                        {
+                            "id": "level3_2",
+                            "line": 3,
+                            "column": 10,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "input": "rootInput"
+    },
+    {
+        "name": "Unbalanced_Tree",
+        "tree": {
+            "id": "root",
+            "line": 1,
+            "column": 1,
+            "children": [
+                {
+                    "id": "leftBranch",
+                    "line": 2,
+                    "column": 1,
+                    "children": [
+                        {
+                            "id": "leftLeaf1",
+                            "line": 3,
+                            "column": 1,
+                            "children": []
+                        },
+                        {
+                            "id": "leftLeaf2",
+                            "line": 3,
+                            "column": 10,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": "rightBranch",
+                    "line": 2,
+                    "column": 20,
+                    "children": []
+                }
+            ]
+        },
+        "input": "rootInput"
+    }
+]
