@@ -2,12 +2,9 @@ package ast
 
 import (
 	"encoding/json"
-	"os"
-	"path/filepath"
 	"testing"
 
 	"github.com/alecthomas/participle/v2/lexer"
-	"github.com/gkampitakis/go-snaps/snaps"
 )
 
 // MockNode is a simple implementation of SyntaxNode for testing purposes.
@@ -59,11 +56,16 @@ func (v *TestVisitor) Exit(node SyntaxNode, childrenOutputs []*string) (*string,
 	return &result, nil
 }
 
-// TestCase represents a test case for the Walk function.
-type TestCase struct {
-	Name  string          `json:"name"`
+// WalkInput represents input for a walk test.
+type WalkInput struct {
 	Tree  json.RawMessage `json:"tree"`
 	Input string          `json:"input"`
+}
+
+// WalkTestOutput holds the output from a walk test.
+type WalkTestOutput struct {
+	Result   string   `json:"result"`
+	VisitLog []string `json:"visitLog"`
 }
 
 // buildTree constructs a MockNode tree from its JSON representation.
@@ -97,56 +99,31 @@ func buildNodeFromMap(nodeMap map[string]interface{}) *MockNode {
 	return node
 }
 
-// loadTestCases loads test cases from the JSON file.
-func loadTestCases() ([]TestCase, error) {
-	fileData, err := os.ReadFile(filepath.Join("testdata", "walk_test_cases.json"))
-	if err != nil {
-		return nil, err
-	}
-
-	var testCases []TestCase
-	if err := json.Unmarshal(fileData, &testCases); err != nil {
-		return nil, err
-	}
-
-	return testCases, nil
-}
-
 func TestWalk(t *testing.T) {
-	testCases, err := loadTestCases()
-	if err != nil {
-		t.Fatalf("Failed to load test cases: %v", err)
-	}
-
-	for _, tc := range testCases {
-		t.Run(tc.Name, func(t *testing.T) {
-			tree, err := buildTree(tc.Tree)
+	RunTests(
+		t,
+		"walk.json",
+		func(input WalkInput, name string) (WalkTestOutput, error) {
+			tree, err := buildTree(input.Tree)
 			if err != nil {
-				t.Fatalf("Failed to build tree: %v", err)
+				return WalkTestOutput{}, err
 			}
 
 			visitor := &TestVisitor{
 				VisitLog: []string{},
 			}
 
-			input := tc.Input
-			result, err := Walk(visitor, &input, tree)
-
+			request := input.Input
+			result, err := Walk(visitor, &request, tree)
 			if err != nil {
-				t.Fatalf("Walk returned error: %v", err)
+				return WalkTestOutput{}, err
 			}
 
-			output := map[string]interface{}{
-				"result":   *result,
-				"visitLog": visitor.VisitLog,
-			}
-
-			snapsConfig := snaps.WithConfig(snaps.JSON(snaps.JSONConfig{
-				Width:    80,
-				Indent:   "  ",
-				SortKeys: true,
-			}))
-			snapsConfig.MatchJSON(t, output)
-		})
-	}
+			return WalkTestOutput{
+				Result:   *result,
+				VisitLog: visitor.VisitLog,
+			}, nil
+		},
+		false,
+	)
 }

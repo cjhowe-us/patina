@@ -1,0 +1,67 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Unsized_array_type",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Unsized_array_type",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "x",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Unsized_array_type",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Type": {
+     "Pos": {
+      "Column": 8,
+      "Filename": "Unsized_array_type",
+      "Line": 1,
+      "Offset": 7
+     },
+     "Type": {
+      "Dimension": null,
+      "Element": {
+       "Pos": {
+        "Column": 10,
+        "Filename": "Unsized_array_type",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Type": {
+        "BitSize": 32,
+        "Pos": {
+         "Column": 10,
+         "Filename": "Unsized_array_type",
+         "Line": 1,
+         "Offset": 9
+        },
+        "Signed": true
+       }
+      },
+      "Pos": {
+       "Column": 8,
+       "Filename": "Unsized_array_type",
+       "Line": 1,
+       "Offset": 7
+      }
+     }
+    },
+    "Value": null
+   }
+  }
+ ]
+}

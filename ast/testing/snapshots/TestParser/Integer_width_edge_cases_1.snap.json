@@ -1,0 +1,150 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Integer_width_edge_cases",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Integer_width_edge_cases",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "min",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Integer_width_edge_cases",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Type": {
+     "Pos": {
+      "Column": 10,
+      "Filename": "Integer_width_edge_cases",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Type": {
+      "BitSize": 1,
+      "Pos": {
+       "Column": 10,
+       "Filename": "Integer_width_edge_cases",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Signed": true
+     }
+    },
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Pos": {
+         "Column": 15,
+         "Filename": "Integer_width_edge_cases",
+         "Line": 1,
+         "Offset": 14
+        },
+        "Value": {
+         "Pos": {
+          "Column": 15,
+          "Filename": "Integer_width_edge_cases",
+          "Line": 1,
+          "Offset": 14
+         },
+         "Value": 0
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 15,
+      "Filename": "Integer_width_edge_cases",
+      "Line": 1,
+      "Offset": 14
+     },
+     "Prefix": null
+    }
+   }
+  },
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Integer_width_edge_cases",
+    "Line": 2,
+    "Offset": 16
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "max",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Integer_width_edge_cases",
+     "Line": 2,
+     "Offset": 16
+    },
+    "Type": {
+     "Pos": {
+      "Column": 10,
+      "Filename": "Integer_width_edge_cases",
+      "Line": 2,
+      "Offset": 25
+     },
+     "Type": {
+      "BitSize": 65535,
+      "Pos": {
+       "Column": 10,
+       "Filename": "Integer_width_edge_cases",
+       "Line": 2,
+       "Offset": 25
+      },
+      "Signed": false
+     }
+    },
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Pos": {
+         "Column": 19,
+         "Filename": "Integer_width_edge_cases",
+         "Line": 2,
+         "Offset": 34
+        },
+        "Value": {
+         "Pos": {
+          "Column": 19,
+          "Filename": "Integer_width_edge_cases",
+          "Line": 2,
+          "Offset": 34
+         },
+         "Value": 0
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 19,
+      "Filename": "Integer_width_edge_cases",
+      "Line": 2,
+      "Offset": 34
+     },
+     "Prefix": null
+    }
+   }
+  }
+ ]
+}

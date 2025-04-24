@@ -1,0 +1,316 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Function_statement_with_annotation",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": [
+    {
+     "Arguments": [
+      {
+       "Operands": [
+        {
+         "Atom": {
+          "Pos": {
+           "Column": 11,
+           "Filename": "Function_statement_with_annotation",
+           "Line": 1,
+           "Offset": 10
+          },
+          "Value": {
+           "Fragments": [
+            {
+             "Interpolation": null,
+             "Pos": {
+              "Column": 12,
+              "Filename": "Function_statement_with_annotation",
+              "Line": 1,
+              "Offset": 11
+             },
+             "Text": "hello world"
+            }
+           ],
+           "Pos": {
+            "Column": 11,
+            "Filename": "Function_statement_with_annotation",
+            "Line": 1,
+            "Offset": 10
+           }
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Pos": {
+        "Column": 11,
+        "Filename": "Function_statement_with_annotation",
+        "Line": 1,
+        "Offset": 10
+       },
+       "Prefix": null
+      },
+      {
+       "Operands": [
+        {
+         "Atom": {
+          "Pos": {
+           "Column": 26,
+           "Filename": "Function_statement_with_annotation",
+           "Line": 1,
+           "Offset": 25
+          },
+          "Value": {
+           "Pos": {
+            "Column": 26,
+            "Filename": "Function_statement_with_annotation",
+            "Line": 1,
+            "Offset": 25
+           },
+           "Value": 100
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Pos": {
+        "Column": 26,
+        "Filename": "Function_statement_with_annotation",
+        "Line": 1,
+        "Offset": 25
+       },
+       "Prefix": null
+      },
+      {
+       "Operands": [
+        {
+         "Atom": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "quoted",
+              "Pos": {
+               "Column": 33,
+               "Filename": "Function_statement_with_annotation",
+               "Line": 1,
+               "Offset": 32
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Pos": {
+            "Column": 33,
+            "Filename": "Function_statement_with_annotation",
+            "Line": 1,
+            "Offset": 32
+           },
+           "Prefix": null
+          },
+          "Pos": {
+           "Column": 32,
+           "Filename": "Function_statement_with_annotation",
+           "Line": 1,
+           "Offset": 31
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Pos": {
+        "Column": 31,
+        "Filename": "Function_statement_with_annotation",
+        "Line": 1,
+        "Offset": 30
+       },
+       "Prefix": [
+        "\\"
+       ]
+      }
+     ],
+     "Name": "tag.anno",
+     "Pos": {
+      "Column": 1,
+      "Filename": "Function_statement_with_annotation",
+      "Line": 1,
+      "Offset": 0
+     }
+    }
+   ],
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Function_statement_with_annotation",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "Block": {
+     "Label": "",
+     "Pos": {
+      "Column": 71,
+      "Filename": "Function_statement_with_annotation",
+      "Line": 1,
+      "Offset": 70
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Pos": {
+        "Column": 2,
+        "Filename": "Function_statement_with_annotation",
+        "Line": 2,
+        "Offset": 73
+       },
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "c",
+        "Pos": {
+         "Column": 2,
+         "Filename": "Function_statement_with_annotation",
+         "Line": 2,
+         "Offset": 73
+        },
+        "Type": null,
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "a",
+            "Pos": {
+             "Column": 10,
+             "Filename": "Function_statement_with_annotation",
+             "Line": 2,
+             "Offset": 81
+            }
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "+",
+             "Pos": {
+              "Column": 12,
+              "Filename": "Function_statement_with_annotation",
+              "Line": 2,
+              "Offset": 83
+             }
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Ident": "b",
+            "Pos": {
+             "Column": 14,
+             "Filename": "Function_statement_with_annotation",
+             "Line": 2,
+             "Offset": 85
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Pos": {
+          "Column": 10,
+          "Filename": "Function_statement_with_annotation",
+          "Line": 2,
+          "Offset": 81
+         },
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "IsStatic": false,
+    "Name": "add",
+    "Parameters": [
+     {
+      "Name": "a",
+      "Pos": {
+       "Column": 50,
+       "Filename": "Function_statement_with_annotation",
+       "Line": 1,
+       "Offset": 49
+      },
+      "Type": {
+       "Pos": {
+        "Column": 53,
+        "Filename": "Function_statement_with_annotation",
+        "Line": 1,
+        "Offset": 52
+       },
+       "Type": {
+        "BitSize": 64,
+        "Pos": {
+         "Column": 53,
+         "Filename": "Function_statement_with_annotation",
+         "Line": 1,
+         "Offset": 52
+        },
+        "Signed": true
+       }
+      }
+     },
+     {
+      "Name": "b",
+      "Pos": {
+       "Column": 58,
+       "Filename": "Function_statement_with_annotation",
+       "Line": 1,
+       "Offset": 57
+      },
+      "Type": {
+       "Pos": {
+        "Column": 61,
+        "Filename": "Function_statement_with_annotation",
+        "Line": 1,
+        "Offset": 60
+       },
+       "Type": {
+        "BitSize": 64,
+        "Pos": {
+         "Column": 61,
+         "Filename": "Function_statement_with_annotation",
+         "Line": 1,
+         "Offset": 60
+        },
+        "Signed": true
+       }
+      }
+     }
+    ],
+    "Pos": {
+     "Column": 42,
+     "Filename": "Function_statement_with_annotation",
+     "Line": 1,
+     "Offset": 41
+    },
+    "Return": {
+     "Pos": {
+      "Column": 67,
+      "Filename": "Function_statement_with_annotation",
+      "Line": 1,
+      "Offset": 66
+     },
+     "Type": {
+      "BitSize": 64,
+      "Pos": {
+       "Column": 67,
+       "Filename": "Function_statement_with_annotation",
+       "Line": 1,
+       "Offset": 66
+      },
+      "Signed": true
+     }
+    }
+   }
+  }
+ ]
+}

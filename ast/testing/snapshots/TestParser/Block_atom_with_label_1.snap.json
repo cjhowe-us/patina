@@ -1,0 +1,101 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Block_atom_with_label",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Block_atom_with_label",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "Expression": {
+     "Block": {
+      "Label": "my_label",
+      "Pos": {
+       "Column": 1,
+       "Filename": "Block_atom_with_label",
+       "Line": 1,
+       "Offset": 0
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Pos": {
+         "Column": 2,
+         "Filename": "Block_atom_with_label",
+         "Line": 2,
+         "Offset": 13
+        },
+        "Statement": {
+         "IsMutable": false,
+         "IsStatic": false,
+         "Name": "x",
+         "Pos": {
+          "Column": 2,
+          "Filename": "Block_atom_with_label",
+          "Line": 2,
+          "Offset": 13
+         },
+         "Type": null,
+         "Value": {
+          "Operands": [
+           {
+            "Atom": {
+             "Pos": {
+              "Column": 10,
+              "Filename": "Block_atom_with_label",
+              "Line": 2,
+              "Offset": 21
+             },
+             "Value": {
+              "Pos": {
+               "Column": 10,
+               "Filename": "Block_atom_with_label",
+               "Line": 2,
+               "Offset": 21
+              },
+              "Value": 1
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Pos": {
+           "Column": 10,
+           "Filename": "Block_atom_with_label",
+           "Line": 2,
+           "Offset": 21
+          },
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false,
+     "Pos": {
+      "Column": 1,
+      "Filename": "Block_atom_with_label",
+      "Line": 1,
+      "Offset": 0
+     }
+    },
+    "Pos": {
+     "Column": 1,
+     "Filename": "Block_atom_with_label",
+     "Line": 1,
+     "Offset": 0
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+[
+ {
+  "Pos": {
+   "Column": 1,
+   "Filename": "Block_Comment",
+   "Line": 1,
+   "Offset": 0
+  },
+  "Type": -6,
+  "Value": "/*"
+ },
+ {
+  "Pos": {
+   "Column": 3,
+   "Filename": "Block_Comment",
+   "Line": 1,
+   "Offset": 2
+  },
+  "Type": -4,
+  "Value": " block comment "
+ },
+ {
+  "Pos": {
+   "Column": 18,
+   "Filename": "Block_Comment",
+   "Line": 1,
+   "Offset": 17
+  },
+  "Type": -2,
+  "Value": "*/"
+ },
+ {
+  "Pos": {
+   "Column": 20,
+   "Filename": "Block_Comment",
+   "Line": 1,
+   "Offset": 19
+  },
+  "Type": -1,
+  "Value": ""
+ }
+]

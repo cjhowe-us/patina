@@ -1,0 +1,342 @@
+[
+    {
+        "name": "Module",
+        "input": "module test {\n\tlet x = *mut i32\n}"
+    },
+    {
+        "name": "Simple binding",
+        "input": "let x = 1"
+    },
+    {
+        "name": "Mutable binding",
+        "input": "let mut y = 2"
+    },
+    {
+        "name": "Static binding",
+        "input": "static let z = 3"
+    },
+    {
+        "name": "Binding with type",
+        "input": "let a: i64 = 4"
+    },
+    {
+        "name": "Binding without init",
+        "input": "let b: i64"
+    },
+    {
+        "name": "Block atom",
+        "input": "{\n\tlet x = 1\n}"
+    },
+    {
+        "name": "Block atom with label",
+        "input": ":my_label {\n\tlet x = 1\n}"
+    },
+    {
+        "name": "Block atom with multiple statements",
+        "input": "{\n\tlet x = 1\n\tlet y: *i32 = 2\n\tbreak x + y\n}"
+    },
+    {
+        "name": "Function statement",
+        "input": "fun add(a: i64, b: u64): i64 {\n\tlet c = a + b\n\treturn c\n}"
+    },
+    {
+        "name": "Function statement with annotation",
+        "input": "@tag.anno(\"hello world\", 100, \\(quoted)) fun add(a: i64, b: i64): i64 {\n\tlet c = a + b\n}"
+    },
+    {
+        "name": "case statement",
+        "input": "case {\n\tif (x > 10) 1\n    else 2\n}"
+    },
+    {
+        "name": "Case statement with many branches",
+        "input": "case {\n\tif (x == 1) 1\n\tif (x == 2) 2\n\telse 3\n}"
+    },
+    {
+        "name": "Using if shortcut with block",
+        "input": "\nif (x > 10 && y < 20 || z == 30) {\n\treturn x + y + z\n} else if (interlockable()) :test {\n    break :test 5\n} else {\n    takeOver(world)?.destroy()\n}\n"
+    },
+    {
+        "name": "String literal",
+        "input": "let msg = \"Hello, world!\""
+    },
+    {
+        "name": "String interpolation",
+        "input": "let msg = \"Hello, \\(name)!\""
+    },
+    {
+        "name": "Binding",
+        "input": "my.`-path`"
+    },
+    {
+        "name": "Comments",
+        "input": "// Line comment\n/* Block comment */\nfun test() {\n}"
+    },
+    {
+        "name": "Integer type",
+        "input": "let x = i64"
+    },
+    {
+        "name": "Type value",
+        "input": "\nlet x: i64 = 10\nlet ptr: *mut i64 = 20\nlet arr: [10]i64\nlet fn: fun add(a: i64, b: i64): i64 = add\n"
+    },
+    {
+        "name": "Pointer type",
+        "input": "let ptr: *mut i64 = 20"
+    },
+    {
+        "name": "Lambda expression",
+        "input": "let adder = fun (b: i32) {\n\tlet a = 1 + b\n}"
+    },
+    {
+        "name": "Binary expression",
+        "input": "let x = 1 + 2 * 3"
+    },
+    {
+        "name": "Nested expressions",
+        "input": "let x = (1 + 2) * 3"
+    },
+    {
+        "name": "Prefix ops",
+        "input": "let x = !true"
+    },
+    {
+        "name": "Postfix ops",
+        "input": "let x = true?"
+    },
+    {
+        "name": "Prefix and postfix ops",
+        "input": "let x = !true?"
+    },
+    {
+        "name": "Invocation",
+        "input": "let x = add(1, 2)"
+    },
+    {
+        "name": "Invocation with postfix op",
+        "input": "let x = add(1, 2)?"
+    },
+    {
+        "name": "Invocation with prefix op",
+        "input": "let x = !add(1, 2)"
+    },
+    {
+        "name": "Invocation with prefix and postfix ops",
+        "input": "let x = !add(1, 2)?"
+    },
+    {
+        "name": "Invocation with prefix, infix, and postfix ops",
+        "input": "let x = -add(1, 2)? + !sub(3, 4)"
+    },
+    {
+        "name": "Indexing",
+        "input": "let x = arr[1]"
+    },
+    {
+        "name": "Indexing with prefix op",
+        "input": "let x = !arr[1]"
+    },
+    {
+        "name": "Indexing with postfix op",
+        "input": "let x = arr[1]?"
+    },
+    {
+        "name": "Indexing with prefix and postfix ops",
+        "input": "let x = !arr[1]?"
+    },
+    {
+        "name": "Indexing with prefix, infix, and postfix ops",
+        "input": "let x = -arr[1]? + !arr[2]"
+    },
+    {
+        "name": "Indexing with invocations and nesting",
+        "input": "let x = arr[1 + 2](1 + 2)?"
+    },
+    {
+        "name": "Simple break",
+        "input": "break"
+    },
+    {
+        "name": "Break with label",
+        "input": "break :myLabel"
+    },
+    {
+        "name": "Break with expression",
+        "input": "break (1 + 2)"
+    },
+    {
+        "name": "Break with label and expression",
+        "input": "break :myLabel (3 * 4)"
+    },
+    {
+        "name": "Quoted label and tag",
+        "input": "\\(:my_label { @my.tag break :my_label })"
+    },
+    {
+        "name": "Quoted binding",
+        "input": "\\(my.`-path`)"
+    },
+    {
+        "name": "Quoted expression",
+        "input": "\\(1 + 2)"
+    },
+    {
+        "name": "Doc comment",
+        "input": "/* My doc comment */\nfun test() {}"
+    },
+    {
+        "name": "Return with tag",
+        "input": "return :label"
+    },
+    {
+        "name": "Return with expression",
+        "input": "return (1 + 2)"
+    },
+    {
+        "name": "Return with tag and expression",
+        "input": "return :label (3 * 4)"
+    },
+    {
+        "name": "Static labeled block expression",
+        "input": "let x = static :labeled {\n\tbreak :labeled 5\n}"
+    },
+    {
+        "name": "Raw pointer type",
+        "input": "let x: *raw i32"
+    },
+    {
+        "name": "Owned pointer type",
+        "input": "let x: *own i32"
+    },
+    {
+        "name": "Unsized array type",
+        "input": "let x: []i32"
+    },
+    {
+        "name": "Named function type",
+        "input": "let x: fun MyFunc(a: i32): i32"
+    },
+    {
+        "name": "Empty input",
+        "input": ""
+    },
+    {
+        "name": "Multiple root statements",
+        "input": "let x = 1\nlet y = 2"
+    },
+    {
+        "name": "Pointer to array type",
+        "input": "let x: *[10]i32"
+    },
+    {
+        "name": "Array of function types",
+        "input": "let x: []fun(): i32"
+    },
+    {
+        "name": "Nested string interpolation",
+        "input": "\"Hello, \\(\"Mr. \\(lastName)\")!\""
+    },
+    {
+        "name": "Multiple annotations",
+        "input": "@anno1 @anno2(true) fun test() {}"
+    },
+    {
+        "name": "Grouped expression",
+        "input": "let x = (1 + 2)"
+    },
+    {
+        "name": "Lambda with return type",
+        "input": "let x = fun(): i32 { return 1 }"
+    },
+    {
+        "name": "Function type without parameters",
+        "input": "let x: fun(): i32"
+    },
+    {
+        "name": "Function type without return type",
+        "input": "let x: fun(a: i32)"
+    },
+    {
+        "name": "Immutable pointer type",
+        "input": "let x: *i32"
+    },
+    {
+        "name": "Mutable let with type and expression",
+        "input": "let mut x: i32 = 1"
+    },
+    {
+        "name": "Static let with type and expression",
+        "input": "static let x: i32 = 1"
+    },
+    {
+        "name": "Trailing comma in function parameters",
+        "input": "fun test(a: i32, ) {}"
+    },
+    {
+        "name": "Trailing comma in function call arguments",
+        "input": "test(1, )"
+    },
+    {
+        "name": "Trailing comma in annotation arguments",
+        "input": "@myAnno(1, ) fun test() {}"
+    },
+    {
+        "name": "Integer width edge cases",
+        "input": "let min: i1 = 0\nlet max: u65535 = 0"
+    },
+    {
+        "name": "Complex nested expressions",
+        "input": "let x = (1 + (2 * (3 - (4 / 5))))\nlet y = ((((1 + 2) * 3) - 4) / 5)"
+    },
+    {
+        "name": "Mutable pointer modifiers",
+        "input": "let x: *mut i32 = 0"
+    },
+    {
+        "name": "Raw pointer modifiers",
+        "input": "let x: *raw i32 = 0"
+    },
+    {
+        "name": "Own pointer modifiers",
+        "input": "let x: *own i32 = 0"
+    },
+    {
+        "name": "Multi-line block comment",
+        "input": "/* This is a\n   multi-line\n   comment with /* nesting */\n   and more text */\nlet x = 1"
+    },
+    {
+        "name": "Complex function type",
+        "input": "let x: fun(cb: fun(a: i32, b: i32): fun(): i32): i32"
+    },
+    {
+        "name": "Multiple annotations with expressions",
+        "input": "@tag1(1 + 2) @tag2(x.y[3]?.z()) fun test() {}"
+    },
+    {
+        "name": "Deeply nested blocks",
+        "input": "{\n\t{\n\t\t{\n\t\t\t{\n\t\t\t\tlet x = 1\n\t\t\t\t{\n\t\t\t\t\tlet y = 2\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+    },
+    {
+        "name": "Empty blocks with labels",
+        "input": ":outer {\n\t:inner {}\n}"
+    },
+    {
+        "name": "Complex indexing chain",
+        "input": "let x = arr[idx1][idx2][fn()+3]?.member()"
+    },
+    {
+        "name": "All operator types combined",
+        "input": "let x = !-~(a + b * c / d % e && f || g) == h != i < j > k <= l >= m?.n()"
+    },
+    {
+        "name": "Static function",
+        "input": "static fun test(): i32 {\n\treturn 42\n}"
+    },
+    {
+        "name": "Nested array types",
+        "input": "let x: [2][3][4]i32"
+    },
+    {
+        "name": "Nested string fragments",
+        "input": "let x = \"begin \\(\"nest1 \\(\"nest2 \\(\"nest3\")\")\")\""
+    }
+]

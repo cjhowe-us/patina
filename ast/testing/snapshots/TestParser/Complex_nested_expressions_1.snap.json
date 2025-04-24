@@ -1,0 +1,551 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Complex_nested_expressions",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Complex_nested_expressions",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "x",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Complex_nested_expressions",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Type": null,
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Pos": {
+             "Column": 10,
+             "Filename": "Complex_nested_expressions",
+             "Line": 1,
+             "Offset": 9
+            },
+            "Value": {
+             "Pos": {
+              "Column": 10,
+              "Filename": "Complex_nested_expressions",
+              "Line": 1,
+              "Offset": 9
+             },
+             "Value": 1
+            }
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "+",
+             "Pos": {
+              "Column": 12,
+              "Filename": "Complex_nested_expressions",
+              "Line": 1,
+              "Offset": 11
+             }
+            },
+            {
+             "Index": null,
+             "Invocation": [
+              {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Pos": {
+                   "Column": 15,
+                   "Filename": "Complex_nested_expressions",
+                   "Line": 1,
+                   "Offset": 14
+                  },
+                  "Value": {
+                   "Pos": {
+                    "Column": 15,
+                    "Filename": "Complex_nested_expressions",
+                    "Line": 1,
+                    "Offset": 14
+                   },
+                   "Value": 2
+                  }
+                 },
+                 "Postfix": [
+                  {
+                   "Index": null,
+                   "Invocation": null,
+                   "Operator": "*",
+                   "Pos": {
+                    "Column": 17,
+                    "Filename": "Complex_nested_expressions",
+                    "Line": 1,
+                    "Offset": 16
+                   }
+                  },
+                  {
+                   "Index": null,
+                   "Invocation": [
+                    {
+                     "Operands": [
+                      {
+                       "Atom": {
+                        "Pos": {
+                         "Column": 20,
+                         "Filename": "Complex_nested_expressions",
+                         "Line": 1,
+                         "Offset": 19
+                        },
+                        "Value": {
+                         "Pos": {
+                          "Column": 20,
+                          "Filename": "Complex_nested_expressions",
+                          "Line": 1,
+                          "Offset": 19
+                         },
+                         "Value": 3
+                        }
+                       },
+                       "Postfix": [
+                        {
+                         "Index": null,
+                         "Invocation": null,
+                         "Operator": "-",
+                         "Pos": {
+                          "Column": 22,
+                          "Filename": "Complex_nested_expressions",
+                          "Line": 1,
+                          "Offset": 21
+                         }
+                        },
+                        {
+                         "Index": null,
+                         "Invocation": [
+                          {
+                           "Operands": [
+                            {
+                             "Atom": {
+                              "Pos": {
+                               "Column": 25,
+                               "Filename": "Complex_nested_expressions",
+                               "Line": 1,
+                               "Offset": 24
+                              },
+                              "Value": {
+                               "Pos": {
+                                "Column": 25,
+                                "Filename": "Complex_nested_expressions",
+                                "Line": 1,
+                                "Offset": 24
+                               },
+                               "Value": 4
+                              }
+                             },
+                             "Postfix": [
+                              {
+                               "Index": null,
+                               "Invocation": null,
+                               "Operator": "/",
+                               "Pos": {
+                                "Column": 27,
+                                "Filename": "Complex_nested_expressions",
+                                "Line": 1,
+                                "Offset": 26
+                               }
+                              }
+                             ]
+                            },
+                            {
+                             "Atom": {
+                              "Pos": {
+                               "Column": 29,
+                               "Filename": "Complex_nested_expressions",
+                               "Line": 1,
+                               "Offset": 28
+                              },
+                              "Value": {
+                               "Pos": {
+                                "Column": 29,
+                                "Filename": "Complex_nested_expressions",
+                                "Line": 1,
+                                "Offset": 28
+                               },
+                               "Value": 5
+                              }
+                             },
+                             "Postfix": null
+                            }
+                           ],
+                           "Pos": {
+                            "Column": 25,
+                            "Filename": "Complex_nested_expressions",
+                            "Line": 1,
+                            "Offset": 24
+                           },
+                           "Prefix": null
+                          }
+                         ],
+                         "Operator": "",
+                         "Pos": {
+                          "Column": 24,
+                          "Filename": "Complex_nested_expressions",
+                          "Line": 1,
+                          "Offset": 23
+                         }
+                        }
+                       ]
+                      }
+                     ],
+                     "Pos": {
+                      "Column": 20,
+                      "Filename": "Complex_nested_expressions",
+                      "Line": 1,
+                      "Offset": 19
+                     },
+                     "Prefix": null
+                    }
+                   ],
+                   "Operator": "",
+                   "Pos": {
+                    "Column": 19,
+                    "Filename": "Complex_nested_expressions",
+                    "Line": 1,
+                    "Offset": 18
+                   }
+                  }
+                 ]
+                }
+               ],
+               "Pos": {
+                "Column": 15,
+                "Filename": "Complex_nested_expressions",
+                "Line": 1,
+                "Offset": 14
+               },
+               "Prefix": null
+              }
+             ],
+             "Operator": "",
+             "Pos": {
+              "Column": 14,
+              "Filename": "Complex_nested_expressions",
+              "Line": 1,
+              "Offset": 13
+             }
+            }
+           ]
+          }
+         ],
+         "Pos": {
+          "Column": 10,
+          "Filename": "Complex_nested_expressions",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Prefix": null
+        },
+        "Pos": {
+         "Column": 9,
+         "Filename": "Complex_nested_expressions",
+         "Line": 1,
+         "Offset": 8
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 9,
+      "Filename": "Complex_nested_expressions",
+      "Line": 1,
+      "Offset": 8
+     },
+     "Prefix": null
+    }
+   }
+  },
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Complex_nested_expressions",
+    "Line": 2,
+    "Offset": 34
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "y",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Complex_nested_expressions",
+     "Line": 2,
+     "Offset": 34
+    },
+    "Type": null,
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Expression": {
+             "Operands": [
+              {
+               "Atom": {
+                "Expression": {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Expression": {
+                     "Operands": [
+                      {
+                       "Atom": {
+                        "Pos": {
+                         "Column": 13,
+                         "Filename": "Complex_nested_expressions",
+                         "Line": 2,
+                         "Offset": 46
+                        },
+                        "Value": {
+                         "Pos": {
+                          "Column": 13,
+                          "Filename": "Complex_nested_expressions",
+                          "Line": 2,
+                          "Offset": 46
+                         },
+                         "Value": 1
+                        }
+                       },
+                       "Postfix": [
+                        {
+                         "Index": null,
+                         "Invocation": null,
+                         "Operator": "+",
+                         "Pos": {
+                          "Column": 15,
+                          "Filename": "Complex_nested_expressions",
+                          "Line": 2,
+                          "Offset": 48
+                         }
+                        }
+                       ]
+                      },
+                      {
+                       "Atom": {
+                        "Pos": {
+                         "Column": 17,
+                         "Filename": "Complex_nested_expressions",
+                         "Line": 2,
+                         "Offset": 50
+                        },
+                        "Value": {
+                         "Pos": {
+                          "Column": 17,
+                          "Filename": "Complex_nested_expressions",
+                          "Line": 2,
+                          "Offset": 50
+                         },
+                         "Value": 2
+                        }
+                       },
+                       "Postfix": null
+                      }
+                     ],
+                     "Pos": {
+                      "Column": 13,
+                      "Filename": "Complex_nested_expressions",
+                      "Line": 2,
+                      "Offset": 46
+                     },
+                     "Prefix": null
+                    },
+                    "Pos": {
+                     "Column": 12,
+                     "Filename": "Complex_nested_expressions",
+                     "Line": 2,
+                     "Offset": 45
+                    }
+                   },
+                   "Postfix": [
+                    {
+                     "Index": null,
+                     "Invocation": null,
+                     "Operator": "*",
+                     "Pos": {
+                      "Column": 20,
+                      "Filename": "Complex_nested_expressions",
+                      "Line": 2,
+                      "Offset": 53
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "Atom": {
+                    "Pos": {
+                     "Column": 22,
+                     "Filename": "Complex_nested_expressions",
+                     "Line": 2,
+                     "Offset": 55
+                    },
+                    "Value": {
+                     "Pos": {
+                      "Column": 22,
+                      "Filename": "Complex_nested_expressions",
+                      "Line": 2,
+                      "Offset": 55
+                     },
+                     "Value": 3
+                    }
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Pos": {
+                  "Column": 12,
+                  "Filename": "Complex_nested_expressions",
+                  "Line": 2,
+                  "Offset": 45
+                 },
+                 "Prefix": null
+                },
+                "Pos": {
+                 "Column": 11,
+                 "Filename": "Complex_nested_expressions",
+                 "Line": 2,
+                 "Offset": 44
+                }
+               },
+               "Postfix": [
+                {
+                 "Index": null,
+                 "Invocation": null,
+                 "Operator": "-",
+                 "Pos": {
+                  "Column": 25,
+                  "Filename": "Complex_nested_expressions",
+                  "Line": 2,
+                  "Offset": 58
+                 }
+                }
+               ]
+              },
+              {
+               "Atom": {
+                "Pos": {
+                 "Column": 27,
+                 "Filename": "Complex_nested_expressions",
+                 "Line": 2,
+                 "Offset": 60
+                },
+                "Value": {
+                 "Pos": {
+                  "Column": 27,
+                  "Filename": "Complex_nested_expressions",
+                  "Line": 2,
+                  "Offset": 60
+                 },
+                 "Value": 4
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Pos": {
+              "Column": 11,
+              "Filename": "Complex_nested_expressions",
+              "Line": 2,
+              "Offset": 44
+             },
+             "Prefix": null
+            },
+            "Pos": {
+             "Column": 10,
+             "Filename": "Complex_nested_expressions",
+             "Line": 2,
+             "Offset": 43
+            }
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "/",
+             "Pos": {
+              "Column": 30,
+              "Filename": "Complex_nested_expressions",
+              "Line": 2,
+              "Offset": 63
+             }
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Pos": {
+             "Column": 32,
+             "Filename": "Complex_nested_expressions",
+             "Line": 2,
+             "Offset": 65
+            },
+            "Value": {
+             "Pos": {
+              "Column": 32,
+              "Filename": "Complex_nested_expressions",
+              "Line": 2,
+              "Offset": 65
+             },
+             "Value": 5
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Pos": {
+          "Column": 10,
+          "Filename": "Complex_nested_expressions",
+          "Line": 2,
+          "Offset": 43
+         },
+         "Prefix": null
+        },
+        "Pos": {
+         "Column": 9,
+         "Filename": "Complex_nested_expressions",
+         "Line": 2,
+         "Offset": 42
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 9,
+      "Filename": "Complex_nested_expressions",
+      "Line": 2,
+      "Offset": 42
+     },
+     "Prefix": null
+    }
+   }
+  }
+ ]
+}

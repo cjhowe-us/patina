@@ -1,0 +1,116 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Multiple_root_statements",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Multiple_root_statements",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "x",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Multiple_root_statements",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Type": null,
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Pos": {
+         "Column": 9,
+         "Filename": "Multiple_root_statements",
+         "Line": 1,
+         "Offset": 8
+        },
+        "Value": {
+         "Pos": {
+          "Column": 9,
+          "Filename": "Multiple_root_statements",
+          "Line": 1,
+          "Offset": 8
+         },
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 9,
+      "Filename": "Multiple_root_statements",
+      "Line": 1,
+      "Offset": 8
+     },
+     "Prefix": null
+    }
+   }
+  },
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Multiple_root_statements",
+    "Line": 2,
+    "Offset": 10
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "y",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Multiple_root_statements",
+     "Line": 2,
+     "Offset": 10
+    },
+    "Type": null,
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Pos": {
+         "Column": 9,
+         "Filename": "Multiple_root_statements",
+         "Line": 2,
+         "Offset": 18
+        },
+        "Value": {
+         "Pos": {
+          "Column": 9,
+          "Filename": "Multiple_root_statements",
+          "Line": 2,
+          "Offset": 18
+         },
+         "Value": 2
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 9,
+      "Filename": "Multiple_root_statements",
+      "Line": 2,
+      "Offset": 18
+     },
+     "Prefix": null
+    }
+   }
+  }
+ ]
+}

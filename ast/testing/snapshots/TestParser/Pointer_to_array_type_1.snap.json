@@ -1,0 +1,86 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Pointer_to_array_type",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Pointer_to_array_type",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "x",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Pointer_to_array_type",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Type": {
+     "Pos": {
+      "Column": 8,
+      "Filename": "Pointer_to_array_type",
+      "Line": 1,
+      "Offset": 7
+     },
+     "Type": {
+      "IsMutable": false,
+      "IsOwned": false,
+      "IsRaw": false,
+      "Pos": {
+       "Column": 8,
+       "Filename": "Pointer_to_array_type",
+       "Line": 1,
+       "Offset": 7
+      },
+      "Target": {
+       "Pos": {
+        "Column": 9,
+        "Filename": "Pointer_to_array_type",
+        "Line": 1,
+        "Offset": 8
+       },
+       "Type": {
+        "Dimension": 10,
+        "Element": {
+         "Pos": {
+          "Column": 13,
+          "Filename": "Pointer_to_array_type",
+          "Line": 1,
+          "Offset": 12
+         },
+         "Type": {
+          "BitSize": 32,
+          "Pos": {
+           "Column": 13,
+           "Filename": "Pointer_to_array_type",
+           "Line": 1,
+           "Offset": 12
+          },
+          "Signed": true
+         }
+        },
+        "Pos": {
+         "Column": 9,
+         "Filename": "Pointer_to_array_type",
+         "Line": 1,
+         "Offset": 8
+        }
+       }
+      }
+     }
+    },
+    "Value": null
+   }
+  }
+ ]
+}

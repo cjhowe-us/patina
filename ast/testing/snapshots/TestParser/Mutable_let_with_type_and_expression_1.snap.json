@@ -1,0 +1,80 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Mutable_let_with_type_and_expression",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Mutable_let_with_type_and_expression",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "IsMutable": true,
+    "IsStatic": false,
+    "Name": "x",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Mutable_let_with_type_and_expression",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Type": {
+     "Pos": {
+      "Column": 12,
+      "Filename": "Mutable_let_with_type_and_expression",
+      "Line": 1,
+      "Offset": 11
+     },
+     "Type": {
+      "BitSize": 32,
+      "Pos": {
+       "Column": 12,
+       "Filename": "Mutable_let_with_type_and_expression",
+       "Line": 1,
+       "Offset": 11
+      },
+      "Signed": true
+     }
+    },
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Pos": {
+         "Column": 18,
+         "Filename": "Mutable_let_with_type_and_expression",
+         "Line": 1,
+         "Offset": 17
+        },
+        "Value": {
+         "Pos": {
+          "Column": 18,
+          "Filename": "Mutable_let_with_type_and_expression",
+          "Line": 1,
+          "Offset": 17
+         },
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 18,
+      "Filename": "Mutable_let_with_type_and_expression",
+      "Line": 1,
+      "Offset": 17
+     },
+     "Prefix": null
+    }
+   }
+  }
+ ]
+}

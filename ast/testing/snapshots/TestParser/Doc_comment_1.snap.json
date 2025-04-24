@@ -1,0 +1,51 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Doc_comment",
+  "Line": 2,
+  "Offset": 21
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": {
+    "NestedComments": null,
+    "Pos": {
+     "Column": 1,
+     "Filename": "Doc_comment",
+     "Line": 2,
+     "Offset": 21
+    },
+    "Text": " My doc comment "
+   },
+   "Pos": {
+    "Column": 1,
+    "Filename": "Doc_comment",
+    "Line": 2,
+    "Offset": 21
+   },
+   "Statement": {
+    "Block": {
+     "Label": "",
+     "Pos": {
+      "Column": 12,
+      "Filename": "Doc_comment",
+      "Line": 2,
+      "Offset": 32
+     },
+     "Statements": null
+    },
+    "IsStatic": false,
+    "Name": "test",
+    "Parameters": null,
+    "Pos": {
+     "Column": 1,
+     "Filename": "Doc_comment",
+     "Line": 2,
+     "Offset": 21
+    },
+    "Return": null
+   }
+  }
+ ]
+}

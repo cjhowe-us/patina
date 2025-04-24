@@ -1,0 +1,256 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Block_atom_with_multiple_statements",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Block_atom_with_multiple_statements",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "Expression": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 1,
+       "Filename": "Block_atom_with_multiple_statements",
+       "Line": 1,
+       "Offset": 0
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Pos": {
+         "Column": 2,
+         "Filename": "Block_atom_with_multiple_statements",
+         "Line": 2,
+         "Offset": 3
+        },
+        "Statement": {
+         "IsMutable": false,
+         "IsStatic": false,
+         "Name": "x",
+         "Pos": {
+          "Column": 2,
+          "Filename": "Block_atom_with_multiple_statements",
+          "Line": 2,
+          "Offset": 3
+         },
+         "Type": null,
+         "Value": {
+          "Operands": [
+           {
+            "Atom": {
+             "Pos": {
+              "Column": 10,
+              "Filename": "Block_atom_with_multiple_statements",
+              "Line": 2,
+              "Offset": 11
+             },
+             "Value": {
+              "Pos": {
+               "Column": 10,
+               "Filename": "Block_atom_with_multiple_statements",
+               "Line": 2,
+               "Offset": 11
+              },
+              "Value": 1
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Pos": {
+           "Column": 10,
+           "Filename": "Block_atom_with_multiple_statements",
+           "Line": 2,
+           "Offset": 11
+          },
+          "Prefix": null
+         }
+        }
+       },
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Pos": {
+         "Column": 2,
+         "Filename": "Block_atom_with_multiple_statements",
+         "Line": 3,
+         "Offset": 14
+        },
+        "Statement": {
+         "IsMutable": false,
+         "IsStatic": false,
+         "Name": "y",
+         "Pos": {
+          "Column": 2,
+          "Filename": "Block_atom_with_multiple_statements",
+          "Line": 3,
+          "Offset": 14
+         },
+         "Type": {
+          "Pos": {
+           "Column": 9,
+           "Filename": "Block_atom_with_multiple_statements",
+           "Line": 3,
+           "Offset": 21
+          },
+          "Type": {
+           "IsMutable": false,
+           "IsOwned": false,
+           "IsRaw": false,
+           "Pos": {
+            "Column": 9,
+            "Filename": "Block_atom_with_multiple_statements",
+            "Line": 3,
+            "Offset": 21
+           },
+           "Target": {
+            "Pos": {
+             "Column": 10,
+             "Filename": "Block_atom_with_multiple_statements",
+             "Line": 3,
+             "Offset": 22
+            },
+            "Type": {
+             "BitSize": 32,
+             "Pos": {
+              "Column": 10,
+              "Filename": "Block_atom_with_multiple_statements",
+              "Line": 3,
+              "Offset": 22
+             },
+             "Signed": true
+            }
+           }
+          }
+         },
+         "Value": {
+          "Operands": [
+           {
+            "Atom": {
+             "Pos": {
+              "Column": 16,
+              "Filename": "Block_atom_with_multiple_statements",
+              "Line": 3,
+              "Offset": 28
+             },
+             "Value": {
+              "Pos": {
+               "Column": 16,
+               "Filename": "Block_atom_with_multiple_statements",
+               "Line": 3,
+               "Offset": 28
+              },
+              "Value": 2
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Pos": {
+           "Column": 16,
+           "Filename": "Block_atom_with_multiple_statements",
+           "Line": 3,
+           "Offset": 28
+          },
+          "Prefix": null
+         }
+        }
+       },
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Pos": {
+         "Column": 2,
+         "Filename": "Block_atom_with_multiple_statements",
+         "Line": 4,
+         "Offset": 31
+        },
+        "Statement": {
+         "Label": "",
+         "Pos": {
+          "Column": 2,
+          "Filename": "Block_atom_with_multiple_statements",
+          "Line": 4,
+          "Offset": 31
+         },
+         "Value": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "x",
+             "Pos": {
+              "Column": 8,
+              "Filename": "Block_atom_with_multiple_statements",
+              "Line": 4,
+              "Offset": 37
+             }
+            },
+            "Postfix": [
+             {
+              "Index": null,
+              "Invocation": null,
+              "Operator": "+",
+              "Pos": {
+               "Column": 10,
+               "Filename": "Block_atom_with_multiple_statements",
+               "Line": 4,
+               "Offset": 39
+              }
+             }
+            ]
+           },
+           {
+            "Atom": {
+             "Ident": "y",
+             "Pos": {
+              "Column": 12,
+              "Filename": "Block_atom_with_multiple_statements",
+              "Line": 4,
+              "Offset": 41
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Pos": {
+           "Column": 8,
+           "Filename": "Block_atom_with_multiple_statements",
+           "Line": 4,
+           "Offset": 37
+          },
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false,
+     "Pos": {
+      "Column": 1,
+      "Filename": "Block_atom_with_multiple_statements",
+      "Line": 1,
+      "Offset": 0
+     }
+    },
+    "Pos": {
+     "Column": 1,
+     "Filename": "Block_atom_with_multiple_statements",
+     "Line": 1,
+     "Offset": 0
+    }
+   }
+  }
+ ]
+}

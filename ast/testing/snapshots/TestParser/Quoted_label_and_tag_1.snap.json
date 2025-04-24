@@ -1,0 +1,103 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Quoted_label_and_tag",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Quoted_label_and_tag",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "Expression": {
+     "Operands": [
+      {
+       "Atom": {
+        "Expression": {
+         "Block": {
+          "Label": "my_label",
+          "Pos": {
+           "Column": 3,
+           "Filename": "Quoted_label_and_tag",
+           "Line": 1,
+           "Offset": 2
+          },
+          "Statements": [
+           {
+            "Annotations": [
+             {
+              "Arguments": null,
+              "Name": "my.tag",
+              "Pos": {
+               "Column": 15,
+               "Filename": "Quoted_label_and_tag",
+               "Line": 1,
+               "Offset": 14
+              }
+             }
+            ],
+            "Comments": null,
+            "Pos": {
+             "Column": 15,
+             "Filename": "Quoted_label_and_tag",
+             "Line": 1,
+             "Offset": 14
+            },
+            "Statement": {
+             "Label": "my_label",
+             "Pos": {
+              "Column": 23,
+              "Filename": "Quoted_label_and_tag",
+              "Line": 1,
+              "Offset": 22
+             },
+             "Value": null
+            }
+           }
+          ]
+         },
+         "IsStatic": false,
+         "Pos": {
+          "Column": 3,
+          "Filename": "Quoted_label_and_tag",
+          "Line": 1,
+          "Offset": 2
+         }
+        },
+        "Pos": {
+         "Column": 2,
+         "Filename": "Quoted_label_and_tag",
+         "Line": 1,
+         "Offset": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 1,
+      "Filename": "Quoted_label_and_tag",
+      "Line": 1,
+      "Offset": 0
+     },
+     "Prefix": [
+      "\\"
+     ]
+    },
+    "Pos": {
+     "Column": 1,
+     "Filename": "Quoted_label_and_tag",
+     "Line": 1,
+     "Offset": 0
+    }
+   }
+  }
+ ]
+}

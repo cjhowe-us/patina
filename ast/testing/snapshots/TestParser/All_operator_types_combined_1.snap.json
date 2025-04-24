@@ -1,0 +1,414 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "All_operator_types_combined",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "All_operator_types_combined",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "x",
+    "Pos": {
+     "Column": 1,
+     "Filename": "All_operator_types_combined",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Type": null,
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "a",
+            "Pos": {
+             "Column": 13,
+             "Filename": "All_operator_types_combined",
+             "Line": 1,
+             "Offset": 12
+            }
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "+",
+             "Pos": {
+              "Column": 15,
+              "Filename": "All_operator_types_combined",
+              "Line": 1,
+              "Offset": 14
+             }
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Ident": "b",
+            "Pos": {
+             "Column": 17,
+             "Filename": "All_operator_types_combined",
+             "Line": 1,
+             "Offset": 16
+            }
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "*",
+             "Pos": {
+              "Column": 19,
+              "Filename": "All_operator_types_combined",
+              "Line": 1,
+              "Offset": 18
+             }
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Ident": "c",
+            "Pos": {
+             "Column": 21,
+             "Filename": "All_operator_types_combined",
+             "Line": 1,
+             "Offset": 20
+            }
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "/",
+             "Pos": {
+              "Column": 23,
+              "Filename": "All_operator_types_combined",
+              "Line": 1,
+              "Offset": 22
+             }
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Ident": "d",
+            "Pos": {
+             "Column": 25,
+             "Filename": "All_operator_types_combined",
+             "Line": 1,
+             "Offset": 24
+            }
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "%",
+             "Pos": {
+              "Column": 27,
+              "Filename": "All_operator_types_combined",
+              "Line": 1,
+              "Offset": 26
+             }
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Ident": "e",
+            "Pos": {
+             "Column": 29,
+             "Filename": "All_operator_types_combined",
+             "Line": 1,
+             "Offset": 28
+            }
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "\u0026\u0026",
+             "Pos": {
+              "Column": 31,
+              "Filename": "All_operator_types_combined",
+              "Line": 1,
+              "Offset": 30
+             }
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Ident": "f",
+            "Pos": {
+             "Column": 34,
+             "Filename": "All_operator_types_combined",
+             "Line": 1,
+             "Offset": 33
+            }
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "||",
+             "Pos": {
+              "Column": 36,
+              "Filename": "All_operator_types_combined",
+              "Line": 1,
+              "Offset": 35
+             }
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Ident": "g",
+            "Pos": {
+             "Column": 39,
+             "Filename": "All_operator_types_combined",
+             "Line": 1,
+             "Offset": 38
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Pos": {
+          "Column": 13,
+          "Filename": "All_operator_types_combined",
+          "Line": 1,
+          "Offset": 12
+         },
+         "Prefix": null
+        },
+        "Pos": {
+         "Column": 12,
+         "Filename": "All_operator_types_combined",
+         "Line": 1,
+         "Offset": 11
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "==",
+         "Pos": {
+          "Column": 42,
+          "Filename": "All_operator_types_combined",
+          "Line": 1,
+          "Offset": 41
+         }
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "h",
+        "Pos": {
+         "Column": 45,
+         "Filename": "All_operator_types_combined",
+         "Line": 1,
+         "Offset": 44
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "!=",
+         "Pos": {
+          "Column": 47,
+          "Filename": "All_operator_types_combined",
+          "Line": 1,
+          "Offset": 46
+         }
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "i",
+        "Pos": {
+         "Column": 50,
+         "Filename": "All_operator_types_combined",
+         "Line": 1,
+         "Offset": 49
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "\u003c",
+         "Pos": {
+          "Column": 52,
+          "Filename": "All_operator_types_combined",
+          "Line": 1,
+          "Offset": 51
+         }
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "j",
+        "Pos": {
+         "Column": 54,
+         "Filename": "All_operator_types_combined",
+         "Line": 1,
+         "Offset": 53
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "\u003e",
+         "Pos": {
+          "Column": 56,
+          "Filename": "All_operator_types_combined",
+          "Line": 1,
+          "Offset": 55
+         }
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "k",
+        "Pos": {
+         "Column": 58,
+         "Filename": "All_operator_types_combined",
+         "Line": 1,
+         "Offset": 57
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "\u003c=",
+         "Pos": {
+          "Column": 60,
+          "Filename": "All_operator_types_combined",
+          "Line": 1,
+          "Offset": 59
+         }
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "l",
+        "Pos": {
+         "Column": 63,
+         "Filename": "All_operator_types_combined",
+         "Line": 1,
+         "Offset": 62
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "\u003e=",
+         "Pos": {
+          "Column": 65,
+          "Filename": "All_operator_types_combined",
+          "Line": 1,
+          "Offset": 64
+         }
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "m",
+        "Pos": {
+         "Column": 68,
+         "Filename": "All_operator_types_combined",
+         "Line": 1,
+         "Offset": 67
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "?",
+         "Pos": {
+          "Column": 69,
+          "Filename": "All_operator_types_combined",
+          "Line": 1,
+          "Offset": 68
+         }
+        },
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": ".",
+         "Pos": {
+          "Column": 70,
+          "Filename": "All_operator_types_combined",
+          "Line": 1,
+          "Offset": 69
+         }
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "n",
+        "Pos": {
+         "Column": 71,
+         "Filename": "All_operator_types_combined",
+         "Line": 1,
+         "Offset": 70
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "",
+         "Pos": {
+          "Column": 72,
+          "Filename": "All_operator_types_combined",
+          "Line": 1,
+          "Offset": 71
+         }
+        }
+       ]
+      }
+     ],
+     "Pos": {
+      "Column": 9,
+      "Filename": "All_operator_types_combined",
+      "Line": 1,
+      "Offset": 8
+     },
+     "Prefix": [
+      "!-~"
+     ]
+    }
+   }
+  }
+ ]
+}

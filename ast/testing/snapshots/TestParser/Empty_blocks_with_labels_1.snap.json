@@ -1,0 +1,85 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Empty_blocks_with_labels",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Empty_blocks_with_labels",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "Expression": {
+     "Block": {
+      "Label": "outer",
+      "Pos": {
+       "Column": 1,
+       "Filename": "Empty_blocks_with_labels",
+       "Line": 1,
+       "Offset": 0
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Pos": {
+         "Column": 2,
+         "Filename": "Empty_blocks_with_labels",
+         "Line": 2,
+         "Offset": 10
+        },
+        "Statement": {
+         "Expression": {
+          "Block": {
+           "Label": "inner",
+           "Pos": {
+            "Column": 2,
+            "Filename": "Empty_blocks_with_labels",
+            "Line": 2,
+            "Offset": 10
+           },
+           "Statements": null
+          },
+          "IsStatic": false,
+          "Pos": {
+           "Column": 2,
+           "Filename": "Empty_blocks_with_labels",
+           "Line": 2,
+           "Offset": 10
+          }
+         },
+         "Pos": {
+          "Column": 2,
+          "Filename": "Empty_blocks_with_labels",
+          "Line": 2,
+          "Offset": 10
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false,
+     "Pos": {
+      "Column": 1,
+      "Filename": "Empty_blocks_with_labels",
+      "Line": 1,
+      "Offset": 0
+     }
+    },
+    "Pos": {
+     "Column": 1,
+     "Filename": "Empty_blocks_with_labels",
+     "Line": 1,
+     "Offset": 0
+    }
+   }
+  }
+ ]
+}

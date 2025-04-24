@@ -1,0 +1,115 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Quoted_expression",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Quoted_expression",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "Expression": {
+     "Operands": [
+      {
+       "Atom": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Pos": {
+             "Column": 3,
+             "Filename": "Quoted_expression",
+             "Line": 1,
+             "Offset": 2
+            },
+            "Value": {
+             "Pos": {
+              "Column": 3,
+              "Filename": "Quoted_expression",
+              "Line": 1,
+              "Offset": 2
+             },
+             "Value": 1
+            }
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "+",
+             "Pos": {
+              "Column": 5,
+              "Filename": "Quoted_expression",
+              "Line": 1,
+              "Offset": 4
+             }
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Pos": {
+             "Column": 7,
+             "Filename": "Quoted_expression",
+             "Line": 1,
+             "Offset": 6
+            },
+            "Value": {
+             "Pos": {
+              "Column": 7,
+              "Filename": "Quoted_expression",
+              "Line": 1,
+              "Offset": 6
+             },
+             "Value": 2
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Pos": {
+          "Column": 3,
+          "Filename": "Quoted_expression",
+          "Line": 1,
+          "Offset": 2
+         },
+         "Prefix": null
+        },
+        "Pos": {
+         "Column": 2,
+         "Filename": "Quoted_expression",
+         "Line": 1,
+         "Offset": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 1,
+      "Filename": "Quoted_expression",
+      "Line": 1,
+      "Offset": 0
+     },
+     "Prefix": [
+      "\\"
+     ]
+    },
+    "Pos": {
+     "Column": 1,
+     "Filename": "Quoted_expression",
+     "Line": 1,
+     "Offset": 0
+    }
+   }
+  }
+ ]
+}

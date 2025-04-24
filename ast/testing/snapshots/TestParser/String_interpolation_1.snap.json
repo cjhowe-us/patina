@@ -1,0 +1,116 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "String_interpolation",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "String_interpolation",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "msg",
+    "Pos": {
+     "Column": 1,
+     "Filename": "String_interpolation",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Type": null,
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Pos": {
+         "Column": 11,
+         "Filename": "String_interpolation",
+         "Line": 1,
+         "Offset": 10
+        },
+        "Value": {
+         "Fragments": [
+          {
+           "Interpolation": null,
+           "Pos": {
+            "Column": 12,
+            "Filename": "String_interpolation",
+            "Line": 1,
+            "Offset": 11
+           },
+           "Text": "Hello, "
+          },
+          {
+           "Interpolation": {
+            "Operands": [
+             {
+              "Atom": {
+               "Ident": "name",
+               "Pos": {
+                "Column": 21,
+                "Filename": "String_interpolation",
+                "Line": 1,
+                "Offset": 20
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Pos": {
+             "Column": 21,
+             "Filename": "String_interpolation",
+             "Line": 1,
+             "Offset": 20
+            },
+            "Prefix": null
+           },
+           "Pos": {
+            "Column": 19,
+            "Filename": "String_interpolation",
+            "Line": 1,
+            "Offset": 18
+           },
+           "Text": ""
+          },
+          {
+           "Interpolation": null,
+           "Pos": {
+            "Column": 26,
+            "Filename": "String_interpolation",
+            "Line": 1,
+            "Offset": 25
+           },
+           "Text": "!"
+          }
+         ],
+         "Pos": {
+          "Column": 11,
+          "Filename": "String_interpolation",
+          "Line": 1,
+          "Offset": 10
+         }
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 11,
+      "Filename": "String_interpolation",
+      "Line": 1,
+      "Offset": 10
+     },
+     "Prefix": null
+    }
+   }
+  }
+ ]
+}

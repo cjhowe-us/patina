@@ -1,0 +1,11 @@
+{
+ "result": "root-left-right",
+ "visitLog": [
+  "Enter: root",
+  "Enter: left",
+  "Exit: left",
+  "Enter: right",
+  "Exit: right",
+  "Exit: root"
+ ]
+}

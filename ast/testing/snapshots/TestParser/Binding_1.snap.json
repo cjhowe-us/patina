@@ -1,0 +1,75 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Binding",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Binding",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "Expression": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "my",
+        "Pos": {
+         "Column": 1,
+         "Filename": "Binding",
+         "Line": 1,
+         "Offset": 0
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": ".",
+         "Pos": {
+          "Column": 3,
+          "Filename": "Binding",
+          "Line": 1,
+          "Offset": 2
+         }
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "-path",
+        "Pos": {
+         "Column": 4,
+         "Filename": "Binding",
+         "Line": 1,
+         "Offset": 3
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 1,
+      "Filename": "Binding",
+      "Line": 1,
+      "Offset": 0
+     },
+     "Prefix": null
+    },
+    "Pos": {
+     "Column": 1,
+     "Filename": "Binding",
+     "Line": 1,
+     "Offset": 0
+    }
+   }
+  }
+ ]
+}

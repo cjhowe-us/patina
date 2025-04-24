@@ -2,7 +2,6 @@ package ast
 
 import (
 	"strings"
-	"sync"
 )
 
 // Visitor is the interface implemented by AST visitors.
@@ -35,40 +34,23 @@ func Walk[Input any, Output any](v Visitor[Input, Output], input *Input, node Sy
 
 	children := node.Children()
 	childrenResults := make([]*Output, len(children))
-	var waitGroup sync.WaitGroup
-	waitGroup.Add(len(children))
-	errChan := make(chan error, len(children))
-	defer close(errChan)
-	for i, child := range children {
-		go func(i int, child SyntaxNode) {
-			defer waitGroup.Done()
-
-			var input *Input
-			if i < len(childInputs) {
-				input = childInputs[i]
-			} else {
-				input = nil
-			}
-			childResult, err := Walk(v, input, child)
-			if err != nil {
-				errChan <- err
-			}
-			childrenResults[i] = childResult
-		}(i, child)
-	}
-
-	waitGroup.Wait()
-
 	errs := ErrorList{}
-errloop:
-	for {
-		select {
-		case val := <-errChan:
-			errs = append(errs, val)
-		default:
-			break errloop
+
+	for i, child := range children {
+		var childInput *Input
+		if i < len(childInputs) {
+			childInput = childInputs[i]
+		} else {
+			childInput = nil
 		}
+
+		childResult, err := Walk(v, childInput, child)
+		if err != nil {
+			errs = append(errs, err)
+		}
+		childrenResults[i] = childResult
 	}
+
 	if len(errs) > 0 {
 		return nil, errs
 	}

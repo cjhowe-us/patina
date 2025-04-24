@@ -1,0 +1,63 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Simple_binding",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Simple_binding",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "x",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Simple_binding",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Type": null,
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Pos": {
+         "Column": 9,
+         "Filename": "Simple_binding",
+         "Line": 1,
+         "Offset": 8
+        },
+        "Value": {
+         "Pos": {
+          "Column": 9,
+          "Filename": "Simple_binding",
+          "Line": 1,
+          "Offset": 8
+         },
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 9,
+      "Filename": "Simple_binding",
+      "Line": 1,
+      "Offset": 8
+     },
+     "Prefix": null
+    }
+   }
+  }
+ ]
+}

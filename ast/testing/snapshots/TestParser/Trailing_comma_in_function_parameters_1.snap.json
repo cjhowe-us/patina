@@ -1,0 +1,70 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Trailing_comma_in_function_parameters",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Trailing_comma_in_function_parameters",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "Block": {
+     "Label": "",
+     "Pos": {
+      "Column": 20,
+      "Filename": "Trailing_comma_in_function_parameters",
+      "Line": 1,
+      "Offset": 19
+     },
+     "Statements": null
+    },
+    "IsStatic": false,
+    "Name": "test",
+    "Parameters": [
+     {
+      "Name": "a",
+      "Pos": {
+       "Column": 10,
+       "Filename": "Trailing_comma_in_function_parameters",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Type": {
+       "Pos": {
+        "Column": 13,
+        "Filename": "Trailing_comma_in_function_parameters",
+        "Line": 1,
+        "Offset": 12
+       },
+       "Type": {
+        "BitSize": 32,
+        "Pos": {
+         "Column": 13,
+         "Filename": "Trailing_comma_in_function_parameters",
+         "Line": 1,
+         "Offset": 12
+        },
+        "Signed": true
+       }
+      }
+     }
+    ],
+    "Pos": {
+     "Column": 1,
+     "Filename": "Trailing_comma_in_function_parameters",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Return": null
+   }
+  }
+ ]
+}

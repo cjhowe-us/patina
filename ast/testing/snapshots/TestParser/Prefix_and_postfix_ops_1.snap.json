@@ -1,0 +1,69 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Prefix_and_postfix_ops",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Prefix_and_postfix_ops",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "x",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Prefix_and_postfix_ops",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Type": null,
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "true",
+        "Pos": {
+         "Column": 10,
+         "Filename": "Prefix_and_postfix_ops",
+         "Line": 1,
+         "Offset": 9
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "?",
+         "Pos": {
+          "Column": 14,
+          "Filename": "Prefix_and_postfix_ops",
+          "Line": 1,
+          "Offset": 13
+         }
+        }
+       ]
+      }
+     ],
+     "Pos": {
+      "Column": 9,
+      "Filename": "Prefix_and_postfix_ops",
+      "Line": 1,
+      "Offset": 8
+     },
+     "Prefix": [
+      "!"
+     ]
+    }
+   }
+  }
+ ]
+}

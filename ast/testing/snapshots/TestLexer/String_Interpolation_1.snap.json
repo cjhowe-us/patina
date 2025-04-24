@@ -1,0 +1,82 @@
+[
+ {
+  "Pos": {
+   "Column": 1,
+   "Filename": "String_Interpolation",
+   "Line": 1,
+   "Offset": 0
+  },
+  "Type": -19,
+  "Value": "\""
+ },
+ {
+  "Pos": {
+   "Column": 2,
+   "Filename": "String_Interpolation",
+   "Line": 1,
+   "Offset": 1
+  },
+  "Type": -22,
+  "Value": "Hello, "
+ },
+ {
+  "Pos": {
+   "Column": 9,
+   "Filename": "String_Interpolation",
+   "Line": 1,
+   "Offset": 8
+  },
+  "Type": -21,
+  "Value": "\\("
+ },
+ {
+  "Pos": {
+   "Column": 11,
+   "Filename": "String_Interpolation",
+   "Line": 1,
+   "Offset": 10
+  },
+  "Type": -14,
+  "Value": "name"
+ },
+ {
+  "Pos": {
+   "Column": 15,
+   "Filename": "String_Interpolation",
+   "Line": 1,
+   "Offset": 14
+  },
+  "Type": -11,
+  "Value": ")"
+ },
+ {
+  "Pos": {
+   "Column": 16,
+   "Filename": "String_Interpolation",
+   "Line": 1,
+   "Offset": 15
+  },
+  "Type": -22,
+  "Value": "!"
+ },
+ {
+  "Pos": {
+   "Column": 17,
+   "Filename": "String_Interpolation",
+   "Line": 1,
+   "Offset": 16
+  },
+  "Type": -20,
+  "Value": "\""
+ },
+ {
+  "Pos": {
+   "Column": 18,
+   "Filename": "String_Interpolation",
+   "Line": 1,
+   "Offset": 17
+  },
+  "Type": -1,
+  "Value": ""
+ }
+]

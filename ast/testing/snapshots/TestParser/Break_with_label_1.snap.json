@@ -1,0 +1,30 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Break_with_label",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Break_with_label",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "Label": "myLabel",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Break_with_label",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Value": null
+   }
+  }
+ ]
+}

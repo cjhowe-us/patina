@@ -1,0 +1,3 @@
+{
+ "error": "Incomplete_string_interpolation:1:7: unexpected token \"=\" (expected \u003ceof\u003e)"
+}

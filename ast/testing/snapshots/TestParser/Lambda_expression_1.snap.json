@@ -1,0 +1,158 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Lambda_expression",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Lambda_expression",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "adder",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Lambda_expression",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Type": null,
+    "Value": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 26,
+       "Filename": "Lambda_expression",
+       "Line": 1,
+       "Offset": 25
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Pos": {
+         "Column": 2,
+         "Filename": "Lambda_expression",
+         "Line": 2,
+         "Offset": 28
+        },
+        "Statement": {
+         "IsMutable": false,
+         "IsStatic": false,
+         "Name": "a",
+         "Pos": {
+          "Column": 2,
+          "Filename": "Lambda_expression",
+          "Line": 2,
+          "Offset": 28
+         },
+         "Type": null,
+         "Value": {
+          "Operands": [
+           {
+            "Atom": {
+             "Pos": {
+              "Column": 10,
+              "Filename": "Lambda_expression",
+              "Line": 2,
+              "Offset": 36
+             },
+             "Value": {
+              "Pos": {
+               "Column": 10,
+               "Filename": "Lambda_expression",
+               "Line": 2,
+               "Offset": 36
+              },
+              "Value": 1
+             }
+            },
+            "Postfix": [
+             {
+              "Index": null,
+              "Invocation": null,
+              "Operator": "+",
+              "Pos": {
+               "Column": 12,
+               "Filename": "Lambda_expression",
+               "Line": 2,
+               "Offset": 38
+              }
+             }
+            ]
+           },
+           {
+            "Atom": {
+             "Ident": "b",
+             "Pos": {
+              "Column": 14,
+              "Filename": "Lambda_expression",
+              "Line": 2,
+              "Offset": 40
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Pos": {
+           "Column": 10,
+           "Filename": "Lambda_expression",
+           "Line": 2,
+           "Offset": 36
+          },
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "Parameters": [
+      {
+       "Name": "b",
+       "Pos": {
+        "Column": 18,
+        "Filename": "Lambda_expression",
+        "Line": 1,
+        "Offset": 17
+       },
+       "Type": {
+        "Pos": {
+         "Column": 21,
+         "Filename": "Lambda_expression",
+         "Line": 1,
+         "Offset": 20
+        },
+        "Type": {
+         "BitSize": 32,
+         "Pos": {
+          "Column": 21,
+          "Filename": "Lambda_expression",
+          "Line": 1,
+          "Offset": 20
+         },
+         "Signed": true
+        }
+       }
+      }
+     ],
+     "Pos": {
+      "Column": 13,
+      "Filename": "Lambda_expression",
+      "Line": 1,
+      "Offset": 12
+     },
+     "Return": null
+    }
+   }
+  }
+ ]
+}

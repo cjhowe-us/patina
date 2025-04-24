@@ -1,0 +1,95 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Trailing_comma_in_function_call_arguments",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Trailing_comma_in_function_call_arguments",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "Expression": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "test",
+        "Pos": {
+         "Column": 1,
+         "Filename": "Trailing_comma_in_function_call_arguments",
+         "Line": 1,
+         "Offset": 0
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": [
+          {
+           "Operands": [
+            {
+             "Atom": {
+              "Pos": {
+               "Column": 6,
+               "Filename": "Trailing_comma_in_function_call_arguments",
+               "Line": 1,
+               "Offset": 5
+              },
+              "Value": {
+               "Pos": {
+                "Column": 6,
+                "Filename": "Trailing_comma_in_function_call_arguments",
+                "Line": 1,
+                "Offset": 5
+               },
+               "Value": 1
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Pos": {
+            "Column": 6,
+            "Filename": "Trailing_comma_in_function_call_arguments",
+            "Line": 1,
+            "Offset": 5
+           },
+           "Prefix": null
+          }
+         ],
+         "Operator": "",
+         "Pos": {
+          "Column": 5,
+          "Filename": "Trailing_comma_in_function_call_arguments",
+          "Line": 1,
+          "Offset": 4
+         }
+        }
+       ]
+      }
+     ],
+     "Pos": {
+      "Column": 1,
+      "Filename": "Trailing_comma_in_function_call_arguments",
+      "Line": 1,
+      "Offset": 0
+     },
+     "Prefix": null
+    },
+    "Pos": {
+     "Column": 1,
+     "Filename": "Trailing_comma_in_function_call_arguments",
+     "Line": 1,
+     "Offset": 0
+    }
+   }
+  }
+ ]
+}

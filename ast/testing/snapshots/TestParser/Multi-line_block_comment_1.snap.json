@@ -1,0 +1,72 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Multi-line_block_comment",
+  "Line": 5,
+  "Offset": 77
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": {
+    "NestedComments": null,
+    "Pos": {
+     "Column": 1,
+     "Filename": "Multi-line_block_comment",
+     "Line": 5,
+     "Offset": 77
+    },
+    "Text": "\n   and more text "
+   },
+   "Pos": {
+    "Column": 1,
+    "Filename": "Multi-line_block_comment",
+    "Line": 5,
+    "Offset": 77
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "x",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Multi-line_block_comment",
+     "Line": 5,
+     "Offset": 77
+    },
+    "Type": null,
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Pos": {
+         "Column": 9,
+         "Filename": "Multi-line_block_comment",
+         "Line": 5,
+         "Offset": 85
+        },
+        "Value": {
+         "Pos": {
+          "Column": 9,
+          "Filename": "Multi-line_block_comment",
+          "Line": 5,
+          "Offset": 85
+         },
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 9,
+      "Filename": "Multi-line_block_comment",
+      "Line": 5,
+      "Offset": 85
+     },
+     "Prefix": null
+    }
+   }
+  }
+ ]
+}

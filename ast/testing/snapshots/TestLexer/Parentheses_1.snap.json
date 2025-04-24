@@ -1,0 +1,32 @@
+[
+ {
+  "Pos": {
+   "Column": 1,
+   "Filename": "Parentheses",
+   "Line": 1,
+   "Offset": 0
+  },
+  "Type": -10,
+  "Value": "("
+ },
+ {
+  "Pos": {
+   "Column": 2,
+   "Filename": "Parentheses",
+   "Line": 1,
+   "Offset": 1
+  },
+  "Type": -11,
+  "Value": ")"
+ },
+ {
+  "Pos": {
+   "Column": 3,
+   "Filename": "Parentheses",
+   "Line": 1,
+   "Offset": 2
+  },
+  "Type": -1,
+  "Value": ""
+ }
+]

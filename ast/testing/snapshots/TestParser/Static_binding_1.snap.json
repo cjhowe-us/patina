@@ -1,0 +1,63 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Static_binding",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Static_binding",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": true,
+    "Name": "z",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Static_binding",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Type": null,
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Pos": {
+         "Column": 16,
+         "Filename": "Static_binding",
+         "Line": 1,
+         "Offset": 15
+        },
+        "Value": {
+         "Pos": {
+          "Column": 16,
+          "Filename": "Static_binding",
+          "Line": 1,
+          "Offset": 15
+         },
+         "Value": 3
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 16,
+      "Filename": "Static_binding",
+      "Line": 1,
+      "Offset": 15
+     },
+     "Prefix": null
+    }
+   }
+  }
+ ]
+}

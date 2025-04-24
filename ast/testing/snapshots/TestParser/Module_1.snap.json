@@ -1,0 +1,99 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Module",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Module",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "Body": {
+     "Label": "",
+     "Pos": {
+      "Column": 13,
+      "Filename": "Module",
+      "Line": 1,
+      "Offset": 12
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Pos": {
+        "Column": 2,
+        "Filename": "Module",
+        "Line": 2,
+        "Offset": 15
+       },
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "x",
+        "Pos": {
+         "Column": 2,
+         "Filename": "Module",
+         "Line": 2,
+         "Offset": 15
+        },
+        "Type": null,
+        "Value": {
+         "Pos": {
+          "Column": 10,
+          "Filename": "Module",
+          "Line": 2,
+          "Offset": 23
+         },
+         "Type": {
+          "IsMutable": true,
+          "IsOwned": false,
+          "IsRaw": false,
+          "Pos": {
+           "Column": 10,
+           "Filename": "Module",
+           "Line": 2,
+           "Offset": 23
+          },
+          "Target": {
+           "Pos": {
+            "Column": 15,
+            "Filename": "Module",
+            "Line": 2,
+            "Offset": 28
+           },
+           "Type": {
+            "BitSize": 32,
+            "Pos": {
+             "Column": 15,
+             "Filename": "Module",
+             "Line": 2,
+             "Offset": 28
+            },
+            "Signed": true
+           }
+          }
+         }
+        }
+       }
+      }
+     ]
+    },
+    "Name": "test",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Module",
+     "Line": 1,
+     "Offset": 0
+    }
+   }
+  }
+ ]
+}

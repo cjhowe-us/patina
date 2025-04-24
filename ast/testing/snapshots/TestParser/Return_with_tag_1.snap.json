@@ -1,0 +1,30 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Return_with_tag",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Return_with_tag",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "Label": "label",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Return_with_tag",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Value": null
+   }
+  }
+ ]
+}

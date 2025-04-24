@@ -1,0 +1,51 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Comments",
+  "Line": 3,
+  "Offset": 36
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": {
+    "NestedComments": null,
+    "Pos": {
+     "Column": 1,
+     "Filename": "Comments",
+     "Line": 3,
+     "Offset": 36
+    },
+    "Text": " Block comment "
+   },
+   "Pos": {
+    "Column": 1,
+    "Filename": "Comments",
+    "Line": 3,
+    "Offset": 36
+   },
+   "Statement": {
+    "Block": {
+     "Label": "",
+     "Pos": {
+      "Column": 12,
+      "Filename": "Comments",
+      "Line": 3,
+      "Offset": 47
+     },
+     "Statements": null
+    },
+    "IsStatic": false,
+    "Name": "test",
+    "Parameters": null,
+    "Pos": {
+     "Column": 1,
+     "Filename": "Comments",
+     "Line": 3,
+     "Offset": 36
+    },
+    "Return": null
+   }
+  }
+ ]
+}

@@ -1,0 +1,82 @@
+[
+ {
+  "Pos": {
+   "Column": 1,
+   "Filename": "Nested_Block_Comment",
+   "Line": 1,
+   "Offset": 0
+  },
+  "Type": -6,
+  "Value": "/*"
+ },
+ {
+  "Pos": {
+   "Column": 3,
+   "Filename": "Nested_Block_Comment",
+   "Line": 1,
+   "Offset": 2
+  },
+  "Type": -4,
+  "Value": " nested "
+ },
+ {
+  "Pos": {
+   "Column": 11,
+   "Filename": "Nested_Block_Comment",
+   "Line": 1,
+   "Offset": 10
+  },
+  "Type": -6,
+  "Value": "/*"
+ },
+ {
+  "Pos": {
+   "Column": 13,
+   "Filename": "Nested_Block_Comment",
+   "Line": 1,
+   "Offset": 12
+  },
+  "Type": -4,
+  "Value": " block "
+ },
+ {
+  "Pos": {
+   "Column": 20,
+   "Filename": "Nested_Block_Comment",
+   "Line": 1,
+   "Offset": 19
+  },
+  "Type": -2,
+  "Value": "*/"
+ },
+ {
+  "Pos": {
+   "Column": 22,
+   "Filename": "Nested_Block_Comment",
+   "Line": 1,
+   "Offset": 21
+  },
+  "Type": -4,
+  "Value": " comment "
+ },
+ {
+  "Pos": {
+   "Column": 31,
+   "Filename": "Nested_Block_Comment",
+   "Line": 1,
+   "Offset": 30
+  },
+  "Type": -2,
+  "Value": "*/"
+ },
+ {
+  "Pos": {
+   "Column": 33,
+   "Filename": "Nested_Block_Comment",
+   "Line": 1,
+   "Offset": 32
+  },
+  "Type": -1,
+  "Value": ""
+ }
+]

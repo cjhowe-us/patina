@@ -1,0 +1,361 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Type_value",
+  "Line": 2,
+  "Offset": 1
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Type_value",
+    "Line": 2,
+    "Offset": 1
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "x",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Type_value",
+     "Line": 2,
+     "Offset": 1
+    },
+    "Type": {
+     "Pos": {
+      "Column": 8,
+      "Filename": "Type_value",
+      "Line": 2,
+      "Offset": 8
+     },
+     "Type": {
+      "BitSize": 64,
+      "Pos": {
+       "Column": 8,
+       "Filename": "Type_value",
+       "Line": 2,
+       "Offset": 8
+      },
+      "Signed": true
+     }
+    },
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Pos": {
+         "Column": 14,
+         "Filename": "Type_value",
+         "Line": 2,
+         "Offset": 14
+        },
+        "Value": {
+         "Pos": {
+          "Column": 14,
+          "Filename": "Type_value",
+          "Line": 2,
+          "Offset": 14
+         },
+         "Value": 10
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 14,
+      "Filename": "Type_value",
+      "Line": 2,
+      "Offset": 14
+     },
+     "Prefix": null
+    }
+   }
+  },
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Type_value",
+    "Line": 3,
+    "Offset": 17
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "ptr",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Type_value",
+     "Line": 3,
+     "Offset": 17
+    },
+    "Type": {
+     "Pos": {
+      "Column": 10,
+      "Filename": "Type_value",
+      "Line": 3,
+      "Offset": 26
+     },
+     "Type": {
+      "IsMutable": true,
+      "IsOwned": false,
+      "IsRaw": false,
+      "Pos": {
+       "Column": 10,
+       "Filename": "Type_value",
+       "Line": 3,
+       "Offset": 26
+      },
+      "Target": {
+       "Pos": {
+        "Column": 15,
+        "Filename": "Type_value",
+        "Line": 3,
+        "Offset": 31
+       },
+       "Type": {
+        "BitSize": 64,
+        "Pos": {
+         "Column": 15,
+         "Filename": "Type_value",
+         "Line": 3,
+         "Offset": 31
+        },
+        "Signed": true
+       }
+      }
+     }
+    },
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Pos": {
+         "Column": 21,
+         "Filename": "Type_value",
+         "Line": 3,
+         "Offset": 37
+        },
+        "Value": {
+         "Pos": {
+          "Column": 21,
+          "Filename": "Type_value",
+          "Line": 3,
+          "Offset": 37
+         },
+         "Value": 20
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 21,
+      "Filename": "Type_value",
+      "Line": 3,
+      "Offset": 37
+     },
+     "Prefix": null
+    }
+   }
+  },
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Type_value",
+    "Line": 4,
+    "Offset": 40
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "arr",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Type_value",
+     "Line": 4,
+     "Offset": 40
+    },
+    "Type": {
+     "Pos": {
+      "Column": 10,
+      "Filename": "Type_value",
+      "Line": 4,
+      "Offset": 49
+     },
+     "Type": {
+      "Dimension": 10,
+      "Element": {
+       "Pos": {
+        "Column": 14,
+        "Filename": "Type_value",
+        "Line": 4,
+        "Offset": 53
+       },
+       "Type": {
+        "BitSize": 64,
+        "Pos": {
+         "Column": 14,
+         "Filename": "Type_value",
+         "Line": 4,
+         "Offset": 53
+        },
+        "Signed": true
+       }
+      },
+      "Pos": {
+       "Column": 10,
+       "Filename": "Type_value",
+       "Line": 4,
+       "Offset": 49
+      }
+     }
+    },
+    "Value": null
+   }
+  },
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Type_value",
+    "Line": 5,
+    "Offset": 57
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "fn",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Type_value",
+     "Line": 5,
+     "Offset": 57
+    },
+    "Type": {
+     "Pos": {
+      "Column": 9,
+      "Filename": "Type_value",
+      "Line": 5,
+      "Offset": 65
+     },
+     "Type": {
+      "Name": "add",
+      "Parameters": [
+       {
+        "Name": "a",
+        "Pos": {
+         "Column": 17,
+         "Filename": "Type_value",
+         "Line": 5,
+         "Offset": 73
+        },
+        "Type": {
+         "Pos": {
+          "Column": 20,
+          "Filename": "Type_value",
+          "Line": 5,
+          "Offset": 76
+         },
+         "Type": {
+          "BitSize": 64,
+          "Pos": {
+           "Column": 20,
+           "Filename": "Type_value",
+           "Line": 5,
+           "Offset": 76
+          },
+          "Signed": true
+         }
+        }
+       },
+       {
+        "Name": "b",
+        "Pos": {
+         "Column": 25,
+         "Filename": "Type_value",
+         "Line": 5,
+         "Offset": 81
+        },
+        "Type": {
+         "Pos": {
+          "Column": 28,
+          "Filename": "Type_value",
+          "Line": 5,
+          "Offset": 84
+         },
+         "Type": {
+          "BitSize": 64,
+          "Pos": {
+           "Column": 28,
+           "Filename": "Type_value",
+           "Line": 5,
+           "Offset": 84
+          },
+          "Signed": true
+         }
+        }
+       }
+      ],
+      "Pos": {
+       "Column": 9,
+       "Filename": "Type_value",
+       "Line": 5,
+       "Offset": 65
+      },
+      "Return": {
+       "Pos": {
+        "Column": 34,
+        "Filename": "Type_value",
+        "Line": 5,
+        "Offset": 90
+       },
+       "Type": {
+        "BitSize": 64,
+        "Pos": {
+         "Column": 34,
+         "Filename": "Type_value",
+         "Line": 5,
+         "Offset": 90
+        },
+        "Signed": true
+       }
+      }
+     }
+    },
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "add",
+        "Pos": {
+         "Column": 40,
+         "Filename": "Type_value",
+         "Line": 5,
+         "Offset": 96
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 40,
+      "Filename": "Type_value",
+      "Line": 5,
+      "Offset": 96
+     },
+     "Prefix": null
+    }
+   }
+  }
+ ]
+}

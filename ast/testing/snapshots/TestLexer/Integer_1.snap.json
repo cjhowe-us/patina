@@ -1,0 +1,22 @@
+[
+ {
+  "Pos": {
+   "Column": 1,
+   "Filename": "Integer",
+   "Line": 1,
+   "Offset": 0
+  },
+  "Type": -18,
+  "Value": "123"
+ },
+ {
+  "Pos": {
+   "Column": 4,
+   "Filename": "Integer",
+   "Line": 1,
+   "Offset": 3
+  },
+  "Type": -1,
+  "Value": ""
+ }
+]

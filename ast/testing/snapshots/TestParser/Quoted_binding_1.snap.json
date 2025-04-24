@@ -1,0 +1,99 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Quoted_binding",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Quoted_binding",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "Expression": {
+     "Operands": [
+      {
+       "Atom": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "my",
+            "Pos": {
+             "Column": 3,
+             "Filename": "Quoted_binding",
+             "Line": 1,
+             "Offset": 2
+            }
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": ".",
+             "Pos": {
+              "Column": 5,
+              "Filename": "Quoted_binding",
+              "Line": 1,
+              "Offset": 4
+             }
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Ident": "-path",
+            "Pos": {
+             "Column": 6,
+             "Filename": "Quoted_binding",
+             "Line": 1,
+             "Offset": 5
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Pos": {
+          "Column": 3,
+          "Filename": "Quoted_binding",
+          "Line": 1,
+          "Offset": 2
+         },
+         "Prefix": null
+        },
+        "Pos": {
+         "Column": 2,
+         "Filename": "Quoted_binding",
+         "Line": 1,
+         "Offset": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 1,
+      "Filename": "Quoted_binding",
+      "Line": 1,
+      "Offset": 0
+     },
+     "Prefix": [
+      "\\"
+     ]
+    },
+    "Pos": {
+     "Column": 1,
+     "Filename": "Quoted_binding",
+     "Line": 1,
+     "Offset": 0
+    }
+   }
+  }
+ ]
+}

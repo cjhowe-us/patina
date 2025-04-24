@@ -1,0 +1,42 @@
+[
+ {
+  "Pos": {
+   "Column": 1,
+   "Filename": "String",
+   "Line": 1,
+   "Offset": 0
+  },
+  "Type": -19,
+  "Value": "\""
+ },
+ {
+  "Pos": {
+   "Column": 2,
+   "Filename": "String",
+   "Line": 1,
+   "Offset": 1
+  },
+  "Type": -22,
+  "Value": "Hello, world!"
+ },
+ {
+  "Pos": {
+   "Column": 15,
+   "Filename": "String",
+   "Line": 1,
+   "Offset": 14
+  },
+  "Type": -20,
+  "Value": "\""
+ },
+ {
+  "Pos": {
+   "Column": 16,
+   "Filename": "String",
+   "Line": 1,
+   "Offset": 15
+  },
+  "Type": -1,
+  "Value": ""
+ }
+]

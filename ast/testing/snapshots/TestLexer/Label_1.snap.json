@@ -1,0 +1,22 @@
+[
+ {
+  "Pos": {
+   "Column": 1,
+   "Filename": "Label",
+   "Line": 1,
+   "Offset": 0
+  },
+  "Type": -12,
+  "Value": ":label"
+ },
+ {
+  "Pos": {
+   "Column": 7,
+   "Filename": "Label",
+   "Line": 1,
+   "Offset": 6
+  },
+  "Type": -1,
+  "Value": ""
+ }
+]

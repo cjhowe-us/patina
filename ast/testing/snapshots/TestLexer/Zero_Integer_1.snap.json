@@ -1,0 +1,22 @@
+[
+ {
+  "Pos": {
+   "Column": 1,
+   "Filename": "Zero_Integer",
+   "Line": 1,
+   "Offset": 0
+  },
+  "Type": -18,
+  "Value": "0"
+ },
+ {
+  "Pos": {
+   "Column": 2,
+   "Filename": "Zero_Integer",
+   "Line": 1,
+   "Offset": 1
+  },
+  "Type": -1,
+  "Value": ""
+ }
+]

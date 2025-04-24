@@ -1,0 +1,15 @@
+{
+ "result": "root-leftBranch-leftLeaf1-leftLeaf2-rightBranch",
+ "visitLog": [
+  "Enter: root",
+  "Enter: leftBranch",
+  "Enter: leftLeaf1",
+  "Exit: leftLeaf1",
+  "Enter: leftLeaf2",
+  "Exit: leftLeaf2",
+  "Exit: leftBranch",
+  "Enter: rightBranch",
+  "Exit: rightBranch",
+  "Exit: root"
+ ]
+}

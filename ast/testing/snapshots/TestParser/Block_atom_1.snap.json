@@ -1,0 +1,101 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Block_atom",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Block_atom",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "Expression": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 1,
+       "Filename": "Block_atom",
+       "Line": 1,
+       "Offset": 0
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Pos": {
+         "Column": 2,
+         "Filename": "Block_atom",
+         "Line": 2,
+         "Offset": 3
+        },
+        "Statement": {
+         "IsMutable": false,
+         "IsStatic": false,
+         "Name": "x",
+         "Pos": {
+          "Column": 2,
+          "Filename": "Block_atom",
+          "Line": 2,
+          "Offset": 3
+         },
+         "Type": null,
+         "Value": {
+          "Operands": [
+           {
+            "Atom": {
+             "Pos": {
+              "Column": 10,
+              "Filename": "Block_atom",
+              "Line": 2,
+              "Offset": 11
+             },
+             "Value": {
+              "Pos": {
+               "Column": 10,
+               "Filename": "Block_atom",
+               "Line": 2,
+               "Offset": 11
+              },
+              "Value": 1
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Pos": {
+           "Column": 10,
+           "Filename": "Block_atom",
+           "Line": 2,
+           "Offset": 11
+          },
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false,
+     "Pos": {
+      "Column": 1,
+      "Filename": "Block_atom",
+      "Line": 1,
+      "Offset": 0
+     }
+    },
+    "Pos": {
+     "Column": 1,
+     "Filename": "Block_atom",
+     "Line": 1,
+     "Offset": 0
+    }
+   }
+  }
+ ]
+}
