@@ -1,32 +1,14 @@
 [
  {
-  "Pos": {
-   "Column": 1,
-   "Filename": "Empty_String",
-   "Line": 1,
-   "Offset": 0
-  },
-  "Type": -19,
-  "Value": "\""
+  "type": "StringStart",
+  "value": "\""
  },
  {
-  "Pos": {
-   "Column": 2,
-   "Filename": "Empty_String",
-   "Line": 1,
-   "Offset": 1
-  },
-  "Type": -20,
-  "Value": "\""
+  "type": "StringEnd",
+  "value": "\""
  },
  {
-  "Pos": {
-   "Column": 3,
-   "Filename": "Empty_String",
-   "Line": 1,
-   "Offset": 2
-  },
-  "Type": -1,
-  "Value": ""
+  "type": "EOF",
+  "value": ""
  }
 ]

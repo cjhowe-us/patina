@@ -1,22 +1,10 @@
 [
  {
-  "Pos": {
-   "Column": 1,
-   "Filename": "Tag",
-   "Line": 1,
-   "Offset": 0
-  },
-  "Type": -13,
-  "Value": "@ns.tag"
+  "type": "Tag",
+  "value": "@ns.tag"
  },
  {
-  "Pos": {
-   "Column": 8,
-   "Filename": "Tag",
-   "Line": 1,
-   "Offset": 7
-  },
-  "Type": -1,
-  "Value": ""
+  "type": "EOF",
+  "value": ""
  }
 ]

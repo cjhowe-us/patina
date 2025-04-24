@@ -1,22 +1,10 @@
 [
  {
-  "Pos": {
-   "Column": 1,
-   "Filename": "Postfix_operator",
-   "Line": 1,
-   "Offset": 0
-  },
-  "Type": -17,
-  "Value": "?"
+  "type": "Operator",
+  "value": "?"
  },
  {
-  "Pos": {
-   "Column": 2,
-   "Filename": "Postfix_operator",
-   "Line": 1,
-   "Offset": 1
-  },
-  "Type": -1,
-  "Value": ""
+  "type": "EOF",
+  "value": ""
  }
 ]
