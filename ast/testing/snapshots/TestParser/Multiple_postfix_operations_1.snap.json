@@ -1,0 +1,191 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Multiple_postfix_operations",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Multiple_postfix_operations",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "result",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Multiple_postfix_operations",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Type": null,
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "getValue",
+        "Pos": {
+         "Column": 14,
+         "Filename": "Multiple_postfix_operations",
+         "Line": 1,
+         "Offset": 13
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "",
+         "Pos": {
+          "Column": 22,
+          "Filename": "Multiple_postfix_operations",
+          "Line": 1,
+          "Offset": 21
+         }
+        },
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "?",
+         "Pos": {
+          "Column": 24,
+          "Filename": "Multiple_postfix_operations",
+          "Line": 1,
+          "Offset": 23
+         }
+        },
+        {
+         "Index": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "index",
+             "Pos": {
+              "Column": 26,
+              "Filename": "Multiple_postfix_operations",
+              "Line": 1,
+              "Offset": 25
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Pos": {
+           "Column": 26,
+           "Filename": "Multiple_postfix_operations",
+           "Line": 1,
+           "Offset": 25
+          },
+          "Prefix": null
+         },
+         "Invocation": null,
+         "Operator": "",
+         "Pos": {
+          "Column": 25,
+          "Filename": "Multiple_postfix_operations",
+          "Line": 1,
+          "Offset": 24
+         }
+        },
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "?",
+         "Pos": {
+          "Column": 32,
+          "Filename": "Multiple_postfix_operations",
+          "Line": 1,
+          "Offset": 31
+         }
+        },
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": ".",
+         "Pos": {
+          "Column": 33,
+          "Filename": "Multiple_postfix_operations",
+          "Line": 1,
+          "Offset": 32
+         }
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "process",
+        "Pos": {
+         "Column": 34,
+         "Filename": "Multiple_postfix_operations",
+         "Line": 1,
+         "Offset": 33
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "",
+         "Pos": {
+          "Column": 41,
+          "Filename": "Multiple_postfix_operations",
+          "Line": 1,
+          "Offset": 40
+         }
+        },
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "?",
+         "Pos": {
+          "Column": 43,
+          "Filename": "Multiple_postfix_operations",
+          "Line": 1,
+          "Offset": 42
+         }
+        },
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": ".",
+         "Pos": {
+          "Column": 44,
+          "Filename": "Multiple_postfix_operations",
+          "Line": 1,
+          "Offset": 43
+         }
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "result",
+        "Pos": {
+         "Column": 45,
+         "Filename": "Multiple_postfix_operations",
+         "Line": 1,
+         "Offset": 44
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 14,
+      "Filename": "Multiple_postfix_operations",
+      "Line": 1,
+      "Offset": 13
+     },
+     "Prefix": null
+    }
+   }
+  }
+ ]
+}

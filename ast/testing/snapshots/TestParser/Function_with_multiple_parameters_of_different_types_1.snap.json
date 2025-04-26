@@ -1,0 +1,312 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Function_with_multiple_parameters_of_different_types",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Function_with_multiple_parameters_of_different_types",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "Block": {
+     "Label": "",
+     "Pos": {
+      "Column": 74,
+      "Filename": "Function_with_multiple_parameters_of_different_types",
+      "Line": 1,
+      "Offset": 73
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Pos": {
+        "Column": 2,
+        "Filename": "Function_with_multiple_parameters_of_different_types",
+        "Line": 2,
+        "Offset": 76
+       },
+       "Statement": {
+        "Label": "",
+        "Pos": {
+         "Column": 2,
+         "Filename": "Function_with_multiple_parameters_of_different_types",
+         "Line": 2,
+         "Offset": 76
+        },
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "null",
+            "Pos": {
+             "Column": 9,
+             "Filename": "Function_with_multiple_parameters_of_different_types",
+             "Line": 2,
+             "Offset": 83
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Pos": {
+          "Column": 9,
+          "Filename": "Function_with_multiple_parameters_of_different_types",
+          "Line": 2,
+          "Offset": 83
+         },
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "IsStatic": false,
+    "Name": "complex",
+    "Parameters": [
+     {
+      "Name": "a",
+      "Pos": {
+       "Column": 13,
+       "Filename": "Function_with_multiple_parameters_of_different_types",
+       "Line": 1,
+       "Offset": 12
+      },
+      "Type": {
+       "Pos": {
+        "Column": 16,
+        "Filename": "Function_with_multiple_parameters_of_different_types",
+        "Line": 1,
+        "Offset": 15
+       },
+       "Type": {
+        "BitSize": 32,
+        "Pos": {
+         "Column": 16,
+         "Filename": "Function_with_multiple_parameters_of_different_types",
+         "Line": 1,
+         "Offset": 15
+        },
+        "Signed": true
+       }
+      }
+     },
+     {
+      "Name": "b",
+      "Pos": {
+       "Column": 21,
+       "Filename": "Function_with_multiple_parameters_of_different_types",
+       "Line": 1,
+       "Offset": 20
+      },
+      "Type": {
+       "Pos": {
+        "Column": 24,
+        "Filename": "Function_with_multiple_parameters_of_different_types",
+        "Line": 1,
+        "Offset": 23
+       },
+       "Type": {
+        "IsMutable": true,
+        "IsOwned": false,
+        "IsRaw": false,
+        "Pos": {
+         "Column": 24,
+         "Filename": "Function_with_multiple_parameters_of_different_types",
+         "Line": 1,
+         "Offset": 23
+        },
+        "Target": {
+         "Pos": {
+          "Column": 29,
+          "Filename": "Function_with_multiple_parameters_of_different_types",
+          "Line": 1,
+          "Offset": 28
+         },
+         "Type": {
+          "BitSize": 64,
+          "Pos": {
+           "Column": 29,
+           "Filename": "Function_with_multiple_parameters_of_different_types",
+           "Line": 1,
+           "Offset": 28
+          },
+          "Signed": true
+         }
+        }
+       }
+      }
+     },
+     {
+      "Name": "c",
+      "Pos": {
+       "Column": 34,
+       "Filename": "Function_with_multiple_parameters_of_different_types",
+       "Line": 1,
+       "Offset": 33
+      },
+      "Type": {
+       "Pos": {
+        "Column": 37,
+        "Filename": "Function_with_multiple_parameters_of_different_types",
+        "Line": 1,
+        "Offset": 36
+       },
+       "Type": {
+        "Dimension": null,
+        "Element": {
+         "Pos": {
+          "Column": 39,
+          "Filename": "Function_with_multiple_parameters_of_different_types",
+          "Line": 1,
+          "Offset": 38
+         },
+         "Type": {
+          "BitSize": 8,
+          "Pos": {
+           "Column": 39,
+           "Filename": "Function_with_multiple_parameters_of_different_types",
+           "Line": 1,
+           "Offset": 38
+          },
+          "Signed": false
+         }
+        },
+        "Pos": {
+         "Column": 37,
+         "Filename": "Function_with_multiple_parameters_of_different_types",
+         "Line": 1,
+         "Offset": 36
+        }
+       }
+      }
+     },
+     {
+      "Name": "d",
+      "Pos": {
+       "Column": 43,
+       "Filename": "Function_with_multiple_parameters_of_different_types",
+       "Line": 1,
+       "Offset": 42
+      },
+      "Type": {
+       "Pos": {
+        "Column": 46,
+        "Filename": "Function_with_multiple_parameters_of_different_types",
+        "Line": 1,
+        "Offset": 45
+       },
+       "Type": {
+        "Name": "",
+        "Parameters": [
+         {
+          "Name": "x",
+          "Pos": {
+           "Column": 50,
+           "Filename": "Function_with_multiple_parameters_of_different_types",
+           "Line": 1,
+           "Offset": 49
+          },
+          "Type": {
+           "Pos": {
+            "Column": 53,
+            "Filename": "Function_with_multiple_parameters_of_different_types",
+            "Line": 1,
+            "Offset": 52
+           },
+           "Type": {
+            "BitSize": 32,
+            "Pos": {
+             "Column": 53,
+             "Filename": "Function_with_multiple_parameters_of_different_types",
+             "Line": 1,
+             "Offset": 52
+            },
+            "Signed": true
+           }
+          }
+         }
+        ],
+        "Pos": {
+         "Column": 46,
+         "Filename": "Function_with_multiple_parameters_of_different_types",
+         "Line": 1,
+         "Offset": 45
+        },
+        "Return": {
+         "Pos": {
+          "Column": 59,
+          "Filename": "Function_with_multiple_parameters_of_different_types",
+          "Line": 1,
+          "Offset": 58
+         },
+         "Type": {
+          "BitSize": 32,
+          "Pos": {
+           "Column": 59,
+           "Filename": "Function_with_multiple_parameters_of_different_types",
+           "Line": 1,
+           "Offset": 58
+          },
+          "Signed": true
+         }
+        }
+       }
+      }
+     }
+    ],
+    "Pos": {
+     "Column": 1,
+     "Filename": "Function_with_multiple_parameters_of_different_types",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Return": {
+     "Pos": {
+      "Column": 65,
+      "Filename": "Function_with_multiple_parameters_of_different_types",
+      "Line": 1,
+      "Offset": 64
+     },
+     "Type": {
+      "IsMutable": false,
+      "IsOwned": true,
+      "IsRaw": false,
+      "Pos": {
+       "Column": 65,
+       "Filename": "Function_with_multiple_parameters_of_different_types",
+       "Line": 1,
+       "Offset": 64
+      },
+      "Target": {
+       "Pos": {
+        "Column": 70,
+        "Filename": "Function_with_multiple_parameters_of_different_types",
+        "Line": 1,
+        "Offset": 69
+       },
+       "Type": {
+        "BitSize": 32,
+        "Pos": {
+         "Column": 70,
+         "Filename": "Function_with_multiple_parameters_of_different_types",
+         "Line": 1,
+         "Offset": 69
+        },
+        "Signed": true
+       }
+      }
+     }
+    }
+   }
+  }
+ ]
+}

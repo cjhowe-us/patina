@@ -1,0 +1,193 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Combination_of_prefix_and_postfix_operations",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Combination_of_prefix_and_postfix_operations",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "result",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Combination_of_prefix_and_postfix_operations",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Type": null,
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "getValue",
+        "Pos": {
+         "Column": 17,
+         "Filename": "Combination_of_prefix_and_postfix_operations",
+         "Line": 1,
+         "Offset": 16
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "",
+         "Pos": {
+          "Column": 25,
+          "Filename": "Combination_of_prefix_and_postfix_operations",
+          "Line": 1,
+          "Offset": 24
+         }
+        },
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "?",
+         "Pos": {
+          "Column": 27,
+          "Filename": "Combination_of_prefix_and_postfix_operations",
+          "Line": 1,
+          "Offset": 26
+         }
+        },
+        {
+         "Index": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "index",
+             "Pos": {
+              "Column": 29,
+              "Filename": "Combination_of_prefix_and_postfix_operations",
+              "Line": 1,
+              "Offset": 28
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Pos": {
+           "Column": 29,
+           "Filename": "Combination_of_prefix_and_postfix_operations",
+           "Line": 1,
+           "Offset": 28
+          },
+          "Prefix": null
+         },
+         "Invocation": null,
+         "Operator": "",
+         "Pos": {
+          "Column": 28,
+          "Filename": "Combination_of_prefix_and_postfix_operations",
+          "Line": 1,
+          "Offset": 27
+         }
+        },
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "?",
+         "Pos": {
+          "Column": 35,
+          "Filename": "Combination_of_prefix_and_postfix_operations",
+          "Line": 1,
+          "Offset": 34
+         }
+        },
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": ".",
+         "Pos": {
+          "Column": 36,
+          "Filename": "Combination_of_prefix_and_postfix_operations",
+          "Line": 1,
+          "Offset": 35
+         }
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "process",
+        "Pos": {
+         "Column": 37,
+         "Filename": "Combination_of_prefix_and_postfix_operations",
+         "Line": 1,
+         "Offset": 36
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "",
+         "Pos": {
+          "Column": 44,
+          "Filename": "Combination_of_prefix_and_postfix_operations",
+          "Line": 1,
+          "Offset": 43
+         }
+        },
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "?",
+         "Pos": {
+          "Column": 46,
+          "Filename": "Combination_of_prefix_and_postfix_operations",
+          "Line": 1,
+          "Offset": 45
+         }
+        },
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": ".",
+         "Pos": {
+          "Column": 47,
+          "Filename": "Combination_of_prefix_and_postfix_operations",
+          "Line": 1,
+          "Offset": 46
+         }
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "result",
+        "Pos": {
+         "Column": 48,
+         "Filename": "Combination_of_prefix_and_postfix_operations",
+         "Line": 1,
+         "Offset": 47
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 14,
+      "Filename": "Combination_of_prefix_and_postfix_operations",
+      "Line": 1,
+      "Offset": 13
+     },
+     "Prefix": [
+      "!-~"
+     ]
+    }
+   }
+  }
+ ]
+}

@@ -19,7 +19,7 @@ func TestLexer(t *testing.T) {
 
 	RunTests(
 		t,
-		"lexer.json",
+		[]string{"lexer.json"},
 		func(input string, name string) ([]TestToken, error) {
 			lex, err := Lexer.LexString(name, input)
 			if err != nil {
@@ -39,14 +39,17 @@ func TestLexer(t *testing.T) {
 			}
 			return testTokens, nil
 		},
-		false,
 	)
 }
 
 func TestParser(t *testing.T) {
 	RunTests(
 		t,
-		"parser.json",
+		[]string{
+			"parser.json",
+			"parser_additional.json",
+			"real_world_examples.json",
+		},
 		func(input, name string) (Root, error) {
 			root, err := Parser.ParseString(name, input)
 			if err != nil || root == nil {
@@ -54,14 +57,16 @@ func TestParser(t *testing.T) {
 			}
 			return *root, nil
 		},
-		false,
 	)
 }
 
 func TestParserErrors(t *testing.T) {
 	RunTests(
 		t,
-		"parser_error.json",
+		[]string{
+			"parser_error.json",
+			"parser_error_additional.json",
+		},
 		func(input, name string) (Root, error) {
 			root, err := Parser.ParseString(name, input)
 			if err != nil || root == nil {
@@ -69,6 +74,5 @@ func TestParserErrors(t *testing.T) {
 			}
 			return *root, nil
 		},
-		true,
 	)
 }

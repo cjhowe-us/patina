@@ -1,0 +1,3 @@
+{
+ "error": "Static_let_with_complex_initialization:5:2: unexpected token \"{\" (expected \"}\")"
+}

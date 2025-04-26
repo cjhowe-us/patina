@@ -1,0 +1,280 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Quoted_expressions_with_complex_nested_structure",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Quoted_expressions_with_complex_nested_structure",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "template",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Quoted_expressions_with_complex_nested_structure",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Type": null,
+    "Value": {
+     "Operands": [
+      {
+       "Atom": {
+        "Expression": {
+         "Block": {
+          "Label": "",
+          "Pos": {
+           "Column": 18,
+           "Filename": "Quoted_expressions_with_complex_nested_structure",
+           "Line": 1,
+           "Offset": 17
+          },
+          "Statements": [
+           {
+            "Annotations": null,
+            "Comments": null,
+            "Pos": {
+             "Column": 2,
+             "Filename": "Quoted_expressions_with_complex_nested_structure",
+             "Line": 2,
+             "Offset": 20
+            },
+            "Statement": {
+             "IsMutable": false,
+             "IsStatic": false,
+             "Name": "x",
+             "Pos": {
+              "Column": 2,
+              "Filename": "Quoted_expressions_with_complex_nested_structure",
+              "Line": 2,
+              "Offset": 20
+             },
+             "Type": null,
+             "Value": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Pos": {
+                  "Column": 10,
+                  "Filename": "Quoted_expressions_with_complex_nested_structure",
+                  "Line": 2,
+                  "Offset": 28
+                 },
+                 "Value": {
+                  "Pos": {
+                   "Column": 10,
+                   "Filename": "Quoted_expressions_with_complex_nested_structure",
+                   "Line": 2,
+                   "Offset": 28
+                  },
+                  "Value": 1
+                 }
+                },
+                "Postfix": [
+                 {
+                  "Index": null,
+                  "Invocation": null,
+                  "Operator": "+",
+                  "Pos": {
+                   "Column": 12,
+                   "Filename": "Quoted_expressions_with_complex_nested_structure",
+                   "Line": 2,
+                   "Offset": 30
+                  }
+                 }
+                ]
+               },
+               {
+                "Atom": {
+                 "Pos": {
+                  "Column": 14,
+                  "Filename": "Quoted_expressions_with_complex_nested_structure",
+                  "Line": 2,
+                  "Offset": 32
+                 },
+                 "Value": {
+                  "Pos": {
+                   "Column": 14,
+                   "Filename": "Quoted_expressions_with_complex_nested_structure",
+                   "Line": 2,
+                   "Offset": 32
+                  },
+                  "Value": 2
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Pos": {
+               "Column": 10,
+               "Filename": "Quoted_expressions_with_complex_nested_structure",
+               "Line": 2,
+               "Offset": 28
+              },
+              "Prefix": null
+             }
+            }
+           },
+           {
+            "Annotations": null,
+            "Comments": null,
+            "Pos": {
+             "Column": 2,
+             "Filename": "Quoted_expressions_with_complex_nested_structure",
+             "Line": 3,
+             "Offset": 35
+            },
+            "Statement": {
+             "IsMutable": false,
+             "IsStatic": false,
+             "Name": "y",
+             "Pos": {
+              "Column": 2,
+              "Filename": "Quoted_expressions_with_complex_nested_structure",
+              "Line": 3,
+              "Offset": 35
+             },
+             "Type": null,
+             "Value": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Ident": "x",
+                 "Pos": {
+                  "Column": 10,
+                  "Filename": "Quoted_expressions_with_complex_nested_structure",
+                  "Line": 3,
+                  "Offset": 43
+                 }
+                },
+                "Postfix": [
+                 {
+                  "Index": null,
+                  "Invocation": null,
+                  "Operator": "*",
+                  "Pos": {
+                   "Column": 12,
+                   "Filename": "Quoted_expressions_with_complex_nested_structure",
+                   "Line": 3,
+                   "Offset": 45
+                  }
+                 }
+                ]
+               },
+               {
+                "Atom": {
+                 "Pos": {
+                  "Column": 14,
+                  "Filename": "Quoted_expressions_with_complex_nested_structure",
+                  "Line": 3,
+                  "Offset": 47
+                 },
+                 "Value": {
+                  "Pos": {
+                   "Column": 14,
+                   "Filename": "Quoted_expressions_with_complex_nested_structure",
+                   "Line": 3,
+                   "Offset": 47
+                  },
+                  "Value": 3
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Pos": {
+               "Column": 10,
+               "Filename": "Quoted_expressions_with_complex_nested_structure",
+               "Line": 3,
+               "Offset": 43
+              },
+              "Prefix": null
+             }
+            }
+           },
+           {
+            "Annotations": null,
+            "Comments": null,
+            "Pos": {
+             "Column": 2,
+             "Filename": "Quoted_expressions_with_complex_nested_structure",
+             "Line": 4,
+             "Offset": 50
+            },
+            "Statement": {
+             "Label": "",
+             "Pos": {
+              "Column": 2,
+              "Filename": "Quoted_expressions_with_complex_nested_structure",
+              "Line": 4,
+              "Offset": 50
+             },
+             "Value": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Ident": "y",
+                 "Pos": {
+                  "Column": 9,
+                  "Filename": "Quoted_expressions_with_complex_nested_structure",
+                  "Line": 4,
+                  "Offset": 57
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Pos": {
+               "Column": 9,
+               "Filename": "Quoted_expressions_with_complex_nested_structure",
+               "Line": 4,
+               "Offset": 57
+              },
+              "Prefix": null
+             }
+            }
+           }
+          ]
+         },
+         "IsStatic": false,
+         "Pos": {
+          "Column": 18,
+          "Filename": "Quoted_expressions_with_complex_nested_structure",
+          "Line": 1,
+          "Offset": 17
+         }
+        },
+        "Pos": {
+         "Column": 17,
+         "Filename": "Quoted_expressions_with_complex_nested_structure",
+         "Line": 1,
+         "Offset": 16
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Pos": {
+      "Column": 16,
+      "Filename": "Quoted_expressions_with_complex_nested_structure",
+      "Line": 1,
+      "Offset": 15
+     },
+     "Prefix": [
+      "\\"
+     ]
+    }
+   }
+  }
+ ]
+}

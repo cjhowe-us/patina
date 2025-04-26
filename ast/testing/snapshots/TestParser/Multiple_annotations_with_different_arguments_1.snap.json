@@ -1,0 +1,150 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Multiple_annotations_with_different_arguments",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": [
+    {
+     "Arguments": null,
+     "Name": "deprecated",
+     "Pos": {
+      "Column": 1,
+      "Filename": "Multiple_annotations_with_different_arguments",
+      "Line": 1,
+      "Offset": 0
+     }
+    },
+    {
+     "Arguments": null,
+     "Name": "unsafe",
+     "Pos": {
+      "Column": 13,
+      "Filename": "Multiple_annotations_with_different_arguments",
+      "Line": 1,
+      "Offset": 12
+     }
+    },
+    {
+     "Arguments": [
+      {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "true",
+          "Pos": {
+           "Column": 29,
+           "Filename": "Multiple_annotations_with_different_arguments",
+           "Line": 1,
+           "Offset": 28
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Pos": {
+        "Column": 29,
+        "Filename": "Multiple_annotations_with_different_arguments",
+        "Line": 1,
+        "Offset": 28
+       },
+       "Prefix": null
+      }
+     ],
+     "Name": "inline",
+     "Pos": {
+      "Column": 21,
+      "Filename": "Multiple_annotations_with_different_arguments",
+      "Line": 1,
+      "Offset": 20
+     }
+    },
+    {
+     "Arguments": [
+      {
+       "Operands": [
+        {
+         "Atom": {
+          "Pos": {
+           "Column": 40,
+           "Filename": "Multiple_annotations_with_different_arguments",
+           "Line": 1,
+           "Offset": 39
+          },
+          "Value": {
+           "Fragments": [
+            {
+             "Interpolation": null,
+             "Pos": {
+              "Column": 41,
+              "Filename": "Multiple_annotations_with_different_arguments",
+              "Line": 1,
+              "Offset": 40
+             },
+             "Text": "This is a test function"
+            }
+           ],
+           "Pos": {
+            "Column": 40,
+            "Filename": "Multiple_annotations_with_different_arguments",
+            "Line": 1,
+            "Offset": 39
+           }
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Pos": {
+        "Column": 40,
+        "Filename": "Multiple_annotations_with_different_arguments",
+        "Line": 1,
+        "Offset": 39
+       },
+       "Prefix": null
+      }
+     ],
+     "Name": "doc",
+     "Pos": {
+      "Column": 35,
+      "Filename": "Multiple_annotations_with_different_arguments",
+      "Line": 1,
+      "Offset": 34
+     }
+    }
+   ],
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Multiple_annotations_with_different_arguments",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "Block": {
+     "Label": "",
+     "Pos": {
+      "Column": 78,
+      "Filename": "Multiple_annotations_with_different_arguments",
+      "Line": 1,
+      "Offset": 77
+     },
+     "Statements": null
+    },
+    "IsStatic": false,
+    "Name": "test",
+    "Parameters": null,
+    "Pos": {
+     "Column": 67,
+     "Filename": "Multiple_annotations_with_different_arguments",
+     "Line": 1,
+     "Offset": 66
+    },
+    "Return": null
+   }
+  }
+ ]
+}

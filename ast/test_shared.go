@@ -31,19 +31,25 @@ func NewTestError(err error) TestError {
 }
 
 // RunTests runs tests for each test case and compares results with snapshots.
+// It accepts either a single filename or multiple filenames.
 func RunTests[I, O any](
 	t *testing.T,
-	filename string,
+	filenames []string,
 	runTest func(I, string) (O, error),
-	expectError bool,
 ) {
 	t.Helper()
-	testCases, err := loadTestCases[I](filename)
-	if err != nil {
-		t.Fatalf("Failed to load test cases: %v", err)
+
+	var allTestCases []TestCase[I]
+
+	for _, filename := range filenames {
+		testCases, err := loadTestCases[I](filename)
+		if err != nil {
+			t.Fatalf("Failed to load test cases from %s: %v", filename, err)
+		}
+		allTestCases = append(allTestCases, testCases...)
 	}
 
-	for _, tc := range testCases {
+	for _, tc := range allTestCases {
 		t.Run(tc.Name, func(t *testing.T) {
 			nameNoSpaces := strings.ReplaceAll(tc.Name, " ", "_")
 			output, err := runTest(tc.Input, nameNoSpaces)

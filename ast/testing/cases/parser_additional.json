@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Module with multiple declarations",
+        "input": "module test {\n\tlet x = 1\n\tfun test() {\n\t\treturn x\n\t}\n}"
+    },
+    {
+        "name": "Module with nested blocks",
+        "input": "module test {\n\tlet x = {\n\t\tlet y = 1\n\t\ty + 1\n\t}\n}"
+    },
+    {
+        "name": "Multiple annotations with different arguments",
+        "input": "@deprecated @unsafe @inline(true) @doc(\"This is a test function\") fun test() {}"
+    },
+    {
+        "name": "Function with multiple parameters of different types",
+        "input": "fun complex(a: i32, b: *mut i64, c: []u8, d: fun(x: i32): i32): *own i32 {\n\treturn null\n}"
+    },
+    {
+        "name": "Function with complex return type",
+        "input": "fun getCallback(): fun(a: i32, b: i32): fun(): i32 {\n\treturn fun(a: i32, b: i32): fun(): i32 {\n\t\treturn fun(): i32 { return a + b }\n\t}\n}"
+    },
+    {
+        "name": "Deeply nested if-else expressions",
+        "input": "if (a > 0) {\n\tif (b > 0) {\n\t\tif (c > 0) {\n\t\t\treturn a + b + c\n\t\t} else {\n\t\t\treturn a + b\n\t\t}\n\t} else {\n\t\treturn a\n\t}\n} else {\n\treturn 0\n}"
+    },
+    {
+        "name": "Case expression with multiple conditions",
+        "input": "let result = case {\n\tif (x < 0) \"negative\"\n\tif (x == 0) \"zero\"\n\tif (x > 0 && x < 10) \"small positive\"\n\tif (x >= 10 && x < 100) \"medium positive\"\n\telse \"large positive\"\n}"
+    },
+    {
+        "name": "Quoted expressions with complex nested structure",
+        "input": "let template = \\({\n\tlet x = 1 + 2\n\tlet y = x * 3\n\treturn y\n})"
+    },
+    {
+        "name": "Multiple break statements with different labels",
+        "input": "{\n\t:outer {\n\t\t:inner {\n\t\t\tif (condition) break :inner\n\t\t\telse break :outer\n\t\t}\n\t\tbreak\n\t}\n}"
+    },
+    {
+        "name": "Multiple return statements with different values",
+        "input": "fun test(x: i32): i32 {\n\tif (x < 0) return -x\n\tif (x == 0) return 0\n\treturn x * 2\n}"
+    },
+    {
+        "name": "Complex operation with multiple operators",
+        "input": "let x = -a + b * c / d % e && f || g == h != i < j > k <= l >= m"
+    },
+    {
+        "name": "Nested array types with different dimensions",
+        "input": "let matrix: [3][3]i32 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]"
+    },
+    {
+        "name": "Complex pointer types",
+        "input": "let x: *mut *raw *own i32"
+    },
+    {
+        "name": "Function type with complex parameter and return types",
+        "input": "let callback: fun(handler: fun(event: *mut Event): bool, timeout: u64): *own Result"
+    },
+    {
+        "name": "String with multiple interpolations",
+        "input": "let message = \"Hello, \\(firstName) \\(lastName)! You have \\(messageCount) new messages.\""
+    },
+    {
+        "name": "Binding with path",
+        "input": "let value = module.submodule.function()"
+    },
+    {
+        "name": "Static let with complex initialization",
+        "input": "static let config = {\n\tlet server = \"example.com\"\n\tlet port = 8080\n\tlet timeout = 30\n\t{ server: server, port: port, timeout: timeout }\n}"
+    },
+    {
+        "name": "Multiple postfix operations",
+        "input": "let result = getValue()?[index]?.process()?.result"
+    },
+    {
+        "name": "Combination of prefix and postfix operations",
+        "input": "let result = !-~getValue()?[index]?.process()?.result"
+    },
+    {
+        "name": "Lambda with multiple parameters and complex body",
+        "input": "let processor = fun(data: []u8, options: *Options): Result {\n\tlet size = data.length\n\tif (size == 0) return Result.empty()\n\tlet processed = process(data, options)\n\treturn Result.success(processed)\n}"
+    }
+]

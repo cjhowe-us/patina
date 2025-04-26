@@ -1,0 +1,107 @@
+{
+ "Pos": {
+  "Column": 1,
+  "Filename": "Complex_pointer_types",
+  "Line": 1,
+  "Offset": 0
+ },
+ "Statements": [
+  {
+   "Annotations": null,
+   "Comments": null,
+   "Pos": {
+    "Column": 1,
+    "Filename": "Complex_pointer_types",
+    "Line": 1,
+    "Offset": 0
+   },
+   "Statement": {
+    "IsMutable": false,
+    "IsStatic": false,
+    "Name": "x",
+    "Pos": {
+     "Column": 1,
+     "Filename": "Complex_pointer_types",
+     "Line": 1,
+     "Offset": 0
+    },
+    "Type": {
+     "Pos": {
+      "Column": 8,
+      "Filename": "Complex_pointer_types",
+      "Line": 1,
+      "Offset": 7
+     },
+     "Type": {
+      "IsMutable": true,
+      "IsOwned": false,
+      "IsRaw": false,
+      "Pos": {
+       "Column": 8,
+       "Filename": "Complex_pointer_types",
+       "Line": 1,
+       "Offset": 7
+      },
+      "Target": {
+       "Pos": {
+        "Column": 13,
+        "Filename": "Complex_pointer_types",
+        "Line": 1,
+        "Offset": 12
+       },
+       "Type": {
+        "IsMutable": false,
+        "IsOwned": false,
+        "IsRaw": true,
+        "Pos": {
+         "Column": 13,
+         "Filename": "Complex_pointer_types",
+         "Line": 1,
+         "Offset": 12
+        },
+        "Target": {
+         "Pos": {
+          "Column": 18,
+          "Filename": "Complex_pointer_types",
+          "Line": 1,
+          "Offset": 17
+         },
+         "Type": {
+          "IsMutable": false,
+          "IsOwned": true,
+          "IsRaw": false,
+          "Pos": {
+           "Column": 18,
+           "Filename": "Complex_pointer_types",
+           "Line": 1,
+           "Offset": 17
+          },
+          "Target": {
+           "Pos": {
+            "Column": 23,
+            "Filename": "Complex_pointer_types",
+            "Line": 1,
+            "Offset": 22
+           },
+           "Type": {
+            "BitSize": 32,
+            "Pos": {
+             "Column": 23,
+             "Filename": "Complex_pointer_types",
+             "Line": 1,
+             "Offset": 22
+            },
+            "Signed": true
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    },
+    "Value": null
+   }
+  }
+ ]
+}

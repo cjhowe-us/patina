@@ -1,0 +1,3 @@
+{
+ "error": "Missing_function_body:1:22: unexpected token \"\u003cEOF\u003e\" (expected \"{\" (DecoratedStatement (\u003ceol\u003e DecoratedStatement)*)? \"}\")"
+}

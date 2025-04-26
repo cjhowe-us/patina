@@ -84,8 +84,11 @@ func (it *IntegerType) Parse(lex *lexer.PeekingLexer) error {
 
 	sign, sizeStr := matches[1], matches[2]
 	bitSize, err := strconv.ParseUint(sizeStr, IntegerWidthBase, IntegerWidthBitSize)
-	if err != nil || bitSize == 0 {
+	if err != nil {
 		return participle.Wrapf(token.Pos, err, "Integer width of '%s' is out of range: %s", token.Value, intWidthRange)
+	}
+	if bitSize == 0 {
+		return participle.Errorf(token.Pos, "Integer width must be greater than 0")
 	}
 
 	lex.Next()

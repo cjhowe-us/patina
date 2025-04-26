@@ -102,7 +102,7 @@ func buildNodeFromMap(nodeMap map[string]interface{}) *MockNode {
 func TestWalk(t *testing.T) {
 	RunTests(
 		t,
-		"walk.json",
+		[]string{"walk.json"},
 		func(input WalkInput, name string) (WalkTestOutput, error) {
 			tree, err := buildTree(input.Tree)
 			if err != nil {
@@ -124,6 +124,5 @@ func TestWalk(t *testing.T) {
 				VisitLog: visitor.VisitLog,
 			}, nil
 		},
-		false,
 	)
 }
