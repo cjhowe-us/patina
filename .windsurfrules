@@ -1,0 +1,79 @@
+# Repository Overview
+
+This repository contains the code for Patina, a new programming language with a focus on creating distinct regions with separate execution and memory models. The language aims to bridge the gap between systems programming and application development within a single codebase.
+
+## Key Components
+
+### Abstract Syntax Tree (AST) Package
+
+The primary component in this repository is the Abstract Syntax Tree (AST) package, which defines the structure for parsing and representing Patina code. The main files and their purposes are:
+
+- `ast/ast.go`: Core package documentation
+- `ast/atoms.go`: Defines atomic expressions (smallest units of expressions)
+- `ast/expressions.go`: Defines expression types (operations, conditionals, etc.)
+- `ast/parser.go`: Contains the lexer and parser implementation using participle
+- `ast/statements.go`: Defines statement types (declarations, assignments, etc.)
+- `ast/syntax_node.go`: Defines the core SyntaxNode interface and basic node types
+- `ast/types.go`: Defines type representations (integers, pointers, arrays, etc.)
+- `ast/values.go`: Defines literal value representations (integers, strings, etc.)
+- `ast/walk.go`: Implements tree traversal for the AST
+
+### Testing Infrastructure
+
+The repository uses snapshot testing with the go-snaps library:
+
+- `ast/test_shared.go`: Common testing utilities
+- `ast/parser_test.go`: Tests for the parser
+- `ast/walk_test.go`: Tests for tree traversal
+
+Test cases and snapshots are organized in:
+- `ast/testing/cases/`: JSON files containing test cases
+- `ast/testing/snapshots/`: Snapshot files for test results
+
+## Language Features
+
+Patina has several distinctive features:
+
+1. **Memory Models**: Explicit regions with different memory management approaches
+2. **Safety at Boundaries**: Strong safety guarantees between different memory model regions
+3. **Expression-Oriented**: Most constructs are expressions that return values
+4. **Strong Typing**: Static type system with explicit type annotations
+
+## Development Guidelines
+
+When making changes to the Patina codebase:
+
+1. **Parser Modifications**:
+   - The parser is built using the participle library
+   - Modify grammar definitions in the corresponding Go structs
+   - Update `parser.go` for lexer rules and token mappings
+
+2. **AST Structure Changes**:
+   - Implement the appropriate interfaces (`SyntaxNode`, `Statement`, `Expression`, etc.)
+   - Add necessary Position() and Children() methods for tree traversal
+   - Connect new nodes to existing structures
+
+3. **Testing**:
+   - Add test cases in the appropriate JSON files in `ast/testing/cases/`
+   - Run tests with `go test ./...`
+   - Update snapshots using `UPDATE_SNAPS=true go test ./...`
+   - Clean up obsolete snapshots with `UPDATE_SNAPS=clean go test ./...`
+
+4. **Best Practices**:
+   - Use a declarative, functional programming style
+   - Avoid mutable state where possible
+   - Do not add implementation comments - only provide public documentation
+   - Abstract logic into interfaces when operating on multiple data types
+   - Use generics instead of interfaces for homogeneous collections
+   - Avoid switch statements based on type - add methods to interfaces instead
+
+## File Modification Strategy
+
+When implementing new features or fixing bugs:
+
+1. First understand the corresponding AST structures
+2. Modify or add struct definitions with proper participle parser tags
+3. Update lexer rules if new token types are needed
+4. Add appropriate methods to implement required interfaces
+5. Add test cases to verify the changes
+6. Run tests and update snapshots
