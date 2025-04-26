@@ -1,0 +1,175 @@
+[
+    {
+        "name": "Empty_Node",
+        "input": {
+            "tree": {
+                "id": "empty",
+                "line": 1,
+                "column": 1,
+                "children": null
+            },
+            "input": "emptyInput"
+        }
+    },
+    {
+        "name": "Null_Input",
+        "input": {
+            "tree": {
+                "id": "root",
+                "line": 1,
+                "column": 1,
+                "children": []
+            },
+            "input": null
+        }
+    },
+    {
+        "name": "Mismatched_Child_Inputs",
+        "input": {
+            "tree": {
+                "id": "parent",
+                "line": 1,
+                "column": 1,
+                "children": [
+                    {
+                        "id": "child1",
+                        "line": 2,
+                        "column": 1,
+                        "children": []
+                    },
+                    {
+                        "id": "child2",
+                        "line": 2,
+                        "column": 10,
+                        "children": []
+                    },
+                    {
+                        "id": "child3",
+                        "line": 2,
+                        "column": 20,
+                        "children": []
+                    }
+                ]
+            },
+            "input": "parentInput"
+        }
+    },
+    {
+        "name": "Complex_Nested_Tree",
+        "input": {
+            "tree": {
+                "id": "root",
+                "line": 1,
+                "column": 1,
+                "children": [
+                    {
+                        "id": "branch1",
+                        "line": 2,
+                        "column": 1,
+                        "children": [
+                            {
+                                "id": "leaf1_1",
+                                "line": 3,
+                                "column": 1,
+                                "children": []
+                            },
+                            {
+                                "id": "leaf1_2",
+                                "line": 3,
+                                "column": 10,
+                                "children": [
+                                    {
+                                        "id": "deepleaf1",
+                                        "line": 4,
+                                        "column": 1,
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "branch2",
+                        "line": 2,
+                        "column": 20,
+                        "children": [
+                            {
+                                "id": "leaf2_1",
+                                "line": 3,
+                                "column": 20,
+                                "children": []
+                            },
+                            {
+                                "id": "leaf2_2",
+                                "line": 3,
+                                "column": 30,
+                                "children": [
+                                    {
+                                        "id": "deepleaf2",
+                                        "line": 4,
+                                        "column": 20,
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "branch3",
+                        "line": 2,
+                        "column": 40,
+                        "children": []
+                    }
+                ]
+            },
+            "input": "rootInput"
+        }
+    },
+    {
+        "name": "Very_Deep_Tree",
+        "input": {
+            "tree": {
+                "id": "level1",
+                "line": 1,
+                "column": 1,
+                "children": [
+                    {
+                        "id": "level2",
+                        "line": 2,
+                        "column": 1,
+                        "children": [
+                            {
+                                "id": "level3",
+                                "line": 3,
+                                "column": 1,
+                                "children": [
+                                    {
+                                        "id": "level4",
+                                        "line": 4,
+                                        "column": 1,
+                                        "children": [
+                                            {
+                                                "id": "level5",
+                                                "line": 5,
+                                                "column": 1,
+                                                "children": [
+                                                    {
+                                                        "id": "level6",
+                                                        "line": 6,
+                                                        "column": 1,
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "input": "deepInput"
+        }
+    }
+]
