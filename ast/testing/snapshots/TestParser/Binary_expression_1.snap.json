@@ -1,48 +1,18 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Binary_expression",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Binary_expression",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "x",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Binary_expression",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": null,
     "Value": {
      "Operands": [
       {
        "Atom": {
-        "Pos": {
-         "Column": 9,
-         "Filename": "Binary_expression",
-         "Line": 1,
-         "Offset": 8
-        },
         "Value": {
-         "Pos": {
-          "Column": 9,
-          "Filename": "Binary_expression",
-          "Line": 1,
-          "Offset": 8
-         },
          "Value": 1
         }
        },
@@ -50,31 +20,13 @@
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "+",
-         "Pos": {
-          "Column": 11,
-          "Filename": "Binary_expression",
-          "Line": 1,
-          "Offset": 10
-         }
+         "Operator": "+"
         }
        ]
       },
       {
        "Atom": {
-        "Pos": {
-         "Column": 13,
-         "Filename": "Binary_expression",
-         "Line": 1,
-         "Offset": 12
-        },
         "Value": {
-         "Pos": {
-          "Column": 13,
-          "Filename": "Binary_expression",
-          "Line": 1,
-          "Offset": 12
-         },
          "Value": 2
         }
        },
@@ -82,43 +34,19 @@
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "*",
-         "Pos": {
-          "Column": 15,
-          "Filename": "Binary_expression",
-          "Line": 1,
-          "Offset": 14
-         }
+         "Operator": "*"
         }
        ]
       },
       {
        "Atom": {
-        "Pos": {
-         "Column": 17,
-         "Filename": "Binary_expression",
-         "Line": 1,
-         "Offset": 16
-        },
         "Value": {
-         "Pos": {
-          "Column": 17,
-          "Filename": "Binary_expression",
-          "Line": 1,
-          "Offset": 16
-         },
          "Value": 3
         }
        },
        "Postfix": null
       }
      ],
-     "Pos": {
-      "Column": 9,
-      "Filename": "Binary_expression",
-      "Line": 1,
-      "Offset": 8
-     },
      "Prefix": null
     }
    }

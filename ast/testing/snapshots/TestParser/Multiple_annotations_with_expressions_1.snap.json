@@ -1,10 +1,4 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Multiple_annotations_with_expressions",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": [
@@ -14,19 +8,7 @@
        "Operands": [
         {
          "Atom": {
-          "Pos": {
-           "Column": 7,
-           "Filename": "Multiple_annotations_with_expressions",
-           "Line": 1,
-           "Offset": 6
-          },
           "Value": {
-           "Pos": {
-            "Column": 7,
-            "Filename": "Multiple_annotations_with_expressions",
-            "Line": 1,
-            "Offset": 6
-           },
            "Value": 1
           }
          },
@@ -34,53 +16,23 @@
           {
            "Index": null,
            "Invocation": null,
-           "Operator": "+",
-           "Pos": {
-            "Column": 9,
-            "Filename": "Multiple_annotations_with_expressions",
-            "Line": 1,
-            "Offset": 8
-           }
+           "Operator": "+"
           }
          ]
         },
         {
          "Atom": {
-          "Pos": {
-           "Column": 11,
-           "Filename": "Multiple_annotations_with_expressions",
-           "Line": 1,
-           "Offset": 10
-          },
           "Value": {
-           "Pos": {
-            "Column": 11,
-            "Filename": "Multiple_annotations_with_expressions",
-            "Line": 1,
-            "Offset": 10
-           },
            "Value": 2
           }
          },
          "Postfix": null
         }
        ],
-       "Pos": {
-        "Column": 7,
-        "Filename": "Multiple_annotations_with_expressions",
-        "Line": 1,
-        "Offset": 6
-       },
        "Prefix": null
       }
      ],
-     "Name": "tag1",
-     "Pos": {
-      "Column": 1,
-      "Filename": "Multiple_annotations_with_expressions",
-      "Line": 1,
-      "Offset": 0
-     }
+     "Name": "tag1"
     },
     {
      "Arguments": [
@@ -88,37 +40,19 @@
        "Operands": [
         {
          "Atom": {
-          "Ident": "x",
-          "Pos": {
-           "Column": 20,
-           "Filename": "Multiple_annotations_with_expressions",
-           "Line": 1,
-           "Offset": 19
-          }
+          "Ident": "x"
          },
          "Postfix": [
           {
            "Index": null,
            "Invocation": null,
-           "Operator": ".",
-           "Pos": {
-            "Column": 21,
-            "Filename": "Multiple_annotations_with_expressions",
-            "Line": 1,
-            "Offset": 20
-           }
+           "Operator": "."
           }
          ]
         },
         {
          "Atom": {
-          "Ident": "y",
-          "Pos": {
-           "Column": 22,
-           "Filename": "Multiple_annotations_with_expressions",
-           "Line": 1,
-           "Offset": 21
-          }
+          "Ident": "y"
          },
          "Postfix": [
           {
@@ -126,116 +60,50 @@
             "Operands": [
              {
               "Atom": {
-               "Pos": {
-                "Column": 24,
-                "Filename": "Multiple_annotations_with_expressions",
-                "Line": 1,
-                "Offset": 23
-               },
                "Value": {
-                "Pos": {
-                 "Column": 24,
-                 "Filename": "Multiple_annotations_with_expressions",
-                 "Line": 1,
-                 "Offset": 23
-                },
                 "Value": 3
                }
               },
               "Postfix": null
              }
             ],
-            "Pos": {
-             "Column": 24,
-             "Filename": "Multiple_annotations_with_expressions",
-             "Line": 1,
-             "Offset": 23
-            },
             "Prefix": null
            },
            "Invocation": null,
-           "Operator": "",
-           "Pos": {
-            "Column": 23,
-            "Filename": "Multiple_annotations_with_expressions",
-            "Line": 1,
-            "Offset": 22
-           }
+           "Operator": ""
           },
           {
            "Index": null,
            "Invocation": null,
-           "Operator": "?",
-           "Pos": {
-            "Column": 26,
-            "Filename": "Multiple_annotations_with_expressions",
-            "Line": 1,
-            "Offset": 25
-           }
+           "Operator": "?"
           },
           {
            "Index": null,
            "Invocation": null,
-           "Operator": ".",
-           "Pos": {
-            "Column": 27,
-            "Filename": "Multiple_annotations_with_expressions",
-            "Line": 1,
-            "Offset": 26
-           }
+           "Operator": "."
           }
          ]
         },
         {
          "Atom": {
-          "Ident": "z",
-          "Pos": {
-           "Column": 28,
-           "Filename": "Multiple_annotations_with_expressions",
-           "Line": 1,
-           "Offset": 27
-          }
+          "Ident": "z"
          },
          "Postfix": [
           {
            "Index": null,
            "Invocation": null,
-           "Operator": "",
-           "Pos": {
-            "Column": 29,
-            "Filename": "Multiple_annotations_with_expressions",
-            "Line": 1,
-            "Offset": 28
-           }
+           "Operator": ""
           }
          ]
         }
        ],
-       "Pos": {
-        "Column": 20,
-        "Filename": "Multiple_annotations_with_expressions",
-        "Line": 1,
-        "Offset": 19
-       },
        "Prefix": null
       }
      ],
-     "Name": "tag2",
-     "Pos": {
-      "Column": 14,
-      "Filename": "Multiple_annotations_with_expressions",
-      "Line": 1,
-      "Offset": 13
-     }
+     "Name": "tag2"
     }
    ],
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Multiple_annotations_with_expressions",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "Block": {
      "Label": "",
@@ -250,12 +118,6 @@
     "IsStatic": false,
     "Name": "test",
     "Parameters": null,
-    "Pos": {
-     "Column": 33,
-     "Filename": "Multiple_annotations_with_expressions",
-     "Line": 1,
-     "Offset": 32
-    },
     "Return": null
    }
   }

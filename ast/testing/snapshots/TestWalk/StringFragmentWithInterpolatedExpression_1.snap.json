@@ -1,0 +1,4377 @@
+{
+ "result": null,
+ "visitor": {
+  "log": [
+   {
+    "isEnter": true,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Body": {
+         "Label": "",
+         "Pos": {
+          "Column": 10,
+          "Filename": "StringFragmentWithInterpolatedExpression",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Expression": {
+             "Operands": [
+              {
+               "Atom": {
+                "Value": {
+                 "Fragments": [
+                  {
+                   "Interpolation": null,
+                   "Text": "result: "
+                  },
+                  {
+                   "Interpolation": {
+                    "Else": {
+                     "Block": {
+                      "Label": "",
+                      "Pos": {
+                       "Column": 54,
+                       "Filename": "StringFragmentWithInterpolatedExpression",
+                       "Line": 1,
+                       "Offset": 53
+                      },
+                      "Statements": [
+                       {
+                        "Annotations": null,
+                        "Comments": null,
+                        "Statement": {
+                         "Expression": {
+                          "Operands": [
+                           {
+                            "Atom": {
+                             "Value": {
+                              "Fragments": [
+                               {
+                                "Interpolation": null,
+                                "Text": "negative"
+                               }
+                              ]
+                             }
+                            },
+                            "Postfix": null
+                           }
+                          ],
+                          "Prefix": null
+                         }
+                        }
+                       }
+                      ]
+                     },
+                     "IsStatic": false
+                    },
+                    "ElseIfs": null,
+                    "If": {
+                     "Condition": {
+                      "Operands": [
+                       {
+                        "Atom": {
+                         "Ident": "x"
+                        },
+                        "Postfix": [
+                         {
+                          "Index": null,
+                          "Invocation": null,
+                          "Operator": "\u003e"
+                         }
+                        ]
+                       },
+                       {
+                        "Atom": {
+                         "Value": {
+                          "Value": 0
+                         }
+                        },
+                        "Postfix": null
+                       }
+                      ],
+                      "Prefix": null
+                     },
+                     "Then": {
+                      "Block": {
+                       "Label": "",
+                       "Pos": {
+                        "Column": 34,
+                        "Filename": "StringFragmentWithInterpolatedExpression",
+                        "Line": 1,
+                        "Offset": 33
+                       },
+                       "Statements": [
+                        {
+                         "Annotations": null,
+                         "Comments": null,
+                         "Statement": {
+                          "Expression": {
+                           "Operands": [
+                            {
+                             "Atom": {
+                              "Value": {
+                               "Fragments": [
+                                {
+                                 "Interpolation": null,
+                                 "Text": "positive"
+                                }
+                               ]
+                              }
+                             },
+                             "Postfix": null
+                            }
+                           ],
+                           "Prefix": null
+                          }
+                         }
+                        }
+                       ]
+                      },
+                      "IsStatic": false
+                     }
+                    }
+                   },
+                   "Text": ""
+                  }
+                 ]
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "Name": "m"
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Body": {
+       "Label": "",
+       "Pos": {
+        "Column": 10,
+        "Filename": "StringFragmentWithInterpolatedExpression",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Fragments": [
+                {
+                 "Interpolation": null,
+                 "Text": "result: "
+                },
+                {
+                 "Interpolation": {
+                  "Else": {
+                   "Block": {
+                    "Label": "",
+                    "Pos": {
+                     "Column": 54,
+                     "Filename": "StringFragmentWithInterpolatedExpression",
+                     "Line": 1,
+                     "Offset": 53
+                    },
+                    "Statements": [
+                     {
+                      "Annotations": null,
+                      "Comments": null,
+                      "Statement": {
+                       "Expression": {
+                        "Operands": [
+                         {
+                          "Atom": {
+                           "Value": {
+                            "Fragments": [
+                             {
+                              "Interpolation": null,
+                              "Text": "negative"
+                             }
+                            ]
+                           }
+                          },
+                          "Postfix": null
+                         }
+                        ],
+                        "Prefix": null
+                       }
+                      }
+                     }
+                    ]
+                   },
+                   "IsStatic": false
+                  },
+                  "ElseIfs": null,
+                  "If": {
+                   "Condition": {
+                    "Operands": [
+                     {
+                      "Atom": {
+                       "Ident": "x"
+                      },
+                      "Postfix": [
+                       {
+                        "Index": null,
+                        "Invocation": null,
+                        "Operator": "\u003e"
+                       }
+                      ]
+                     },
+                     {
+                      "Atom": {
+                       "Value": {
+                        "Value": 0
+                       }
+                      },
+                      "Postfix": null
+                     }
+                    ],
+                    "Prefix": null
+                   },
+                   "Then": {
+                    "Block": {
+                     "Label": "",
+                     "Pos": {
+                      "Column": 34,
+                      "Filename": "StringFragmentWithInterpolatedExpression",
+                      "Line": 1,
+                      "Offset": 33
+                     },
+                     "Statements": [
+                      {
+                       "Annotations": null,
+                       "Comments": null,
+                       "Statement": {
+                        "Expression": {
+                         "Operands": [
+                          {
+                           "Atom": {
+                            "Value": {
+                             "Fragments": [
+                              {
+                               "Interpolation": null,
+                               "Text": "positive"
+                              }
+                             ]
+                            }
+                           },
+                           "Postfix": null
+                          }
+                         ],
+                         "Prefix": null
+                        }
+                       }
+                      }
+                     ]
+                    },
+                    "IsStatic": false
+                   }
+                  }
+                 },
+                 "Text": ""
+                }
+               ]
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "Name": "m"
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 10,
+       "Filename": "StringFragmentWithInterpolatedExpression",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Fragments": [
+               {
+                "Interpolation": null,
+                "Text": "result: "
+               },
+               {
+                "Interpolation": {
+                 "Else": {
+                  "Block": {
+                   "Label": "",
+                   "Pos": {
+                    "Column": 54,
+                    "Filename": "StringFragmentWithInterpolatedExpression",
+                    "Line": 1,
+                    "Offset": 53
+                   },
+                   "Statements": [
+                    {
+                     "Annotations": null,
+                     "Comments": null,
+                     "Statement": {
+                      "Expression": {
+                       "Operands": [
+                        {
+                         "Atom": {
+                          "Value": {
+                           "Fragments": [
+                            {
+                             "Interpolation": null,
+                             "Text": "negative"
+                            }
+                           ]
+                          }
+                         },
+                         "Postfix": null
+                        }
+                       ],
+                       "Prefix": null
+                      }
+                     }
+                    }
+                   ]
+                  },
+                  "IsStatic": false
+                 },
+                 "ElseIfs": null,
+                 "If": {
+                  "Condition": {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Ident": "x"
+                     },
+                     "Postfix": [
+                      {
+                       "Index": null,
+                       "Invocation": null,
+                       "Operator": "\u003e"
+                      }
+                     ]
+                    },
+                    {
+                     "Atom": {
+                      "Value": {
+                       "Value": 0
+                      }
+                     },
+                     "Postfix": null
+                    }
+                   ],
+                   "Prefix": null
+                  },
+                  "Then": {
+                   "Block": {
+                    "Label": "",
+                    "Pos": {
+                     "Column": 34,
+                     "Filename": "StringFragmentWithInterpolatedExpression",
+                     "Line": 1,
+                     "Offset": 33
+                    },
+                    "Statements": [
+                     {
+                      "Annotations": null,
+                      "Comments": null,
+                      "Statement": {
+                       "Expression": {
+                        "Operands": [
+                         {
+                          "Atom": {
+                           "Value": {
+                            "Fragments": [
+                             {
+                              "Interpolation": null,
+                              "Text": "positive"
+                             }
+                            ]
+                           }
+                          },
+                          "Postfix": null
+                         }
+                        ],
+                        "Prefix": null
+                       }
+                      }
+                     }
+                    ]
+                   },
+                   "IsStatic": false
+                  }
+                 }
+                },
+                "Text": ""
+               }
+              ]
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "Name": "m"
+    },
+    "type": "ast.Module"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 10,
+      "Filename": "StringFragmentWithInterpolatedExpression",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Fragments": [
+              {
+               "Interpolation": null,
+               "Text": "result: "
+              },
+              {
+               "Interpolation": {
+                "Else": {
+                 "Block": {
+                  "Label": "",
+                  "Pos": {
+                   "Column": 54,
+                   "Filename": "StringFragmentWithInterpolatedExpression",
+                   "Line": 1,
+                   "Offset": 53
+                  },
+                  "Statements": [
+                   {
+                    "Annotations": null,
+                    "Comments": null,
+                    "Statement": {
+                     "Expression": {
+                      "Operands": [
+                       {
+                        "Atom": {
+                         "Value": {
+                          "Fragments": [
+                           {
+                            "Interpolation": null,
+                            "Text": "negative"
+                           }
+                          ]
+                         }
+                        },
+                        "Postfix": null
+                       }
+                      ],
+                      "Prefix": null
+                     }
+                    }
+                   }
+                  ]
+                 },
+                 "IsStatic": false
+                },
+                "ElseIfs": null,
+                "If": {
+                 "Condition": {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Ident": "x"
+                    },
+                    "Postfix": [
+                     {
+                      "Index": null,
+                      "Invocation": null,
+                      "Operator": "\u003e"
+                     }
+                    ]
+                   },
+                   {
+                    "Atom": {
+                     "Value": {
+                      "Value": 0
+                     }
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 },
+                 "Then": {
+                  "Block": {
+                   "Label": "",
+                   "Pos": {
+                    "Column": 34,
+                    "Filename": "StringFragmentWithInterpolatedExpression",
+                    "Line": 1,
+                    "Offset": 33
+                   },
+                   "Statements": [
+                    {
+                     "Annotations": null,
+                     "Comments": null,
+                     "Statement": {
+                      "Expression": {
+                       "Operands": [
+                        {
+                         "Atom": {
+                          "Value": {
+                           "Fragments": [
+                            {
+                             "Interpolation": null,
+                             "Text": "positive"
+                            }
+                           ]
+                          }
+                         },
+                         "Postfix": null
+                        }
+                       ],
+                       "Prefix": null
+                      }
+                     }
+                    }
+                   ]
+                  },
+                  "IsStatic": false
+                 }
+                }
+               },
+               "Text": ""
+              }
+             ]
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Fragments": [
+            {
+             "Interpolation": null,
+             "Text": "result: "
+            },
+            {
+             "Interpolation": {
+              "Else": {
+               "Block": {
+                "Label": "",
+                "Pos": {
+                 "Column": 54,
+                 "Filename": "StringFragmentWithInterpolatedExpression",
+                 "Line": 1,
+                 "Offset": 53
+                },
+                "Statements": [
+                 {
+                  "Annotations": null,
+                  "Comments": null,
+                  "Statement": {
+                   "Expression": {
+                    "Operands": [
+                     {
+                      "Atom": {
+                       "Value": {
+                        "Fragments": [
+                         {
+                          "Interpolation": null,
+                          "Text": "negative"
+                         }
+                        ]
+                       }
+                      },
+                      "Postfix": null
+                     }
+                    ],
+                    "Prefix": null
+                   }
+                  }
+                 }
+                ]
+               },
+               "IsStatic": false
+              },
+              "ElseIfs": null,
+              "If": {
+               "Condition": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Ident": "x"
+                  },
+                  "Postfix": [
+                   {
+                    "Index": null,
+                    "Invocation": null,
+                    "Operator": "\u003e"
+                   }
+                  ]
+                 },
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Value": 0
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               },
+               "Then": {
+                "Block": {
+                 "Label": "",
+                 "Pos": {
+                  "Column": 34,
+                  "Filename": "StringFragmentWithInterpolatedExpression",
+                  "Line": 1,
+                  "Offset": 33
+                 },
+                 "Statements": [
+                  {
+                   "Annotations": null,
+                   "Comments": null,
+                   "Statement": {
+                    "Expression": {
+                     "Operands": [
+                      {
+                       "Atom": {
+                        "Value": {
+                         "Fragments": [
+                          {
+                           "Interpolation": null,
+                           "Text": "positive"
+                          }
+                         ]
+                        }
+                       },
+                       "Postfix": null
+                      }
+                     ],
+                     "Prefix": null
+                    }
+                   }
+                  }
+                 ]
+                },
+                "IsStatic": false
+               }
+              }
+             },
+             "Text": ""
+            }
+           ]
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Expression": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Fragments": [
+           {
+            "Interpolation": null,
+            "Text": "result: "
+           },
+           {
+            "Interpolation": {
+             "Else": {
+              "Block": {
+               "Label": "",
+               "Pos": {
+                "Column": 54,
+                "Filename": "StringFragmentWithInterpolatedExpression",
+                "Line": 1,
+                "Offset": 53
+               },
+               "Statements": [
+                {
+                 "Annotations": null,
+                 "Comments": null,
+                 "Statement": {
+                  "Expression": {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Value": {
+                       "Fragments": [
+                        {
+                         "Interpolation": null,
+                         "Text": "negative"
+                        }
+                       ]
+                      }
+                     },
+                     "Postfix": null
+                    }
+                   ],
+                   "Prefix": null
+                  }
+                 }
+                }
+               ]
+              },
+              "IsStatic": false
+             },
+             "ElseIfs": null,
+             "If": {
+              "Condition": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Ident": "x"
+                 },
+                 "Postfix": [
+                  {
+                   "Index": null,
+                   "Invocation": null,
+                   "Operator": "\u003e"
+                  }
+                 ]
+                },
+                {
+                 "Atom": {
+                  "Value": {
+                   "Value": 0
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              },
+              "Then": {
+               "Block": {
+                "Label": "",
+                "Pos": {
+                 "Column": 34,
+                 "Filename": "StringFragmentWithInterpolatedExpression",
+                 "Line": 1,
+                 "Offset": 33
+                },
+                "Statements": [
+                 {
+                  "Annotations": null,
+                  "Comments": null,
+                  "Statement": {
+                   "Expression": {
+                    "Operands": [
+                     {
+                      "Atom": {
+                       "Value": {
+                        "Fragments": [
+                         {
+                          "Interpolation": null,
+                          "Text": "positive"
+                         }
+                        ]
+                       }
+                      },
+                      "Postfix": null
+                     }
+                    ],
+                    "Prefix": null
+                   }
+                  }
+                 }
+                ]
+               },
+               "IsStatic": false
+              }
+             }
+            },
+            "Text": ""
+           }
+          ]
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Fragments": [
+          {
+           "Interpolation": null,
+           "Text": "result: "
+          },
+          {
+           "Interpolation": {
+            "Else": {
+             "Block": {
+              "Label": "",
+              "Pos": {
+               "Column": 54,
+               "Filename": "StringFragmentWithInterpolatedExpression",
+               "Line": 1,
+               "Offset": 53
+              },
+              "Statements": [
+               {
+                "Annotations": null,
+                "Comments": null,
+                "Statement": {
+                 "Expression": {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Value": {
+                      "Fragments": [
+                       {
+                        "Interpolation": null,
+                        "Text": "negative"
+                       }
+                      ]
+                     }
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 }
+                }
+               }
+              ]
+             },
+             "IsStatic": false
+            },
+            "ElseIfs": null,
+            "If": {
+             "Condition": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Ident": "x"
+                },
+                "Postfix": [
+                 {
+                  "Index": null,
+                  "Invocation": null,
+                  "Operator": "\u003e"
+                 }
+                ]
+               },
+               {
+                "Atom": {
+                 "Value": {
+                  "Value": 0
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             },
+             "Then": {
+              "Block": {
+               "Label": "",
+               "Pos": {
+                "Column": 34,
+                "Filename": "StringFragmentWithInterpolatedExpression",
+                "Line": 1,
+                "Offset": 33
+               },
+               "Statements": [
+                {
+                 "Annotations": null,
+                 "Comments": null,
+                 "Statement": {
+                  "Expression": {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Value": {
+                       "Fragments": [
+                        {
+                         "Interpolation": null,
+                         "Text": "positive"
+                        }
+                       ]
+                      }
+                     },
+                     "Postfix": null
+                    }
+                   ],
+                   "Prefix": null
+                  }
+                 }
+                }
+               ]
+              },
+              "IsStatic": false
+             }
+            }
+           },
+           "Text": ""
+          }
+         ]
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Fragments": [
+        {
+         "Interpolation": null,
+         "Text": "result: "
+        },
+        {
+         "Interpolation": {
+          "Else": {
+           "Block": {
+            "Label": "",
+            "Pos": {
+             "Column": 54,
+             "Filename": "StringFragmentWithInterpolatedExpression",
+             "Line": 1,
+             "Offset": 53
+            },
+            "Statements": [
+             {
+              "Annotations": null,
+              "Comments": null,
+              "Statement": {
+               "Expression": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Fragments": [
+                     {
+                      "Interpolation": null,
+                      "Text": "negative"
+                     }
+                    ]
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               }
+              }
+             }
+            ]
+           },
+           "IsStatic": false
+          },
+          "ElseIfs": null,
+          "If": {
+           "Condition": {
+            "Operands": [
+             {
+              "Atom": {
+               "Ident": "x"
+              },
+              "Postfix": [
+               {
+                "Index": null,
+                "Invocation": null,
+                "Operator": "\u003e"
+               }
+              ]
+             },
+             {
+              "Atom": {
+               "Value": {
+                "Value": 0
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           },
+           "Then": {
+            "Block": {
+             "Label": "",
+             "Pos": {
+              "Column": 34,
+              "Filename": "StringFragmentWithInterpolatedExpression",
+              "Line": 1,
+              "Offset": 33
+             },
+             "Statements": [
+              {
+               "Annotations": null,
+               "Comments": null,
+               "Statement": {
+                "Expression": {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Value": {
+                     "Fragments": [
+                      {
+                       "Interpolation": null,
+                       "Text": "positive"
+                      }
+                     ]
+                    }
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Prefix": null
+                }
+               }
+              }
+             ]
+            },
+            "IsStatic": false
+           }
+          }
+         },
+         "Text": ""
+        }
+       ]
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Fragments": [
+       {
+        "Interpolation": null,
+        "Text": "result: "
+       },
+       {
+        "Interpolation": {
+         "Else": {
+          "Block": {
+           "Label": "",
+           "Pos": {
+            "Column": 54,
+            "Filename": "StringFragmentWithInterpolatedExpression",
+            "Line": 1,
+            "Offset": 53
+           },
+           "Statements": [
+            {
+             "Annotations": null,
+             "Comments": null,
+             "Statement": {
+              "Expression": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Value": {
+                   "Fragments": [
+                    {
+                     "Interpolation": null,
+                     "Text": "negative"
+                    }
+                   ]
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             }
+            }
+           ]
+          },
+          "IsStatic": false
+         },
+         "ElseIfs": null,
+         "If": {
+          "Condition": {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "x"
+             },
+             "Postfix": [
+              {
+               "Index": null,
+               "Invocation": null,
+               "Operator": "\u003e"
+              }
+             ]
+            },
+            {
+             "Atom": {
+              "Value": {
+               "Value": 0
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          },
+          "Then": {
+           "Block": {
+            "Label": "",
+            "Pos": {
+             "Column": 34,
+             "Filename": "StringFragmentWithInterpolatedExpression",
+             "Line": 1,
+             "Offset": 33
+            },
+            "Statements": [
+             {
+              "Annotations": null,
+              "Comments": null,
+              "Statement": {
+               "Expression": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Fragments": [
+                     {
+                      "Interpolation": null,
+                      "Text": "positive"
+                     }
+                    ]
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               }
+              }
+             }
+            ]
+           },
+           "IsStatic": false
+          }
+         }
+        },
+        "Text": ""
+       }
+      ]
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Fragments": [
+      {
+       "Interpolation": null,
+       "Text": "result: "
+      },
+      {
+       "Interpolation": {
+        "Else": {
+         "Block": {
+          "Label": "",
+          "Pos": {
+           "Column": 54,
+           "Filename": "StringFragmentWithInterpolatedExpression",
+           "Line": 1,
+           "Offset": 53
+          },
+          "Statements": [
+           {
+            "Annotations": null,
+            "Comments": null,
+            "Statement": {
+             "Expression": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Value": {
+                  "Fragments": [
+                   {
+                    "Interpolation": null,
+                    "Text": "negative"
+                   }
+                  ]
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             }
+            }
+           }
+          ]
+         },
+         "IsStatic": false
+        },
+        "ElseIfs": null,
+        "If": {
+         "Condition": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "x"
+            },
+            "Postfix": [
+             {
+              "Index": null,
+              "Invocation": null,
+              "Operator": "\u003e"
+             }
+            ]
+           },
+           {
+            "Atom": {
+             "Value": {
+              "Value": 0
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         },
+         "Then": {
+          "Block": {
+           "Label": "",
+           "Pos": {
+            "Column": 34,
+            "Filename": "StringFragmentWithInterpolatedExpression",
+            "Line": 1,
+            "Offset": 33
+           },
+           "Statements": [
+            {
+             "Annotations": null,
+             "Comments": null,
+             "Statement": {
+              "Expression": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Value": {
+                   "Fragments": [
+                    {
+                     "Interpolation": null,
+                     "Text": "positive"
+                    }
+                   ]
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             }
+            }
+           ]
+          },
+          "IsStatic": false
+         }
+        }
+       },
+       "Text": ""
+      }
+     ]
+    },
+    "type": "ast.String"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Interpolation": null,
+     "Text": "result: "
+    },
+    "type": "*ast.StringFragment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Interpolation": null,
+     "Text": "result: "
+    },
+    "type": "*ast.StringFragment"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Interpolation": {
+      "Else": {
+       "Block": {
+        "Label": "",
+        "Pos": {
+         "Column": 54,
+         "Filename": "StringFragmentWithInterpolatedExpression",
+         "Line": 1,
+         "Offset": 53
+        },
+        "Statements": [
+         {
+          "Annotations": null,
+          "Comments": null,
+          "Statement": {
+           "Expression": {
+            "Operands": [
+             {
+              "Atom": {
+               "Value": {
+                "Fragments": [
+                 {
+                  "Interpolation": null,
+                  "Text": "negative"
+                 }
+                ]
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           }
+          }
+         }
+        ]
+       },
+       "IsStatic": false
+      },
+      "ElseIfs": null,
+      "If": {
+       "Condition": {
+        "Operands": [
+         {
+          "Atom": {
+           "Ident": "x"
+          },
+          "Postfix": [
+           {
+            "Index": null,
+            "Invocation": null,
+            "Operator": "\u003e"
+           }
+          ]
+         },
+         {
+          "Atom": {
+           "Value": {
+            "Value": 0
+           }
+          },
+          "Postfix": null
+         }
+        ],
+        "Prefix": null
+       },
+       "Then": {
+        "Block": {
+         "Label": "",
+         "Pos": {
+          "Column": 34,
+          "Filename": "StringFragmentWithInterpolatedExpression",
+          "Line": 1,
+          "Offset": 33
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Expression": {
+             "Operands": [
+              {
+               "Atom": {
+                "Value": {
+                 "Fragments": [
+                  {
+                   "Interpolation": null,
+                   "Text": "positive"
+                  }
+                 ]
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "IsStatic": false
+       }
+      }
+     },
+     "Text": ""
+    },
+    "type": "*ast.StringFragment"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Else": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 54,
+        "Filename": "StringFragmentWithInterpolatedExpression",
+        "Line": 1,
+        "Offset": 53
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Fragments": [
+                {
+                 "Interpolation": null,
+                 "Text": "negative"
+                }
+               ]
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "IsStatic": false
+     },
+     "ElseIfs": null,
+     "If": {
+      "Condition": {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "x"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "\u003e"
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Value": {
+           "Value": 0
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      },
+      "Then": {
+       "Block": {
+        "Label": "",
+        "Pos": {
+         "Column": 34,
+         "Filename": "StringFragmentWithInterpolatedExpression",
+         "Line": 1,
+         "Offset": 33
+        },
+        "Statements": [
+         {
+          "Annotations": null,
+          "Comments": null,
+          "Statement": {
+           "Expression": {
+            "Operands": [
+             {
+              "Atom": {
+               "Value": {
+                "Fragments": [
+                 {
+                  "Interpolation": null,
+                  "Text": "positive"
+                 }
+                ]
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           }
+          }
+         }
+        ]
+       },
+       "IsStatic": false
+      }
+     }
+    },
+    "type": "ast.IfExpression"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Condition": {
+      "Operands": [
+       {
+        "Atom": {
+         "Ident": "x"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": null,
+          "Operator": "\u003e"
+         }
+        ]
+       },
+       {
+        "Atom": {
+         "Value": {
+          "Value": 0
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     },
+     "Then": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 34,
+        "Filename": "StringFragmentWithInterpolatedExpression",
+        "Line": 1,
+        "Offset": 33
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Fragments": [
+                {
+                 "Interpolation": null,
+                 "Text": "positive"
+                }
+               ]
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "IsStatic": false
+     }
+    },
+    "type": "ast.IfBranch"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "x"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "\u003e"
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Value": {
+         "Value": 0
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "x"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "\u003e"
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "x"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "x"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "\u003e"
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "\u003e"
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "x"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "\u003e"
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 0
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 0
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 0
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 0
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 0
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 0
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "x"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "\u003e"
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Value": {
+         "Value": 0
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 34,
+       "Filename": "StringFragmentWithInterpolatedExpression",
+       "Line": 1,
+       "Offset": 33
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Fragments": [
+               {
+                "Interpolation": null,
+                "Text": "positive"
+               }
+              ]
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false
+    },
+    "type": "ast.BlockExpression"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 34,
+      "Filename": "StringFragmentWithInterpolatedExpression",
+      "Line": 1,
+      "Offset": 33
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Fragments": [
+              {
+               "Interpolation": null,
+               "Text": "positive"
+              }
+             ]
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Fragments": [
+            {
+             "Interpolation": null,
+             "Text": "positive"
+            }
+           ]
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Expression": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Fragments": [
+           {
+            "Interpolation": null,
+            "Text": "positive"
+           }
+          ]
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Fragments": [
+          {
+           "Interpolation": null,
+           "Text": "positive"
+          }
+         ]
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Fragments": [
+        {
+         "Interpolation": null,
+         "Text": "positive"
+        }
+       ]
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Fragments": [
+       {
+        "Interpolation": null,
+        "Text": "positive"
+       }
+      ]
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Fragments": [
+      {
+       "Interpolation": null,
+       "Text": "positive"
+      }
+     ]
+    },
+    "type": "ast.String"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Interpolation": null,
+     "Text": "positive"
+    },
+    "type": "*ast.StringFragment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Interpolation": null,
+     "Text": "positive"
+    },
+    "type": "*ast.StringFragment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Fragments": [
+      {
+       "Interpolation": null,
+       "Text": "positive"
+      }
+     ]
+    },
+    "type": "ast.String"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Fragments": [
+       {
+        "Interpolation": null,
+        "Text": "positive"
+       }
+      ]
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Fragments": [
+        {
+         "Interpolation": null,
+         "Text": "positive"
+        }
+       ]
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Fragments": [
+          {
+           "Interpolation": null,
+           "Text": "positive"
+          }
+         ]
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Expression": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Fragments": [
+           {
+            "Interpolation": null,
+            "Text": "positive"
+           }
+          ]
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Fragments": [
+            {
+             "Interpolation": null,
+             "Text": "positive"
+            }
+           ]
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 34,
+      "Filename": "StringFragmentWithInterpolatedExpression",
+      "Line": 1,
+      "Offset": 33
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Fragments": [
+              {
+               "Interpolation": null,
+               "Text": "positive"
+              }
+             ]
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 34,
+       "Filename": "StringFragmentWithInterpolatedExpression",
+       "Line": 1,
+       "Offset": 33
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Fragments": [
+               {
+                "Interpolation": null,
+                "Text": "positive"
+               }
+              ]
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false
+    },
+    "type": "ast.BlockExpression"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Condition": {
+      "Operands": [
+       {
+        "Atom": {
+         "Ident": "x"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": null,
+          "Operator": "\u003e"
+         }
+        ]
+       },
+       {
+        "Atom": {
+         "Value": {
+          "Value": 0
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     },
+     "Then": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 34,
+        "Filename": "StringFragmentWithInterpolatedExpression",
+        "Line": 1,
+        "Offset": 33
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Fragments": [
+                {
+                 "Interpolation": null,
+                 "Text": "positive"
+                }
+               ]
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "IsStatic": false
+     }
+    },
+    "type": "ast.IfBranch"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 54,
+       "Filename": "StringFragmentWithInterpolatedExpression",
+       "Line": 1,
+       "Offset": 53
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Fragments": [
+               {
+                "Interpolation": null,
+                "Text": "negative"
+               }
+              ]
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false
+    },
+    "type": "ast.BlockExpression"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 54,
+      "Filename": "StringFragmentWithInterpolatedExpression",
+      "Line": 1,
+      "Offset": 53
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Fragments": [
+              {
+               "Interpolation": null,
+               "Text": "negative"
+              }
+             ]
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Fragments": [
+            {
+             "Interpolation": null,
+             "Text": "negative"
+            }
+           ]
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Expression": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Fragments": [
+           {
+            "Interpolation": null,
+            "Text": "negative"
+           }
+          ]
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Fragments": [
+          {
+           "Interpolation": null,
+           "Text": "negative"
+          }
+         ]
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Fragments": [
+        {
+         "Interpolation": null,
+         "Text": "negative"
+        }
+       ]
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Fragments": [
+       {
+        "Interpolation": null,
+        "Text": "negative"
+       }
+      ]
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Fragments": [
+      {
+       "Interpolation": null,
+       "Text": "negative"
+      }
+     ]
+    },
+    "type": "ast.String"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Interpolation": null,
+     "Text": "negative"
+    },
+    "type": "*ast.StringFragment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Interpolation": null,
+     "Text": "negative"
+    },
+    "type": "*ast.StringFragment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Fragments": [
+      {
+       "Interpolation": null,
+       "Text": "negative"
+      }
+     ]
+    },
+    "type": "ast.String"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Fragments": [
+       {
+        "Interpolation": null,
+        "Text": "negative"
+       }
+      ]
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Fragments": [
+        {
+         "Interpolation": null,
+         "Text": "negative"
+        }
+       ]
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Fragments": [
+          {
+           "Interpolation": null,
+           "Text": "negative"
+          }
+         ]
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Expression": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Fragments": [
+           {
+            "Interpolation": null,
+            "Text": "negative"
+           }
+          ]
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Fragments": [
+            {
+             "Interpolation": null,
+             "Text": "negative"
+            }
+           ]
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 54,
+      "Filename": "StringFragmentWithInterpolatedExpression",
+      "Line": 1,
+      "Offset": 53
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Fragments": [
+              {
+               "Interpolation": null,
+               "Text": "negative"
+              }
+             ]
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 54,
+       "Filename": "StringFragmentWithInterpolatedExpression",
+       "Line": 1,
+       "Offset": 53
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Fragments": [
+               {
+                "Interpolation": null,
+                "Text": "negative"
+               }
+              ]
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false
+    },
+    "type": "ast.BlockExpression"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Else": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 54,
+        "Filename": "StringFragmentWithInterpolatedExpression",
+        "Line": 1,
+        "Offset": 53
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Fragments": [
+                {
+                 "Interpolation": null,
+                 "Text": "negative"
+                }
+               ]
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "IsStatic": false
+     },
+     "ElseIfs": null,
+     "If": {
+      "Condition": {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "x"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "\u003e"
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Value": {
+           "Value": 0
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      },
+      "Then": {
+       "Block": {
+        "Label": "",
+        "Pos": {
+         "Column": 34,
+         "Filename": "StringFragmentWithInterpolatedExpression",
+         "Line": 1,
+         "Offset": 33
+        },
+        "Statements": [
+         {
+          "Annotations": null,
+          "Comments": null,
+          "Statement": {
+           "Expression": {
+            "Operands": [
+             {
+              "Atom": {
+               "Value": {
+                "Fragments": [
+                 {
+                  "Interpolation": null,
+                  "Text": "positive"
+                 }
+                ]
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           }
+          }
+         }
+        ]
+       },
+       "IsStatic": false
+      }
+     }
+    },
+    "type": "ast.IfExpression"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Interpolation": {
+      "Else": {
+       "Block": {
+        "Label": "",
+        "Pos": {
+         "Column": 54,
+         "Filename": "StringFragmentWithInterpolatedExpression",
+         "Line": 1,
+         "Offset": 53
+        },
+        "Statements": [
+         {
+          "Annotations": null,
+          "Comments": null,
+          "Statement": {
+           "Expression": {
+            "Operands": [
+             {
+              "Atom": {
+               "Value": {
+                "Fragments": [
+                 {
+                  "Interpolation": null,
+                  "Text": "negative"
+                 }
+                ]
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           }
+          }
+         }
+        ]
+       },
+       "IsStatic": false
+      },
+      "ElseIfs": null,
+      "If": {
+       "Condition": {
+        "Operands": [
+         {
+          "Atom": {
+           "Ident": "x"
+          },
+          "Postfix": [
+           {
+            "Index": null,
+            "Invocation": null,
+            "Operator": "\u003e"
+           }
+          ]
+         },
+         {
+          "Atom": {
+           "Value": {
+            "Value": 0
+           }
+          },
+          "Postfix": null
+         }
+        ],
+        "Prefix": null
+       },
+       "Then": {
+        "Block": {
+         "Label": "",
+         "Pos": {
+          "Column": 34,
+          "Filename": "StringFragmentWithInterpolatedExpression",
+          "Line": 1,
+          "Offset": 33
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Expression": {
+             "Operands": [
+              {
+               "Atom": {
+                "Value": {
+                 "Fragments": [
+                  {
+                   "Interpolation": null,
+                   "Text": "positive"
+                  }
+                 ]
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "IsStatic": false
+       }
+      }
+     },
+     "Text": ""
+    },
+    "type": "*ast.StringFragment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Fragments": [
+      {
+       "Interpolation": null,
+       "Text": "result: "
+      },
+      {
+       "Interpolation": {
+        "Else": {
+         "Block": {
+          "Label": "",
+          "Pos": {
+           "Column": 54,
+           "Filename": "StringFragmentWithInterpolatedExpression",
+           "Line": 1,
+           "Offset": 53
+          },
+          "Statements": [
+           {
+            "Annotations": null,
+            "Comments": null,
+            "Statement": {
+             "Expression": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Value": {
+                  "Fragments": [
+                   {
+                    "Interpolation": null,
+                    "Text": "negative"
+                   }
+                  ]
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             }
+            }
+           }
+          ]
+         },
+         "IsStatic": false
+        },
+        "ElseIfs": null,
+        "If": {
+         "Condition": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "x"
+            },
+            "Postfix": [
+             {
+              "Index": null,
+              "Invocation": null,
+              "Operator": "\u003e"
+             }
+            ]
+           },
+           {
+            "Atom": {
+             "Value": {
+              "Value": 0
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         },
+         "Then": {
+          "Block": {
+           "Label": "",
+           "Pos": {
+            "Column": 34,
+            "Filename": "StringFragmentWithInterpolatedExpression",
+            "Line": 1,
+            "Offset": 33
+           },
+           "Statements": [
+            {
+             "Annotations": null,
+             "Comments": null,
+             "Statement": {
+              "Expression": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Value": {
+                   "Fragments": [
+                    {
+                     "Interpolation": null,
+                     "Text": "positive"
+                    }
+                   ]
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             }
+            }
+           ]
+          },
+          "IsStatic": false
+         }
+        }
+       },
+       "Text": ""
+      }
+     ]
+    },
+    "type": "ast.String"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Fragments": [
+       {
+        "Interpolation": null,
+        "Text": "result: "
+       },
+       {
+        "Interpolation": {
+         "Else": {
+          "Block": {
+           "Label": "",
+           "Pos": {
+            "Column": 54,
+            "Filename": "StringFragmentWithInterpolatedExpression",
+            "Line": 1,
+            "Offset": 53
+           },
+           "Statements": [
+            {
+             "Annotations": null,
+             "Comments": null,
+             "Statement": {
+              "Expression": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Value": {
+                   "Fragments": [
+                    {
+                     "Interpolation": null,
+                     "Text": "negative"
+                    }
+                   ]
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             }
+            }
+           ]
+          },
+          "IsStatic": false
+         },
+         "ElseIfs": null,
+         "If": {
+          "Condition": {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "x"
+             },
+             "Postfix": [
+              {
+               "Index": null,
+               "Invocation": null,
+               "Operator": "\u003e"
+              }
+             ]
+            },
+            {
+             "Atom": {
+              "Value": {
+               "Value": 0
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          },
+          "Then": {
+           "Block": {
+            "Label": "",
+            "Pos": {
+             "Column": 34,
+             "Filename": "StringFragmentWithInterpolatedExpression",
+             "Line": 1,
+             "Offset": 33
+            },
+            "Statements": [
+             {
+              "Annotations": null,
+              "Comments": null,
+              "Statement": {
+               "Expression": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Fragments": [
+                     {
+                      "Interpolation": null,
+                      "Text": "positive"
+                     }
+                    ]
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               }
+              }
+             }
+            ]
+           },
+           "IsStatic": false
+          }
+         }
+        },
+        "Text": ""
+       }
+      ]
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Fragments": [
+        {
+         "Interpolation": null,
+         "Text": "result: "
+        },
+        {
+         "Interpolation": {
+          "Else": {
+           "Block": {
+            "Label": "",
+            "Pos": {
+             "Column": 54,
+             "Filename": "StringFragmentWithInterpolatedExpression",
+             "Line": 1,
+             "Offset": 53
+            },
+            "Statements": [
+             {
+              "Annotations": null,
+              "Comments": null,
+              "Statement": {
+               "Expression": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Fragments": [
+                     {
+                      "Interpolation": null,
+                      "Text": "negative"
+                     }
+                    ]
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               }
+              }
+             }
+            ]
+           },
+           "IsStatic": false
+          },
+          "ElseIfs": null,
+          "If": {
+           "Condition": {
+            "Operands": [
+             {
+              "Atom": {
+               "Ident": "x"
+              },
+              "Postfix": [
+               {
+                "Index": null,
+                "Invocation": null,
+                "Operator": "\u003e"
+               }
+              ]
+             },
+             {
+              "Atom": {
+               "Value": {
+                "Value": 0
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           },
+           "Then": {
+            "Block": {
+             "Label": "",
+             "Pos": {
+              "Column": 34,
+              "Filename": "StringFragmentWithInterpolatedExpression",
+              "Line": 1,
+              "Offset": 33
+             },
+             "Statements": [
+              {
+               "Annotations": null,
+               "Comments": null,
+               "Statement": {
+                "Expression": {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Value": {
+                     "Fragments": [
+                      {
+                       "Interpolation": null,
+                       "Text": "positive"
+                      }
+                     ]
+                    }
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Prefix": null
+                }
+               }
+              }
+             ]
+            },
+            "IsStatic": false
+           }
+          }
+         },
+         "Text": ""
+        }
+       ]
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Fragments": [
+          {
+           "Interpolation": null,
+           "Text": "result: "
+          },
+          {
+           "Interpolation": {
+            "Else": {
+             "Block": {
+              "Label": "",
+              "Pos": {
+               "Column": 54,
+               "Filename": "StringFragmentWithInterpolatedExpression",
+               "Line": 1,
+               "Offset": 53
+              },
+              "Statements": [
+               {
+                "Annotations": null,
+                "Comments": null,
+                "Statement": {
+                 "Expression": {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Value": {
+                      "Fragments": [
+                       {
+                        "Interpolation": null,
+                        "Text": "negative"
+                       }
+                      ]
+                     }
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 }
+                }
+               }
+              ]
+             },
+             "IsStatic": false
+            },
+            "ElseIfs": null,
+            "If": {
+             "Condition": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Ident": "x"
+                },
+                "Postfix": [
+                 {
+                  "Index": null,
+                  "Invocation": null,
+                  "Operator": "\u003e"
+                 }
+                ]
+               },
+               {
+                "Atom": {
+                 "Value": {
+                  "Value": 0
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             },
+             "Then": {
+              "Block": {
+               "Label": "",
+               "Pos": {
+                "Column": 34,
+                "Filename": "StringFragmentWithInterpolatedExpression",
+                "Line": 1,
+                "Offset": 33
+               },
+               "Statements": [
+                {
+                 "Annotations": null,
+                 "Comments": null,
+                 "Statement": {
+                  "Expression": {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Value": {
+                       "Fragments": [
+                        {
+                         "Interpolation": null,
+                         "Text": "positive"
+                        }
+                       ]
+                      }
+                     },
+                     "Postfix": null
+                    }
+                   ],
+                   "Prefix": null
+                  }
+                 }
+                }
+               ]
+              },
+              "IsStatic": false
+             }
+            }
+           },
+           "Text": ""
+          }
+         ]
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Expression": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Fragments": [
+           {
+            "Interpolation": null,
+            "Text": "result: "
+           },
+           {
+            "Interpolation": {
+             "Else": {
+              "Block": {
+               "Label": "",
+               "Pos": {
+                "Column": 54,
+                "Filename": "StringFragmentWithInterpolatedExpression",
+                "Line": 1,
+                "Offset": 53
+               },
+               "Statements": [
+                {
+                 "Annotations": null,
+                 "Comments": null,
+                 "Statement": {
+                  "Expression": {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Value": {
+                       "Fragments": [
+                        {
+                         "Interpolation": null,
+                         "Text": "negative"
+                        }
+                       ]
+                      }
+                     },
+                     "Postfix": null
+                    }
+                   ],
+                   "Prefix": null
+                  }
+                 }
+                }
+               ]
+              },
+              "IsStatic": false
+             },
+             "ElseIfs": null,
+             "If": {
+              "Condition": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Ident": "x"
+                 },
+                 "Postfix": [
+                  {
+                   "Index": null,
+                   "Invocation": null,
+                   "Operator": "\u003e"
+                  }
+                 ]
+                },
+                {
+                 "Atom": {
+                  "Value": {
+                   "Value": 0
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              },
+              "Then": {
+               "Block": {
+                "Label": "",
+                "Pos": {
+                 "Column": 34,
+                 "Filename": "StringFragmentWithInterpolatedExpression",
+                 "Line": 1,
+                 "Offset": 33
+                },
+                "Statements": [
+                 {
+                  "Annotations": null,
+                  "Comments": null,
+                  "Statement": {
+                   "Expression": {
+                    "Operands": [
+                     {
+                      "Atom": {
+                       "Value": {
+                        "Fragments": [
+                         {
+                          "Interpolation": null,
+                          "Text": "positive"
+                         }
+                        ]
+                       }
+                      },
+                      "Postfix": null
+                     }
+                    ],
+                    "Prefix": null
+                   }
+                  }
+                 }
+                ]
+               },
+               "IsStatic": false
+              }
+             }
+            },
+            "Text": ""
+           }
+          ]
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Fragments": [
+            {
+             "Interpolation": null,
+             "Text": "result: "
+            },
+            {
+             "Interpolation": {
+              "Else": {
+               "Block": {
+                "Label": "",
+                "Pos": {
+                 "Column": 54,
+                 "Filename": "StringFragmentWithInterpolatedExpression",
+                 "Line": 1,
+                 "Offset": 53
+                },
+                "Statements": [
+                 {
+                  "Annotations": null,
+                  "Comments": null,
+                  "Statement": {
+                   "Expression": {
+                    "Operands": [
+                     {
+                      "Atom": {
+                       "Value": {
+                        "Fragments": [
+                         {
+                          "Interpolation": null,
+                          "Text": "negative"
+                         }
+                        ]
+                       }
+                      },
+                      "Postfix": null
+                     }
+                    ],
+                    "Prefix": null
+                   }
+                  }
+                 }
+                ]
+               },
+               "IsStatic": false
+              },
+              "ElseIfs": null,
+              "If": {
+               "Condition": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Ident": "x"
+                  },
+                  "Postfix": [
+                   {
+                    "Index": null,
+                    "Invocation": null,
+                    "Operator": "\u003e"
+                   }
+                  ]
+                 },
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Value": 0
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               },
+               "Then": {
+                "Block": {
+                 "Label": "",
+                 "Pos": {
+                  "Column": 34,
+                  "Filename": "StringFragmentWithInterpolatedExpression",
+                  "Line": 1,
+                  "Offset": 33
+                 },
+                 "Statements": [
+                  {
+                   "Annotations": null,
+                   "Comments": null,
+                   "Statement": {
+                    "Expression": {
+                     "Operands": [
+                      {
+                       "Atom": {
+                        "Value": {
+                         "Fragments": [
+                          {
+                           "Interpolation": null,
+                           "Text": "positive"
+                          }
+                         ]
+                        }
+                       },
+                       "Postfix": null
+                      }
+                     ],
+                     "Prefix": null
+                    }
+                   }
+                  }
+                 ]
+                },
+                "IsStatic": false
+               }
+              }
+             },
+             "Text": ""
+            }
+           ]
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 10,
+      "Filename": "StringFragmentWithInterpolatedExpression",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Fragments": [
+              {
+               "Interpolation": null,
+               "Text": "result: "
+              },
+              {
+               "Interpolation": {
+                "Else": {
+                 "Block": {
+                  "Label": "",
+                  "Pos": {
+                   "Column": 54,
+                   "Filename": "StringFragmentWithInterpolatedExpression",
+                   "Line": 1,
+                   "Offset": 53
+                  },
+                  "Statements": [
+                   {
+                    "Annotations": null,
+                    "Comments": null,
+                    "Statement": {
+                     "Expression": {
+                      "Operands": [
+                       {
+                        "Atom": {
+                         "Value": {
+                          "Fragments": [
+                           {
+                            "Interpolation": null,
+                            "Text": "negative"
+                           }
+                          ]
+                         }
+                        },
+                        "Postfix": null
+                       }
+                      ],
+                      "Prefix": null
+                     }
+                    }
+                   }
+                  ]
+                 },
+                 "IsStatic": false
+                },
+                "ElseIfs": null,
+                "If": {
+                 "Condition": {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Ident": "x"
+                    },
+                    "Postfix": [
+                     {
+                      "Index": null,
+                      "Invocation": null,
+                      "Operator": "\u003e"
+                     }
+                    ]
+                   },
+                   {
+                    "Atom": {
+                     "Value": {
+                      "Value": 0
+                     }
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 },
+                 "Then": {
+                  "Block": {
+                   "Label": "",
+                   "Pos": {
+                    "Column": 34,
+                    "Filename": "StringFragmentWithInterpolatedExpression",
+                    "Line": 1,
+                    "Offset": 33
+                   },
+                   "Statements": [
+                    {
+                     "Annotations": null,
+                     "Comments": null,
+                     "Statement": {
+                      "Expression": {
+                       "Operands": [
+                        {
+                         "Atom": {
+                          "Value": {
+                           "Fragments": [
+                            {
+                             "Interpolation": null,
+                             "Text": "positive"
+                            }
+                           ]
+                          }
+                         },
+                         "Postfix": null
+                        }
+                       ],
+                       "Prefix": null
+                      }
+                     }
+                    }
+                   ]
+                  },
+                  "IsStatic": false
+                 }
+                }
+               },
+               "Text": ""
+              }
+             ]
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 10,
+       "Filename": "StringFragmentWithInterpolatedExpression",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Fragments": [
+               {
+                "Interpolation": null,
+                "Text": "result: "
+               },
+               {
+                "Interpolation": {
+                 "Else": {
+                  "Block": {
+                   "Label": "",
+                   "Pos": {
+                    "Column": 54,
+                    "Filename": "StringFragmentWithInterpolatedExpression",
+                    "Line": 1,
+                    "Offset": 53
+                   },
+                   "Statements": [
+                    {
+                     "Annotations": null,
+                     "Comments": null,
+                     "Statement": {
+                      "Expression": {
+                       "Operands": [
+                        {
+                         "Atom": {
+                          "Value": {
+                           "Fragments": [
+                            {
+                             "Interpolation": null,
+                             "Text": "negative"
+                            }
+                           ]
+                          }
+                         },
+                         "Postfix": null
+                        }
+                       ],
+                       "Prefix": null
+                      }
+                     }
+                    }
+                   ]
+                  },
+                  "IsStatic": false
+                 },
+                 "ElseIfs": null,
+                 "If": {
+                  "Condition": {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Ident": "x"
+                     },
+                     "Postfix": [
+                      {
+                       "Index": null,
+                       "Invocation": null,
+                       "Operator": "\u003e"
+                      }
+                     ]
+                    },
+                    {
+                     "Atom": {
+                      "Value": {
+                       "Value": 0
+                      }
+                     },
+                     "Postfix": null
+                    }
+                   ],
+                   "Prefix": null
+                  },
+                  "Then": {
+                   "Block": {
+                    "Label": "",
+                    "Pos": {
+                     "Column": 34,
+                     "Filename": "StringFragmentWithInterpolatedExpression",
+                     "Line": 1,
+                     "Offset": 33
+                    },
+                    "Statements": [
+                     {
+                      "Annotations": null,
+                      "Comments": null,
+                      "Statement": {
+                       "Expression": {
+                        "Operands": [
+                         {
+                          "Atom": {
+                           "Value": {
+                            "Fragments": [
+                             {
+                              "Interpolation": null,
+                              "Text": "positive"
+                             }
+                            ]
+                           }
+                          },
+                          "Postfix": null
+                         }
+                        ],
+                        "Prefix": null
+                       }
+                      }
+                     }
+                    ]
+                   },
+                   "IsStatic": false
+                  }
+                 }
+                },
+                "Text": ""
+               }
+              ]
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "Name": "m"
+    },
+    "type": "ast.Module"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Body": {
+       "Label": "",
+       "Pos": {
+        "Column": 10,
+        "Filename": "StringFragmentWithInterpolatedExpression",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Fragments": [
+                {
+                 "Interpolation": null,
+                 "Text": "result: "
+                },
+                {
+                 "Interpolation": {
+                  "Else": {
+                   "Block": {
+                    "Label": "",
+                    "Pos": {
+                     "Column": 54,
+                     "Filename": "StringFragmentWithInterpolatedExpression",
+                     "Line": 1,
+                     "Offset": 53
+                    },
+                    "Statements": [
+                     {
+                      "Annotations": null,
+                      "Comments": null,
+                      "Statement": {
+                       "Expression": {
+                        "Operands": [
+                         {
+                          "Atom": {
+                           "Value": {
+                            "Fragments": [
+                             {
+                              "Interpolation": null,
+                              "Text": "negative"
+                             }
+                            ]
+                           }
+                          },
+                          "Postfix": null
+                         }
+                        ],
+                        "Prefix": null
+                       }
+                      }
+                     }
+                    ]
+                   },
+                   "IsStatic": false
+                  },
+                  "ElseIfs": null,
+                  "If": {
+                   "Condition": {
+                    "Operands": [
+                     {
+                      "Atom": {
+                       "Ident": "x"
+                      },
+                      "Postfix": [
+                       {
+                        "Index": null,
+                        "Invocation": null,
+                        "Operator": "\u003e"
+                       }
+                      ]
+                     },
+                     {
+                      "Atom": {
+                       "Value": {
+                        "Value": 0
+                       }
+                      },
+                      "Postfix": null
+                     }
+                    ],
+                    "Prefix": null
+                   },
+                   "Then": {
+                    "Block": {
+                     "Label": "",
+                     "Pos": {
+                      "Column": 34,
+                      "Filename": "StringFragmentWithInterpolatedExpression",
+                      "Line": 1,
+                      "Offset": 33
+                     },
+                     "Statements": [
+                      {
+                       "Annotations": null,
+                       "Comments": null,
+                       "Statement": {
+                        "Expression": {
+                         "Operands": [
+                          {
+                           "Atom": {
+                            "Value": {
+                             "Fragments": [
+                              {
+                               "Interpolation": null,
+                               "Text": "positive"
+                              }
+                             ]
+                            }
+                           },
+                           "Postfix": null
+                          }
+                         ],
+                         "Prefix": null
+                        }
+                       }
+                      }
+                     ]
+                    },
+                    "IsStatic": false
+                   }
+                  }
+                 },
+                 "Text": ""
+                }
+               ]
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "Name": "m"
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Body": {
+         "Label": "",
+         "Pos": {
+          "Column": 10,
+          "Filename": "StringFragmentWithInterpolatedExpression",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Expression": {
+             "Operands": [
+              {
+               "Atom": {
+                "Value": {
+                 "Fragments": [
+                  {
+                   "Interpolation": null,
+                   "Text": "result: "
+                  },
+                  {
+                   "Interpolation": {
+                    "Else": {
+                     "Block": {
+                      "Label": "",
+                      "Pos": {
+                       "Column": 54,
+                       "Filename": "StringFragmentWithInterpolatedExpression",
+                       "Line": 1,
+                       "Offset": 53
+                      },
+                      "Statements": [
+                       {
+                        "Annotations": null,
+                        "Comments": null,
+                        "Statement": {
+                         "Expression": {
+                          "Operands": [
+                           {
+                            "Atom": {
+                             "Value": {
+                              "Fragments": [
+                               {
+                                "Interpolation": null,
+                                "Text": "negative"
+                               }
+                              ]
+                             }
+                            },
+                            "Postfix": null
+                           }
+                          ],
+                          "Prefix": null
+                         }
+                        }
+                       }
+                      ]
+                     },
+                     "IsStatic": false
+                    },
+                    "ElseIfs": null,
+                    "If": {
+                     "Condition": {
+                      "Operands": [
+                       {
+                        "Atom": {
+                         "Ident": "x"
+                        },
+                        "Postfix": [
+                         {
+                          "Index": null,
+                          "Invocation": null,
+                          "Operator": "\u003e"
+                         }
+                        ]
+                       },
+                       {
+                        "Atom": {
+                         "Value": {
+                          "Value": 0
+                         }
+                        },
+                        "Postfix": null
+                       }
+                      ],
+                      "Prefix": null
+                     },
+                     "Then": {
+                      "Block": {
+                       "Label": "",
+                       "Pos": {
+                        "Column": 34,
+                        "Filename": "StringFragmentWithInterpolatedExpression",
+                        "Line": 1,
+                        "Offset": 33
+                       },
+                       "Statements": [
+                        {
+                         "Annotations": null,
+                         "Comments": null,
+                         "Statement": {
+                          "Expression": {
+                           "Operands": [
+                            {
+                             "Atom": {
+                              "Value": {
+                               "Fragments": [
+                                {
+                                 "Interpolation": null,
+                                 "Text": "positive"
+                                }
+                               ]
+                              }
+                             },
+                             "Postfix": null
+                            }
+                           ],
+                           "Prefix": null
+                          }
+                         }
+                        }
+                       ]
+                      },
+                      "IsStatic": false
+                     }
+                    }
+                   },
+                   "Text": ""
+                  }
+                 ]
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "Name": "m"
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   }
+  ]
+ }
+}

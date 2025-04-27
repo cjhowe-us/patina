@@ -1,0 +1,1297 @@
+{
+ "result": null,
+ "visitor": {
+  "log": [
+   {
+    "isEnter": true,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Body": {
+         "Label": "",
+         "Pos": {
+          "Column": 10,
+          "Filename": "GroupedExpressionWithComplexExpression",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Expression": {
+             "Operands": [
+              {
+               "Atom": {
+                "Expression": {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Ident": "x"
+                   },
+                   "Postfix": [
+                    {
+                     "Index": null,
+                     "Invocation": null,
+                     "Operator": "+"
+                    }
+                   ]
+                  },
+                  {
+                   "Atom": {
+                    "Ident": "y"
+                   },
+                   "Postfix": [
+                    {
+                     "Index": null,
+                     "Invocation": null,
+                     "Operator": "*"
+                    }
+                   ]
+                  },
+                  {
+                   "Atom": {
+                    "Ident": "z"
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Prefix": null
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "Name": "m"
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Body": {
+       "Label": "",
+       "Pos": {
+        "Column": 10,
+        "Filename": "GroupedExpressionWithComplexExpression",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Expression": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Ident": "x"
+                 },
+                 "Postfix": [
+                  {
+                   "Index": null,
+                   "Invocation": null,
+                   "Operator": "+"
+                  }
+                 ]
+                },
+                {
+                 "Atom": {
+                  "Ident": "y"
+                 },
+                 "Postfix": [
+                  {
+                   "Index": null,
+                   "Invocation": null,
+                   "Operator": "*"
+                  }
+                 ]
+                },
+                {
+                 "Atom": {
+                  "Ident": "z"
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "Name": "m"
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 10,
+       "Filename": "GroupedExpressionWithComplexExpression",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Operands": [
+           {
+            "Atom": {
+             "Expression": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Ident": "x"
+                },
+                "Postfix": [
+                 {
+                  "Index": null,
+                  "Invocation": null,
+                  "Operator": "+"
+                 }
+                ]
+               },
+               {
+                "Atom": {
+                 "Ident": "y"
+                },
+                "Postfix": [
+                 {
+                  "Index": null,
+                  "Invocation": null,
+                  "Operator": "*"
+                 }
+                ]
+               },
+               {
+                "Atom": {
+                 "Ident": "z"
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "Name": "m"
+    },
+    "type": "ast.Module"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 10,
+      "Filename": "GroupedExpressionWithComplexExpression",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Expression": {
+             "Operands": [
+              {
+               "Atom": {
+                "Ident": "x"
+               },
+               "Postfix": [
+                {
+                 "Index": null,
+                 "Invocation": null,
+                 "Operator": "+"
+                }
+               ]
+              },
+              {
+               "Atom": {
+                "Ident": "y"
+               },
+               "Postfix": [
+                {
+                 "Index": null,
+                 "Invocation": null,
+                 "Operator": "*"
+                }
+               ]
+              },
+              {
+               "Atom": {
+                "Ident": "z"
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Operands": [
+        {
+         "Atom": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "x"
+             },
+             "Postfix": [
+              {
+               "Index": null,
+               "Invocation": null,
+               "Operator": "+"
+              }
+             ]
+            },
+            {
+             "Atom": {
+              "Ident": "y"
+             },
+             "Postfix": [
+              {
+               "Index": null,
+               "Invocation": null,
+               "Operator": "*"
+              }
+             ]
+            },
+            {
+             "Atom": {
+              "Ident": "z"
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Expression": {
+      "Operands": [
+       {
+        "Atom": {
+         "Expression": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "x"
+            },
+            "Postfix": [
+             {
+              "Index": null,
+              "Invocation": null,
+              "Operator": "+"
+             }
+            ]
+           },
+           {
+            "Atom": {
+             "Ident": "y"
+            },
+            "Postfix": [
+             {
+              "Index": null,
+              "Invocation": null,
+              "Operator": "*"
+             }
+            ]
+           },
+           {
+            "Atom": {
+             "Ident": "z"
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "x"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "+"
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Ident": "y"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "*"
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Ident": "z"
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Expression": {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "x"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "+"
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Ident": "y"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "*"
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Ident": "z"
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Expression": {
+      "Operands": [
+       {
+        "Atom": {
+         "Ident": "x"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": null,
+          "Operator": "+"
+         }
+        ]
+       },
+       {
+        "Atom": {
+         "Ident": "y"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": null,
+          "Operator": "*"
+         }
+        ]
+       },
+       {
+        "Atom": {
+         "Ident": "z"
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.GroupedExpression"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "x"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "+"
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "y"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "*"
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "z"
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "x"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "+"
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "x"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "x"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "+"
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "+"
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "x"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "+"
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "y"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "*"
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "y"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "y"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "*"
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "*"
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "y"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "*"
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "z"
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "z"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "z"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "z"
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "x"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "+"
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "y"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "*"
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "z"
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Expression": {
+      "Operands": [
+       {
+        "Atom": {
+         "Ident": "x"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": null,
+          "Operator": "+"
+         }
+        ]
+       },
+       {
+        "Atom": {
+         "Ident": "y"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": null,
+          "Operator": "*"
+         }
+        ]
+       },
+       {
+        "Atom": {
+         "Ident": "z"
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.GroupedExpression"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Expression": {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "x"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "+"
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Ident": "y"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "*"
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Ident": "z"
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "x"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "+"
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Ident": "y"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "*"
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Ident": "z"
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Expression": {
+      "Operands": [
+       {
+        "Atom": {
+         "Expression": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "x"
+            },
+            "Postfix": [
+             {
+              "Index": null,
+              "Invocation": null,
+              "Operator": "+"
+             }
+            ]
+           },
+           {
+            "Atom": {
+             "Ident": "y"
+            },
+            "Postfix": [
+             {
+              "Index": null,
+              "Invocation": null,
+              "Operator": "*"
+             }
+            ]
+           },
+           {
+            "Atom": {
+             "Ident": "z"
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Operands": [
+        {
+         "Atom": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "x"
+             },
+             "Postfix": [
+              {
+               "Index": null,
+               "Invocation": null,
+               "Operator": "+"
+              }
+             ]
+            },
+            {
+             "Atom": {
+              "Ident": "y"
+             },
+             "Postfix": [
+              {
+               "Index": null,
+               "Invocation": null,
+               "Operator": "*"
+              }
+             ]
+            },
+            {
+             "Atom": {
+              "Ident": "z"
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 10,
+      "Filename": "GroupedExpressionWithComplexExpression",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Expression": {
+             "Operands": [
+              {
+               "Atom": {
+                "Ident": "x"
+               },
+               "Postfix": [
+                {
+                 "Index": null,
+                 "Invocation": null,
+                 "Operator": "+"
+                }
+               ]
+              },
+              {
+               "Atom": {
+                "Ident": "y"
+               },
+               "Postfix": [
+                {
+                 "Index": null,
+                 "Invocation": null,
+                 "Operator": "*"
+                }
+               ]
+              },
+              {
+               "Atom": {
+                "Ident": "z"
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 10,
+       "Filename": "GroupedExpressionWithComplexExpression",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Operands": [
+           {
+            "Atom": {
+             "Expression": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Ident": "x"
+                },
+                "Postfix": [
+                 {
+                  "Index": null,
+                  "Invocation": null,
+                  "Operator": "+"
+                 }
+                ]
+               },
+               {
+                "Atom": {
+                 "Ident": "y"
+                },
+                "Postfix": [
+                 {
+                  "Index": null,
+                  "Invocation": null,
+                  "Operator": "*"
+                 }
+                ]
+               },
+               {
+                "Atom": {
+                 "Ident": "z"
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "Name": "m"
+    },
+    "type": "ast.Module"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Body": {
+       "Label": "",
+       "Pos": {
+        "Column": 10,
+        "Filename": "GroupedExpressionWithComplexExpression",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Expression": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Ident": "x"
+                 },
+                 "Postfix": [
+                  {
+                   "Index": null,
+                   "Invocation": null,
+                   "Operator": "+"
+                  }
+                 ]
+                },
+                {
+                 "Atom": {
+                  "Ident": "y"
+                 },
+                 "Postfix": [
+                  {
+                   "Index": null,
+                   "Invocation": null,
+                   "Operator": "*"
+                  }
+                 ]
+                },
+                {
+                 "Atom": {
+                  "Ident": "z"
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "Name": "m"
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Body": {
+         "Label": "",
+         "Pos": {
+          "Column": 10,
+          "Filename": "GroupedExpressionWithComplexExpression",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Expression": {
+             "Operands": [
+              {
+               "Atom": {
+                "Expression": {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Ident": "x"
+                   },
+                   "Postfix": [
+                    {
+                     "Index": null,
+                     "Invocation": null,
+                     "Operator": "+"
+                    }
+                   ]
+                  },
+                  {
+                   "Atom": {
+                    "Ident": "y"
+                   },
+                   "Postfix": [
+                    {
+                     "Index": null,
+                     "Invocation": null,
+                     "Operator": "*"
+                    }
+                   ]
+                  },
+                  {
+                   "Atom": {
+                    "Ident": "z"
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Prefix": null
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "Name": "m"
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   }
+  ]
+ }
+}

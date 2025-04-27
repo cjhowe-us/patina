@@ -1,28 +1,10 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Return_with_tag_and_expression",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Return_with_tag_and_expression",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "Label": "label",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Return_with_tag_and_expression",
-     "Line": 1,
-     "Offset": 0
-    },
     "Value": {
      "Operands": [
       {
@@ -31,19 +13,7 @@
          "Operands": [
           {
            "Atom": {
-            "Pos": {
-             "Column": 16,
-             "Filename": "Return_with_tag_and_expression",
-             "Line": 1,
-             "Offset": 15
-            },
             "Value": {
-             "Pos": {
-              "Column": 16,
-              "Filename": "Return_with_tag_and_expression",
-              "Line": 1,
-              "Offset": 15
-             },
              "Value": 3
             }
            },
@@ -51,61 +21,25 @@
             {
              "Index": null,
              "Invocation": null,
-             "Operator": "*",
-             "Pos": {
-              "Column": 18,
-              "Filename": "Return_with_tag_and_expression",
-              "Line": 1,
-              "Offset": 17
-             }
+             "Operator": "*"
             }
            ]
           },
           {
            "Atom": {
-            "Pos": {
-             "Column": 20,
-             "Filename": "Return_with_tag_and_expression",
-             "Line": 1,
-             "Offset": 19
-            },
             "Value": {
-             "Pos": {
-              "Column": 20,
-              "Filename": "Return_with_tag_and_expression",
-              "Line": 1,
-              "Offset": 19
-             },
              "Value": 4
             }
            },
            "Postfix": null
           }
          ],
-         "Pos": {
-          "Column": 16,
-          "Filename": "Return_with_tag_and_expression",
-          "Line": 1,
-          "Offset": 15
-         },
          "Prefix": null
-        },
-        "Pos": {
-         "Column": 15,
-         "Filename": "Return_with_tag_and_expression",
-         "Line": 1,
-         "Offset": 14
         }
        },
        "Postfix": null
       }
      ],
-     "Pos": {
-      "Column": 15,
-      "Filename": "Return_with_tag_and_expression",
-      "Line": 1,
-      "Offset": 14
-     },
      "Prefix": null
     }
    }

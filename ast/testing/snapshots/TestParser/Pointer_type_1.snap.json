@@ -1,62 +1,20 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Pointer_type",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Pointer_type",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "ptr",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Pointer_type",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": {
-     "Pos": {
-      "Column": 10,
-      "Filename": "Pointer_type",
-      "Line": 1,
-      "Offset": 9
-     },
      "Type": {
       "IsMutable": true,
       "IsOwned": false,
       "IsRaw": false,
-      "Pos": {
-       "Column": 10,
-       "Filename": "Pointer_type",
-       "Line": 1,
-       "Offset": 9
-      },
       "Target": {
-       "Pos": {
-        "Column": 15,
-        "Filename": "Pointer_type",
-        "Line": 1,
-        "Offset": 14
-       },
        "Type": {
         "BitSize": 64,
-        "Pos": {
-         "Column": 15,
-         "Filename": "Pointer_type",
-         "Line": 1,
-         "Offset": 14
-        },
         "Signed": true
        }
       }
@@ -66,31 +24,13 @@
      "Operands": [
       {
        "Atom": {
-        "Pos": {
-         "Column": 21,
-         "Filename": "Pointer_type",
-         "Line": 1,
-         "Offset": 20
-        },
         "Value": {
-         "Pos": {
-          "Column": 21,
-          "Filename": "Pointer_type",
-          "Line": 1,
-          "Offset": 20
-         },
          "Value": 20
         }
        },
        "Postfix": null
       }
      ],
-     "Pos": {
-      "Column": 21,
-      "Filename": "Pointer_type",
-      "Line": 1,
-      "Offset": 20
-     },
      "Prefix": null
     }
    }

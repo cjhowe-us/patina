@@ -1,30 +1,12 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Nested_expressions",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Nested_expressions",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "x",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Nested_expressions",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": null,
     "Value": {
      "Operands": [
@@ -34,19 +16,7 @@
          "Operands": [
           {
            "Atom": {
-            "Pos": {
-             "Column": 10,
-             "Filename": "Nested_expressions",
-             "Line": 1,
-             "Offset": 9
-            },
             "Value": {
-             "Pos": {
-              "Column": 10,
-              "Filename": "Nested_expressions",
-              "Line": 1,
-              "Offset": 9
-             },
              "Value": 1
             }
            },
@@ -54,93 +24,39 @@
             {
              "Index": null,
              "Invocation": null,
-             "Operator": "+",
-             "Pos": {
-              "Column": 12,
-              "Filename": "Nested_expressions",
-              "Line": 1,
-              "Offset": 11
-             }
+             "Operator": "+"
             }
            ]
           },
           {
            "Atom": {
-            "Pos": {
-             "Column": 14,
-             "Filename": "Nested_expressions",
-             "Line": 1,
-             "Offset": 13
-            },
             "Value": {
-             "Pos": {
-              "Column": 14,
-              "Filename": "Nested_expressions",
-              "Line": 1,
-              "Offset": 13
-             },
              "Value": 2
             }
            },
            "Postfix": null
           }
          ],
-         "Pos": {
-          "Column": 10,
-          "Filename": "Nested_expressions",
-          "Line": 1,
-          "Offset": 9
-         },
          "Prefix": null
-        },
-        "Pos": {
-         "Column": 9,
-         "Filename": "Nested_expressions",
-         "Line": 1,
-         "Offset": 8
         }
        },
        "Postfix": [
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "*",
-         "Pos": {
-          "Column": 17,
-          "Filename": "Nested_expressions",
-          "Line": 1,
-          "Offset": 16
-         }
+         "Operator": "*"
         }
        ]
       },
       {
        "Atom": {
-        "Pos": {
-         "Column": 19,
-         "Filename": "Nested_expressions",
-         "Line": 1,
-         "Offset": 18
-        },
         "Value": {
-         "Pos": {
-          "Column": 19,
-          "Filename": "Nested_expressions",
-          "Line": 1,
-          "Offset": 18
-         },
          "Value": 3
         }
        },
        "Postfix": null
       }
      ],
-     "Pos": {
-      "Column": 9,
-      "Filename": "Nested_expressions",
-      "Line": 1,
-      "Offset": 8
-     },
      "Prefix": null
     }
    }

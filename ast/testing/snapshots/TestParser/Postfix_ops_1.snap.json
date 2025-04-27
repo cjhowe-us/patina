@@ -1,64 +1,28 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Postfix_ops",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Postfix_ops",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "x",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Postfix_ops",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": null,
     "Value": {
      "Operands": [
       {
        "Atom": {
-        "Ident": "true",
-        "Pos": {
-         "Column": 9,
-         "Filename": "Postfix_ops",
-         "Line": 1,
-         "Offset": 8
-        }
+        "Ident": "true"
        },
        "Postfix": [
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "?",
-         "Pos": {
-          "Column": 13,
-          "Filename": "Postfix_ops",
-          "Line": 1,
-          "Offset": 12
-         }
+         "Operator": "?"
         }
        ]
       }
      ],
-     "Pos": {
-      "Column": 9,
-      "Filename": "Postfix_ops",
-      "Line": 1,
-      "Offset": 8
-     },
      "Prefix": null
     }
    }

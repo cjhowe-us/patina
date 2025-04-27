@@ -1,173 +1,59 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Function_type_with_complex_parameter_and_return_types",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Function_type_with_complex_parameter_and_return_types",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "callback",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Function_type_with_complex_parameter_and_return_types",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": {
-     "Pos": {
-      "Column": 15,
-      "Filename": "Function_type_with_complex_parameter_and_return_types",
-      "Line": 1,
-      "Offset": 14
-     },
      "Type": {
       "Name": "",
       "Parameters": [
        {
         "Name": "handler",
-        "Pos": {
-         "Column": 19,
-         "Filename": "Function_type_with_complex_parameter_and_return_types",
-         "Line": 1,
-         "Offset": 18
-        },
         "Type": {
-         "Pos": {
-          "Column": 28,
-          "Filename": "Function_type_with_complex_parameter_and_return_types",
-          "Line": 1,
-          "Offset": 27
-         },
          "Type": {
           "Name": "",
           "Parameters": [
            {
             "Name": "event",
-            "Pos": {
-             "Column": 32,
-             "Filename": "Function_type_with_complex_parameter_and_return_types",
-             "Line": 1,
-             "Offset": 31
-            },
             "Type": {
-             "Pos": {
-              "Column": 39,
-              "Filename": "Function_type_with_complex_parameter_and_return_types",
-              "Line": 1,
-              "Offset": 38
-             },
              "Type": {
               "IsMutable": true,
               "IsOwned": false,
               "IsRaw": false,
-              "Pos": {
-               "Column": 39,
-               "Filename": "Function_type_with_complex_parameter_and_return_types",
-               "Line": 1,
-               "Offset": 38
-              },
               "Target": {
-               "Ident": "Event",
-               "Pos": {
-                "Column": 44,
-                "Filename": "Function_type_with_complex_parameter_and_return_types",
-                "Line": 1,
-                "Offset": 43
-               }
+               "Ident": "Event"
               }
              }
             }
            }
           ],
-          "Pos": {
-           "Column": 28,
-           "Filename": "Function_type_with_complex_parameter_and_return_types",
-           "Line": 1,
-           "Offset": 27
-          },
           "Return": {
-           "Ident": "bool",
-           "Pos": {
-            "Column": 52,
-            "Filename": "Function_type_with_complex_parameter_and_return_types",
-            "Line": 1,
-            "Offset": 51
-           }
+           "Ident": "bool"
           }
          }
         }
        },
        {
         "Name": "timeout",
-        "Pos": {
-         "Column": 58,
-         "Filename": "Function_type_with_complex_parameter_and_return_types",
-         "Line": 1,
-         "Offset": 57
-        },
         "Type": {
-         "Pos": {
-          "Column": 67,
-          "Filename": "Function_type_with_complex_parameter_and_return_types",
-          "Line": 1,
-          "Offset": 66
-         },
          "Type": {
           "BitSize": 64,
-          "Pos": {
-           "Column": 67,
-           "Filename": "Function_type_with_complex_parameter_and_return_types",
-           "Line": 1,
-           "Offset": 66
-          },
           "Signed": false
          }
         }
        }
       ],
-      "Pos": {
-       "Column": 15,
-       "Filename": "Function_type_with_complex_parameter_and_return_types",
-       "Line": 1,
-       "Offset": 14
-      },
       "Return": {
-       "Pos": {
-        "Column": 73,
-        "Filename": "Function_type_with_complex_parameter_and_return_types",
-        "Line": 1,
-        "Offset": 72
-       },
        "Type": {
         "IsMutable": false,
         "IsOwned": true,
         "IsRaw": false,
-        "Pos": {
-         "Column": 73,
-         "Filename": "Function_type_with_complex_parameter_and_return_types",
-         "Line": 1,
-         "Offset": 72
-        },
         "Target": {
-         "Ident": "Result",
-         "Pos": {
-          "Column": 78,
-          "Filename": "Function_type_with_complex_parameter_and_return_types",
-          "Line": 1,
-          "Offset": 77
-         }
+         "Ident": "Result"
         }
        }
       }

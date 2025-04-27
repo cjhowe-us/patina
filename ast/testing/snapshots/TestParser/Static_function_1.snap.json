@@ -1,20 +1,8 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Static_function",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Static_function",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "Block": {
      "Label": "",
@@ -28,49 +16,19 @@
       {
        "Annotations": null,
        "Comments": null,
-       "Pos": {
-        "Column": 2,
-        "Filename": "Static_function",
-        "Line": 2,
-        "Offset": 26
-       },
        "Statement": {
         "Label": "",
-        "Pos": {
-         "Column": 2,
-         "Filename": "Static_function",
-         "Line": 2,
-         "Offset": 26
-        },
         "Value": {
          "Operands": [
           {
            "Atom": {
-            "Pos": {
-             "Column": 9,
-             "Filename": "Static_function",
-             "Line": 2,
-             "Offset": 33
-            },
             "Value": {
-             "Pos": {
-              "Column": 9,
-              "Filename": "Static_function",
-              "Line": 2,
-              "Offset": 33
-             },
              "Value": 42
             }
            },
            "Postfix": null
           }
          ],
-         "Pos": {
-          "Column": 9,
-          "Filename": "Static_function",
-          "Line": 2,
-          "Offset": 33
-         },
          "Prefix": null
         }
        }
@@ -80,27 +38,9 @@
     "IsStatic": true,
     "Name": "test",
     "Parameters": null,
-    "Pos": {
-     "Column": 1,
-     "Filename": "Static_function",
-     "Line": 1,
-     "Offset": 0
-    },
     "Return": {
-     "Pos": {
-      "Column": 20,
-      "Filename": "Static_function",
-      "Line": 1,
-      "Offset": 19
-     },
      "Type": {
       "BitSize": 32,
-      "Pos": {
-       "Column": 20,
-       "Filename": "Static_function",
-       "Line": 1,
-       "Offset": 19
-      },
       "Signed": true
      }
     }

@@ -1,20 +1,8 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Deeply_nested_blocks",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Deeply_nested_blocks",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "Expression": {
      "Block": {
@@ -29,12 +17,6 @@
        {
         "Annotations": null,
         "Comments": null,
-        "Pos": {
-         "Column": 2,
-         "Filename": "Deeply_nested_blocks",
-         "Line": 2,
-         "Offset": 3
-        },
         "Statement": {
          "Expression": {
           "Block": {
@@ -49,12 +31,6 @@
             {
              "Annotations": null,
              "Comments": null,
-             "Pos": {
-              "Column": 3,
-              "Filename": "Deeply_nested_blocks",
-              "Line": 3,
-              "Offset": 7
-             },
              "Statement": {
               "Expression": {
                "Block": {
@@ -69,12 +45,6 @@
                  {
                   "Annotations": null,
                   "Comments": null,
-                  "Pos": {
-                   "Column": 4,
-                   "Filename": "Deeply_nested_blocks",
-                   "Line": 4,
-                   "Offset": 12
-                  },
                   "Statement": {
                    "Expression": {
                     "Block": {
@@ -89,52 +59,22 @@
                       {
                        "Annotations": null,
                        "Comments": null,
-                       "Pos": {
-                        "Column": 5,
-                        "Filename": "Deeply_nested_blocks",
-                        "Line": 5,
-                        "Offset": 18
-                       },
                        "Statement": {
                         "IsMutable": false,
                         "IsStatic": false,
                         "Name": "x",
-                        "Pos": {
-                         "Column": 5,
-                         "Filename": "Deeply_nested_blocks",
-                         "Line": 5,
-                         "Offset": 18
-                        },
                         "Type": null,
                         "Value": {
                          "Operands": [
                           {
                            "Atom": {
-                            "Pos": {
-                             "Column": 13,
-                             "Filename": "Deeply_nested_blocks",
-                             "Line": 5,
-                             "Offset": 26
-                            },
                             "Value": {
-                             "Pos": {
-                              "Column": 13,
-                              "Filename": "Deeply_nested_blocks",
-                              "Line": 5,
-                              "Offset": 26
-                             },
                              "Value": 1
                             }
                            },
                            "Postfix": null
                           }
                          ],
-                         "Pos": {
-                          "Column": 13,
-                          "Filename": "Deeply_nested_blocks",
-                          "Line": 5,
-                          "Offset": 26
-                         },
                          "Prefix": null
                         }
                        }
@@ -142,12 +82,6 @@
                       {
                        "Annotations": null,
                        "Comments": null,
-                       "Pos": {
-                        "Column": 5,
-                        "Filename": "Deeply_nested_blocks",
-                        "Line": 6,
-                        "Offset": 32
-                       },
                        "Statement": {
                         "Expression": {
                          "Block": {
@@ -162,143 +96,53 @@
                            {
                             "Annotations": null,
                             "Comments": null,
-                            "Pos": {
-                             "Column": 6,
-                             "Filename": "Deeply_nested_blocks",
-                             "Line": 7,
-                             "Offset": 39
-                            },
                             "Statement": {
                              "IsMutable": false,
                              "IsStatic": false,
                              "Name": "y",
-                             "Pos": {
-                              "Column": 6,
-                              "Filename": "Deeply_nested_blocks",
-                              "Line": 7,
-                              "Offset": 39
-                             },
                              "Type": null,
                              "Value": {
                               "Operands": [
                                {
                                 "Atom": {
-                                 "Pos": {
-                                  "Column": 14,
-                                  "Filename": "Deeply_nested_blocks",
-                                  "Line": 7,
-                                  "Offset": 47
-                                 },
                                  "Value": {
-                                  "Pos": {
-                                   "Column": 14,
-                                   "Filename": "Deeply_nested_blocks",
-                                   "Line": 7,
-                                   "Offset": 47
-                                  },
                                   "Value": 2
                                  }
                                 },
                                 "Postfix": null
                                }
                               ],
-                              "Pos": {
-                               "Column": 14,
-                               "Filename": "Deeply_nested_blocks",
-                               "Line": 7,
-                               "Offset": 47
-                              },
                               "Prefix": null
                              }
                             }
                            }
                           ]
                          },
-                         "IsStatic": false,
-                         "Pos": {
-                          "Column": 5,
-                          "Filename": "Deeply_nested_blocks",
-                          "Line": 6,
-                          "Offset": 32
-                         }
-                        },
-                        "Pos": {
-                         "Column": 5,
-                         "Filename": "Deeply_nested_blocks",
-                         "Line": 6,
-                         "Offset": 32
+                         "IsStatic": false
                         }
                        }
                       }
                      ]
                     },
-                    "IsStatic": false,
-                    "Pos": {
-                     "Column": 4,
-                     "Filename": "Deeply_nested_blocks",
-                     "Line": 4,
-                     "Offset": 12
-                    }
-                   },
-                   "Pos": {
-                    "Column": 4,
-                    "Filename": "Deeply_nested_blocks",
-                    "Line": 4,
-                    "Offset": 12
+                    "IsStatic": false
                    }
                   }
                  }
                 ]
                },
-               "IsStatic": false,
-               "Pos": {
-                "Column": 3,
-                "Filename": "Deeply_nested_blocks",
-                "Line": 3,
-                "Offset": 7
-               }
-              },
-              "Pos": {
-               "Column": 3,
-               "Filename": "Deeply_nested_blocks",
-               "Line": 3,
-               "Offset": 7
+               "IsStatic": false
               }
              }
             }
            ]
           },
-          "IsStatic": false,
-          "Pos": {
-           "Column": 2,
-           "Filename": "Deeply_nested_blocks",
-           "Line": 2,
-           "Offset": 3
-          }
-         },
-         "Pos": {
-          "Column": 2,
-          "Filename": "Deeply_nested_blocks",
-          "Line": 2,
-          "Offset": 3
+          "IsStatic": false
          }
         }
        }
       ]
      },
-     "IsStatic": false,
-     "Pos": {
-      "Column": 1,
-      "Filename": "Deeply_nested_blocks",
-      "Line": 1,
-      "Offset": 0
-     }
-    },
-    "Pos": {
-     "Column": 1,
-     "Filename": "Deeply_nested_blocks",
-     "Line": 1,
-     "Offset": 0
+     "IsStatic": false
     }
    }
   }

@@ -1,0 +1,581 @@
+{
+ "result": null,
+ "visitor": {
+  "log": [
+   {
+    "isEnter": true,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Body": {
+         "Label": "",
+         "Pos": {
+          "Column": 10,
+          "Filename": "BindingWithTypeAndValue",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "IsMutable": false,
+            "IsStatic": false,
+            "Name": "x",
+            "Type": {
+             "Ident": "Int"
+            },
+            "Value": {
+             "Operands": [
+              {
+               "Atom": {
+                "Value": {
+                 "Value": 42
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "Name": "m"
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Body": {
+       "Label": "",
+       "Pos": {
+        "Column": 10,
+        "Filename": "BindingWithTypeAndValue",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "IsMutable": false,
+          "IsStatic": false,
+          "Name": "x",
+          "Type": {
+           "Ident": "Int"
+          },
+          "Value": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Value": 42
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "Name": "m"
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 10,
+       "Filename": "BindingWithTypeAndValue",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "IsMutable": false,
+         "IsStatic": false,
+         "Name": "x",
+         "Type": {
+          "Ident": "Int"
+         },
+         "Value": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Value": 42
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "Name": "m"
+    },
+    "type": "ast.Module"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 10,
+      "Filename": "BindingWithTypeAndValue",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "x",
+        "Type": {
+         "Ident": "Int"
+        },
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 42
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "x",
+      "Type": {
+       "Ident": "Int"
+      },
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 42
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "x",
+     "Type": {
+      "Ident": "Int"
+     },
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 42
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "Int"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "Int"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 42
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 42
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 42
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 42
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 42
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 42
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 42
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 42
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "x",
+     "Type": {
+      "Ident": "Int"
+     },
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 42
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "x",
+      "Type": {
+       "Ident": "Int"
+      },
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 42
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 10,
+      "Filename": "BindingWithTypeAndValue",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "x",
+        "Type": {
+         "Ident": "Int"
+        },
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 42
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 10,
+       "Filename": "BindingWithTypeAndValue",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "IsMutable": false,
+         "IsStatic": false,
+         "Name": "x",
+         "Type": {
+          "Ident": "Int"
+         },
+         "Value": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Value": 42
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "Name": "m"
+    },
+    "type": "ast.Module"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Body": {
+       "Label": "",
+       "Pos": {
+        "Column": 10,
+        "Filename": "BindingWithTypeAndValue",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "IsMutable": false,
+          "IsStatic": false,
+          "Name": "x",
+          "Type": {
+           "Ident": "Int"
+          },
+          "Value": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Value": 42
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "Name": "m"
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Body": {
+         "Label": "",
+         "Pos": {
+          "Column": 10,
+          "Filename": "BindingWithTypeAndValue",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "IsMutable": false,
+            "IsStatic": false,
+            "Name": "x",
+            "Type": {
+             "Ident": "Int"
+            },
+            "Value": {
+             "Operands": [
+              {
+               "Atom": {
+                "Value": {
+                 "Value": 42
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "Name": "m"
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   }
+  ]
+ }
+}

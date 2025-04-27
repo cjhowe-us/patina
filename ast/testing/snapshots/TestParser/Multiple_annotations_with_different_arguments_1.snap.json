@@ -1,32 +1,14 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Multiple_annotations_with_different_arguments",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": [
     {
      "Arguments": null,
-     "Name": "deprecated",
-     "Pos": {
-      "Column": 1,
-      "Filename": "Multiple_annotations_with_different_arguments",
-      "Line": 1,
-      "Offset": 0
-     }
+     "Name": "deprecated"
     },
     {
      "Arguments": null,
-     "Name": "unsafe",
-     "Pos": {
-      "Column": 13,
-      "Filename": "Multiple_annotations_with_different_arguments",
-      "Line": 1,
-      "Offset": 12
-     }
+     "Name": "unsafe"
     },
     {
      "Arguments": [
@@ -34,33 +16,15 @@
        "Operands": [
         {
          "Atom": {
-          "Ident": "true",
-          "Pos": {
-           "Column": 29,
-           "Filename": "Multiple_annotations_with_different_arguments",
-           "Line": 1,
-           "Offset": 28
-          }
+          "Ident": "true"
          },
          "Postfix": null
         }
        ],
-       "Pos": {
-        "Column": 29,
-        "Filename": "Multiple_annotations_with_different_arguments",
-        "Line": 1,
-        "Offset": 28
-       },
        "Prefix": null
       }
      ],
-     "Name": "inline",
-     "Pos": {
-      "Column": 21,
-      "Filename": "Multiple_annotations_with_different_arguments",
-      "Line": 1,
-      "Offset": 20
-     }
+     "Name": "inline"
     },
     {
      "Arguments": [
@@ -68,61 +32,25 @@
        "Operands": [
         {
          "Atom": {
-          "Pos": {
-           "Column": 40,
-           "Filename": "Multiple_annotations_with_different_arguments",
-           "Line": 1,
-           "Offset": 39
-          },
           "Value": {
            "Fragments": [
             {
              "Interpolation": null,
-             "Pos": {
-              "Column": 41,
-              "Filename": "Multiple_annotations_with_different_arguments",
-              "Line": 1,
-              "Offset": 40
-             },
              "Text": "This is a test function"
             }
-           ],
-           "Pos": {
-            "Column": 40,
-            "Filename": "Multiple_annotations_with_different_arguments",
-            "Line": 1,
-            "Offset": 39
-           }
+           ]
           }
          },
          "Postfix": null
         }
        ],
-       "Pos": {
-        "Column": 40,
-        "Filename": "Multiple_annotations_with_different_arguments",
-        "Line": 1,
-        "Offset": 39
-       },
        "Prefix": null
       }
      ],
-     "Name": "doc",
-     "Pos": {
-      "Column": 35,
-      "Filename": "Multiple_annotations_with_different_arguments",
-      "Line": 1,
-      "Offset": 34
-     }
+     "Name": "doc"
     }
    ],
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Multiple_annotations_with_different_arguments",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "Block": {
      "Label": "",
@@ -137,12 +65,6 @@
     "IsStatic": false,
     "Name": "test",
     "Parameters": null,
-    "Pos": {
-     "Column": 67,
-     "Filename": "Multiple_annotations_with_different_arguments",
-     "Line": 1,
-     "Offset": 66
-    },
     "Return": null
    }
   }

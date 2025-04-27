@@ -11,15 +11,15 @@ type SyntaxNode interface {
 
 // Root represents the root of an AST tree.
 type Root struct {
-	Pos        lexer.Position
+	Pos        lexer.Position       `json:"-" parser:""`
 	Statements []DecoratedStatement `parser:"(@@ (EOL @@)*)? EOF"`
 }
 
-func (n *Root) Position() lexer.Position { return n.Pos }
-func (n *Root) Children() []SyntaxNode {
-	children := make([]SyntaxNode, 0, len(n.Statements))
-	for i := range n.Statements {
-		children = append(children, &n.Statements[i])
+func (n Root) Position() lexer.Position { return n.Pos }
+func (n Root) Children() []SyntaxNode {
+	children := []SyntaxNode{}
+	for _, stmt := range n.Statements {
+		children = append(children, stmt)
 	}
 	return children
 }
@@ -31,68 +31,66 @@ type Block struct {
 	Statements []DecoratedStatement `parser:"'{' (@@ (EOL @@)*)? '}'"`
 }
 
-func (n *Block) Position() lexer.Position { return n.Pos }
-func (n *Block) Children() []SyntaxNode {
-	children := make([]SyntaxNode, 0, len(n.Statements))
-	for i := range n.Statements {
-		children = append(children, &n.Statements[i])
+func (n Block) Position() lexer.Position { return n.Pos }
+func (n Block) Children() []SyntaxNode {
+	children := []SyntaxNode{}
+	for _, stmt := range n.Statements {
+		children = append(children, stmt)
 	}
 	return children
 }
 
 // DecoratedStatement represents a statement with comments and annotations.
 type DecoratedStatement struct {
-	Pos         lexer.Position
-	Comments    *Comment     `parser:"@@*"`
-	Annotations []Annotation `parser:"@@*"`
-	Statement   Statement    `parser:"@@"`
+	Pos         lexer.Position `json:"-" parser:""`
+	Comments    []Comment      `parser:"@@*"`
+	Annotations []Annotation   `parser:"@@*"`
+	Statement   Statement      `parser:"@@"`
 }
 
-func (n *DecoratedStatement) Position() lexer.Position { return n.Pos }
-func (n *DecoratedStatement) Children() []SyntaxNode {
-	children := make([]SyntaxNode, 0, 1+len(n.Annotations))
-	if n.Comments != nil {
-		children = append(children, n.Comments)
+func (n DecoratedStatement) Position() lexer.Position { return n.Pos }
+func (n DecoratedStatement) Children() []SyntaxNode {
+	children := []SyntaxNode{}
+	for _, comment := range n.Comments {
+		children = append(children, comment)
 	}
-	for i := range n.Annotations {
-		children = append(children, &n.Annotations[i])
+	for _, annotation := range n.Annotations {
+		children = append(children, annotation)
 	}
 	if n.Statement != nil {
-		if stmtNode, ok := n.Statement.(SyntaxNode); ok {
-			children = append(children, stmtNode)
-		}
+		children = append(children, n.Statement.(SyntaxNode))
 	}
 	return children
 }
 
 // Comment represents a comment in the AST.
 type Comment struct {
-	Pos            lexer.Position
-	Text           string    `parser:"@(LineComment | BlockCommentContents)"`
-	NestedComments []Comment `parser:"| BlockCommentStart @@* BlockCommentEnd"`
+	Pos            lexer.Position `json:"-" parser:""`
+	Text           string         `parser:"@(LineComment | BlockCommentContents)"`
+	NestedComments []Comment      `parser:"| BlockCommentStart @@* BlockCommentEnd"`
 }
 
-func (n *Comment) Position() lexer.Position { return n.Pos }
-func (n *Comment) Children() []SyntaxNode {
-	children := make([]SyntaxNode, 0, len(n.NestedComments))
-	for i := range n.NestedComments {
-		children = append(children, &n.NestedComments[i])
+func (n Comment) Position() lexer.Position { return n.Pos }
+func (n Comment) Children() []SyntaxNode {
+	children := []SyntaxNode{}
+	for _, nestedComment := range n.NestedComments {
+		children = append(children, nestedComment)
 	}
 	return children
 }
 
 // Annotation represents an annotation in the AST.
 type Annotation struct {
-	Pos       lexer.Position
-	Name      string       `parser:"@Tag"`
-	Arguments []Expression `parser:"('(' (@@ (',' @@)* ','?)? ')')?"`
+	Pos       lexer.Position `json:"-" parser:""`
+	Name      string         `parser:"@Tag"`
+	Arguments []Expression   `parser:"('(' (@@ (',' @@)* ','?)? ')')?"`
 }
 
-func (n *Annotation) Position() lexer.Position { return n.Pos }
-func (n *Annotation) Children() []SyntaxNode {
-	children := make([]SyntaxNode, 0, len(n.Arguments))
-	for i := range n.Arguments {
-		if exprNode, ok := n.Arguments[i].(SyntaxNode); ok {
+func (n Annotation) Position() lexer.Position { return n.Pos }
+func (n Annotation) Children() []SyntaxNode {
+	children := []SyntaxNode{}
+	for _, argument := range n.Arguments {
+		if exprNode, ok := argument.(SyntaxNode); ok {
 			children = append(children, exprNode)
 		}
 	}

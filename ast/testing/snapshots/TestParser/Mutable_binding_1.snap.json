@@ -1,60 +1,24 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Mutable_binding",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Mutable_binding",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": true,
     "IsStatic": false,
     "Name": "y",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Mutable_binding",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": null,
     "Value": {
      "Operands": [
       {
        "Atom": {
-        "Pos": {
-         "Column": 13,
-         "Filename": "Mutable_binding",
-         "Line": 1,
-         "Offset": 12
-        },
         "Value": {
-         "Pos": {
-          "Column": 13,
-          "Filename": "Mutable_binding",
-          "Line": 1,
-          "Offset": 12
-         },
          "Value": 2
         }
        },
        "Postfix": null
       }
      ],
-     "Pos": {
-      "Column": 13,
-      "Filename": "Mutable_binding",
-      "Line": 1,
-      "Offset": 12
-     },
      "Prefix": null
     }
    }

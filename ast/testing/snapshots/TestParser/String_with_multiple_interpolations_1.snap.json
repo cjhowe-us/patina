@@ -1,51 +1,21 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "String_with_multiple_interpolations",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "String_with_multiple_interpolations",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "message",
-    "Pos": {
-     "Column": 1,
-     "Filename": "String_with_multiple_interpolations",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": null,
     "Value": {
      "Operands": [
       {
        "Atom": {
-        "Pos": {
-         "Column": 15,
-         "Filename": "String_with_multiple_interpolations",
-         "Line": 1,
-         "Offset": 14
-        },
         "Value": {
          "Fragments": [
           {
            "Interpolation": null,
-           "Pos": {
-            "Column": 16,
-            "Filename": "String_with_multiple_interpolations",
-            "Line": 1,
-            "Offset": 15
-           },
            "Text": "Hello, "
           },
           {
@@ -53,41 +23,17 @@
             "Operands": [
              {
               "Atom": {
-               "Ident": "firstName",
-               "Pos": {
-                "Column": 25,
-                "Filename": "String_with_multiple_interpolations",
-                "Line": 1,
-                "Offset": 24
-               }
+               "Ident": "firstName"
               },
               "Postfix": null
              }
             ],
-            "Pos": {
-             "Column": 25,
-             "Filename": "String_with_multiple_interpolations",
-             "Line": 1,
-             "Offset": 24
-            },
             "Prefix": null
-           },
-           "Pos": {
-            "Column": 23,
-            "Filename": "String_with_multiple_interpolations",
-            "Line": 1,
-            "Offset": 22
            },
            "Text": ""
           },
           {
            "Interpolation": null,
-           "Pos": {
-            "Column": 35,
-            "Filename": "String_with_multiple_interpolations",
-            "Line": 1,
-            "Offset": 34
-           },
            "Text": " "
           },
           {
@@ -95,41 +41,17 @@
             "Operands": [
              {
               "Atom": {
-               "Ident": "lastName",
-               "Pos": {
-                "Column": 38,
-                "Filename": "String_with_multiple_interpolations",
-                "Line": 1,
-                "Offset": 37
-               }
+               "Ident": "lastName"
               },
               "Postfix": null
              }
             ],
-            "Pos": {
-             "Column": 38,
-             "Filename": "String_with_multiple_interpolations",
-             "Line": 1,
-             "Offset": 37
-            },
             "Prefix": null
-           },
-           "Pos": {
-            "Column": 36,
-            "Filename": "String_with_multiple_interpolations",
-            "Line": 1,
-            "Offset": 35
            },
            "Text": ""
           },
           {
            "Interpolation": null,
-           "Pos": {
-            "Column": 47,
-            "Filename": "String_with_multiple_interpolations",
-            "Line": 1,
-            "Offset": 46
-           },
            "Text": "! You have "
           },
           {
@@ -137,61 +59,25 @@
             "Operands": [
              {
               "Atom": {
-               "Ident": "messageCount",
-               "Pos": {
-                "Column": 60,
-                "Filename": "String_with_multiple_interpolations",
-                "Line": 1,
-                "Offset": 59
-               }
+               "Ident": "messageCount"
               },
               "Postfix": null
              }
             ],
-            "Pos": {
-             "Column": 60,
-             "Filename": "String_with_multiple_interpolations",
-             "Line": 1,
-             "Offset": 59
-            },
             "Prefix": null
-           },
-           "Pos": {
-            "Column": 58,
-            "Filename": "String_with_multiple_interpolations",
-            "Line": 1,
-            "Offset": 57
            },
            "Text": ""
           },
           {
            "Interpolation": null,
-           "Pos": {
-            "Column": 73,
-            "Filename": "String_with_multiple_interpolations",
-            "Line": 1,
-            "Offset": 72
-           },
            "Text": " new messages."
           }
-         ],
-         "Pos": {
-          "Column": 15,
-          "Filename": "String_with_multiple_interpolations",
-          "Line": 1,
-          "Offset": 14
-         }
+         ]
         }
        },
        "Postfix": null
       }
      ],
-     "Pos": {
-      "Column": 15,
-      "Filename": "String_with_multiple_interpolations",
-      "Line": 1,
-      "Offset": 14
-     },
      "Prefix": null
     }
    }

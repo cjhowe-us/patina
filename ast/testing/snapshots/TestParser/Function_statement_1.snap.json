@@ -1,20 +1,8 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Function_statement",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Function_statement",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "Block": {
      "Label": "",
@@ -28,68 +16,32 @@
       {
        "Annotations": null,
        "Comments": null,
-       "Pos": {
-        "Column": 2,
-        "Filename": "Function_statement",
-        "Line": 2,
-        "Offset": 32
-       },
        "Statement": {
         "IsMutable": false,
         "IsStatic": false,
         "Name": "c",
-        "Pos": {
-         "Column": 2,
-         "Filename": "Function_statement",
-         "Line": 2,
-         "Offset": 32
-        },
         "Type": null,
         "Value": {
          "Operands": [
           {
            "Atom": {
-            "Ident": "a",
-            "Pos": {
-             "Column": 10,
-             "Filename": "Function_statement",
-             "Line": 2,
-             "Offset": 40
-            }
+            "Ident": "a"
            },
            "Postfix": [
             {
              "Index": null,
              "Invocation": null,
-             "Operator": "+",
-             "Pos": {
-              "Column": 12,
-              "Filename": "Function_statement",
-              "Line": 2,
-              "Offset": 42
-             }
+             "Operator": "+"
             }
            ]
           },
           {
            "Atom": {
-            "Ident": "b",
-            "Pos": {
-             "Column": 14,
-             "Filename": "Function_statement",
-             "Line": 2,
-             "Offset": 44
-            }
+            "Ident": "b"
            },
            "Postfix": null
           }
          ],
-         "Pos": {
-          "Column": 10,
-          "Filename": "Function_statement",
-          "Line": 2,
-          "Offset": 40
-         },
          "Prefix": null
         }
        }
@@ -97,41 +49,17 @@
       {
        "Annotations": null,
        "Comments": null,
-       "Pos": {
-        "Column": 2,
-        "Filename": "Function_statement",
-        "Line": 3,
-        "Offset": 47
-       },
        "Statement": {
         "Label": "",
-        "Pos": {
-         "Column": 2,
-         "Filename": "Function_statement",
-         "Line": 3,
-         "Offset": 47
-        },
         "Value": {
          "Operands": [
           {
            "Atom": {
-            "Ident": "c",
-            "Pos": {
-             "Column": 9,
-             "Filename": "Function_statement",
-             "Line": 3,
-             "Offset": 54
-            }
+            "Ident": "c"
            },
            "Postfix": null
           }
          ],
-         "Pos": {
-          "Column": 9,
-          "Filename": "Function_statement",
-          "Line": 3,
-          "Offset": 54
-         },
          "Prefix": null
         }
        }
@@ -143,80 +71,26 @@
     "Parameters": [
      {
       "Name": "a",
-      "Pos": {
-       "Column": 9,
-       "Filename": "Function_statement",
-       "Line": 1,
-       "Offset": 8
-      },
       "Type": {
-       "Pos": {
-        "Column": 12,
-        "Filename": "Function_statement",
-        "Line": 1,
-        "Offset": 11
-       },
        "Type": {
         "BitSize": 64,
-        "Pos": {
-         "Column": 12,
-         "Filename": "Function_statement",
-         "Line": 1,
-         "Offset": 11
-        },
         "Signed": true
        }
       }
      },
      {
       "Name": "b",
-      "Pos": {
-       "Column": 17,
-       "Filename": "Function_statement",
-       "Line": 1,
-       "Offset": 16
-      },
       "Type": {
-       "Pos": {
-        "Column": 20,
-        "Filename": "Function_statement",
-        "Line": 1,
-        "Offset": 19
-       },
        "Type": {
         "BitSize": 64,
-        "Pos": {
-         "Column": 20,
-         "Filename": "Function_statement",
-         "Line": 1,
-         "Offset": 19
-        },
         "Signed": false
        }
       }
      }
     ],
-    "Pos": {
-     "Column": 1,
-     "Filename": "Function_statement",
-     "Line": 1,
-     "Offset": 0
-    },
     "Return": {
-     "Pos": {
-      "Column": 26,
-      "Filename": "Function_statement",
-      "Line": 1,
-      "Offset": 25
-     },
      "Type": {
       "BitSize": 64,
-      "Pos": {
-       "Column": 26,
-       "Filename": "Function_statement",
-       "Line": 1,
-       "Offset": 25
-      },
       "Signed": true
      }
     }

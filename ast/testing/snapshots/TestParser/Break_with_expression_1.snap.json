@@ -1,28 +1,10 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Break_with_expression",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Break_with_expression",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "Label": "",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Break_with_expression",
-     "Line": 1,
-     "Offset": 0
-    },
     "Value": {
      "Operands": [
       {
@@ -31,19 +13,7 @@
          "Operands": [
           {
            "Atom": {
-            "Pos": {
-             "Column": 8,
-             "Filename": "Break_with_expression",
-             "Line": 1,
-             "Offset": 7
-            },
             "Value": {
-             "Pos": {
-              "Column": 8,
-              "Filename": "Break_with_expression",
-              "Line": 1,
-              "Offset": 7
-             },
              "Value": 1
             }
            },
@@ -51,61 +21,25 @@
             {
              "Index": null,
              "Invocation": null,
-             "Operator": "+",
-             "Pos": {
-              "Column": 10,
-              "Filename": "Break_with_expression",
-              "Line": 1,
-              "Offset": 9
-             }
+             "Operator": "+"
             }
            ]
           },
           {
            "Atom": {
-            "Pos": {
-             "Column": 12,
-             "Filename": "Break_with_expression",
-             "Line": 1,
-             "Offset": 11
-            },
             "Value": {
-             "Pos": {
-              "Column": 12,
-              "Filename": "Break_with_expression",
-              "Line": 1,
-              "Offset": 11
-             },
              "Value": 2
             }
            },
            "Postfix": null
           }
          ],
-         "Pos": {
-          "Column": 8,
-          "Filename": "Break_with_expression",
-          "Line": 1,
-          "Offset": 7
-         },
          "Prefix": null
-        },
-        "Pos": {
-         "Column": 7,
-         "Filename": "Break_with_expression",
-         "Line": 1,
-         "Offset": 6
         }
        },
        "Postfix": null
       }
      ],
-     "Pos": {
-      "Column": 7,
-      "Filename": "Break_with_expression",
-      "Line": 1,
-      "Offset": 6
-     },
      "Prefix": null
     }
    }

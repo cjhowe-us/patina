@@ -1,10 +1,4 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Trailing_comma_in_annotation_arguments",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": [
@@ -14,50 +8,20 @@
        "Operands": [
         {
          "Atom": {
-          "Pos": {
-           "Column": 9,
-           "Filename": "Trailing_comma_in_annotation_arguments",
-           "Line": 1,
-           "Offset": 8
-          },
           "Value": {
-           "Pos": {
-            "Column": 9,
-            "Filename": "Trailing_comma_in_annotation_arguments",
-            "Line": 1,
-            "Offset": 8
-           },
            "Value": 1
           }
          },
          "Postfix": null
         }
        ],
-       "Pos": {
-        "Column": 9,
-        "Filename": "Trailing_comma_in_annotation_arguments",
-        "Line": 1,
-        "Offset": 8
-       },
        "Prefix": null
       }
      ],
-     "Name": "myAnno",
-     "Pos": {
-      "Column": 1,
-      "Filename": "Trailing_comma_in_annotation_arguments",
-      "Line": 1,
-      "Offset": 0
-     }
+     "Name": "myAnno"
     }
    ],
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Trailing_comma_in_annotation_arguments",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "Block": {
      "Label": "",
@@ -72,12 +36,6 @@
     "IsStatic": false,
     "Name": "test",
     "Parameters": null,
-    "Pos": {
-     "Column": 14,
-     "Filename": "Trailing_comma_in_annotation_arguments",
-     "Line": 1,
-     "Offset": 13
-    },
     "Return": null
    }
   }

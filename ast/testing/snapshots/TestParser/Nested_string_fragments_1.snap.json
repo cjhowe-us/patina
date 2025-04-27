@@ -1,51 +1,21 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Nested_string_fragments",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Nested_string_fragments",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "x",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Nested_string_fragments",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": null,
     "Value": {
      "Operands": [
       {
        "Atom": {
-        "Pos": {
-         "Column": 9,
-         "Filename": "Nested_string_fragments",
-         "Line": 1,
-         "Offset": 8
-        },
         "Value": {
          "Fragments": [
           {
            "Interpolation": null,
-           "Pos": {
-            "Column": 10,
-            "Filename": "Nested_string_fragments",
-            "Line": 1,
-            "Offset": 9
-           },
            "Text": "begin "
           },
           {
@@ -53,22 +23,10 @@
             "Operands": [
              {
               "Atom": {
-               "Pos": {
-                "Column": 18,
-                "Filename": "Nested_string_fragments",
-                "Line": 1,
-                "Offset": 17
-               },
                "Value": {
                 "Fragments": [
                  {
                   "Interpolation": null,
-                  "Pos": {
-                   "Column": 19,
-                   "Filename": "Nested_string_fragments",
-                   "Line": 1,
-                   "Offset": 18
-                  },
                   "Text": "nest1 "
                  },
                  {
@@ -76,22 +34,10 @@
                    "Operands": [
                     {
                      "Atom": {
-                      "Pos": {
-                       "Column": 27,
-                       "Filename": "Nested_string_fragments",
-                       "Line": 1,
-                       "Offset": 26
-                      },
                       "Value": {
                        "Fragments": [
                         {
                          "Interpolation": null,
-                         "Pos": {
-                          "Column": 28,
-                          "Filename": "Nested_string_fragments",
-                          "Line": 1,
-                          "Offset": 27
-                         },
                          "Text": "nest2 "
                         },
                         {
@@ -99,126 +45,48 @@
                           "Operands": [
                            {
                             "Atom": {
-                             "Pos": {
-                              "Column": 36,
-                              "Filename": "Nested_string_fragments",
-                              "Line": 1,
-                              "Offset": 35
-                             },
                              "Value": {
                               "Fragments": [
                                {
                                 "Interpolation": null,
-                                "Pos": {
-                                 "Column": 37,
-                                 "Filename": "Nested_string_fragments",
-                                 "Line": 1,
-                                 "Offset": 36
-                                },
                                 "Text": "nest3"
                                }
-                              ],
-                              "Pos": {
-                               "Column": 36,
-                               "Filename": "Nested_string_fragments",
-                               "Line": 1,
-                               "Offset": 35
-                              }
+                              ]
                              }
                             },
                             "Postfix": null
                            }
                           ],
-                          "Pos": {
-                           "Column": 36,
-                           "Filename": "Nested_string_fragments",
-                           "Line": 1,
-                           "Offset": 35
-                          },
                           "Prefix": null
-                         },
-                         "Pos": {
-                          "Column": 34,
-                          "Filename": "Nested_string_fragments",
-                          "Line": 1,
-                          "Offset": 33
                          },
                          "Text": ""
                         }
-                       ],
-                       "Pos": {
-                        "Column": 27,
-                        "Filename": "Nested_string_fragments",
-                        "Line": 1,
-                        "Offset": 26
-                       }
+                       ]
                       }
                      },
                      "Postfix": null
                     }
                    ],
-                   "Pos": {
-                    "Column": 27,
-                    "Filename": "Nested_string_fragments",
-                    "Line": 1,
-                    "Offset": 26
-                   },
                    "Prefix": null
-                  },
-                  "Pos": {
-                   "Column": 25,
-                   "Filename": "Nested_string_fragments",
-                   "Line": 1,
-                   "Offset": 24
                   },
                   "Text": ""
                  }
-                ],
-                "Pos": {
-                 "Column": 18,
-                 "Filename": "Nested_string_fragments",
-                 "Line": 1,
-                 "Offset": 17
-                }
+                ]
                }
               },
               "Postfix": null
              }
             ],
-            "Pos": {
-             "Column": 18,
-             "Filename": "Nested_string_fragments",
-             "Line": 1,
-             "Offset": 17
-            },
             "Prefix": null
-           },
-           "Pos": {
-            "Column": 16,
-            "Filename": "Nested_string_fragments",
-            "Line": 1,
-            "Offset": 15
            },
            "Text": ""
           }
-         ],
-         "Pos": {
-          "Column": 9,
-          "Filename": "Nested_string_fragments",
-          "Line": 1,
-          "Offset": 8
-         }
+         ]
         }
        },
        "Postfix": null
       }
      ],
-     "Pos": {
-      "Column": 9,
-      "Filename": "Nested_string_fragments",
-      "Line": 1,
-      "Offset": 8
-     },
      "Prefix": null
     }
    }

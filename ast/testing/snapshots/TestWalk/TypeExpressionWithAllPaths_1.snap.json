@@ -1,0 +1,3 @@
+{
+ "error": "TypeExpressionWithAllPaths:1:26: lexer: invalid input text \"; let b: [Int] =...\""
+}

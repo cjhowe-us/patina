@@ -1,20 +1,8 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Module_with_nested_blocks",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Module_with_nested_blocks",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "Body": {
      "Label": "",
@@ -28,22 +16,10 @@
       {
        "Annotations": null,
        "Comments": null,
-       "Pos": {
-        "Column": 2,
-        "Filename": "Module_with_nested_blocks",
-        "Line": 2,
-        "Offset": 15
-       },
        "Statement": {
         "IsMutable": false,
         "IsStatic": false,
         "Name": "x",
-        "Pos": {
-         "Column": 2,
-         "Filename": "Module_with_nested_blocks",
-         "Line": 2,
-         "Offset": 15
-        },
         "Type": null,
         "Value": {
          "Block": {
@@ -58,40 +34,16 @@
            {
             "Annotations": null,
             "Comments": null,
-            "Pos": {
-             "Column": 3,
-             "Filename": "Module_with_nested_blocks",
-             "Line": 3,
-             "Offset": 27
-            },
             "Statement": {
              "IsMutable": false,
              "IsStatic": false,
              "Name": "y",
-             "Pos": {
-              "Column": 3,
-              "Filename": "Module_with_nested_blocks",
-              "Line": 3,
-              "Offset": 27
-             },
              "Type": null,
              "Value": {
               "Operands": [
                {
                 "Atom": {
-                 "Pos": {
-                  "Column": 11,
-                  "Filename": "Module_with_nested_blocks",
-                  "Line": 3,
-                  "Offset": 35
-                 },
                  "Value": {
-                  "Pos": {
-                   "Column": 11,
-                   "Filename": "Module_with_nested_blocks",
-                   "Line": 3,
-                   "Offset": 35
-                  },
                   "Value": 1
                  }
                 },
@@ -99,80 +51,38 @@
                },
                {
                 "Atom": {
-                 "Ident": "y",
-                 "Pos": {
-                  "Column": 3,
-                  "Filename": "Module_with_nested_blocks",
-                  "Line": 4,
-                  "Offset": 39
-                 }
+                 "Ident": "y"
                 },
                 "Postfix": [
                  {
                   "Index": null,
                   "Invocation": null,
-                  "Operator": "+",
-                  "Pos": {
-                   "Column": 5,
-                   "Filename": "Module_with_nested_blocks",
-                   "Line": 4,
-                   "Offset": 41
-                  }
+                  "Operator": "+"
                  }
                 ]
                },
                {
                 "Atom": {
-                 "Pos": {
-                  "Column": 7,
-                  "Filename": "Module_with_nested_blocks",
-                  "Line": 4,
-                  "Offset": 43
-                 },
                  "Value": {
-                  "Pos": {
-                   "Column": 7,
-                   "Filename": "Module_with_nested_blocks",
-                   "Line": 4,
-                   "Offset": 43
-                  },
                   "Value": 1
                  }
                 },
                 "Postfix": null
                }
               ],
-              "Pos": {
-               "Column": 11,
-               "Filename": "Module_with_nested_blocks",
-               "Line": 3,
-               "Offset": 35
-              },
               "Prefix": null
              }
             }
            }
           ]
          },
-         "IsStatic": false,
-         "Pos": {
-          "Column": 10,
-          "Filename": "Module_with_nested_blocks",
-          "Line": 2,
-          "Offset": 23
-         }
+         "IsStatic": false
         }
        }
       }
      ]
     },
-    "Name": "test",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Module_with_nested_blocks",
-     "Line": 1,
-     "Offset": 0
-    }
+    "Name": "test"
    }
   }
  ]

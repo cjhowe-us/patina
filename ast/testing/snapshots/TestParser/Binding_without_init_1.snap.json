@@ -1,45 +1,15 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Binding_without_init",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Binding_without_init",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "b",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Binding_without_init",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": {
-     "Pos": {
-      "Column": 8,
-      "Filename": "Binding_without_init",
-      "Line": 1,
-      "Offset": 7
-     },
      "Type": {
       "BitSize": 64,
-      "Pos": {
-       "Column": 8,
-       "Filename": "Binding_without_init",
-       "Line": 1,
-       "Offset": 7
-      },
       "Signed": true
      }
     },

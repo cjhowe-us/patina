@@ -1,340 +1,166 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Complex_operation_with_multiple_operators",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Complex_operation_with_multiple_operators",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "x",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Complex_operation_with_multiple_operators",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": null,
     "Value": {
      "Operands": [
       {
        "Atom": {
-        "Ident": "a",
-        "Pos": {
-         "Column": 10,
-         "Filename": "Complex_operation_with_multiple_operators",
-         "Line": 1,
-         "Offset": 9
-        }
+        "Ident": "a"
        },
        "Postfix": [
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "+",
-         "Pos": {
-          "Column": 12,
-          "Filename": "Complex_operation_with_multiple_operators",
-          "Line": 1,
-          "Offset": 11
-         }
+         "Operator": "+"
         }
        ]
       },
       {
        "Atom": {
-        "Ident": "b",
-        "Pos": {
-         "Column": 14,
-         "Filename": "Complex_operation_with_multiple_operators",
-         "Line": 1,
-         "Offset": 13
-        }
+        "Ident": "b"
        },
        "Postfix": [
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "*",
-         "Pos": {
-          "Column": 16,
-          "Filename": "Complex_operation_with_multiple_operators",
-          "Line": 1,
-          "Offset": 15
-         }
+         "Operator": "*"
         }
        ]
       },
       {
        "Atom": {
-        "Ident": "c",
-        "Pos": {
-         "Column": 18,
-         "Filename": "Complex_operation_with_multiple_operators",
-         "Line": 1,
-         "Offset": 17
-        }
+        "Ident": "c"
        },
        "Postfix": [
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "/",
-         "Pos": {
-          "Column": 20,
-          "Filename": "Complex_operation_with_multiple_operators",
-          "Line": 1,
-          "Offset": 19
-         }
+         "Operator": "/"
         }
        ]
       },
       {
        "Atom": {
-        "Ident": "d",
-        "Pos": {
-         "Column": 22,
-         "Filename": "Complex_operation_with_multiple_operators",
-         "Line": 1,
-         "Offset": 21
-        }
+        "Ident": "d"
        },
        "Postfix": [
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "%",
-         "Pos": {
-          "Column": 24,
-          "Filename": "Complex_operation_with_multiple_operators",
-          "Line": 1,
-          "Offset": 23
-         }
+         "Operator": "%"
         }
        ]
       },
       {
        "Atom": {
-        "Ident": "e",
-        "Pos": {
-         "Column": 26,
-         "Filename": "Complex_operation_with_multiple_operators",
-         "Line": 1,
-         "Offset": 25
-        }
+        "Ident": "e"
        },
        "Postfix": [
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "\u0026\u0026",
-         "Pos": {
-          "Column": 28,
-          "Filename": "Complex_operation_with_multiple_operators",
-          "Line": 1,
-          "Offset": 27
-         }
+         "Operator": "\u0026\u0026"
         }
        ]
       },
       {
        "Atom": {
-        "Ident": "f",
-        "Pos": {
-         "Column": 31,
-         "Filename": "Complex_operation_with_multiple_operators",
-         "Line": 1,
-         "Offset": 30
-        }
+        "Ident": "f"
        },
        "Postfix": [
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "||",
-         "Pos": {
-          "Column": 33,
-          "Filename": "Complex_operation_with_multiple_operators",
-          "Line": 1,
-          "Offset": 32
-         }
+         "Operator": "||"
         }
        ]
       },
       {
        "Atom": {
-        "Ident": "g",
-        "Pos": {
-         "Column": 36,
-         "Filename": "Complex_operation_with_multiple_operators",
-         "Line": 1,
-         "Offset": 35
-        }
+        "Ident": "g"
        },
        "Postfix": [
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "==",
-         "Pos": {
-          "Column": 38,
-          "Filename": "Complex_operation_with_multiple_operators",
-          "Line": 1,
-          "Offset": 37
-         }
+         "Operator": "=="
         }
        ]
       },
       {
        "Atom": {
-        "Ident": "h",
-        "Pos": {
-         "Column": 41,
-         "Filename": "Complex_operation_with_multiple_operators",
-         "Line": 1,
-         "Offset": 40
-        }
+        "Ident": "h"
        },
        "Postfix": [
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "!=",
-         "Pos": {
-          "Column": 43,
-          "Filename": "Complex_operation_with_multiple_operators",
-          "Line": 1,
-          "Offset": 42
-         }
+         "Operator": "!="
         }
        ]
       },
       {
        "Atom": {
-        "Ident": "i",
-        "Pos": {
-         "Column": 46,
-         "Filename": "Complex_operation_with_multiple_operators",
-         "Line": 1,
-         "Offset": 45
-        }
+        "Ident": "i"
        },
        "Postfix": [
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "\u003c",
-         "Pos": {
-          "Column": 48,
-          "Filename": "Complex_operation_with_multiple_operators",
-          "Line": 1,
-          "Offset": 47
-         }
+         "Operator": "\u003c"
         }
        ]
       },
       {
        "Atom": {
-        "Ident": "j",
-        "Pos": {
-         "Column": 50,
-         "Filename": "Complex_operation_with_multiple_operators",
-         "Line": 1,
-         "Offset": 49
-        }
+        "Ident": "j"
        },
        "Postfix": [
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "\u003e",
-         "Pos": {
-          "Column": 52,
-          "Filename": "Complex_operation_with_multiple_operators",
-          "Line": 1,
-          "Offset": 51
-         }
+         "Operator": "\u003e"
         }
        ]
       },
       {
        "Atom": {
-        "Ident": "k",
-        "Pos": {
-         "Column": 54,
-         "Filename": "Complex_operation_with_multiple_operators",
-         "Line": 1,
-         "Offset": 53
-        }
+        "Ident": "k"
        },
        "Postfix": [
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "\u003c=",
-         "Pos": {
-          "Column": 56,
-          "Filename": "Complex_operation_with_multiple_operators",
-          "Line": 1,
-          "Offset": 55
-         }
+         "Operator": "\u003c="
         }
        ]
       },
       {
        "Atom": {
-        "Ident": "l",
-        "Pos": {
-         "Column": 59,
-         "Filename": "Complex_operation_with_multiple_operators",
-         "Line": 1,
-         "Offset": 58
-        }
+        "Ident": "l"
        },
        "Postfix": [
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "\u003e=",
-         "Pos": {
-          "Column": 61,
-          "Filename": "Complex_operation_with_multiple_operators",
-          "Line": 1,
-          "Offset": 60
-         }
+         "Operator": "\u003e="
         }
        ]
       },
       {
        "Atom": {
-        "Ident": "m",
-        "Pos": {
-         "Column": 64,
-         "Filename": "Complex_operation_with_multiple_operators",
-         "Line": 1,
-         "Offset": 63
-        }
+        "Ident": "m"
        },
        "Postfix": null
       }
      ],
-     "Pos": {
-      "Column": 9,
-      "Filename": "Complex_operation_with_multiple_operators",
-      "Line": 1,
-      "Offset": 8
-     },
      "Prefix": [
       "-"
      ]

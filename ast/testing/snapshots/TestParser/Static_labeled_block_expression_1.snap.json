@@ -1,30 +1,12 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Static_labeled_block_expression",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Static_labeled_block_expression",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "x",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Static_labeled_block_expression",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": null,
     "Value": {
      "Block": {
@@ -39,62 +21,26 @@
        {
         "Annotations": null,
         "Comments": null,
-        "Pos": {
-         "Column": 2,
-         "Filename": "Static_labeled_block_expression",
-         "Line": 2,
-         "Offset": 27
-        },
         "Statement": {
          "Label": "labeled",
-         "Pos": {
-          "Column": 2,
-          "Filename": "Static_labeled_block_expression",
-          "Line": 2,
-          "Offset": 27
-         },
          "Value": {
           "Operands": [
            {
             "Atom": {
-             "Pos": {
-              "Column": 17,
-              "Filename": "Static_labeled_block_expression",
-              "Line": 2,
-              "Offset": 42
-             },
              "Value": {
-              "Pos": {
-               "Column": 17,
-               "Filename": "Static_labeled_block_expression",
-               "Line": 2,
-               "Offset": 42
-              },
               "Value": 5
              }
             },
             "Postfix": null
            }
           ],
-          "Pos": {
-           "Column": 17,
-           "Filename": "Static_labeled_block_expression",
-           "Line": 2,
-           "Offset": 42
-          },
           "Prefix": null
          }
         }
        }
       ]
      },
-     "IsStatic": true,
-     "Pos": {
-      "Column": 9,
-      "Filename": "Static_labeled_block_expression",
-      "Line": 1,
-      "Offset": 8
-     }
+     "IsStatic": true
     }
    }
   }

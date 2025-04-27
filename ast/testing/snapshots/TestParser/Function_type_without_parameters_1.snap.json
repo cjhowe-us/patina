@@ -1,61 +1,19 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Function_type_without_parameters",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Function_type_without_parameters",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "x",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Function_type_without_parameters",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": {
-     "Pos": {
-      "Column": 8,
-      "Filename": "Function_type_without_parameters",
-      "Line": 1,
-      "Offset": 7
-     },
      "Type": {
       "Name": "",
       "Parameters": null,
-      "Pos": {
-       "Column": 8,
-       "Filename": "Function_type_without_parameters",
-       "Line": 1,
-       "Offset": 7
-      },
       "Return": {
-       "Pos": {
-        "Column": 15,
-        "Filename": "Function_type_without_parameters",
-        "Line": 1,
-        "Offset": 14
-       },
        "Type": {
         "BitSize": 32,
-        "Pos": {
-         "Column": 15,
-         "Filename": "Function_type_without_parameters",
-         "Line": 1,
-         "Offset": 14
-        },
         "Signed": true
        }
       }

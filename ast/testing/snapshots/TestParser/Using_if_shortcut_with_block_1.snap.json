@@ -1,20 +1,8 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Using_if_shortcut_with_block",
-  "Line": 2,
-  "Offset": 1
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Using_if_shortcut_with_block",
-    "Line": 2,
-    "Offset": 1
-   },
    "Statement": {
     "Expression": {
      "Else": {
@@ -30,24 +18,12 @@
         {
          "Annotations": null,
          "Comments": null,
-         "Pos": {
-          "Column": 5,
-          "Filename": "Using_if_shortcut_with_block",
-          "Line": 7,
-          "Offset": 121
-         },
          "Statement": {
           "Expression": {
            "Operands": [
             {
              "Atom": {
-              "Ident": "takeOver",
-              "Pos": {
-               "Column": 5,
-               "Filename": "Using_if_shortcut_with_block",
-               "Line": 7,
-               "Offset": 121
-              }
+              "Ident": "takeOver"
              },
              "Postfix": [
               {
@@ -57,108 +33,48 @@
                  "Operands": [
                   {
                    "Atom": {
-                    "Ident": "world",
-                    "Pos": {
-                     "Column": 14,
-                     "Filename": "Using_if_shortcut_with_block",
-                     "Line": 7,
-                     "Offset": 130
-                    }
+                    "Ident": "world"
                    },
                    "Postfix": null
                   }
                  ],
-                 "Pos": {
-                  "Column": 14,
-                  "Filename": "Using_if_shortcut_with_block",
-                  "Line": 7,
-                  "Offset": 130
-                 },
                  "Prefix": null
                 }
                ],
-               "Operator": "",
-               "Pos": {
-                "Column": 13,
-                "Filename": "Using_if_shortcut_with_block",
-                "Line": 7,
-                "Offset": 129
-               }
+               "Operator": ""
               },
               {
                "Index": null,
                "Invocation": null,
-               "Operator": "?",
-               "Pos": {
-                "Column": 20,
-                "Filename": "Using_if_shortcut_with_block",
-                "Line": 7,
-                "Offset": 136
-               }
+               "Operator": "?"
               },
               {
                "Index": null,
                "Invocation": null,
-               "Operator": ".",
-               "Pos": {
-                "Column": 21,
-                "Filename": "Using_if_shortcut_with_block",
-                "Line": 7,
-                "Offset": 137
-               }
+               "Operator": "."
               }
              ]
             },
             {
              "Atom": {
-              "Ident": "destroy",
-              "Pos": {
-               "Column": 22,
-               "Filename": "Using_if_shortcut_with_block",
-               "Line": 7,
-               "Offset": 138
-              }
+              "Ident": "destroy"
              },
              "Postfix": [
               {
                "Index": null,
                "Invocation": null,
-               "Operator": "",
-               "Pos": {
-                "Column": 29,
-                "Filename": "Using_if_shortcut_with_block",
-                "Line": 7,
-                "Offset": 145
-               }
+               "Operator": ""
               }
              ]
             }
            ],
-           "Pos": {
-            "Column": 5,
-            "Filename": "Using_if_shortcut_with_block",
-            "Line": 7,
-            "Offset": 121
-           },
            "Prefix": null
-          },
-          "Pos": {
-           "Column": 5,
-           "Filename": "Using_if_shortcut_with_block",
-           "Line": 7,
-           "Offset": 121
           }
          }
         }
        ]
       },
-      "IsStatic": false,
-      "Pos": {
-       "Column": 8,
-       "Filename": "Using_if_shortcut_with_block",
-       "Line": 6,
-       "Offset": 115
-      }
+      "IsStatic": false
      },
      "ElseIfs": [
       {
@@ -166,42 +82,18 @@
         "Operands": [
          {
           "Atom": {
-           "Ident": "interlockable",
-           "Pos": {
-            "Column": 12,
-            "Filename": "Using_if_shortcut_with_block",
-            "Line": 4,
-            "Offset": 65
-           }
+           "Ident": "interlockable"
           },
           "Postfix": [
            {
             "Index": null,
             "Invocation": null,
-            "Operator": "",
-            "Pos": {
-             "Column": 25,
-             "Filename": "Using_if_shortcut_with_block",
-             "Line": 4,
-             "Offset": 78
-            }
+            "Operator": ""
            }
           ]
          }
         ],
-        "Pos": {
-         "Column": 12,
-         "Filename": "Using_if_shortcut_with_block",
-         "Line": 4,
-         "Offset": 65
-        },
         "Prefix": null
-       },
-       "Pos": {
-        "Column": 8,
-        "Filename": "Using_if_shortcut_with_block",
-        "Line": 4,
-        "Offset": 61
        },
        "Then": {
         "Block": {
@@ -216,62 +108,26 @@
           {
            "Annotations": null,
            "Comments": null,
-           "Pos": {
-            "Column": 5,
-            "Filename": "Using_if_shortcut_with_block",
-            "Line": 5,
-            "Offset": 94
-           },
            "Statement": {
             "Label": "test",
-            "Pos": {
-             "Column": 5,
-             "Filename": "Using_if_shortcut_with_block",
-             "Line": 5,
-             "Offset": 94
-            },
             "Value": {
              "Operands": [
               {
                "Atom": {
-                "Pos": {
-                 "Column": 17,
-                 "Filename": "Using_if_shortcut_with_block",
-                 "Line": 5,
-                 "Offset": 106
-                },
                 "Value": {
-                 "Pos": {
-                  "Column": 17,
-                  "Filename": "Using_if_shortcut_with_block",
-                  "Line": 5,
-                  "Offset": 106
-                 },
                  "Value": 5
                 }
                },
                "Postfix": null
               }
              ],
-             "Pos": {
-              "Column": 17,
-              "Filename": "Using_if_shortcut_with_block",
-              "Line": 5,
-              "Offset": 106
-             },
              "Prefix": null
             }
            }
           }
          ]
         },
-        "IsStatic": false,
-        "Pos": {
-         "Column": 29,
-         "Filename": "Using_if_shortcut_with_block",
-         "Line": 4,
-         "Offset": 82
-        }
+        "IsStatic": false
        }
       }
      ],
@@ -280,43 +136,19 @@
        "Operands": [
         {
          "Atom": {
-          "Ident": "x",
-          "Pos": {
-           "Column": 5,
-           "Filename": "Using_if_shortcut_with_block",
-           "Line": 2,
-           "Offset": 5
-          }
+          "Ident": "x"
          },
          "Postfix": [
           {
            "Index": null,
            "Invocation": null,
-           "Operator": "\u003e",
-           "Pos": {
-            "Column": 7,
-            "Filename": "Using_if_shortcut_with_block",
-            "Line": 2,
-            "Offset": 7
-           }
+           "Operator": "\u003e"
           }
          ]
         },
         {
          "Atom": {
-          "Pos": {
-           "Column": 9,
-           "Filename": "Using_if_shortcut_with_block",
-           "Line": 2,
-           "Offset": 9
-          },
           "Value": {
-           "Pos": {
-            "Column": 9,
-            "Filename": "Using_if_shortcut_with_block",
-            "Line": 2,
-            "Offset": 9
-           },
            "Value": 10
           }
          },
@@ -324,55 +156,25 @@
           {
            "Index": null,
            "Invocation": null,
-           "Operator": "\u0026\u0026",
-           "Pos": {
-            "Column": 12,
-            "Filename": "Using_if_shortcut_with_block",
-            "Line": 2,
-            "Offset": 12
-           }
+           "Operator": "\u0026\u0026"
           }
          ]
         },
         {
          "Atom": {
-          "Ident": "y",
-          "Pos": {
-           "Column": 15,
-           "Filename": "Using_if_shortcut_with_block",
-           "Line": 2,
-           "Offset": 15
-          }
+          "Ident": "y"
          },
          "Postfix": [
           {
            "Index": null,
            "Invocation": null,
-           "Operator": "\u003c",
-           "Pos": {
-            "Column": 17,
-            "Filename": "Using_if_shortcut_with_block",
-            "Line": 2,
-            "Offset": 17
-           }
+           "Operator": "\u003c"
           }
          ]
         },
         {
          "Atom": {
-          "Pos": {
-           "Column": 19,
-           "Filename": "Using_if_shortcut_with_block",
-           "Line": 2,
-           "Offset": 19
-          },
           "Value": {
-           "Pos": {
-            "Column": 19,
-            "Filename": "Using_if_shortcut_with_block",
-            "Line": 2,
-            "Offset": 19
-           },
            "Value": 20
           }
          },
@@ -380,74 +182,32 @@
           {
            "Index": null,
            "Invocation": null,
-           "Operator": "||",
-           "Pos": {
-            "Column": 22,
-            "Filename": "Using_if_shortcut_with_block",
-            "Line": 2,
-            "Offset": 22
-           }
+           "Operator": "||"
           }
          ]
         },
         {
          "Atom": {
-          "Ident": "z",
-          "Pos": {
-           "Column": 25,
-           "Filename": "Using_if_shortcut_with_block",
-           "Line": 2,
-           "Offset": 25
-          }
+          "Ident": "z"
          },
          "Postfix": [
           {
            "Index": null,
            "Invocation": null,
-           "Operator": "==",
-           "Pos": {
-            "Column": 27,
-            "Filename": "Using_if_shortcut_with_block",
-            "Line": 2,
-            "Offset": 27
-           }
+           "Operator": "=="
           }
          ]
         },
         {
          "Atom": {
-          "Pos": {
-           "Column": 30,
-           "Filename": "Using_if_shortcut_with_block",
-           "Line": 2,
-           "Offset": 30
-          },
           "Value": {
-           "Pos": {
-            "Column": 30,
-            "Filename": "Using_if_shortcut_with_block",
-            "Line": 2,
-            "Offset": 30
-           },
            "Value": 30
           }
          },
          "Postfix": null
         }
        ],
-       "Pos": {
-        "Column": 5,
-        "Filename": "Using_if_shortcut_with_block",
-        "Line": 2,
-        "Offset": 5
-       },
        "Prefix": null
-      },
-      "Pos": {
-       "Column": 1,
-       "Filename": "Using_if_shortcut_with_block",
-       "Line": 2,
-       "Offset": 1
       },
       "Then": {
        "Block": {
@@ -462,116 +222,50 @@
          {
           "Annotations": null,
           "Comments": null,
-          "Pos": {
-           "Column": 2,
-           "Filename": "Using_if_shortcut_with_block",
-           "Line": 3,
-           "Offset": 37
-          },
           "Statement": {
            "Label": "",
-           "Pos": {
-            "Column": 2,
-            "Filename": "Using_if_shortcut_with_block",
-            "Line": 3,
-            "Offset": 37
-           },
            "Value": {
             "Operands": [
              {
               "Atom": {
-               "Ident": "x",
-               "Pos": {
-                "Column": 9,
-                "Filename": "Using_if_shortcut_with_block",
-                "Line": 3,
-                "Offset": 44
-               }
+               "Ident": "x"
               },
               "Postfix": [
                {
                 "Index": null,
                 "Invocation": null,
-                "Operator": "+",
-                "Pos": {
-                 "Column": 11,
-                 "Filename": "Using_if_shortcut_with_block",
-                 "Line": 3,
-                 "Offset": 46
-                }
+                "Operator": "+"
                }
               ]
              },
              {
               "Atom": {
-               "Ident": "y",
-               "Pos": {
-                "Column": 13,
-                "Filename": "Using_if_shortcut_with_block",
-                "Line": 3,
-                "Offset": 48
-               }
+               "Ident": "y"
               },
               "Postfix": [
                {
                 "Index": null,
                 "Invocation": null,
-                "Operator": "+",
-                "Pos": {
-                 "Column": 15,
-                 "Filename": "Using_if_shortcut_with_block",
-                 "Line": 3,
-                 "Offset": 50
-                }
+                "Operator": "+"
                }
               ]
              },
              {
               "Atom": {
-               "Ident": "z",
-               "Pos": {
-                "Column": 17,
-                "Filename": "Using_if_shortcut_with_block",
-                "Line": 3,
-                "Offset": 52
-               }
+               "Ident": "z"
               },
               "Postfix": null
              }
             ],
-            "Pos": {
-             "Column": 9,
-             "Filename": "Using_if_shortcut_with_block",
-             "Line": 3,
-             "Offset": 44
-            },
             "Prefix": null
            }
           }
          }
         ]
        },
-       "IsStatic": false,
-       "Pos": {
-        "Column": 34,
-        "Filename": "Using_if_shortcut_with_block",
-        "Line": 2,
-        "Offset": 34
-       }
+       "IsStatic": false
       }
-     },
-     "Pos": {
-      "Column": 1,
-      "Filename": "Using_if_shortcut_with_block",
-      "Line": 2,
-      "Offset": 1
      }
-    },
-    "Pos": {
-     "Column": 1,
-     "Filename": "Using_if_shortcut_with_block",
-     "Line": 2,
-     "Offset": 1
     }
    }
   }

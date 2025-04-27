@@ -1,0 +1,1709 @@
+{
+ "result": null,
+ "visitor": {
+  "log": [
+   {
+    "isEnter": true,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Body": {
+         "Label": "",
+         "Pos": {
+          "Column": 10,
+          "Filename": "PostfixWithMultipleOperations",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Expression": {
+             "Operands": [
+              {
+               "Atom": {
+                "Ident": "array"
+               },
+               "Postfix": [
+                {
+                 "Index": {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Value": {
+                      "Value": 0
+                     }
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 },
+                 "Invocation": null,
+                 "Operator": ""
+                },
+                {
+                 "Index": {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Value": {
+                      "Value": 1
+                     }
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 },
+                 "Invocation": null,
+                 "Operator": ""
+                },
+                {
+                 "Index": null,
+                 "Invocation": [
+                  {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Value": {
+                       "Value": 2
+                      }
+                     },
+                     "Postfix": null
+                    }
+                   ],
+                   "Prefix": null
+                  }
+                 ],
+                 "Operator": ""
+                }
+               ]
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "Name": "m"
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Body": {
+       "Label": "",
+       "Pos": {
+        "Column": 10,
+        "Filename": "PostfixWithMultipleOperations",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "array"
+             },
+             "Postfix": [
+              {
+               "Index": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Value": 0
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               },
+               "Invocation": null,
+               "Operator": ""
+              },
+              {
+               "Index": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Value": 1
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               },
+               "Invocation": null,
+               "Operator": ""
+              },
+              {
+               "Index": null,
+               "Invocation": [
+                {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Value": {
+                     "Value": 2
+                    }
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Prefix": null
+                }
+               ],
+               "Operator": ""
+              }
+             ]
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "Name": "m"
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 10,
+       "Filename": "PostfixWithMultipleOperations",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "array"
+            },
+            "Postfix": [
+             {
+              "Index": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Value": {
+                   "Value": 0
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              },
+              "Invocation": null,
+              "Operator": ""
+             },
+             {
+              "Index": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Value": {
+                   "Value": 1
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              },
+              "Invocation": null,
+              "Operator": ""
+             },
+             {
+              "Index": null,
+              "Invocation": [
+               {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Value": 2
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               }
+              ],
+              "Operator": ""
+             }
+            ]
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "Name": "m"
+    },
+    "type": "ast.Module"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 10,
+      "Filename": "PostfixWithMultipleOperations",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "array"
+           },
+           "Postfix": [
+            {
+             "Index": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Value": {
+                  "Value": 0
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             },
+             "Invocation": null,
+             "Operator": ""
+            },
+            {
+             "Index": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Value": {
+                  "Value": 1
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             },
+             "Invocation": null,
+             "Operator": ""
+            },
+            {
+             "Index": null,
+             "Invocation": [
+              {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Value": {
+                   "Value": 2
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             ],
+             "Operator": ""
+            }
+           ]
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "array"
+         },
+         "Postfix": [
+          {
+           "Index": {
+            "Operands": [
+             {
+              "Atom": {
+               "Value": {
+                "Value": 0
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           },
+           "Invocation": null,
+           "Operator": ""
+          },
+          {
+           "Index": {
+            "Operands": [
+             {
+              "Atom": {
+               "Value": {
+                "Value": 1
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           },
+           "Invocation": null,
+           "Operator": ""
+          },
+          {
+           "Index": null,
+           "Invocation": [
+            {
+             "Operands": [
+              {
+               "Atom": {
+                "Value": {
+                 "Value": 2
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           ],
+           "Operator": ""
+          }
+         ]
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Expression": {
+      "Operands": [
+       {
+        "Atom": {
+         "Ident": "array"
+        },
+        "Postfix": [
+         {
+          "Index": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Value": 0
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          },
+          "Invocation": null,
+          "Operator": ""
+         },
+         {
+          "Index": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Value": 1
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          },
+          "Invocation": null,
+          "Operator": ""
+         },
+         {
+          "Index": null,
+          "Invocation": [
+           {
+            "Operands": [
+             {
+              "Atom": {
+               "Value": {
+                "Value": 2
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           }
+          ],
+          "Operator": ""
+         }
+        ]
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "array"
+       },
+       "Postfix": [
+        {
+         "Index": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Value": 0
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         },
+         "Invocation": null,
+         "Operator": ""
+        },
+        {
+         "Index": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Value": 1
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         },
+         "Invocation": null,
+         "Operator": ""
+        },
+        {
+         "Index": null,
+         "Invocation": [
+          {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Value": 2
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         ],
+         "Operator": ""
+        }
+       ]
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "array"
+     },
+     "Postfix": [
+      {
+       "Index": {
+        "Operands": [
+         {
+          "Atom": {
+           "Value": {
+            "Value": 0
+           }
+          },
+          "Postfix": null
+         }
+        ],
+        "Prefix": null
+       },
+       "Invocation": null,
+       "Operator": ""
+      },
+      {
+       "Index": {
+        "Operands": [
+         {
+          "Atom": {
+           "Value": {
+            "Value": 1
+           }
+          },
+          "Postfix": null
+         }
+        ],
+        "Prefix": null
+       },
+       "Invocation": null,
+       "Operator": ""
+      },
+      {
+       "Index": null,
+       "Invocation": [
+        {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 2
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       ],
+       "Operator": ""
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "array"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "array"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Index": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 0
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     },
+     "Invocation": null,
+     "Operator": ""
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 0
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 0
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 0
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 0
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 0
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 0
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 0
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 0
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Index": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 0
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     },
+     "Invocation": null,
+     "Operator": ""
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Index": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 1
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     },
+     "Invocation": null,
+     "Operator": ""
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 1
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 1
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 1
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 1
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 1
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 1
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Index": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 1
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     },
+     "Invocation": null,
+     "Operator": ""
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Index": null,
+     "Invocation": [
+      {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 2
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     ],
+     "Operator": ""
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 2
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 2
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 2
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 2
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 2
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 2
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 2
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 2
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Index": null,
+     "Invocation": [
+      {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 2
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     ],
+     "Operator": ""
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "array"
+     },
+     "Postfix": [
+      {
+       "Index": {
+        "Operands": [
+         {
+          "Atom": {
+           "Value": {
+            "Value": 0
+           }
+          },
+          "Postfix": null
+         }
+        ],
+        "Prefix": null
+       },
+       "Invocation": null,
+       "Operator": ""
+      },
+      {
+       "Index": {
+        "Operands": [
+         {
+          "Atom": {
+           "Value": {
+            "Value": 1
+           }
+          },
+          "Postfix": null
+         }
+        ],
+        "Prefix": null
+       },
+       "Invocation": null,
+       "Operator": ""
+      },
+      {
+       "Index": null,
+       "Invocation": [
+        {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 2
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       ],
+       "Operator": ""
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "array"
+       },
+       "Postfix": [
+        {
+         "Index": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Value": 0
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         },
+         "Invocation": null,
+         "Operator": ""
+        },
+        {
+         "Index": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Value": 1
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         },
+         "Invocation": null,
+         "Operator": ""
+        },
+        {
+         "Index": null,
+         "Invocation": [
+          {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Value": 2
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         ],
+         "Operator": ""
+        }
+       ]
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Expression": {
+      "Operands": [
+       {
+        "Atom": {
+         "Ident": "array"
+        },
+        "Postfix": [
+         {
+          "Index": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Value": 0
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          },
+          "Invocation": null,
+          "Operator": ""
+         },
+         {
+          "Index": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Value": 1
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          },
+          "Invocation": null,
+          "Operator": ""
+         },
+         {
+          "Index": null,
+          "Invocation": [
+           {
+            "Operands": [
+             {
+              "Atom": {
+               "Value": {
+                "Value": 2
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           }
+          ],
+          "Operator": ""
+         }
+        ]
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "array"
+         },
+         "Postfix": [
+          {
+           "Index": {
+            "Operands": [
+             {
+              "Atom": {
+               "Value": {
+                "Value": 0
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           },
+           "Invocation": null,
+           "Operator": ""
+          },
+          {
+           "Index": {
+            "Operands": [
+             {
+              "Atom": {
+               "Value": {
+                "Value": 1
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           },
+           "Invocation": null,
+           "Operator": ""
+          },
+          {
+           "Index": null,
+           "Invocation": [
+            {
+             "Operands": [
+              {
+               "Atom": {
+                "Value": {
+                 "Value": 2
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           ],
+           "Operator": ""
+          }
+         ]
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 10,
+      "Filename": "PostfixWithMultipleOperations",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "array"
+           },
+           "Postfix": [
+            {
+             "Index": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Value": {
+                  "Value": 0
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             },
+             "Invocation": null,
+             "Operator": ""
+            },
+            {
+             "Index": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Value": {
+                  "Value": 1
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             },
+             "Invocation": null,
+             "Operator": ""
+            },
+            {
+             "Index": null,
+             "Invocation": [
+              {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Value": {
+                   "Value": 2
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             ],
+             "Operator": ""
+            }
+           ]
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 10,
+       "Filename": "PostfixWithMultipleOperations",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "array"
+            },
+            "Postfix": [
+             {
+              "Index": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Value": {
+                   "Value": 0
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              },
+              "Invocation": null,
+              "Operator": ""
+             },
+             {
+              "Index": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Value": {
+                   "Value": 1
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              },
+              "Invocation": null,
+              "Operator": ""
+             },
+             {
+              "Index": null,
+              "Invocation": [
+               {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Value": 2
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               }
+              ],
+              "Operator": ""
+             }
+            ]
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "Name": "m"
+    },
+    "type": "ast.Module"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Body": {
+       "Label": "",
+       "Pos": {
+        "Column": 10,
+        "Filename": "PostfixWithMultipleOperations",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "array"
+             },
+             "Postfix": [
+              {
+               "Index": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Value": 0
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               },
+               "Invocation": null,
+               "Operator": ""
+              },
+              {
+               "Index": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Value": 1
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               },
+               "Invocation": null,
+               "Operator": ""
+              },
+              {
+               "Index": null,
+               "Invocation": [
+                {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Value": {
+                     "Value": 2
+                    }
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Prefix": null
+                }
+               ],
+               "Operator": ""
+              }
+             ]
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "Name": "m"
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Body": {
+         "Label": "",
+         "Pos": {
+          "Column": 10,
+          "Filename": "PostfixWithMultipleOperations",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Expression": {
+             "Operands": [
+              {
+               "Atom": {
+                "Ident": "array"
+               },
+               "Postfix": [
+                {
+                 "Index": {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Value": {
+                      "Value": 0
+                     }
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 },
+                 "Invocation": null,
+                 "Operator": ""
+                },
+                {
+                 "Index": {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Value": {
+                      "Value": 1
+                     }
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 },
+                 "Invocation": null,
+                 "Operator": ""
+                },
+                {
+                 "Index": null,
+                 "Invocation": [
+                  {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Value": {
+                       "Value": 2
+                      }
+                     },
+                     "Postfix": null
+                    }
+                   ],
+                   "Prefix": null
+                  }
+                 ],
+                 "Operator": ""
+                }
+               ]
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "Name": "m"
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   }
+  ]
+ }
+}

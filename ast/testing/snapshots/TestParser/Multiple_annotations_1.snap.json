@@ -1,22 +1,10 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Multiple_annotations",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": [
     {
      "Arguments": null,
-     "Name": "anno1",
-     "Pos": {
-      "Column": 1,
-      "Filename": "Multiple_annotations",
-      "Line": 1,
-      "Offset": 0
-     }
+     "Name": "anno1"
     },
     {
      "Arguments": [
@@ -24,42 +12,18 @@
        "Operands": [
         {
          "Atom": {
-          "Ident": "true",
-          "Pos": {
-           "Column": 15,
-           "Filename": "Multiple_annotations",
-           "Line": 1,
-           "Offset": 14
-          }
+          "Ident": "true"
          },
          "Postfix": null
         }
        ],
-       "Pos": {
-        "Column": 15,
-        "Filename": "Multiple_annotations",
-        "Line": 1,
-        "Offset": 14
-       },
        "Prefix": null
       }
      ],
-     "Name": "anno2",
-     "Pos": {
-      "Column": 8,
-      "Filename": "Multiple_annotations",
-      "Line": 1,
-      "Offset": 7
-     }
+     "Name": "anno2"
     }
    ],
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Multiple_annotations",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "Block": {
      "Label": "",
@@ -74,12 +38,6 @@
     "IsStatic": false,
     "Name": "test",
     "Parameters": null,
-    "Pos": {
-     "Column": 21,
-     "Filename": "Multiple_annotations",
-     "Line": 1,
-     "Offset": 20
-    },
     "Return": null
    }
   }

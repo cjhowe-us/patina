@@ -1,96 +1,30 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Nested_array_types",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Nested_array_types",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "x",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Nested_array_types",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": {
-     "Pos": {
-      "Column": 8,
-      "Filename": "Nested_array_types",
-      "Line": 1,
-      "Offset": 7
-     },
      "Type": {
       "Dimension": 2,
       "Element": {
-       "Pos": {
-        "Column": 11,
-        "Filename": "Nested_array_types",
-        "Line": 1,
-        "Offset": 10
-       },
        "Type": {
         "Dimension": 3,
         "Element": {
-         "Pos": {
-          "Column": 14,
-          "Filename": "Nested_array_types",
-          "Line": 1,
-          "Offset": 13
-         },
          "Type": {
           "Dimension": 4,
           "Element": {
-           "Pos": {
-            "Column": 17,
-            "Filename": "Nested_array_types",
-            "Line": 1,
-            "Offset": 16
-           },
            "Type": {
             "BitSize": 32,
-            "Pos": {
-             "Column": 17,
-             "Filename": "Nested_array_types",
-             "Line": 1,
-             "Offset": 16
-            },
             "Signed": true
            }
-          },
-          "Pos": {
-           "Column": 14,
-           "Filename": "Nested_array_types",
-           "Line": 1,
-           "Offset": 13
           }
          }
-        },
-        "Pos": {
-         "Column": 11,
-         "Filename": "Nested_array_types",
-         "Line": 1,
-         "Offset": 10
         }
        }
-      },
-      "Pos": {
-       "Column": 8,
-       "Filename": "Nested_array_types",
-       "Line": 1,
-       "Offset": 7
       }
      }
     },

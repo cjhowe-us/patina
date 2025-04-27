@@ -1,150 +1,48 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Complex_function_type",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Complex_function_type",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "x",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Complex_function_type",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": {
-     "Pos": {
-      "Column": 8,
-      "Filename": "Complex_function_type",
-      "Line": 1,
-      "Offset": 7
-     },
      "Type": {
       "Name": "",
       "Parameters": [
        {
         "Name": "cb",
-        "Pos": {
-         "Column": 12,
-         "Filename": "Complex_function_type",
-         "Line": 1,
-         "Offset": 11
-        },
         "Type": {
-         "Pos": {
-          "Column": 16,
-          "Filename": "Complex_function_type",
-          "Line": 1,
-          "Offset": 15
-         },
          "Type": {
           "Name": "",
           "Parameters": [
            {
             "Name": "a",
-            "Pos": {
-             "Column": 20,
-             "Filename": "Complex_function_type",
-             "Line": 1,
-             "Offset": 19
-            },
             "Type": {
-             "Pos": {
-              "Column": 23,
-              "Filename": "Complex_function_type",
-              "Line": 1,
-              "Offset": 22
-             },
              "Type": {
               "BitSize": 32,
-              "Pos": {
-               "Column": 23,
-               "Filename": "Complex_function_type",
-               "Line": 1,
-               "Offset": 22
-              },
               "Signed": true
              }
             }
            },
            {
             "Name": "b",
-            "Pos": {
-             "Column": 28,
-             "Filename": "Complex_function_type",
-             "Line": 1,
-             "Offset": 27
-            },
             "Type": {
-             "Pos": {
-              "Column": 31,
-              "Filename": "Complex_function_type",
-              "Line": 1,
-              "Offset": 30
-             },
              "Type": {
               "BitSize": 32,
-              "Pos": {
-               "Column": 31,
-               "Filename": "Complex_function_type",
-               "Line": 1,
-               "Offset": 30
-              },
               "Signed": true
              }
             }
            }
           ],
-          "Pos": {
-           "Column": 16,
-           "Filename": "Complex_function_type",
-           "Line": 1,
-           "Offset": 15
-          },
           "Return": {
-           "Pos": {
-            "Column": 37,
-            "Filename": "Complex_function_type",
-            "Line": 1,
-            "Offset": 36
-           },
            "Type": {
             "Name": "",
             "Parameters": null,
-            "Pos": {
-             "Column": 37,
-             "Filename": "Complex_function_type",
-             "Line": 1,
-             "Offset": 36
-            },
             "Return": {
-             "Pos": {
-              "Column": 44,
-              "Filename": "Complex_function_type",
-              "Line": 1,
-              "Offset": 43
-             },
              "Type": {
               "BitSize": 32,
-              "Pos": {
-               "Column": 44,
-               "Filename": "Complex_function_type",
-               "Line": 1,
-               "Offset": 43
-              },
               "Signed": true
              }
             }
@@ -154,27 +52,9 @@
         }
        }
       ],
-      "Pos": {
-       "Column": 8,
-       "Filename": "Complex_function_type",
-       "Line": 1,
-       "Offset": 7
-      },
       "Return": {
-       "Pos": {
-        "Column": 50,
-        "Filename": "Complex_function_type",
-        "Line": 1,
-        "Offset": 49
-       },
        "Type": {
         "BitSize": 32,
-        "Pos": {
-         "Column": 50,
-         "Filename": "Complex_function_type",
-         "Line": 1,
-         "Offset": 49
-        },
         "Signed": true
        }
       }

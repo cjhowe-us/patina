@@ -1,0 +1,1117 @@
+{
+ "result": null,
+ "visitor": {
+  "log": [
+   {
+    "isEnter": true,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Body": {
+         "Label": "",
+         "Pos": {
+          "Column": 10,
+          "Filename": "FunctionStatementWithParameters",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Block": {
+             "Label": "",
+             "Pos": {
+              "Column": 45,
+              "Filename": "FunctionStatementWithParameters",
+              "Line": 1,
+              "Offset": 44
+             },
+             "Statements": [
+              {
+               "Annotations": null,
+               "Comments": null,
+               "Statement": {
+                "Label": "",
+                "Value": {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Ident": "a"
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Prefix": null
+                }
+               }
+              }
+             ]
+            },
+            "IsStatic": false,
+            "Name": "test",
+            "Parameters": [
+             {
+              "Name": "a",
+              "Type": {
+               "Ident": "Int"
+              }
+             },
+             {
+              "Name": "b",
+              "Type": {
+               "Ident": "String"
+              }
+             }
+            ],
+            "Return": {
+             "Ident": "Int"
+            }
+           }
+          }
+         ]
+        },
+        "Name": "m"
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Body": {
+       "Label": "",
+       "Pos": {
+        "Column": 10,
+        "Filename": "FunctionStatementWithParameters",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Block": {
+           "Label": "",
+           "Pos": {
+            "Column": 45,
+            "Filename": "FunctionStatementWithParameters",
+            "Line": 1,
+            "Offset": 44
+           },
+           "Statements": [
+            {
+             "Annotations": null,
+             "Comments": null,
+             "Statement": {
+              "Label": "",
+              "Value": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Ident": "a"
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             }
+            }
+           ]
+          },
+          "IsStatic": false,
+          "Name": "test",
+          "Parameters": [
+           {
+            "Name": "a",
+            "Type": {
+             "Ident": "Int"
+            }
+           },
+           {
+            "Name": "b",
+            "Type": {
+             "Ident": "String"
+            }
+           }
+          ],
+          "Return": {
+           "Ident": "Int"
+          }
+         }
+        }
+       ]
+      },
+      "Name": "m"
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 10,
+       "Filename": "FunctionStatementWithParameters",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Block": {
+          "Label": "",
+          "Pos": {
+           "Column": 45,
+           "Filename": "FunctionStatementWithParameters",
+           "Line": 1,
+           "Offset": 44
+          },
+          "Statements": [
+           {
+            "Annotations": null,
+            "Comments": null,
+            "Statement": {
+             "Label": "",
+             "Value": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Ident": "a"
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             }
+            }
+           }
+          ]
+         },
+         "IsStatic": false,
+         "Name": "test",
+         "Parameters": [
+          {
+           "Name": "a",
+           "Type": {
+            "Ident": "Int"
+           }
+          },
+          {
+           "Name": "b",
+           "Type": {
+            "Ident": "String"
+           }
+          }
+         ],
+         "Return": {
+          "Ident": "Int"
+         }
+        }
+       }
+      ]
+     },
+     "Name": "m"
+    },
+    "type": "ast.Module"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 10,
+      "Filename": "FunctionStatementWithParameters",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Block": {
+         "Label": "",
+         "Pos": {
+          "Column": 45,
+          "Filename": "FunctionStatementWithParameters",
+          "Line": 1,
+          "Offset": 44
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Label": "",
+            "Value": {
+             "Operands": [
+              {
+               "Atom": {
+                "Ident": "a"
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "IsStatic": false,
+        "Name": "test",
+        "Parameters": [
+         {
+          "Name": "a",
+          "Type": {
+           "Ident": "Int"
+          }
+         },
+         {
+          "Name": "b",
+          "Type": {
+           "Ident": "String"
+          }
+         }
+        ],
+        "Return": {
+         "Ident": "Int"
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 45,
+        "Filename": "FunctionStatementWithParameters",
+        "Line": 1,
+        "Offset": 44
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Label": "",
+          "Value": {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "a"
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "IsStatic": false,
+      "Name": "test",
+      "Parameters": [
+       {
+        "Name": "a",
+        "Type": {
+         "Ident": "Int"
+        }
+       },
+       {
+        "Name": "b",
+        "Type": {
+         "Ident": "String"
+        }
+       }
+      ],
+      "Return": {
+       "Ident": "Int"
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 45,
+       "Filename": "FunctionStatementWithParameters",
+       "Line": 1,
+       "Offset": 44
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Label": "",
+         "Value": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "a"
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false,
+     "Name": "test",
+     "Parameters": [
+      {
+       "Name": "a",
+       "Type": {
+        "Ident": "Int"
+       }
+      },
+      {
+       "Name": "b",
+       "Type": {
+        "Ident": "String"
+       }
+      }
+     ],
+     "Return": {
+      "Ident": "Int"
+     }
+    },
+    "type": "ast.FunctionStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Name": "a",
+     "Type": {
+      "Ident": "Int"
+     }
+    },
+    "type": "*ast.FunctionParameter"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "Int"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "Int"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Name": "a",
+     "Type": {
+      "Ident": "Int"
+     }
+    },
+    "type": "*ast.FunctionParameter"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Name": "b",
+     "Type": {
+      "Ident": "String"
+     }
+    },
+    "type": "*ast.FunctionParameter"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "String"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "String"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Name": "b",
+     "Type": {
+      "Ident": "String"
+     }
+    },
+    "type": "*ast.FunctionParameter"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "Int"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "Int"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 45,
+      "Filename": "FunctionStatementWithParameters",
+      "Line": 1,
+      "Offset": 44
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Label": "",
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "a"
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Label": "",
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "a"
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Ident": "a"
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ReturnStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "a"
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "a"
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "a"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "a"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "a"
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "a"
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Ident": "a"
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ReturnStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Label": "",
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "a"
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 45,
+      "Filename": "FunctionStatementWithParameters",
+      "Line": 1,
+      "Offset": 44
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Label": "",
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "a"
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 45,
+       "Filename": "FunctionStatementWithParameters",
+       "Line": 1,
+       "Offset": 44
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Label": "",
+         "Value": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "a"
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false,
+     "Name": "test",
+     "Parameters": [
+      {
+       "Name": "a",
+       "Type": {
+        "Ident": "Int"
+       }
+      },
+      {
+       "Name": "b",
+       "Type": {
+        "Ident": "String"
+       }
+      }
+     ],
+     "Return": {
+      "Ident": "Int"
+     }
+    },
+    "type": "ast.FunctionStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 45,
+        "Filename": "FunctionStatementWithParameters",
+        "Line": 1,
+        "Offset": 44
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Label": "",
+          "Value": {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "a"
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "IsStatic": false,
+      "Name": "test",
+      "Parameters": [
+       {
+        "Name": "a",
+        "Type": {
+         "Ident": "Int"
+        }
+       },
+       {
+        "Name": "b",
+        "Type": {
+         "Ident": "String"
+        }
+       }
+      ],
+      "Return": {
+       "Ident": "Int"
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 10,
+      "Filename": "FunctionStatementWithParameters",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Block": {
+         "Label": "",
+         "Pos": {
+          "Column": 45,
+          "Filename": "FunctionStatementWithParameters",
+          "Line": 1,
+          "Offset": 44
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Label": "",
+            "Value": {
+             "Operands": [
+              {
+               "Atom": {
+                "Ident": "a"
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "IsStatic": false,
+        "Name": "test",
+        "Parameters": [
+         {
+          "Name": "a",
+          "Type": {
+           "Ident": "Int"
+          }
+         },
+         {
+          "Name": "b",
+          "Type": {
+           "Ident": "String"
+          }
+         }
+        ],
+        "Return": {
+         "Ident": "Int"
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 10,
+       "Filename": "FunctionStatementWithParameters",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Block": {
+          "Label": "",
+          "Pos": {
+           "Column": 45,
+           "Filename": "FunctionStatementWithParameters",
+           "Line": 1,
+           "Offset": 44
+          },
+          "Statements": [
+           {
+            "Annotations": null,
+            "Comments": null,
+            "Statement": {
+             "Label": "",
+             "Value": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Ident": "a"
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             }
+            }
+           }
+          ]
+         },
+         "IsStatic": false,
+         "Name": "test",
+         "Parameters": [
+          {
+           "Name": "a",
+           "Type": {
+            "Ident": "Int"
+           }
+          },
+          {
+           "Name": "b",
+           "Type": {
+            "Ident": "String"
+           }
+          }
+         ],
+         "Return": {
+          "Ident": "Int"
+         }
+        }
+       }
+      ]
+     },
+     "Name": "m"
+    },
+    "type": "ast.Module"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Body": {
+       "Label": "",
+       "Pos": {
+        "Column": 10,
+        "Filename": "FunctionStatementWithParameters",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Block": {
+           "Label": "",
+           "Pos": {
+            "Column": 45,
+            "Filename": "FunctionStatementWithParameters",
+            "Line": 1,
+            "Offset": 44
+           },
+           "Statements": [
+            {
+             "Annotations": null,
+             "Comments": null,
+             "Statement": {
+              "Label": "",
+              "Value": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Ident": "a"
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             }
+            }
+           ]
+          },
+          "IsStatic": false,
+          "Name": "test",
+          "Parameters": [
+           {
+            "Name": "a",
+            "Type": {
+             "Ident": "Int"
+            }
+           },
+           {
+            "Name": "b",
+            "Type": {
+             "Ident": "String"
+            }
+           }
+          ],
+          "Return": {
+           "Ident": "Int"
+          }
+         }
+        }
+       ]
+      },
+      "Name": "m"
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Body": {
+         "Label": "",
+         "Pos": {
+          "Column": 10,
+          "Filename": "FunctionStatementWithParameters",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Block": {
+             "Label": "",
+             "Pos": {
+              "Column": 45,
+              "Filename": "FunctionStatementWithParameters",
+              "Line": 1,
+              "Offset": 44
+             },
+             "Statements": [
+              {
+               "Annotations": null,
+               "Comments": null,
+               "Statement": {
+                "Label": "",
+                "Value": {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Ident": "a"
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Prefix": null
+                }
+               }
+              }
+             ]
+            },
+            "IsStatic": false,
+            "Name": "test",
+            "Parameters": [
+             {
+              "Name": "a",
+              "Type": {
+               "Ident": "Int"
+              }
+             },
+             {
+              "Name": "b",
+              "Type": {
+               "Ident": "String"
+              }
+             }
+            ],
+            "Return": {
+             "Ident": "Int"
+            }
+           }
+          }
+         ]
+        },
+        "Name": "m"
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   }
+  ]
+ }
+}

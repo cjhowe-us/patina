@@ -1,20 +1,8 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Deeply_nested_if-else_expressions",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Deeply_nested_if-else_expressions",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "Expression": {
      "Else": {
@@ -30,62 +18,26 @@
         {
          "Annotations": null,
          "Comments": null,
-         "Pos": {
-          "Column": 2,
-          "Filename": "Deeply_nested_if-else_expressions",
-          "Line": 12,
-          "Offset": 127
-         },
          "Statement": {
           "Label": "",
-          "Pos": {
-           "Column": 2,
-           "Filename": "Deeply_nested_if-else_expressions",
-           "Line": 12,
-           "Offset": 127
-          },
           "Value": {
            "Operands": [
             {
              "Atom": {
-              "Pos": {
-               "Column": 9,
-               "Filename": "Deeply_nested_if-else_expressions",
-               "Line": 12,
-               "Offset": 134
-              },
               "Value": {
-               "Pos": {
-                "Column": 9,
-                "Filename": "Deeply_nested_if-else_expressions",
-                "Line": 12,
-                "Offset": 134
-               },
                "Value": 0
               }
              },
              "Postfix": null
             }
            ],
-           "Pos": {
-            "Column": 9,
-            "Filename": "Deeply_nested_if-else_expressions",
-            "Line": 12,
-            "Offset": 134
-           },
            "Prefix": null
           }
          }
         }
        ]
       },
-      "IsStatic": false,
-      "Pos": {
-       "Column": 8,
-       "Filename": "Deeply_nested_if-else_expressions",
-       "Line": 11,
-       "Offset": 124
-      }
+      "IsStatic": false
      },
      "ElseIfs": null,
      "If": {
@@ -93,62 +45,26 @@
        "Operands": [
         {
          "Atom": {
-          "Ident": "a",
-          "Pos": {
-           "Column": 5,
-           "Filename": "Deeply_nested_if-else_expressions",
-           "Line": 1,
-           "Offset": 4
-          }
+          "Ident": "a"
          },
          "Postfix": [
           {
            "Index": null,
            "Invocation": null,
-           "Operator": "\u003e",
-           "Pos": {
-            "Column": 7,
-            "Filename": "Deeply_nested_if-else_expressions",
-            "Line": 1,
-            "Offset": 6
-           }
+           "Operator": "\u003e"
           }
          ]
         },
         {
          "Atom": {
-          "Pos": {
-           "Column": 9,
-           "Filename": "Deeply_nested_if-else_expressions",
-           "Line": 1,
-           "Offset": 8
-          },
           "Value": {
-           "Pos": {
-            "Column": 9,
-            "Filename": "Deeply_nested_if-else_expressions",
-            "Line": 1,
-            "Offset": 8
-           },
            "Value": 0
           }
          },
          "Postfix": null
         }
        ],
-       "Pos": {
-        "Column": 5,
-        "Filename": "Deeply_nested_if-else_expressions",
-        "Line": 1,
-        "Offset": 4
-       },
        "Prefix": null
-      },
-      "Pos": {
-       "Column": 1,
-       "Filename": "Deeply_nested_if-else_expressions",
-       "Line": 1,
-       "Offset": 0
       },
       "Then": {
        "Block": {
@@ -163,12 +79,6 @@
          {
           "Annotations": null,
           "Comments": null,
-          "Pos": {
-           "Column": 2,
-           "Filename": "Deeply_nested_if-else_expressions",
-           "Line": 2,
-           "Offset": 14
-          },
           "Statement": {
            "Expression": {
             "Else": {
@@ -184,54 +94,24 @@
                {
                 "Annotations": null,
                 "Comments": null,
-                "Pos": {
-                 "Column": 3,
-                 "Filename": "Deeply_nested_if-else_expressions",
-                 "Line": 9,
-                 "Offset": 105
-                },
                 "Statement": {
                  "Label": "",
-                 "Pos": {
-                  "Column": 3,
-                  "Filename": "Deeply_nested_if-else_expressions",
-                  "Line": 9,
-                  "Offset": 105
-                 },
                  "Value": {
                   "Operands": [
                    {
                     "Atom": {
-                     "Ident": "a",
-                     "Pos": {
-                      "Column": 10,
-                      "Filename": "Deeply_nested_if-else_expressions",
-                      "Line": 9,
-                      "Offset": 112
-                     }
+                     "Ident": "a"
                     },
                     "Postfix": null
                    }
                   ],
-                  "Pos": {
-                   "Column": 10,
-                   "Filename": "Deeply_nested_if-else_expressions",
-                   "Line": 9,
-                   "Offset": 112
-                  },
                   "Prefix": null
                  }
                 }
                }
               ]
              },
-             "IsStatic": false,
-             "Pos": {
-              "Column": 9,
-              "Filename": "Deeply_nested_if-else_expressions",
-              "Line": 8,
-              "Offset": 101
-             }
+             "IsStatic": false
             },
             "ElseIfs": null,
             "If": {
@@ -239,62 +119,26 @@
               "Operands": [
                {
                 "Atom": {
-                 "Ident": "b",
-                 "Pos": {
-                  "Column": 6,
-                  "Filename": "Deeply_nested_if-else_expressions",
-                  "Line": 2,
-                  "Offset": 18
-                 }
+                 "Ident": "b"
                 },
                 "Postfix": [
                  {
                   "Index": null,
                   "Invocation": null,
-                  "Operator": "\u003e",
-                  "Pos": {
-                   "Column": 8,
-                   "Filename": "Deeply_nested_if-else_expressions",
-                   "Line": 2,
-                   "Offset": 20
-                  }
+                  "Operator": "\u003e"
                  }
                 ]
                },
                {
                 "Atom": {
-                 "Pos": {
-                  "Column": 10,
-                  "Filename": "Deeply_nested_if-else_expressions",
-                  "Line": 2,
-                  "Offset": 22
-                 },
                  "Value": {
-                  "Pos": {
-                   "Column": 10,
-                   "Filename": "Deeply_nested_if-else_expressions",
-                   "Line": 2,
-                   "Offset": 22
-                  },
                   "Value": 0
                  }
                 },
                 "Postfix": null
                }
               ],
-              "Pos": {
-               "Column": 6,
-               "Filename": "Deeply_nested_if-else_expressions",
-               "Line": 2,
-               "Offset": 18
-              },
               "Prefix": null
-             },
-             "Pos": {
-              "Column": 2,
-              "Filename": "Deeply_nested_if-else_expressions",
-              "Line": 2,
-              "Offset": 14
              },
              "Then": {
               "Block": {
@@ -309,12 +153,6 @@
                 {
                  "Annotations": null,
                  "Comments": null,
-                 "Pos": {
-                  "Column": 3,
-                  "Filename": "Deeply_nested_if-else_expressions",
-                  "Line": 3,
-                  "Offset": 29
-                 },
                  "Statement": {
                   "Expression": {
                    "Else": {
@@ -330,78 +168,36 @@
                       {
                        "Annotations": null,
                        "Comments": null,
-                       "Pos": {
-                        "Column": 4,
-                        "Filename": "Deeply_nested_if-else_expressions",
-                        "Line": 6,
-                        "Offset": 76
-                       },
                        "Statement": {
                         "Label": "",
-                        "Pos": {
-                         "Column": 4,
-                         "Filename": "Deeply_nested_if-else_expressions",
-                         "Line": 6,
-                         "Offset": 76
-                        },
                         "Value": {
                          "Operands": [
                           {
                            "Atom": {
-                            "Ident": "a",
-                            "Pos": {
-                             "Column": 11,
-                             "Filename": "Deeply_nested_if-else_expressions",
-                             "Line": 6,
-                             "Offset": 83
-                            }
+                            "Ident": "a"
                            },
                            "Postfix": [
                             {
                              "Index": null,
                              "Invocation": null,
-                             "Operator": "+",
-                             "Pos": {
-                              "Column": 13,
-                              "Filename": "Deeply_nested_if-else_expressions",
-                              "Line": 6,
-                              "Offset": 85
-                             }
+                             "Operator": "+"
                             }
                            ]
                           },
                           {
                            "Atom": {
-                            "Ident": "b",
-                            "Pos": {
-                             "Column": 15,
-                             "Filename": "Deeply_nested_if-else_expressions",
-                             "Line": 6,
-                             "Offset": 87
-                            }
+                            "Ident": "b"
                            },
                            "Postfix": null
                           }
                          ],
-                         "Pos": {
-                          "Column": 11,
-                          "Filename": "Deeply_nested_if-else_expressions",
-                          "Line": 6,
-                          "Offset": 83
-                         },
                          "Prefix": null
                         }
                        }
                       }
                      ]
                     },
-                    "IsStatic": false,
-                    "Pos": {
-                     "Column": 10,
-                     "Filename": "Deeply_nested_if-else_expressions",
-                     "Line": 5,
-                     "Offset": 71
-                    }
+                    "IsStatic": false
                    },
                    "ElseIfs": null,
                    "If": {
@@ -409,62 +205,26 @@
                      "Operands": [
                       {
                        "Atom": {
-                        "Ident": "c",
-                        "Pos": {
-                         "Column": 7,
-                         "Filename": "Deeply_nested_if-else_expressions",
-                         "Line": 3,
-                         "Offset": 33
-                        }
+                        "Ident": "c"
                        },
                        "Postfix": [
                         {
                          "Index": null,
                          "Invocation": null,
-                         "Operator": "\u003e",
-                         "Pos": {
-                          "Column": 9,
-                          "Filename": "Deeply_nested_if-else_expressions",
-                          "Line": 3,
-                          "Offset": 35
-                         }
+                         "Operator": "\u003e"
                         }
                        ]
                       },
                       {
                        "Atom": {
-                        "Pos": {
-                         "Column": 11,
-                         "Filename": "Deeply_nested_if-else_expressions",
-                         "Line": 3,
-                         "Offset": 37
-                        },
                         "Value": {
-                         "Pos": {
-                          "Column": 11,
-                          "Filename": "Deeply_nested_if-else_expressions",
-                          "Line": 3,
-                          "Offset": 37
-                         },
                          "Value": 0
                         }
                        },
                        "Postfix": null
                       }
                      ],
-                     "Pos": {
-                      "Column": 7,
-                      "Filename": "Deeply_nested_if-else_expressions",
-                      "Line": 3,
-                      "Offset": 33
-                     },
                      "Prefix": null
-                    },
-                    "Pos": {
-                     "Column": 3,
-                     "Filename": "Deeply_nested_if-else_expressions",
-                     "Line": 3,
-                     "Offset": 29
                     },
                     "Then": {
                      "Block": {
@@ -479,168 +239,66 @@
                        {
                         "Annotations": null,
                         "Comments": null,
-                        "Pos": {
-                         "Column": 4,
-                         "Filename": "Deeply_nested_if-else_expressions",
-                         "Line": 4,
-                         "Offset": 45
-                        },
                         "Statement": {
                          "Label": "",
-                         "Pos": {
-                          "Column": 4,
-                          "Filename": "Deeply_nested_if-else_expressions",
-                          "Line": 4,
-                          "Offset": 45
-                         },
                          "Value": {
                           "Operands": [
                            {
                             "Atom": {
-                             "Ident": "a",
-                             "Pos": {
-                              "Column": 11,
-                              "Filename": "Deeply_nested_if-else_expressions",
-                              "Line": 4,
-                              "Offset": 52
-                             }
+                             "Ident": "a"
                             },
                             "Postfix": [
                              {
                               "Index": null,
                               "Invocation": null,
-                              "Operator": "+",
-                              "Pos": {
-                               "Column": 13,
-                               "Filename": "Deeply_nested_if-else_expressions",
-                               "Line": 4,
-                               "Offset": 54
-                              }
+                              "Operator": "+"
                              }
                             ]
                            },
                            {
                             "Atom": {
-                             "Ident": "b",
-                             "Pos": {
-                              "Column": 15,
-                              "Filename": "Deeply_nested_if-else_expressions",
-                              "Line": 4,
-                              "Offset": 56
-                             }
+                             "Ident": "b"
                             },
                             "Postfix": [
                              {
                               "Index": null,
                               "Invocation": null,
-                              "Operator": "+",
-                              "Pos": {
-                               "Column": 17,
-                               "Filename": "Deeply_nested_if-else_expressions",
-                               "Line": 4,
-                               "Offset": 58
-                              }
+                              "Operator": "+"
                              }
                             ]
                            },
                            {
                             "Atom": {
-                             "Ident": "c",
-                             "Pos": {
-                              "Column": 19,
-                              "Filename": "Deeply_nested_if-else_expressions",
-                              "Line": 4,
-                              "Offset": 60
-                             }
+                             "Ident": "c"
                             },
                             "Postfix": null
                            }
                           ],
-                          "Pos": {
-                           "Column": 11,
-                           "Filename": "Deeply_nested_if-else_expressions",
-                           "Line": 4,
-                           "Offset": 52
-                          },
                           "Prefix": null
                          }
                         }
                        }
                       ]
                      },
-                     "IsStatic": false,
-                     "Pos": {
-                      "Column": 14,
-                      "Filename": "Deeply_nested_if-else_expressions",
-                      "Line": 3,
-                      "Offset": 40
-                     }
+                     "IsStatic": false
                     }
-                   },
-                   "Pos": {
-                    "Column": 3,
-                    "Filename": "Deeply_nested_if-else_expressions",
-                    "Line": 3,
-                    "Offset": 29
                    }
-                  },
-                  "Pos": {
-                   "Column": 3,
-                   "Filename": "Deeply_nested_if-else_expressions",
-                   "Line": 3,
-                   "Offset": 29
                   }
                  }
                 }
                ]
               },
-              "IsStatic": false,
-              "Pos": {
-               "Column": 13,
-               "Filename": "Deeply_nested_if-else_expressions",
-               "Line": 2,
-               "Offset": 25
-              }
+              "IsStatic": false
              }
-            },
-            "Pos": {
-             "Column": 2,
-             "Filename": "Deeply_nested_if-else_expressions",
-             "Line": 2,
-             "Offset": 14
             }
-           },
-           "Pos": {
-            "Column": 2,
-            "Filename": "Deeply_nested_if-else_expressions",
-            "Line": 2,
-            "Offset": 14
            }
           }
          }
         ]
        },
-       "IsStatic": false,
-       "Pos": {
-        "Column": 12,
-        "Filename": "Deeply_nested_if-else_expressions",
-        "Line": 1,
-        "Offset": 11
-       }
+       "IsStatic": false
       }
-     },
-     "Pos": {
-      "Column": 1,
-      "Filename": "Deeply_nested_if-else_expressions",
-      "Line": 1,
-      "Offset": 0
      }
-    },
-    "Pos": {
-     "Column": 1,
-     "Filename": "Deeply_nested_if-else_expressions",
-     "Line": 1,
-     "Offset": 0
     }
    }
   }

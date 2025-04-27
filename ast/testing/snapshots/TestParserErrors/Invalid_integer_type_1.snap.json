@@ -1,38 +1,14 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Invalid_integer_type",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Invalid_integer_type",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "x",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Invalid_integer_type",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": {
-     "Ident": "i0",
-     "Pos": {
-      "Column": 8,
-      "Filename": "Invalid_integer_type",
-      "Line": 1,
-      "Offset": 7
-     }
+     "Ident": "i0"
     },
     "Value": null
    }

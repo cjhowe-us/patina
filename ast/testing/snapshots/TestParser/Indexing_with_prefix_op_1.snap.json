@@ -1,42 +1,18 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Indexing_with_prefix_op",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Indexing_with_prefix_op",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "x",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Indexing_with_prefix_op",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": null,
     "Value": {
      "Operands": [
       {
        "Atom": {
-        "Ident": "arr",
-        "Pos": {
-         "Column": 10,
-         "Filename": "Indexing_with_prefix_op",
-         "Line": 1,
-         "Offset": 9
-        }
+        "Ident": "arr"
        },
        "Postfix": [
         {
@@ -44,51 +20,21 @@
           "Operands": [
            {
             "Atom": {
-             "Pos": {
-              "Column": 14,
-              "Filename": "Indexing_with_prefix_op",
-              "Line": 1,
-              "Offset": 13
-             },
              "Value": {
-              "Pos": {
-               "Column": 14,
-               "Filename": "Indexing_with_prefix_op",
-               "Line": 1,
-               "Offset": 13
-              },
               "Value": 1
              }
             },
             "Postfix": null
            }
           ],
-          "Pos": {
-           "Column": 14,
-           "Filename": "Indexing_with_prefix_op",
-           "Line": 1,
-           "Offset": 13
-          },
           "Prefix": null
          },
          "Invocation": null,
-         "Operator": "",
-         "Pos": {
-          "Column": 13,
-          "Filename": "Indexing_with_prefix_op",
-          "Line": 1,
-          "Offset": 12
-         }
+         "Operator": ""
         }
        ]
       }
      ],
-     "Pos": {
-      "Column": 9,
-      "Filename": "Indexing_with_prefix_op",
-      "Line": 1,
-      "Offset": 8
-     },
      "Prefix": [
       "!"
      ]

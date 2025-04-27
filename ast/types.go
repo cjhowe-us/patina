@@ -15,17 +15,17 @@ type Type interface {
 
 // PointerType represents a pointer type in the AST.
 type PointerType struct {
-	Pos       lexer.Position
-	IsOwned   bool `parser:"'*' (@'own'"`
-	IsRaw     bool `parser:"| @'raw'"`
-	IsMutable bool `parser:"| @'mut')?"`
-	Target    Atom `parser:"@@"`
+	Pos       lexer.Position `json:"-" parser:""`
+	IsOwned   bool           `parser:"'*' (@'own'"`
+	IsRaw     bool           `parser:"| @'raw'"`
+	IsMutable bool           `parser:"| @'mut')?"`
+	Target    Atom           `parser:"@@"`
 }
 
 func (PointerType) is_type() {}
 
-func (n *PointerType) Position() lexer.Position { return n.Pos }
-func (n *PointerType) Children() []SyntaxNode {
+func (n PointerType) Position() lexer.Position { return n.Pos }
+func (n PointerType) Children() []SyntaxNode {
 	if n.Target != nil {
 		if targetNode, ok := n.Target.(SyntaxNode); ok {
 			return []SyntaxNode{targetNode}
@@ -36,15 +36,15 @@ func (n *PointerType) Children() []SyntaxNode {
 
 // ArrayType represents an array type in the AST.
 type ArrayType struct {
-	Pos       lexer.Position
-	Dimension *uint64 `parser:"'[' @Integer? ']'"`
-	Element   Atom    `parser:"@@"`
+	Pos       lexer.Position `json:"-" parser:""`
+	Dimension *uint64        `parser:"'[' @Integer? ']'"`
+	Element   Atom           `parser:"@@"`
 }
 
 func (ArrayType) is_type() {}
 
-func (n *ArrayType) Position() lexer.Position { return n.Pos }
-func (n *ArrayType) Children() []SyntaxNode {
+func (n ArrayType) Position() lexer.Position { return n.Pos }
+func (n ArrayType) Children() []SyntaxNode {
 	if n.Element != nil {
 		if elementNode, ok := n.Element.(SyntaxNode); ok {
 			return []SyntaxNode{elementNode}
@@ -55,7 +55,7 @@ func (n *ArrayType) Children() []SyntaxNode {
 
 // IntegerType represents an integer type (signed or unsigned) with a specific bit size.
 type IntegerType struct {
-	Pos     lexer.Position
+	Pos     lexer.Position `json:"-" parser:""`
 	Signed  bool
 	BitSize uint64
 }
@@ -98,14 +98,14 @@ func (it *IntegerType) Parse(lex *lexer.PeekingLexer) error {
 	return nil
 }
 
-func (n *IntegerType) Position() lexer.Position { return n.Pos }
-func (n *IntegerType) Children() []SyntaxNode {
+func (n IntegerType) Position() lexer.Position { return n.Pos }
+func (n IntegerType) Children() []SyntaxNode {
 	return nil
 }
 
 // FunctionType represents a function type in the AST.
 type FunctionType struct {
-	Pos        lexer.Position
+	Pos        lexer.Position      `json:"-" parser:""`
 	Name       string              `parser:"'fun' @Ident?"`
 	Parameters []FunctionParameter `parser:"'(' (@@ (',' @@)* ','?)? ')'"`
 	Return     Atom                `parser:"(':' @@)?"`
@@ -113,8 +113,8 @@ type FunctionType struct {
 
 func (FunctionType) is_type() {}
 
-func (n *FunctionType) Position() lexer.Position { return n.Pos }
-func (n *FunctionType) Children() []SyntaxNode {
+func (n FunctionType) Position() lexer.Position { return n.Pos }
+func (n FunctionType) Children() []SyntaxNode {
 	children := make([]SyntaxNode, 0, len(n.Parameters)+1)
 	for i := range n.Parameters {
 		children = append(children, &n.Parameters[i])

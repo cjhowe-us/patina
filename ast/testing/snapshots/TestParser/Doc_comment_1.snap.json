@@ -1,29 +1,13 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Doc_comment",
-  "Line": 2,
-  "Offset": 21
- },
  "Statements": [
   {
    "Annotations": null,
-   "Comments": {
-    "NestedComments": null,
-    "Pos": {
-     "Column": 1,
-     "Filename": "Doc_comment",
-     "Line": 2,
-     "Offset": 21
-    },
-    "Text": " My doc comment "
-   },
-   "Pos": {
-    "Column": 1,
-    "Filename": "Doc_comment",
-    "Line": 2,
-    "Offset": 21
-   },
+   "Comments": [
+    {
+     "NestedComments": null,
+     "Text": " My doc comment "
+    }
+   ],
    "Statement": {
     "Block": {
      "Label": "",
@@ -38,12 +22,6 @@
     "IsStatic": false,
     "Name": "test",
     "Parameters": null,
-    "Pos": {
-     "Column": 1,
-     "Filename": "Doc_comment",
-     "Line": 2,
-     "Offset": 21
-    },
     "Return": null
    }
   }

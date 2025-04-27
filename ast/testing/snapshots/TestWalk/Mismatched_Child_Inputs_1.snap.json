@@ -1,0 +1,13 @@
+{
+ "result": "parent-child1-child2-child3",
+ "visitLog": [
+  "Enter: parent",
+  "Enter: child1",
+  "Exit: child1",
+  "Enter: child2",
+  "Exit: child2",
+  "Enter: child3",
+  "Exit: child3",
+  "Exit: parent"
+ ]
+}

@@ -1,42 +1,18 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Invocation_with_prefix_op",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Invocation_with_prefix_op",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "x",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Invocation_with_prefix_op",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": null,
     "Value": {
      "Operands": [
       {
        "Atom": {
-        "Ident": "add",
-        "Pos": {
-         "Column": 10,
-         "Filename": "Invocation_with_prefix_op",
-         "Line": 1,
-         "Offset": 9
-        }
+        "Ident": "add"
        },
        "Postfix": [
         {
@@ -46,82 +22,34 @@
            "Operands": [
             {
              "Atom": {
-              "Pos": {
-               "Column": 14,
-               "Filename": "Invocation_with_prefix_op",
-               "Line": 1,
-               "Offset": 13
-              },
               "Value": {
-               "Pos": {
-                "Column": 14,
-                "Filename": "Invocation_with_prefix_op",
-                "Line": 1,
-                "Offset": 13
-               },
                "Value": 1
               }
              },
              "Postfix": null
             }
            ],
-           "Pos": {
-            "Column": 14,
-            "Filename": "Invocation_with_prefix_op",
-            "Line": 1,
-            "Offset": 13
-           },
            "Prefix": null
           },
           {
            "Operands": [
             {
              "Atom": {
-              "Pos": {
-               "Column": 17,
-               "Filename": "Invocation_with_prefix_op",
-               "Line": 1,
-               "Offset": 16
-              },
               "Value": {
-               "Pos": {
-                "Column": 17,
-                "Filename": "Invocation_with_prefix_op",
-                "Line": 1,
-                "Offset": 16
-               },
                "Value": 2
               }
              },
              "Postfix": null
             }
            ],
-           "Pos": {
-            "Column": 17,
-            "Filename": "Invocation_with_prefix_op",
-            "Line": 1,
-            "Offset": 16
-           },
            "Prefix": null
           }
          ],
-         "Operator": "",
-         "Pos": {
-          "Column": 13,
-          "Filename": "Invocation_with_prefix_op",
-          "Line": 1,
-          "Offset": 12
-         }
+         "Operator": ""
         }
        ]
       }
      ],
-     "Pos": {
-      "Column": 9,
-      "Filename": "Invocation_with_prefix_op",
-      "Line": 1,
-      "Offset": 8
-     },
      "Prefix": [
       "!"
      ]

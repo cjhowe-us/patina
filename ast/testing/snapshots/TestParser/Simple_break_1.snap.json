@@ -1,28 +1,10 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Simple_break",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Simple_break",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "Label": "",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Simple_break",
-     "Line": 1,
-     "Offset": 0
-    },
     "Value": null
    }
   }

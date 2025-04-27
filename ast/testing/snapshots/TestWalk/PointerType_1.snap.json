@@ -1,0 +1,435 @@
+{
+ "result": null,
+ "visitor": {
+  "log": [
+   {
+    "isEnter": true,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Body": {
+         "Label": "",
+         "Pos": {
+          "Column": 10,
+          "Filename": "PointerType",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Expression": {
+             "Type": {
+              "IsMutable": false,
+              "IsOwned": false,
+              "IsRaw": false,
+              "Target": {
+               "Ident": "Int"
+              }
+             }
+            }
+           }
+          }
+         ]
+        },
+        "Name": "m"
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Body": {
+       "Label": "",
+       "Pos": {
+        "Column": 10,
+        "Filename": "PointerType",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Type": {
+            "IsMutable": false,
+            "IsOwned": false,
+            "IsRaw": false,
+            "Target": {
+             "Ident": "Int"
+            }
+           }
+          }
+         }
+        }
+       ]
+      },
+      "Name": "m"
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 10,
+       "Filename": "PointerType",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Type": {
+           "IsMutable": false,
+           "IsOwned": false,
+           "IsRaw": false,
+           "Target": {
+            "Ident": "Int"
+           }
+          }
+         }
+        }
+       }
+      ]
+     },
+     "Name": "m"
+    },
+    "type": "ast.Module"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 10,
+      "Filename": "PointerType",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Type": {
+          "IsMutable": false,
+          "IsOwned": false,
+          "IsRaw": false,
+          "Target": {
+           "Ident": "Int"
+          }
+         }
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Type": {
+        "IsMutable": false,
+        "IsOwned": false,
+        "IsRaw": false,
+        "Target": {
+         "Ident": "Int"
+        }
+       }
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Expression": {
+      "Type": {
+       "IsMutable": false,
+       "IsOwned": false,
+       "IsRaw": false,
+       "Target": {
+        "Ident": "Int"
+       }
+      }
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "IsMutable": false,
+      "IsOwned": false,
+      "IsRaw": false,
+      "Target": {
+       "Ident": "Int"
+      }
+     }
+    },
+    "type": "ast.TypeExpression"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsOwned": false,
+     "IsRaw": false,
+     "Target": {
+      "Ident": "Int"
+     }
+    },
+    "type": "ast.PointerType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "Int"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "Int"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsOwned": false,
+     "IsRaw": false,
+     "Target": {
+      "Ident": "Int"
+     }
+    },
+    "type": "ast.PointerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "IsMutable": false,
+      "IsOwned": false,
+      "IsRaw": false,
+      "Target": {
+       "Ident": "Int"
+      }
+     }
+    },
+    "type": "ast.TypeExpression"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Expression": {
+      "Type": {
+       "IsMutable": false,
+       "IsOwned": false,
+       "IsRaw": false,
+       "Target": {
+        "Ident": "Int"
+       }
+      }
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Type": {
+        "IsMutable": false,
+        "IsOwned": false,
+        "IsRaw": false,
+        "Target": {
+         "Ident": "Int"
+        }
+       }
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 10,
+      "Filename": "PointerType",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Type": {
+          "IsMutable": false,
+          "IsOwned": false,
+          "IsRaw": false,
+          "Target": {
+           "Ident": "Int"
+          }
+         }
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 10,
+       "Filename": "PointerType",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Type": {
+           "IsMutable": false,
+           "IsOwned": false,
+           "IsRaw": false,
+           "Target": {
+            "Ident": "Int"
+           }
+          }
+         }
+        }
+       }
+      ]
+     },
+     "Name": "m"
+    },
+    "type": "ast.Module"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Body": {
+       "Label": "",
+       "Pos": {
+        "Column": 10,
+        "Filename": "PointerType",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Type": {
+            "IsMutable": false,
+            "IsOwned": false,
+            "IsRaw": false,
+            "Target": {
+             "Ident": "Int"
+            }
+           }
+          }
+         }
+        }
+       ]
+      },
+      "Name": "m"
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Body": {
+         "Label": "",
+         "Pos": {
+          "Column": 10,
+          "Filename": "PointerType",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Expression": {
+             "Type": {
+              "IsMutable": false,
+              "IsOwned": false,
+              "IsRaw": false,
+              "Target": {
+               "Ident": "Int"
+              }
+             }
+            }
+           }
+          }
+         ]
+        },
+        "Name": "m"
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   }
+  ]
+ }
+}

@@ -1,28 +1,10 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Return_with_expression",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Return_with_expression",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "Label": "",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Return_with_expression",
-     "Line": 1,
-     "Offset": 0
-    },
     "Value": {
      "Operands": [
       {
@@ -31,19 +13,7 @@
          "Operands": [
           {
            "Atom": {
-            "Pos": {
-             "Column": 9,
-             "Filename": "Return_with_expression",
-             "Line": 1,
-             "Offset": 8
-            },
             "Value": {
-             "Pos": {
-              "Column": 9,
-              "Filename": "Return_with_expression",
-              "Line": 1,
-              "Offset": 8
-             },
              "Value": 1
             }
            },
@@ -51,61 +21,25 @@
             {
              "Index": null,
              "Invocation": null,
-             "Operator": "+",
-             "Pos": {
-              "Column": 11,
-              "Filename": "Return_with_expression",
-              "Line": 1,
-              "Offset": 10
-             }
+             "Operator": "+"
             }
            ]
           },
           {
            "Atom": {
-            "Pos": {
-             "Column": 13,
-             "Filename": "Return_with_expression",
-             "Line": 1,
-             "Offset": 12
-            },
             "Value": {
-             "Pos": {
-              "Column": 13,
-              "Filename": "Return_with_expression",
-              "Line": 1,
-              "Offset": 12
-             },
              "Value": 2
             }
            },
            "Postfix": null
           }
          ],
-         "Pos": {
-          "Column": 9,
-          "Filename": "Return_with_expression",
-          "Line": 1,
-          "Offset": 8
-         },
          "Prefix": null
-        },
-        "Pos": {
-         "Column": 8,
-         "Filename": "Return_with_expression",
-         "Line": 1,
-         "Offset": 7
         }
        },
        "Postfix": null
       }
      ],
-     "Pos": {
-      "Column": 8,
-      "Filename": "Return_with_expression",
-      "Line": 1,
-      "Offset": 7
-     },
      "Prefix": null
     }
    }

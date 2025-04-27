@@ -1,20 +1,8 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "case_statement",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "case_statement",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "Expression": {
      "Branches": [
@@ -25,100 +13,40 @@
          "Operands": [
           {
            "Atom": {
-            "Ident": "x",
-            "Pos": {
-             "Column": 6,
-             "Filename": "case_statement",
-             "Line": 2,
-             "Offset": 12
-            }
+            "Ident": "x"
            },
            "Postfix": [
             {
              "Index": null,
              "Invocation": null,
-             "Operator": "\u003e",
-             "Pos": {
-              "Column": 8,
-              "Filename": "case_statement",
-              "Line": 2,
-              "Offset": 14
-             }
+             "Operator": "\u003e"
             }
            ]
           },
           {
            "Atom": {
-            "Pos": {
-             "Column": 10,
-             "Filename": "case_statement",
-             "Line": 2,
-             "Offset": 16
-            },
             "Value": {
-             "Pos": {
-              "Column": 10,
-              "Filename": "case_statement",
-              "Line": 2,
-              "Offset": 16
-             },
              "Value": 10
             }
            },
            "Postfix": null
           }
          ],
-         "Pos": {
-          "Column": 6,
-          "Filename": "case_statement",
-          "Line": 2,
-          "Offset": 12
-         },
          "Prefix": null
-        },
-        "Pos": {
-         "Column": 2,
-         "Filename": "case_statement",
-         "Line": 2,
-         "Offset": 8
         },
         "Then": {
          "Operands": [
           {
            "Atom": {
-            "Pos": {
-             "Column": 14,
-             "Filename": "case_statement",
-             "Line": 2,
-             "Offset": 20
-            },
             "Value": {
-             "Pos": {
-              "Column": 14,
-              "Filename": "case_statement",
-              "Line": 2,
-              "Offset": 20
-             },
              "Value": 1
             }
            },
            "Postfix": null
           }
          ],
-         "Pos": {
-          "Column": 14,
-          "Filename": "case_statement",
-          "Line": 2,
-          "Offset": 20
-         },
          "Prefix": null
         }
-       },
-       "Pos": {
-        "Column": 2,
-        "Filename": "case_statement",
-        "Line": 2,
-        "Offset": 8
        }
       },
       {
@@ -126,54 +54,21 @@
         "Operands": [
          {
           "Atom": {
-           "Pos": {
-            "Column": 10,
-            "Filename": "case_statement",
-            "Line": 3,
-            "Offset": 31
-           },
            "Value": {
-            "Pos": {
-             "Column": 10,
-             "Filename": "case_statement",
-             "Line": 3,
-             "Offset": 31
-            },
             "Value": 2
            }
           },
           "Postfix": null
          }
         ],
-        "Pos": {
-         "Column": 10,
-         "Filename": "case_statement",
-         "Line": 3,
-         "Offset": 31
-        },
         "Prefix": null
        },
-       "If": null,
-       "Pos": {
-        "Column": 5,
-        "Filename": "case_statement",
-        "Line": 3,
-        "Offset": 26
+       "If": {
+        "Condition": null,
+        "Then": null
        }
       }
-     ],
-     "Pos": {
-      "Column": 1,
-      "Filename": "case_statement",
-      "Line": 1,
-      "Offset": 0
-     }
-    },
-    "Pos": {
-     "Column": 1,
-     "Filename": "case_statement",
-     "Line": 1,
-     "Offset": 0
+     ]
     }
    }
   }

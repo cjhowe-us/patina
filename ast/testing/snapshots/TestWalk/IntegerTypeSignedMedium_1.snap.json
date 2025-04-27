@@ -1,0 +1,639 @@
+{
+ "result": null,
+ "visitor": {
+  "log": [
+   {
+    "isEnter": true,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Body": {
+         "Label": "",
+         "Pos": {
+          "Column": 10,
+          "Filename": "IntegerTypeSignedMedium",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "IsMutable": false,
+            "IsStatic": false,
+            "Name": "x",
+            "Type": {
+             "Type": {
+              "BitSize": 16,
+              "Signed": true
+             }
+            },
+            "Value": {
+             "Operands": [
+              {
+               "Atom": {
+                "Value": {
+                 "Value": 1
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "Name": "m"
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Body": {
+       "Label": "",
+       "Pos": {
+        "Column": 10,
+        "Filename": "IntegerTypeSignedMedium",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "IsMutable": false,
+          "IsStatic": false,
+          "Name": "x",
+          "Type": {
+           "Type": {
+            "BitSize": 16,
+            "Signed": true
+           }
+          },
+          "Value": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Value": 1
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "Name": "m"
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 10,
+       "Filename": "IntegerTypeSignedMedium",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "IsMutable": false,
+         "IsStatic": false,
+         "Name": "x",
+         "Type": {
+          "Type": {
+           "BitSize": 16,
+           "Signed": true
+          }
+         },
+         "Value": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Value": 1
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "Name": "m"
+    },
+    "type": "ast.Module"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 10,
+      "Filename": "IntegerTypeSignedMedium",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "x",
+        "Type": {
+         "Type": {
+          "BitSize": 16,
+          "Signed": true
+         }
+        },
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 1
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "x",
+      "Type": {
+       "Type": {
+        "BitSize": 16,
+        "Signed": true
+       }
+      },
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 1
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "x",
+     "Type": {
+      "Type": {
+       "BitSize": 16,
+       "Signed": true
+      }
+     },
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 1
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "BitSize": 16,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "BitSize": 16,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "BitSize": 16,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "BitSize": 16,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 1
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 1
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 1
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 1
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 1
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 1
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "x",
+     "Type": {
+      "Type": {
+       "BitSize": 16,
+       "Signed": true
+      }
+     },
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 1
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "x",
+      "Type": {
+       "Type": {
+        "BitSize": 16,
+        "Signed": true
+       }
+      },
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 1
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 10,
+      "Filename": "IntegerTypeSignedMedium",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "x",
+        "Type": {
+         "Type": {
+          "BitSize": 16,
+          "Signed": true
+         }
+        },
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 1
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 10,
+       "Filename": "IntegerTypeSignedMedium",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "IsMutable": false,
+         "IsStatic": false,
+         "Name": "x",
+         "Type": {
+          "Type": {
+           "BitSize": 16,
+           "Signed": true
+          }
+         },
+         "Value": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Value": 1
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "Name": "m"
+    },
+    "type": "ast.Module"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Body": {
+       "Label": "",
+       "Pos": {
+        "Column": 10,
+        "Filename": "IntegerTypeSignedMedium",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "IsMutable": false,
+          "IsStatic": false,
+          "Name": "x",
+          "Type": {
+           "Type": {
+            "BitSize": 16,
+            "Signed": true
+           }
+          },
+          "Value": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Value": 1
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "Name": "m"
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Body": {
+         "Label": "",
+         "Pos": {
+          "Column": 10,
+          "Filename": "IntegerTypeSignedMedium",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "IsMutable": false,
+            "IsStatic": false,
+            "Name": "x",
+            "Type": {
+             "Type": {
+              "BitSize": 16,
+              "Signed": true
+             }
+            },
+            "Value": {
+             "Operands": [
+              {
+               "Atom": {
+                "Value": {
+                 "Value": 1
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "Name": "m"
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   }
+  ]
+ }
+}

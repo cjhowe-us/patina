@@ -8,21 +8,21 @@ type Statement interface{ statement() }
 
 // Module represents a module declaration in the AST.
 type Module struct {
-	Pos  lexer.Position
-	Name string `parser:"'module' @Ident"`
-	Body Block  `parser:"@@"`
+	Pos  lexer.Position `json:"-" parser:""`
+	Name string         `parser:"'module' @Ident"`
+	Body Block          `parser:"@@"`
 }
 
 func (Module) statement() {}
 
-func (n *Module) Position() lexer.Position { return n.Pos }
-func (n *Module) Children() []SyntaxNode {
+func (n Module) Position() lexer.Position { return n.Pos }
+func (n Module) Children() []SyntaxNode {
 	return []SyntaxNode{&n.Body}
 }
 
 // FunctionStatement represents a function declaration in the AST.
 type FunctionStatement struct {
-	Pos        lexer.Position
+	Pos        lexer.Position      `json:"-" parser:""`
 	IsStatic   bool                `parser:"@'static'?"`
 	Name       string              `parser:"'fun' @Ident"`
 	Parameters []FunctionParameter `parser:"'(' (@@ (',' @@)* ','?)? ')'"`
@@ -32,8 +32,8 @@ type FunctionStatement struct {
 
 func (FunctionStatement) statement() {}
 
-func (n *FunctionStatement) Position() lexer.Position { return n.Pos }
-func (n *FunctionStatement) Children() []SyntaxNode {
+func (n FunctionStatement) Position() lexer.Position { return n.Pos }
+func (n FunctionStatement) Children() []SyntaxNode {
 	children := make([]SyntaxNode, 0, len(n.Parameters)+1+1)
 	for i := range n.Parameters {
 		children = append(children, &n.Parameters[i])
@@ -49,13 +49,13 @@ func (n *FunctionStatement) Children() []SyntaxNode {
 
 // FunctionParameter represents a parameter in a function declaration.
 type FunctionParameter struct {
-	Pos  lexer.Position
-	Name string `parser:"@Ident ':'"`
-	Type Atom   `parser:"@@"`
+	Pos  lexer.Position `json:"-" parser:""`
+	Name string         `parser:"@Ident ':'"`
+	Type Atom           `parser:"@@"`
 }
 
-func (n *FunctionParameter) Position() lexer.Position { return n.Pos }
-func (n *FunctionParameter) Children() []SyntaxNode {
+func (n FunctionParameter) Position() lexer.Position { return n.Pos }
+func (n FunctionParameter) Children() []SyntaxNode {
 	if n.Type != nil {
 		if typeNode, ok := n.Type.(SyntaxNode); ok {
 			return []SyntaxNode{typeNode}
@@ -66,15 +66,15 @@ func (n *FunctionParameter) Children() []SyntaxNode {
 
 // ReturnStatement represents a return statement in the AST.
 type ReturnStatement struct {
-	Pos   lexer.Position
-	Label string     `parser:"'return' @Label?"`
-	Value Expression `parser:"@@?"`
+	Pos   lexer.Position `json:"-" parser:""`
+	Label string         `parser:"'return' @Label?"`
+	Value Expression     `parser:"@@?"`
 }
 
 func (ReturnStatement) statement() {}
 
-func (n *ReturnStatement) Position() lexer.Position { return n.Pos }
-func (n *ReturnStatement) Children() []SyntaxNode {
+func (n ReturnStatement) Position() lexer.Position { return n.Pos }
+func (n ReturnStatement) Children() []SyntaxNode {
 	if n.Value != nil {
 		if valueNode, ok := n.Value.(SyntaxNode); ok {
 			return []SyntaxNode{valueNode}
@@ -85,18 +85,18 @@ func (n *ReturnStatement) Children() []SyntaxNode {
 
 // LetStatement represents a variable declaration in the AST.
 type LetStatement struct {
-	Pos       lexer.Position
-	IsStatic  bool       `parser:"@'static'?"`
-	IsMutable bool       `parser:"'let' @'mut'?"`
-	Name      string     `parser:"@Ident"`
-	Type      Atom       `parser:"(':' @@)?"`
-	Value     Expression `parser:"('=' @@)?"`
+	Pos       lexer.Position `json:"-" parser:""`
+	IsStatic  bool           `parser:"@'static'?"`
+	IsMutable bool           `parser:"'let' @'mut'?"`
+	Name      string         `parser:"@Ident"`
+	Type      Atom           `parser:"(':' @@)?"`
+	Value     Expression     `parser:"('=' @@)?"`
 }
 
 func (LetStatement) statement() {}
 
-func (n *LetStatement) Position() lexer.Position { return n.Pos }
-func (n *LetStatement) Children() []SyntaxNode {
+func (n LetStatement) Position() lexer.Position { return n.Pos }
+func (n LetStatement) Children() []SyntaxNode {
 	children := make([]SyntaxNode, 0, 2)
 	if n.Type != nil {
 		if typeNode, ok := n.Type.(SyntaxNode); ok {
@@ -113,15 +113,15 @@ func (n *LetStatement) Children() []SyntaxNode {
 
 // BreakStatement represents a break statement in the AST.
 type BreakStatement struct {
-	Pos   lexer.Position
-	Label string     `parser:"'break' @Label?"`
-	Value Expression `parser:"@@?"`
+	Pos   lexer.Position `json:"-" parser:""`
+	Label string         `parser:"'break' @Label?"`
+	Value Expression     `parser:"@@?"`
 }
 
 func (BreakStatement) statement() {}
 
-func (n *BreakStatement) Position() lexer.Position { return n.Pos }
-func (n *BreakStatement) Children() []SyntaxNode {
+func (n BreakStatement) Position() lexer.Position { return n.Pos }
+func (n BreakStatement) Children() []SyntaxNode {
 	if n.Value != nil {
 		if valueNode, ok := n.Value.(SyntaxNode); ok {
 			return []SyntaxNode{valueNode}
@@ -132,14 +132,14 @@ func (n *BreakStatement) Children() []SyntaxNode {
 
 // ExpressionStatement represents an expression used as a statement.
 type ExpressionStatement struct {
-	Pos        lexer.Position
-	Expression Expression `parser:"@@"`
+	Pos        lexer.Position `json:"-" parser:""`
+	Expression Expression     `parser:"@@"`
 }
 
 func (ExpressionStatement) statement() {}
 
-func (n *ExpressionStatement) Position() lexer.Position { return n.Pos }
-func (n *ExpressionStatement) Children() []SyntaxNode {
+func (n ExpressionStatement) Position() lexer.Position { return n.Pos }
+func (n ExpressionStatement) Children() []SyntaxNode {
 	if n.Expression != nil {
 		if exprNode, ok := n.Expression.(SyntaxNode); ok {
 			return []SyntaxNode{exprNode}

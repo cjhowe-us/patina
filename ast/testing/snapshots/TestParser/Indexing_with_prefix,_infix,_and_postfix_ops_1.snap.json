@@ -1,42 +1,18 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "x",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": null,
     "Value": {
      "Operands": [
       {
        "Atom": {
-        "Ident": "arr",
-        "Pos": {
-         "Column": 10,
-         "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-         "Line": 1,
-         "Offset": 9
-        }
+        "Ident": "arr"
        },
        "Postfix": [
         {
@@ -44,86 +20,38 @@
           "Operands": [
            {
             "Atom": {
-             "Pos": {
-              "Column": 14,
-              "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-              "Line": 1,
-              "Offset": 13
-             },
              "Value": {
-              "Pos": {
-               "Column": 14,
-               "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-               "Line": 1,
-               "Offset": 13
-              },
               "Value": 1
              }
             },
             "Postfix": null
            }
           ],
-          "Pos": {
-           "Column": 14,
-           "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-           "Line": 1,
-           "Offset": 13
-          },
           "Prefix": null
          },
          "Invocation": null,
-         "Operator": "",
-         "Pos": {
-          "Column": 13,
-          "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-          "Line": 1,
-          "Offset": 12
-         }
+         "Operator": ""
         },
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "?",
-         "Pos": {
-          "Column": 16,
-          "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-          "Line": 1,
-          "Offset": 15
-         }
+         "Operator": "?"
         },
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "+",
-         "Pos": {
-          "Column": 18,
-          "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-          "Line": 1,
-          "Offset": 17
-         }
+         "Operator": "+"
         },
         {
          "Index": null,
          "Invocation": null,
-         "Operator": "!",
-         "Pos": {
-          "Column": 20,
-          "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-          "Line": 1,
-          "Offset": 19
-         }
+         "Operator": "!"
         }
        ]
       },
       {
        "Atom": {
-        "Ident": "arr",
-        "Pos": {
-         "Column": 21,
-         "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-         "Line": 1,
-         "Offset": 20
-        }
+        "Ident": "arr"
        },
        "Postfix": [
         {
@@ -131,51 +59,21 @@
           "Operands": [
            {
             "Atom": {
-             "Pos": {
-              "Column": 25,
-              "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-              "Line": 1,
-              "Offset": 24
-             },
              "Value": {
-              "Pos": {
-               "Column": 25,
-               "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-               "Line": 1,
-               "Offset": 24
-              },
               "Value": 2
              }
             },
             "Postfix": null
            }
           ],
-          "Pos": {
-           "Column": 25,
-           "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-           "Line": 1,
-           "Offset": 24
-          },
           "Prefix": null
          },
          "Invocation": null,
-         "Operator": "",
-         "Pos": {
-          "Column": 24,
-          "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-          "Line": 1,
-          "Offset": 23
-         }
+         "Operator": ""
         }
        ]
       }
      ],
-     "Pos": {
-      "Column": 9,
-      "Filename": "Indexing_with_prefix,_infix,_and_postfix_ops",
-      "Line": 1,
-      "Offset": 8
-     },
      "Prefix": [
       "-"
      ]

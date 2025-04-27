@@ -1,42 +1,18 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Invocation",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Invocation",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "IsMutable": false,
     "IsStatic": false,
     "Name": "x",
-    "Pos": {
-     "Column": 1,
-     "Filename": "Invocation",
-     "Line": 1,
-     "Offset": 0
-    },
     "Type": null,
     "Value": {
      "Operands": [
       {
        "Atom": {
-        "Ident": "add",
-        "Pos": {
-         "Column": 9,
-         "Filename": "Invocation",
-         "Line": 1,
-         "Offset": 8
-        }
+        "Ident": "add"
        },
        "Postfix": [
         {
@@ -46,82 +22,34 @@
            "Operands": [
             {
              "Atom": {
-              "Pos": {
-               "Column": 13,
-               "Filename": "Invocation",
-               "Line": 1,
-               "Offset": 12
-              },
               "Value": {
-               "Pos": {
-                "Column": 13,
-                "Filename": "Invocation",
-                "Line": 1,
-                "Offset": 12
-               },
                "Value": 1
               }
              },
              "Postfix": null
             }
            ],
-           "Pos": {
-            "Column": 13,
-            "Filename": "Invocation",
-            "Line": 1,
-            "Offset": 12
-           },
            "Prefix": null
           },
           {
            "Operands": [
             {
              "Atom": {
-              "Pos": {
-               "Column": 16,
-               "Filename": "Invocation",
-               "Line": 1,
-               "Offset": 15
-              },
               "Value": {
-               "Pos": {
-                "Column": 16,
-                "Filename": "Invocation",
-                "Line": 1,
-                "Offset": 15
-               },
                "Value": 2
               }
              },
              "Postfix": null
             }
            ],
-           "Pos": {
-            "Column": 16,
-            "Filename": "Invocation",
-            "Line": 1,
-            "Offset": 15
-           },
            "Prefix": null
           }
          ],
-         "Operator": "",
-         "Pos": {
-          "Column": 12,
-          "Filename": "Invocation",
-          "Line": 1,
-          "Offset": 11
-         }
+         "Operator": ""
         }
        ]
       }
      ],
-     "Pos": {
-      "Column": 9,
-      "Filename": "Invocation",
-      "Line": 1,
-      "Offset": 8
-     },
      "Prefix": null
     }
    }

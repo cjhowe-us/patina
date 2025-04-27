@@ -1,20 +1,8 @@
 {
- "Pos": {
-  "Column": 1,
-  "Filename": "Function_with_complex_return_type",
-  "Line": 1,
-  "Offset": 0
- },
  "Statements": [
   {
    "Annotations": null,
    "Comments": null,
-   "Pos": {
-    "Column": 1,
-    "Filename": "Function_with_complex_return_type",
-    "Line": 1,
-    "Offset": 0
-   },
    "Statement": {
     "Block": {
      "Label": "",
@@ -28,20 +16,8 @@
       {
        "Annotations": null,
        "Comments": null,
-       "Pos": {
-        "Column": 2,
-        "Filename": "Function_with_complex_return_type",
-        "Line": 2,
-        "Offset": 54
-       },
        "Statement": {
         "Label": "",
-        "Pos": {
-         "Column": 2,
-         "Filename": "Function_with_complex_return_type",
-         "Line": 2,
-         "Offset": 54
-        },
         "Value": {
          "Body": {
           "Label": "",
@@ -55,20 +31,8 @@
            {
             "Annotations": null,
             "Comments": null,
-            "Pos": {
-             "Column": 3,
-             "Filename": "Function_with_complex_return_type",
-             "Line": 3,
-             "Offset": 97
-            },
             "Statement": {
              "Label": "",
-             "Pos": {
-              "Column": 3,
-              "Filename": "Function_with_complex_return_type",
-              "Line": 3,
-              "Offset": 97
-             },
              "Value": {
               "Body": {
                "Label": "",
@@ -82,65 +46,29 @@
                 {
                  "Annotations": null,
                  "Comments": null,
-                 "Pos": {
-                  "Column": 23,
-                  "Filename": "Function_with_complex_return_type",
-                  "Line": 3,
-                  "Offset": 117
-                 },
                  "Statement": {
                   "Label": "",
-                  "Pos": {
-                   "Column": 23,
-                   "Filename": "Function_with_complex_return_type",
-                   "Line": 3,
-                   "Offset": 117
-                  },
                   "Value": {
                    "Operands": [
                     {
                      "Atom": {
-                      "Ident": "a",
-                      "Pos": {
-                       "Column": 30,
-                       "Filename": "Function_with_complex_return_type",
-                       "Line": 3,
-                       "Offset": 124
-                      }
+                      "Ident": "a"
                      },
                      "Postfix": [
                       {
                        "Index": null,
                        "Invocation": null,
-                       "Operator": "+",
-                       "Pos": {
-                        "Column": 32,
-                        "Filename": "Function_with_complex_return_type",
-                        "Line": 3,
-                        "Offset": 126
-                       }
+                       "Operator": "+"
                       }
                      ]
                     },
                     {
                      "Atom": {
-                      "Ident": "b",
-                      "Pos": {
-                       "Column": 34,
-                       "Filename": "Function_with_complex_return_type",
-                       "Line": 3,
-                       "Offset": 128
-                      }
+                      "Ident": "b"
                      },
                      "Postfix": null
                     }
                    ],
-                   "Pos": {
-                    "Column": 30,
-                    "Filename": "Function_with_complex_return_type",
-                    "Line": 3,
-                    "Offset": 124
-                   },
                    "Prefix": null
                   }
                  }
@@ -148,27 +76,9 @@
                ]
               },
               "Parameters": null,
-              "Pos": {
-               "Column": 10,
-               "Filename": "Function_with_complex_return_type",
-               "Line": 3,
-               "Offset": 104
-              },
               "Return": {
-               "Pos": {
-                "Column": 17,
-                "Filename": "Function_with_complex_return_type",
-                "Line": 3,
-                "Offset": 111
-               },
                "Type": {
                 "BitSize": 32,
-                "Pos": {
-                 "Column": 17,
-                 "Filename": "Function_with_complex_return_type",
-                 "Line": 3,
-                 "Offset": 111
-                },
                 "Signed": true
                }
               }
@@ -180,96 +90,30 @@
          "Parameters": [
           {
            "Name": "a",
-           "Pos": {
-            "Column": 13,
-            "Filename": "Function_with_complex_return_type",
-            "Line": 2,
-            "Offset": 65
-           },
            "Type": {
-            "Pos": {
-             "Column": 16,
-             "Filename": "Function_with_complex_return_type",
-             "Line": 2,
-             "Offset": 68
-            },
             "Type": {
              "BitSize": 32,
-             "Pos": {
-              "Column": 16,
-              "Filename": "Function_with_complex_return_type",
-              "Line": 2,
-              "Offset": 68
-             },
              "Signed": true
             }
            }
           },
           {
            "Name": "b",
-           "Pos": {
-            "Column": 21,
-            "Filename": "Function_with_complex_return_type",
-            "Line": 2,
-            "Offset": 73
-           },
            "Type": {
-            "Pos": {
-             "Column": 24,
-             "Filename": "Function_with_complex_return_type",
-             "Line": 2,
-             "Offset": 76
-            },
             "Type": {
              "BitSize": 32,
-             "Pos": {
-              "Column": 24,
-              "Filename": "Function_with_complex_return_type",
-              "Line": 2,
-              "Offset": 76
-             },
              "Signed": true
             }
            }
           }
          ],
-         "Pos": {
-          "Column": 9,
-          "Filename": "Function_with_complex_return_type",
-          "Line": 2,
-          "Offset": 61
-         },
          "Return": {
-          "Pos": {
-           "Column": 30,
-           "Filename": "Function_with_complex_return_type",
-           "Line": 2,
-           "Offset": 82
-          },
           "Type": {
            "Name": "",
            "Parameters": null,
-           "Pos": {
-            "Column": 30,
-            "Filename": "Function_with_complex_return_type",
-            "Line": 2,
-            "Offset": 82
-           },
            "Return": {
-            "Pos": {
-             "Column": 37,
-             "Filename": "Function_with_complex_return_type",
-             "Line": 2,
-             "Offset": 89
-            },
             "Type": {
              "BitSize": 32,
-             "Pos": {
-              "Column": 37,
-              "Filename": "Function_with_complex_return_type",
-              "Line": 2,
-              "Offset": 89
-             },
              "Signed": true
             }
            }
@@ -283,114 +127,36 @@
     "IsStatic": false,
     "Name": "getCallback",
     "Parameters": null,
-    "Pos": {
-     "Column": 1,
-     "Filename": "Function_with_complex_return_type",
-     "Line": 1,
-     "Offset": 0
-    },
     "Return": {
-     "Pos": {
-      "Column": 20,
-      "Filename": "Function_with_complex_return_type",
-      "Line": 1,
-      "Offset": 19
-     },
      "Type": {
       "Name": "",
       "Parameters": [
        {
         "Name": "a",
-        "Pos": {
-         "Column": 24,
-         "Filename": "Function_with_complex_return_type",
-         "Line": 1,
-         "Offset": 23
-        },
         "Type": {
-         "Pos": {
-          "Column": 27,
-          "Filename": "Function_with_complex_return_type",
-          "Line": 1,
-          "Offset": 26
-         },
          "Type": {
           "BitSize": 32,
-          "Pos": {
-           "Column": 27,
-           "Filename": "Function_with_complex_return_type",
-           "Line": 1,
-           "Offset": 26
-          },
           "Signed": true
          }
         }
        },
        {
         "Name": "b",
-        "Pos": {
-         "Column": 32,
-         "Filename": "Function_with_complex_return_type",
-         "Line": 1,
-         "Offset": 31
-        },
         "Type": {
-         "Pos": {
-          "Column": 35,
-          "Filename": "Function_with_complex_return_type",
-          "Line": 1,
-          "Offset": 34
-         },
          "Type": {
           "BitSize": 32,
-          "Pos": {
-           "Column": 35,
-           "Filename": "Function_with_complex_return_type",
-           "Line": 1,
-           "Offset": 34
-          },
           "Signed": true
          }
         }
        }
       ],
-      "Pos": {
-       "Column": 20,
-       "Filename": "Function_with_complex_return_type",
-       "Line": 1,
-       "Offset": 19
-      },
       "Return": {
-       "Pos": {
-        "Column": 41,
-        "Filename": "Function_with_complex_return_type",
-        "Line": 1,
-        "Offset": 40
-       },
        "Type": {
         "Name": "",
         "Parameters": null,
-        "Pos": {
-         "Column": 41,
-         "Filename": "Function_with_complex_return_type",
-         "Line": 1,
-         "Offset": 40
-        },
         "Return": {
-         "Pos": {
-          "Column": 48,
-          "Filename": "Function_with_complex_return_type",
-          "Line": 1,
-          "Offset": 47
-         },
          "Type": {
           "BitSize": 32,
-          "Pos": {
-           "Column": 48,
-           "Filename": "Function_with_complex_return_type",
-           "Line": 1,
-           "Offset": 47
-          },
           "Signed": true
          }
         }

@@ -1,0 +1,2549 @@
+{
+ "result": null,
+ "visitor": {
+  "log": [
+   {
+    "isEnter": true,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Body": {
+         "Label": "",
+         "Pos": {
+          "Column": 10,
+          "Filename": "CaseExpressionWithChildren",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Expression": {
+             "Branches": [
+              {
+               "Else": null,
+               "If": {
+                "Condition": {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Ident": "x"
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Prefix": null
+                },
+                "Then": {
+                 "Block": {
+                  "Label": "",
+                  "Pos": {
+                   "Column": 26,
+                   "Filename": "CaseExpressionWithChildren",
+                   "Line": 1,
+                   "Offset": 25
+                  },
+                  "Statements": [
+                   {
+                    "Annotations": null,
+                    "Comments": null,
+                    "Statement": {
+                     "Expression": {
+                      "Operands": [
+                       {
+                        "Atom": {
+                         "Value": {
+                          "Value": 1
+                         }
+                        },
+                        "Postfix": null
+                       }
+                      ],
+                      "Prefix": null
+                     }
+                    }
+                   }
+                  ]
+                 },
+                 "IsStatic": false
+                }
+               }
+              },
+              {
+               "Else": {
+                "Block": {
+                 "Label": "",
+                 "Pos": {
+                  "Column": 37,
+                  "Filename": "CaseExpressionWithChildren",
+                  "Line": 1,
+                  "Offset": 36
+                 },
+                 "Statements": [
+                  {
+                   "Annotations": null,
+                   "Comments": null,
+                   "Statement": {
+                    "Expression": {
+                     "Operands": [
+                      {
+                       "Atom": {
+                        "Value": {
+                         "Value": 2
+                        }
+                       },
+                       "Postfix": null
+                      }
+                     ],
+                     "Prefix": null
+                    }
+                   }
+                  }
+                 ]
+                },
+                "IsStatic": false
+               },
+               "If": {
+                "Condition": null,
+                "Then": null
+               }
+              }
+             ]
+            }
+           }
+          }
+         ]
+        },
+        "Name": "m"
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Body": {
+       "Label": "",
+       "Pos": {
+        "Column": 10,
+        "Filename": "CaseExpressionWithChildren",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Branches": [
+            {
+             "Else": null,
+             "If": {
+              "Condition": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Ident": "x"
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              },
+              "Then": {
+               "Block": {
+                "Label": "",
+                "Pos": {
+                 "Column": 26,
+                 "Filename": "CaseExpressionWithChildren",
+                 "Line": 1,
+                 "Offset": 25
+                },
+                "Statements": [
+                 {
+                  "Annotations": null,
+                  "Comments": null,
+                  "Statement": {
+                   "Expression": {
+                    "Operands": [
+                     {
+                      "Atom": {
+                       "Value": {
+                        "Value": 1
+                       }
+                      },
+                      "Postfix": null
+                     }
+                    ],
+                    "Prefix": null
+                   }
+                  }
+                 }
+                ]
+               },
+               "IsStatic": false
+              }
+             }
+            },
+            {
+             "Else": {
+              "Block": {
+               "Label": "",
+               "Pos": {
+                "Column": 37,
+                "Filename": "CaseExpressionWithChildren",
+                "Line": 1,
+                "Offset": 36
+               },
+               "Statements": [
+                {
+                 "Annotations": null,
+                 "Comments": null,
+                 "Statement": {
+                  "Expression": {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Value": {
+                       "Value": 2
+                      }
+                     },
+                     "Postfix": null
+                    }
+                   ],
+                   "Prefix": null
+                  }
+                 }
+                }
+               ]
+              },
+              "IsStatic": false
+             },
+             "If": {
+              "Condition": null,
+              "Then": null
+             }
+            }
+           ]
+          }
+         }
+        }
+       ]
+      },
+      "Name": "m"
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 10,
+       "Filename": "CaseExpressionWithChildren",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Branches": [
+           {
+            "Else": null,
+            "If": {
+             "Condition": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Ident": "x"
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             },
+             "Then": {
+              "Block": {
+               "Label": "",
+               "Pos": {
+                "Column": 26,
+                "Filename": "CaseExpressionWithChildren",
+                "Line": 1,
+                "Offset": 25
+               },
+               "Statements": [
+                {
+                 "Annotations": null,
+                 "Comments": null,
+                 "Statement": {
+                  "Expression": {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Value": {
+                       "Value": 1
+                      }
+                     },
+                     "Postfix": null
+                    }
+                   ],
+                   "Prefix": null
+                  }
+                 }
+                }
+               ]
+              },
+              "IsStatic": false
+             }
+            }
+           },
+           {
+            "Else": {
+             "Block": {
+              "Label": "",
+              "Pos": {
+               "Column": 37,
+               "Filename": "CaseExpressionWithChildren",
+               "Line": 1,
+               "Offset": 36
+              },
+              "Statements": [
+               {
+                "Annotations": null,
+                "Comments": null,
+                "Statement": {
+                 "Expression": {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Value": {
+                      "Value": 2
+                     }
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 }
+                }
+               }
+              ]
+             },
+             "IsStatic": false
+            },
+            "If": {
+             "Condition": null,
+             "Then": null
+            }
+           }
+          ]
+         }
+        }
+       }
+      ]
+     },
+     "Name": "m"
+    },
+    "type": "ast.Module"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 10,
+      "Filename": "CaseExpressionWithChildren",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Branches": [
+          {
+           "Else": null,
+           "If": {
+            "Condition": {
+             "Operands": [
+              {
+               "Atom": {
+                "Ident": "x"
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            },
+            "Then": {
+             "Block": {
+              "Label": "",
+              "Pos": {
+               "Column": 26,
+               "Filename": "CaseExpressionWithChildren",
+               "Line": 1,
+               "Offset": 25
+              },
+              "Statements": [
+               {
+                "Annotations": null,
+                "Comments": null,
+                "Statement": {
+                 "Expression": {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Value": {
+                      "Value": 1
+                     }
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 }
+                }
+               }
+              ]
+             },
+             "IsStatic": false
+            }
+           }
+          },
+          {
+           "Else": {
+            "Block": {
+             "Label": "",
+             "Pos": {
+              "Column": 37,
+              "Filename": "CaseExpressionWithChildren",
+              "Line": 1,
+              "Offset": 36
+             },
+             "Statements": [
+              {
+               "Annotations": null,
+               "Comments": null,
+               "Statement": {
+                "Expression": {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Value": {
+                     "Value": 2
+                    }
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Prefix": null
+                }
+               }
+              }
+             ]
+            },
+            "IsStatic": false
+           },
+           "If": {
+            "Condition": null,
+            "Then": null
+           }
+          }
+         ]
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Branches": [
+        {
+         "Else": null,
+         "If": {
+          "Condition": {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "x"
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          },
+          "Then": {
+           "Block": {
+            "Label": "",
+            "Pos": {
+             "Column": 26,
+             "Filename": "CaseExpressionWithChildren",
+             "Line": 1,
+             "Offset": 25
+            },
+            "Statements": [
+             {
+              "Annotations": null,
+              "Comments": null,
+              "Statement": {
+               "Expression": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Value": 1
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               }
+              }
+             }
+            ]
+           },
+           "IsStatic": false
+          }
+         }
+        },
+        {
+         "Else": {
+          "Block": {
+           "Label": "",
+           "Pos": {
+            "Column": 37,
+            "Filename": "CaseExpressionWithChildren",
+            "Line": 1,
+            "Offset": 36
+           },
+           "Statements": [
+            {
+             "Annotations": null,
+             "Comments": null,
+             "Statement": {
+              "Expression": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Value": {
+                   "Value": 2
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             }
+            }
+           ]
+          },
+          "IsStatic": false
+         },
+         "If": {
+          "Condition": null,
+          "Then": null
+         }
+        }
+       ]
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Expression": {
+      "Branches": [
+       {
+        "Else": null,
+        "If": {
+         "Condition": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "x"
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         },
+         "Then": {
+          "Block": {
+           "Label": "",
+           "Pos": {
+            "Column": 26,
+            "Filename": "CaseExpressionWithChildren",
+            "Line": 1,
+            "Offset": 25
+           },
+           "Statements": [
+            {
+             "Annotations": null,
+             "Comments": null,
+             "Statement": {
+              "Expression": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Value": {
+                   "Value": 1
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             }
+            }
+           ]
+          },
+          "IsStatic": false
+         }
+        }
+       },
+       {
+        "Else": {
+         "Block": {
+          "Label": "",
+          "Pos": {
+           "Column": 37,
+           "Filename": "CaseExpressionWithChildren",
+           "Line": 1,
+           "Offset": 36
+          },
+          "Statements": [
+           {
+            "Annotations": null,
+            "Comments": null,
+            "Statement": {
+             "Expression": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Value": {
+                  "Value": 2
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             }
+            }
+           }
+          ]
+         },
+         "IsStatic": false
+        },
+        "If": {
+         "Condition": null,
+         "Then": null
+        }
+       }
+      ]
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Branches": [
+      {
+       "Else": null,
+       "If": {
+        "Condition": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "x"
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        },
+        "Then": {
+         "Block": {
+          "Label": "",
+          "Pos": {
+           "Column": 26,
+           "Filename": "CaseExpressionWithChildren",
+           "Line": 1,
+           "Offset": 25
+          },
+          "Statements": [
+           {
+            "Annotations": null,
+            "Comments": null,
+            "Statement": {
+             "Expression": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Value": {
+                  "Value": 1
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             }
+            }
+           }
+          ]
+         },
+         "IsStatic": false
+        }
+       }
+      },
+      {
+       "Else": {
+        "Block": {
+         "Label": "",
+         "Pos": {
+          "Column": 37,
+          "Filename": "CaseExpressionWithChildren",
+          "Line": 1,
+          "Offset": 36
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Expression": {
+             "Operands": [
+              {
+               "Atom": {
+                "Value": {
+                 "Value": 2
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "IsStatic": false
+       },
+       "If": {
+        "Condition": null,
+        "Then": null
+       }
+      }
+     ]
+    },
+    "type": "ast.CaseExpression"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Else": null,
+     "If": {
+      "Condition": {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "x"
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      },
+      "Then": {
+       "Block": {
+        "Label": "",
+        "Pos": {
+         "Column": 26,
+         "Filename": "CaseExpressionWithChildren",
+         "Line": 1,
+         "Offset": 25
+        },
+        "Statements": [
+         {
+          "Annotations": null,
+          "Comments": null,
+          "Statement": {
+           "Expression": {
+            "Operands": [
+             {
+              "Atom": {
+               "Value": {
+                "Value": 1
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           }
+          }
+         }
+        ]
+       },
+       "IsStatic": false
+      }
+     }
+    },
+    "type": "ast.CaseBranch"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Condition": {
+      "Operands": [
+       {
+        "Atom": {
+         "Ident": "x"
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     },
+     "Then": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 26,
+        "Filename": "CaseExpressionWithChildren",
+        "Line": 1,
+        "Offset": 25
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Value": 1
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "IsStatic": false
+     }
+    },
+    "type": "ast.IfBranch"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "x"
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "x"
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "x"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "x"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "x"
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "x"
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 26,
+       "Filename": "CaseExpressionWithChildren",
+       "Line": 1,
+       "Offset": 25
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Value": 1
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false
+    },
+    "type": "ast.BlockExpression"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 26,
+      "Filename": "CaseExpressionWithChildren",
+      "Line": 1,
+      "Offset": 25
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 1
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 1
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Expression": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 1
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 1
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 1
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 1
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 1
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 1
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 1
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Expression": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 1
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 1
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 26,
+      "Filename": "CaseExpressionWithChildren",
+      "Line": 1,
+      "Offset": 25
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 1
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 26,
+       "Filename": "CaseExpressionWithChildren",
+       "Line": 1,
+       "Offset": 25
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Value": 1
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false
+    },
+    "type": "ast.BlockExpression"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Condition": {
+      "Operands": [
+       {
+        "Atom": {
+         "Ident": "x"
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     },
+     "Then": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 26,
+        "Filename": "CaseExpressionWithChildren",
+        "Line": 1,
+        "Offset": 25
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Value": 1
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "IsStatic": false
+     }
+    },
+    "type": "ast.IfBranch"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Else": null,
+     "If": {
+      "Condition": {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "x"
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      },
+      "Then": {
+       "Block": {
+        "Label": "",
+        "Pos": {
+         "Column": 26,
+         "Filename": "CaseExpressionWithChildren",
+         "Line": 1,
+         "Offset": 25
+        },
+        "Statements": [
+         {
+          "Annotations": null,
+          "Comments": null,
+          "Statement": {
+           "Expression": {
+            "Operands": [
+             {
+              "Atom": {
+               "Value": {
+                "Value": 1
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           }
+          }
+         }
+        ]
+       },
+       "IsStatic": false
+      }
+     }
+    },
+    "type": "ast.CaseBranch"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Else": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 37,
+        "Filename": "CaseExpressionWithChildren",
+        "Line": 1,
+        "Offset": 36
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Value": 2
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "IsStatic": false
+     },
+     "If": {
+      "Condition": null,
+      "Then": null
+     }
+    },
+    "type": "ast.CaseBranch"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Condition": null,
+     "Then": null
+    },
+    "type": "ast.IfBranch"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Condition": null,
+     "Then": null
+    },
+    "type": "ast.IfBranch"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 37,
+       "Filename": "CaseExpressionWithChildren",
+       "Line": 1,
+       "Offset": 36
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Value": 2
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false
+    },
+    "type": "ast.BlockExpression"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 37,
+      "Filename": "CaseExpressionWithChildren",
+      "Line": 1,
+      "Offset": 36
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 2
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 2
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Expression": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 2
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 2
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 2
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 2
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 2
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 2
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 2
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 2
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 2
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Expression": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 2
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 2
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 37,
+      "Filename": "CaseExpressionWithChildren",
+      "Line": 1,
+      "Offset": 36
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 2
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 37,
+       "Filename": "CaseExpressionWithChildren",
+       "Line": 1,
+       "Offset": 36
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Value": 2
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false
+    },
+    "type": "ast.BlockExpression"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Else": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 37,
+        "Filename": "CaseExpressionWithChildren",
+        "Line": 1,
+        "Offset": 36
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Value": 2
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "IsStatic": false
+     },
+     "If": {
+      "Condition": null,
+      "Then": null
+     }
+    },
+    "type": "ast.CaseBranch"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Branches": [
+      {
+       "Else": null,
+       "If": {
+        "Condition": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "x"
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        },
+        "Then": {
+         "Block": {
+          "Label": "",
+          "Pos": {
+           "Column": 26,
+           "Filename": "CaseExpressionWithChildren",
+           "Line": 1,
+           "Offset": 25
+          },
+          "Statements": [
+           {
+            "Annotations": null,
+            "Comments": null,
+            "Statement": {
+             "Expression": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Value": {
+                  "Value": 1
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             }
+            }
+           }
+          ]
+         },
+         "IsStatic": false
+        }
+       }
+      },
+      {
+       "Else": {
+        "Block": {
+         "Label": "",
+         "Pos": {
+          "Column": 37,
+          "Filename": "CaseExpressionWithChildren",
+          "Line": 1,
+          "Offset": 36
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Expression": {
+             "Operands": [
+              {
+               "Atom": {
+                "Value": {
+                 "Value": 2
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "IsStatic": false
+       },
+       "If": {
+        "Condition": null,
+        "Then": null
+       }
+      }
+     ]
+    },
+    "type": "ast.CaseExpression"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Expression": {
+      "Branches": [
+       {
+        "Else": null,
+        "If": {
+         "Condition": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "x"
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         },
+         "Then": {
+          "Block": {
+           "Label": "",
+           "Pos": {
+            "Column": 26,
+            "Filename": "CaseExpressionWithChildren",
+            "Line": 1,
+            "Offset": 25
+           },
+           "Statements": [
+            {
+             "Annotations": null,
+             "Comments": null,
+             "Statement": {
+              "Expression": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Value": {
+                   "Value": 1
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             }
+            }
+           ]
+          },
+          "IsStatic": false
+         }
+        }
+       },
+       {
+        "Else": {
+         "Block": {
+          "Label": "",
+          "Pos": {
+           "Column": 37,
+           "Filename": "CaseExpressionWithChildren",
+           "Line": 1,
+           "Offset": 36
+          },
+          "Statements": [
+           {
+            "Annotations": null,
+            "Comments": null,
+            "Statement": {
+             "Expression": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Value": {
+                  "Value": 2
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             }
+            }
+           }
+          ]
+         },
+         "IsStatic": false
+        },
+        "If": {
+         "Condition": null,
+         "Then": null
+        }
+       }
+      ]
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Branches": [
+        {
+         "Else": null,
+         "If": {
+          "Condition": {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "x"
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          },
+          "Then": {
+           "Block": {
+            "Label": "",
+            "Pos": {
+             "Column": 26,
+             "Filename": "CaseExpressionWithChildren",
+             "Line": 1,
+             "Offset": 25
+            },
+            "Statements": [
+             {
+              "Annotations": null,
+              "Comments": null,
+              "Statement": {
+               "Expression": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Value": 1
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               }
+              }
+             }
+            ]
+           },
+           "IsStatic": false
+          }
+         }
+        },
+        {
+         "Else": {
+          "Block": {
+           "Label": "",
+           "Pos": {
+            "Column": 37,
+            "Filename": "CaseExpressionWithChildren",
+            "Line": 1,
+            "Offset": 36
+           },
+           "Statements": [
+            {
+             "Annotations": null,
+             "Comments": null,
+             "Statement": {
+              "Expression": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Value": {
+                   "Value": 2
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             }
+            }
+           ]
+          },
+          "IsStatic": false
+         },
+         "If": {
+          "Condition": null,
+          "Then": null
+         }
+        }
+       ]
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 10,
+      "Filename": "CaseExpressionWithChildren",
+      "Line": 1,
+      "Offset": 9
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Branches": [
+          {
+           "Else": null,
+           "If": {
+            "Condition": {
+             "Operands": [
+              {
+               "Atom": {
+                "Ident": "x"
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            },
+            "Then": {
+             "Block": {
+              "Label": "",
+              "Pos": {
+               "Column": 26,
+               "Filename": "CaseExpressionWithChildren",
+               "Line": 1,
+               "Offset": 25
+              },
+              "Statements": [
+               {
+                "Annotations": null,
+                "Comments": null,
+                "Statement": {
+                 "Expression": {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Value": {
+                      "Value": 1
+                     }
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 }
+                }
+               }
+              ]
+             },
+             "IsStatic": false
+            }
+           }
+          },
+          {
+           "Else": {
+            "Block": {
+             "Label": "",
+             "Pos": {
+              "Column": 37,
+              "Filename": "CaseExpressionWithChildren",
+              "Line": 1,
+              "Offset": 36
+             },
+             "Statements": [
+              {
+               "Annotations": null,
+               "Comments": null,
+               "Statement": {
+                "Expression": {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Value": {
+                     "Value": 2
+                    }
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Prefix": null
+                }
+               }
+              }
+             ]
+            },
+            "IsStatic": false
+           },
+           "If": {
+            "Condition": null,
+            "Then": null
+           }
+          }
+         ]
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Body": {
+      "Label": "",
+      "Pos": {
+       "Column": 10,
+       "Filename": "CaseExpressionWithChildren",
+       "Line": 1,
+       "Offset": 9
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Branches": [
+           {
+            "Else": null,
+            "If": {
+             "Condition": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Ident": "x"
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             },
+             "Then": {
+              "Block": {
+               "Label": "",
+               "Pos": {
+                "Column": 26,
+                "Filename": "CaseExpressionWithChildren",
+                "Line": 1,
+                "Offset": 25
+               },
+               "Statements": [
+                {
+                 "Annotations": null,
+                 "Comments": null,
+                 "Statement": {
+                  "Expression": {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Value": {
+                       "Value": 1
+                      }
+                     },
+                     "Postfix": null
+                    }
+                   ],
+                   "Prefix": null
+                  }
+                 }
+                }
+               ]
+              },
+              "IsStatic": false
+             }
+            }
+           },
+           {
+            "Else": {
+             "Block": {
+              "Label": "",
+              "Pos": {
+               "Column": 37,
+               "Filename": "CaseExpressionWithChildren",
+               "Line": 1,
+               "Offset": 36
+              },
+              "Statements": [
+               {
+                "Annotations": null,
+                "Comments": null,
+                "Statement": {
+                 "Expression": {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Value": {
+                      "Value": 2
+                     }
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 }
+                }
+               }
+              ]
+             },
+             "IsStatic": false
+            },
+            "If": {
+             "Condition": null,
+             "Then": null
+            }
+           }
+          ]
+         }
+        }
+       }
+      ]
+     },
+     "Name": "m"
+    },
+    "type": "ast.Module"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Body": {
+       "Label": "",
+       "Pos": {
+        "Column": 10,
+        "Filename": "CaseExpressionWithChildren",
+        "Line": 1,
+        "Offset": 9
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Branches": [
+            {
+             "Else": null,
+             "If": {
+              "Condition": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Ident": "x"
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              },
+              "Then": {
+               "Block": {
+                "Label": "",
+                "Pos": {
+                 "Column": 26,
+                 "Filename": "CaseExpressionWithChildren",
+                 "Line": 1,
+                 "Offset": 25
+                },
+                "Statements": [
+                 {
+                  "Annotations": null,
+                  "Comments": null,
+                  "Statement": {
+                   "Expression": {
+                    "Operands": [
+                     {
+                      "Atom": {
+                       "Value": {
+                        "Value": 1
+                       }
+                      },
+                      "Postfix": null
+                     }
+                    ],
+                    "Prefix": null
+                   }
+                  }
+                 }
+                ]
+               },
+               "IsStatic": false
+              }
+             }
+            },
+            {
+             "Else": {
+              "Block": {
+               "Label": "",
+               "Pos": {
+                "Column": 37,
+                "Filename": "CaseExpressionWithChildren",
+                "Line": 1,
+                "Offset": 36
+               },
+               "Statements": [
+                {
+                 "Annotations": null,
+                 "Comments": null,
+                 "Statement": {
+                  "Expression": {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Value": {
+                       "Value": 2
+                      }
+                     },
+                     "Postfix": null
+                    }
+                   ],
+                   "Prefix": null
+                  }
+                 }
+                }
+               ]
+              },
+              "IsStatic": false
+             },
+             "If": {
+              "Condition": null,
+              "Then": null
+             }
+            }
+           ]
+          }
+         }
+        }
+       ]
+      },
+      "Name": "m"
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Body": {
+         "Label": "",
+         "Pos": {
+          "Column": 10,
+          "Filename": "CaseExpressionWithChildren",
+          "Line": 1,
+          "Offset": 9
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Expression": {
+             "Branches": [
+              {
+               "Else": null,
+               "If": {
+                "Condition": {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Ident": "x"
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Prefix": null
+                },
+                "Then": {
+                 "Block": {
+                  "Label": "",
+                  "Pos": {
+                   "Column": 26,
+                   "Filename": "CaseExpressionWithChildren",
+                   "Line": 1,
+                   "Offset": 25
+                  },
+                  "Statements": [
+                   {
+                    "Annotations": null,
+                    "Comments": null,
+                    "Statement": {
+                     "Expression": {
+                      "Operands": [
+                       {
+                        "Atom": {
+                         "Value": {
+                          "Value": 1
+                         }
+                        },
+                        "Postfix": null
+                       }
+                      ],
+                      "Prefix": null
+                     }
+                    }
+                   }
+                  ]
+                 },
+                 "IsStatic": false
+                }
+               }
+              },
+              {
+               "Else": {
+                "Block": {
+                 "Label": "",
+                 "Pos": {
+                  "Column": 37,
+                  "Filename": "CaseExpressionWithChildren",
+                  "Line": 1,
+                  "Offset": 36
+                 },
+                 "Statements": [
+                  {
+                   "Annotations": null,
+                   "Comments": null,
+                   "Statement": {
+                    "Expression": {
+                     "Operands": [
+                      {
+                       "Atom": {
+                        "Value": {
+                         "Value": 2
+                        }
+                       },
+                       "Postfix": null
+                      }
+                     ],
+                     "Prefix": null
+                    }
+                   }
+                  }
+                 ]
+                },
+                "IsStatic": false
+               },
+               "If": {
+                "Condition": null,
+                "Then": null
+               }
+              }
+             ]
+            }
+           }
+          }
+         ]
+        },
+        "Name": "m"
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   }
+  ]
+ }
+}

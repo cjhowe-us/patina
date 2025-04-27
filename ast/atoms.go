@@ -8,14 +8,14 @@ type Atom interface{ atom() }
 
 // GroupedExpression represents a parenthesized expression in the AST.
 type GroupedExpression struct {
-	Pos        lexer.Position
-	Expression Expression `parser:"'(' @@ ')'"`
+	Pos        lexer.Position `json:"-" parser:""`
+	Expression Expression     `parser:"'(' @@ ')'"`
 }
 
 func (GroupedExpression) atom() {}
 
-func (n *GroupedExpression) Position() lexer.Position { return n.Pos }
-func (n *GroupedExpression) Children() []SyntaxNode {
+func (n GroupedExpression) Position() lexer.Position { return n.Pos }
+func (n GroupedExpression) Children() []SyntaxNode {
 	if n.Expression != nil {
 		if exprNode, ok := n.Expression.(SyntaxNode); ok {
 			return []SyntaxNode{exprNode}
@@ -26,14 +26,14 @@ func (n *GroupedExpression) Children() []SyntaxNode {
 
 // AtomicType represents a type used as an atomic expression.
 type AtomicType struct {
-	Pos  lexer.Position
-	Type Type `parser:"@@"`
+	Pos  lexer.Position `json:"-" parser:""`
+	Type Type           `parser:"@@"`
 }
 
 func (AtomicType) atom() {}
 
-func (n *AtomicType) Position() lexer.Position { return n.Pos }
-func (n *AtomicType) Children() []SyntaxNode {
+func (n AtomicType) Position() lexer.Position { return n.Pos }
+func (n AtomicType) Children() []SyntaxNode {
 	if n.Type != nil {
 		if typeNode, ok := n.Type.(SyntaxNode); ok {
 			return []SyntaxNode{typeNode}
@@ -44,14 +44,14 @@ func (n *AtomicType) Children() []SyntaxNode {
 
 // AtomicValue represents a value used as an atomic expression.
 type AtomicValue struct {
-	Pos   lexer.Position
-	Value Value `parser:"@@"`
+	Pos   lexer.Position `json:"-" parser:""`
+	Value Value          `parser:"@@"`
 }
 
 func (AtomicValue) atom() {}
 
-func (n *AtomicValue) Position() lexer.Position { return n.Pos }
-func (n *AtomicValue) Children() []SyntaxNode {
+func (n AtomicValue) Position() lexer.Position { return n.Pos }
+func (n AtomicValue) Children() []SyntaxNode {
 	if n.Value != nil {
 		if valueNode, ok := n.Value.(SyntaxNode); ok {
 			return []SyntaxNode{valueNode}
@@ -62,13 +62,13 @@ func (n *AtomicValue) Children() []SyntaxNode {
 
 // Binding represents an identifier binding in the AST.
 type Binding struct {
-	Pos   lexer.Position
-	Ident string `parser:"@Ident"`
+	Pos   lexer.Position `json:"-" parser:""`
+	Ident string         `parser:"@Ident"`
 }
 
 func (Binding) atom() {}
 
-func (n *Binding) Position() lexer.Position { return n.Pos }
-func (n *Binding) Children() []SyntaxNode {
+func (n Binding) Position() lexer.Position { return n.Pos }
+func (n Binding) Children() []SyntaxNode {
 	return nil
 }
