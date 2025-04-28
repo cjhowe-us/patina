@@ -44,42 +44,43 @@ folder..
 
 The repository uses snapshot testing with the go-snaps library:
 
-- `ast/test_shared.go`: Common testing utilities
-- `ast/parser_test.go`: Tests for the parser
-- `ast/walk_test.go`: Tests for tree traversal
+* `ast/test_shared.go`: Common testing utilities
+* `ast/parser_test.go`: Tests for the parser
+* `ast/walk_test.go`: Tests for tree traversal
 
 Test cases and snapshots are organized in:
-- `ast/testing/cases/`: JSON files containing test cases
-- `ast/testing/snapshots/`: Snapshot files for test results
+
+* `ast/testing/cases/`: JSON files containing test cases
+* `ast/testing/snapshots/`: Snapshot files for test results
 
 ## Development Guidelines
 
 When making changes to the Patina codebase:
 
 1. **Parser Modifications**:
-   - The parser is built using the participle library
-   - Modify grammar definitions in the corresponding Go structs
-   - Update `parser.go` for lexer rules and token mappings
+   * The parser is built using the participle library
+   * Modify grammar definitions in the corresponding Go structs
+   * Update `parser.go` for lexer rules and token mappings
 
 2. **AST Structure Changes**:
-   - Implement the appropriate interfaces (`SyntaxNode`, `Statement`, `Expression`, etc.)
-   - Add necessary Position() and Children() methods for tree traversal
-   - Connect new nodes to existing structures
+   * Implement the appropriate interfaces (`SyntaxNode`, `Statement`, `Expression`, etc.)
+   * Add necessary Position() and Children() methods for tree traversal
+   * Connect new nodes to existing structures
 
 3. **Testing**:
-   - Add test cases in the appropriate JSON files in `ast/testing/cases/`
-   - Run tests with `go test ./...`
-   - The snapshots are stored in `ast/testing/snapshots/`
-   - Update snapshots using `UPDATE_SNAPS=true go test ./...`
-   - Clean up obsolete snapshots with `UPDATE_SNAPS=clean go test ./...`
+   * Add test cases in the appropriate JSON files in `ast/testing/cases/`
+   * Run tests with `go test ./...`
+   * The snapshots are stored in `ast/testing/snapshots/`
+   * Update snapshots using `UPDATE_SNAPS=true go test ./...`
+   * Clean up obsolete snapshots with `UPDATE_SNAPS=clean go test ./...`
 
 4. **Best Practices**:
-   - Use a declarative, functional programming style
-   - Avoid mutable state where possible
-   - Do not add implementation comments - only provide public documentation
+   * Use a declarative, functional programming style
+   * Avoid mutable state where possible
+   * Do not add implementation comments - only provide public documentation
      comments
-   - Abstract logic into interfaces when operating on multiple data types
-   - Use generics instead of interfaces for homogeneous collections
+   * Abstract logic into interfaces when operating on multiple data types
+   * Use generics instead of interfaces for homogeneous collections
 
 ## File Modification Strategy
 
@@ -94,12 +95,12 @@ When implementing new features or fixing bugs:
 
 ## Glossary
 
-- **AST**: Abstract Syntax Tree, a hierarchical structure representing the source code
-- **Atom**: A single unit of an expression (e.g. identifier, literal, etc.)
-- **Expression**: A unit of code that returns a value
-- **Statement**: A unit of code that performs an action (no return value)
-- **SyntaxNode**: An interface implemented by all AST nodes
-- **Type**: A representation of a type (e.g. integer, pointer, array, etc.)
+* **AST**: Abstract Syntax Tree, a hierarchical structure representing the source code
+* **Atom**: A single unit of an expression (e.g. identifier, literal, etc.)
+* **Expression**: A unit of code that returns a value
+* **Statement**: A unit of code that performs an action (no return value)
+* **SyntaxNode**: An interface implemented by all AST nodes
+* **Type**: A representation of a type (e.g. integer, pointer, array, etc.)
 
 ## 3. Technical Architecture & Requirements
 
