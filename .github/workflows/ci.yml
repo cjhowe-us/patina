@@ -1,20 +1,27 @@
-name: CI
+name: Patina CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, agent-development]
   pull_request:
     branches: [main]
+
 jobs:
-  test:
-    name: Test
-    runs-on: macos-latest
+  test-go:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
-            go-version: '^1.24.0'
-      - name: Run tests
+          go-version: "^1.24"
+      - name: Test Go code
         run: go test -v ./...
+  test-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+      - name: Test Python code
+        run: pipenv run pytest

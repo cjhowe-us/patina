@@ -1,0 +1,16 @@
+{
+    "language": "python",
+    "app": "pipenv run python infrastructure/main.py",
+    "projectId": "patina-458202",
+    "sendCrashReports": true,
+    "terraformProviders": [
+        "google@~>4.0"
+    ],
+    "terraformModules": [],
+    "codeMakerOutput": "imports",
+    "output": "cdktf.out",
+    "context": {
+        "excludeStackIdFromLogicalIds": "true",
+        "allowSepCharsInLogicalIds": "true"
+    }
+}

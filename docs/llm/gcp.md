@@ -1,11 +1,5 @@
 # Patina Language - AI Agent Development Plan v1.2
 
-The project currently includes an ast package implemented in Go that parses
-Patina source code, along with a visitor that can walk the entire Patina AST.
-The parser may be missing important code constructs that still need to be added.
-Use this as a starting point. The LLM code should be implemented in the llm
-folder.
-
 ## 1. Project Goal & Problem Statement
 
 * **Goal:** Develop the compiler and core tooling for the Patina programming
@@ -36,10 +30,84 @@ folder.
 * **Safe Interoperability:** Robust static checks at model boundaries for
   reliable integration.
 
+## 3. Initial Repository State
+
+All of the information in this section only applies to the AST package
+
+The repository currently includes an AST package implemented in Go that parses
+Patina source code, along with a visitor that can walk the entire Patina AST.
+The parser may be missing important code constructs that still need to be added.
+Use this as a starting point. The LLM code should be implemented in the llm
+folder..
+
+## Testing Infrastructure
+
+The repository uses snapshot testing with the go-snaps library:
+
+- `ast/test_shared.go`: Common testing utilities
+- `ast/parser_test.go`: Tests for the parser
+- `ast/walk_test.go`: Tests for tree traversal
+
+Test cases and snapshots are organized in:
+- `ast/testing/cases/`: JSON files containing test cases
+- `ast/testing/snapshots/`: Snapshot files for test results
+
+## Development Guidelines
+
+When making changes to the Patina codebase:
+
+1. **Parser Modifications**:
+   - The parser is built using the participle library
+   - Modify grammar definitions in the corresponding Go structs
+   - Update `parser.go` for lexer rules and token mappings
+
+2. **AST Structure Changes**:
+   - Implement the appropriate interfaces (`SyntaxNode`, `Statement`, `Expression`, etc.)
+   - Add necessary Position() and Children() methods for tree traversal
+   - Connect new nodes to existing structures
+
+3. **Testing**:
+   - Add test cases in the appropriate JSON files in `ast/testing/cases/`
+   - Run tests with `go test ./...`
+   - The snapshots are stored in `ast/testing/snapshots/`
+   - Update snapshots using `UPDATE_SNAPS=true go test ./...`
+   - Clean up obsolete snapshots with `UPDATE_SNAPS=clean go test ./...`
+
+4. **Best Practices**:
+   - Use a declarative, functional programming style
+   - Avoid mutable state where possible
+   - Do not add implementation comments - only provide public documentation
+     comments
+   - Abstract logic into interfaces when operating on multiple data types
+   - Use generics instead of interfaces for homogeneous collections
+
+## File Modification Strategy
+
+When implementing new features or fixing bugs:
+
+1. First understand the corresponding AST structures
+2. Modify or add struct definitions with proper participle parser tags
+3. Update lexer rules if new token types are needed
+4. Review the implementation to ensure all functionality works as expected
+5. Add test cases to verify the changes
+6. Run tests and update snapshots
+
+## Glossary
+
+- **AST**: Abstract Syntax Tree, a hierarchical structure representing the source code
+- **Atom**: A single unit of an expression (e.g. identifier, literal, etc.)
+- **Expression**: A unit of code that returns a value
+- **Statement**: A unit of code that performs an action (no return value)
+- **SyntaxNode**: An interface implemented by all AST nodes
+- **Type**: A representation of a type (e.g. integer, pointer, array, etc.)
+
 ## 3. Technical Architecture & Requirements
 
+* **Development Languages:** Go for infrastructure and compiler, Python for LLM
+  agents.
+* **Infrastructure as Code (IaC) Framework**: CDK for Terraform (Go).
+* **LLM Agent Framework:** Agent Development Kit (ADK) (Python).
 * **Cloud Platform:** Google Cloud Platform (GCP).
-* **Agent Framework:** Agent Development Kit (ADK).
 * **Agent Orchestration/Deployment:** Vertex AI (Agent Engine).
 * **Source Code Management:** GitHub (`https://github.com/cjhowedev/patina`).
 * **CI/CD:** GitHub Actions.
