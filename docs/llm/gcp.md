@@ -120,6 +120,8 @@ When implementing new features or fixing bugs:
 
 ## 4. Agent Roles & Responsibilities
 
+See prompts.md for agent prompts.
+
 * **Coordinator Agent:** Oversees development, decomposes tasks (including
   staged compilation steps), monitors progress, handles cross-agent decisions,
   initiates human intervention.
