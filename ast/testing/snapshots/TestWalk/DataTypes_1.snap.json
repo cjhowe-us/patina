@@ -1,0 +1,2621 @@
+{
+ "result": null,
+ "visitor": {
+  "log": [
+   {
+    "isEnter": true,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": [
+        {
+         "NestedComments": null,
+         "Text": "// Integer types with bit width"
+        }
+       ],
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "signed",
+        "Type": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        },
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 42
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": [
+          "-"
+         ]
+        }
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "unsigned",
+        "Type": {
+         "Type": {
+          "BitSize": 64,
+          "Signed": false
+         }
+        },
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 42
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": [
+        {
+         "NestedComments": null,
+         "Text": "// Pointer types"
+        }
+       ],
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "ptr",
+        "Type": {
+         "Type": {
+          "IsMutable": false,
+          "IsOwned": false,
+          "IsRaw": false,
+          "Target": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        },
+        "Value": null
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "ownPtr",
+        "Type": {
+         "Type": {
+          "IsMutable": false,
+          "IsOwned": true,
+          "IsRaw": false,
+          "Target": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        },
+        "Value": null
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "rawPtr",
+        "Type": {
+         "Type": {
+          "IsMutable": false,
+          "IsOwned": false,
+          "IsRaw": true,
+          "Target": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        },
+        "Value": null
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "mutPtr",
+        "Type": {
+         "Type": {
+          "IsMutable": true,
+          "IsOwned": false,
+          "IsRaw": false,
+          "Target": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        },
+        "Value": null
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": [
+        {
+         "NestedComments": null,
+         "Text": "// Array types"
+        }
+       ],
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "fixedArray",
+        "Type": {
+         "Type": {
+          "Dimension": 5,
+          "Element": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        },
+        "Value": null
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "dynamicArray",
+        "Type": {
+         "Type": {
+          "Dimension": null,
+          "Element": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        },
+        "Value": null
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": [
+        {
+         "NestedComments": null,
+         "Text": "// Function types"
+        }
+       ],
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "callback",
+        "Type": {
+         "Type": {
+          "Name": "",
+          "Parameters": [
+           {
+            "Name": "x",
+            "Type": {
+             "Type": {
+              "BitSize": 32,
+              "Signed": true
+             }
+            }
+           }
+          ],
+          "Return": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        },
+        "Value": null
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": [
+      {
+       "NestedComments": null,
+       "Text": "// Integer types with bit width"
+      }
+     ],
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "signed",
+      "Type": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      },
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 42
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": [
+        "-"
+       ]
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "NestedComments": null,
+     "Text": "// Integer types with bit width"
+    },
+    "type": "ast.Comment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "NestedComments": null,
+     "Text": "// Integer types with bit width"
+    },
+    "type": "ast.Comment"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "signed",
+     "Type": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     },
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 42
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": [
+       "-"
+      ]
+     }
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 42
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": [
+      "-"
+     ]
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 42
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 42
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 42
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 42
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 42
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 42
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 42
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": [
+      "-"
+     ]
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "signed",
+     "Type": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     },
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 42
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": [
+       "-"
+      ]
+     }
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": [
+      {
+       "NestedComments": null,
+       "Text": "// Integer types with bit width"
+      }
+     ],
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "signed",
+      "Type": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      },
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 42
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": [
+        "-"
+       ]
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "unsigned",
+      "Type": {
+       "Type": {
+        "BitSize": 64,
+        "Signed": false
+       }
+      },
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 42
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "unsigned",
+     "Type": {
+      "Type": {
+       "BitSize": 64,
+       "Signed": false
+      }
+     },
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 42
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "BitSize": 64,
+      "Signed": false
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "BitSize": 64,
+     "Signed": false
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "BitSize": 64,
+     "Signed": false
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "BitSize": 64,
+      "Signed": false
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 42
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 42
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 42
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 42
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 42
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 42
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 42
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 42
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "unsigned",
+     "Type": {
+      "Type": {
+       "BitSize": 64,
+       "Signed": false
+      }
+     },
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 42
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "unsigned",
+      "Type": {
+       "Type": {
+        "BitSize": 64,
+        "Signed": false
+       }
+      },
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 42
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": [
+      {
+       "NestedComments": null,
+       "Text": "// Pointer types"
+      }
+     ],
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "ptr",
+      "Type": {
+       "Type": {
+        "IsMutable": false,
+        "IsOwned": false,
+        "IsRaw": false,
+        "Target": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      },
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "NestedComments": null,
+     "Text": "// Pointer types"
+    },
+    "type": "ast.Comment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "NestedComments": null,
+     "Text": "// Pointer types"
+    },
+    "type": "ast.Comment"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "ptr",
+     "Type": {
+      "Type": {
+       "IsMutable": false,
+       "IsOwned": false,
+       "IsRaw": false,
+       "Target": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     },
+     "Value": null
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "IsMutable": false,
+      "IsOwned": false,
+      "IsRaw": false,
+      "Target": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      }
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsOwned": false,
+     "IsRaw": false,
+     "Target": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "ast.PointerType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsOwned": false,
+     "IsRaw": false,
+     "Target": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "ast.PointerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "IsMutable": false,
+      "IsOwned": false,
+      "IsRaw": false,
+      "Target": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      }
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "ptr",
+     "Type": {
+      "Type": {
+       "IsMutable": false,
+       "IsOwned": false,
+       "IsRaw": false,
+       "Target": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     },
+     "Value": null
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": [
+      {
+       "NestedComments": null,
+       "Text": "// Pointer types"
+      }
+     ],
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "ptr",
+      "Type": {
+       "Type": {
+        "IsMutable": false,
+        "IsOwned": false,
+        "IsRaw": false,
+        "Target": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      },
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "ownPtr",
+      "Type": {
+       "Type": {
+        "IsMutable": false,
+        "IsOwned": true,
+        "IsRaw": false,
+        "Target": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      },
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "ownPtr",
+     "Type": {
+      "Type": {
+       "IsMutable": false,
+       "IsOwned": true,
+       "IsRaw": false,
+       "Target": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     },
+     "Value": null
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "IsMutable": false,
+      "IsOwned": true,
+      "IsRaw": false,
+      "Target": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      }
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsOwned": true,
+     "IsRaw": false,
+     "Target": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "ast.PointerType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsOwned": true,
+     "IsRaw": false,
+     "Target": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "ast.PointerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "IsMutable": false,
+      "IsOwned": true,
+      "IsRaw": false,
+      "Target": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      }
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "ownPtr",
+     "Type": {
+      "Type": {
+       "IsMutable": false,
+       "IsOwned": true,
+       "IsRaw": false,
+       "Target": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     },
+     "Value": null
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "ownPtr",
+      "Type": {
+       "Type": {
+        "IsMutable": false,
+        "IsOwned": true,
+        "IsRaw": false,
+        "Target": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      },
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "rawPtr",
+      "Type": {
+       "Type": {
+        "IsMutable": false,
+        "IsOwned": false,
+        "IsRaw": true,
+        "Target": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      },
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "rawPtr",
+     "Type": {
+      "Type": {
+       "IsMutable": false,
+       "IsOwned": false,
+       "IsRaw": true,
+       "Target": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     },
+     "Value": null
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "IsMutable": false,
+      "IsOwned": false,
+      "IsRaw": true,
+      "Target": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      }
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsOwned": false,
+     "IsRaw": true,
+     "Target": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "ast.PointerType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsOwned": false,
+     "IsRaw": true,
+     "Target": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "ast.PointerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "IsMutable": false,
+      "IsOwned": false,
+      "IsRaw": true,
+      "Target": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      }
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "rawPtr",
+     "Type": {
+      "Type": {
+       "IsMutable": false,
+       "IsOwned": false,
+       "IsRaw": true,
+       "Target": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     },
+     "Value": null
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "rawPtr",
+      "Type": {
+       "Type": {
+        "IsMutable": false,
+        "IsOwned": false,
+        "IsRaw": true,
+        "Target": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      },
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "mutPtr",
+      "Type": {
+       "Type": {
+        "IsMutable": true,
+        "IsOwned": false,
+        "IsRaw": false,
+        "Target": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      },
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "mutPtr",
+     "Type": {
+      "Type": {
+       "IsMutable": true,
+       "IsOwned": false,
+       "IsRaw": false,
+       "Target": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     },
+     "Value": null
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "IsMutable": true,
+      "IsOwned": false,
+      "IsRaw": false,
+      "Target": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      }
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": true,
+     "IsOwned": false,
+     "IsRaw": false,
+     "Target": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "ast.PointerType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": true,
+     "IsOwned": false,
+     "IsRaw": false,
+     "Target": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "ast.PointerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "IsMutable": true,
+      "IsOwned": false,
+      "IsRaw": false,
+      "Target": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      }
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "mutPtr",
+     "Type": {
+      "Type": {
+       "IsMutable": true,
+       "IsOwned": false,
+       "IsRaw": false,
+       "Target": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     },
+     "Value": null
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "mutPtr",
+      "Type": {
+       "Type": {
+        "IsMutable": true,
+        "IsOwned": false,
+        "IsRaw": false,
+        "Target": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      },
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": [
+      {
+       "NestedComments": null,
+       "Text": "// Array types"
+      }
+     ],
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "fixedArray",
+      "Type": {
+       "Type": {
+        "Dimension": 5,
+        "Element": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      },
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "NestedComments": null,
+     "Text": "// Array types"
+    },
+    "type": "ast.Comment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "NestedComments": null,
+     "Text": "// Array types"
+    },
+    "type": "ast.Comment"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "fixedArray",
+     "Type": {
+      "Type": {
+       "Dimension": 5,
+       "Element": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     },
+     "Value": null
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "Dimension": 5,
+      "Element": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      }
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Dimension": 5,
+     "Element": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "ast.ArrayType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Dimension": 5,
+     "Element": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "ast.ArrayType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "Dimension": 5,
+      "Element": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      }
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "fixedArray",
+     "Type": {
+      "Type": {
+       "Dimension": 5,
+       "Element": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     },
+     "Value": null
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": [
+      {
+       "NestedComments": null,
+       "Text": "// Array types"
+      }
+     ],
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "fixedArray",
+      "Type": {
+       "Type": {
+        "Dimension": 5,
+        "Element": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      },
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "dynamicArray",
+      "Type": {
+       "Type": {
+        "Dimension": null,
+        "Element": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      },
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "dynamicArray",
+     "Type": {
+      "Type": {
+       "Dimension": null,
+       "Element": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     },
+     "Value": null
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "Dimension": null,
+      "Element": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      }
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Dimension": null,
+     "Element": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "ast.ArrayType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Dimension": null,
+     "Element": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "ast.ArrayType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "Dimension": null,
+      "Element": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      }
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "dynamicArray",
+     "Type": {
+      "Type": {
+       "Dimension": null,
+       "Element": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     },
+     "Value": null
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "dynamicArray",
+      "Type": {
+       "Type": {
+        "Dimension": null,
+        "Element": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      },
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": [
+      {
+       "NestedComments": null,
+       "Text": "// Function types"
+      }
+     ],
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "callback",
+      "Type": {
+       "Type": {
+        "Name": "",
+        "Parameters": [
+         {
+          "Name": "x",
+          "Type": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        ],
+        "Return": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      },
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "NestedComments": null,
+     "Text": "// Function types"
+    },
+    "type": "ast.Comment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "NestedComments": null,
+     "Text": "// Function types"
+    },
+    "type": "ast.Comment"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "callback",
+     "Type": {
+      "Type": {
+       "Name": "",
+       "Parameters": [
+        {
+         "Name": "x",
+         "Type": {
+          "Type": {
+           "BitSize": 32,
+           "Signed": true
+          }
+         }
+        }
+       ],
+       "Return": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     },
+     "Value": null
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "Name": "",
+      "Parameters": [
+       {
+        "Name": "x",
+        "Type": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      ],
+      "Return": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      }
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Name": "",
+     "Parameters": [
+      {
+       "Name": "x",
+       "Type": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     ],
+     "Return": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "ast.FunctionType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Name": "x",
+     "Type": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "*ast.FunctionParameter"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Name": "x",
+     "Type": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "*ast.FunctionParameter"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Name": "",
+     "Parameters": [
+      {
+       "Name": "x",
+       "Type": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     ],
+     "Return": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "ast.FunctionType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "Name": "",
+      "Parameters": [
+       {
+        "Name": "x",
+        "Type": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      ],
+      "Return": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      }
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "callback",
+     "Type": {
+      "Type": {
+       "Name": "",
+       "Parameters": [
+        {
+         "Name": "x",
+         "Type": {
+          "Type": {
+           "BitSize": 32,
+           "Signed": true
+          }
+         }
+        }
+       ],
+       "Return": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     },
+     "Value": null
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": [
+      {
+       "NestedComments": null,
+       "Text": "// Function types"
+      }
+     ],
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "callback",
+      "Type": {
+       "Type": {
+        "Name": "",
+        "Parameters": [
+         {
+          "Name": "x",
+          "Type": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        ],
+        "Return": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      },
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": [
+        {
+         "NestedComments": null,
+         "Text": "// Integer types with bit width"
+        }
+       ],
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "signed",
+        "Type": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        },
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 42
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": [
+          "-"
+         ]
+        }
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "unsigned",
+        "Type": {
+         "Type": {
+          "BitSize": 64,
+          "Signed": false
+         }
+        },
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 42
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": [
+        {
+         "NestedComments": null,
+         "Text": "// Pointer types"
+        }
+       ],
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "ptr",
+        "Type": {
+         "Type": {
+          "IsMutable": false,
+          "IsOwned": false,
+          "IsRaw": false,
+          "Target": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        },
+        "Value": null
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "ownPtr",
+        "Type": {
+         "Type": {
+          "IsMutable": false,
+          "IsOwned": true,
+          "IsRaw": false,
+          "Target": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        },
+        "Value": null
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "rawPtr",
+        "Type": {
+         "Type": {
+          "IsMutable": false,
+          "IsOwned": false,
+          "IsRaw": true,
+          "Target": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        },
+        "Value": null
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "mutPtr",
+        "Type": {
+         "Type": {
+          "IsMutable": true,
+          "IsOwned": false,
+          "IsRaw": false,
+          "Target": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        },
+        "Value": null
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": [
+        {
+         "NestedComments": null,
+         "Text": "// Array types"
+        }
+       ],
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "fixedArray",
+        "Type": {
+         "Type": {
+          "Dimension": 5,
+          "Element": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        },
+        "Value": null
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "dynamicArray",
+        "Type": {
+         "Type": {
+          "Dimension": null,
+          "Element": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        },
+        "Value": null
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": [
+        {
+         "NestedComments": null,
+         "Text": "// Function types"
+        }
+       ],
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "callback",
+        "Type": {
+         "Type": {
+          "Name": "",
+          "Parameters": [
+           {
+            "Name": "x",
+            "Type": {
+             "Type": {
+              "BitSize": 32,
+              "Signed": true
+             }
+            }
+           }
+          ],
+          "Return": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        },
+        "Value": null
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   }
+  ]
+ }
+}

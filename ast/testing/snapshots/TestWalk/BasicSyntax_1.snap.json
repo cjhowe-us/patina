@@ -1,0 +1,2867 @@
+{
+ "result": null,
+ "visitor": {
+  "log": [
+   {
+    "isEnter": true,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": [
+        {
+         "NestedComments": null,
+         "Text": "// Comments start with double slashes"
+        },
+        {
+         "NestedComments": null,
+         "Text": " Block comments can span\n   multiple lines "
+        }
+       ],
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "arbitraryNumber",
+        "Type": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        },
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 42
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": [
+        {
+         "NestedComments": null,
+         "Text": "// Let can infer types from the assigned value"
+        }
+       ],
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "arbitraryString",
+        "Type": null,
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Fragments": [
+              {
+               "Interpolation": null,
+               "Text": "Hello, world!"
+              }
+             ]
+            }
+           },
+           "Postfix": null
+          },
+          {
+           "Atom": {
+            "Ident": "print"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": [
+              {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Value": {
+                   "Fragments": [
+                    {
+                     "Interpolation": null,
+                     "Text": "The answer to life, the universe, and everything is "
+                    },
+                    {
+                     "Interpolation": {
+                      "Operands": [
+                       {
+                        "Atom": {
+                         "Ident": "arbitraryNumber"
+                        },
+                        "Postfix": null
+                       }
+                      ],
+                      "Prefix": null
+                     },
+                     "Text": ""
+                    }
+                   ]
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             ],
+             "Operator": ""
+            }
+           ]
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": true,
+        "IsStatic": false,
+        "Name": "counter",
+        "Type": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        },
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 0
+            }
+           },
+           "Postfix": null
+          },
+          {
+           "Atom": {
+            "Ident": "counter"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "="
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Ident": "counter"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "+"
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Value": {
+             "Value": 1
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": true,
+        "Name": "PI",
+        "Type": {
+         "Ident": "f64"
+        },
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 3
+            }
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "."
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Value": {
+             "Value": 14159
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": [
+      {
+       "NestedComments": null,
+       "Text": "// Comments start with double slashes"
+      },
+      {
+       "NestedComments": null,
+       "Text": " Block comments can span\n   multiple lines "
+      }
+     ],
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "arbitraryNumber",
+      "Type": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      },
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 42
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "NestedComments": null,
+     "Text": "// Comments start with double slashes"
+    },
+    "type": "ast.Comment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "NestedComments": null,
+     "Text": "// Comments start with double slashes"
+    },
+    "type": "ast.Comment"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "NestedComments": null,
+     "Text": " Block comments can span\n   multiple lines "
+    },
+    "type": "ast.Comment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "NestedComments": null,
+     "Text": " Block comments can span\n   multiple lines "
+    },
+    "type": "ast.Comment"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "arbitraryNumber",
+     "Type": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     },
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 42
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 42
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 42
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 42
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 42
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 42
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 42
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 42
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 42
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "arbitraryNumber",
+     "Type": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     },
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 42
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": [
+      {
+       "NestedComments": null,
+       "Text": "// Comments start with double slashes"
+      },
+      {
+       "NestedComments": null,
+       "Text": " Block comments can span\n   multiple lines "
+      }
+     ],
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "arbitraryNumber",
+      "Type": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      },
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 42
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": [
+      {
+       "NestedComments": null,
+       "Text": "// Let can infer types from the assigned value"
+      }
+     ],
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "arbitraryString",
+      "Type": null,
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Fragments": [
+            {
+             "Interpolation": null,
+             "Text": "Hello, world!"
+            }
+           ]
+          }
+         },
+         "Postfix": null
+        },
+        {
+         "Atom": {
+          "Ident": "print"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": [
+            {
+             "Operands": [
+              {
+               "Atom": {
+                "Value": {
+                 "Fragments": [
+                  {
+                   "Interpolation": null,
+                   "Text": "The answer to life, the universe, and everything is "
+                  },
+                  {
+                   "Interpolation": {
+                    "Operands": [
+                     {
+                      "Atom": {
+                       "Ident": "arbitraryNumber"
+                      },
+                      "Postfix": null
+                     }
+                    ],
+                    "Prefix": null
+                   },
+                   "Text": ""
+                  }
+                 ]
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           ],
+           "Operator": ""
+          }
+         ]
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "NestedComments": null,
+     "Text": "// Let can infer types from the assigned value"
+    },
+    "type": "ast.Comment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "NestedComments": null,
+     "Text": "// Let can infer types from the assigned value"
+    },
+    "type": "ast.Comment"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "arbitraryString",
+     "Type": null,
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Fragments": [
+           {
+            "Interpolation": null,
+            "Text": "Hello, world!"
+           }
+          ]
+         }
+        },
+        "Postfix": null
+       },
+       {
+        "Atom": {
+         "Ident": "print"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": [
+           {
+            "Operands": [
+             {
+              "Atom": {
+               "Value": {
+                "Fragments": [
+                 {
+                  "Interpolation": null,
+                  "Text": "The answer to life, the universe, and everything is "
+                 },
+                 {
+                  "Interpolation": {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Ident": "arbitraryNumber"
+                     },
+                     "Postfix": null
+                    }
+                   ],
+                   "Prefix": null
+                  },
+                  "Text": ""
+                 }
+                ]
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           }
+          ],
+          "Operator": ""
+         }
+        ]
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Fragments": [
+          {
+           "Interpolation": null,
+           "Text": "Hello, world!"
+          }
+         ]
+        }
+       },
+       "Postfix": null
+      },
+      {
+       "Atom": {
+        "Ident": "print"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": [
+          {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Fragments": [
+                {
+                 "Interpolation": null,
+                 "Text": "The answer to life, the universe, and everything is "
+                },
+                {
+                 "Interpolation": {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Ident": "arbitraryNumber"
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 },
+                 "Text": ""
+                }
+               ]
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         ],
+         "Operator": ""
+        }
+       ]
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Fragments": [
+        {
+         "Interpolation": null,
+         "Text": "Hello, world!"
+        }
+       ]
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Fragments": [
+       {
+        "Interpolation": null,
+        "Text": "Hello, world!"
+       }
+      ]
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Fragments": [
+      {
+       "Interpolation": null,
+       "Text": "Hello, world!"
+      }
+     ]
+    },
+    "type": "ast.String"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Interpolation": null,
+     "Text": "Hello, world!"
+    },
+    "type": "*ast.StringFragment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Interpolation": null,
+     "Text": "Hello, world!"
+    },
+    "type": "*ast.StringFragment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Fragments": [
+      {
+       "Interpolation": null,
+       "Text": "Hello, world!"
+      }
+     ]
+    },
+    "type": "ast.String"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Fragments": [
+       {
+        "Interpolation": null,
+        "Text": "Hello, world!"
+       }
+      ]
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Fragments": [
+        {
+         "Interpolation": null,
+         "Text": "Hello, world!"
+        }
+       ]
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "print"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": [
+        {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Fragments": [
+              {
+               "Interpolation": null,
+               "Text": "The answer to life, the universe, and everything is "
+              },
+              {
+               "Interpolation": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Ident": "arbitraryNumber"
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               },
+               "Text": ""
+              }
+             ]
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       ],
+       "Operator": ""
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "print"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "print"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Index": null,
+     "Invocation": [
+      {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Fragments": [
+            {
+             "Interpolation": null,
+             "Text": "The answer to life, the universe, and everything is "
+            },
+            {
+             "Interpolation": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Ident": "arbitraryNumber"
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             },
+             "Text": ""
+            }
+           ]
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     ],
+     "Operator": ""
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Fragments": [
+          {
+           "Interpolation": null,
+           "Text": "The answer to life, the universe, and everything is "
+          },
+          {
+           "Interpolation": {
+            "Operands": [
+             {
+              "Atom": {
+               "Ident": "arbitraryNumber"
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           },
+           "Text": ""
+          }
+         ]
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Fragments": [
+        {
+         "Interpolation": null,
+         "Text": "The answer to life, the universe, and everything is "
+        },
+        {
+         "Interpolation": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "arbitraryNumber"
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         },
+         "Text": ""
+        }
+       ]
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Fragments": [
+       {
+        "Interpolation": null,
+        "Text": "The answer to life, the universe, and everything is "
+       },
+       {
+        "Interpolation": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "arbitraryNumber"
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        },
+        "Text": ""
+       }
+      ]
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Fragments": [
+      {
+       "Interpolation": null,
+       "Text": "The answer to life, the universe, and everything is "
+      },
+      {
+       "Interpolation": {
+        "Operands": [
+         {
+          "Atom": {
+           "Ident": "arbitraryNumber"
+          },
+          "Postfix": null
+         }
+        ],
+        "Prefix": null
+       },
+       "Text": ""
+      }
+     ]
+    },
+    "type": "ast.String"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Interpolation": null,
+     "Text": "The answer to life, the universe, and everything is "
+    },
+    "type": "*ast.StringFragment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Interpolation": null,
+     "Text": "The answer to life, the universe, and everything is "
+    },
+    "type": "*ast.StringFragment"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Interpolation": {
+      "Operands": [
+       {
+        "Atom": {
+         "Ident": "arbitraryNumber"
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     },
+     "Text": ""
+    },
+    "type": "*ast.StringFragment"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "arbitraryNumber"
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "arbitraryNumber"
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "arbitraryNumber"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "arbitraryNumber"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "arbitraryNumber"
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "arbitraryNumber"
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Interpolation": {
+      "Operands": [
+       {
+        "Atom": {
+         "Ident": "arbitraryNumber"
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     },
+     "Text": ""
+    },
+    "type": "*ast.StringFragment"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Fragments": [
+      {
+       "Interpolation": null,
+       "Text": "The answer to life, the universe, and everything is "
+      },
+      {
+       "Interpolation": {
+        "Operands": [
+         {
+          "Atom": {
+           "Ident": "arbitraryNumber"
+          },
+          "Postfix": null
+         }
+        ],
+        "Prefix": null
+       },
+       "Text": ""
+      }
+     ]
+    },
+    "type": "ast.String"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Fragments": [
+       {
+        "Interpolation": null,
+        "Text": "The answer to life, the universe, and everything is "
+       },
+       {
+        "Interpolation": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "arbitraryNumber"
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        },
+        "Text": ""
+       }
+      ]
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Fragments": [
+        {
+         "Interpolation": null,
+         "Text": "The answer to life, the universe, and everything is "
+        },
+        {
+         "Interpolation": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "arbitraryNumber"
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         },
+         "Text": ""
+        }
+       ]
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Fragments": [
+          {
+           "Interpolation": null,
+           "Text": "The answer to life, the universe, and everything is "
+          },
+          {
+           "Interpolation": {
+            "Operands": [
+             {
+              "Atom": {
+               "Ident": "arbitraryNumber"
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           },
+           "Text": ""
+          }
+         ]
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Index": null,
+     "Invocation": [
+      {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Fragments": [
+            {
+             "Interpolation": null,
+             "Text": "The answer to life, the universe, and everything is "
+            },
+            {
+             "Interpolation": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Ident": "arbitraryNumber"
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             },
+             "Text": ""
+            }
+           ]
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     ],
+     "Operator": ""
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "print"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": [
+        {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Fragments": [
+              {
+               "Interpolation": null,
+               "Text": "The answer to life, the universe, and everything is "
+              },
+              {
+               "Interpolation": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Ident": "arbitraryNumber"
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               },
+               "Text": ""
+              }
+             ]
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       ],
+       "Operator": ""
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Fragments": [
+          {
+           "Interpolation": null,
+           "Text": "Hello, world!"
+          }
+         ]
+        }
+       },
+       "Postfix": null
+      },
+      {
+       "Atom": {
+        "Ident": "print"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": [
+          {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Fragments": [
+                {
+                 "Interpolation": null,
+                 "Text": "The answer to life, the universe, and everything is "
+                },
+                {
+                 "Interpolation": {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Ident": "arbitraryNumber"
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 },
+                 "Text": ""
+                }
+               ]
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         ],
+         "Operator": ""
+        }
+       ]
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": false,
+     "Name": "arbitraryString",
+     "Type": null,
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Fragments": [
+           {
+            "Interpolation": null,
+            "Text": "Hello, world!"
+           }
+          ]
+         }
+        },
+        "Postfix": null
+       },
+       {
+        "Atom": {
+         "Ident": "print"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": [
+           {
+            "Operands": [
+             {
+              "Atom": {
+               "Value": {
+                "Fragments": [
+                 {
+                  "Interpolation": null,
+                  "Text": "The answer to life, the universe, and everything is "
+                 },
+                 {
+                  "Interpolation": {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Ident": "arbitraryNumber"
+                     },
+                     "Postfix": null
+                    }
+                   ],
+                   "Prefix": null
+                  },
+                  "Text": ""
+                 }
+                ]
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           }
+          ],
+          "Operator": ""
+         }
+        ]
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": [
+      {
+       "NestedComments": null,
+       "Text": "// Let can infer types from the assigned value"
+      }
+     ],
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": false,
+      "Name": "arbitraryString",
+      "Type": null,
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Fragments": [
+            {
+             "Interpolation": null,
+             "Text": "Hello, world!"
+            }
+           ]
+          }
+         },
+         "Postfix": null
+        },
+        {
+         "Atom": {
+          "Ident": "print"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": [
+            {
+             "Operands": [
+              {
+               "Atom": {
+                "Value": {
+                 "Fragments": [
+                  {
+                   "Interpolation": null,
+                   "Text": "The answer to life, the universe, and everything is "
+                  },
+                  {
+                   "Interpolation": {
+                    "Operands": [
+                     {
+                      "Atom": {
+                       "Ident": "arbitraryNumber"
+                      },
+                      "Postfix": null
+                     }
+                    ],
+                    "Prefix": null
+                   },
+                   "Text": ""
+                  }
+                 ]
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           ],
+           "Operator": ""
+          }
+         ]
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": true,
+      "IsStatic": false,
+      "Name": "counter",
+      "Type": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      },
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 0
+          }
+         },
+         "Postfix": null
+        },
+        {
+         "Atom": {
+          "Ident": "counter"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "="
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Ident": "counter"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "+"
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Value": {
+           "Value": 1
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": true,
+     "IsStatic": false,
+     "Name": "counter",
+     "Type": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     },
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 0
+         }
+        },
+        "Postfix": null
+       },
+       {
+        "Atom": {
+         "Ident": "counter"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": null,
+          "Operator": "="
+         }
+        ]
+       },
+       {
+        "Atom": {
+         "Ident": "counter"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": null,
+          "Operator": "+"
+         }
+        ]
+       },
+       {
+        "Atom": {
+         "Value": {
+          "Value": 1
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 0
+        }
+       },
+       "Postfix": null
+      },
+      {
+       "Atom": {
+        "Ident": "counter"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "="
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "counter"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "+"
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Value": {
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 0
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 0
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 0
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 0
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 0
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 0
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "counter"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "="
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "counter"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "counter"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "="
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "="
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "counter"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "="
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "counter"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "+"
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "counter"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "counter"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "+"
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "+"
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "counter"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "+"
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 1
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 1
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 1
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 1
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 1
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 1
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 0
+        }
+       },
+       "Postfix": null
+      },
+      {
+       "Atom": {
+        "Ident": "counter"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "="
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "counter"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "+"
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Value": {
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": true,
+     "IsStatic": false,
+     "Name": "counter",
+     "Type": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     },
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 0
+         }
+        },
+        "Postfix": null
+       },
+       {
+        "Atom": {
+         "Ident": "counter"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": null,
+          "Operator": "="
+         }
+        ]
+       },
+       {
+        "Atom": {
+         "Ident": "counter"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": null,
+          "Operator": "+"
+         }
+        ]
+       },
+       {
+        "Atom": {
+         "Value": {
+          "Value": 1
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": true,
+      "IsStatic": false,
+      "Name": "counter",
+      "Type": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      },
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 0
+          }
+         },
+         "Postfix": null
+        },
+        {
+         "Atom": {
+          "Ident": "counter"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "="
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Ident": "counter"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "+"
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Value": {
+           "Value": 1
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": true,
+      "Name": "PI",
+      "Type": {
+       "Ident": "f64"
+      },
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 3
+          }
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "."
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Value": {
+           "Value": 14159
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": true,
+     "Name": "PI",
+     "Type": {
+      "Ident": "f64"
+     },
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 3
+         }
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": null,
+          "Operator": "."
+         }
+        ]
+       },
+       {
+        "Atom": {
+         "Value": {
+          "Value": 14159
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "f64"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "f64"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 3
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "."
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Value": {
+         "Value": 14159
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 3
+      }
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "."
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 3
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 3
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 3
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 3
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "."
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "."
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 3
+      }
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "."
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 14159
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 14159
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 14159
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 14159
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 14159
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 14159
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 3
+        }
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "."
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Value": {
+         "Value": 14159
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "IsMutable": false,
+     "IsStatic": true,
+     "Name": "PI",
+     "Type": {
+      "Ident": "f64"
+     },
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 3
+         }
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": null,
+          "Operator": "."
+         }
+        ]
+       },
+       {
+        "Atom": {
+         "Value": {
+          "Value": 14159
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.LetStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "IsMutable": false,
+      "IsStatic": true,
+      "Name": "PI",
+      "Type": {
+       "Ident": "f64"
+      },
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 3
+          }
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "."
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Value": {
+           "Value": 14159
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": [
+        {
+         "NestedComments": null,
+         "Text": "// Comments start with double slashes"
+        },
+        {
+         "NestedComments": null,
+         "Text": " Block comments can span\n   multiple lines "
+        }
+       ],
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "arbitraryNumber",
+        "Type": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        },
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 42
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": [
+        {
+         "NestedComments": null,
+         "Text": "// Let can infer types from the assigned value"
+        }
+       ],
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": false,
+        "Name": "arbitraryString",
+        "Type": null,
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Fragments": [
+              {
+               "Interpolation": null,
+               "Text": "Hello, world!"
+              }
+             ]
+            }
+           },
+           "Postfix": null
+          },
+          {
+           "Atom": {
+            "Ident": "print"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": [
+              {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Value": {
+                   "Fragments": [
+                    {
+                     "Interpolation": null,
+                     "Text": "The answer to life, the universe, and everything is "
+                    },
+                    {
+                     "Interpolation": {
+                      "Operands": [
+                       {
+                        "Atom": {
+                         "Ident": "arbitraryNumber"
+                        },
+                        "Postfix": null
+                       }
+                      ],
+                      "Prefix": null
+                     },
+                     "Text": ""
+                    }
+                   ]
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             ],
+             "Operator": ""
+            }
+           ]
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": true,
+        "IsStatic": false,
+        "Name": "counter",
+        "Type": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        },
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 0
+            }
+           },
+           "Postfix": null
+          },
+          {
+           "Atom": {
+            "Ident": "counter"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "="
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Ident": "counter"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "+"
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Value": {
+             "Value": 1
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      },
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "IsMutable": false,
+        "IsStatic": true,
+        "Name": "PI",
+        "Type": {
+         "Ident": "f64"
+        },
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 3
+            }
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "."
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Value": {
+             "Value": 14159
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   }
+  ]
+ }
+}

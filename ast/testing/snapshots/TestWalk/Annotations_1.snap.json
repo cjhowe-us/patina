@@ -1,0 +1,5267 @@
+{
+ "result": null,
+ "visitor": {
+  "log": [
+   {
+    "isEnter": true,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": [
+        {
+         "Arguments": null,
+         "Name": "deprecated"
+        }
+       ],
+       "Comments": null,
+       "Statement": {
+        "Block": {
+         "Label": "",
+         "Pos": {
+          "Column": 19,
+          "Filename": "Annotations",
+          "Line": 2,
+          "Offset": 30
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Label": "",
+            "Value": null
+           }
+          }
+         ]
+        },
+        "IsStatic": false,
+        "Name": "oldFunction",
+        "Parameters": null,
+        "Return": null
+       }
+      },
+      {
+       "Annotations": [
+        {
+         "Arguments": [
+          {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "always"
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         ],
+         "Name": "inline"
+        }
+       ],
+       "Comments": null,
+       "Statement": {
+        "Block": {
+         "Label": "",
+         "Pos": {
+          "Column": 20,
+          "Filename": "Annotations",
+          "Line": 7,
+          "Offset": 81
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Label": "",
+            "Value": null
+           }
+          }
+         ]
+        },
+        "IsStatic": false,
+        "Name": "fastFunction",
+        "Parameters": null,
+        "Return": null
+       }
+      },
+      {
+       "Annotations": [
+        {
+         "Arguments": [
+          {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "n"
+             },
+             "Postfix": [
+              {
+               "Index": null,
+               "Invocation": null,
+               "Operator": "\u003e"
+              }
+             ]
+            },
+            {
+             "Atom": {
+              "Value": {
+               "Value": 0
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         ],
+         "Name": "verify"
+        }
+       ],
+       "Comments": null,
+       "Statement": {
+        "Block": {
+         "Label": "",
+         "Pos": {
+          "Column": 28,
+          "Filename": "Annotations",
+          "Line": 12,
+          "Offset": 139
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Expression": {
+             "Else": {
+              "Block": {
+               "Label": "",
+               "Pos": {
+                "Column": 12,
+                "Filename": "Annotations",
+                "Line": 15,
+                "Offset": 187
+               },
+               "Statements": [
+                {
+                 "Annotations": null,
+                 "Comments": null,
+                 "Statement": {
+                  "Label": "",
+                  "Value": {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Ident": "n"
+                     },
+                     "Postfix": [
+                      {
+                       "Index": null,
+                       "Invocation": null,
+                       "Operator": "*"
+                      }
+                     ]
+                    },
+                    {
+                     "Atom": {
+                      "Ident": "factorial"
+                     },
+                     "Postfix": [
+                      {
+                       "Index": null,
+                       "Invocation": [
+                        {
+                         "Operands": [
+                          {
+                           "Atom": {
+                            "Ident": "n"
+                           },
+                           "Postfix": [
+                            {
+                             "Index": null,
+                             "Invocation": null,
+                             "Operator": "-"
+                            }
+                           ]
+                          },
+                          {
+                           "Atom": {
+                            "Value": {
+                             "Value": 1
+                            }
+                           },
+                           "Postfix": null
+                          }
+                         ],
+                         "Prefix": null
+                        }
+                       ],
+                       "Operator": ""
+                      }
+                     ]
+                    }
+                   ],
+                   "Prefix": null
+                  }
+                 }
+                }
+               ]
+              },
+              "IsStatic": false
+             },
+             "ElseIfs": null,
+             "If": {
+              "Condition": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Ident": "n"
+                 },
+                 "Postfix": [
+                  {
+                   "Index": null,
+                   "Invocation": null,
+                   "Operator": "\u003c="
+                  }
+                 ]
+                },
+                {
+                 "Atom": {
+                  "Value": {
+                   "Value": 1
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              },
+              "Then": {
+               "Block": {
+                "Label": "",
+                "Pos": {
+                 "Column": 17,
+                 "Filename": "Annotations",
+                 "Line": 13,
+                 "Offset": 157
+                },
+                "Statements": [
+                 {
+                  "Annotations": null,
+                  "Comments": null,
+                  "Statement": {
+                   "Label": "",
+                   "Value": {
+                    "Operands": [
+                     {
+                      "Atom": {
+                       "Value": {
+                        "Value": 1
+                       }
+                      },
+                      "Postfix": null
+                     }
+                    ],
+                    "Prefix": null
+                   }
+                  }
+                 }
+                ]
+               },
+               "IsStatic": false
+              }
+             }
+            }
+           }
+          }
+         ]
+        },
+        "IsStatic": false,
+        "Name": "factorial",
+        "Parameters": [
+         {
+          "Name": "n",
+          "Type": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        ],
+        "Return": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": [
+      {
+       "Arguments": null,
+       "Name": "deprecated"
+      }
+     ],
+     "Comments": null,
+     "Statement": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 19,
+        "Filename": "Annotations",
+        "Line": 2,
+        "Offset": 30
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Label": "",
+          "Value": null
+         }
+        }
+       ]
+      },
+      "IsStatic": false,
+      "Name": "oldFunction",
+      "Parameters": null,
+      "Return": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Arguments": null,
+     "Name": "deprecated"
+    },
+    "type": "ast.Annotation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Arguments": null,
+     "Name": "deprecated"
+    },
+    "type": "ast.Annotation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 19,
+       "Filename": "Annotations",
+       "Line": 2,
+       "Offset": 30
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Label": "",
+         "Value": null
+        }
+       }
+      ]
+     },
+     "IsStatic": false,
+     "Name": "oldFunction",
+     "Parameters": null,
+     "Return": null
+    },
+    "type": "ast.FunctionStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 19,
+      "Filename": "Annotations",
+      "Line": 2,
+      "Offset": 30
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Label": "",
+        "Value": null
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Label": "",
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Value": null
+    },
+    "type": "ast.ReturnStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Value": null
+    },
+    "type": "ast.ReturnStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Label": "",
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 19,
+      "Filename": "Annotations",
+      "Line": 2,
+      "Offset": 30
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Label": "",
+        "Value": null
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 19,
+       "Filename": "Annotations",
+       "Line": 2,
+       "Offset": 30
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Label": "",
+         "Value": null
+        }
+       }
+      ]
+     },
+     "IsStatic": false,
+     "Name": "oldFunction",
+     "Parameters": null,
+     "Return": null
+    },
+    "type": "ast.FunctionStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": [
+      {
+       "Arguments": null,
+       "Name": "deprecated"
+      }
+     ],
+     "Comments": null,
+     "Statement": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 19,
+        "Filename": "Annotations",
+        "Line": 2,
+        "Offset": 30
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Label": "",
+          "Value": null
+         }
+        }
+       ]
+      },
+      "IsStatic": false,
+      "Name": "oldFunction",
+      "Parameters": null,
+      "Return": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": [
+      {
+       "Arguments": [
+        {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "always"
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       ],
+       "Name": "inline"
+      }
+     ],
+     "Comments": null,
+     "Statement": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 20,
+        "Filename": "Annotations",
+        "Line": 7,
+        "Offset": 81
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Label": "",
+          "Value": null
+         }
+        }
+       ]
+      },
+      "IsStatic": false,
+      "Name": "fastFunction",
+      "Parameters": null,
+      "Return": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Arguments": [
+      {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "always"
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     ],
+     "Name": "inline"
+    },
+    "type": "ast.Annotation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "always"
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "always"
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "always"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "always"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "always"
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "always"
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Arguments": [
+      {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "always"
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     ],
+     "Name": "inline"
+    },
+    "type": "ast.Annotation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 20,
+       "Filename": "Annotations",
+       "Line": 7,
+       "Offset": 81
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Label": "",
+         "Value": null
+        }
+       }
+      ]
+     },
+     "IsStatic": false,
+     "Name": "fastFunction",
+     "Parameters": null,
+     "Return": null
+    },
+    "type": "ast.FunctionStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 20,
+      "Filename": "Annotations",
+      "Line": 7,
+      "Offset": 81
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Label": "",
+        "Value": null
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Label": "",
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Value": null
+    },
+    "type": "ast.ReturnStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Value": null
+    },
+    "type": "ast.ReturnStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Label": "",
+      "Value": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 20,
+      "Filename": "Annotations",
+      "Line": 7,
+      "Offset": 81
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Label": "",
+        "Value": null
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 20,
+       "Filename": "Annotations",
+       "Line": 7,
+       "Offset": 81
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Label": "",
+         "Value": null
+        }
+       }
+      ]
+     },
+     "IsStatic": false,
+     "Name": "fastFunction",
+     "Parameters": null,
+     "Return": null
+    },
+    "type": "ast.FunctionStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": [
+      {
+       "Arguments": [
+        {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "always"
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       ],
+       "Name": "inline"
+      }
+     ],
+     "Comments": null,
+     "Statement": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 20,
+        "Filename": "Annotations",
+        "Line": 7,
+        "Offset": 81
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Label": "",
+          "Value": null
+         }
+        }
+       ]
+      },
+      "IsStatic": false,
+      "Name": "fastFunction",
+      "Parameters": null,
+      "Return": null
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": [
+      {
+       "Arguments": [
+        {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "n"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "\u003e"
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Value": {
+             "Value": 0
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       ],
+       "Name": "verify"
+      }
+     ],
+     "Comments": null,
+     "Statement": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 28,
+        "Filename": "Annotations",
+        "Line": 12,
+        "Offset": 139
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Else": {
+            "Block": {
+             "Label": "",
+             "Pos": {
+              "Column": 12,
+              "Filename": "Annotations",
+              "Line": 15,
+              "Offset": 187
+             },
+             "Statements": [
+              {
+               "Annotations": null,
+               "Comments": null,
+               "Statement": {
+                "Label": "",
+                "Value": {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Ident": "n"
+                   },
+                   "Postfix": [
+                    {
+                     "Index": null,
+                     "Invocation": null,
+                     "Operator": "*"
+                    }
+                   ]
+                  },
+                  {
+                   "Atom": {
+                    "Ident": "factorial"
+                   },
+                   "Postfix": [
+                    {
+                     "Index": null,
+                     "Invocation": [
+                      {
+                       "Operands": [
+                        {
+                         "Atom": {
+                          "Ident": "n"
+                         },
+                         "Postfix": [
+                          {
+                           "Index": null,
+                           "Invocation": null,
+                           "Operator": "-"
+                          }
+                         ]
+                        },
+                        {
+                         "Atom": {
+                          "Value": {
+                           "Value": 1
+                          }
+                         },
+                         "Postfix": null
+                        }
+                       ],
+                       "Prefix": null
+                      }
+                     ],
+                     "Operator": ""
+                    }
+                   ]
+                  }
+                 ],
+                 "Prefix": null
+                }
+               }
+              }
+             ]
+            },
+            "IsStatic": false
+           },
+           "ElseIfs": null,
+           "If": {
+            "Condition": {
+             "Operands": [
+              {
+               "Atom": {
+                "Ident": "n"
+               },
+               "Postfix": [
+                {
+                 "Index": null,
+                 "Invocation": null,
+                 "Operator": "\u003c="
+                }
+               ]
+              },
+              {
+               "Atom": {
+                "Value": {
+                 "Value": 1
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            },
+            "Then": {
+             "Block": {
+              "Label": "",
+              "Pos": {
+               "Column": 17,
+               "Filename": "Annotations",
+               "Line": 13,
+               "Offset": 157
+              },
+              "Statements": [
+               {
+                "Annotations": null,
+                "Comments": null,
+                "Statement": {
+                 "Label": "",
+                 "Value": {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Value": {
+                      "Value": 1
+                     }
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 }
+                }
+               }
+              ]
+             },
+             "IsStatic": false
+            }
+           }
+          }
+         }
+        }
+       ]
+      },
+      "IsStatic": false,
+      "Name": "factorial",
+      "Parameters": [
+       {
+        "Name": "n",
+        "Type": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      ],
+      "Return": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Arguments": [
+      {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "n"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "\u003e"
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Value": {
+           "Value": 0
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     ],
+     "Name": "verify"
+    },
+    "type": "ast.Annotation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "n"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "\u003e"
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Value": {
+         "Value": 0
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "n"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "\u003e"
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "n"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "n"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "\u003e"
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "\u003e"
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "n"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "\u003e"
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 0
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 0
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 0
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 0
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 0
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 0
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "n"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "\u003e"
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Value": {
+         "Value": 0
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Arguments": [
+      {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "n"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "\u003e"
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Value": {
+           "Value": 0
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     ],
+     "Name": "verify"
+    },
+    "type": "ast.Annotation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 28,
+       "Filename": "Annotations",
+       "Line": 12,
+       "Offset": 139
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Else": {
+           "Block": {
+            "Label": "",
+            "Pos": {
+             "Column": 12,
+             "Filename": "Annotations",
+             "Line": 15,
+             "Offset": 187
+            },
+            "Statements": [
+             {
+              "Annotations": null,
+              "Comments": null,
+              "Statement": {
+               "Label": "",
+               "Value": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Ident": "n"
+                  },
+                  "Postfix": [
+                   {
+                    "Index": null,
+                    "Invocation": null,
+                    "Operator": "*"
+                   }
+                  ]
+                 },
+                 {
+                  "Atom": {
+                   "Ident": "factorial"
+                  },
+                  "Postfix": [
+                   {
+                    "Index": null,
+                    "Invocation": [
+                     {
+                      "Operands": [
+                       {
+                        "Atom": {
+                         "Ident": "n"
+                        },
+                        "Postfix": [
+                         {
+                          "Index": null,
+                          "Invocation": null,
+                          "Operator": "-"
+                         }
+                        ]
+                       },
+                       {
+                        "Atom": {
+                         "Value": {
+                          "Value": 1
+                         }
+                        },
+                        "Postfix": null
+                       }
+                      ],
+                      "Prefix": null
+                     }
+                    ],
+                    "Operator": ""
+                   }
+                  ]
+                 }
+                ],
+                "Prefix": null
+               }
+              }
+             }
+            ]
+           },
+           "IsStatic": false
+          },
+          "ElseIfs": null,
+          "If": {
+           "Condition": {
+            "Operands": [
+             {
+              "Atom": {
+               "Ident": "n"
+              },
+              "Postfix": [
+               {
+                "Index": null,
+                "Invocation": null,
+                "Operator": "\u003c="
+               }
+              ]
+             },
+             {
+              "Atom": {
+               "Value": {
+                "Value": 1
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           },
+           "Then": {
+            "Block": {
+             "Label": "",
+             "Pos": {
+              "Column": 17,
+              "Filename": "Annotations",
+              "Line": 13,
+              "Offset": 157
+             },
+             "Statements": [
+              {
+               "Annotations": null,
+               "Comments": null,
+               "Statement": {
+                "Label": "",
+                "Value": {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Value": {
+                     "Value": 1
+                    }
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Prefix": null
+                }
+               }
+              }
+             ]
+            },
+            "IsStatic": false
+           }
+          }
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false,
+     "Name": "factorial",
+     "Parameters": [
+      {
+       "Name": "n",
+       "Type": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     ],
+     "Return": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "ast.FunctionStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Name": "n",
+     "Type": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "*ast.FunctionParameter"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Name": "n",
+     "Type": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "*ast.FunctionParameter"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "BitSize": 32,
+     "Signed": true
+    },
+    "type": "ast.IntegerType"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Type": {
+      "BitSize": 32,
+      "Signed": true
+     }
+    },
+    "type": "ast.AtomicType"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 28,
+      "Filename": "Annotations",
+      "Line": 12,
+      "Offset": 139
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Else": {
+          "Block": {
+           "Label": "",
+           "Pos": {
+            "Column": 12,
+            "Filename": "Annotations",
+            "Line": 15,
+            "Offset": 187
+           },
+           "Statements": [
+            {
+             "Annotations": null,
+             "Comments": null,
+             "Statement": {
+              "Label": "",
+              "Value": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Ident": "n"
+                 },
+                 "Postfix": [
+                  {
+                   "Index": null,
+                   "Invocation": null,
+                   "Operator": "*"
+                  }
+                 ]
+                },
+                {
+                 "Atom": {
+                  "Ident": "factorial"
+                 },
+                 "Postfix": [
+                  {
+                   "Index": null,
+                   "Invocation": [
+                    {
+                     "Operands": [
+                      {
+                       "Atom": {
+                        "Ident": "n"
+                       },
+                       "Postfix": [
+                        {
+                         "Index": null,
+                         "Invocation": null,
+                         "Operator": "-"
+                        }
+                       ]
+                      },
+                      {
+                       "Atom": {
+                        "Value": {
+                         "Value": 1
+                        }
+                       },
+                       "Postfix": null
+                      }
+                     ],
+                     "Prefix": null
+                    }
+                   ],
+                   "Operator": ""
+                  }
+                 ]
+                }
+               ],
+               "Prefix": null
+              }
+             }
+            }
+           ]
+          },
+          "IsStatic": false
+         },
+         "ElseIfs": null,
+         "If": {
+          "Condition": {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "n"
+             },
+             "Postfix": [
+              {
+               "Index": null,
+               "Invocation": null,
+               "Operator": "\u003c="
+              }
+             ]
+            },
+            {
+             "Atom": {
+              "Value": {
+               "Value": 1
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          },
+          "Then": {
+           "Block": {
+            "Label": "",
+            "Pos": {
+             "Column": 17,
+             "Filename": "Annotations",
+             "Line": 13,
+             "Offset": 157
+            },
+            "Statements": [
+             {
+              "Annotations": null,
+              "Comments": null,
+              "Statement": {
+               "Label": "",
+               "Value": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Value": 1
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               }
+              }
+             }
+            ]
+           },
+           "IsStatic": false
+          }
+         }
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Else": {
+        "Block": {
+         "Label": "",
+         "Pos": {
+          "Column": 12,
+          "Filename": "Annotations",
+          "Line": 15,
+          "Offset": 187
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Label": "",
+            "Value": {
+             "Operands": [
+              {
+               "Atom": {
+                "Ident": "n"
+               },
+               "Postfix": [
+                {
+                 "Index": null,
+                 "Invocation": null,
+                 "Operator": "*"
+                }
+               ]
+              },
+              {
+               "Atom": {
+                "Ident": "factorial"
+               },
+               "Postfix": [
+                {
+                 "Index": null,
+                 "Invocation": [
+                  {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Ident": "n"
+                     },
+                     "Postfix": [
+                      {
+                       "Index": null,
+                       "Invocation": null,
+                       "Operator": "-"
+                      }
+                     ]
+                    },
+                    {
+                     "Atom": {
+                      "Value": {
+                       "Value": 1
+                      }
+                     },
+                     "Postfix": null
+                    }
+                   ],
+                   "Prefix": null
+                  }
+                 ],
+                 "Operator": ""
+                }
+               ]
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "IsStatic": false
+       },
+       "ElseIfs": null,
+       "If": {
+        "Condition": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "n"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "\u003c="
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Value": {
+             "Value": 1
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        },
+        "Then": {
+         "Block": {
+          "Label": "",
+          "Pos": {
+           "Column": 17,
+           "Filename": "Annotations",
+           "Line": 13,
+           "Offset": 157
+          },
+          "Statements": [
+           {
+            "Annotations": null,
+            "Comments": null,
+            "Statement": {
+             "Label": "",
+             "Value": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Value": {
+                  "Value": 1
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             }
+            }
+           }
+          ]
+         },
+         "IsStatic": false
+        }
+       }
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Expression": {
+      "Else": {
+       "Block": {
+        "Label": "",
+        "Pos": {
+         "Column": 12,
+         "Filename": "Annotations",
+         "Line": 15,
+         "Offset": 187
+        },
+        "Statements": [
+         {
+          "Annotations": null,
+          "Comments": null,
+          "Statement": {
+           "Label": "",
+           "Value": {
+            "Operands": [
+             {
+              "Atom": {
+               "Ident": "n"
+              },
+              "Postfix": [
+               {
+                "Index": null,
+                "Invocation": null,
+                "Operator": "*"
+               }
+              ]
+             },
+             {
+              "Atom": {
+               "Ident": "factorial"
+              },
+              "Postfix": [
+               {
+                "Index": null,
+                "Invocation": [
+                 {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Ident": "n"
+                    },
+                    "Postfix": [
+                     {
+                      "Index": null,
+                      "Invocation": null,
+                      "Operator": "-"
+                     }
+                    ]
+                   },
+                   {
+                    "Atom": {
+                     "Value": {
+                      "Value": 1
+                     }
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 }
+                ],
+                "Operator": ""
+               }
+              ]
+             }
+            ],
+            "Prefix": null
+           }
+          }
+         }
+        ]
+       },
+       "IsStatic": false
+      },
+      "ElseIfs": null,
+      "If": {
+       "Condition": {
+        "Operands": [
+         {
+          "Atom": {
+           "Ident": "n"
+          },
+          "Postfix": [
+           {
+            "Index": null,
+            "Invocation": null,
+            "Operator": "\u003c="
+           }
+          ]
+         },
+         {
+          "Atom": {
+           "Value": {
+            "Value": 1
+           }
+          },
+          "Postfix": null
+         }
+        ],
+        "Prefix": null
+       },
+       "Then": {
+        "Block": {
+         "Label": "",
+         "Pos": {
+          "Column": 17,
+          "Filename": "Annotations",
+          "Line": 13,
+          "Offset": 157
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Label": "",
+            "Value": {
+             "Operands": [
+              {
+               "Atom": {
+                "Value": {
+                 "Value": 1
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "IsStatic": false
+       }
+      }
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Else": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 12,
+        "Filename": "Annotations",
+        "Line": 15,
+        "Offset": 187
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Label": "",
+          "Value": {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "n"
+             },
+             "Postfix": [
+              {
+               "Index": null,
+               "Invocation": null,
+               "Operator": "*"
+              }
+             ]
+            },
+            {
+             "Atom": {
+              "Ident": "factorial"
+             },
+             "Postfix": [
+              {
+               "Index": null,
+               "Invocation": [
+                {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Ident": "n"
+                   },
+                   "Postfix": [
+                    {
+                     "Index": null,
+                     "Invocation": null,
+                     "Operator": "-"
+                    }
+                   ]
+                  },
+                  {
+                   "Atom": {
+                    "Value": {
+                     "Value": 1
+                    }
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Prefix": null
+                }
+               ],
+               "Operator": ""
+              }
+             ]
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "IsStatic": false
+     },
+     "ElseIfs": null,
+     "If": {
+      "Condition": {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "n"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "\u003c="
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Value": {
+           "Value": 1
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      },
+      "Then": {
+       "Block": {
+        "Label": "",
+        "Pos": {
+         "Column": 17,
+         "Filename": "Annotations",
+         "Line": 13,
+         "Offset": 157
+        },
+        "Statements": [
+         {
+          "Annotations": null,
+          "Comments": null,
+          "Statement": {
+           "Label": "",
+           "Value": {
+            "Operands": [
+             {
+              "Atom": {
+               "Value": {
+                "Value": 1
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           }
+          }
+         }
+        ]
+       },
+       "IsStatic": false
+      }
+     }
+    },
+    "type": "ast.IfExpression"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Condition": {
+      "Operands": [
+       {
+        "Atom": {
+         "Ident": "n"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": null,
+          "Operator": "\u003c="
+         }
+        ]
+       },
+       {
+        "Atom": {
+         "Value": {
+          "Value": 1
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     },
+     "Then": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 17,
+        "Filename": "Annotations",
+        "Line": 13,
+        "Offset": 157
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Label": "",
+          "Value": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Value": 1
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "IsStatic": false
+     }
+    },
+    "type": "ast.IfBranch"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "n"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "\u003c="
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Value": {
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "n"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "\u003c="
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "n"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "n"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "\u003c="
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "\u003c="
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "n"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "\u003c="
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 1
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 1
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 1
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 1
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 1
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 1
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "n"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "\u003c="
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Value": {
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 17,
+       "Filename": "Annotations",
+       "Line": 13,
+       "Offset": 157
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Label": "",
+         "Value": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Value": 1
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false
+    },
+    "type": "ast.BlockExpression"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 17,
+      "Filename": "Annotations",
+      "Line": 13,
+      "Offset": 157
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Label": "",
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 1
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Label": "",
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 1
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 1
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ReturnStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 1
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 1
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 1
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 1
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 1
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 1
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Value": {
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Value": {
+          "Value": 1
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ReturnStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Label": "",
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Value": {
+           "Value": 1
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 17,
+      "Filename": "Annotations",
+      "Line": 13,
+      "Offset": 157
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Label": "",
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Value": {
+             "Value": 1
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 17,
+       "Filename": "Annotations",
+       "Line": 13,
+       "Offset": 157
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Label": "",
+         "Value": {
+          "Operands": [
+           {
+            "Atom": {
+             "Value": {
+              "Value": 1
+             }
+            },
+            "Postfix": null
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false
+    },
+    "type": "ast.BlockExpression"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Condition": {
+      "Operands": [
+       {
+        "Atom": {
+         "Ident": "n"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": null,
+          "Operator": "\u003c="
+         }
+        ]
+       },
+       {
+        "Atom": {
+         "Value": {
+          "Value": 1
+         }
+        },
+        "Postfix": null
+       }
+      ],
+      "Prefix": null
+     },
+     "Then": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 17,
+        "Filename": "Annotations",
+        "Line": 13,
+        "Offset": 157
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Label": "",
+          "Value": {
+           "Operands": [
+            {
+             "Atom": {
+              "Value": {
+               "Value": 1
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "IsStatic": false
+     }
+    },
+    "type": "ast.IfBranch"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 12,
+       "Filename": "Annotations",
+       "Line": 15,
+       "Offset": 187
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Label": "",
+         "Value": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "n"
+            },
+            "Postfix": [
+             {
+              "Index": null,
+              "Invocation": null,
+              "Operator": "*"
+             }
+            ]
+           },
+           {
+            "Atom": {
+             "Ident": "factorial"
+            },
+            "Postfix": [
+             {
+              "Index": null,
+              "Invocation": [
+               {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Ident": "n"
+                  },
+                  "Postfix": [
+                   {
+                    "Index": null,
+                    "Invocation": null,
+                    "Operator": "-"
+                   }
+                  ]
+                 },
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Value": 1
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               }
+              ],
+              "Operator": ""
+             }
+            ]
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false
+    },
+    "type": "ast.BlockExpression"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 12,
+      "Filename": "Annotations",
+      "Line": 15,
+      "Offset": 187
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Label": "",
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "n"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "*"
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Ident": "factorial"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": [
+              {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Ident": "n"
+                 },
+                 "Postfix": [
+                  {
+                   "Index": null,
+                   "Invocation": null,
+                   "Operator": "-"
+                  }
+                 ]
+                },
+                {
+                 "Atom": {
+                  "Value": {
+                   "Value": 1
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             ],
+             "Operator": ""
+            }
+           ]
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "ast.Block"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Label": "",
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "n"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "*"
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Ident": "factorial"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": [
+            {
+             "Operands": [
+              {
+               "Atom": {
+                "Ident": "n"
+               },
+               "Postfix": [
+                {
+                 "Index": null,
+                 "Invocation": null,
+                 "Operator": "-"
+                }
+               ]
+              },
+              {
+               "Atom": {
+                "Value": {
+                 "Value": 1
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           ],
+           "Operator": ""
+          }
+         ]
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Label": "",
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Ident": "n"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": null,
+          "Operator": "*"
+         }
+        ]
+       },
+       {
+        "Atom": {
+         "Ident": "factorial"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": [
+           {
+            "Operands": [
+             {
+              "Atom": {
+               "Ident": "n"
+              },
+              "Postfix": [
+               {
+                "Index": null,
+                "Invocation": null,
+                "Operator": "-"
+               }
+              ]
+             },
+             {
+              "Atom": {
+               "Value": {
+                "Value": 1
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           }
+          ],
+          "Operator": ""
+         }
+        ]
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ReturnStatement"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "n"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "*"
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "factorial"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": [
+          {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "n"
+             },
+             "Postfix": [
+              {
+               "Index": null,
+               "Invocation": null,
+               "Operator": "-"
+              }
+             ]
+            },
+            {
+             "Atom": {
+              "Value": {
+               "Value": 1
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         ],
+         "Operator": ""
+        }
+       ]
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "n"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "*"
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "n"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "n"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "*"
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "*"
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "n"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "*"
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "factorial"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": [
+        {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "n"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "-"
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Value": {
+             "Value": 1
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       ],
+       "Operator": ""
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "factorial"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "factorial"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Index": null,
+     "Invocation": [
+      {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "n"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "-"
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Value": {
+           "Value": 1
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     ],
+     "Operator": ""
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "n"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "-"
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Value": {
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Ident": "n"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "-"
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Ident": "n"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Ident": "n"
+    },
+    "type": "ast.Binding"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "-"
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Index": null,
+     "Invocation": null,
+     "Operator": "-"
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "n"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": null,
+       "Operator": "-"
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 1
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": {
+      "Value": 1
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": true,
+    "message": {
+     "Value": 1
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": 1
+    },
+    "type": "ast.Integer"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Value": {
+      "Value": 1
+     }
+    },
+    "type": "ast.AtomicValue"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Value": {
+       "Value": 1
+      }
+     },
+     "Postfix": null
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "n"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "-"
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Value": {
+         "Value": 1
+        }
+       },
+       "Postfix": null
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Index": null,
+     "Invocation": [
+      {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "n"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "-"
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Value": {
+           "Value": 1
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      }
+     ],
+     "Operator": ""
+    },
+    "type": "ast.Postfix"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Atom": {
+      "Ident": "factorial"
+     },
+     "Postfix": [
+      {
+       "Index": null,
+       "Invocation": [
+        {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "n"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "-"
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Value": {
+             "Value": 1
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       ],
+       "Operator": ""
+      }
+     ]
+    },
+    "type": "ast.Operand"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Operands": [
+      {
+       "Atom": {
+        "Ident": "n"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": null,
+         "Operator": "*"
+        }
+       ]
+      },
+      {
+       "Atom": {
+        "Ident": "factorial"
+       },
+       "Postfix": [
+        {
+         "Index": null,
+         "Invocation": [
+          {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "n"
+             },
+             "Postfix": [
+              {
+               "Index": null,
+               "Invocation": null,
+               "Operator": "-"
+              }
+             ]
+            },
+            {
+             "Atom": {
+              "Value": {
+               "Value": 1
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         ],
+         "Operator": ""
+        }
+       ]
+      }
+     ],
+     "Prefix": null
+    },
+    "type": "ast.Operation"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Value": {
+      "Operands": [
+       {
+        "Atom": {
+         "Ident": "n"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": null,
+          "Operator": "*"
+         }
+        ]
+       },
+       {
+        "Atom": {
+         "Ident": "factorial"
+        },
+        "Postfix": [
+         {
+          "Index": null,
+          "Invocation": [
+           {
+            "Operands": [
+             {
+              "Atom": {
+               "Ident": "n"
+              },
+              "Postfix": [
+               {
+                "Index": null,
+                "Invocation": null,
+                "Operator": "-"
+               }
+              ]
+             },
+             {
+              "Atom": {
+               "Value": {
+                "Value": 1
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           }
+          ],
+          "Operator": ""
+         }
+        ]
+       }
+      ],
+      "Prefix": null
+     }
+    },
+    "type": "ast.ReturnStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Label": "",
+      "Value": {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "n"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "*"
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Ident": "factorial"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": [
+            {
+             "Operands": [
+              {
+               "Atom": {
+                "Ident": "n"
+               },
+               "Postfix": [
+                {
+                 "Index": null,
+                 "Invocation": null,
+                 "Operator": "-"
+                }
+               ]
+              },
+              {
+               "Atom": {
+                "Value": {
+                 "Value": 1
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           ],
+           "Operator": ""
+          }
+         ]
+        }
+       ],
+       "Prefix": null
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 12,
+      "Filename": "Annotations",
+      "Line": 15,
+      "Offset": 187
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Label": "",
+        "Value": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "n"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "*"
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Ident": "factorial"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": [
+              {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Ident": "n"
+                 },
+                 "Postfix": [
+                  {
+                   "Index": null,
+                   "Invocation": null,
+                   "Operator": "-"
+                  }
+                 ]
+                },
+                {
+                 "Atom": {
+                  "Value": {
+                   "Value": 1
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              }
+             ],
+             "Operator": ""
+            }
+           ]
+          }
+         ],
+         "Prefix": null
+        }
+       }
+      }
+     ]
+    },
+    "type": "ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 12,
+       "Filename": "Annotations",
+       "Line": 15,
+       "Offset": 187
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Label": "",
+         "Value": {
+          "Operands": [
+           {
+            "Atom": {
+             "Ident": "n"
+            },
+            "Postfix": [
+             {
+              "Index": null,
+              "Invocation": null,
+              "Operator": "*"
+             }
+            ]
+           },
+           {
+            "Atom": {
+             "Ident": "factorial"
+            },
+            "Postfix": [
+             {
+              "Index": null,
+              "Invocation": [
+               {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Ident": "n"
+                  },
+                  "Postfix": [
+                   {
+                    "Index": null,
+                    "Invocation": null,
+                    "Operator": "-"
+                   }
+                  ]
+                 },
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Value": 1
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               }
+              ],
+              "Operator": ""
+             }
+            ]
+           }
+          ],
+          "Prefix": null
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false
+    },
+    "type": "ast.BlockExpression"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Else": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 12,
+        "Filename": "Annotations",
+        "Line": 15,
+        "Offset": 187
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Label": "",
+          "Value": {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "n"
+             },
+             "Postfix": [
+              {
+               "Index": null,
+               "Invocation": null,
+               "Operator": "*"
+              }
+             ]
+            },
+            {
+             "Atom": {
+              "Ident": "factorial"
+             },
+             "Postfix": [
+              {
+               "Index": null,
+               "Invocation": [
+                {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Ident": "n"
+                   },
+                   "Postfix": [
+                    {
+                     "Index": null,
+                     "Invocation": null,
+                     "Operator": "-"
+                    }
+                   ]
+                  },
+                  {
+                   "Atom": {
+                    "Value": {
+                     "Value": 1
+                    }
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Prefix": null
+                }
+               ],
+               "Operator": ""
+              }
+             ]
+            }
+           ],
+           "Prefix": null
+          }
+         }
+        }
+       ]
+      },
+      "IsStatic": false
+     },
+     "ElseIfs": null,
+     "If": {
+      "Condition": {
+       "Operands": [
+        {
+         "Atom": {
+          "Ident": "n"
+         },
+         "Postfix": [
+          {
+           "Index": null,
+           "Invocation": null,
+           "Operator": "\u003c="
+          }
+         ]
+        },
+        {
+         "Atom": {
+          "Value": {
+           "Value": 1
+          }
+         },
+         "Postfix": null
+        }
+       ],
+       "Prefix": null
+      },
+      "Then": {
+       "Block": {
+        "Label": "",
+        "Pos": {
+         "Column": 17,
+         "Filename": "Annotations",
+         "Line": 13,
+         "Offset": 157
+        },
+        "Statements": [
+         {
+          "Annotations": null,
+          "Comments": null,
+          "Statement": {
+           "Label": "",
+           "Value": {
+            "Operands": [
+             {
+              "Atom": {
+               "Value": {
+                "Value": 1
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           }
+          }
+         }
+        ]
+       },
+       "IsStatic": false
+      }
+     }
+    },
+    "type": "ast.IfExpression"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Expression": {
+      "Else": {
+       "Block": {
+        "Label": "",
+        "Pos": {
+         "Column": 12,
+         "Filename": "Annotations",
+         "Line": 15,
+         "Offset": 187
+        },
+        "Statements": [
+         {
+          "Annotations": null,
+          "Comments": null,
+          "Statement": {
+           "Label": "",
+           "Value": {
+            "Operands": [
+             {
+              "Atom": {
+               "Ident": "n"
+              },
+              "Postfix": [
+               {
+                "Index": null,
+                "Invocation": null,
+                "Operator": "*"
+               }
+              ]
+             },
+             {
+              "Atom": {
+               "Ident": "factorial"
+              },
+              "Postfix": [
+               {
+                "Index": null,
+                "Invocation": [
+                 {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Ident": "n"
+                    },
+                    "Postfix": [
+                     {
+                      "Index": null,
+                      "Invocation": null,
+                      "Operator": "-"
+                     }
+                    ]
+                   },
+                   {
+                    "Atom": {
+                     "Value": {
+                      "Value": 1
+                     }
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 }
+                ],
+                "Operator": ""
+               }
+              ]
+             }
+            ],
+            "Prefix": null
+           }
+          }
+         }
+        ]
+       },
+       "IsStatic": false
+      },
+      "ElseIfs": null,
+      "If": {
+       "Condition": {
+        "Operands": [
+         {
+          "Atom": {
+           "Ident": "n"
+          },
+          "Postfix": [
+           {
+            "Index": null,
+            "Invocation": null,
+            "Operator": "\u003c="
+           }
+          ]
+         },
+         {
+          "Atom": {
+           "Value": {
+            "Value": 1
+           }
+          },
+          "Postfix": null
+         }
+        ],
+        "Prefix": null
+       },
+       "Then": {
+        "Block": {
+         "Label": "",
+         "Pos": {
+          "Column": 17,
+          "Filename": "Annotations",
+          "Line": 13,
+          "Offset": 157
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Label": "",
+            "Value": {
+             "Operands": [
+              {
+               "Atom": {
+                "Value": {
+                 "Value": 1
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "IsStatic": false
+       }
+      }
+     }
+    },
+    "type": "ast.ExpressionStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": null,
+     "Comments": null,
+     "Statement": {
+      "Expression": {
+       "Else": {
+        "Block": {
+         "Label": "",
+         "Pos": {
+          "Column": 12,
+          "Filename": "Annotations",
+          "Line": 15,
+          "Offset": 187
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Label": "",
+            "Value": {
+             "Operands": [
+              {
+               "Atom": {
+                "Ident": "n"
+               },
+               "Postfix": [
+                {
+                 "Index": null,
+                 "Invocation": null,
+                 "Operator": "*"
+                }
+               ]
+              },
+              {
+               "Atom": {
+                "Ident": "factorial"
+               },
+               "Postfix": [
+                {
+                 "Index": null,
+                 "Invocation": [
+                  {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Ident": "n"
+                     },
+                     "Postfix": [
+                      {
+                       "Index": null,
+                       "Invocation": null,
+                       "Operator": "-"
+                      }
+                     ]
+                    },
+                    {
+                     "Atom": {
+                      "Value": {
+                       "Value": 1
+                      }
+                     },
+                     "Postfix": null
+                    }
+                   ],
+                   "Prefix": null
+                  }
+                 ],
+                 "Operator": ""
+                }
+               ]
+              }
+             ],
+             "Prefix": null
+            }
+           }
+          }
+         ]
+        },
+        "IsStatic": false
+       },
+       "ElseIfs": null,
+       "If": {
+        "Condition": {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "n"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "\u003c="
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Value": {
+             "Value": 1
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        },
+        "Then": {
+         "Block": {
+          "Label": "",
+          "Pos": {
+           "Column": 17,
+           "Filename": "Annotations",
+           "Line": 13,
+           "Offset": 157
+          },
+          "Statements": [
+           {
+            "Annotations": null,
+            "Comments": null,
+            "Statement": {
+             "Label": "",
+             "Value": {
+              "Operands": [
+               {
+                "Atom": {
+                 "Value": {
+                  "Value": 1
+                 }
+                },
+                "Postfix": null
+               }
+              ],
+              "Prefix": null
+             }
+            }
+           }
+          ]
+         },
+         "IsStatic": false
+        }
+       }
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Label": "",
+     "Pos": {
+      "Column": 28,
+      "Filename": "Annotations",
+      "Line": 12,
+      "Offset": 139
+     },
+     "Statements": [
+      {
+       "Annotations": null,
+       "Comments": null,
+       "Statement": {
+        "Expression": {
+         "Else": {
+          "Block": {
+           "Label": "",
+           "Pos": {
+            "Column": 12,
+            "Filename": "Annotations",
+            "Line": 15,
+            "Offset": 187
+           },
+           "Statements": [
+            {
+             "Annotations": null,
+             "Comments": null,
+             "Statement": {
+              "Label": "",
+              "Value": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Ident": "n"
+                 },
+                 "Postfix": [
+                  {
+                   "Index": null,
+                   "Invocation": null,
+                   "Operator": "*"
+                  }
+                 ]
+                },
+                {
+                 "Atom": {
+                  "Ident": "factorial"
+                 },
+                 "Postfix": [
+                  {
+                   "Index": null,
+                   "Invocation": [
+                    {
+                     "Operands": [
+                      {
+                       "Atom": {
+                        "Ident": "n"
+                       },
+                       "Postfix": [
+                        {
+                         "Index": null,
+                         "Invocation": null,
+                         "Operator": "-"
+                        }
+                       ]
+                      },
+                      {
+                       "Atom": {
+                        "Value": {
+                         "Value": 1
+                        }
+                       },
+                       "Postfix": null
+                      }
+                     ],
+                     "Prefix": null
+                    }
+                   ],
+                   "Operator": ""
+                  }
+                 ]
+                }
+               ],
+               "Prefix": null
+              }
+             }
+            }
+           ]
+          },
+          "IsStatic": false
+         },
+         "ElseIfs": null,
+         "If": {
+          "Condition": {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "n"
+             },
+             "Postfix": [
+              {
+               "Index": null,
+               "Invocation": null,
+               "Operator": "\u003c="
+              }
+             ]
+            },
+            {
+             "Atom": {
+              "Value": {
+               "Value": 1
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          },
+          "Then": {
+           "Block": {
+            "Label": "",
+            "Pos": {
+             "Column": 17,
+             "Filename": "Annotations",
+             "Line": 13,
+             "Offset": 157
+            },
+            "Statements": [
+             {
+              "Annotations": null,
+              "Comments": null,
+              "Statement": {
+               "Label": "",
+               "Value": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Value": {
+                    "Value": 1
+                   }
+                  },
+                  "Postfix": null
+                 }
+                ],
+                "Prefix": null
+               }
+              }
+             }
+            ]
+           },
+           "IsStatic": false
+          }
+         }
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Block"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Block": {
+      "Label": "",
+      "Pos": {
+       "Column": 28,
+       "Filename": "Annotations",
+       "Line": 12,
+       "Offset": 139
+      },
+      "Statements": [
+       {
+        "Annotations": null,
+        "Comments": null,
+        "Statement": {
+         "Expression": {
+          "Else": {
+           "Block": {
+            "Label": "",
+            "Pos": {
+             "Column": 12,
+             "Filename": "Annotations",
+             "Line": 15,
+             "Offset": 187
+            },
+            "Statements": [
+             {
+              "Annotations": null,
+              "Comments": null,
+              "Statement": {
+               "Label": "",
+               "Value": {
+                "Operands": [
+                 {
+                  "Atom": {
+                   "Ident": "n"
+                  },
+                  "Postfix": [
+                   {
+                    "Index": null,
+                    "Invocation": null,
+                    "Operator": "*"
+                   }
+                  ]
+                 },
+                 {
+                  "Atom": {
+                   "Ident": "factorial"
+                  },
+                  "Postfix": [
+                   {
+                    "Index": null,
+                    "Invocation": [
+                     {
+                      "Operands": [
+                       {
+                        "Atom": {
+                         "Ident": "n"
+                        },
+                        "Postfix": [
+                         {
+                          "Index": null,
+                          "Invocation": null,
+                          "Operator": "-"
+                         }
+                        ]
+                       },
+                       {
+                        "Atom": {
+                         "Value": {
+                          "Value": 1
+                         }
+                        },
+                        "Postfix": null
+                       }
+                      ],
+                      "Prefix": null
+                     }
+                    ],
+                    "Operator": ""
+                   }
+                  ]
+                 }
+                ],
+                "Prefix": null
+               }
+              }
+             }
+            ]
+           },
+           "IsStatic": false
+          },
+          "ElseIfs": null,
+          "If": {
+           "Condition": {
+            "Operands": [
+             {
+              "Atom": {
+               "Ident": "n"
+              },
+              "Postfix": [
+               {
+                "Index": null,
+                "Invocation": null,
+                "Operator": "\u003c="
+               }
+              ]
+             },
+             {
+              "Atom": {
+               "Value": {
+                "Value": 1
+               }
+              },
+              "Postfix": null
+             }
+            ],
+            "Prefix": null
+           },
+           "Then": {
+            "Block": {
+             "Label": "",
+             "Pos": {
+              "Column": 17,
+              "Filename": "Annotations",
+              "Line": 13,
+              "Offset": 157
+             },
+             "Statements": [
+              {
+               "Annotations": null,
+               "Comments": null,
+               "Statement": {
+                "Label": "",
+                "Value": {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Value": {
+                     "Value": 1
+                    }
+                   },
+                   "Postfix": null
+                  }
+                 ],
+                 "Prefix": null
+                }
+               }
+              }
+             ]
+            },
+            "IsStatic": false
+           }
+          }
+         }
+        }
+       }
+      ]
+     },
+     "IsStatic": false,
+     "Name": "factorial",
+     "Parameters": [
+      {
+       "Name": "n",
+       "Type": {
+        "Type": {
+         "BitSize": 32,
+         "Signed": true
+        }
+       }
+      }
+     ],
+     "Return": {
+      "Type": {
+       "BitSize": 32,
+       "Signed": true
+      }
+     }
+    },
+    "type": "ast.FunctionStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Annotations": [
+      {
+       "Arguments": [
+        {
+         "Operands": [
+          {
+           "Atom": {
+            "Ident": "n"
+           },
+           "Postfix": [
+            {
+             "Index": null,
+             "Invocation": null,
+             "Operator": "\u003e"
+            }
+           ]
+          },
+          {
+           "Atom": {
+            "Value": {
+             "Value": 0
+            }
+           },
+           "Postfix": null
+          }
+         ],
+         "Prefix": null
+        }
+       ],
+       "Name": "verify"
+      }
+     ],
+     "Comments": null,
+     "Statement": {
+      "Block": {
+       "Label": "",
+       "Pos": {
+        "Column": 28,
+        "Filename": "Annotations",
+        "Line": 12,
+        "Offset": 139
+       },
+       "Statements": [
+        {
+         "Annotations": null,
+         "Comments": null,
+         "Statement": {
+          "Expression": {
+           "Else": {
+            "Block": {
+             "Label": "",
+             "Pos": {
+              "Column": 12,
+              "Filename": "Annotations",
+              "Line": 15,
+              "Offset": 187
+             },
+             "Statements": [
+              {
+               "Annotations": null,
+               "Comments": null,
+               "Statement": {
+                "Label": "",
+                "Value": {
+                 "Operands": [
+                  {
+                   "Atom": {
+                    "Ident": "n"
+                   },
+                   "Postfix": [
+                    {
+                     "Index": null,
+                     "Invocation": null,
+                     "Operator": "*"
+                    }
+                   ]
+                  },
+                  {
+                   "Atom": {
+                    "Ident": "factorial"
+                   },
+                   "Postfix": [
+                    {
+                     "Index": null,
+                     "Invocation": [
+                      {
+                       "Operands": [
+                        {
+                         "Atom": {
+                          "Ident": "n"
+                         },
+                         "Postfix": [
+                          {
+                           "Index": null,
+                           "Invocation": null,
+                           "Operator": "-"
+                          }
+                         ]
+                        },
+                        {
+                         "Atom": {
+                          "Value": {
+                           "Value": 1
+                          }
+                         },
+                         "Postfix": null
+                        }
+                       ],
+                       "Prefix": null
+                      }
+                     ],
+                     "Operator": ""
+                    }
+                   ]
+                  }
+                 ],
+                 "Prefix": null
+                }
+               }
+              }
+             ]
+            },
+            "IsStatic": false
+           },
+           "ElseIfs": null,
+           "If": {
+            "Condition": {
+             "Operands": [
+              {
+               "Atom": {
+                "Ident": "n"
+               },
+               "Postfix": [
+                {
+                 "Index": null,
+                 "Invocation": null,
+                 "Operator": "\u003c="
+                }
+               ]
+              },
+              {
+               "Atom": {
+                "Value": {
+                 "Value": 1
+                }
+               },
+               "Postfix": null
+              }
+             ],
+             "Prefix": null
+            },
+            "Then": {
+             "Block": {
+              "Label": "",
+              "Pos": {
+               "Column": 17,
+               "Filename": "Annotations",
+               "Line": 13,
+               "Offset": 157
+              },
+              "Statements": [
+               {
+                "Annotations": null,
+                "Comments": null,
+                "Statement": {
+                 "Label": "",
+                 "Value": {
+                  "Operands": [
+                   {
+                    "Atom": {
+                     "Value": {
+                      "Value": 1
+                     }
+                    },
+                    "Postfix": null
+                   }
+                  ],
+                  "Prefix": null
+                 }
+                }
+               }
+              ]
+             },
+             "IsStatic": false
+            }
+           }
+          }
+         }
+        }
+       ]
+      },
+      "IsStatic": false,
+      "Name": "factorial",
+      "Parameters": [
+       {
+        "Name": "n",
+        "Type": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      ],
+      "Return": {
+       "Type": {
+        "BitSize": 32,
+        "Signed": true
+       }
+      }
+     }
+    },
+    "type": "ast.DecoratedStatement"
+   },
+   {
+    "isEnter": false,
+    "message": {
+     "Statements": [
+      {
+       "Annotations": [
+        {
+         "Arguments": null,
+         "Name": "deprecated"
+        }
+       ],
+       "Comments": null,
+       "Statement": {
+        "Block": {
+         "Label": "",
+         "Pos": {
+          "Column": 19,
+          "Filename": "Annotations",
+          "Line": 2,
+          "Offset": 30
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Label": "",
+            "Value": null
+           }
+          }
+         ]
+        },
+        "IsStatic": false,
+        "Name": "oldFunction",
+        "Parameters": null,
+        "Return": null
+       }
+      },
+      {
+       "Annotations": [
+        {
+         "Arguments": [
+          {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "always"
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         ],
+         "Name": "inline"
+        }
+       ],
+       "Comments": null,
+       "Statement": {
+        "Block": {
+         "Label": "",
+         "Pos": {
+          "Column": 20,
+          "Filename": "Annotations",
+          "Line": 7,
+          "Offset": 81
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Label": "",
+            "Value": null
+           }
+          }
+         ]
+        },
+        "IsStatic": false,
+        "Name": "fastFunction",
+        "Parameters": null,
+        "Return": null
+       }
+      },
+      {
+       "Annotations": [
+        {
+         "Arguments": [
+          {
+           "Operands": [
+            {
+             "Atom": {
+              "Ident": "n"
+             },
+             "Postfix": [
+              {
+               "Index": null,
+               "Invocation": null,
+               "Operator": "\u003e"
+              }
+             ]
+            },
+            {
+             "Atom": {
+              "Value": {
+               "Value": 0
+              }
+             },
+             "Postfix": null
+            }
+           ],
+           "Prefix": null
+          }
+         ],
+         "Name": "verify"
+        }
+       ],
+       "Comments": null,
+       "Statement": {
+        "Block": {
+         "Label": "",
+         "Pos": {
+          "Column": 28,
+          "Filename": "Annotations",
+          "Line": 12,
+          "Offset": 139
+         },
+         "Statements": [
+          {
+           "Annotations": null,
+           "Comments": null,
+           "Statement": {
+            "Expression": {
+             "Else": {
+              "Block": {
+               "Label": "",
+               "Pos": {
+                "Column": 12,
+                "Filename": "Annotations",
+                "Line": 15,
+                "Offset": 187
+               },
+               "Statements": [
+                {
+                 "Annotations": null,
+                 "Comments": null,
+                 "Statement": {
+                  "Label": "",
+                  "Value": {
+                   "Operands": [
+                    {
+                     "Atom": {
+                      "Ident": "n"
+                     },
+                     "Postfix": [
+                      {
+                       "Index": null,
+                       "Invocation": null,
+                       "Operator": "*"
+                      }
+                     ]
+                    },
+                    {
+                     "Atom": {
+                      "Ident": "factorial"
+                     },
+                     "Postfix": [
+                      {
+                       "Index": null,
+                       "Invocation": [
+                        {
+                         "Operands": [
+                          {
+                           "Atom": {
+                            "Ident": "n"
+                           },
+                           "Postfix": [
+                            {
+                             "Index": null,
+                             "Invocation": null,
+                             "Operator": "-"
+                            }
+                           ]
+                          },
+                          {
+                           "Atom": {
+                            "Value": {
+                             "Value": 1
+                            }
+                           },
+                           "Postfix": null
+                          }
+                         ],
+                         "Prefix": null
+                        }
+                       ],
+                       "Operator": ""
+                      }
+                     ]
+                    }
+                   ],
+                   "Prefix": null
+                  }
+                 }
+                }
+               ]
+              },
+              "IsStatic": false
+             },
+             "ElseIfs": null,
+             "If": {
+              "Condition": {
+               "Operands": [
+                {
+                 "Atom": {
+                  "Ident": "n"
+                 },
+                 "Postfix": [
+                  {
+                   "Index": null,
+                   "Invocation": null,
+                   "Operator": "\u003c="
+                  }
+                 ]
+                },
+                {
+                 "Atom": {
+                  "Value": {
+                   "Value": 1
+                  }
+                 },
+                 "Postfix": null
+                }
+               ],
+               "Prefix": null
+              },
+              "Then": {
+               "Block": {
+                "Label": "",
+                "Pos": {
+                 "Column": 17,
+                 "Filename": "Annotations",
+                 "Line": 13,
+                 "Offset": 157
+                },
+                "Statements": [
+                 {
+                  "Annotations": null,
+                  "Comments": null,
+                  "Statement": {
+                   "Label": "",
+                   "Value": {
+                    "Operands": [
+                     {
+                      "Atom": {
+                       "Value": {
+                        "Value": 1
+                       }
+                      },
+                      "Postfix": null
+                     }
+                    ],
+                    "Prefix": null
+                   }
+                  }
+                 }
+                ]
+               },
+               "IsStatic": false
+              }
+             }
+            }
+           }
+          }
+         ]
+        },
+        "IsStatic": false,
+        "Name": "factorial",
+        "Parameters": [
+         {
+          "Name": "n",
+          "Type": {
+           "Type": {
+            "BitSize": 32,
+            "Signed": true
+           }
+          }
+         }
+        ],
+        "Return": {
+         "Type": {
+          "BitSize": 32,
+          "Signed": true
+         }
+        }
+       }
+      }
+     ]
+    },
+    "type": "*ast.Root"
+   }
+  ]
+ }
+}

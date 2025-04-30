@@ -43,7 +43,7 @@ type WalkTestOutput struct {
 func TestWalk(t *testing.T) {
 	RunTests(
 		t,
-		[]string{"walk.json"},
+		[]string{"walk.json", "readme_examples.json"},
 		func(input string, name string) (WalkTestOutput, error) {
 			root, err := Parser.ParseString(name, input)
 			if err != nil || root == nil {
