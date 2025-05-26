@@ -1,0 +1,23 @@
+[package]
+name = "patina"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "patina"
+path = "src/main.rs"
+
+[lib]
+name = "patina"
+path = "src/lib.rs"
+
+[dependencies]
+pest = "2.7"
+pest_derive = "2.7"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+
+[dev-dependencies]
+insta = { version = "1.34", features = ["json"] }
+tempfile = "3.8"

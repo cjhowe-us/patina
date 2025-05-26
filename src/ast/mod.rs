@@ -1,0 +1,88 @@
+use serde::{Deserialize, Serialize};
+
+// Declare all modules first
+pub mod atoms;
+pub mod expressions;
+pub mod statements;
+pub mod syntax_nodes;
+pub mod types;
+pub mod values;
+
+// Re-export all types after modules are declared
+pub use atoms::*;
+pub use expressions::*;
+pub use statements::*;
+pub use syntax_nodes::*;
+pub use types::*;
+pub use values::*;
+
+/// Position information for AST nodes
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct Position {
+    pub line: usize,
+    pub column: usize,
+    pub offset: usize,
+}
+
+impl Default for Position {
+    fn default() -> Self {
+        Position {
+            line: 1,
+            column: 1,
+            offset: 0,
+        }
+    }
+}
+
+/// Base trait for all AST nodes
+pub trait SyntaxNode {
+    fn position(&self) -> &Position;
+    fn children(&self) -> Vec<&dyn SyntaxNode>;
+}
+
+/// Enum for all statement types
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub enum StatementKind {
+    Module(Module),
+    Function(FunctionStatement),
+    Return(ReturnStatement),
+    Let(LetStatement),
+    Break(BreakStatement),
+    Expression(ExpressionStatement),
+}
+
+/// Enum for all expression types
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub enum ExpressionKind {
+    If(IfExpression),
+    Case(CaseExpression),
+    Lambda(Lambda),
+    Block(BlockExpression),
+    Type(TypeExpression),
+    Operation(Operation),
+}
+
+/// Enum for all atom types
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub enum AtomKind {
+    Grouped(GroupedExpression),
+    Type(AtomicType),
+    Value(AtomicValue),
+    Binding(Binding),
+}
+
+/// Enum for all value types
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub enum ValueKind {
+    Integer(Integer),
+    String(StringLiteral),
+}
+
+/// Enum for all type expressions
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub enum TypeKind {
+    Pointer(PointerType),
+    Array(ArrayType),
+    Integer(IntegerType),
+    Function(FunctionType),
+}

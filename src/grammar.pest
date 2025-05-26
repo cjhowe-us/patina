@@ -1,0 +1,197 @@
+// Patina Language Grammar
+WHITESPACE = _{ " " | "\t" }
+NEWLINE    = _{ "\n" | "\r\n" | "\r" }
+
+// Comments
+line_comment  =  { "//" ~ (!NEWLINE ~ ANY)* }
+block_comment =  { "/*" ~ (block_comment | (!"*/" ~ ANY))* ~ "*/" }
+COMMENT       = _{ line_comment | block_comment }
+
+// Keywords
+module_kw = { "module" }
+fun_kw    = { "fun" }
+return_kw = { "return" }
+break_kw  = { "break" }
+mut_kw    = { "mut" }
+own_kw    = { "own" }
+raw_kw    = { "raw" }
+let_kw    = { "let" }
+if_kw     = { "if" }
+else_kw   = { "else" }
+case_kw   = { "case" }
+static_kw = { "static" }
+
+keyword = { module_kw | fun_kw | return_kw | break_kw | mut_kw | own_kw | raw_kw | let_kw | if_kw | else_kw | case_kw | static_kw }
+
+// Identifiers and Labels
+ident_char     = { ASCII_ALPHANUMERIC | "_" }
+ident_start    = { ASCII_ALPHA | "_" }
+ident_normal   = { ident_start ~ ident_char* }
+ident_backtick = { "`" ~ ((!"`" ~ !WHITESPACE ~ ANY)+) ~ "`" }
+ident          = { !(keyword ~ !ident_char) ~ (ident_normal | ident_backtick) }
+
+label = { ":" ~ ident_char+ }
+tag   = { "@" ~ (ident_char | ".")+ }
+
+// Literals
+integer = { ASCII_DIGIT+ }
+
+// String literals with interpolation
+string_fragment    = { (!"\"" ~ !"\\" ~ ANY)+ }
+string_interpolant = { "\\(" ~ expression ~ ")" }
+string_content     = { (string_fragment | string_interpolant)* }
+string             = { "\"" ~ string_content ~ "\"" }
+
+// Operators
+operator_multi  = {
+    "&&"
+  | "||"
+  | "=="
+  | "!="
+  | "<="
+  | ">="
+  | "<<"
+  | ">>"
+  | "++"
+  | "--"
+  | "+="
+  | "-="
+  | "*="
+  | "/="
+  | "%="
+  | "&="
+  | "|="
+  | "^="
+  | "<<="
+  | ">>="
+  | "?."
+  | ".."
+  | "..."
+  | "=>"
+}
+operator_single = {
+    "~"
+  | "!"
+  | "#"
+  | "$"
+  | "%"
+  | "^"
+  | "&"
+  | "*"
+  | "-"
+  | "="
+  | "+"
+  | "<"
+  | ">"
+  | "?"
+  | "/"
+  | "|"
+  | "\\"
+  | "."
+}
+operator        = { operator_multi | operator_single }
+
+// Symbols
+colon         = { ":" }
+comma         = { "," }
+semicolon     = { ";" }
+left_paren    = { "(" }
+right_paren   = { ")" }
+left_bracket  = { "[" }
+right_bracket = { "]" }
+left_brace    = { "{" }
+right_brace   = { "}" }
+
+// Types
+integer_type = { ("i" | "u") ~ ASCII_DIGIT+ }
+
+pointer_type = { "*" ~ (own_kw | raw_kw | mut_kw)? ~ atom }
+
+array_type = { left_bracket ~ integer? ~ right_bracket ~ atom }
+
+function_parameter = { ident ~ colon ~ atom }
+function_type      = { left_paren ~ (function_parameter ~ (comma ~ function_parameter)* ~ comma?)? ~ right_paren ~ (colon ~ atom)? }
+
+type_expr = { integer_type | pointer_type | array_type | function_type }
+
+// Atoms
+grouped_expression = { left_paren ~ expression ~ right_paren }
+atomic_type        = { type_expr }
+atomic_value       = { integer | string }
+binding            = { ident }
+
+atom = { grouped_expression | atomic_type | atomic_value | binding }
+
+// Expressions
+postfix = {
+    (left_paren ~ (expression ~ (comma ~ expression)* ~ comma?)? ~ right_paren)
+  | (left_bracket ~ expression ~ right_bracket)
+}
+
+operand = { atom ~ postfix* }
+
+operation = { operand ~ (operator ~ operand)* }
+
+if_branch       = { if_kw ~ expression? ~ block }
+case_branch     = { case_kw ~ expression ~ expression }
+case_expression = { case_kw ~ left_brace ~ case_branch* ~ right_brace }
+
+if_expression = { if_branch ~ (else_kw ~ (if_expression | block))? }
+
+lambda_parameter = { ident ~ (colon ~ atom)? }
+lambda           = {
+    left_paren ~ (lambda_parameter ~ (comma ~ lambda_parameter)* ~ comma?)? ~ right_paren ~ (colon ~ atom)? ~ block
+}
+
+block_expression = { block }
+
+type_expression = { type_expr }
+
+expression = { if_expression | case_expression | lambda | block_expression | type_expression | operation }
+
+// Statements
+module_stmt = { module_kw ~ ident ~ block }
+
+function_stmt = {
+    static_kw? ~ fun_kw ~ ident ~ left_paren ~ (function_parameter ~ (comma ~ function_parameter)* ~ comma?)? ~ right_paren ~ (colon ~ atom)? ~ block
+}
+
+return_stmt = { return_kw ~ label? ~ expression? }
+
+break_stmt = { break_kw ~ label? ~ expression? }
+
+let_stmt = { static_kw? ~ let_kw ~ mut_kw? ~ ident ~ (colon ~ atom)? ~ (operator ~ expression)? }
+
+expression_stmt = { expression }
+
+statement = { module_stmt | function_stmt | return_stmt | break_stmt | let_stmt | expression_stmt }
+
+// Comments and annotations
+comment    = { line_comment | block_comment }
+annotation = { tag ~ (left_paren ~ (expression ~ (comma ~ expression)* ~ comma?)? ~ right_paren)? }
+
+// Statement aliases for parser compatibility
+module_statement     = { module_stmt }
+function_statement   = { function_stmt }
+return_statement     = { return_stmt }
+break_statement      = { break_stmt }
+let_statement        = { let_stmt }
+expression_statement = { expression_stmt }
+
+// Postfix operation aliases
+call  = { left_paren ~ (expression ~ (comma ~ expression)* ~ comma?)? ~ right_paren }
+index = { left_bracket ~ expression ~ right_bracket }
+field = { "." ~ ident }
+
+// Value alias
+value = { atomic_value }
+
+// Case arm alias
+case_arm = { case_branch }
+
+decorated_statement = { line_comment* ~ annotation* ~ statement }
+
+// Blocks and root
+block = { label? ~ left_brace ~ (decorated_statement ~ (NEWLINE+ ~ decorated_statement)*)? ~ right_brace }
+
+root = { SOI ~ (decorated_statement ~ (NEWLINE+ ~ decorated_statement)*)? ~ EOI }
