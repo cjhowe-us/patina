@@ -7,10 +7,8 @@ pub fn walk_ast<F>(node: &dyn SyntaxNode, visitor: &mut F)
 where
     F: FnMut(&dyn SyntaxNode),
 {
-    // Visit the current node
     visitor(node);
     
-    // Recursively visit all children
     for child in node.children() {
         walk_ast(child, visitor);
     }
@@ -26,15 +24,12 @@ where
     Pre: FnMut(&dyn SyntaxNode),
     Post: FnMut(&dyn SyntaxNode),
 {
-    // Pre-order visit
     pre_visitor(node);
     
-    // Visit children
     for child in node.children() {
         walk_ast_with_callbacks(child, pre_visitor, post_visitor);
     }
     
-    // Post-order visit
     post_visitor(node);
 }
 
@@ -43,12 +38,10 @@ pub fn walk_ast_until<F>(node: &dyn SyntaxNode, visitor: &mut F) -> bool
 where
     F: FnMut(&dyn SyntaxNode) -> bool,
 {
-    // Visit the current node
     if !visitor(node) {
         return false;
     }
     
-    // Recursively visit all children
     for child in node.children() {
         if !walk_ast_until(child, visitor) {
             return false;
@@ -65,12 +58,10 @@ where
 {
     let mut results = Vec::new();
     
-    // Visit the current node
     if let Some(result) = visitor(node) {
         results.push(result);
     }
     
-    // Recursively visit all children
     for child in node.children() {
         results.extend(walk_ast_map(child, visitor));
     }

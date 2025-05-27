@@ -1,6 +1,5 @@
 use serde::{Deserialize, Serialize};
 
-// Declare all modules first
 pub mod atoms;
 pub mod expressions;
 pub mod statements;
@@ -9,7 +8,6 @@ pub mod types;
 pub mod values;
 pub mod walk;
 
-// Re-export all types after modules are declared
 pub use atoms::*;
 pub use expressions::*;
 pub use statements::*;

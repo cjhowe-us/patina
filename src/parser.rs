@@ -31,11 +31,7 @@ pub fn parse_file_with_name(
     let pair = pairs.into_iter().next().unwrap();
     let mut root = parse_root(pair)?;
 
-    // Set filename
     root.pos.filename = Some(filename.to_string());
-
-    // Recursively set filename for all nodes
-    // (would need a visitor implementation)
 
     Ok(root)
 }
@@ -49,8 +45,8 @@ pub fn parse_root(pair: pest::iterators::Pair<Rule>) -> Result<Root, Box<dyn std
             Rule::decorated_statement => {
                 statements.push(parse_decorated_statement(inner_pair)?);
             }
-            Rule::EOI => {} // End of input
-            _ => {}         // Skip other rules
+            Rule::EOI => {}
+            _ => {}
         }
     }
 
