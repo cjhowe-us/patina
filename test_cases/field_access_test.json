@@ -1,0 +1,26 @@
+[
+  {
+    "name": "SimpleFieldAccess",
+    "input": "let x = obj.field"
+  },
+  {
+    "name": "FieldAccessWithMethod",
+    "input": "let x = obj.method()"
+  },
+  {
+    "name": "ChainedFieldAccess",
+    "input": "let x = obj.field1.field2"
+  },
+  {
+    "name": "FieldAccessWithIndexing",
+    "input": "let x = arr.length"
+  },
+  {
+    "name": "MethodChaining",
+    "input": "let x = data.process().filter().sort()"
+  },
+  {
+    "name": "ComplexFieldAccess",
+    "input": "let x = container.items[0].name"
+  }
+]

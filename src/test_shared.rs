@@ -46,7 +46,7 @@ pub fn load_test_cases<T>(filename: &str) -> Result<Vec<TestCase<T>>, Box<dyn st
 where
     T: for<'de> Deserialize<'de>,
 {
-    let path = Path::new("ast/testing/cases").join(filename);
+    let path = Path::new("test_cases").join(filename);
     let content = fs::read_to_string(&path)
         .map_err(|e| format!("Failed to read test file {}: {}", path.display(), e))?;
 

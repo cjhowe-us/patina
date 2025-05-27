@@ -7,6 +7,7 @@ pub mod statements;
 pub mod syntax_nodes;
 pub mod types;
 pub mod values;
+pub mod walk;
 
 // Re-export all types after modules are declared
 pub use atoms::*;
@@ -15,6 +16,7 @@ pub use statements::*;
 pub use syntax_nodes::*;
 pub use types::*;
 pub use values::*;
+pub use walk::*;
 
 /// Position information for AST nodes
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -41,6 +43,7 @@ pub trait SyntaxNode {
     fn position(&self) -> &Position;
     fn children(&self) -> Vec<&dyn SyntaxNode>;
 }
+
 
 /// Enum for all statement types
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]

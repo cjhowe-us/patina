@@ -71,18 +71,12 @@ patina/
 │   ├── grammar.pest    # Pest grammar definition
 │   ├── lib.rs          # Library entry point
 │   └── main.rs         # CLI entry point
-├── ast/                # Go AST reference code. Do not update
-│   ├── testing/        # Test cases and utilities
-│   └── *.go            # AST definitions in Go
+├── test_cases/         # JSON test cases for parser testing
 ├── target/             # Rust build artifacts
 └── Cargo.toml          # Rust project configuration
 ```
 
-### Languages and Libraries
-
-#### Rust
-
-##### Rust Dependencies
+### Dependencies
 
 - **pest** (2.7): Parser generator for creating the Patina parser
 - **pest_derive** (2.7): Derive macros for Pest
@@ -90,17 +84,10 @@ patina/
 - **serde_json** (1.0): JSON support for serde
 - **thiserror** (1.0): Error handling with derive macros
 
-##### Development Dependencies
+### Development Dependencies
 
 - **insta** (1.34): Snapshot testing library with JSON support
 - **tempfile** (3.8): Temporary file handling for tests
-
-#### Go
-
-##### Go Dependencies
-
-- **go-snaps**: Snapshot testing for Go
-- **participle** (via alecthomas): Parser combinator library (used in Go AST)
 
 ### Testing Conventions
 
@@ -112,7 +99,7 @@ patina/
 2. **Test Organization**:
    - Unit tests are colocated with source files
    - Integration tests in `tests/` directory
-   - Test cases defined in JSON files under `testing/cases/`
+   - Test cases defined in JSON files under `test_cases/`
 
 3. **Naming Conventions**:
    - Test names use descriptive strings with underscores
@@ -121,5 +108,4 @@ patina/
 ### Code Style
 
 - Rust code follows standard `rustfmt` conventions
-- Go code follows standard `gofmt` conventions
 - Grammar rules in `grammar.pest` use snake_case
