@@ -1,3 +1,0 @@
-{
- "error": "IntegerTypeWithUnsignedAndExplicitBitSize:1:28: lexer: invalid input text \"; let b: UInt16 ...\""
-}

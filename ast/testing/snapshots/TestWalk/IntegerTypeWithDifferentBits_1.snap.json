@@ -1,3 +1,0 @@
-{
- "error": "IntegerTypeWithDifferentBits:1:27: lexer: invalid input text \"; let b: Int16 =...\""
-}

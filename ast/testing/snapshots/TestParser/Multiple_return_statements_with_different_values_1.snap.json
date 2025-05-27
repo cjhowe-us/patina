@@ -1,3 +1,0 @@
-{
- "error": "Multiple_return_statements_with_different_values:2:13: unexpected token \"return\" (expected Operand+)"
-}

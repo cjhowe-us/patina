@@ -1,3 +1,0 @@
-{
- "error": "Lambda_with_multiple_parameters_and_complex_body:3:17: unexpected token \"return\" (expected Operand+)"
-}

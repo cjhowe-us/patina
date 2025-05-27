@@ -1,9 +1,0 @@
-{
- "result": "parent-child",
- "visitLog": [
-  "Enter: parent",
-  "Enter: child",
-  "Exit: child",
-  "Exit: parent"
- ]
-}

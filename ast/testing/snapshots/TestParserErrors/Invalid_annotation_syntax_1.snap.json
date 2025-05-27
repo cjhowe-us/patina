@@ -1,3 +1,0 @@
-{
- "error": "Invalid_annotation_syntax:1:1: lexer: invalid input text \"@(test) fun test...\""
-}

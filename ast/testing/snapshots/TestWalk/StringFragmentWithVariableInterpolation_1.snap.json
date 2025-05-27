@@ -1,3 +1,0 @@
-{
- "error": "StringFragmentWithVariableInterpolation:1:22: lexer: invalid input text \"; \\\"text with \\\\(x...\""
-}
