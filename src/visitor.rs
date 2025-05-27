@@ -16,7 +16,11 @@ pub trait Visitor<Input, Output> {
     ///
     /// # Returns
     /// A vector of input data for each child node, or an error
-    fn enter(&mut self, node: &dyn SyntaxNode, request: Option<&Input>) -> Result<Vec<Option<Input>>, Box<dyn Error>>;
+    fn enter(
+        &mut self,
+        node: &dyn SyntaxNode,
+        request: Option<&Input>,
+    ) -> Result<Vec<Option<Input>>, Box<dyn Error>>;
 
     /// Called when exiting a node during traversal.
     ///
@@ -26,7 +30,11 @@ pub trait Visitor<Input, Output> {
     ///
     /// # Returns
     /// The output for this node, or an error
-    fn exit(&mut self, node: &dyn SyntaxNode, children_outputs: Vec<Option<Output>>) -> Result<Option<Output>, Box<dyn Error>>;
+    fn exit(
+        &mut self,
+        node: &dyn SyntaxNode,
+        children_outputs: Vec<Option<Output>>,
+    ) -> Result<Option<Output>, Box<dyn Error>>;
 }
 
 /// A collection of errors that occurred during AST traversal.
@@ -53,6 +61,12 @@ impl ErrorList {
     }
 }
 
+impl Default for ErrorList {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl fmt::Display for ErrorList {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         if self.errors.is_empty() {
@@ -61,7 +75,7 @@ impl fmt::Display for ErrorList {
 
         writeln!(f, "One or more errors occurred:")?;
         for error in &self.errors {
-            writeln!(f, "  - {}", error)?;
+            writeln!(f, "  - {error}")?;
         }
         Ok(())
     }
@@ -160,7 +174,11 @@ impl Default for DebugPrinter {
 }
 
 impl Visitor<(), ()> for DebugPrinter {
-    fn enter(&mut self, node: &dyn SyntaxNode, _request: Option<&()>) -> Result<Vec<Option<()>>, Box<dyn Error>> {
+    fn enter(
+        &mut self,
+        node: &dyn SyntaxNode,
+        _request: Option<&()>,
+    ) -> Result<Vec<Option<()>>, Box<dyn Error>> {
         let position = node.position();
         self.output.push_str(&format!(
             "{}Node at {}:{} (offset: {})\n",
@@ -175,7 +193,11 @@ impl Visitor<(), ()> for DebugPrinter {
         Ok(vec![Some(()); children_count])
     }
 
-    fn exit(&mut self, _node: &dyn SyntaxNode, _children_outputs: Vec<Option<()>>) -> Result<Option<()>, Box<dyn Error>> {
+    fn exit(
+        &mut self,
+        _node: &dyn SyntaxNode,
+        _children_outputs: Vec<Option<()>>,
+    ) -> Result<Option<()>, Box<dyn Error>> {
         self.depth -= 1;
         Ok(Some(()))
     }
@@ -188,9 +210,7 @@ pub struct ValidationVisitor {
 
 impl ValidationVisitor {
     pub fn new() -> Self {
-        Self {
-            errors: Vec::new(),
-        }
+        Self { errors: Vec::new() }
     }
 
     pub fn has_errors(&self) -> bool {
@@ -205,21 +225,31 @@ impl Default for ValidationVisitor {
 }
 
 impl Visitor<(), ()> for ValidationVisitor {
-    fn enter(&mut self, node: &dyn SyntaxNode, _request: Option<&()>) -> Result<Vec<Option<()>>, Box<dyn Error>> {
+    fn enter(
+        &mut self,
+        node: &dyn SyntaxNode,
+        _request: Option<&()>,
+    ) -> Result<Vec<Option<()>>, Box<dyn Error>> {
         // Basic validation - ensure position is valid
         let position = node.position();
         if position.line == 0 {
-            self.errors.push("Invalid line number (should be 1-based)".to_string());
+            self.errors
+                .push("Invalid line number (should be 1-based)".to_string());
         }
         if position.column == 0 {
-            self.errors.push("Invalid column number (should be 1-based)".to_string());
+            self.errors
+                .push("Invalid column number (should be 1-based)".to_string());
         }
 
         let children_count = node.children().len();
         Ok(vec![Some(()); children_count])
     }
 
-    fn exit(&mut self, _node: &dyn SyntaxNode, _children_outputs: Vec<Option<()>>) -> Result<Option<()>, Box<dyn Error>> {
+    fn exit(
+        &mut self,
+        _node: &dyn SyntaxNode,
+        _children_outputs: Vec<Option<()>>,
+    ) -> Result<Option<()>, Box<dyn Error>> {
         Ok(Some(()))
     }
 }
@@ -245,7 +275,11 @@ impl NodeCounter {
     }
 
     pub fn total_count(&self) -> usize {
-        self.statement_count + self.expression_count + self.atom_count + self.value_count + self.type_count
+        self.statement_count
+            + self.expression_count
+            + self.atom_count
+            + self.value_count
+            + self.type_count
     }
 }
 
@@ -256,7 +290,11 @@ impl Default for NodeCounter {
 }
 
 impl Visitor<(), ()> for NodeCounter {
-    fn enter(&mut self, _node: &dyn SyntaxNode, _request: Option<&()>) -> Result<Vec<Option<()>>, Box<dyn Error>> {
+    fn enter(
+        &mut self,
+        _node: &dyn SyntaxNode,
+        _request: Option<&()>,
+    ) -> Result<Vec<Option<()>>, Box<dyn Error>> {
         // Note: In a real implementation, we would need to downcast the node
         // to determine its specific type. This is a simplified version.
 
@@ -264,7 +302,11 @@ impl Visitor<(), ()> for NodeCounter {
         Ok(vec![Some(()); children_count])
     }
 
-    fn exit(&mut self, _node: &dyn SyntaxNode, _children_outputs: Vec<Option<()>>) -> Result<Option<()>, Box<dyn Error>> {
+    fn exit(
+        &mut self,
+        _node: &dyn SyntaxNode,
+        _children_outputs: Vec<Option<()>>,
+    ) -> Result<Option<()>, Box<dyn Error>> {
         // In a real implementation, we would increment counters based on node type
         Ok(Some(()))
     }
@@ -276,13 +318,18 @@ mod tests;
 #[cfg(test)]
 mod unit_tests {
     use super::*;
-    use crate::ast::{Root, Position};
+    use crate::ast::{Position, Root};
 
     #[test]
     fn test_debug_printer() {
         let root = Root {
             statements: Vec::new(),
-            pos: Position { line: 1, column: 1, offset: 0 },
+            pos: Position {
+                filename: None,
+                line: 1,
+                column: 1,
+                offset: 0,
+            },
         };
 
         let mut printer = DebugPrinter::new();
@@ -296,7 +343,12 @@ mod unit_tests {
     fn test_validation_visitor() {
         let root = Root {
             statements: Vec::new(),
-            pos: Position { line: 1, column: 1, offset: 0 },
+            pos: Position {
+                filename: None,
+                line: 1,
+                column: 1,
+                offset: 0,
+            },
         };
 
         let mut validator = ValidationVisitor::new();

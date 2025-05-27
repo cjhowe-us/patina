@@ -1,0 +1,96 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "pos": {
+    "filename": "Multiple_root_statements",
+    "line": 1,
+    "column": 1,
+    "offset": 0
+  },
+  "statements": [
+    {
+      "pos": {
+        "filename": null,
+        "line": 1,
+        "column": 1,
+        "offset": 0
+      },
+      "comments": [],
+      "annotations": [],
+      "statement": {
+        "Expression": {
+          "pos": {
+            "filename": null,
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "expression": {
+            "Block": {
+              "pos": {
+                "filename": null,
+                "line": 1,
+                "column": 1,
+                "offset": 0
+              },
+              "is_static": false,
+              "block": {
+                "pos": {
+                  "filename": null,
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "label": null,
+                "statements": []
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "pos": {
+        "filename": null,
+        "line": 2,
+        "column": 1,
+        "offset": 10
+      },
+      "comments": [],
+      "annotations": [],
+      "statement": {
+        "Expression": {
+          "pos": {
+            "filename": null,
+            "line": 2,
+            "column": 1,
+            "offset": 10
+          },
+          "expression": {
+            "Block": {
+              "pos": {
+                "filename": null,
+                "line": 2,
+                "column": 1,
+                "offset": 10
+              },
+              "is_static": false,
+              "block": {
+                "pos": {
+                  "filename": null,
+                  "line": 2,
+                  "column": 1,
+                  "offset": 10
+                },
+                "label": null,
+                "statements": []
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

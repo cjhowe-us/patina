@@ -1,0 +1,22 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "node_types": [
+    "SyntaxNode",
+    "SyntaxNode",
+    "SyntaxNode",
+    "SyntaxNode",
+    "SyntaxNode",
+    "SyntaxNode",
+    "SyntaxNode",
+    "SyntaxNode",
+    "SyntaxNode",
+    "SyntaxNode",
+    "SyntaxNode"
+  ],
+  "visit_count": {
+    "SyntaxNode": 11
+  }
+}

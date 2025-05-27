@@ -1,0 +1,92 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "pos": {
+    "filename": "String_literal_parser",
+    "line": 1,
+    "column": 1,
+    "offset": 0
+  },
+  "statements": [
+    {
+      "pos": {
+        "filename": null,
+        "line": 1,
+        "column": 1,
+        "offset": 0
+      },
+      "comments": [],
+      "annotations": [],
+      "statement": {
+        "Let": {
+          "pos": {
+            "filename": null,
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "is_static": false,
+          "is_mutable": false,
+          "name": "msg",
+          "var_type": null,
+          "value": {
+            "Operation": {
+              "pos": {
+                "filename": null,
+                "line": 1,
+                "column": 11,
+                "offset": 10
+              },
+              "prefix": [],
+              "operands": [
+                {
+                  "pos": {
+                    "filename": null,
+                    "line": 1,
+                    "column": 11,
+                    "offset": 10
+                  },
+                  "atom": {
+                    "Value": {
+                      "pos": {
+                        "filename": null,
+                        "line": 1,
+                        "column": 11,
+                        "offset": 10
+                      },
+                      "value": {
+                        "String": {
+                          "pos": {
+                            "filename": null,
+                            "line": 1,
+                            "column": 11,
+                            "offset": 10
+                          },
+                          "fragments": [
+                            {
+                              "pos": {
+                                "filename": null,
+                                "line": 1,
+                                "column": 12,
+                                "offset": 11
+                              },
+                              "text": "Hello, world!",
+                              "interpolation": null
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "postfix": []
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

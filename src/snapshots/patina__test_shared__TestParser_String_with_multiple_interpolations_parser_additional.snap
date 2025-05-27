@@ -1,0 +1,238 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "pos": {
+    "filename": "String_with_multiple_interpolations_parser_additional",
+    "line": 1,
+    "column": 1,
+    "offset": 0
+  },
+  "statements": [
+    {
+      "pos": {
+        "filename": null,
+        "line": 1,
+        "column": 1,
+        "offset": 0
+      },
+      "comments": [],
+      "annotations": [],
+      "statement": {
+        "Let": {
+          "pos": {
+            "filename": null,
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "is_static": false,
+          "is_mutable": false,
+          "name": "message",
+          "var_type": null,
+          "value": {
+            "Operation": {
+              "pos": {
+                "filename": null,
+                "line": 1,
+                "column": 15,
+                "offset": 14
+              },
+              "prefix": [],
+              "operands": [
+                {
+                  "pos": {
+                    "filename": null,
+                    "line": 1,
+                    "column": 15,
+                    "offset": 14
+                  },
+                  "atom": {
+                    "Value": {
+                      "pos": {
+                        "filename": null,
+                        "line": 1,
+                        "column": 15,
+                        "offset": 14
+                      },
+                      "value": {
+                        "String": {
+                          "pos": {
+                            "filename": null,
+                            "line": 1,
+                            "column": 15,
+                            "offset": 14
+                          },
+                          "fragments": [
+                            {
+                              "pos": {
+                                "filename": null,
+                                "line": 1,
+                                "column": 16,
+                                "offset": 15
+                              },
+                              "text": "Hello,",
+                              "interpolation": null
+                            },
+                            {
+                              "pos": {
+                                "filename": null,
+                                "line": 1,
+                                "column": 23,
+                                "offset": 22
+                              },
+                              "text": null,
+                              "interpolation": {
+                                "Operation": {
+                                  "pos": {
+                                    "filename": null,
+                                    "line": 1,
+                                    "column": 25,
+                                    "offset": 24
+                                  },
+                                  "prefix": [],
+                                  "operands": [
+                                    {
+                                      "pos": {
+                                        "filename": null,
+                                        "line": 1,
+                                        "column": 25,
+                                        "offset": 24
+                                      },
+                                      "atom": {
+                                        "Binding": {
+                                          "pos": {
+                                            "filename": null,
+                                            "line": 1,
+                                            "column": 25,
+                                            "offset": 24
+                                          },
+                                          "name": "firstName"
+                                        }
+                                      },
+                                      "postfix": []
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            {
+                              "pos": {
+                                "filename": null,
+                                "line": 1,
+                                "column": 36,
+                                "offset": 35
+                              },
+                              "text": null,
+                              "interpolation": {
+                                "Operation": {
+                                  "pos": {
+                                    "filename": null,
+                                    "line": 1,
+                                    "column": 38,
+                                    "offset": 37
+                                  },
+                                  "prefix": [],
+                                  "operands": [
+                                    {
+                                      "pos": {
+                                        "filename": null,
+                                        "line": 1,
+                                        "column": 38,
+                                        "offset": 37
+                                      },
+                                      "atom": {
+                                        "Binding": {
+                                          "pos": {
+                                            "filename": null,
+                                            "line": 1,
+                                            "column": 38,
+                                            "offset": 37
+                                          },
+                                          "name": "lastName"
+                                        }
+                                      },
+                                      "postfix": []
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            {
+                              "pos": {
+                                "filename": null,
+                                "line": 1,
+                                "column": 47,
+                                "offset": 46
+                              },
+                              "text": "! You have",
+                              "interpolation": null
+                            },
+                            {
+                              "pos": {
+                                "filename": null,
+                                "line": 1,
+                                "column": 58,
+                                "offset": 57
+                              },
+                              "text": null,
+                              "interpolation": {
+                                "Operation": {
+                                  "pos": {
+                                    "filename": null,
+                                    "line": 1,
+                                    "column": 60,
+                                    "offset": 59
+                                  },
+                                  "prefix": [],
+                                  "operands": [
+                                    {
+                                      "pos": {
+                                        "filename": null,
+                                        "line": 1,
+                                        "column": 60,
+                                        "offset": 59
+                                      },
+                                      "atom": {
+                                        "Binding": {
+                                          "pos": {
+                                            "filename": null,
+                                            "line": 1,
+                                            "column": 60,
+                                            "offset": 59
+                                          },
+                                          "name": "messageCount"
+                                        }
+                                      },
+                                      "postfix": []
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            {
+                              "pos": {
+                                "filename": null,
+                                "line": 1,
+                                "column": 74,
+                                "offset": 73
+                              },
+                              "text": "new messages.",
+                              "interpolation": null
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "postfix": []
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

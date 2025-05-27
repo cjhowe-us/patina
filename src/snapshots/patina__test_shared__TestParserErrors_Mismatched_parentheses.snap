@@ -1,0 +1,7 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "error": " --> 1:15\n  |\n1 | let x = (1 + 2\n  |               ^---\n  |\n  = expected operator, right_paren, or postfix"
+}

@@ -1,0 +1,202 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "pos": {
+    "filename": "Module_with_multiple_declarations_parser_additional",
+    "line": 1,
+    "column": 1,
+    "offset": 0
+  },
+  "statements": [
+    {
+      "pos": {
+        "filename": null,
+        "line": 1,
+        "column": 1,
+        "offset": 0
+      },
+      "comments": [],
+      "annotations": [],
+      "statement": {
+        "Module": {
+          "pos": {
+            "filename": null,
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "name": "test",
+          "body": {
+            "pos": {
+              "filename": null,
+              "line": 1,
+              "column": 13,
+              "offset": 12
+            },
+            "label": null,
+            "statements": [
+              {
+                "pos": {
+                  "filename": null,
+                  "line": 2,
+                  "column": 2,
+                  "offset": 15
+                },
+                "comments": [],
+                "annotations": [],
+                "statement": {
+                  "Let": {
+                    "pos": {
+                      "filename": null,
+                      "line": 2,
+                      "column": 2,
+                      "offset": 15
+                    },
+                    "is_static": false,
+                    "is_mutable": false,
+                    "name": "x ",
+                    "var_type": null,
+                    "value": {
+                      "Operation": {
+                        "pos": {
+                          "filename": null,
+                          "line": 2,
+                          "column": 10,
+                          "offset": 23
+                        },
+                        "prefix": [],
+                        "operands": [
+                          {
+                            "pos": {
+                              "filename": null,
+                              "line": 2,
+                              "column": 10,
+                              "offset": 23
+                            },
+                            "atom": {
+                              "Value": {
+                                "pos": {
+                                  "filename": null,
+                                  "line": 2,
+                                  "column": 10,
+                                  "offset": 23
+                                },
+                                "value": {
+                                  "Integer": {
+                                    "pos": {
+                                      "filename": null,
+                                      "line": 2,
+                                      "column": 10,
+                                      "offset": 23
+                                    },
+                                    "value": 1
+                                  }
+                                }
+                              }
+                            },
+                            "postfix": []
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "pos": {
+                  "filename": null,
+                  "line": 3,
+                  "column": 2,
+                  "offset": 26
+                },
+                "comments": [],
+                "annotations": [],
+                "statement": {
+                  "Function": {
+                    "pos": {
+                      "filename": null,
+                      "line": 3,
+                      "column": 2,
+                      "offset": 26
+                    },
+                    "is_static": false,
+                    "name": "test",
+                    "parameters": [],
+                    "return_type": null,
+                    "block": {
+                      "pos": {
+                        "filename": null,
+                        "line": 3,
+                        "column": 13,
+                        "offset": 37
+                      },
+                      "label": null,
+                      "statements": [
+                        {
+                          "pos": {
+                            "filename": null,
+                            "line": 4,
+                            "column": 3,
+                            "offset": 41
+                          },
+                          "comments": [],
+                          "annotations": [],
+                          "statement": {
+                            "Return": {
+                              "pos": {
+                                "filename": null,
+                                "line": 4,
+                                "column": 3,
+                                "offset": 41
+                              },
+                              "label": null,
+                              "value": {
+                                "Operation": {
+                                  "pos": {
+                                    "filename": null,
+                                    "line": 4,
+                                    "column": 10,
+                                    "offset": 48
+                                  },
+                                  "prefix": [],
+                                  "operands": [
+                                    {
+                                      "pos": {
+                                        "filename": null,
+                                        "line": 4,
+                                        "column": 10,
+                                        "offset": 48
+                                      },
+                                      "atom": {
+                                        "Binding": {
+                                          "pos": {
+                                            "filename": null,
+                                            "line": 4,
+                                            "column": 10,
+                                            "offset": 48
+                                          },
+                                          "name": "x"
+                                        }
+                                      },
+                                      "postfix": []
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -19,6 +19,7 @@ pub use values::*;
 /// Position information for AST nodes
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Position {
+    pub filename: Option<String>,
     pub line: usize,
     pub column: usize,
     pub offset: usize,
@@ -27,6 +28,7 @@ pub struct Position {
 impl Default for Position {
     fn default() -> Self {
         Position {
+            filename: None,
             line: 1,
             column: 1,
             offset: 0,
@@ -47,7 +49,14 @@ pub enum StatementKind {
     Function(FunctionStatement),
     Return(ReturnStatement),
     Let(LetStatement),
+    Assignment(AssignmentStatement),
     Break(BreakStatement),
+    While(WhileStatement),
+    For(ForStatement),
+    Struct(StructStatement),
+    Enum(EnumStatement),
+    Interface(InterfaceStatement),
+    Impl(ImplStatement),
     Expression(ExpressionStatement),
 }
 
@@ -75,6 +84,9 @@ pub enum AtomKind {
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ValueKind {
     Integer(Integer),
+    Boolean(Boolean),
+    Float(Float),
+    Null(Null),
     String(StringLiteral),
 }
 
@@ -84,5 +96,8 @@ pub enum TypeKind {
     Pointer(PointerType),
     Array(ArrayType),
     Integer(IntegerType),
+    Floating(FloatingType),
+    Void(VoidType),
+    Self_(SelfType),
     Function(FunctionType),
 }

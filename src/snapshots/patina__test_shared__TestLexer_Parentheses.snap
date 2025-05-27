@@ -1,0 +1,16 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+[
+  "root: ()",
+  "decorated_statement: ()",
+  "statement: ()",
+  "expression_stmt: ()",
+  "expression: ()",
+  "type_expression: ()",
+  "type_expr: ()",
+  "function_type: ()",
+  "left_paren: (",
+  "right_paren: )"
+]

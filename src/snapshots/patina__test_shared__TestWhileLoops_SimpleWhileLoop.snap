@@ -1,0 +1,87 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "pos": {
+    "filename": "SimpleWhileLoop",
+    "line": 1,
+    "column": 1,
+    "offset": 0
+  },
+  "statements": [
+    {
+      "pos": {
+        "filename": null,
+        "line": 1,
+        "column": 1,
+        "offset": 0
+      },
+      "comments": [],
+      "annotations": [],
+      "statement": {
+        "While": {
+          "pos": {
+            "filename": null,
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "condition": {
+            "Operation": {
+              "pos": {
+                "filename": null,
+                "line": 1,
+                "column": 8,
+                "offset": 7
+              },
+              "prefix": [],
+              "operands": [
+                {
+                  "pos": {
+                    "filename": null,
+                    "line": 1,
+                    "column": 8,
+                    "offset": 7
+                  },
+                  "atom": {
+                    "Value": {
+                      "pos": {
+                        "filename": null,
+                        "line": 1,
+                        "column": 8,
+                        "offset": 7
+                      },
+                      "value": {
+                        "Boolean": {
+                          "pos": {
+                            "filename": null,
+                            "line": 1,
+                            "column": 8,
+                            "offset": 7
+                          },
+                          "value": true
+                        }
+                      }
+                    }
+                  },
+                  "postfix": []
+                }
+              ]
+            }
+          },
+          "body": {
+            "pos": {
+              "filename": null,
+              "line": 1,
+              "column": 14,
+              "offset": 13
+            },
+            "label": null,
+            "statements": []
+          }
+        }
+      }
+    }
+  ]
+}

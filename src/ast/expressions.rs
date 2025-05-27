@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct IfExpression {
     pub pos: Position,
-    pub if_branch: IfBranch,
+    pub if_branch: Option<IfBranch>,
     pub else_ifs: Vec<IfBranch>,
     pub else_branch: Option<Box<ExpressionKind>>,
 }
@@ -17,7 +17,9 @@ impl SyntaxNode for IfExpression {
 
     fn children(&self) -> Vec<&dyn SyntaxNode> {
         let mut children: Vec<&dyn SyntaxNode> = Vec::new();
-        children.push(&self.if_branch as &dyn SyntaxNode);
+        if let Some(if_branch) = &self.if_branch {
+            children.push(if_branch as &dyn SyntaxNode);
+        }
         for else_if in &self.else_ifs {
             children.push(else_if as &dyn SyntaxNode);
         }
@@ -201,6 +203,7 @@ pub struct Postfix {
     pub pos: Position,
     pub invocation: Vec<ExpressionKind>,
     pub index: Option<Box<ExpressionKind>>,
+    pub field: Option<String>,
     pub operator: Option<String>,
 }
 

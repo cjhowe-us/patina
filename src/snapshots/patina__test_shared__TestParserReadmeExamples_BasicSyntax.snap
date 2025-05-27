@@ -1,0 +1,7 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "error": " --> 1:38\n  |\n1 | // Comments start with double slashes␊\n  |                                      ^---\n  |\n  = expected EOI or decorated_statement"
+}

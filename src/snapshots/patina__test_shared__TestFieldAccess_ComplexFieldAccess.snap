@@ -1,0 +1,150 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "pos": {
+    "filename": "ComplexFieldAccess",
+    "line": 1,
+    "column": 1,
+    "offset": 0
+  },
+  "statements": [
+    {
+      "pos": {
+        "filename": null,
+        "line": 1,
+        "column": 1,
+        "offset": 0
+      },
+      "comments": [],
+      "annotations": [],
+      "statement": {
+        "Let": {
+          "pos": {
+            "filename": null,
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "is_static": false,
+          "is_mutable": false,
+          "name": "x ",
+          "var_type": null,
+          "value": {
+            "Operation": {
+              "pos": {
+                "filename": null,
+                "line": 1,
+                "column": 9,
+                "offset": 8
+              },
+              "prefix": [],
+              "operands": [
+                {
+                  "pos": {
+                    "filename": null,
+                    "line": 1,
+                    "column": 9,
+                    "offset": 8
+                  },
+                  "atom": {
+                    "Binding": {
+                      "pos": {
+                        "filename": null,
+                        "line": 1,
+                        "column": 9,
+                        "offset": 8
+                      },
+                      "name": "container"
+                    }
+                  },
+                  "postfix": [
+                    {
+                      "pos": {
+                        "filename": null,
+                        "line": 1,
+                        "column": 18,
+                        "offset": 17
+                      },
+                      "invocation": [],
+                      "index": null,
+                      "field": "items",
+                      "operator": null
+                    },
+                    {
+                      "pos": {
+                        "filename": null,
+                        "line": 1,
+                        "column": 24,
+                        "offset": 23
+                      },
+                      "invocation": [],
+                      "index": {
+                        "Operation": {
+                          "pos": {
+                            "filename": null,
+                            "line": 1,
+                            "column": 25,
+                            "offset": 24
+                          },
+                          "prefix": [],
+                          "operands": [
+                            {
+                              "pos": {
+                                "filename": null,
+                                "line": 1,
+                                "column": 25,
+                                "offset": 24
+                              },
+                              "atom": {
+                                "Value": {
+                                  "pos": {
+                                    "filename": null,
+                                    "line": 1,
+                                    "column": 25,
+                                    "offset": 24
+                                  },
+                                  "value": {
+                                    "Integer": {
+                                      "pos": {
+                                        "filename": null,
+                                        "line": 1,
+                                        "column": 25,
+                                        "offset": 24
+                                      },
+                                      "value": 0
+                                    }
+                                  }
+                                }
+                              },
+                              "postfix": []
+                            }
+                          ]
+                        }
+                      },
+                      "field": null,
+                      "operator": null
+                    },
+                    {
+                      "pos": {
+                        "filename": null,
+                        "line": 1,
+                        "column": 27,
+                        "offset": 26
+                      },
+                      "invocation": [],
+                      "index": null,
+                      "field": "name",
+                      "operator": null
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

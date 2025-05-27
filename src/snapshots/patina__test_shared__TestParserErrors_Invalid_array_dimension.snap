@@ -1,0 +1,7 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "error": " --> 1:9\n  |\n1 | let x: [\"string\"]i32\n  |         ^---\n  |\n  = expected integer or right_bracket"
+}

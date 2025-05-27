@@ -1,0 +1,50 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "pos": {
+    "line": 1,
+    "column": 1,
+    "offset": 0
+  },
+  "statements": [
+    {
+      "pos": {
+        "line": 1,
+        "column": 1,
+        "offset": 0
+      },
+      "comments": [],
+      "annotations": [],
+      "statement": {
+        "Expression": {
+          "pos": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "expression": {
+            "Block": {
+              "pos": {
+                "line": 1,
+                "column": 1,
+                "offset": 0
+              },
+              "is_static": false,
+              "block": {
+                "pos": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "label": null,
+                "statements": []
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

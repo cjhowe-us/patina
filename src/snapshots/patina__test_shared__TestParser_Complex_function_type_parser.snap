@@ -1,0 +1,7 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "error": " --> 1:11\n  |\n1 | let x: fun(cb: fun(a: i32, b: i32): fun(): i32): i32\n  |           ^---\n  |\n  = expected ident_char"
+}

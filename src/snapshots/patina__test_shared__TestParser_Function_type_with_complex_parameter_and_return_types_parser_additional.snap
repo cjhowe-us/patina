@@ -1,0 +1,7 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "error": " --> 1:18\n  |\n1 | let callback: fun(handler: fun(event: *mut Event): bool, timeout: u64): *own Result\n  |                  ^---\n  |\n  = expected ident_char"
+}

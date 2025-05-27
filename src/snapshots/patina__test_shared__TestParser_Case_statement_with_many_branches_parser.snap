@@ -1,0 +1,7 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "error": " --> 1:7\n  |\n1 | case {␊\n  |       ^---\n  |\n  = expected case_kw or right_brace"
+}

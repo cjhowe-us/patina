@@ -8,20 +8,28 @@ block_comment =  { "/*" ~ (block_comment | (!"*/" ~ ANY))* ~ "*/" }
 COMMENT       = _{ line_comment | block_comment }
 
 // Keywords
-module_kw = { "module" }
-fun_kw    = { "fun" }
-return_kw = { "return" }
-break_kw  = { "break" }
-mut_kw    = { "mut" }
-own_kw    = { "own" }
-raw_kw    = { "raw" }
-let_kw    = { "let" }
-if_kw     = { "if" }
-else_kw   = { "else" }
-case_kw   = { "case" }
-static_kw = { "static" }
+module_kw    = { "module" }
+fun_kw       = { "fun" }
+return_kw    = { "return" }
+break_kw     = { "break" }
+mut_kw       = { "mut" }
+own_kw       = { "own" }
+raw_kw       = { "raw" }
+let_kw       = { "let" }
+if_kw        = { "if" }
+else_kw      = { "else" }
+case_kw      = { "case" }
+static_kw    = { "static" }
+while_kw     = { "while" }
+for_kw       = { "for" }
+struct_kw    = { "struct" }
+enum_kw      = { "enum" }
+interface_kw = { "interface" }
+impl_kw      = { "impl" }
+true_kw      = { "true" }
+false_kw     = { "false" }
 
-keyword = { module_kw | fun_kw | return_kw | break_kw | mut_kw | own_kw | raw_kw | let_kw | if_kw | else_kw | case_kw | static_kw }
+keyword = { module_kw | fun_kw | return_kw | break_kw | mut_kw | own_kw | raw_kw | let_kw | if_kw | else_kw | case_kw | static_kw | while_kw | for_kw | struct_kw | enum_kw | interface_kw | impl_kw | true_kw | false_kw }
 
 // Identifiers and Labels
 ident_char     = { ASCII_ALPHANUMERIC | "_" }
@@ -35,6 +43,8 @@ tag   = { "@" ~ (ident_char | ".")+ }
 
 // Literals
 integer = { ASCII_DIGIT+ }
+float   = { ASCII_DIGIT+ ~ "." ~ ASCII_DIGIT+ }
+boolean = { true_kw | false_kw }
 
 // String literals with interpolation
 string_fragment    = { (!"\"" ~ !"\\" ~ ANY)+ }
@@ -103,7 +113,8 @@ left_brace    = { "{" }
 right_brace   = { "}" }
 
 // Types
-integer_type = { ("i" | "u") ~ ASCII_DIGIT+ }
+integer_type  = { ("i" | "u") ~ ASCII_DIGIT+ }
+floating_type = { "f" ~ ASCII_DIGIT+ }
 
 pointer_type = { "*" ~ (own_kw | raw_kw | mut_kw)? ~ atom }
 
@@ -112,12 +123,12 @@ array_type = { left_bracket ~ integer? ~ right_bracket ~ atom }
 function_parameter = { ident ~ colon ~ atom }
 function_type      = { left_paren ~ (function_parameter ~ (comma ~ function_parameter)* ~ comma?)? ~ right_paren ~ (colon ~ atom)? }
 
-type_expr = { integer_type | pointer_type | array_type | function_type }
+type_expr = { integer_type | floating_type | pointer_type | array_type | function_type }
 
 // Atoms
 grouped_expression = { left_paren ~ expression ~ right_paren }
 atomic_type        = { type_expr }
-atomic_value       = { integer | string }
+atomic_value       = { integer | float | boolean | string }
 binding            = { ident }
 
 atom = { grouped_expression | atomic_type | atomic_value | binding }
@@ -126,6 +137,7 @@ atom = { grouped_expression | atomic_type | atomic_value | binding }
 postfix = {
     (left_paren ~ (expression ~ (comma ~ expression)* ~ comma?)? ~ right_paren)
   | (left_bracket ~ expression ~ right_bracket)
+  | field
 }
 
 operand = { atom ~ postfix* }
@@ -140,7 +152,7 @@ if_expression = { if_branch ~ (else_kw ~ (if_expression | block))? }
 
 lambda_parameter = { ident ~ (colon ~ atom)? }
 lambda           = {
-    left_paren ~ (lambda_parameter ~ (comma ~ lambda_parameter)* ~ comma?)? ~ right_paren ~ (colon ~ atom)? ~ block
+    fun_kw ~ left_paren ~ (lambda_parameter ~ (comma ~ lambda_parameter)* ~ comma?)? ~ right_paren ~ (colon ~ atom)? ~ block
 }
 
 block_expression = { block }
@@ -162,9 +174,36 @@ break_stmt = { break_kw ~ label? ~ expression? }
 
 let_stmt = { static_kw? ~ let_kw ~ mut_kw? ~ ident ~ (colon ~ atom)? ~ (operator ~ expression)? }
 
+assignment_stmt = { expression ~ "=" ~ expression }
+
+while_stmt = { while_kw ~ left_paren ~ expression ~ right_paren ~ block }
+
+for_stmt = {
+    for_kw ~ left_paren ~ ((let_stmt? ~ semicolon ~ expression? ~ semicolon ~ expression?) | (let_kw ~ ident ~ "in" ~ expression)) ~ right_paren ~ block
+}
+
+struct_field = { ident ~ colon ~ atom }
+struct_stmt  = {
+    struct_kw ~ ident ~ ("<" ~ ident ~ ("," ~ ident)* ~ ">")? ~ left_brace ~ (struct_field ~ ("," ~ struct_field)* ~ ","?)? ~ right_brace
+}
+
+enum_variant = { ident ~ (left_paren ~ (atom ~ ("," ~ atom)* ~ ","?)? ~ right_paren)? }
+enum_stmt    = {
+    enum_kw ~ ident ~ ("<" ~ ident ~ ("," ~ ident)* ~ ">")? ~ left_brace ~ (enum_variant ~ ("," ~ enum_variant)* ~ ","?)? ~ right_brace
+}
+
+interface_method = { fun_kw ~ ident ~ left_paren ~ (function_parameter ~ ("," ~ function_parameter)* ~ ","?)? ~ right_paren ~ (colon ~ atom)? }
+interface_stmt   = {
+    interface_kw ~ ident ~ ("<" ~ ident ~ ("," ~ ident)* ~ ">")? ~ left_brace ~ interface_method* ~ right_brace
+}
+
+impl_stmt = {
+    impl_kw ~ ("<" ~ ident ~ ("," ~ ident)* ~ ">")? ~ ident ~ ("for" ~ ident)? ~ left_brace ~ function_stmt* ~ right_brace
+}
+
 expression_stmt = { expression }
 
-statement = { module_stmt | function_stmt | return_stmt | break_stmt | let_stmt | expression_stmt }
+statement = { module_stmt | function_stmt | return_stmt | break_stmt | let_stmt | assignment_stmt | while_stmt | for_stmt | struct_stmt | enum_stmt | interface_stmt | impl_stmt | expression_stmt }
 
 // Comments and annotations
 comment    = { line_comment | block_comment }
@@ -176,6 +215,13 @@ function_statement   = { function_stmt }
 return_statement     = { return_stmt }
 break_statement      = { break_stmt }
 let_statement        = { let_stmt }
+assignment_statement = { assignment_stmt }
+while_statement      = { while_stmt }
+for_statement        = { for_stmt }
+struct_statement     = { struct_stmt }
+enum_statement       = { enum_stmt }
+interface_statement  = { interface_stmt }
+impl_statement       = { impl_stmt }
 expression_statement = { expression_stmt }
 
 // Postfix operation aliases
@@ -189,9 +235,9 @@ value = { atomic_value }
 // Case arm alias
 case_arm = { case_branch }
 
-decorated_statement = { line_comment* ~ annotation* ~ statement }
+decorated_statement = { (line_comment | block_comment)* ~ annotation* ~ statement }
 
 // Blocks and root
-block = { label? ~ left_brace ~ (decorated_statement ~ (NEWLINE+ ~ decorated_statement)*)? ~ right_brace }
+block = { label? ~ left_brace ~ NEWLINE* ~ (decorated_statement ~ ((NEWLINE+ | semicolon) ~ decorated_statement)*)? ~ NEWLINE* ~ right_brace }
 
-root = { SOI ~ (decorated_statement ~ (NEWLINE+ ~ decorated_statement)*)? ~ EOI }
+root = { SOI ~ (decorated_statement ~ (NEWLINE+ ~ decorated_statement)* ~ NEWLINE*)? ~ EOI }

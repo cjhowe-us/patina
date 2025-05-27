@@ -1,0 +1,7 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "error": " --> 1:32\n  |\n1 | // Integer types with bit width␊\n  |                                ^---\n  |\n  = expected EOI or decorated_statement"
+}

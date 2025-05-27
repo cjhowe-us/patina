@@ -1,0 +1,7 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "error": " --> 1:15\n  |\n1 | let x = \"hello\n  |               ^---\n  |\n  = expected string_fragment or string_interpolant"
+}

@@ -1,0 +1,76 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "pos": {
+    "filename": "Multiple_annotations",
+    "line": 1,
+    "column": 1,
+    "offset": 0
+  },
+  "statements": [
+    {
+      "pos": {
+        "filename": null,
+        "line": 1,
+        "column": 1,
+        "offset": 0
+      },
+      "comments": [],
+      "annotations": [
+        {
+          "pos": {
+            "filename": null,
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "name": "@anno1 ",
+          "arguments": []
+        },
+        {
+          "pos": {
+            "filename": null,
+            "line": 1,
+            "column": 8,
+            "offset": 7
+          },
+          "name": "@anno2(true)",
+          "arguments": []
+        }
+      ],
+      "statement": {
+        "Expression": {
+          "pos": {
+            "filename": null,
+            "line": 1,
+            "column": 21,
+            "offset": 20
+          },
+          "expression": {
+            "Block": {
+              "pos": {
+                "filename": null,
+                "line": 1,
+                "column": 21,
+                "offset": 20
+              },
+              "is_static": false,
+              "block": {
+                "pos": {
+                  "filename": null,
+                  "line": 1,
+                  "column": 21,
+                  "offset": 20
+                },
+                "label": null,
+                "statements": []
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

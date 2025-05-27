@@ -1,0 +1,7 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "error": "  --> 20:16\n   |\n20 |         return -1  // Target not found\n   |                ^---\n   |\n   = expected label, semicolon, right_brace, or expression"
+}

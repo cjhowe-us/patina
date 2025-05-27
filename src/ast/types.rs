@@ -57,6 +57,55 @@ impl SyntaxNode for IntegerType {
     }
 }
 
+/// FloatingType represents a floating point type with specific bit size
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct FloatingType {
+    pub pos: Position,
+    pub bit_size: u64,
+}
+
+impl SyntaxNode for FloatingType {
+    fn position(&self) -> &Position {
+        &self.pos
+    }
+
+    fn children(&self) -> Vec<&dyn SyntaxNode> {
+        vec![]
+    }
+}
+
+/// VoidType represents the void type for functions with no return value
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct VoidType {
+    pub pos: Position,
+}
+
+impl SyntaxNode for VoidType {
+    fn position(&self) -> &Position {
+        &self.pos
+    }
+
+    fn children(&self) -> Vec<&dyn SyntaxNode> {
+        vec![]
+    }
+}
+
+/// SelfType represents the Self type for referring to the implementing type
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct SelfType {
+    pub pos: Position,
+}
+
+impl SyntaxNode for SelfType {
+    fn position(&self) -> &Position {
+        &self.pos
+    }
+
+    fn children(&self) -> Vec<&dyn SyntaxNode> {
+        vec![]
+    }
+}
+
 /// FunctionType represents a function type in the AST
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct FunctionType {
@@ -89,6 +138,9 @@ impl SyntaxNode for TypeKind {
             TypeKind::Pointer(p) => p.position(),
             TypeKind::Array(a) => a.position(),
             TypeKind::Integer(i) => i.position(),
+            TypeKind::Floating(f) => f.position(),
+            TypeKind::Void(v) => v.position(),
+            TypeKind::Self_(s) => s.position(),
             TypeKind::Function(f) => f.position(),
         }
     }
@@ -98,6 +150,9 @@ impl SyntaxNode for TypeKind {
             TypeKind::Pointer(p) => p.children(),
             TypeKind::Array(a) => a.children(),
             TypeKind::Integer(i) => i.children(),
+            TypeKind::Floating(f) => f.children(),
+            TypeKind::Void(v) => v.children(),
+            TypeKind::Self_(s) => s.children(),
             TypeKind::Function(f) => f.children(),
         }
     }

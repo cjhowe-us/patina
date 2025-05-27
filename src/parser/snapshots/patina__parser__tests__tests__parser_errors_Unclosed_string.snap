@@ -1,0 +1,7 @@
+---
+source: src/parser/tests.rs
+expression: "&result"
+---
+{
+  "Err": "Parse error:  --> 1:7\n  |\n1 | \"hello\n  |       ^---\n  |\n  = expected string_fragment or string_interpolant"
+}

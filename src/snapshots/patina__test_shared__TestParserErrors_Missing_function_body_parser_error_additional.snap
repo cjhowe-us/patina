@@ -1,0 +1,7 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "error": " --> 1:22\n  |\n1 | fun test(x: i32): i32\n  |                      ^---\n  |\n  = expected block"
+}

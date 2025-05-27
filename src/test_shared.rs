@@ -70,7 +70,17 @@ pub fn run_tests<I, O>(
     // Load all test cases from specified files
     for filename in filenames {
         match load_test_cases::<I>(filename) {
-            Ok(mut cases) => all_test_cases.append(&mut cases),
+            Ok(mut cases) => {
+                // Add the filename to each test case's name for uniqueness
+                let file_base = filename.split('.').next().unwrap_or("");
+                for case in &mut cases {
+                    // Only append the filename if there are multiple files and the name might conflict
+                    if filenames.len() > 1 {
+                        case.name = format!("{}_{}", case.name, file_base);
+                    }
+                }
+                all_test_cases.append(&mut cases);
+            }
             Err(e) => panic!("Failed to load test cases from {}: {}", filename, e),
         }
     }
@@ -85,28 +95,9 @@ pub fn run_tests<I, O>(
         let snapshot_name = format!("{}_{}", test_name, test_case_name);
 
         // Use insta for snapshot testing
-        insta::assert_json_snapshot!(snapshot_name, test_result);
-    }
-}
-
-/// Run table-driven tests from a predefined list of test cases
-pub fn run_table_tests<T, R>(
-    test_name: &str,
-    test_cases: &[(&str, T)],
-    test_fn: impl Fn(&T, &str) -> Result<R, String>,
-) where
-    T: Clone,
-    R: Serialize,
-{
-    for (name, input) in test_cases {
-        let result = test_fn(input, name);
-        let test_result = match result {
-            Ok(value) => TestResult::Success(value),
-            Err(err) => TestResult::Error(TestError::new(err)),
-        };
-
-        let snapshot_name = format!("{}_{}", test_name, name.replace(' ', "_"));
-        insta::assert_json_snapshot!(snapshot_name, test_result);
+        insta::with_settings!({sort_maps => true}, {
+            insta::assert_json_snapshot!(snapshot_name, test_result);
+        });
     }
 }
 

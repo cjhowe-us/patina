@@ -1,76 +1,93 @@
-use crate::ast::Root;
-use crate::test_shared::run_table_tests;
-use insta::assert_json_snapshot;
-use serde::{Deserialize, Serialize};
-
-#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
-struct TestToken {
-    #[serde(rename = "type")]
-    token_type: String,
-    #[serde(rename = "value")]
-    token_value: String,
-}
-
-fn parse_patina_code(input: &str) -> Result<Root, String> {
-    crate::parser::parse_file(input).map_err(|e| format!("Parse error: {}", e))
-}
+use crate::parser::parse_file_with_name;
+use crate::test_shared::run_tests;
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
-    fn test_parser_basic_cases() {
-        let test_cases = vec![
-            ("Simple binding", "let x = 1"),
-            ("Mutable binding", "let mut y = 2"),
-            ("Static binding", "static let z = 3"),
-            ("Binding with type", "let a: i64 = 4"),
-            ("Binding without init", "let b: i64"),
-            ("Block atom", "{\n\tlet x = 1\n}"),
-            ("Return statement", "return 42"),
-            ("Break statement", "break"),
-        ];
-
-        run_table_tests("parser_basic", &test_cases, |input, name| {
-            let result = parse_patina_code(input);
-            assert_json_snapshot!(format!("parser_basic_{}", name.replace(" ", "_")), &result);
-            result
-        });
+    fn test_parser_from_json() {
+        run_tests(
+            "TestParser",
+            &["parser.json", "parser_additional.json"],
+            |input: &String, name: &str| -> Result<crate::ast::Root, Box<dyn std::error::Error>> {
+                parse_file_with_name(name, input)
+            },
+        );
     }
 
     #[test]
-    fn test_parser_advanced_cases() {
-        let test_cases = vec![
-            ("Array type", "[i32; 10]"),
-            ("Pointer type", "*mut i32"),
-            ("Function type", "fn(i32, i32) -> i32"),
-            ("Nested blocks", "{ { let x = 1; x } }"),
-            ("String literal", "\"Hello, world!\""),
-            ("Integer literal", "42"),
-        ];
-
-        run_table_tests("parser_advanced", &test_cases, |input, name| {
-            let result = parse_patina_code(input);
-            assert_json_snapshot!(format!("parser_advanced_{}", name.replace(" ", "_")), &result);
-            result
-        });
+    fn test_parser_errors_from_json() {
+        run_tests(
+            "TestParserErrors",
+            &["parser_error.json", "parser_error_additional.json"],
+            |input: &String, name: &str| -> Result<crate::ast::Root, Box<dyn std::error::Error>> {
+                parse_file_with_name(name, input)
+            },
+        );
     }
 
     #[test]
-    fn test_parser_error_cases() {
-        let test_cases = vec![
-            ("Unclosed block", "{ let x = 1"),
-            ("Invalid syntax", "let = 1"),
-            ("Unclosed string", "\"hello"),
-            ("Invalid type", "let x: *"),
-        ];
+    fn test_parser_real_world_from_json() {
+        run_tests(
+            "TestParserRealWorld",
+            &["real_world_examples.json"],
+            |input: &String, name: &str| -> Result<crate::ast::Root, Box<dyn std::error::Error>> {
+                parse_file_with_name(name, input)
+            },
+        );
+    }
 
-        run_table_tests("parser_errors", &test_cases, |input, name| {
-            let result = parse_patina_code(input);
-            // For error cases, we expect failures but still snapshot them
-            assert_json_snapshot!(format!("parser_errors_{}", name.replace(" ", "_")), &result);
-            result
-        });
+    #[test]
+    fn test_parser_readme_examples_from_json() {
+        run_tests(
+            "TestParserReadmeExamples",
+            &["readme_examples.json"],
+            |input: &String, name: &str| -> Result<crate::ast::Root, Box<dyn std::error::Error>> {
+                parse_file_with_name(name, input)
+            },
+        );
+    }
+
+    #[test]
+    fn test_while_loops_from_json() {
+        run_tests(
+            "TestWhileLoops",
+            &["while_test.json"],
+            |input: &String, name: &str| -> Result<crate::ast::Root, Box<dyn std::error::Error>> {
+                parse_file_with_name(name, input)
+            },
+        );
+    }
+
+    #[test]
+    fn test_field_access_from_json() {
+        run_tests(
+            "TestFieldAccess",
+            &["field_access_test.json"],
+            |input: &String, name: &str| -> Result<crate::ast::Root, Box<dyn std::error::Error>> {
+                parse_file_with_name(name, input)
+            },
+        );
+    }
+
+    #[test]
+    fn test_lexer_from_json() {
+        use crate::parser::{PatinaParser, Rule};
+        use pest::Parser;
+
+        run_tests(
+            "TestLexer",
+            &["lexer.json"],
+            |input: &String, _name: &str| -> Result<Vec<String>, Box<dyn std::error::Error>> {
+                let pairs = PatinaParser::parse(Rule::root, input)?;
+                let tokens: Vec<String> = pairs
+                    .flatten()
+                    .filter(|p| !matches!(p.as_rule(), Rule::EOI))
+                    .map(|p| format!("{:?}: {}", p.as_rule(), p.as_str()))
+                    .collect();
+                Ok(tokens)
+            },
+        );
     }
 }

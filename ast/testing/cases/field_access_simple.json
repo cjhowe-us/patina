@@ -1,0 +1,6 @@
+[
+  {
+    "name": "SimpleFieldAccess",
+    "input": "let x = obj.field"
+  }
+]

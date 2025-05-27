@@ -1,0 +1,109 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "pos": {
+    "filename": "WhileWithComparison",
+    "line": 1,
+    "column": 1,
+    "offset": 0
+  },
+  "statements": [
+    {
+      "pos": {
+        "filename": null,
+        "line": 1,
+        "column": 1,
+        "offset": 0
+      },
+      "comments": [],
+      "annotations": [],
+      "statement": {
+        "While": {
+          "pos": {
+            "filename": null,
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "condition": {
+            "Operation": {
+              "pos": {
+                "filename": null,
+                "line": 1,
+                "column": 8,
+                "offset": 7
+              },
+              "prefix": [
+                ">"
+              ],
+              "operands": [
+                {
+                  "pos": {
+                    "filename": null,
+                    "line": 1,
+                    "column": 8,
+                    "offset": 7
+                  },
+                  "atom": {
+                    "Binding": {
+                      "pos": {
+                        "filename": null,
+                        "line": 1,
+                        "column": 8,
+                        "offset": 7
+                      },
+                      "name": "count"
+                    }
+                  },
+                  "postfix": []
+                },
+                {
+                  "pos": {
+                    "filename": null,
+                    "line": 1,
+                    "column": 16,
+                    "offset": 15
+                  },
+                  "atom": {
+                    "Value": {
+                      "pos": {
+                        "filename": null,
+                        "line": 1,
+                        "column": 16,
+                        "offset": 15
+                      },
+                      "value": {
+                        "Integer": {
+                          "pos": {
+                            "filename": null,
+                            "line": 1,
+                            "column": 16,
+                            "offset": 15
+                          },
+                          "value": 0
+                        }
+                      }
+                    }
+                  },
+                  "postfix": []
+                }
+              ]
+            }
+          },
+          "body": {
+            "pos": {
+              "filename": null,
+              "line": 1,
+              "column": 19,
+              "offset": 18
+            },
+            "label": null,
+            "statements": []
+          }
+        }
+      }
+    }
+  ]
+}

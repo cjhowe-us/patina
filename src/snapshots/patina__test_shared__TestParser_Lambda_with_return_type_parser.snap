@@ -1,0 +1,125 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "pos": {
+    "filename": "Lambda_with_return_type_parser",
+    "line": 1,
+    "column": 1,
+    "offset": 0
+  },
+  "statements": [
+    {
+      "pos": {
+        "filename": null,
+        "line": 1,
+        "column": 1,
+        "offset": 0
+      },
+      "comments": [],
+      "annotations": [],
+      "statement": {
+        "Let": {
+          "pos": {
+            "filename": null,
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "is_static": false,
+          "is_mutable": false,
+          "name": "x ",
+          "var_type": null,
+          "value": {
+            "Lambda": {
+              "pos": {
+                "filename": null,
+                "line": 1,
+                "column": 9,
+                "offset": 8
+              },
+              "parameters": [],
+              "return_type": null,
+              "body": {
+                "pos": {
+                  "filename": null,
+                  "line": 1,
+                  "column": 20,
+                  "offset": 19
+                },
+                "label": null,
+                "statements": [
+                  {
+                    "pos": {
+                      "filename": null,
+                      "line": 1,
+                      "column": 22,
+                      "offset": 21
+                    },
+                    "comments": [],
+                    "annotations": [],
+                    "statement": {
+                      "Return": {
+                        "pos": {
+                          "filename": null,
+                          "line": 1,
+                          "column": 22,
+                          "offset": 21
+                        },
+                        "label": null,
+                        "value": {
+                          "Operation": {
+                            "pos": {
+                              "filename": null,
+                              "line": 1,
+                              "column": 29,
+                              "offset": 28
+                            },
+                            "prefix": [],
+                            "operands": [
+                              {
+                                "pos": {
+                                  "filename": null,
+                                  "line": 1,
+                                  "column": 29,
+                                  "offset": 28
+                                },
+                                "atom": {
+                                  "Value": {
+                                    "pos": {
+                                      "filename": null,
+                                      "line": 1,
+                                      "column": 29,
+                                      "offset": 28
+                                    },
+                                    "value": {
+                                      "Integer": {
+                                        "pos": {
+                                          "filename": null,
+                                          "line": 1,
+                                          "column": 29,
+                                          "offset": 28
+                                        },
+                                        "value": 0
+                                      }
+                                    }
+                                  }
+                                },
+                                "postfix": []
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

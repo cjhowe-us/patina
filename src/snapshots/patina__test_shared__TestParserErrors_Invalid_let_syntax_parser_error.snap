@@ -1,0 +1,7 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "error": " --> 1:5\n  |\n1 | let = 5\n  |     ^---\n  |\n  = expected mut_kw, ident_char, or ident"
+}

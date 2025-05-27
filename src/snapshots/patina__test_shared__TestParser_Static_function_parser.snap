@@ -1,0 +1,123 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "pos": {
+    "filename": "Static_function_parser",
+    "line": 1,
+    "column": 1,
+    "offset": 0
+  },
+  "statements": [
+    {
+      "pos": {
+        "filename": null,
+        "line": 1,
+        "column": 1,
+        "offset": 0
+      },
+      "comments": [],
+      "annotations": [],
+      "statement": {
+        "Function": {
+          "pos": {
+            "filename": null,
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "is_static": true,
+          "name": "test",
+          "parameters": [],
+          "return_type": {
+            "Type": {
+              "pos": {
+                "filename": null,
+                "line": 1,
+                "column": 20,
+                "offset": 19
+              },
+              "type_expr": null
+            }
+          },
+          "block": {
+            "pos": {
+              "filename": null,
+              "line": 1,
+              "column": 24,
+              "offset": 23
+            },
+            "label": null,
+            "statements": [
+              {
+                "pos": {
+                  "filename": null,
+                  "line": 2,
+                  "column": 2,
+                  "offset": 26
+                },
+                "comments": [],
+                "annotations": [],
+                "statement": {
+                  "Return": {
+                    "pos": {
+                      "filename": null,
+                      "line": 2,
+                      "column": 2,
+                      "offset": 26
+                    },
+                    "label": null,
+                    "value": {
+                      "Operation": {
+                        "pos": {
+                          "filename": null,
+                          "line": 2,
+                          "column": 9,
+                          "offset": 33
+                        },
+                        "prefix": [],
+                        "operands": [
+                          {
+                            "pos": {
+                              "filename": null,
+                              "line": 2,
+                              "column": 9,
+                              "offset": 33
+                            },
+                            "atom": {
+                              "Value": {
+                                "pos": {
+                                  "filename": null,
+                                  "line": 2,
+                                  "column": 9,
+                                  "offset": 33
+                                },
+                                "value": {
+                                  "Integer": {
+                                    "pos": {
+                                      "filename": null,
+                                      "line": 2,
+                                      "column": 9,
+                                      "offset": 33
+                                    },
+                                    "value": 42
+                                  }
+                                }
+                              }
+                            },
+                            "postfix": []
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

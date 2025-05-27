@@ -1,0 +1,7 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "error": " --> 4:19\n  |\n4 | \t\t\tif (condition) break :inner\n  | \t\t\t               ^---\n  |\n  = expected operator, postfix, or block"
+}

@@ -1,0 +1,7 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "error": " --> 1:12\n  |\n1 | @deprecated␊\n  |            ^---\n  |\n  = expected ident_char, tag, left_paren, or statement"
+}

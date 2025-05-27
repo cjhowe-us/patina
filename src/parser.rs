@@ -10,6 +10,7 @@ pub struct PatinaParser;
 fn span_to_position(span: &pest::Span) -> Position {
     let (line, column) = span.start_pos().line_col();
     Position {
+        filename: None,
         line,
         column,
         offset: span.start(),
@@ -18,9 +19,25 @@ fn span_to_position(span: &pest::Span) -> Position {
 
 /// Parse a Patina source file
 pub fn parse_file(input: &str) -> Result<Root, Box<dyn std::error::Error>> {
+    parse_file_with_name("", input)
+}
+
+/// Parse a Patina source file with a given filename
+pub fn parse_file_with_name(
+    filename: &str,
+    input: &str,
+) -> Result<Root, Box<dyn std::error::Error>> {
     let pairs = PatinaParser::parse(Rule::root, input)?;
     let pair = pairs.into_iter().next().unwrap();
-    parse_root(pair)
+    let mut root = parse_root(pair)?;
+
+    // Set filename
+    root.pos.filename = Some(filename.to_string());
+
+    // Recursively set filename for all nodes
+    // (would need a visitor implementation)
+
+    Ok(root)
 }
 
 pub fn parse_root(pair: pest::iterators::Pair<Rule>) -> Result<Root, Box<dyn std::error::Error>> {
@@ -53,7 +70,7 @@ fn parse_decorated_statement(
             Rule::annotation => {
                 annotations.push(parse_annotation(inner_pair)?);
             }
-            Rule::comment => {
+            Rule::line_comment | Rule::block_comment => {
                 comments.push(parse_comment(inner_pair)?);
             }
             Rule::statement => {
@@ -90,7 +107,7 @@ fn parse_annotation(
     Ok(Annotation {
         pos,
         name,
-        arguments: Vec::new()
+        arguments: Vec::new(),
     })
 }
 
@@ -100,7 +117,7 @@ fn parse_comment(pair: pest::iterators::Pair<Rule>) -> Result<Comment, Box<dyn s
     Ok(Comment {
         pos,
         text,
-        nested_comments: Vec::new()
+        nested_comments: Vec::new(),
     })
 }
 
@@ -112,20 +129,26 @@ fn parse_statement(
 
     for inner_pair in pair.into_inner() {
         match inner_pair.as_rule() {
-            Rule::module_statement => {
+            Rule::module_stmt => {
                 return Ok(StatementKind::Module(parse_module(inner_pair)?));
             }
-            Rule::function_statement => {
+            Rule::function_stmt => {
                 return Ok(StatementKind::Function(parse_function(inner_pair)?));
             }
-            Rule::return_statement => {
+            Rule::return_stmt => {
                 return Ok(StatementKind::Return(parse_return(inner_pair)?));
             }
-            Rule::let_statement => {
+            Rule::let_stmt => {
                 return Ok(StatementKind::Let(parse_let(inner_pair)?));
             }
-            Rule::break_statement => {
+            Rule::assignment_stmt => {
+                return Ok(StatementKind::Assignment(parse_assignment(inner_pair)?));
+            }
+            Rule::break_stmt => {
                 return Ok(StatementKind::Break(parse_break(inner_pair)?));
+            }
+            Rule::while_stmt => {
+                return Ok(StatementKind::While(parse_while(inner_pair)?));
             }
             Rule::expression => {
                 return Ok(StatementKind::Expression(ExpressionStatement {
@@ -155,16 +178,26 @@ fn parse_statement(
 
 fn parse_module(pair: pest::iterators::Pair<Rule>) -> Result<Module, Box<dyn std::error::Error>> {
     let pos = span_to_position(&pair.as_span());
-    let name = pair.as_str().to_string();
-    Ok(Module {
-        pos,
-        name,
-        body: Block {
-            pos: Position::default(),
-            label: None,
-            statements: Vec::new(),
+    let mut name = String::new();
+    let mut body = Block {
+        pos: Position::default(),
+        label: None,
+        statements: Vec::new(),
+    };
+
+    for inner_pair in pair.into_inner() {
+        match inner_pair.as_rule() {
+            Rule::ident => {
+                name = inner_pair.as_str().to_string();
+            }
+            Rule::block => {
+                body = parse_block(inner_pair)?;
+            }
+            _ => {} // Skip other rules
         }
-    })
+    }
+
+    Ok(Module { pos, name, body })
 }
 
 fn parse_function(
@@ -175,17 +208,21 @@ fn parse_function(
     let mut parameters = Vec::new();
     let mut return_type = None;
     let mut body = None;
+    let mut is_static = false;
 
     for inner_pair in pair.into_inner() {
         match inner_pair.as_rule() {
+            Rule::static_kw => {
+                is_static = true;
+            }
             Rule::ident => {
                 name = inner_pair.as_str().to_string();
             }
             Rule::function_parameter => {
                 parameters.push(parse_function_parameter(inner_pair)?);
             }
-            Rule::atomic_type => {
-                return_type = Some(AtomKind::Type(parse_atomic_type(inner_pair)?));
+            Rule::atom => {
+                return_type = Some(parse_atom(inner_pair)?);
             }
             Rule::block => {
                 body = Some(parse_block(inner_pair)?);
@@ -196,7 +233,7 @@ fn parse_function(
 
     Ok(FunctionStatement {
         pos,
-        is_static: false,
+        is_static,
         name,
         parameters,
         return_type,
@@ -223,8 +260,8 @@ fn parse_function_parameter(
             Rule::ident => {
                 name = inner_pair.as_str().to_string();
             }
-            Rule::atomic_type => {
-                param_type = AtomKind::Type(parse_atomic_type(inner_pair)?);
+            Rule::atom => {
+                param_type = parse_atom(inner_pair)?;
             }
             _ => {} // Skip other rules
         }
@@ -246,8 +283,10 @@ fn parse_return(
 
     for inner_pair in pair.into_inner() {
         match inner_pair.as_rule() {
-            Rule::ident => {
-                label = Some(inner_pair.as_str().to_string());
+            Rule::label => {
+                // Extract the label without the leading colon
+                let label_str = inner_pair.as_str();
+                label = Some(label_str.trim_start_matches(':').to_string());
             }
             Rule::expression => {
                 value = Some(parse_expression(inner_pair)?);
@@ -266,14 +305,28 @@ fn parse_let(
     let mut name = String::new();
     let mut var_type = None;
     let mut value = None;
+    let mut is_mutable = false;
+    let mut is_static = false;
 
     for inner_pair in pair.into_inner() {
         match inner_pair.as_rule() {
-            Rule::binding => {
-                name = parse_binding(inner_pair)?.name;
+            Rule::static_kw => {
+                is_static = true;
+            }
+            Rule::mut_kw => {
+                is_mutable = true;
+            }
+            Rule::ident => {
+                name = inner_pair.as_str().to_string();
             }
             Rule::atomic_type => {
                 var_type = Some(AtomKind::Type(parse_atomic_type(inner_pair)?));
+            }
+            Rule::atom => {
+                var_type = Some(parse_atom(inner_pair)?);
+            }
+            Rule::operator => {
+                // Skip the = operator
             }
             Rule::expression => {
                 value = Some(parse_expression(inner_pair)?);
@@ -284,11 +337,51 @@ fn parse_let(
 
     Ok(LetStatement {
         pos,
-        is_static: false,
-        is_mutable: false,
+        is_static,
+        is_mutable,
         name,
         var_type,
         value,
+    })
+}
+
+fn parse_assignment(
+    pair: pest::iterators::Pair<Rule>,
+) -> Result<AssignmentStatement, Box<dyn std::error::Error>> {
+    let pos = span_to_position(&pair.as_span());
+    let mut target = None;
+    let mut value = None;
+
+    let expressions: Vec<_> = pair
+        .into_inner()
+        .filter(|p| p.as_rule() == Rule::expression)
+        .collect();
+
+    if expressions.len() >= 2 {
+        target = Some(parse_expression(expressions[0].clone())?);
+        value = Some(parse_expression(expressions[1].clone())?);
+    }
+
+    Ok(AssignmentStatement {
+        pos: pos.clone(),
+        target: target.unwrap_or(ExpressionKind::Block(BlockExpression {
+            pos: pos.clone(),
+            is_static: false,
+            block: Block {
+                pos: pos.clone(),
+                label: None,
+                statements: Vec::new(),
+            },
+        })),
+        value: value.unwrap_or(ExpressionKind::Block(BlockExpression {
+            pos: pos.clone(),
+            is_static: false,
+            block: Block {
+                pos,
+                label: None,
+                statements: Vec::new(),
+            },
+        })),
     })
 }
 
@@ -297,17 +390,61 @@ fn parse_break(
 ) -> Result<BreakStatement, Box<dyn std::error::Error>> {
     let pos = span_to_position(&pair.as_span());
     let mut label = None;
+    let mut value = None;
 
     for inner_pair in pair.into_inner() {
         match inner_pair.as_rule() {
-            Rule::ident => {
-                label = Some(inner_pair.as_str().to_string());
+            Rule::label => {
+                // Extract the label without the leading colon
+                let label_str = inner_pair.as_str();
+                label = Some(label_str.trim_start_matches(':').to_string());
+            }
+            Rule::expression => {
+                value = Some(parse_expression(inner_pair)?);
             }
             _ => {} // Skip other rules
         }
     }
 
-    Ok(BreakStatement { pos, label, value: None })
+    Ok(BreakStatement { pos, label, value })
+}
+
+fn parse_while(
+    pair: pest::iterators::Pair<Rule>,
+) -> Result<WhileStatement, Box<dyn std::error::Error>> {
+    let pos = span_to_position(&pair.as_span());
+    let mut condition = None;
+    let mut body = None;
+
+    for inner_pair in pair.into_inner() {
+        match inner_pair.as_rule() {
+            Rule::expression => {
+                condition = Some(parse_expression(inner_pair)?);
+            }
+            Rule::block => {
+                body = Some(parse_block(inner_pair)?);
+            }
+            _ => {} // Skip other rules
+        }
+    }
+
+    Ok(WhileStatement {
+        pos,
+        condition: condition.unwrap_or(ExpressionKind::Block(BlockExpression {
+            pos: Position::default(),
+            is_static: false,
+            block: Block {
+                pos: Position::default(),
+                label: None,
+                statements: Vec::new(),
+            },
+        })),
+        body: body.unwrap_or(Block {
+            pos: Position::default(),
+            label: None,
+            statements: Vec::new(),
+        }),
+    })
 }
 
 fn parse_expression(
@@ -358,51 +495,56 @@ fn parse_if_expression(
     let mut else_ifs = Vec::new();
     let mut else_branch = None;
 
-    for (idx, inner_pair) in pair.into_inner().enumerate() {
-        match inner_pair.as_rule() {
-            Rule::if_branch => {
-                if idx == 0 {
-                    // First branch is the main if branch
-                    if_branch = Some(parse_if_branch(inner_pair)?);
-                } else {
-                    // Other branches except the last one are else-if branches
-                    else_ifs.push(parse_if_branch(inner_pair)?);
-                }
-            }
-            Rule::expression => {
-                // The final expression is the else branch (if present)
-                else_branch = Some(Box::new(parse_expression(inner_pair)?));
-            }
-            _ => {} // Skip other rules
+    let inner_pairs: Vec<_> = pair.into_inner().collect();
+
+    // The first if_branch is the main if
+    if let Some(first_pair) = inner_pairs.get(0) {
+        if first_pair.as_rule() == Rule::if_branch {
+            if_branch = Some(parse_if_branch(first_pair.clone())?);
         }
     }
 
-    // Create a default branch using a position that won't be moved
-    let default_pos = pos.clone();
+    // Process remaining pairs
+    let mut i = 1;
+    while i < inner_pairs.len() {
+        let pair = &inner_pairs[i];
+
+        match pair.as_rule() {
+            Rule::else_kw => {
+                // Check what follows else
+                if i + 1 < inner_pairs.len() {
+                    let next_pair = &inner_pairs[i + 1];
+                    match next_pair.as_rule() {
+                        Rule::if_expression => {
+                            // This is an else-if
+                            let else_if = parse_if_expression(next_pair.clone())?;
+                            if let Some(branch) = else_if.if_branch {
+                                else_ifs.push(branch);
+                            }
+                            i += 1; // Skip the if_expression we just processed
+                        }
+                        Rule::block => {
+                            // This is an else block
+                            let block = parse_block(next_pair.clone())?;
+                            else_branch = Some(Box::new(ExpressionKind::Block(BlockExpression {
+                                pos: block.pos.clone(),
+                                is_static: false,
+                                block,
+                            })));
+                            i += 1; // Skip the block we just processed
+                        }
+                        _ => {}
+                    }
+                }
+            }
+            _ => {}
+        }
+        i += 1;
+    }
 
     Ok(IfExpression {
         pos,
-        if_branch: if_branch.unwrap_or_else(|| IfBranch {
-            pos: default_pos.clone(),
-            condition: Box::new(ExpressionKind::Block(BlockExpression {
-                pos: default_pos.clone(),
-                is_static: false,
-                block: Block {
-                    pos: default_pos.clone(),
-                    label: None,
-                    statements: Vec::new(),
-                },
-            })),
-            then: Box::new(ExpressionKind::Block(BlockExpression {
-                pos: default_pos.clone(),
-                is_static: false,
-                block: Block {
-                    pos: default_pos,
-                    label: None,
-                    statements: Vec::new(),
-                },
-            })),
-        }),
+        if_branch,
         else_ifs,
         else_branch,
     })
@@ -413,16 +555,22 @@ fn parse_if_branch(
 ) -> Result<IfBranch, Box<dyn std::error::Error>> {
     let pos = span_to_position(&pair.as_span());
     let mut condition_expr = None;
-    let mut then_expr = None;
+    let mut then_block = None;
 
     for inner_pair in pair.into_inner() {
         match inner_pair.as_rule() {
             Rule::expression => {
-                if condition_expr.is_none() {
-                    condition_expr = Some(Box::new(parse_expression(inner_pair)?));
-                } else {
-                    then_expr = Some(Box::new(parse_expression(inner_pair)?));
-                }
+                // The expression is the condition
+                condition_expr = Some(Box::new(parse_expression(inner_pair)?));
+            }
+            Rule::block => {
+                // The block is the then part
+                let block = parse_block(inner_pair)?;
+                then_block = Some(Box::new(ExpressionKind::Block(BlockExpression {
+                    pos: block.pos.clone(),
+                    is_static: false,
+                    block,
+                })));
             }
             _ => {} // Skip other rules
         }
@@ -432,20 +580,22 @@ fn parse_if_branch(
     let default_pos = pos.clone();
 
     // Default empty expressions if not provided - use the cloned position
-    let default_expr = || Box::new(ExpressionKind::Block(BlockExpression {
-        pos: default_pos.clone(),
-        is_static: false,
-        block: Block {
+    let default_expr = || {
+        Box::new(ExpressionKind::Block(BlockExpression {
             pos: default_pos.clone(),
-            label: None,
-            statements: Vec::new(),
-        },
-    }));
+            is_static: false,
+            block: Block {
+                pos: default_pos.clone(),
+                label: None,
+                statements: Vec::new(),
+            },
+        }))
+    };
 
     Ok(IfBranch {
         pos: default_pos.clone(), // Use the cloned position
         condition: condition_expr.unwrap_or_else(default_expr),
-        then: then_expr.unwrap_or_else(default_expr),
+        then: then_block.unwrap_or_else(default_expr),
     })
 }
 
@@ -456,11 +606,8 @@ fn parse_case_expression(
     let mut branches = Vec::new();
 
     for inner_pair in pair.into_inner() {
-        match inner_pair.as_rule() {
-            Rule::case_branch => {
-                branches.push(parse_case_branch(inner_pair)?);
-            }
-            _ => {} // Skip other rules
+        if inner_pair.as_rule() == Rule::case_branch {
+            branches.push(parse_case_branch(inner_pair)?);
         }
     }
 
@@ -475,15 +622,12 @@ fn parse_case_branch(
     let mut then = None;
 
     for inner_pair in pair.into_inner() {
-        match inner_pair.as_rule() {
-            Rule::expression => {
-                if pattern.is_none() {
-                    pattern = Some(Box::new(parse_expression(inner_pair)?));
-                } else {
-                    then = Some(Box::new(parse_expression(inner_pair)?));
-                }
+        if inner_pair.as_rule() == Rule::expression {
+            if pattern.is_none() {
+                pattern = Some(Box::new(parse_expression(inner_pair)?));
+            } else {
+                then = Some(Box::new(parse_expression(inner_pair)?));
             }
-            _ => {} // Skip other rules
         }
     }
 
@@ -542,15 +686,25 @@ fn parse_block_expression(
 ) -> Result<BlockExpression, Box<dyn std::error::Error>> {
     let pos = span_to_position(&pair.as_span());
     let block = parse_block(pair)?;
-    Ok(BlockExpression { pos, is_static: false, block })
+    Ok(BlockExpression {
+        pos,
+        is_static: false,
+        block,
+    })
 }
 
 fn parse_block(pair: pest::iterators::Pair<Rule>) -> Result<Block, Box<dyn std::error::Error>> {
     let pos = span_to_position(&pair.as_span());
     let mut statements = Vec::new();
+    let mut label = None;
 
     for inner_pair in pair.into_inner() {
         match inner_pair.as_rule() {
+            Rule::label => {
+                // Extract the label without the leading colon
+                let label_str = inner_pair.as_str();
+                label = Some(label_str.trim_start_matches(':').to_string());
+            }
             Rule::decorated_statement => {
                 statements.push(parse_decorated_statement(inner_pair)?);
             }
@@ -558,7 +712,11 @@ fn parse_block(pair: pest::iterators::Pair<Rule>) -> Result<Block, Box<dyn std::
         }
     }
 
-    Ok(Block { pos, label: None, statements })
+    Ok(Block {
+        pos,
+        label,
+        statements,
+    })
 }
 
 fn parse_operation(
@@ -566,22 +724,49 @@ fn parse_operation(
 ) -> Result<Operation, Box<dyn std::error::Error>> {
     let pos = span_to_position(&pair.as_span());
     let mut operands = Vec::new();
+    let mut operators = Vec::new();
 
     for inner_pair in pair.into_inner() {
         match inner_pair.as_rule() {
             Rule::operand => {
                 operands.push(parse_operand(inner_pair)?);
             }
+            Rule::operator => {
+                operators.push(inner_pair.as_str().to_string());
+            }
             _ => {} // Skip other rules
         }
     }
 
-    Ok(Operation { pos, prefix: Vec::new(), operands })
+    // Build the operation tree (for now just return the first operand wrapped)
+    if operands.is_empty() {
+        Ok(Operation {
+            pos,
+            prefix: Vec::new(),
+            operands: vec![Operand {
+                pos: Position::default(),
+                atom: AtomKind::Value(AtomicValue {
+                    pos: Position::default(),
+                    value: None,
+                }),
+                postfix: Vec::new(),
+            }],
+        })
+    } else {
+        Ok(Operation {
+            pos,
+            prefix: operators.clone(),
+            operands,
+        })
+    }
 }
 
 fn parse_operand(pair: pest::iterators::Pair<Rule>) -> Result<Operand, Box<dyn std::error::Error>> {
     let pos = span_to_position(&pair.as_span());
-    let mut atom = AtomKind::Value(AtomicValue { pos: pos.clone(), value: None });
+    let mut atom = AtomKind::Value(AtomicValue {
+        pos: pos.clone(),
+        value: None,
+    });
     let mut postfix = Vec::new();
 
     for inner_pair in pair.into_inner() {
@@ -596,33 +781,43 @@ fn parse_operand(pair: pest::iterators::Pair<Rule>) -> Result<Operand, Box<dyn s
         }
     }
 
-    Ok(Operand {
-        pos,
-        atom,
-        postfix,
-    })
+    Ok(Operand { pos, atom, postfix })
 }
 
 fn parse_postfix(pair: pest::iterators::Pair<Rule>) -> Result<Postfix, Box<dyn std::error::Error>> {
     let pos = span_to_position(&pair.as_span());
+    let parent_str = pair.as_str().to_string(); // Get string before consuming pair
     let mut invocation = Vec::new();
     let mut index = None;
+    let mut field = None;
     let mut operator = None;
 
     for inner_pair in pair.into_inner() {
         match inner_pair.as_rule() {
             Rule::expression => {
-                if inner_pair.as_str().starts_with('(') || inner_pair.as_str().contains('(') {
+                // Check parent context to determine if this is invocation or index
+                if parent_str.starts_with('(') {
                     // Function invocation
                     invocation.push(parse_expression(inner_pair)?);
-                } else {
+                } else if parent_str.starts_with('[') {
                     // Array index
                     index = Some(Box::new(parse_expression(inner_pair)?));
                 }
             }
-            // Handle operators if they exist
+            Rule::field => {
+                // Handle field access - extract the identifier after the dot
+                for field_inner in inner_pair.into_inner() {
+                    if field_inner.as_rule() == Rule::ident {
+                        field = Some(field_inner.as_str().to_string());
+                    }
+                }
+            }
             Rule::operator => {
                 operator = Some(inner_pair.as_str().to_string());
+            }
+            Rule::ident => {
+                // Direct identifier in field context
+                field = Some(inner_pair.as_str().to_string());
             }
             _ => {} // Skip other rules
         }
@@ -632,19 +827,8 @@ fn parse_postfix(pair: pest::iterators::Pair<Rule>) -> Result<Postfix, Box<dyn s
         pos,
         invocation,
         index,
+        field,
         operator,
-    })
-}
-
-fn parse_postfix_suffix(
-    _pair: pest::iterators::Pair<Rule>,
-) -> Result<Postfix, Box<dyn std::error::Error>> {
-    // Simple implementation - in a real parser you'd handle different suffix types
-    Ok(Postfix {
-        pos: Position { line: 0, column: 0, offset: 0 },
-        invocation: Vec::new(),
-        index: None,
-        operator: None,
     })
 }
 
@@ -671,7 +855,10 @@ fn parse_atom(pair: pest::iterators::Pair<Rule>) -> Result<AtomKind, Box<dyn std
     }
 
     // Default fallback
-    Ok(AtomKind::Value(AtomicValue { pos: default_pos, value: None }))
+    Ok(AtomKind::Value(AtomicValue {
+        pos: default_pos,
+        value: None,
+    }))
 }
 
 fn parse_grouped_expression(
@@ -681,11 +868,8 @@ fn parse_grouped_expression(
     let mut expression = None;
 
     for inner_pair in pair.into_inner() {
-        match inner_pair.as_rule() {
-            Rule::expression => {
-                expression = Some(Box::new(parse_expression(inner_pair)?));
-            }
-            _ => {} // Skip other rules
+        if inner_pair.as_rule() == Rule::expression {
+            expression = Some(Box::new(parse_expression(inner_pair)?));
         }
     }
 
@@ -699,11 +883,8 @@ fn parse_atomic_type(
     let mut type_expr = None;
 
     for inner_pair in pair.into_inner() {
-        match inner_pair.as_rule() {
-            Rule::type_expression => {
-                type_expr = Some(Box::new(parse_type_expression(inner_pair)?));
-            }
-            _ => {} // Skip other rules
+        if inner_pair.as_rule() == Rule::type_expression {
+            type_expr = Some(Box::new(parse_type_expression(inner_pair)?));
         }
     }
 
@@ -727,6 +908,9 @@ fn parse_type_expression(
             Rule::integer_type => {
                 return Ok(TypeKind::Integer(parse_integer_type(inner_pair)?));
             }
+            Rule::floating_type => {
+                return Ok(TypeKind::Floating(parse_floating_type(inner_pair)?));
+            }
             Rule::function_type => {
                 return Ok(TypeKind::Function(parse_function_type(inner_pair)?));
             }
@@ -735,7 +919,11 @@ fn parse_type_expression(
     }
 
     // Default fallback
-    Ok(TypeKind::Integer(IntegerType { pos: default_pos, bit_size: 32, signed: true }))
+    Ok(TypeKind::Integer(IntegerType {
+        pos: default_pos,
+        bit_size: 32,
+        signed: true,
+    }))
 }
 
 fn parse_pointer_type(
@@ -743,11 +931,23 @@ fn parse_pointer_type(
 ) -> Result<PointerType, Box<dyn std::error::Error>> {
     let pos = span_to_position(&pair.as_span());
     let mut target = None;
+    let mut is_owned = false;
+    let mut is_raw = false;
+    let mut is_mutable = false;
 
     for inner_pair in pair.into_inner() {
         match inner_pair.as_rule() {
-            Rule::atomic_type => {
-                target = Some(AtomKind::Type(parse_atomic_type(inner_pair)?));
+            Rule::own_kw => {
+                is_owned = true;
+            }
+            Rule::raw_kw => {
+                is_raw = true;
+            }
+            Rule::mut_kw => {
+                is_mutable = true;
+            }
+            Rule::atom => {
+                target = Some(parse_atom(inner_pair)?);
             }
             _ => {} // Skip other rules
         }
@@ -755,11 +955,10 @@ fn parse_pointer_type(
 
     Ok(PointerType {
         pos: pos.clone(),
-        is_owned: false,
-        is_raw: false,
-        is_mutable: false,
-        target: target
-            .unwrap_or_else(|| AtomKind::Value(AtomicValue { pos, value: None })),
+        is_owned,
+        is_raw,
+        is_mutable,
+        target: target.unwrap_or(AtomKind::Value(AtomicValue { pos, value: None })),
     })
 }
 
@@ -777,7 +976,14 @@ fn parse_array_type(
             }
             Rule::integer => {
                 let value_str = inner_pair.as_str();
-                dimension = Some(value_str.parse::<u64>().unwrap_or(0));
+                // Since we can have negative array dimensions in tests, use i64 instead
+                // This only affects the parser, not semantics validation
+                if let Ok(parsed_value) = value_str.parse::<i64>() {
+                    if parsed_value >= 0 {
+                        dimension = Some(parsed_value as u64);
+                    }
+                    // else invalid dimension - maintain none
+                }
             }
             _ => {} // Skip other rules
         }
@@ -785,8 +991,7 @@ fn parse_array_type(
 
     Ok(ArrayType {
         pos: pos.clone(),
-        element: element
-            .unwrap_or_else(|| AtomKind::Value(AtomicValue { pos, value: None })),
+        element: element.unwrap_or(AtomKind::Value(AtomicValue { pos, value: None })),
         dimension,
     })
 }
@@ -795,8 +1000,29 @@ fn parse_integer_type(
     pair: pest::iterators::Pair<Rule>,
 ) -> Result<IntegerType, Box<dyn std::error::Error>> {
     let pos = span_to_position(&pair.as_span());
-    let bit_size = 32; // Default size
-    Ok(IntegerType { pos, bit_size, signed: true })
+    let type_str = pair.as_str();
+
+    // Parse i32, u64, etc.
+    let signed = type_str.starts_with('i');
+    let bit_size = type_str[1..].parse::<u64>().unwrap_or(32);
+
+    Ok(IntegerType {
+        pos,
+        bit_size,
+        signed,
+    })
+}
+
+fn parse_floating_type(
+    pair: pest::iterators::Pair<Rule>,
+) -> Result<FloatingType, Box<dyn std::error::Error>> {
+    let pos = span_to_position(&pair.as_span());
+    let type_str = pair.as_str();
+
+    // Parse f32, f64, etc.
+    let bit_size = type_str[1..].parse::<u64>().unwrap_or(64);
+
+    Ok(FloatingType { pos, bit_size })
 }
 
 fn parse_function_type(
@@ -837,6 +1063,12 @@ fn parse_atomic_value(
             Rule::integer => {
                 value = Some(ValueKind::Integer(parse_integer(inner_pair)?));
             }
+            Rule::float => {
+                value = Some(ValueKind::Float(parse_float(inner_pair)?));
+            }
+            Rule::boolean => {
+                value = Some(ValueKind::Boolean(parse_boolean(inner_pair)?));
+            }
             Rule::string => {
                 value = Some(ValueKind::String(parse_string(inner_pair)?));
             }
@@ -854,6 +1086,23 @@ fn parse_integer(pair: pest::iterators::Pair<Rule>) -> Result<Integer, Box<dyn s
     Ok(Integer { pos, value })
 }
 
+fn parse_float(pair: pest::iterators::Pair<Rule>) -> Result<Float, Box<dyn std::error::Error>> {
+    let pos = span_to_position(&pair.as_span());
+    let value_str = pair.as_str();
+    let value = value_str.parse::<f64>().unwrap_or(0.0);
+    Ok(Float { pos, value })
+}
+
+fn parse_boolean(pair: pest::iterators::Pair<Rule>) -> Result<Boolean, Box<dyn std::error::Error>> {
+    let pos = span_to_position(&pair.as_span());
+    let value = match pair.as_str() {
+        "true" => true,
+        "false" => false,
+        _ => false, // default to false for unexpected values
+    };
+    Ok(Boolean { pos, value })
+}
+
 fn parse_string(
     pair: pest::iterators::Pair<Rule>,
 ) -> Result<StringLiteral, Box<dyn std::error::Error>> {
@@ -862,10 +1111,21 @@ fn parse_string(
 
     for inner_pair in pair.into_inner() {
         match inner_pair.as_rule() {
-            Rule::string_fragment => {
-                fragments.push(parse_string_fragment(inner_pair)?);
+            Rule::string_content => {
+                // Parse the string content which contains fragments and interpolants
+                for content_pair in inner_pair.into_inner() {
+                    match content_pair.as_rule() {
+                        Rule::string_fragment => {
+                            fragments.push(parse_string_fragment(content_pair)?);
+                        }
+                        Rule::string_interpolant => {
+                            fragments.push(parse_string_interpolant(content_pair)?);
+                        }
+                        _ => {}
+                    }
+                }
             }
-            _ => {} // Skip other rules
+            _ => {}
         }
     }
 
@@ -877,11 +1137,29 @@ fn parse_string_fragment(
 ) -> Result<StringFragment, Box<dyn std::error::Error>> {
     let pos = span_to_position(&pair.as_span());
     let text = Some(pair.as_str().to_string());
-    let interpolation = None; // Default value
 
     Ok(StringFragment {
         pos,
         text,
+        interpolation: None,
+    })
+}
+
+fn parse_string_interpolant(
+    pair: pest::iterators::Pair<Rule>,
+) -> Result<StringFragment, Box<dyn std::error::Error>> {
+    let pos = span_to_position(&pair.as_span());
+    let mut interpolation = None;
+
+    for inner_pair in pair.into_inner() {
+        if inner_pair.as_rule() == Rule::expression {
+            interpolation = Some(parse_expression(inner_pair)?);
+        }
+    }
+
+    Ok(StringFragment {
+        pos,
+        text: None,
         interpolation,
     })
 }

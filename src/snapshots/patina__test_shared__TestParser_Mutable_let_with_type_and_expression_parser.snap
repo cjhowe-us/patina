@@ -1,0 +1,91 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "pos": {
+    "filename": "Mutable_let_with_type_and_expression_parser",
+    "line": 1,
+    "column": 1,
+    "offset": 0
+  },
+  "statements": [
+    {
+      "pos": {
+        "filename": null,
+        "line": 1,
+        "column": 1,
+        "offset": 0
+      },
+      "comments": [],
+      "annotations": [],
+      "statement": {
+        "Let": {
+          "pos": {
+            "filename": null,
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "is_static": false,
+          "is_mutable": true,
+          "name": "x",
+          "var_type": {
+            "Type": {
+              "pos": {
+                "filename": null,
+                "line": 1,
+                "column": 12,
+                "offset": 11
+              },
+              "type_expr": null
+            }
+          },
+          "value": {
+            "Operation": {
+              "pos": {
+                "filename": null,
+                "line": 1,
+                "column": 18,
+                "offset": 17
+              },
+              "prefix": [],
+              "operands": [
+                {
+                  "pos": {
+                    "filename": null,
+                    "line": 1,
+                    "column": 18,
+                    "offset": 17
+                  },
+                  "atom": {
+                    "Value": {
+                      "pos": {
+                        "filename": null,
+                        "line": 1,
+                        "column": 18,
+                        "offset": 17
+                      },
+                      "value": {
+                        "Integer": {
+                          "pos": {
+                            "filename": null,
+                            "line": 1,
+                            "column": 18,
+                            "offset": 17
+                          },
+                          "value": 1
+                        }
+                      }
+                    }
+                  },
+                  "postfix": []
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "error": " --> 1:36\n  |\n1 | module m { let a: Int = 1; let b: [Int] = [1]; let c: *Int = null; let d: fun(x: Int): Int = null }\n  |                                    ^---\n  |\n  = expected integer or right_bracket"
+}

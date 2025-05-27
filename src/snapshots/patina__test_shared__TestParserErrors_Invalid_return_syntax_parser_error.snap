@@ -1,0 +1,7 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "error": " --> 1:9\n  |\n1 | return :\n  |         ^---\n  |\n  = expected ident_char"
+}

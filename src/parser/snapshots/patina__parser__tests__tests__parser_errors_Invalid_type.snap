@@ -1,0 +1,7 @@
+---
+source: src/parser/tests.rs
+expression: "&result"
+---
+{
+  "Err": "Parse error:  --> 1:9\n  |\n1 | let x: *\n  |         ^---\n  |\n  = expected mut_kw, own_kw, raw_kw, or atom"
+}

@@ -1,0 +1,126 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "pos": {
+    "filename": "Indexing_parser",
+    "line": 1,
+    "column": 1,
+    "offset": 0
+  },
+  "statements": [
+    {
+      "pos": {
+        "filename": null,
+        "line": 1,
+        "column": 1,
+        "offset": 0
+      },
+      "comments": [],
+      "annotations": [],
+      "statement": {
+        "Let": {
+          "pos": {
+            "filename": null,
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "is_static": false,
+          "is_mutable": false,
+          "name": "x ",
+          "var_type": null,
+          "value": {
+            "Operation": {
+              "pos": {
+                "filename": null,
+                "line": 1,
+                "column": 9,
+                "offset": 8
+              },
+              "prefix": [],
+              "operands": [
+                {
+                  "pos": {
+                    "filename": null,
+                    "line": 1,
+                    "column": 9,
+                    "offset": 8
+                  },
+                  "atom": {
+                    "Binding": {
+                      "pos": {
+                        "filename": null,
+                        "line": 1,
+                        "column": 9,
+                        "offset": 8
+                      },
+                      "name": "arr"
+                    }
+                  },
+                  "postfix": [
+                    {
+                      "pos": {
+                        "filename": null,
+                        "line": 1,
+                        "column": 12,
+                        "offset": 11
+                      },
+                      "invocation": [],
+                      "index": {
+                        "Operation": {
+                          "pos": {
+                            "filename": null,
+                            "line": 1,
+                            "column": 13,
+                            "offset": 12
+                          },
+                          "prefix": [],
+                          "operands": [
+                            {
+                              "pos": {
+                                "filename": null,
+                                "line": 1,
+                                "column": 13,
+                                "offset": 12
+                              },
+                              "atom": {
+                                "Value": {
+                                  "pos": {
+                                    "filename": null,
+                                    "line": 1,
+                                    "column": 13,
+                                    "offset": 12
+                                  },
+                                  "value": {
+                                    "Integer": {
+                                      "pos": {
+                                        "filename": null,
+                                        "line": 1,
+                                        "column": 13,
+                                        "offset": 12
+                                      },
+                                      "value": 1
+                                    }
+                                  }
+                                }
+                              },
+                              "postfix": []
+                            }
+                          ]
+                        }
+                      },
+                      "field": null,
+                      "operator": null
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

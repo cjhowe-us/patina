@@ -1,0 +1,49 @@
+---
+source: src/test_shared.rs
+expression: test_result
+---
+{
+  "pos": {
+    "filename": "Invalid_function_type_syntax_parser_error_additional",
+    "line": 1,
+    "column": 1,
+    "offset": 0
+  },
+  "statements": [
+    {
+      "pos": {
+        "filename": null,
+        "line": 1,
+        "column": 1,
+        "offset": 0
+      },
+      "comments": [],
+      "annotations": [],
+      "statement": {
+        "Let": {
+          "pos": {
+            "filename": null,
+            "line": 1,
+            "column": 1,
+            "offset": 0
+          },
+          "is_static": false,
+          "is_mutable": false,
+          "name": "x",
+          "var_type": {
+            "Binding": {
+              "pos": {
+                "filename": null,
+                "line": 1,
+                "column": 8,
+                "offset": 7
+              },
+              "name": "fun i32"
+            }
+          },
+          "value": null
+        }
+      }
+    }
+  ]
+}

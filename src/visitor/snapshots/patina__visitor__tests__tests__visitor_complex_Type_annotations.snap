@@ -1,0 +1,93 @@
+---
+source: src/visitor/tests.rs
+expression: "&result"
+---
+{
+  "Ok": {
+    "result": "Visited: dyn patina::ast::SyntaxNode",
+    "visitor": {
+      "log": [
+        {
+          "type": "dyn patina::ast::SyntaxNode",
+          "message": "Entering node at position Position { filename: Some(\"test_input\"), line: 1, column: 1, offset: 0 }",
+          "is_enter": true
+        },
+        {
+          "type": "dyn patina::ast::SyntaxNode",
+          "message": "Entering node at position Position { filename: None, line: 1, column: 1, offset: 0 }",
+          "is_enter": true
+        },
+        {
+          "type": "dyn patina::ast::SyntaxNode",
+          "message": "Entering node at position Position { filename: None, line: 1, column: 1, offset: 0 }",
+          "is_enter": true
+        },
+        {
+          "type": "dyn patina::ast::SyntaxNode",
+          "message": "Entering node at position Position { filename: None, line: 1, column: 8, offset: 7 }",
+          "is_enter": true
+        },
+        {
+          "type": "dyn patina::ast::SyntaxNode",
+          "message": "Exiting node at position Position { filename: None, line: 1, column: 8, offset: 7 }",
+          "is_enter": false
+        },
+        {
+          "type": "dyn patina::ast::SyntaxNode",
+          "message": "Entering node at position Position { filename: None, line: 1, column: 14, offset: 13 }",
+          "is_enter": true
+        },
+        {
+          "type": "dyn patina::ast::SyntaxNode",
+          "message": "Entering node at position Position { filename: None, line: 1, column: 14, offset: 13 }",
+          "is_enter": true
+        },
+        {
+          "type": "dyn patina::ast::SyntaxNode",
+          "message": "Entering node at position Position { filename: None, line: 1, column: 14, offset: 13 }",
+          "is_enter": true
+        },
+        {
+          "type": "dyn patina::ast::SyntaxNode",
+          "message": "Entering node at position Position { filename: None, line: 1, column: 14, offset: 13 }",
+          "is_enter": true
+        },
+        {
+          "type": "dyn patina::ast::SyntaxNode",
+          "message": "Exiting node at position Position { filename: None, line: 1, column: 14, offset: 13 }",
+          "is_enter": false
+        },
+        {
+          "type": "dyn patina::ast::SyntaxNode",
+          "message": "Exiting node at position Position { filename: None, line: 1, column: 14, offset: 13 }",
+          "is_enter": false
+        },
+        {
+          "type": "dyn patina::ast::SyntaxNode",
+          "message": "Exiting node at position Position { filename: None, line: 1, column: 14, offset: 13 }",
+          "is_enter": false
+        },
+        {
+          "type": "dyn patina::ast::SyntaxNode",
+          "message": "Exiting node at position Position { filename: None, line: 1, column: 14, offset: 13 }",
+          "is_enter": false
+        },
+        {
+          "type": "dyn patina::ast::SyntaxNode",
+          "message": "Exiting node at position Position { filename: None, line: 1, column: 1, offset: 0 }",
+          "is_enter": false
+        },
+        {
+          "type": "dyn patina::ast::SyntaxNode",
+          "message": "Exiting node at position Position { filename: None, line: 1, column: 1, offset: 0 }",
+          "is_enter": false
+        },
+        {
+          "type": "dyn patina::ast::SyntaxNode",
+          "message": "Exiting node at position Position { filename: Some(\"test_input\"), line: 1, column: 1, offset: 0 }",
+          "is_enter": false
+        }
+      ]
+    }
+  }
+}

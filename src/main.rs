@@ -18,7 +18,7 @@ fn main() {
     let input = match fs::read_to_string(filename) {
         Ok(content) => content,
         Err(err) => {
-            eprintln!("Error reading file '{}': {}", filename, err);
+            eprintln!("Error reading file '{filename}': {err}");
             process::exit(1);
         }
     };
@@ -27,7 +27,7 @@ fn main() {
     let root = match parse_file(&input) {
         Ok(ast) => ast,
         Err(err) => {
-            eprintln!("Parse error: {}", err);
+            eprintln!("Parse error: {err}");
             process::exit(1);
         }
     };
@@ -35,14 +35,14 @@ fn main() {
     // Validate the AST
     let mut validator = ValidationVisitor::new();
     if let Err(err) = walk(&mut validator, None, &root) {
-        eprintln!("Validation error: {}", err);
+        eprintln!("Validation error: {err}");
         process::exit(1);
     }
 
     if validator.has_errors() {
         eprintln!("Validation failed:");
         for error in &validator.errors {
-            eprintln!("  - {}", error);
+            eprintln!("  - {error}");
         }
         process::exit(1);
     }
@@ -50,7 +50,7 @@ fn main() {
     // Print debug information
     let mut printer = DebugPrinter::new();
     if let Err(err) = walk(&mut printer, None, &root) {
-        eprintln!("Debug printing error: {}", err);
+        eprintln!("Debug printing error: {err}");
         process::exit(1);
     }
 
@@ -58,7 +58,7 @@ fn main() {
     println!("{}", printer.output);
 
     println!("=== Parse Success ===");
-    println!("File '{}' parsed successfully!", filename);
+    println!("File '{filename}' parsed successfully!");
     println!(
         "AST contains {} top-level statements",
         root.statements.len()
@@ -74,13 +74,18 @@ mod tests {
     #[test]
     fn test_main_with_valid_input() {
         let mut temp_file = NamedTempFile::new().unwrap();
-        writeln!(temp_file, "module test {{ let x = 42 }}").unwrap();
+        // Use a string literal without newlines
+        write!(temp_file, "module test {{ let x = 42 }}").unwrap();
 
         let path = temp_file.path().to_str().unwrap();
 
         // Test that parsing succeeds
         let content = fs::read_to_string(path).unwrap();
+        println!("Input content: {:?}", content);
         let result = parse_file(&content);
+        if let Err(ref e) = result {
+            println!("Parse error: {:?}", e);
+        }
         assert!(result.is_ok());
     }
 
