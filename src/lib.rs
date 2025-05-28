@@ -12,9 +12,20 @@
 pub mod ast;
 pub mod parser;
 pub mod visitor;
+pub mod ast_ecs;
+// pub mod parser_ecs; // TODO: Fix rule names
 
 #[cfg(test)]
 pub mod test_shared;
+
+#[cfg(test)]
+mod comparison;
+
+#[cfg(test)]
+mod test_ecs;
+
+#[cfg(test)]
+mod test_ecs_coverage;
 
 pub use ast::*;
 pub use parser::*;
