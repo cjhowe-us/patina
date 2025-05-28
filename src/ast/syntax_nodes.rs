@@ -14,7 +14,10 @@ impl SyntaxNode for Root {
     }
 
     fn children(&self) -> Vec<&dyn SyntaxNode> {
-        self.statements.iter().map(|s| s as &dyn SyntaxNode).collect()
+        self.statements
+            .iter()
+            .map(|s| s as &dyn SyntaxNode)
+            .collect()
     }
 }
 
@@ -32,7 +35,10 @@ impl SyntaxNode for Block {
     }
 
     fn children(&self) -> Vec<&dyn SyntaxNode> {
-        self.statements.iter().map(|s| s as &dyn SyntaxNode).collect()
+        self.statements
+            .iter()
+            .map(|s| s as &dyn SyntaxNode)
+            .collect()
     }
 }
 
@@ -77,7 +83,10 @@ impl SyntaxNode for Comment {
     }
 
     fn children(&self) -> Vec<&dyn SyntaxNode> {
-        self.nested_comments.iter().map(|c| c as &dyn SyntaxNode).collect()
+        self.nested_comments
+            .iter()
+            .map(|c| c as &dyn SyntaxNode)
+            .collect()
     }
 }
 
@@ -95,6 +104,9 @@ impl SyntaxNode for Annotation {
     }
 
     fn children(&self) -> Vec<&dyn SyntaxNode> {
-        self.arguments.iter().map(|a| a as &dyn SyntaxNode).collect()
+        self.arguments
+            .iter()
+            .map(|a| a as &dyn SyntaxNode)
+            .collect()
     }
 }

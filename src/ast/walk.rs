@@ -8,7 +8,7 @@ where
     F: FnMut(&dyn SyntaxNode),
 {
     visitor(node);
-    
+
     for child in node.children() {
         walk_ast(child, visitor);
     }
@@ -19,17 +19,16 @@ pub fn walk_ast_with_callbacks<Pre, Post>(
     node: &dyn SyntaxNode,
     pre_visitor: &mut Pre,
     post_visitor: &mut Post,
-)
-where
+) where
     Pre: FnMut(&dyn SyntaxNode),
     Post: FnMut(&dyn SyntaxNode),
 {
     pre_visitor(node);
-    
+
     for child in node.children() {
         walk_ast_with_callbacks(child, pre_visitor, post_visitor);
     }
-    
+
     post_visitor(node);
 }
 
@@ -41,13 +40,13 @@ where
     if !visitor(node) {
         return false;
     }
-    
+
     for child in node.children() {
         if !walk_ast_until(child, visitor) {
             return false;
         }
     }
-    
+
     true
 }
 
@@ -57,18 +56,17 @@ where
     F: FnMut(&'a dyn SyntaxNode) -> Option<T>,
 {
     let mut results = Vec::new();
-    
+
     if let Some(result) = visitor(node) {
         results.push(result);
     }
-    
+
     for child in node.children() {
         results.extend(walk_ast_map(child, visitor));
     }
-    
+
     results
 }
-
 
 #[cfg(test)]
 mod tests {

@@ -42,7 +42,6 @@ pub trait SyntaxNode {
     fn children(&self) -> Vec<&dyn SyntaxNode>;
 }
 
-
 /// Enum for all statement types
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub enum StatementKind {
