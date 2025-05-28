@@ -1,3 +1,4 @@
 /target
+/coverage
 *.local.json
 *.local

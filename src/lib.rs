@@ -9,6 +9,7 @@
 //! - `Value`: Trait for literal values
 //! - `Type`: Trait for type values
 
+pub mod analysis;
 pub mod ast;
 pub mod parser;
 pub mod visitor;

@@ -5,11 +5,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Development Commands
 
 ### Building
+
 ```bash
 cargo build
 ```
 
 ### Testing
+
 ```bash
 # Run all tests
 cargo test
@@ -34,6 +36,7 @@ cargo test module_name::
 ```
 
 ### Linting
+
 ```bash
 # Run clippy (Rust linter)
 cargo clippy
@@ -72,15 +75,16 @@ Patina is a systems programming language project implemented in Rust. The archit
 ### Type System
 
 The language supports multiple pointer ownership models:
+
 - `*own` - Owned pointers
-- `*raw` - Raw pointers  
+- `*raw` - Raw pointers
 - `*mut` - Mutable pointers
-- Regular pointers without modifiers
+- `*` Read only pointer
 
 ### Testing Strategy
 
 Tests are organized into:
-- Unit tests colocated with source files
-- Snapshot tests for parser output and visitor patterns
-- Error case testing to verify proper error handling
 
+- Test cases stored in separate JSON data files
+- Use snapshot testing for assertions
+- Error case testing to verify proper error handling

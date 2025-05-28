@@ -1,52 +1,52 @@
-# Semantic Analysis and AST Phase Separation Design for Patina
+# Semantic Analysis and Compile Stage Level Design for Patina
 
 ## Overview
 
-This document outlines the design for implementing semantic analysis with phase-separated ASTs in the Patina programming language. Inspired by MacoCaml's phase separation techniques, this design creates a modular, type-safe compilation pipeline where each stage has its own specialized AST representation while maintaining code reuse through appropriate abstractions.
+This document outlines the design for implementing semantic analysis with compile stage levels in the Patina programming language. Inspired by MacroCaml's stage separation techniques, this design creates a modular, type-safe compilation pipeline where code can exist at different compile-time stages, enabling powerful metaprogramming capabilities while maintaining type safety.
 
 ## Goals
 
-### AST Phase Separation Goals
+### Compile Stage Level Goals
 
-1. **Clear Phase Boundaries**: Distinct AST representations for each compilation phase
-2. **Type-Safe Transitions**: Compile-time guarantees for valid phase transformations
-3. **Optimized Representations**: Each phase's AST is tailored to its specific needs
-4. **Progressive Refinement**: ASTs become more specialized as compilation progresses
+1. **Clear Stage Boundaries**: Code exists at distinct compile-time stages (stage 0 for compile-time, stage 1 for runtime, etc.)
+2. **Type-Safe Stage Transitions**: Compile-time guarantees for valid stage transitions through quotation and splicing
+3. **Stage-Aware Representations**: AST nodes carry stage information
+4. **Multi-Stage Programming**: Support for arbitrary levels of staging for code generation
 
 ### Semantic Analysis Goals
 
-1. **Modular Design**: Each analysis phase should be independent and composable
+1. **Modular Design**: Each analysis component should be independent and composable
 2. **Code Reuse**: Share common infrastructure across different analyses
 3. **Incremental Analysis**: Support analyzing partial programs and incremental updates
 4. **Error Recovery**: Continue analysis after encountering errors
 5. **Extensibility**: Easy to add new analysis passes
 
-## Background: Phase Separation Motivation
+## Background: Compile Stage Level Motivation
 
-Traditional single-AST designs suffer from:
-- Mixing concerns across compilation phases
-- Carrying unnecessary information through the pipeline
-- Lack of type safety for phase-specific operations
-- Difficulty in optimizing phase-specific traversals
+Traditional single-stage designs suffer from:
+- No distinction between compile-time and runtime code
+- Limited metaprogramming capabilities
+- Lack of type safety for stage-specific operations
+- Difficulty in implementing hygienic macros
 
-MacoCaml's approach demonstrates the benefits of:
-- **Phase Separation**: Clear distinction between compile-time and runtime code
-- **Typed Source Calculus**: Type safety across phases
-- **Quotation-based Staging**: Code can be quoted and spliced across phases
-- **Compile-time Evaluation**: Macros execute during compilation
+MacroCaml's approach demonstrates the benefits of:
+- **Stage Separation**: Clear distinction between compile-time and runtime code
+- **Typed Staging**: Type safety across stages
+- **Quotation-based Staging**: Code can be quoted and spliced across stages
+- **Compile-time Evaluation**: Computations execute during compilation
 
 ## Architecture
 
-### Phase-Separated Compilation Pipeline
+### Stage-Aware Compilation Pipeline
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                    Phase-Separated AST Pipeline                      │
+│                    Stage-Aware Compilation Pipeline                  │
 ├─────────────────────────────────────────────────────────────────────┤
-│  Source → Parse AST → Desugared AST → Typed AST → IR Tree → Output  │
-│             ↓             ↓              ↓            ↓              │
-│         Parsing      Name Res.      Type Check    Optimize          │
-│                      + Desugar      + Inference   + Lower           │
+│  Source → Parse → Stage Analysis → Type Check → Stage Eval → Output │
+│            ↓           ↓              ↓            ↓                 │
+│        Parsing    Stage Assign    Type+Stage    Compile-time        │
+│                   + Desugar       Inference      Evaluation         │
 └─────────────────────────────────────────────────────────────────────┘
                                     ↓
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -54,169 +54,341 @@ MacoCaml's approach demonstrates the benefits of:
 ├─────────────────────────────────────────────────────────────────────┤
 │  • Symbol Tables    • Type Registry    • Error Collector            │
 │  • Scope Manager    • Type Unifier     • Diagnostics               │
-│  • Phase Traits     • Transform Traits • Analysis Context           │
+│  • Stage Manager    • Transform Traits • Analysis Context           │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-### AST Phase Design
+### AST Stage-Based Separation
 
-The compilation pipeline uses a hybrid approach combining phase-based AST hierarchy with trait-based separation for maximum type safety and code reuse:
+Following MacroCaml's techniques, the AST is separated based on compile stage level values. Each stage level has its own AST representation:
 
-#### Phase 1: Parse AST
-- Raw syntactic representation from parser
-- Preserves all source information (comments, formatting)
-- No semantic information
+#### Stage 0 AST - Compile-Time Code
+- Code that executes during compilation
+- Macro definitions and expansions
+- Type-level computations
+- Generates code for Stage 1
 
 ```rust
-pub mod parse_ast {
+pub mod stage0_ast {
     use crate::Position;
     
+    // AST for compile-time evaluation
+    pub struct Module {
+        pub position: Position,
+        pub name: String,
+        pub macros: Vec<MacroDefinition>,
+        pub compile_time_values: Vec<CompileTimeBinding>,
+        pub generated_code: Vec<stage1_ast::Item>, // Code generated for stage 1
+    }
+    
+    pub struct MacroDefinition {
+        pub name: String,
+        pub params: Vec<MacroParam>,
+        pub body: Expression, // Evaluates to stage 1 code
+    }
+    
+    pub enum Expression {
+        Quote(Box<stage1_ast::Expression>), // Quote stage 1 code
+        Splice(Box<Expression>), // Splice stage 0 value
+        MacroCall { name: String, args: Vec<Expression> },
+        // ... other compile-time expressions
+    }
+}
+```
+
+#### Stage 1 AST - Runtime Code
+- Normal program code that executes at runtime
+- Result of stage 0 evaluation and macro expansion
+- Can contain quotes for stage 2 code generation
+
+```rust
+pub mod stage1_ast {
+    use crate::Position;
+    
+    // AST for runtime code
     pub struct Module {
         pub position: Position,
         pub name: String,
         pub items: Vec<Item>,
     }
     
-    pub enum Item {
-        Statement(Statement),
-        Declaration(Declaration),
-    }
-    
-    pub struct Statement {
-        pub position: Position,
-        pub kind: StatementKind,
-    }
-}
-```
-
-#### Phase 2: Desugared AST
-- Syntactic sugar expanded (e.g., `if` expressions to match)
-- Macros expanded
-- Names still unresolved
-
-```rust
-pub mod desugared_ast {
-    use super::parse_ast;
-    
-    pub struct Module {
-        pub parsed: parse_ast::Module,
-        pub expanded_items: Vec<Item>,
-    }
-    
-    // Simplified representations without sugar
     pub enum Expression {
-        Match(MatchExpr),  // All conditionals become match
-        Block(BlockExpr),
-        // No If, While, etc. - all desugared
+        Literal(Value),
+        Variable(String),
+        FunctionCall { func: Box<Expression>, args: Vec<Expression> },
+        Quote(Box<stage2_ast::Expression>), // Quote for next stage
+        // ... normal runtime expressions
     }
 }
 ```
 
-#### Phase 3: Typed AST
-- All names resolved to symbols
-- Types inferred and checked
-- Lifetime annotations added
+#### Stage n AST - Multi-Stage Code Generation
+- For stages beyond 1, supporting arbitrary levels of code generation
+- Each stage n generates code for stage n+1
 
 ```rust
-pub mod typed_ast {
-    use super::desugared_ast;
-    use crate::analysis::{SymbolId, TypeId};
+pub mod stage_n_ast {
+    use crate::Position;
     
-    pub struct Module {
-        pub desugared: desugared_ast::Module,
-        pub exports: HashMap<String, SymbolId>,
-        pub type_env: TypeEnvironment,
+    pub struct StagedExpression<const N: usize> {
+        pub expr: Expression<N>,
+        pub position: Position,
     }
     
-    pub struct Expression {
-        pub desugared: desugared_ast::Expression,
-        pub ty: TypeId,
-        pub symbol_ref: Option<SymbolId>,
+    pub enum Expression<const N: usize> {
+        Quote(Box<Expression<{N + 1}>>), // Quote for next stage
+        Splice(Box<Expression<{N - 1}>>), // Splice from previous stage
+        // ... stage-specific operations
     }
 }
 ```
 
-#### Phase 4: IR Tree
-- Low-level representation
-- Control flow explicit
-- Ready for optimization and code generation
+### Stage Calculation and Analysis
 
+Following MacroCaml's approach, stage levels are calculated through analysis:
+
+#### Stage Level Calculation
 ```rust
-pub mod ir_tree {
-    pub struct Module {
-        pub functions: Vec<Function>,
-        pub globals: Vec<Global>,
-    }
-    
-    pub struct Function {
-        pub blocks: Vec<BasicBlock>,
-        pub entry: BlockId,
-    }
-    
-    pub struct BasicBlock {
-        pub instructions: Vec<Instruction>,
-        pub terminator: Terminator,
+pub struct StageCalculator {
+    current_stage: Stage,
+    symbol_stages: HashMap<SymbolId, Stage>,
+}
+
+impl StageCalculator {
+    pub fn calculate_expression_stage(&mut self, expr: &Expression) -> Stage {
+        match expr {
+            Expression::Quote(inner) => {
+                // Quoted expressions are at next stage
+                self.current_stage.next()
+            }
+            Expression::Splice(inner) => {
+                // Spliced expressions must be from previous stage
+                self.current_stage.prev()
+                    .expect("Cannot splice at stage 0")
+            }
+            Expression::Variable(name) => {
+                // Look up variable's stage
+                self.lookup_symbol_stage(name)
+            }
+            // ... other cases
+        }
     }
 }
 ```
 
-### Phase Transformation Infrastructure
+#### Stage Separation Process
+1. **Parse**: Create initial AST without stage information
+2. **Stage Analysis**: Calculate stage levels for all expressions
+3. **Stage Separation**: Split AST into stage-specific representations
+4. **Stage 0 Evaluation**: Execute compile-time code
+5. **Code Generation**: Generate stage 1 AST from stage 0 results
+
+### Stage-Aware Type System
+
+Types in the system are stage-aware, ensuring type safety across compile-time boundaries:
 
 ```rust
-// Trait for phase transformations
-pub trait Transform<From, To> {
+pub mod stage_types {
+    use crate::analysis::{Stage, TypeId};
+    
+    pub enum StagedType {
+        // Regular types exist at specific stages
+        Base { ty: TypeId, stage: Stage },
+        
+        // Code types represent quoted expressions
+        Code { inner: Box<StagedType>, from_stage: Stage },
+        
+        // Stage-polymorphic types
+        StagePolymorphic { 
+            param: StageParam,
+            inner: Box<StagedType>,
+        },
+    }
+    
+    // Type checking ensures stage consistency
+    pub fn check_splice(
+        expr_type: &StagedType,
+        current_stage: Stage,
+    ) -> Result<TypeId, StageError> {
+        match expr_type {
+            StagedType::Code { inner, from_stage } 
+                if *from_stage == current_stage.prev()? => {
+                // Valid splice
+                Ok(inner.base_type())
+            }
+            _ => Err(StageError::InvalidSplice),
+        }
+    }
+}
+```
+
+### Stage 0 Evaluation Engine
+
+The compile-time evaluation engine executes stage 0 code:
+
+```rust
+pub struct Stage0Evaluator {
+    symbol_table: SymbolTable,
+    type_registry: TypeRegistry,
+    value_env: HashMap<SymbolId, CompileTimeValue>,
+}
+
+impl Stage0Evaluator {
+    pub fn eval_module(
+        &mut self,
+        module: &stage0_ast::Module,
+    ) -> Result<stage1_ast::Module, EvalError> {
+        // Evaluate all compile-time bindings
+        for binding in &module.compile_time_values {
+            let value = self.eval_expression(&binding.value)?;
+            self.value_env.insert(binding.id, value);
+        }
+        
+        // Generate stage 1 code
+        let mut items = Vec::new();
+        for generated in &module.generated_code {
+            items.push(self.expand_template(generated)?);
+        }
+        
+        Ok(stage1_ast::Module {
+            position: module.position.clone(),
+            name: module.name.clone(),
+            items,
+        })
+    }
+    
+    pub fn eval_macro_call(
+        &mut self,
+        name: &str,
+        args: Vec<CompileTimeValue>,
+    ) -> Result<stage1_ast::Expression, EvalError> {
+        // Look up macro definition
+        // Bind arguments
+        // Evaluate macro body
+        // Return generated stage 1 code
+        todo!()
+    }
+}
+```
+
+### Stage Transformation Infrastructure
+
+```rust
+// Transformation between stage representations
+pub trait StageTransform<const FROM: usize, const TO: usize> {
     type Error;
     type Context;
     
-    fn transform(from: From, ctx: &mut Self::Context) -> Result<To, Self::Error>;
+    fn transform(
+        from: StageAst<FROM>,
+        ctx: &mut Self::Context,
+    ) -> Result<StageAst<TO>, Self::Error>;
 }
 
-// Example: Parse to Desugared transformation
-pub struct Desugarer {
-    macro_expander: MacroExpander,
+// Stage separation from unified AST
+pub struct StageSeparator {
+    stage_calculator: StageCalculator,
 }
 
-impl Transform<parse_ast::Module, desugared_ast::Module> for Desugarer {
-    type Error = DesugarError;
-    type Context = AnalysisContext;
-    
-    fn transform(from: parse_ast::Module, ctx: &mut Self::Context) -> Result<desugared_ast::Module, Self::Error> {
-        // Expand macros, desugar syntax
+impl StageSeparator {
+    pub fn separate(
+        &mut self,
+        ast: UnifiedAst,
+    ) -> Result<StageSeparatedAst, StageError> {
+        // Calculate stages for all nodes
+        let stages = self.stage_calculator.calculate(&ast)?;
+        
+        // Separate into stage-specific ASTs
+        let stage0 = self.extract_stage_0(&ast, &stages)?;
+        let stage1_template = self.extract_stage_1_template(&ast, &stages)?;
+        
+        Ok(StageSeparatedAst {
+            stage0,
+            stage1_template,
+        })
     }
 }
 ```
 
-### Phase-Aware Traits
+### Stage-Aware Infrastructure
 
 ```rust
-// Traits that track compilation phase
-pub trait CompilationPhase {
-    type SymbolInfo;
-    type TypeInfo;
-    type Position;
+// Stage tracking throughout compilation
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+pub struct Stage(pub u32);
+
+impl Stage {
+    pub const COMPILE_TIME: Stage = Stage(0);
+    pub const RUNTIME: Stage = Stage(1);
+    
+    pub fn next(self) -> Stage {
+        Stage(self.0 + 1)
+    }
+    
+    pub fn prev(self) -> Result<Stage, StageError> {
+        if self.0 > 0 {
+            Ok(Stage(self.0 - 1))
+        } else {
+            Err(StageError::NoPreviousStage)
+        }
+    }
 }
 
-pub struct ParsePhase;
-impl CompilationPhase for ParsePhase {
-    type SymbolInfo = ();  // No symbols yet
-    type TypeInfo = ();    // No types yet
-    type Position = Position;
-}
-
-pub struct TypedPhase;
-impl CompilationPhase for TypedPhase {
-    type SymbolInfo = SymbolId;
-    type TypeInfo = TypeId;
-    type Position = Position;
-}
-
-// Phase-aware visitor
-pub trait PhaseVisitor<P: CompilationPhase> {
-    fn visit_with_phase(&mut self, node: &dyn PhaseNode<P>);
+// Stage-aware symbol table
+impl SymbolTable {
+    pub fn declare_staged(
+        &mut self,
+        name: String,
+        stage: Stage,
+        kind: SymbolKind,
+    ) -> Result<SymbolId, SymbolError> {
+        let symbol = Symbol {
+            name,
+            kind,
+            stage,
+            // ...
+        };
+        self.declare_symbol(symbol)
+    }
+    
+    pub fn lookup_at_stage(
+        &self,
+        name: &str,
+        current_stage: Stage,
+    ) -> Option<SymbolId> {
+        // Symbols from earlier stages (closer to 0) are visible at later stages
+        // E.g., at stage 2, can see symbols from stages 0, 1, and 2
+        // This enables compile-time values to be used at runtime
+        self.lookup(name)
+            .filter(|id| {
+                let symbol_stage = self.get_symbol(*id).map(|s| s.stage);
+                matches!(symbol_stage, Some(s) if s <= current_stage)
+            })
+    }
+    
+    pub fn lookup_all_visible_stages(
+        &self,
+        name: &str,
+        current_stage: Stage,
+    ) -> Vec<(SymbolId, Stage)> {
+        // Find all symbols with this name at visible stages
+        // Useful for error messages about ambiguous symbols
+        self.lookup_all(name)
+            .into_iter()
+            .filter_map(|id| {
+                let symbol = self.get_symbol(id)?;
+                if symbol.stage <= current_stage {
+                    Some((id, symbol.stage))
+                } else {
+                    None
+                }
+            })
+            .collect()
+    }
 }
 ```
 
-### Phase 1: Symbol Collection and Name Resolution
+### Component 1: Symbol Collection and Name Resolution
 
 #### 1.1 Symbol Table Design
 
@@ -275,7 +447,7 @@ impl Visitor<(), NameResolutionResult> for NameResolver {
 }
 ```
 
-### Phase 2: Type System Infrastructure
+### Component 2: Type System Infrastructure
 
 #### 2.1 Type Registry
 
@@ -326,7 +498,7 @@ impl Visitor<TypeContext, TypeResult> for TypeChecker {
 }
 ```
 
-### Phase 3: Advanced Analysis
+### Component 3: Advanced Analysis
 
 #### 3.1 Control Flow Analysis
 
@@ -424,22 +596,22 @@ pub trait AnalysisVisitor<Input, Output> {
 
 ### Evaluation Criteria
 
-1. **Type Safety**: How well does the approach prevent phase-related errors?
-2. **Modularity**: How easy is it to add new phases or modify existing ones?
+1. **Type Safety**: How well does the approach prevent stage-related errors?
+2. **Modularity**: How easy is it to add new stages or modify existing ones?
 3. **Performance**: What is the runtime and compile-time overhead?
 4. **Usability**: How complex is the API for compiler developers?
 5. **Extensibility**: How well does it support future language features?
 
 ### Design Decision: Hybrid Approach
 
-After evaluating multiple design options (phase-based hierarchy, parameterized ASTs with phantom types, trait-based separation, staging with quotation, and modular components), the recommended approach combines:
+After evaluating multiple design options, the recommended approach follows MacroCaml's staged compilation model:
 
-1. **Phase-based AST hierarchy** for clarity and type safety
+1. **Stage-based AST separation** for clarity and type safety
 2. **Trait-based separation** for code reuse and flexibility
 3. **Shared infrastructure** for common functionality
 
 This hybrid provides:
-- Clear phase separation with distinct AST types
+- Clear stage separation with distinct AST types per compile stage level
 - Trait-based common functionality
 - Type-safe transformations
 - Extensible architecture
@@ -447,53 +619,75 @@ This hybrid provides:
 
 ### Implementation Strategy
 
-The implementation combines both AST phase separation and semantic analysis into a unified pipeline:
+The implementation combines both AST stage separation and semantic analysis into a unified pipeline:
 
-#### Phase 1: Foundation and Phase Infrastructure (Week 1-2)
-1. Define core phase traits and transformation framework
+#### Phase 1: Foundation and Stage Infrastructure (Week 1-2)
+1. Define core stage types and transformation framework
 2. Implement `SymbolTable` and `Scope` management
 3. Create `ErrorCollector` and diagnostic infrastructure
-4. Set up basic module structure for phase-specific ASTs
+4. Set up basic module structure for stage-specific ASTs
 
-#### Phase 2: Parse AST and Initial Analysis (Week 3-4)
-1. Implement parse_ast module with current AST structures
-2. Add ParsePhase trait implementations
+#### Phase 2: Parse AST and Stage Analysis (Week 3-4)
+1. Implement unified AST parsing
+2. Add stage calculation and separation
 3. Build basic `NameResolver` visitor
 4. Update parser to generate parse_ast nodes
 
-#### Phase 3: Type System and Typed AST (Week 5-6)
+#### Phase 3: Type System and Stage-Aware Types (Week 5-6)
 1. Implement `TypeRegistry` and core type representations
-2. Design typed_ast module with type annotations
+2. Design stage-aware type system
 3. Create `TypeChecker` visitor as Transform trait
 4. Add type inference for simple cases
 
-#### Phase 4: IR Generation and Advanced Analysis (Week 7-8)
-1. Design IR tree structure
-2. Implement lowering from typed_ast to IR
+#### Phase 4: Stage Evaluation and Code Generation (Week 7-8)
+1. Implement stage 0 evaluator
+2. Generate stage 1 code from stage 0 evaluation
 3. Add control flow analysis
 4. Basic ownership/lifetime checking for pointer types
 
 #### Phase 5: Integration and Optimization (Week 9-10)
 1. Create analysis pipeline orchestrator
-2. Update visitor pattern for phase-specific traversals
+2. Update visitor pattern for stage-specific traversals
 3. Add incremental analysis support
 4. Performance testing and optimization
 
 #### Phase 6: Documentation and Testing (Week 11-12)
-1. Comprehensive documentation for phase system
+1. Comprehensive documentation for stage system
 2. Migration guide for existing code
 3. Extensive test coverage for all phases
 4. Integration tests for complete pipeline
+
+## Stage Visibility Example
+
+```patina
+// Stage 0 (compile-time)
+const TABLE_SIZE: i32 = 256;  // Visible at all stages >= 0
+
+macro generate_lookup() {
+    // This runs at stage 0, generates stage 1 code
+    let table = Array::new(TABLE_SIZE);
+    <[~table]>  // Quote stage 1 array using stage 0 value
+}
+
+// Stage 1 (runtime)
+fn main() {
+    let size = TABLE_SIZE;  // Can use stage 0 constant
+    let lookup = generate_lookup();  // Macro expansion happens at stage 0
+    
+    // This would be an error - can't access future stages:
+    // let future = ~stage2_value;  // Error: stage2_value not visible at stage 1
+}
+```
 
 ## Usage Example
 
 ```rust
 use patina::analysis::{analyze_pipeline, PipelineOptions};
-use patina::ast::{parse_ast, desugared_ast, typed_ast};
+use patina::analysis::{Stage, StageSeparator, Stage0Evaluator};
 
-// Parse source into phase 1 AST
+// Parse source into unified AST
 let source = std::fs::read_to_string("example.pat")?;
-let parse_tree: parse_ast::Module = parse_to_ast(&source)?;
+let unified_ast = parse_to_ast(&source)?;
 
 // Option 1: Run complete pipeline
 let options = PipelineOptions {
@@ -502,43 +696,43 @@ let options = PipelineOptions {
     optimize: true,
 };
 
-let ir = analyze_pipeline(parse_tree, options)?;
+let result = analyze_pipeline(unified_ast, options)?;
 
-// Option 2: Run phases individually for more control
+// Option 2: Run stages individually for more control
 let mut ctx = AnalysisContext::new();
 
-// Phase 1 → Phase 2: Desugar
-let desugared = Desugarer::new()
-    .transform(parse_tree, &mut ctx)?;
+// Separate AST by stages
+let separated = StageSeparator::new()
+    .separate(unified_ast, &mut ctx)?;
 
-// Phase 2 → Phase 3: Name resolution and type checking
-let typed = TypeChecker::new()
-    .transform(desugared, &mut ctx)?;
+// Evaluate stage 0 (compile-time)
+let stage1_ast = Stage0Evaluator::new()
+    .eval_module(&separated.stage0, &mut ctx)?;
 
-// Access phase-specific information
+// Access stage-specific information
 let symbols = ctx.symbol_table();
 let types = ctx.type_registry();
 let diagnostics = ctx.diagnostics();
 
-// Query typed AST
-if let Some(main_fn) = typed.find_function("main") {
+// Stage 1 is now ready for runtime compilation
+if let Some(main_fn) = stage1_ast.find_function("main") {
     println!("main function type: {:?}", main_fn.signature());
 }
 
-// Phase 3 → Phase 4: Generate IR
-let ir = IRGenerator::new()
-    .transform(typed, &mut ctx)?;
+// Generate final code from stage 1
+let output = CodeGenerator::new()
+    .generate(stage1_ast, &mut ctx)?;
 ```
 
 ## Benefits of This Design
 
-### Phase Separation Benefits
+### Stage Separation Benefits
 
-1. **Clear Phase Boundaries**: Each compilation stage has distinct responsibilities
-2. **Type-Safe Transitions**: Invalid phase transformations caught at compile time
-3. **Optimized Representations**: Each AST contains only phase-relevant information
-4. **Progressive Refinement**: Information accumulates through phases without cluttering early stages
-5. **Parallel Development**: Teams can work on different phases independently
+1. **Clear Stage Boundaries**: Each compile-time stage has distinct responsibilities
+2. **Type-Safe Stage Transitions**: Invalid stage transitions caught at compile time
+3. **Powerful Metaprogramming**: Arbitrary compile-time computation via stage 0
+4. **Hygienic Macros**: Stage separation ensures proper macro hygiene
+5. **Multi-Stage Programming**: Support for code generation at multiple levels
 
 ### Semantic Analysis Benefits
 
@@ -551,11 +745,11 @@ let ir = IRGenerator::new()
 
 ### Combined Architecture Benefits
 
-1. **Clean Separation of Concerns**: Parsing, analysis, and code generation are clearly separated
-2. **Flexible Pipeline**: Can run phases individually or as a complete pipeline
-3. **Better Error Messages**: Phase-specific context enables precise diagnostics
-4. **Easier Testing**: Each phase can be tested in isolation
-5. **Future-Proof**: Architecture supports advanced features like macros and staging
+1. **Clean Separation of Concerns**: Compile-time and runtime code are clearly separated
+2. **Flexible Pipeline**: Can evaluate stages individually or as a complete pipeline
+3. **Better Error Messages**: Stage-specific context enables precise diagnostics
+4. **Easier Testing**: Each stage can be tested in isolation
+5. **MacroCaml Compatibility**: Architecture follows proven staging techniques
 
 ## Necessary Abstractions for Simple Implementation
 
