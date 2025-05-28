@@ -1,3 +1,45 @@
+# general
+.DS_Store
+desktop.ini
+thumbs.db
+
+# artifacts
+/coverage
 /target
-*.local.json
+*.lcov
+
+# dev tooling
+/.{zed,vscode,windsurf,helix,vs,idea,settings}/
+!/.{cursor,vscode,windsurf,zed}/{settings,tasks}.json
+.cargo
+.valgrindrc
+
+# llm tooling
+/.claude/*.local.json
+
+# local files
 *.local
+.env
+
+## temporary
+*~
+\#*
+\#*\#
+.#*
+
+# editor
+*.swp
+*.swo
+*.vim
+*.iml
+.favorites.json
+.dir-locals.el
+
+## direnv
+/.envrc
+/.direnv/
+
+## nix
+/flake.nix
+flake.lock
+/default.nix
