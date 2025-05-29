@@ -1,16 +1,16 @@
 use std::fmt;
 
-/// Represents a compile-time stage level.
-/// Stage 0 is compile-time, Stage 1 is runtime, etc.
+/// Represents a stage level in the compilation process.
+/// Stage 0 is runtime (never executed at compile time), Stage 1+ are compile-time stages.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct Stage(pub u32);
 
 impl Stage {
-    /// Compile-time stage (macros, const evaluation)
-    pub const COMPILE_TIME: Stage = Stage(0);
+    /// Runtime stage (never executed at compile time)
+    pub const RUNTIME: Stage = Stage(0);
     
-    /// Runtime stage (normal program execution)
-    pub const RUNTIME: Stage = Stage(1);
+    /// First compile-time stage (executed first during compilation)
+    pub const COMPILE_TIME: Stage = Stage(1);
     
     /// Creates a new stage with the given level
     pub fn new(level: u32) -> Self {
@@ -36,20 +36,30 @@ impl Stage {
         }
     }
     
-    /// Checks if this is the compile-time stage (stage 0)
-    pub fn is_compile_time(self) -> bool {
+    /// Checks if this is the runtime stage (stage 0)
+    pub fn is_runtime(self) -> bool {
         self.0 == 0
     }
     
-    /// Checks if this is the runtime stage (stage 1)
-    pub fn is_runtime(self) -> bool {
+    /// Checks if this is the compile-time stage (stage 1)
+    pub fn is_compile_time(self) -> bool {
         self.0 == 1
     }
     
     /// Checks if a symbol at `symbol_stage` is visible at `self` stage.
-    /// Symbols from earlier stages are visible at later stages.
+    /// Runtime (stage 0) can see all symbols.
+    /// Compile-time stages can only see other compile-time symbols.
     pub fn can_see_symbol_at(self, symbol_stage: Stage) -> bool {
-        symbol_stage.0 <= self.0
+        if self.is_runtime() {
+            // Runtime can see everything
+            true
+        } else if symbol_stage.is_runtime() {
+            // Compile-time cannot see runtime
+            false
+        } else {
+            // Compile-time can see earlier compile-time stages
+            symbol_stage.0 <= self.0
+        }
     }
 }
 
@@ -122,8 +132,8 @@ mod tests {
 
     #[test]
     fn test_stage_creation() {
-        let stage0 = Stage::COMPILE_TIME;
-        let stage1 = Stage::RUNTIME;
+        let stage0 = Stage::RUNTIME;
+        let stage1 = Stage::COMPILE_TIME;
         let stage2 = Stage::new(2);
         
         assert_eq!(stage0.level(), 0);
@@ -133,8 +143,8 @@ mod tests {
     
     #[test]
     fn test_stage_comparison() {
-        let stage0 = Stage::COMPILE_TIME;
-        let stage1 = Stage::RUNTIME;
+        let stage0 = Stage::RUNTIME;
+        let stage1 = Stage::COMPILE_TIME;
         let stage2 = Stage::new(2);
         
         assert!(stage0 < stage1);
@@ -144,36 +154,36 @@ mod tests {
     
     #[test]
     fn test_stage_next() {
-        let stage0 = Stage::COMPILE_TIME;
+        let stage0 = Stage::RUNTIME;
         let stage1 = stage0.next();
         let stage2 = stage1.next();
         
-        assert_eq!(stage1, Stage::RUNTIME);
+        assert_eq!(stage1, Stage::COMPILE_TIME);
         assert_eq!(stage2, Stage::new(2));
     }
     
     #[test]
     fn test_stage_prev() {
-        let stage0 = Stage::COMPILE_TIME;
-        let stage1 = Stage::RUNTIME;
+        let stage0 = Stage::RUNTIME;
+        let stage1 = Stage::COMPILE_TIME;
         let stage2 = Stage::new(2);
         
         assert_eq!(stage0.prev(), None);
-        assert_eq!(stage1.prev(), Some(Stage::COMPILE_TIME));
-        assert_eq!(stage2.prev(), Some(Stage::RUNTIME));
+        assert_eq!(stage1.prev(), Some(Stage::RUNTIME));
+        assert_eq!(stage2.prev(), Some(Stage::COMPILE_TIME));
     }
     
     #[test]
     fn test_stage_predicates() {
-        let stage0 = Stage::COMPILE_TIME;
-        let stage1 = Stage::RUNTIME;
+        let stage0 = Stage::RUNTIME;
+        let stage1 = Stage::COMPILE_TIME;
         let stage2 = Stage::new(2);
         
-        assert!(stage0.is_compile_time());
-        assert!(!stage0.is_runtime());
+        assert!(stage0.is_runtime());
+        assert!(!stage0.is_compile_time());
         
-        assert!(!stage1.is_compile_time());
-        assert!(stage1.is_runtime());
+        assert!(stage1.is_compile_time());
+        assert!(!stage1.is_runtime());
         
         assert!(!stage2.is_compile_time());
         assert!(!stage2.is_runtime());
@@ -181,30 +191,30 @@ mod tests {
     
     #[test]
     fn test_symbol_visibility() {
-        let stage0 = Stage::COMPILE_TIME;
-        let stage1 = Stage::RUNTIME;
+        let stage0 = Stage::RUNTIME;
+        let stage1 = Stage::COMPILE_TIME;
         let stage2 = Stage::new(2);
         
-        // Stage 0 can only see stage 0 symbols
+        // Stage 0 (runtime) can see all symbols
         assert!(stage0.can_see_symbol_at(stage0));
-        assert!(!stage0.can_see_symbol_at(stage1));
-        assert!(!stage0.can_see_symbol_at(stage2));
+        assert!(stage0.can_see_symbol_at(stage1));
+        assert!(stage0.can_see_symbol_at(stage2));
         
-        // Stage 1 can see stage 0 and 1 symbols
-        assert!(stage1.can_see_symbol_at(stage0));
+        // Stage 1 (compile-time) cannot see runtime, but can see compile-time
+        assert!(!stage1.can_see_symbol_at(stage0)); // Can't see runtime
         assert!(stage1.can_see_symbol_at(stage1));
-        assert!(!stage1.can_see_symbol_at(stage2));
+        assert!(!stage1.can_see_symbol_at(stage2)); // Can't see later stages
         
-        // Stage 2 can see stages 0, 1, and 2 symbols
-        assert!(stage2.can_see_symbol_at(stage0));
-        assert!(stage2.can_see_symbol_at(stage1));
+        // Stage 2 (compile-time) cannot see runtime, can see earlier compile-time
+        assert!(!stage2.can_see_symbol_at(stage0)); // Can't see runtime
+        assert!(stage2.can_see_symbol_at(stage1)); // Can see earlier compile-time
         assert!(stage2.can_see_symbol_at(stage2));
     }
     
     #[test]
     fn test_stage_display() {
-        assert_eq!(format!("{}", Stage::COMPILE_TIME), "stage 0");
-        assert_eq!(format!("{}", Stage::RUNTIME), "stage 1");
+        assert_eq!(format!("{}", Stage::RUNTIME), "stage 0");
+        assert_eq!(format!("{}", Stage::COMPILE_TIME), "stage 1");
         assert_eq!(format!("{}", Stage::new(42)), "stage 42");
     }
     
@@ -234,7 +244,7 @@ mod tests {
         };
         assert_eq!(
             format!("{}", err),
-            "Invalid stage transition from stage 1 to stage 0"
+            "Invalid stage transition from stage 0 to stage 1"
         );
         
         let err = StageError::SymbolNotVisible {
@@ -243,7 +253,7 @@ mod tests {
         };
         assert_eq!(
             format!("{}", err),
-            "Symbol at stage 2 is not visible at stage 1"
+            "Symbol at stage 2 is not visible at stage 0"
         );
     }
     
