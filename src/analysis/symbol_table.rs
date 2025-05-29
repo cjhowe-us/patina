@@ -581,20 +581,20 @@ mod tests {
         
         // Test visibility at different stages
         
-        // At stage 0, can only see stage 0 symbols
+        // At stage 1 (compile-time), can only see compile-time symbols
         assert_eq!(table.lookup_at_stage("compile_val", Stage::COMPILE_TIME), Some(stage0_sym));
-        assert_eq!(table.lookup_at_stage("runtime_val", Stage::COMPILE_TIME), None);
+        assert_eq!(table.lookup_at_stage("runtime_val", Stage::COMPILE_TIME), None); // Can't see runtime
         assert_eq!(table.lookup_at_stage("generated_val", Stage::COMPILE_TIME), None);
         
-        // At stage 1, can see stage 0 and 1 symbols
+        // At stage 0 (runtime), can see all symbols
         assert_eq!(table.lookup_at_stage("compile_val", Stage::RUNTIME), Some(stage0_sym));
         assert_eq!(table.lookup_at_stage("runtime_val", Stage::RUNTIME), Some(stage1_sym));
-        assert_eq!(table.lookup_at_stage("generated_val", Stage::RUNTIME), None);
+        assert_eq!(table.lookup_at_stage("generated_val", Stage::RUNTIME), Some(stage2_sym));
         
-        // At stage 2, can see all symbols
+        // At stage 2 (compile-time), can see compile-time symbols but not runtime
         let stage2 = Stage::new(2);
         assert_eq!(table.lookup_at_stage("compile_val", stage2), Some(stage0_sym));
-        assert_eq!(table.lookup_at_stage("runtime_val", stage2), Some(stage1_sym));
+        assert_eq!(table.lookup_at_stage("runtime_val", stage2), None); // Can't see runtime
         assert_eq!(table.lookup_at_stage("generated_val", stage2), Some(stage2_sym));
     }
     
@@ -619,16 +619,16 @@ mod tests {
             .declare_variable("x".to_string(), pos, false, false)
             .unwrap();
         
-        // At stage 0, only see stage 0 symbol
+        // At stage 1, only see stage 1 symbol
         let visible_at_0 = table.lookup_all_visible_stages("x", Stage::COMPILE_TIME);
         assert_eq!(visible_at_0.len(), 1);
         assert_eq!(visible_at_0[0], (x_stage0, Stage::COMPILE_TIME));
         
-        // At stage 1, see both symbols
-        let visible_at_1 = table.lookup_all_visible_stages("x", Stage::RUNTIME);
-        assert_eq!(visible_at_1.len(), 2);
-        assert!(visible_at_1.contains(&(x_stage0, Stage::COMPILE_TIME)));
-        assert!(visible_at_1.contains(&(x_stage1, Stage::RUNTIME)));
+        // At stage 0 (runtime), see both symbols
+        let visible_at_0 = table.lookup_all_visible_stages("x", Stage::RUNTIME);
+        assert_eq!(visible_at_0.len(), 2);
+        assert!(visible_at_0.contains(&(x_stage0, Stage::COMPILE_TIME)));
+        assert!(visible_at_0.contains(&(x_stage1, Stage::RUNTIME)));
     }
     
     #[test]
@@ -641,7 +641,7 @@ mod tests {
             offset: 0,
         };
         
-        // Add symbol at stage 0
+        // Add symbol at stage 1
         table.set_stage(Stage::COMPILE_TIME);
         let early_sym = table
             .declare_variable("early".to_string(), pos.clone(), false, false)

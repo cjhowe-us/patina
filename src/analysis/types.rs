@@ -299,13 +299,21 @@ impl<'a> TypeChecker<'a> {
     ) -> Result<Id<Type>, TypeError> {
         match self.registry.unwrap_code_type(expr_type) {
             Some((inner_type, from_stage)) => {
-                // Splice must come from previous stage
-                match splice_stage.prev() {
-                    Some(prev_stage) if prev_stage == from_stage => Ok(inner_type),
-                    _ => Err(TypeError::InvalidSplice {
-                        expected_stage: splice_stage.prev().unwrap_or(Stage::COMPILE_TIME),
+                // For runtime (stage 0), can splice from compile-time (stage 1)
+                // For compile-time stages, can splice from previous compile-time stage
+                let expected_stage = if splice_stage == Stage::RUNTIME {
+                    Stage::COMPILE_TIME
+                } else {
+                    splice_stage.prev().unwrap_or(Stage::RUNTIME)
+                };
+                
+                if from_stage == expected_stage {
+                    Ok(inner_type)
+                } else {
+                    Err(TypeError::InvalidSplice {
+                        expected_stage,
                         actual_stage: from_stage,
-                    }),
+                    })
                 }
             }
             None => Err(TypeError::NotCodeType { ty: expr_type }),
@@ -476,11 +484,11 @@ mod tests {
         
         let checker = TypeChecker::new(&mut registry);
         
-        // Valid splice at stage 1
+        // Valid splice at stage 0 (runtime) from stage 1 (compile-time)
         let result = checker.check_splice(code_type, Stage::RUNTIME);
         assert_eq!(result, Ok(i32_type));
         
-        // Invalid splice at stage 0
+        // Invalid splice at stage 1 (compile-time) - can't splice from same stage
         let result = checker.check_splice(code_type, Stage::COMPILE_TIME);
         assert!(matches!(result, Err(TypeError::InvalidSplice { .. })));
         
