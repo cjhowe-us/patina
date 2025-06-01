@@ -1,0 +1,7 @@
+TestCase(
+    name: "Mismatched brackets",
+    input: r#"
+let x = arr[1
+"#,
+    should_fail: true,
+)

@@ -1,0 +1,6 @@
+TestCase(
+    name: "String with multiple interpolations",
+    input: r#"
+let message = \
+"#,
+)

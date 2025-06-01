@@ -1,0 +1,6 @@
+TestCase(
+    name: "Binding without init",
+    input: r#"
+let b: i64
+"#,
+)

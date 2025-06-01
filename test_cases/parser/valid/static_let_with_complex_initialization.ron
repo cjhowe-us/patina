@@ -1,0 +1,7 @@
+TestCase(
+    name: "Static let with complex initialization",
+    input: r#"
+static let config = {
+	let server = \
+"#,
+)

@@ -1,0 +1,9 @@
+TestCase(
+    name: "Function with complex return type",
+    input: r#"
+fun getCallback(): *i32 {
+    let x = 42
+    return x
+}
+"#,
+)

@@ -1,0 +1,6 @@
+TestCase(
+    name: "Multiple annotations with expressions",
+    input: r#"
+@tag1(1 + 2) @tag2(x.y[3].z()) fun test() {}
+"#,
+)

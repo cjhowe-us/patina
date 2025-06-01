@@ -328,6 +328,7 @@ mod tests {
             line: 1, 
             column: 1,
             offset: 0,
+            length: 0,
         };
 
         let result = table.declare_variable("x".to_string(), pos, false, false);
@@ -353,12 +354,14 @@ mod tests {
             line: 1, 
             column: 1,
             offset: 0,
+            length: 0,
         };
         let pos2 = Position { 
             filename: None,
             line: 2, 
             column: 1,
             offset: 0,
+            length: 0,
         };
 
         let result1 = table.declare_variable("x".to_string(), pos1, false, false);
@@ -379,6 +382,7 @@ mod tests {
             line: 1, 
             column: 1,
             offset: 0,
+            length: 0,
         };
 
         let symbol_id = table
@@ -400,12 +404,14 @@ mod tests {
             line: 1, 
             column: 1,
             offset: 0,
+            length: 0,
         };
         let pos2 = Position { 
             filename: None,
             line: 2, 
             column: 1,
             offset: 0,
+            length: 0,
         };
 
         // Declare in global scope
@@ -443,12 +449,14 @@ mod tests {
             line: 1, 
             column: 1,
             offset: 0,
+            length: 0,
         };
         let pos2 = Position { 
             filename: None,
             line: 2, 
             column: 1,
             offset: 0,
+            length: 0,
         };
 
         // Declare in global scope
@@ -483,6 +491,7 @@ mod tests {
             line: 1, 
             column: 1,
             offset: 0,
+            length: 0,
         };
 
         let params = vec![
@@ -537,6 +546,7 @@ mod tests {
             line: 1,
             column: 1,
             offset: 0,
+            length: 0,
         };
         
         // Declare a compile-time constant
@@ -562,6 +572,7 @@ mod tests {
             line: 1,
             column: 1,
             offset: 0,
+            length: 0,
         };
         
         // Declare symbols at different stages
@@ -606,6 +617,7 @@ mod tests {
             line: 1,
             column: 1,
             offset: 0,
+            length: 0,
         };
         
         // Declare same name at different stages
@@ -639,6 +651,7 @@ mod tests {
             line: 1,
             column: 1,
             offset: 0,
+            length: 0,
         };
         
         // Add symbol at stage 0

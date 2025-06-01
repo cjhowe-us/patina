@@ -1,0 +1,6 @@
+TestCase(
+    name: "Indexing",
+    input: r#"
+let x = arr[1]
+"#,
+)

@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": "Parse error:  --> 1:7\n  |\n1 | \"hello\n  |       ^---\n  |\n  = expected string_fragment or string_interpolant"
-}

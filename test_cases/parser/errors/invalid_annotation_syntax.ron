@@ -1,0 +1,7 @@
+TestCase(
+    name: "Invalid annotation syntax",
+    input: r#"
+@(test) fun test() {}
+"#,
+    should_fail: true,
+)

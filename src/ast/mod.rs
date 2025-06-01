@@ -1,103 +1,127 @@
-use serde::{Deserialize, Serialize};
+//! Component-based AST system for Patina using hecs ECS
+//! This module provides an AST structure where:
+//! - Child nodes are stored directly in parent structs
+//! - Each node has an associated entity ID in the ECS world
+//! - Components are stored using generics for type safety
+//! - Generic visitors can traverse based on any trait
 
-pub mod atoms;
-pub mod expressions;
-pub mod statements;
-pub mod syntax_nodes;
-pub mod types;
-pub mod values;
-pub mod walk;
+use hecs::{Entity, World};
+use std::collections::HashSet;
+use std::marker::PhantomData;
 
-pub use atoms::*;
-pub use expressions::*;
-pub use statements::*;
-pub use syntax_nodes::*;
-pub use types::*;
-pub use values::*;
-pub use walk::*;
+#[cfg(test)]
+#[path = "mod_tests.rs"]
+mod tests;
 
-/// Position information for AST nodes
-#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub struct Position {
-    pub filename: Option<String>,
-    pub line: usize,
-    pub column: usize,
-    pub offset: usize,
+pub mod nodes;
+pub mod components;
+pub mod visitor;
+pub mod printer;
+#[cfg(test)]
+pub mod test_utils;
+
+pub use nodes::*;
+pub use components::*;
+pub use visitor::*;
+pub use printer::*;
+
+/// Trait for all AST nodes to get their associated entity ID
+pub trait AstNode {
+    /// Get the entity ID associated with this AST node
+    fn entity_id(&self) -> Entity;
 }
 
-impl Default for Position {
-    fn default() -> Self {
-        Position {
-            filename: None,
-            line: 1,
-            column: 1,
-            offset: 0,
+/// Generic AST structure with component type parameters
+pub struct Ast<C = ()> {
+    /// The ECS world containing all entities and components
+    pub world: World,
+    /// Set of entities with specific component types
+    pub component_entities: HashSet<Entity>,
+    /// The root node of the AST
+    pub root: Root,
+    /// Phantom data for component type
+    _phantom: PhantomData<C>,
+}
+
+impl<C> std::fmt::Debug for Ast<C> {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("Ast")
+            .field("world", &format!("World[{} entities]", self.world.len()))
+            .field("component_entities", &self.component_entities)
+            .field("root", &self.root)
+            .finish()
+    }
+}
+
+impl Ast<()> {
+    /// Create a new AST with no specific component types
+    pub fn new() -> Self {
+        let mut world = World::new();
+        let root_entity = world.spawn(());
+        Self {
+            world,
+            component_entities: HashSet::new(),
+            root: Root {
+                entity: root_entity,
+                statements: Vec::new(),
+            },
+            _phantom: PhantomData,
         }
     }
 }
 
-/// Base trait for all AST nodes
-pub trait SyntaxNode {
-    fn position(&self) -> &Position;
-    fn children(&self) -> Vec<&dyn SyntaxNode>;
+impl<C> Ast<C> {
+    /// Create an entity
+    pub fn create_entity(&mut self) -> Entity {
+        self.world.spawn(())
+    }
+
+    /// Add a component to an entity and track it
+    pub fn add_component<T: 'static + Send + Sync>(&mut self, entity: Entity, component: T) {
+        self.world.insert_one(entity, component).unwrap();
+        self.component_entities.insert(entity);
+    }
+
+    /// Get a component from an entity
+    pub fn get_component<T: 'static + Send + Sync>(&self, entity: Entity) -> Option<hecs::Ref<T>> {
+        self.world.get::<&T>(entity).ok()
+    }
+
+    /// Get a mutable component from an entity  
+    pub fn get_component_mut<T: 'static + Send + Sync>(&mut self, entity: Entity) -> Option<hecs::RefMut<T>> {
+        self.world.get::<&mut T>(entity).ok()
+    }
+
+    /// Query entities with specific components
+    pub fn query_entities<Q: hecs::Query>(&self) -> hecs::QueryBorrow<Q> {
+        self.world.query::<Q>()
+    }
+
+    /// Filter entities by component presence
+    pub fn filter_entities<T: 'static + Send + Sync>(&self) -> HashSet<Entity> {
+        let mut entities = HashSet::new();
+        for (entity, _) in self.world.query::<&T>().iter() {
+            entities.insert(entity);
+        }
+        entities
+    }
 }
 
-/// Enum for all statement types
-#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub enum StatementKind {
-    Module(Module),
-    Function(FunctionStatement),
-    Return(ReturnStatement),
-    Let(LetStatement),
-    Assignment(AssignmentStatement),
-    Break(BreakStatement),
-    While(WhileStatement),
-    For(ForStatement),
-    Struct(StructStatement),
-    Enum(EnumStatement),
-    Interface(InterfaceStatement),
-    Impl(ImplStatement),
-    Expression(ExpressionStatement),
+/// Generic visitor trait that can work with any component constraint
+pub trait GenericVisitor<C> {
+    /// Visit any node that satisfies the component constraint
+    fn visit_node<N: AstNode>(&mut self, ast: &Ast<C>, node: &N)
+    where
+        Self: Sized;
 }
 
-/// Enum for all expression types
-#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub enum ExpressionKind {
-    If(IfExpression),
-    Case(CaseExpression),
-    Lambda(Lambda),
-    Block(BlockExpression),
-    Type(TypeExpression),
-    Operation(Operation),
-}
-
-/// Enum for all atom types
-#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub enum AtomKind {
-    Grouped(GroupedExpression),
-    Type(AtomicType),
-    Value(AtomicValue),
-    Binding(Binding),
-}
-
-/// Enum for all value types
-#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub enum ValueKind {
-    Integer(Integer),
-    Boolean(Boolean),
-    Float(Float),
-    Null(Null),
-    String(StringLiteral),
-}
-
-/// Enum for all type expressions
-#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub enum TypeKind {
-    Pointer(PointerType),
-    Array(ArrayType),
-    Integer(IntegerType),
-    Floating(FloatingType),
-    Void(VoidType),
-    Self_(SelfType),
-    Function(FunctionType),
+/// Trait for traversable nodes
+pub trait Traversable<C> {
+    /// Accept a generic visitor
+    fn accept<V: GenericVisitor<C>>(&self, visitor: &mut V, ast: &Ast<C>)
+    where
+        Self: AstNode + Sized,
+    {
+        visitor.visit_node(ast, self);
+    }
 }

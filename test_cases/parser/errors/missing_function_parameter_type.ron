@@ -1,0 +1,7 @@
+TestCase(
+    name: "Missing function parameter type",
+    input: r#"
+fun test(x) {}
+"#,
+    should_fail: true,
+)

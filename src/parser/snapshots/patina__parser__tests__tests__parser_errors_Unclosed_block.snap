@@ -1,7 +1,0 @@
----
-source: src/parser/tests.rs
-expression: "&result"
----
-{
-  "Err": "Parse error:  --> 1:12\n  |\n1 | { let x = 1\n  |            ^---\n  |\n  = expected operator, semicolon, right_brace, or postfix"
-}

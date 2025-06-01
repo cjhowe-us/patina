@@ -1,0 +1,6 @@
+TestCase(
+    name: "Return with tag",
+    input: r#"
+return :label
+"#,
+)

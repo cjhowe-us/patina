@@ -1,0 +1,7 @@
+TestCase(
+    name: "Invalid function call",
+    input: r#"
+let x = f(,)
+"#,
+    should_fail: true,
+)

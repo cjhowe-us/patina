@@ -1,0 +1,6 @@
+TestCase(
+    name: "Mutable binding",
+    input: r#"
+let mut y = 2
+"#,
+)

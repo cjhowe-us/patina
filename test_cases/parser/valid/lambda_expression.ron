@@ -1,0 +1,8 @@
+TestCase(
+    name: "Lambda expression",
+    input: r#"
+let adder = fun (b: i32) {
+	let a = 1 + b
+}
+"#,
+)

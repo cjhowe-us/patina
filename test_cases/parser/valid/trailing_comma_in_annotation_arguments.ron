@@ -1,0 +1,6 @@
+TestCase(
+    name: "Trailing comma in annotation arguments",
+    input: r#"
+@myAnno(1, ) fun test() {}
+"#,
+)

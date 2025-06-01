@@ -1,0 +1,6 @@
+TestCase(
+    name: "Grouped expression",
+    input: r#"
+let x = (1 + 2)
+"#,
+)

@@ -1,0 +1,9 @@
+TestCase(
+    name: "Function statement",
+    input: r#"
+fun add(a: i64, b: u64): i64 {
+	let c = a + b
+	return c
+}
+"#,
+)

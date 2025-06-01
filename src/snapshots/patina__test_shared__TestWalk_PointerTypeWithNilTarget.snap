@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": " --> 1:21\n  |\n1 | module m { let x: * = null }\n  |                     ^---\n  |\n  = expected mut_kw, own_kw, raw_kw, or atom"
-}

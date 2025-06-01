@@ -1,0 +1,8 @@
+TestCase(
+    name: "Type value",
+    input: r#"
+let x: i64 = 10
+let ptr: *mut i64
+let arr: [10]i64
+"#,
+)

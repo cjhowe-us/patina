@@ -1,0 +1,7 @@
+TestCase(
+    name: "Multiple root statements",
+    input: r#"
+let x = 1
+let y = 2
+"#,
+)

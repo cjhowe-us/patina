@@ -1,0 +1,6 @@
+TestCase(
+    name: "Complex operation with multiple operators",
+    input: r#"
+let x = a + b * c / d % e && f || g == h != i < j > k <= l >= m
+"#,
+)

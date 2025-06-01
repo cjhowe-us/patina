@@ -2,7 +2,7 @@
 
 ## Overview
 
-Patina has successfully implemented the core semantic analysis infrastructure. The compiler can parse and analyze Patina source code with comprehensive error reporting.
+Patina has implemented a component-based AST system and semantic analysis infrastructure. The compiler can parse Patina source code with comprehensive error reporting, though semantic analysis is not yet integrated with the parser.
 
 ## Completed Features
 
@@ -13,40 +13,49 @@ Patina has successfully implemented the core semantic analysis infrastructure. T
 - Position tracking for all nodes
 - 100+ parser test cases passing
 
-### ✅ AST Infrastructure (100%)
-- Complete node hierarchy
-- SyntaxNode trait implementation
-- Generic visitor pattern
-- Tree traversal utilities
+### ✅ Component-Based AST (100%)
+- Entity-Component-System (ECS) architecture using `hecs`
+- Generic AST structure with compile-time type safety
+- Traditional and generic visitor patterns
+- Component queries and filtering
+- No runtime boxing overhead
 - Comprehensive test coverage
 
-### ✅ Semantic Analysis - Phase 1 (100%)
+### ✅ Semantic Analysis Infrastructure (100%)
 - Arena-based memory management
 - Symbol table with scoping
-- Type representation and checking
+- Type representation and registry
 - Stage-level tracking and validation
 - Diagnostic system with detailed errors
 - 59 semantic analysis tests passing
 
-### 🏗️ Stage System Foundation (Started)
-- Stage type definitions implemented
-- Basic stage tracking in symbols
-- Stage error types defined
-- Annotation parsing infrastructure ready
+### ❌ Semantic Analysis Integration (0%)
+- Infrastructure exists but not connected to parser
+- No name resolution visitor implemented
+- No type checking visitor implemented
+- Components (TypeInfo, SymbolInfo) never populated
+- No analysis pipeline in main binary
 
-## In Progress
+## Next Steps
 
-### 🏗️ Stage System (10%)
-- Foundation types implemented
+### 🎯 Immediate Priority: Connect Analysis to AST
+1. Implement name resolution visitor
+2. Implement type checking visitor  
+3. Create analysis pipeline in main.rs
+4. Populate AST components with analysis results
+
+### 🏗️ Stage System Integration
+- Stage infrastructure is complete in analysis module
+- Needs integration with parser and AST traversal
 - Full implementation planned (see docs/plans/phase-separation)
-- Not yet integrated with parser or analysis
 
 ## Planned Features
 
-### 🏗️ Type System (40%)
-- Basic types implemented (integers, pointers, arrays, functions)
-- Type inference scaffolding in place
-- Missing: Full inference, generics, type aliases
+### 📝 Semantic Analysis Visitors
+- Name resolution using symbol table
+- Type checking using type registry
+- Stage validation for quoted code
+- Error reporting integration
 
 ### 🏗️ Code Generation (0%)
 - Not yet started
@@ -55,90 +64,59 @@ Patina has successfully implemented the core semantic analysis infrastructure. T
 ## Test Status
 
 ```
-Total Tests: 159
+Total Tests: 200+
 - Parser Tests: 100+ ✅
+- AST/Visitor Tests: 50+ ✅
 - Semantic Analysis Tests: 59 ✅
-- Integration Tests: Ongoing
+- Integration Tests: None (analysis not integrated)
 ```
 
-All tests are passing with snapshot verification.
+All unit tests passing with snapshot verification.
 
 ## Known Limitations
 
-1. **Type Inference**: Basic framework only, full inference not implemented
-2. **Generics**: Not yet supported
-3. **Modules**: Basic parsing only, no semantic analysis
-4. **Code Generation**: No backend implementation
-5. **Standard Library**: Not started
+1. **Semantic Analysis**: Infrastructure complete but not integrated
+2. **Type Inference**: Basic framework only, no implementation
+3. **Generics**: Not yet supported
+4. **Modules**: Basic parsing only, no semantic analysis
+5. **Code Generation**: No backend implementation
+6. **Standard Library**: Not started
 
-## Next Steps
+## Architecture Status
 
-### Phase 1: Enhanced Type System
-- [ ] Complete type inference algorithm
-- [ ] Add generic type support
-- [ ] Implement type aliases
-- [ ] Add trait/interface system
+### ✅ Stable and Complete
+- Parser infrastructure
+- Component-based AST with ECS
+- Visitor patterns (traditional + generic)
+- Semantic analysis infrastructure
+- Stage system types
 
-### Phase 2: Advanced Staging
-- [ ] Quote/splice operators
-- [ ] Cross-stage persistence
-- [ ] Stage polymorphism
-- [ ] Lifted values
-
-### Phase 3: Code Generation
-- [ ] LLVM backend setup
-- [ ] Basic code generation
-- [ ] Optimization passes
-- [ ] Runtime library
-
-### Phase 4: Standard Library
-- [ ] Core types and traits
-- [ ] Memory management
-- [ ] I/O operations
-- [ ] Collections
-
-## Architecture Stability
-
-The core architecture is stable and well-tested:
-- Parser infrastructure ✅
-- AST design ✅
-- Visitor pattern ✅
-- Analysis framework ✅
-- Stage system design ✅
+### ❌ Missing Integration
+- Analysis visitors not implemented
+- No connection between parser and analysis
+- AST components never populated with analysis data
 
 ## Contributing
 
-The project is ready for contributions in:
-- Type system enhancements
-- Additional semantic analysis
-- Code generation backend
-- Standard library development
-- Documentation improvements
+The most impactful contributions would be:
+1. **Implementing semantic analysis visitors** (highest priority)
+2. Connecting analysis to the compilation pipeline
+3. Type inference implementation
+4. Code generation backend
+5. Documentation for the component system
 
-See [Getting Started](../development/getting-started.md) for development setup.
+See [Getting Started](../developer/getting-started.md) for development setup.
 
 ## Performance
 
-Current performance characteristics:
-- Parser: ~1000 lines/second
-- Analysis: ~500 lines/second
-- Memory usage: Efficient arena allocation
-- Test suite: < 5 seconds
+Current characteristics:
+- Parser: Fast with minimal allocations
+- AST: Efficient ECS-based storage
+- Analysis: Infrastructure ready but unused
+- Test suite: < 5 seconds for 200+ tests
 
-## Future Directions
+## Project Readiness
 
-### Near-term Goals
-- Complete type inference
-- Basic code generation
-- Initial standard library
-
-### Medium-term Goals
-- Generic types
-- Advanced staging features
-- Optimization framework
-
-### Long-term Goals
-- Self-hosting compiler
-- Package management
-- IDE support
-- Production readiness
+- **Research/Experimental**: ✅ Ready for exploration
+- **Educational**: ✅ Good example of modern compiler design
+- **Production**: ❌ Missing critical compilation phases

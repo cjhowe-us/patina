@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": " --> 1:16\n  |\n1 | let x = arr[1]?\n  |                ^---\n  |\n  = expected atom"
-}

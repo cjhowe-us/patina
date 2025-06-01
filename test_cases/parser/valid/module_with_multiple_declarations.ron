@@ -1,0 +1,11 @@
+TestCase(
+    name: "Module with multiple declarations",
+    input: r#"
+module test {
+	let x = 1
+	fun test() {
+		return x
+	}
+}
+"#,
+)

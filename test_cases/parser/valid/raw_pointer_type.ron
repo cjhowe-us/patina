@@ -1,0 +1,6 @@
+TestCase(
+    name: "Raw pointer type",
+    input: r#"
+let x: *raw i32
+"#,
+)

@@ -1,0 +1,8 @@
+TestCase(
+    name: "Module",
+    input: r#"
+module test {
+	let x = *mut i32
+}
+"#,
+)

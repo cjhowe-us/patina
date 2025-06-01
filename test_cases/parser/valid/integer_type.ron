@@ -1,0 +1,6 @@
+TestCase(
+    name: "Integer type", 
+    input: r#"
+let x: i64 = 42
+"#,
+)

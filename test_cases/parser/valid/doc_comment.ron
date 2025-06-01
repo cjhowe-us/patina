@@ -1,0 +1,6 @@
+TestCase(
+    name: "Doc comment",
+    input: r#"
+/* My doc comment */ fun test() { let x = 1 }
+"#,
+)

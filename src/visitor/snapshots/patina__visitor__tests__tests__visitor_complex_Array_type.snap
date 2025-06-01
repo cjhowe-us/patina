@@ -1,7 +1,0 @@
----
-source: src/visitor/tests.rs
-expression: "&result"
----
-{
-  "Err": "Parse error:  --> 1:2\n  |\n1 | [i32; 10]\n  |  ^---\n  |\n  = expected integer or right_bracket"
-}

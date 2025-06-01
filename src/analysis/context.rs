@@ -143,6 +143,7 @@ mod tests {
             line: 1,
             column: 1,
             offset: 0,
+            length: 0,
         };
         
         let symbol_id = ctx.with_symbol_table(|table| {
@@ -182,6 +183,7 @@ mod tests {
             line: 1,
             column: 1,
             offset: 0,
+            length: 0,
         };
         
         ctx.with_diagnostics(|diag| {
@@ -232,6 +234,7 @@ mod tests {
             line: 1,
             column: 1,
             offset: 0,
+            length: 0,
         };
         
         // Add symbol to original context
@@ -267,6 +270,7 @@ mod tests {
             line: 1,
             column: 1,
             offset: 0,
+            length: 0,
         };
         
         ctx1.with_diagnostics(|diag| {

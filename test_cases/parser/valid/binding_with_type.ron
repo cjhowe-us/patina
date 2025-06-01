@@ -1,0 +1,6 @@
+TestCase(
+    name: "Binding with type",
+    input: r#"
+let a: i64 = 4
+"#,
+)

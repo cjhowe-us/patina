@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": " --> 1:31\n  |\n1 | @tag.anno(\"hello world\", 100, \\(quoted)) fun add(a: i64, b: i64): i64 {\n  |                               ^---\n  |\n  = expected right_paren or expression"
-}

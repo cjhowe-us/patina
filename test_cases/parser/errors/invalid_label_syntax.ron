@@ -1,0 +1,7 @@
+TestCase(
+    name: "Invalid label syntax",
+    input: r#"
+: { let x = 1 }
+"#,
+    should_fail: true,
+)

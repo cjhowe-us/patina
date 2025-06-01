@@ -2,13 +2,14 @@
 
 ## Current Architecture
 
-Patina currently implements a traditional compiler pipeline with infrastructure for future stage-based phase separation.
+Patina implements a component-based AST using Entity-Component-System (ECS) architecture, with separate semantic analysis infrastructure ready for integration.
 
 ### Core Components (Implemented)
 
-- **Parser**: Complete AST generation
-- **Semantic Analysis**: Type checking and symbol resolution
-- **Foundation**: Stage types and infrastructure (not integrated)
+- **Parser**: Complete AST generation with Pest
+- **Component-Based AST**: ECS architecture using `hecs`
+- **Semantic Analysis**: Infrastructure complete but not integrated
+- **Stage System**: Types defined, awaiting integration
 
 ## Planned Pipeline (See docs/plans/phase-separation)
 
@@ -28,15 +29,19 @@ Future stage-based compilation phases:
 - **Design**: Pest parser generator
 - **Output**: Strongly-typed AST nodes
 
-### AST (Abstract Syntax Tree)
+### Component-Based AST
 - **Location**: `src/ast/`
+- **Architecture**: Entity-Component-System (ECS)
 - **Structure**:
-  - `statements.rs` - Statement nodes
-  - `expressions.rs` - Expression nodes
-  - `atoms.rs` - Atomic constructs
-  - `types.rs` - Type representations
-  - `values.rs` - Value nodes
-  - `syntax_nodes.rs` - Base traits
+  - `mod.rs` - Core `Ast<C>` generic type
+  - `nodes.rs` - All AST node definitions
+  - `components.rs` - Component types
+  - `visitor.rs` - Visitor patterns
+  - `printer.rs` - Debug utilities
+- **Features**:
+  - Generic components without boxing
+  - Efficient entity queries
+  - Type-safe at compile time
 
 ### Semantic Analysis
 - **Location**: `src/analysis/`
@@ -64,10 +69,10 @@ Future stage-based compilation phases:
 ## Design Patterns
 
 ### Visitor Pattern
-- Generic AST traversal
-- No match statements required
-- Extensible analysis passes
-- See: `src/ast/walk.rs`
+- **Traditional**: Node-specific visitor methods
+- **Generic**: Component-based traversal
+- **Filter**: Query entities by component
+- See: `src/ast/visitor.rs`
 
 ### Arena Allocation
 - Efficient memory management
@@ -98,13 +103,19 @@ Future stage-based compilation phases:
 
 ```
 src/
-├── main.rs          # CLI entry
+├── main.rs          # CLI entry (parser only)
 ├── lib.rs           # Library root
 ├── parser.rs        # Parser implementation
 ├── grammar.pest     # Language grammar
-├── ast/             # AST definitions
-├── analysis/        # Semantic analysis
-└── visitor.rs       # Original visitor
+├── ast/             # Component-based AST
+│   ├── mod.rs       # Core AST structure
+│   ├── nodes.rs     # Node definitions
+│   ├── components.rs # ECS components
+│   └── visitor.rs   # Visitor patterns
+└── analysis/        # Semantic analysis (not integrated)
+    ├── arena.rs     # Memory management
+    ├── context.rs   # Analysis context
+    └── types.rs     # Type system
 ```
 
 ## Extension Points

@@ -1,0 +1,7 @@
+TestCase(
+    name: "Integer width edge cases",
+    input: r#"
+let min: i8 = 0
+let max: u64 = 0
+"#,
+)

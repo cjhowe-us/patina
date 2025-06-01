@@ -1,0 +1,6 @@
+TestCase(
+    name: "Static let with type and expression",
+    input: r#"
+static let x: i32 = 1
+"#,
+)

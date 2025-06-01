@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": " --> 1:26\n  |\n1 | let matrix: [3][3]i32 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\n  |                          ^---\n  |\n  = expected integer or right_bracket"
-}

@@ -1,0 +1,6 @@
+TestCase(
+    name: "Return with expression",
+    input: r#"
+return (1 + 2)
+"#,
+)

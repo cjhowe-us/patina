@@ -1,0 +1,14 @@
+TestCase(
+    name: "Multiple break statements with different labels",
+    input: r#"
+{
+	:outer {
+		:inner {
+			if (condition) break :inner
+			else break :outer
+		}
+		break
+	}
+}
+"#,
+)

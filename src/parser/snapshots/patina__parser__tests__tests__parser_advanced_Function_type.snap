@@ -1,7 +1,0 @@
----
-source: src/parser/tests.rs
-expression: "&result"
----
-{
-  "Err": "Parse error:  --> 1:15\n  |\n1 | fn(i32, i32) -> i32\n  |               ^---\n  |\n  = expected atom"
-}

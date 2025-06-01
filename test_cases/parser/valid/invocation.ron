@@ -1,0 +1,6 @@
+TestCase(
+    name: "Invocation",
+    input: r#"
+let x = add(1, 2)
+"#,
+)

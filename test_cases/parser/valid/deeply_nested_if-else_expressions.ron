@@ -1,0 +1,18 @@
+TestCase(
+    name: "Deeply nested if-else expressions",
+    input: r#"
+if (a > 0) {
+	if (b > 0) {
+		if (c > 0) {
+			return a + b + c
+		} else {
+			return a + b
+		}
+	} else {
+		return a
+	}
+} else {
+	return 0
+}
+"#,
+)

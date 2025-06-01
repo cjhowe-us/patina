@@ -1,0 +1,8 @@
+TestCase(
+    name: "Empty blocks with labels",
+    input: r#"
+:outer {
+	:inner {}
+}
+"#,
+)

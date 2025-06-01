@@ -1,0 +1,10 @@
+TestCase(
+    name: "Block atom with multiple statements",
+    input: r#"
+{
+	let x = 1
+	let y: *i32 = 2
+	break x + y
+}
+"#,
+)

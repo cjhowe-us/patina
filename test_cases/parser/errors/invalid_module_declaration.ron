@@ -1,0 +1,7 @@
+TestCase(
+    name: "Invalid module declaration",
+    input: r#"
+module 123 {}
+"#,
+    should_fail: true,
+)

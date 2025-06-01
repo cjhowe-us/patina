@@ -1,0 +1,7 @@
+TestCase(
+    name: "Invalid let syntax",
+    input: r#"
+let = 5
+"#,
+    should_fail: true,
+)

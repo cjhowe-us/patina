@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": " --> 1:22\n  |\n1 | module m { let a: [] = null; let b: * = null; let c: fun() = null; let d: fun(): = null; let e: = null; let f = \"\"; let g = \"${}\"; }\n  |                      ^---\n  |\n  = expected atom"
-}

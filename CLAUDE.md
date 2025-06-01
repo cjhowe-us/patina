@@ -101,7 +101,7 @@ The language supports multiple pointer ownership models:
 
 Tests are organized into:
 
-- Test cases stored in separate JSON data files
+- Test cases stored in separate RON data files
 - Use snapshot testing for assertions
 - Error case testing to verify proper error handling
 

@@ -1,0 +1,6 @@
+TestCase(
+    name: "Owned pointer type",
+    input: r#"
+let x: *own i32
+"#,
+)

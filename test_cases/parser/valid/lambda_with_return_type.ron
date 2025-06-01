@@ -1,0 +1,6 @@
+TestCase(
+    name: "Lambda with return type",
+    input: r#"
+let x = fun(): i32 { return 1 }
+"#,
+)

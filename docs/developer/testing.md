@@ -20,7 +20,7 @@ patina/
 │   ├── parser/tests.rs      # Parser unit tests
 │   ├── visitor/tests.rs     # Visitor pattern tests
 │   └── */snapshots/         # Snapshot files
-├── test_cases/              # Test data JSON files
+├── test_cases/              # Test data RON files
 └── tests/                   # Integration tests
 ```
 
@@ -103,11 +103,11 @@ Full pipeline tests including:
 
 ## Test Data Files
 
-### JSON Test Cases
+### RON Test Cases
 
-Test data is stored in JSON files:
+Test data is stored in RON files:
 
-```json
+```rust
 {
   "SimpleBinding": {
     "input": "let x = 42",
@@ -122,11 +122,11 @@ Test data is stored in JSON files:
 
 ### Test Categories
 
-- `lexer.json`: Lexical analysis tests
-- `parser.json`: Basic parsing tests
-- `parser_error.json`: Error handling tests
-- `real_world_examples.json`: Complex scenarios
-- `field_access_test.json`: Member access tests
+- `lexer.ron`: Lexical analysis tests
+- `parser.ron`: Basic parsing tests
+- `parser_error.ron`: Error handling tests
+- `real_world_examples.ron`: Complex scenarios
+- `field_access_test.ron`: Member access tests
 
 ## Writing New Tests
 
@@ -144,8 +144,8 @@ fn test_new_feature() {
 
 ### 2. Add Test Case
 
-Add to appropriate JSON file:
-```json
+Add to appropriate RON file:
+```rust
 {
   "NewFeature": {
     "input": "new syntax here",
@@ -204,7 +204,7 @@ RUST_BACKTRACE=1 cargo test test_name
 ### Adding Coverage
 
 1. Identify untested code paths
-2. Add test cases to JSON files
+2. Add test cases to RON files
 3. Verify with snapshots
 4. Add edge cases
 

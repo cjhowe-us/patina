@@ -1,0 +1,6 @@
+TestCase(
+    name: "Immutable pointer type",
+    input: r#"
+let x: *i32
+"#,
+)

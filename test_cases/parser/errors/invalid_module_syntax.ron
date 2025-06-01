@@ -1,0 +1,7 @@
+TestCase(
+    name: "Invalid module syntax",
+    input: r#"
+module {}
+"#,
+    should_fail: true,
+)

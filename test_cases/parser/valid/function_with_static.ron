@@ -1,0 +1,12 @@
+TestCase(
+    name: "function_with_static",
+    input: r#"
+fun compute(x: i32): i32 {
+    static {
+        let multiplier = 2
+    }
+    return x
+}
+"#,
+    description: Some("Test function with static compile-time code"),
+)

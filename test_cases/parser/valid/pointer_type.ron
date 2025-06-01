@@ -1,0 +1,6 @@
+TestCase(
+    name: "Pointer type",
+    input: r#"
+let ptr: *mut i64 = 20
+"#,
+)

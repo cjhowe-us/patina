@@ -1,0 +1,6 @@
+TestCase(
+    name: "Mutable let with type and expression",
+    input: r#"
+let mut x: i32 = 1
+"#,
+)

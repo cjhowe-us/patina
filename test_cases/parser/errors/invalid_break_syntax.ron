@@ -1,0 +1,7 @@
+TestCase(
+    name: "Invalid break syntax",
+    input: r#"
+break :
+"#,
+    should_fail: true,
+)

@@ -1,0 +1,14 @@
+TestCase(
+    name: "Using if shortcut with block",
+    input: r#"
+
+if (x > 10 && y < 20 || z == 30) {
+	return x + y + z
+} else if (interlockable()) :test {
+    break :test 5
+} else {
+    takeOver(world).destroy()
+}
+
+"#,
+)

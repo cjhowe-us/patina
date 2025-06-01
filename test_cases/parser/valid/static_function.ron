@@ -1,0 +1,8 @@
+TestCase(
+    name: "Static function",
+    input: r#"
+static fun test(): i32 {
+	return 42
+}
+"#,
+)

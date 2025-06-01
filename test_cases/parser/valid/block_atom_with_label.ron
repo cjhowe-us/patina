@@ -1,0 +1,8 @@
+TestCase(
+    name: "Block atom with label",
+    input: r#"
+:my_label {
+	let x = 1
+}
+"#,
+)

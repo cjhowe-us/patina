@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": " --> 1:49\n  |\n1 | fun complex(a: i32, b: *mut i64, c: []u8, d: fun(x: i32): i32): *own i32 {\n  |                                                 ^---\n  |\n  = expected ident_char"
-}

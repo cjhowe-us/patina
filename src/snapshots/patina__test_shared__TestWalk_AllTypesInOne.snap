@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": " --> 1:35\n  |\n1 | module m { fun test(a: Int32, b: [String], c: *Bool, d: fun(x: Int): String): *[Int] { let x: MyType = \"hello ${world}\"; return *x[0] } }\n  |                                   ^---\n  |\n  = expected integer or right_bracket"
-}

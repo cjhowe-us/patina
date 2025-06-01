@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": " --> 3:25\n  |\n3 |     struct Listener<T> {␊\n  |                         ^---\n  |\n  = expected ident or right_brace"
-}

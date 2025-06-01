@@ -1,0 +1,7 @@
+TestCase(
+    name: "Mismatched braces",
+    input: r#"
+fun test() {
+"#,
+    should_fail: true,
+)

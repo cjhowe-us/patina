@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": " --> 1:8\n  |\n1 | module {}\n  |        ^---\n  |\n  = expected ident_char or ident"
-}

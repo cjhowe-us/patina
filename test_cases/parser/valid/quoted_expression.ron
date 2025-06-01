@@ -1,0 +1,6 @@
+TestCase(
+    name: "Quoted expression",
+    input: r#"
+\(1 + 2)
+"#,
+)

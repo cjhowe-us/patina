@@ -1,0 +1,7 @@
+TestCase(
+    name: "Unterminated string interpolation",
+    input: r#"
+let x = \
+"#,
+    should_fail: true,
+)

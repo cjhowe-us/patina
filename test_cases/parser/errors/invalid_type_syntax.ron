@@ -1,0 +1,7 @@
+TestCase(
+    name: "Invalid type syntax",
+    input: r#"
+let x: * {}
+"#,
+    should_fail: true,
+)

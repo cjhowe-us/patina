@@ -1,0 +1,6 @@
+TestCase(
+    name: "Quoted binding",
+    input: r#"
+\(my.`-path`)
+"#,
+)

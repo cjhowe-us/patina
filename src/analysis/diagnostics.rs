@@ -226,6 +226,7 @@ mod tests {
             line: 1, 
             column: 10,
             offset: 0,
+            length: 0,
         };
 
         collector.error("Undefined variable".to_string(), pos);
@@ -244,18 +245,21 @@ mod tests {
             line: 1, 
             column: 10,
             offset: 0,
+            length: 0,
         };
         let pos2 = Position { 
             filename: None,
             line: 2, 
             column: 5,
             offset: 0,
+            length: 0,
         };
         let pos3 = Position { 
             filename: None,
             line: 3, 
             column: 1,
             offset: 0,
+            length: 0,
         };
 
         collector.error("Error message".to_string(), pos1);
@@ -275,12 +279,14 @@ mod tests {
             line: 10, 
             column: 15,
             offset: 0,
+            length: 0,
         };
         let note_pos = Position { 
             filename: None,
             line: 8, 
             column: 1,
             offset: 0,
+            length: 0,
         };
 
         let diagnostic = Diagnostic::error("Type mismatch".to_string(), pos)
@@ -305,12 +311,14 @@ mod tests {
             line: 1, 
             column: 1,
             offset: 0,
+            length: 0,
         };
         let pos2 = Position { 
             filename: None,
             line: 2, 
             column: 1,
             offset: 0,
+            length: 0,
         };
 
         collector1.error("Error 1".to_string(), pos1);
@@ -330,6 +338,7 @@ mod tests {
             line: 5, 
             column: 10,
             offset: 0,
+            length: 0,
         };
         let diagnostic = Diagnostic::error("Undefined variable 'x'".to_string(), pos)
             .with_note("Variable must be declared before use".to_string(), None);
@@ -347,6 +356,7 @@ mod tests {
             line: 1, 
             column: 1,
             offset: 0,
+            length: 0,
         };
 
         collector.error("Error".to_string(), pos.clone());

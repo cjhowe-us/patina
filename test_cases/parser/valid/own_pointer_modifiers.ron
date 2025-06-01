@@ -1,0 +1,6 @@
+TestCase(
+    name: "Own pointer modifiers",
+    input: r#"
+let x: *own i32 = 0
+"#,
+)

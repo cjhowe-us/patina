@@ -1,0 +1,6 @@
+TestCase(
+    name: "Nested string fragments",
+    input: r#"
+let x = \
+"#,
+)

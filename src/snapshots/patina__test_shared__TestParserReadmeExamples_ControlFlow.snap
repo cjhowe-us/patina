@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": " --> 1:18\n  |\n1 | // If expressions␊\n  |                  ^---\n  |\n  = expected EOI or decorated_statement"
-}

@@ -1,0 +1,8 @@
+TestCase(
+    name: "Static labeled block expression",
+    input: r#"
+let x = static :labeled {
+	break :labeled 5
+}
+"#,
+)

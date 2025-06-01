@@ -1,0 +1,7 @@
+TestCase(
+    name: "Missing closing parenthesis in grouped expression",
+    input: r#"
+let x = (1 + (2 * 3)
+"#,
+    should_fail: true,
+)

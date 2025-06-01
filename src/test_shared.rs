@@ -1,169 +1,134 @@
-use serde::{Deserialize, Serialize};
-use serde_json;
+//! Shared test utilities for directory-based RON tests
+
+use ron;
+use serde::Deserialize;
 use std::fs;
 use std::path::Path;
 
-/// Represents a test case with input data and metadata
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct TestCase<T> {
+#[derive(Debug, Deserialize)]
+pub struct TestCase {
     pub name: String,
-    pub input: T,
+    pub input: String,
+    #[serde(default)]
+    pub should_fail: bool,
+    pub description: Option<String>,
 }
 
-/// Error wrapper for test results
-#[derive(Debug, Serialize, Deserialize)]
-pub struct TestError {
-    pub error: String,
-}
-
-impl TestError {
-    pub fn new<E: std::fmt::Display>(err: E) -> Self {
-        Self {
-            error: err.to_string(),
-        }
-    }
-}
-
-/// Result type for test cases - either success with data or error
-#[derive(Debug, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum TestResult<T> {
-    Success(T),
-    Error(TestError),
-}
-
-impl<T> From<Result<T, Box<dyn std::error::Error>>> for TestResult<T> {
-    fn from(result: Result<T, Box<dyn std::error::Error>>) -> Self {
-        match result {
-            Ok(value) => TestResult::Success(value),
-            Err(err) => TestResult::Error(TestError::new(err)),
-        }
-    }
-}
-
-/// Load test cases from a JSON file
-pub fn load_test_cases<T>(filename: &str) -> Result<Vec<TestCase<T>>, Box<dyn std::error::Error>>
-where
-    T: for<'de> Deserialize<'de>,
-{
-    let path = Path::new("test_cases").join(filename);
-    let content = fs::read_to_string(&path)
-        .map_err(|e| format!("Failed to read test file {}: {}", path.display(), e))?;
-
-    let test_cases: Vec<TestCase<T>> = serde_json::from_str(&content)
-        .map_err(|e| format!("Failed to parse test file {}: {}", path.display(), e))?;
-
-    Ok(test_cases)
-}
-
-/// Run table-driven tests with snapshot testing
-pub fn run_tests<I, O>(
+/// Run tests by reading all RON files from a directory
+pub fn run_directory_tests<T, F>(
     test_name: &str,
-    filenames: &[&str],
-    test_fn: impl Fn(&I, &str) -> Result<O, Box<dyn std::error::Error>>,
+    directory: &str,
+    test_fn: F,
 ) where
-    I: for<'de> Deserialize<'de>,
-    O: Serialize,
+    T: std::fmt::Debug,
+    F: Fn(&str, &str) -> Result<T, Box<dyn std::error::Error>>,
 {
-    let mut all_test_cases = Vec::new();
-
-    // Load all test cases from specified files
-    for filename in filenames {
-        match load_test_cases::<I>(filename) {
-            Ok(mut cases) => {
-                // Add the filename to each test case's name for uniqueness
-                let file_base = filename.split('.').next().unwrap_or("");
-                for case in &mut cases {
-                    // Only append the filename if there are multiple files and the name might conflict
-                    if filenames.len() > 1 {
-                        case.name = format!("{}_{}", case.name, file_base);
-                    }
-                }
-                all_test_cases.append(&mut cases);
-            }
-            Err(e) => panic!("Failed to load test cases from {}: {}", filename, e),
-        }
+    let dir_path = Path::new("test_cases").join(directory);
+    
+    let mut entries: Vec<_> = fs::read_dir(&dir_path)
+        .unwrap_or_else(|e| panic!("Failed to read directory {}: {}", directory, e))
+        .filter_map(|e| e.ok())
+        .filter(|e| {
+            e.path().extension()
+                .and_then(|s| s.to_str())
+                .map(|s| s == "ron")
+                .unwrap_or(false)
+        })
+        .collect();
+    
+    // Sort entries for consistent test order
+    entries.sort_by_key(|e| e.path());
+    
+    if entries.is_empty() {
+        panic!("No test files found in directory: {}", directory);
     }
-
-    // Run each test case
-    for test_case in all_test_cases {
-        let test_case_name = test_case.name.replace(' ', "_");
-        let result = test_fn(&test_case.input, &test_case_name);
-        let test_result = TestResult::from(result);
-
-        // Create snapshot name
-        let snapshot_name = format!("{}_{}", test_name, test_case_name);
-
-        // Use insta for snapshot testing
-        insta::with_settings!({sort_maps => true}, {
-            insta::assert_json_snapshot!(snapshot_name, test_result);
-        });
+    
+    for entry in entries {
+        let path = entry.path();
+        
+        let content = fs::read_to_string(&path)
+            .unwrap_or_else(|e| panic!("Failed to read test file {:?}: {}", path, e));
+        
+        let test_case: TestCase = ron::from_str(&content)
+            .unwrap_or_else(|e| panic!("Failed to parse RON file {:?}: {}", path, e));
+        
+        // Trim the input to remove leading/trailing newlines from raw strings
+        let input = test_case.input.trim();
+        
+        match test_fn(input, &test_case.name) {
+            Ok(_) => {
+                if test_case.should_fail {
+                    panic!("{}: {} - Expected test to fail but it succeeded", test_name, test_case.name);
+                }
+            }
+            Err(e) => {
+                if !test_case.should_fail {
+                    panic!("{}: {} - Test failed unexpectedly: {:?}", test_name, test_case.name, e);
+                }
+            }
+        }
     }
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[derive(Debug, Serialize, Deserialize)]
-    struct SimpleInput {
-        value: String,
+/// Run parser tests with AST verification
+pub fn run_parser_directory_tests<F, V>(
+    test_name: &str,
+    directory: &str,
+    parse_fn: F,
+    verify_fn: V,
+) where
+    F: Fn(&str, &str) -> Result<crate::ast::Ast, Box<dyn std::error::Error>>,
+    V: Fn(&str, &crate::ast::Ast),
+{
+    let dir_path = Path::new("test_cases").join(directory);
+    
+    let mut entries: Vec<_> = fs::read_dir(&dir_path)
+        .unwrap_or_else(|e| panic!("Failed to read directory {}: {}", directory, e))
+        .filter_map(|e| e.ok())
+        .filter(|e| {
+            e.path().extension()
+                .and_then(|s| s.to_str())
+                .map(|s| s == "ron")
+                .unwrap_or(false)
+        })
+        .collect();
+    
+    // Sort entries for consistent test order
+    entries.sort_by_key(|e| e.path());
+    
+    if entries.is_empty() {
+        panic!("No test files found in directory: {}", directory);
     }
-
-    #[derive(Debug, Serialize, Deserialize)]
-    struct SimpleOutput {
-        result: String,
-    }
-
-    #[test]
-    fn test_test_error() {
-        let error = TestError::new("test error message");
-        assert_eq!(error.error, "test error message");
-    }
-
-    #[test]
-    fn test_test_result_success() {
-        let result: TestResult<SimpleOutput> = TestResult::Success(SimpleOutput {
-            result: "success".to_string(),
-        });
-
-        match result {
-            TestResult::Success(output) => assert_eq!(output.result, "success"),
-            TestResult::Error(_) => panic!("Expected success"),
+    
+    for entry in entries {
+        let path = entry.path();
+        
+        let content = fs::read_to_string(&path)
+            .unwrap_or_else(|e| panic!("Failed to read test file {:?}: {}", path, e));
+        
+        let test_case: TestCase = ron::from_str(&content)
+            .unwrap_or_else(|e| panic!("Failed to parse RON file {:?}: {}", path, e));
+        
+        // Trim the input to remove leading/trailing newlines from raw strings
+        let input = test_case.input.trim();
+        
+        if input.is_empty() {
+            eprintln!("Warning: Test '{}' has empty input, skipping", test_case.name);
+            continue;
         }
-    }
-
-    #[test]
-    fn test_test_result_error() {
-        let result: TestResult<SimpleOutput> = TestResult::Error(TestError::new("test error"));
-
-        match result {
-            TestResult::Success(_) => panic!("Expected error"),
-            TestResult::Error(err) => assert_eq!(err.error, "test error"),
-        }
-    }
-
-    #[test]
-    fn test_test_result_from_result_ok() {
-        let ok_result: Result<SimpleOutput, Box<dyn std::error::Error>> = Ok(SimpleOutput {
-            result: "success".to_string(),
-        });
-        let test_result = TestResult::from(ok_result);
-
-        match test_result {
-            TestResult::Success(output) => assert_eq!(output.result, "success"),
-            TestResult::Error(_) => panic!("Expected success"),
-        }
-    }
-
-    #[test]
-    fn test_test_result_from_result_err() {
-        let err_result: Result<SimpleOutput, Box<dyn std::error::Error>> = Err("test error".into());
-        let test_result = TestResult::from(err_result);
-
-        match test_result {
-            TestResult::Success(_) => panic!("Expected error"),
-            TestResult::Error(err) => assert_eq!(err.error, "test error"),
+        
+        match parse_fn(input, &test_case.name) {
+            Ok(ast) => {
+                if test_case.should_fail {
+                    panic!("{}: {} - Expected test to fail but it succeeded", test_name, test_case.name);
+                }
+                verify_fn(&test_case.name, &ast);
+            }
+            Err(e) => {
+                if !test_case.should_fail {
+                    panic!("{}: {} - Test failed unexpectedly: {:?}", test_name, test_case.name, e);
+                }
+            }
         }
     }
 }

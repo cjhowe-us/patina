@@ -1,0 +1,7 @@
+TestCase(
+    name: "Invalid function return type syntax",
+    input: r#"
+fun test(): { return 1 }
+"#,
+    should_fail: true,
+)

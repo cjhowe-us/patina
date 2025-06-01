@@ -1,0 +1,8 @@
+TestCase(
+    name: "Function with multiple parameters of different types",
+    input: r#"
+fun complex(a: i32, b: *mut i64, c: []u8, d: *i32): *own i32 {
+    return null
+}
+"#,
+)

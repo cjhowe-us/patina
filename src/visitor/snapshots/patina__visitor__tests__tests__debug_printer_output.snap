@@ -1,5 +1,0 @@
----
-source: src/visitor/tests.rs
-expression: "&output"
----
-"Success: Some(())"

@@ -1,0 +1,11 @@
+TestCase(
+    name: "Module with nested blocks",
+    input: r#"
+module test {
+	let x = {
+		let y = 1
+		y + 1
+	}
+}
+"#,
+)

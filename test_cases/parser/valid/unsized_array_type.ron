@@ -1,0 +1,6 @@
+TestCase(
+    name: "Unsized array type",
+    input: r#"
+let x: []i32
+"#,
+)

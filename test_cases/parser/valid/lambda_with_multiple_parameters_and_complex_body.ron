@@ -1,0 +1,11 @@
+TestCase(
+    name: "Lambda with multiple parameters and complex body",
+    input: r#"
+let processor = fun(data: []u8, options: *Options): Result {
+	let size = data.length
+	if (size == 0) { return Result.empty() }
+	let processed = process(data, options)
+	return Result.success(processed)
+}
+"#,
+)

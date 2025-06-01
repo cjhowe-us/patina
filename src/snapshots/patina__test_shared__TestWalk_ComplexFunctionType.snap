@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": " --> 1:22\n  |\n1 | module m { let f: fun(a: Int, b: String): *[Bool] = null }\n  |                      ^---\n  |\n  = expected ident_char"
-}

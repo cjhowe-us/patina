@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": " --> 5:10\n  |\n5 | \t{ server: server, port: port, timeout: timeout }\n  | \t        ^---\n  |\n  = expected ident_char, operator, semicolon, right_brace, or postfix"
-}

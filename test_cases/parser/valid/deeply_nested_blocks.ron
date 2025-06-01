@@ -1,0 +1,17 @@
+TestCase(
+    name: "Deeply nested blocks",
+    input: r#"
+{
+	{
+		{
+			{
+				let x = 1
+				{
+					let y = 2
+				}
+			}
+		}
+	}
+}
+"#,
+)

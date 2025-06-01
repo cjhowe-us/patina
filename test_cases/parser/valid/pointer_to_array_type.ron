@@ -1,0 +1,6 @@
+TestCase(
+    name: "Pointer to array type",
+    input: r#"
+let x: *[10]i32
+"#,
+)

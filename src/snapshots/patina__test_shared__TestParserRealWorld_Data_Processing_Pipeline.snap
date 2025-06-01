@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": " --> 3:32\n  |\n3 |     interface Processor<T, U> {␊\n  |                                ^---\n  |\n  = expected fun_kw or right_brace"
-}

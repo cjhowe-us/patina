@@ -1,0 +1,10 @@
+TestCase(
+    name: "Quoted expressions with complex nested structure",
+    input: r#"
+let template = \({
+	let x = 1 + 2
+	let y = x * 3
+	return y
+})
+"#,
+)

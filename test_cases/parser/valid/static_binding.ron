@@ -1,0 +1,6 @@
+TestCase(
+    name: "Static binding",
+    input: r#"
+static let z = 3
+"#,
+)

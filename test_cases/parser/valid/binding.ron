@@ -1,0 +1,6 @@
+TestCase(
+    name: "Binding",
+    input: r#"
+my.`-path`
+"#,
+)

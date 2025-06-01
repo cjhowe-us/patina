@@ -1,0 +1,6 @@
+TestCase(
+    name: "Complex pointer types",
+    input: r#"
+let x: *mut *raw *own i32
+"#,
+)

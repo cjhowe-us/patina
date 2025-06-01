@@ -1,0 +1,8 @@
+TestCase(
+    name: "Block atom",
+    input: r#"
+{
+	let x = 1
+}
+"#,
+)

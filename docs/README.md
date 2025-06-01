@@ -1,12 +1,12 @@
 # Patina Documentation
 
-## Phase-Separated Compiler Architecture
+## Compiler Architecture
 
-Patina implements stage-based phase separation - the key architectural principle enabling:
-- Compile-time metaprogramming
-- Zero-cost abstractions
-- Type-safe code generation
-- Clear compilation boundaries
+Patina uses a component-based AST with Entity-Component-System (ECS) architecture and plans for stage-based phase separation:
+- Component-based AST for extensibility
+- Semantic analysis infrastructure (not yet integrated)
+- Planned compile-time metaprogramming
+- Foundation for stage-based compilation
 
 ## Documentation Structure
 
@@ -16,9 +16,11 @@ Patina implements stage-based phase separation - the key architectural principle
 
 ### 👷 [Developer Documentation](./developer/)
 **For Compiler Contributors**
-- [**Architecture**](./developer/architecture/) - Phase-separated compiler design
-  - [Overview](./developer/architecture/overview.md) - Stage-based architecture
-  - [Visitor Pattern](./developer/architecture/visitor-pattern.md) - AST traversal
+- [**Architecture**](./developer/architecture/) - Compiler design
+  - [Overview](./developer/architecture/overview.md) - Component-based architecture
+  - [Visitor Pattern](./developer/architecture/visitor-pattern.md) - AST traversal patterns
+- [**Component-Based AST**](./developer/component-based-ast.md) - ECS design guide
+- [**Getting Started**](./developer/getting-started.md) - Development setup
 - [**Testing**](./developer/testing.md) - Test infrastructure
 
 ### 📋 [Plans](./plans/)
@@ -50,6 +52,8 @@ Patina implements stage-based phase separation - the key architectural principle
 ### 📊 [Status](./status/)
 **Project Status**
 - [**Current Status**](./status/current.md) - Implementation progress
+- [**Component AST Status**](./status/component-based-ast-implementation.md) - AST implementation details
+- [**Implementation Complete**](./status/IMPLEMENTATION_COMPLETE.md) - Completed features
 
 ## Core Concepts
 
@@ -70,9 +74,10 @@ Patina implements stage-based phase separation - the key architectural principle
 → [User Documentation](./user/) → [Getting Started](./user/getting-started.md)
 
 ### Contributing
-1. [Architecture Overview](./developer/architecture/overview.md) - Understand phases
-2. [Current Status](./status/current.md) - Find work areas
-3. [RFCs](./rfcs/) - Identify problems to solve
+1. [Architecture Overview](./developer/architecture/overview.md) - Understand the design
+2. [Component-Based AST](./developer/component-based-ast.md) - Learn the AST system
+3. [Current Status](./status/current.md) - Find work areas
+4. [RFCs](./rfcs/) - Identify problems to solve
 
 ### Understanding Design
 - [Phase Separation Plan](./plans/phase-separation/) - Core architecture

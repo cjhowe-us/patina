@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": " --> 1:23\n  |\n1 | fun getCallback(): fun(a: i32, b: i32): fun(): i32 {\n  |                       ^---\n  |\n  = expected ident_char or left_brace"
-}

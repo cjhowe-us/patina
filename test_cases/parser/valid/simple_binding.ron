@@ -1,0 +1,6 @@
+TestCase(
+    name: "Simple binding",
+    input: r#"
+let x = 1
+"#,
+)

@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-[
-  "root: /* block comment */"
-]

@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": " --> 1:1\n  |\n1 | \\(:my_label { @my.tag break :my_label })\n  | ^---\n  |\n  = expected root"
-}

@@ -1,0 +1,7 @@
+TestCase(
+    name: "Invalid array dimension",
+    input: r#"
+let x: [\
+"#,
+    should_fail: true,
+)

@@ -1,7 +1,0 @@
----
-source: src/test_shared.rs
-expression: test_result
----
-{
-  "error": " --> 1:20\n  |\n1 | let result = case {␊\n  |                    ^---\n  |\n  = expected case_kw or right_brace"
-}

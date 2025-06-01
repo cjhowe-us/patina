@@ -1,0 +1,6 @@
+TestCase(
+    name: "Return with tag and expression",
+    input: r#"
+return :label (3 * 4)
+"#,
+)

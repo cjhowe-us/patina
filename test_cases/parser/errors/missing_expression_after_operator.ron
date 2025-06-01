@@ -1,0 +1,7 @@
+TestCase(
+    name: "Missing expression after operator",
+    input: r#"
+let x = 1 +
+"#,
+    should_fail: true,
+)

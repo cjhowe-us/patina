@@ -1,0 +1,6 @@
+TestCase(
+    name: "Complex indexing chain",
+    input: r#"
+let x = arr[idx1][idx2][fn()+3].member()
+"#,
+)

@@ -1,0 +1,6 @@
+TestCase(
+    name: "Indexing with invocations and nesting",
+    input: r#"
+let x = arr[1 + 2](1 + 2)
+"#,
+)

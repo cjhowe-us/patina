@@ -1,0 +1,10 @@
+TestCase(
+    name: "Multi-line block comment",
+    input: r#"
+/* This is a
+   multi-line
+   comment with /* nesting */
+   and more text */
+let x = 1
+"#,
+)

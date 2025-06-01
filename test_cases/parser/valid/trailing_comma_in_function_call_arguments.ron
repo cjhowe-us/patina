@@ -1,0 +1,6 @@
+TestCase(
+    name: "Trailing comma in function call arguments",
+    input: r#"
+test(1, )
+"#,
+)

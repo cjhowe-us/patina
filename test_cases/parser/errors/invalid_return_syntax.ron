@@ -1,0 +1,7 @@
+TestCase(
+    name: "Invalid return syntax",
+    input: r#"
+return :
+"#,
+    should_fail: true,
+)

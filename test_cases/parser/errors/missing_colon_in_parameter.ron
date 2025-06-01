@@ -1,0 +1,7 @@
+TestCase(
+    name: "Missing colon in parameter",
+    input: r#"
+fun test(a i32) {}
+"#,
+    should_fail: true,
+)

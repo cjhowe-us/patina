@@ -1,0 +1,7 @@
+TestCase(
+    name: "Missing function body",
+    input: r#"
+fun test(x: i32): i32
+"#,
+    should_fail: true,
+)

@@ -1,0 +1,8 @@
+TestCase(
+    name: "Function statement with annotation",
+    input: r#"
+@tag.anno() fun test() {
+    let x = 1
+}
+"#,
+)

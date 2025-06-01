@@ -1,0 +1,6 @@
+TestCase(
+    name: "Multiple annotations",
+    input: r#"
+@anno1 @anno2(true) fun test() {}
+"#,
+)
