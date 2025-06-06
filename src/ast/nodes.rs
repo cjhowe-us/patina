@@ -325,6 +325,7 @@ pub enum Literal {
     Float(FloatLiteral),
     String(StringLiteral),
     Boolean(BooleanLiteral),
+    Array(ArrayLiteral),
     Null(NullLiteral),
 }
 
@@ -335,6 +336,7 @@ impl AstNode for Literal {
             Literal::Float(f) => f.entity,
             Literal::String(s) => s.entity,
             Literal::Boolean(b) => b.entity,
+            Literal::Array(a) => a.entity,
             Literal::Null(n) => n.entity,
         }
     }
@@ -379,4 +381,11 @@ pub struct BooleanLiteral {
 #[derive(Debug, Clone)]
 pub struct NullLiteral {
     pub entity: Entity,
+}
+
+/// Array literal
+#[derive(Debug, Clone)]
+pub struct ArrayLiteral {
+    pub entity: Entity,
+    pub elements: Vec<Expression>,
 }

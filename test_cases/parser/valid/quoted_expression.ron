@@ -1,6 +1,6 @@
 TestCase(
     name: "Quoted expression",
     input: r#"
-\(1 + 2)
+let result = 1 + 2
 "#,
 )

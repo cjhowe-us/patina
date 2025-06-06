@@ -465,6 +465,7 @@ impl ParseNode for Expression {
                 let block = Block::parse(ast, inner.into_inner().next().unwrap());
                 Expression::Block(block)
             }
+            Rule::type_expression => parse_type_expression(ast, inner),
             Rule::operation => Operation::parse(ast, inner).into_expression(),
             _ => todo!("Unhandled expression type: {:?}", inner.as_rule()),
         }
@@ -631,6 +632,9 @@ impl ParseNode for Operation {
         
         for inner_pair in pair.into_inner() {
             match inner_pair.as_rule() {
+                Rule::unary_operator => {
+                    elements.push(OperationElement::Operator(inner_pair.as_str().to_string()));
+                }
                 Rule::operand => {
                     let operand = parse_operand(ast, inner_pair);
                     elements.push(OperationElement::Operand(operand));
@@ -872,6 +876,7 @@ fn parse_atomic_value(ast: &mut Ast, pair: Pair<Rule>) -> Expression {
             Expression::Literal(Literal::Boolean(BooleanLiteral { entity, value }))
         }
         Rule::string => parse_string_literal(ast, inner),
+        Rule::array_literal => parse_array_literal(ast, inner),
         _ => todo!("Unhandled atomic value type: {:?}", inner.as_rule()),
     }
 }
@@ -899,6 +904,21 @@ fn parse_string_literal(ast: &mut Ast, pair: Pair<Rule>) -> Expression {
     }
     
     Expression::Literal(Literal::String(StringLiteral { entity, fragments }))
+}
+
+fn parse_array_literal(ast: &mut Ast, pair: Pair<Rule>) -> Expression {
+    let entity = ast.create_entity();
+    add_position(ast, entity, &pair);
+    
+    let mut elements = Vec::new();
+    
+    for inner_pair in pair.into_inner() {
+        if inner_pair.as_rule() == Rule::expression {
+            elements.push(Expression::parse(ast, inner_pair));
+        }
+    }
+    
+    Expression::Literal(Literal::Array(ArrayLiteral { entity, elements }))
 }
 
 fn parse_type_expression(ast: &mut Ast, pair: Pair<Rule>) -> Expression {

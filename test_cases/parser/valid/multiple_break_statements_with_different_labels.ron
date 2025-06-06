@@ -4,8 +4,11 @@ TestCase(
 {
 	:outer {
 		:inner {
-			if (condition) break :inner
-			else break :outer
+			if (condition) {
+				break :inner
+			} else {
+				break :outer
+			}
 		}
 		break
 	}

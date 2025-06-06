@@ -2,8 +2,12 @@ TestCase(
     name: "Multiple return statements with different values",
     input: r#"
 fun test(x: i32): i32 {
-	if (x < 0) return -x
-	if (x == 0) return 0
+	if (x < 0) {
+		return -x
+	}
+	if (x == 0) {
+		return 0
+	}
 	return x * 2
 }
 "#,

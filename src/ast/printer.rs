@@ -493,6 +493,7 @@ impl PrinterVisitor {
             Literal::Float(f) => self.write(&f.value.to_string()),
             Literal::String(s) => self.print_string_literal(s),
             Literal::Boolean(b) => self.write(if b.value { "true" } else { "false" }),
+            Literal::Array(a) => self.print_array_literal(a),
             Literal::Null(_) => self.write("null"),
         }
     }
@@ -522,6 +523,18 @@ impl PrinterVisitor {
             }
         }
         self.write("\"");
+    }
+
+    /// Print an array literal
+    pub fn print_array_literal(&mut self, array: &ArrayLiteral) {
+        self.write("[");
+        for (i, element) in array.elements.iter().enumerate() {
+            if i > 0 {
+                self.write(", ");
+            }
+            self.print_expression(element);
+        }
+        self.write("]");
     }
 }
 

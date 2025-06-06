@@ -128,7 +128,8 @@ type_expr = { integer_type | floating_type | pointer_type | array_type | functio
 // Atoms
 grouped_expression = { left_paren ~ expression ~ right_paren }
 atomic_type        = { type_expr }
-atomic_value       = { integer | float | boolean | string }
+array_literal      = { left_bracket ~ (expression ~ (comma ~ expression)* ~ comma?)? ~ right_bracket }
+atomic_value       = { integer | float | boolean | string | array_literal }
 binding            = { ident }
 
 atom = { grouped_expression | atomic_type | atomic_value | binding }
@@ -142,9 +143,11 @@ postfix = {
 
 operand = { atom ~ postfix* }
 
-operation = { operand ~ (operator ~ operand)* }
+unary_operator = { "-" | "+" | "!" | "~" | "*" | "&" }
 
-if_branch       = { if_kw ~ expression? ~ block }
+operation = { unary_operator* ~ operand ~ (operator ~ operand)* }
+
+if_branch       = { if_kw ~ (left_paren ~ expression ~ right_paren | expression)? ~ block }
 case_branch     = { case_kw ~ expression ~ expression }
 case_expression = { case_kw ~ left_brace ~ case_branch* ~ right_brace }
 
@@ -237,7 +240,7 @@ value = { atomic_value }
 // Case arm alias
 case_arm = { case_branch }
 
-decorated_statement = { (line_comment | block_comment)* ~ annotation* ~ statement }
+decorated_statement = { (line_comment | block_comment)* ~ NEWLINE* ~ annotation* ~ NEWLINE* ~ statement }
 
 // Blocks and root
 block = { label? ~ left_brace ~ NEWLINE* ~ (decorated_statement ~ ((NEWLINE+ | semicolon) ~ decorated_statement)*)? ~ NEWLINE* ~ right_brace }

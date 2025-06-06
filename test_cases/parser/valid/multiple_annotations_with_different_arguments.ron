@@ -1,6 +1,7 @@
 TestCase(
     name: "Multiple annotations with different arguments",
     input: r#"
-@deprecated @unsafe @inline(true) @doc(\
+@deprecated @unsafe @inline(true) @doc("Test function")
+fun test() {}
 "#,
 )

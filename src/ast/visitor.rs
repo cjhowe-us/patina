@@ -39,6 +39,7 @@ pub trait Visitor {
     fn visit_float_literal(&mut self, _ast: &Ast, _lit: &FloatLiteral) {}
     fn visit_string_literal(&mut self, _ast: &Ast, _lit: &StringLiteral) {}
     fn visit_boolean_literal(&mut self, _ast: &Ast, _lit: &BooleanLiteral) {}
+    fn visit_array_literal(&mut self, _ast: &Ast, _lit: &ArrayLiteral) {}
     fn visit_null_literal(&mut self, _ast: &Ast, _lit: &NullLiteral) {}
     
     // Pattern visitors
@@ -240,6 +241,10 @@ pub fn walk_literal<V: Visitor>(visitor: &mut V, ast: &Ast, literal: &Literal) {
             walk_string_literal(visitor, ast, s);
         }
         Literal::Boolean(b) => visitor.visit_boolean_literal(ast, b),
+        Literal::Array(a) => {
+            visitor.visit_array_literal(ast, a);
+            walk_array_literal(visitor, ast, a);
+        }
         Literal::Null(n) => visitor.visit_null_literal(ast, n),
     }
 }
@@ -250,6 +255,13 @@ pub fn walk_string_literal<V: Visitor>(visitor: &mut V, ast: &Ast, string: &Stri
         if let StringFragment::Interpolation(expr) = fragment {
             walk_expression(visitor, ast, expr);
         }
+    }
+}
+
+/// Walk an array literal
+pub fn walk_array_literal<V: Visitor>(visitor: &mut V, ast: &Ast, array: &ArrayLiteral) {
+    for element in &array.elements {
+        walk_expression(visitor, ast, element);
     }
 }
 
@@ -473,6 +485,12 @@ where
     fn visit_boolean_literal(&mut self, ast: &Ast, lit: &BooleanLiteral) {
         if (self.filter)(ast, lit.entity) {
             self.inner.visit_boolean_literal(ast, lit);
+        }
+    }
+
+    fn visit_array_literal(&mut self, ast: &Ast, lit: &ArrayLiteral) {
+        if (self.filter)(ast, lit.entity) {
+            self.inner.visit_array_literal(ast, lit);
         }
     }
 
