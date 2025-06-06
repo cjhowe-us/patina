@@ -323,12 +323,12 @@ impl PrinterVisitor {
     /// Print an if expression
     pub fn print_if(&mut self, if_expr: &If) {
         self.write("if ");
-        
+
         // First branch
         if let Some(branch) = if_expr.branches.first() {
             self.print_expression(&branch.condition);
             self.write(" ");
-            
+
             // Handle block body
             match &branch.body {
                 Expression::Block(b) => {
@@ -352,7 +352,7 @@ impl PrinterVisitor {
             self.write(" else if ");
             self.print_expression(&branch.condition);
             self.write(" ");
-            
+
             match &branch.body {
                 Expression::Block(b) => {
                     self.print_block(b);

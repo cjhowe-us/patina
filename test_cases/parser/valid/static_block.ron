@@ -2,8 +2,8 @@ TestCase(
     name: "static_block",
     input: r#"
 static {
-    let x = 42;
-    let y = "hello";
+    let x = 42
+    let y = "hello"
 }
 "#,
     description: Some("Test static block with variable declarations"),

@@ -34,7 +34,7 @@ mod tests {
     fn test_stage_component() {
         let stage = Stage { stage_number: 0 };
         assert_eq!(stage.stage_number, 0);
-        
+
         let stage2 = Stage { stage_number: 5 };
         assert_eq!(stage2.stage_number, 5);
     }
@@ -47,7 +47,7 @@ mod tests {
         };
         assert_eq!(type_info.type_name, "i32");
         assert!(type_info.is_resolved);
-        
+
         let unresolved = TypeInfo {
             type_name: "T".to_string(),
             is_resolved: false,
@@ -75,7 +75,7 @@ mod tests {
         };
         assert_eq!(comment.text, "This is a comment");
         assert!(!comment.is_doc_comment);
-        
+
         let doc_comment = Comment {
             text: "Documentation comment".to_string(),
             is_doc_comment: true,
@@ -110,7 +110,7 @@ mod tests {
         let type_err = ErrorType::TypeError;
         let name_err = ErrorType::NameError;
         let stage_err = ErrorType::StageError;
-        
+
         assert!(matches!(parse_err, ErrorType::ParseError));
         assert!(matches!(type_err, ErrorType::TypeError));
         assert!(matches!(name_err, ErrorType::NameError));
@@ -121,11 +121,11 @@ mod tests {
     fn test_component_box() {
         let pos = Position::default();
         let boxed = ComponentBox::new(pos.clone());
-        
+
         let retrieved = boxed.downcast::<Position>();
         assert!(retrieved.is_some());
         assert_eq!(retrieved.unwrap().line, 1);
-        
+
         let wrong_type = boxed.downcast::<Stage>();
         assert!(wrong_type.is_none());
     }
@@ -134,13 +134,13 @@ mod tests {
     fn test_component_box_mut() {
         let stage = Stage { stage_number: 1 };
         let mut boxed = ComponentBox::new(stage);
-        
+
         {
             let mut_ref = boxed.downcast_mut::<Stage>();
             assert!(mut_ref.is_some());
             mut_ref.unwrap().stage_number = 2;
         }
-        
+
         let retrieved = boxed.downcast::<Stage>();
         assert_eq!(retrieved.unwrap().stage_number, 2);
     }

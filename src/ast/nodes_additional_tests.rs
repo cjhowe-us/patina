@@ -13,7 +13,7 @@ mod tests {
     #[test]
     fn test_all_statement_types() {
         let entity = create_test_entity();
-        
+
         // Test Module
         let module = Module {
             entity,
@@ -22,7 +22,7 @@ mod tests {
         };
         assert_eq!(module.entity, entity);
         assert_eq!(module.name, "test_module");
-        
+
         // Test Function
         let func = Function {
             entity,
@@ -34,7 +34,7 @@ mod tests {
         };
         assert!(func.is_static);
         assert!(func.body.is_none());
-        
+
         // Test Return
         let ret = Return {
             entity,
@@ -42,7 +42,7 @@ mod tests {
             value: None,
         };
         assert_eq!(ret.label, Some("loop1".to_string()));
-        
+
         // Test While
         let while_stmt = While {
             entity,
@@ -58,7 +58,7 @@ mod tests {
             },
         };
         assert_eq!(while_stmt.label, Some("outer".to_string()));
-        
+
         // Test For
         let for_stmt = For {
             entity,
@@ -67,7 +67,7 @@ mod tests {
                 Literal::Integer(IntegerLiteral {
                     entity: create_test_entity(),
                     value: 0,
-                })
+                }),
             )))),
             condition: None,
             update: None,
@@ -78,7 +78,7 @@ mod tests {
             },
         };
         assert!(for_stmt.init.is_some());
-        
+
         // Test Break
         let break_stmt = Break {
             entity,
@@ -89,7 +89,7 @@ mod tests {
             }))),
         };
         assert!(break_stmt.value.is_some());
-        
+
         // Test Block
         let block = Block {
             entity,
@@ -102,7 +102,7 @@ mod tests {
     #[test]
     fn test_all_expression_types() {
         let entity = create_test_entity();
-        
+
         // Test Case
         let case = Case {
             entity,
@@ -112,8 +112,11 @@ mod tests {
             })),
             branches: vec![],
         };
-        assert_eq!(Statement::Expression(Expression::Case(Box::new(case.clone()))).entity_id(), entity);
-        
+        assert_eq!(
+            Statement::Expression(Expression::Case(Box::new(case.clone()))).entity_id(),
+            entity
+        );
+
         // Test Call
         let call = Call {
             entity,
@@ -124,7 +127,7 @@ mod tests {
             arguments: vec![],
         };
         assert_eq!(Expression::Call(call).entity_id(), entity);
-        
+
         // Test Index
         let index = Index {
             entity,
@@ -138,7 +141,7 @@ mod tests {
             }))),
         };
         assert_eq!(Expression::Index(index).entity_id(), entity);
-        
+
         // Test Field
         let field = Field {
             entity,
@@ -155,7 +158,7 @@ mod tests {
     #[test]
     fn test_if_and_case_branches() {
         let entity = create_test_entity();
-        
+
         // Test IfBranch
         let if_branch = IfBranch {
             entity,
@@ -169,7 +172,7 @@ mod tests {
             })),
         };
         assert_eq!(if_branch.entity_id(), entity);
-        
+
         // Test CaseBranch with guard
         let case_branch = CaseBranch {
             entity,
@@ -193,7 +196,7 @@ mod tests {
     #[test]
     fn test_pattern_destructuring() {
         let entity = create_test_entity();
-        
+
         // Test TuplePattern with multiple patterns
         let tuple_pattern = TuplePattern {
             entity,
@@ -209,20 +212,26 @@ mod tests {
             ],
         };
         assert_eq!(tuple_pattern.patterns.len(), 2);
-        
+
         // Test StructPattern with fields
         let struct_pattern = StructPattern {
             entity,
             name: "Point".to_string(),
             fields: vec![
-                ("x".to_string(), Pattern::Identifier(Identifier {
-                    entity: create_test_entity(),
-                    name: "px".to_string(),
-                })),
-                ("y".to_string(), Pattern::Identifier(Identifier {
-                    entity: create_test_entity(),
-                    name: "py".to_string(),
-                })),
+                (
+                    "x".to_string(),
+                    Pattern::Identifier(Identifier {
+                        entity: create_test_entity(),
+                        name: "px".to_string(),
+                    }),
+                ),
+                (
+                    "y".to_string(),
+                    Pattern::Identifier(Identifier {
+                        entity: create_test_entity(),
+                        name: "py".to_string(),
+                    }),
+                ),
             ],
         };
         assert_eq!(struct_pattern.fields.len(), 2);
@@ -232,7 +241,7 @@ mod tests {
     #[test]
     fn test_parameter_and_lambda() {
         let entity = create_test_entity();
-        
+
         // Test Parameter
         let param = Parameter {
             entity,
@@ -244,7 +253,7 @@ mod tests {
         };
         assert_eq!(param.entity_id(), entity);
         assert_eq!(param.name, "value");
-        
+
         // Test Lambda with multiple parameters and return type
         let lambda = Lambda {
             entity,
@@ -292,7 +301,7 @@ mod tests {
     #[test]
     fn test_let_statement_variations() {
         let entity = create_test_entity();
-        
+
         // Test static mutable let
         let static_mut_let = Let {
             entity,
@@ -313,7 +322,7 @@ mod tests {
         };
         assert!(static_mut_let.is_mutable);
         assert!(static_mut_let.is_static);
-        
+
         // Test destructuring let
         let destructure_let = Let {
             entity,
@@ -342,7 +351,7 @@ mod tests {
             is_mutable: false,
             is_static: false,
         };
-        
+
         match &destructure_let.pattern {
             Pattern::Tuple(t) => assert_eq!(t.patterns.len(), 2),
             _ => panic!("Expected tuple pattern"),
@@ -352,7 +361,7 @@ mod tests {
     #[test]
     fn test_expression_block() {
         let entity = create_test_entity();
-        
+
         let block = Block {
             entity,
             label: None,
@@ -379,15 +388,17 @@ mod tests {
                             name: "temp".to_string(),
                         })),
                         OperationElement::Operator("*".to_string()),
-                        OperationElement::Operand(Expression::Literal(Literal::Integer(IntegerLiteral {
-                            entity: create_test_entity(),
-                            value: 2,
-                        }))),
+                        OperationElement::Operand(Expression::Literal(Literal::Integer(
+                            IntegerLiteral {
+                                entity: create_test_entity(),
+                                value: 2,
+                            },
+                        ))),
                     ],
                 })),
             ],
         };
-        
+
         let block_expr = Expression::Block(block);
         assert_eq!(block_expr.entity_id(), entity);
     }
@@ -395,13 +406,13 @@ mod tests {
     #[test]
     fn test_float_literal() {
         let entity = create_test_entity();
-        
+
         let float_lit = FloatLiteral {
             entity,
             value: 3.14159,
         };
         assert_eq!(float_lit.value, 3.14159);
-        
+
         let lit = Literal::Float(float_lit);
         assert_eq!(lit.entity_id(), entity);
     }
@@ -409,7 +420,7 @@ mod tests {
     #[test]
     fn test_complex_string_literal() {
         let entity = create_test_entity();
-        
+
         let string_lit = StringLiteral {
             entity,
             fragments: vec![
@@ -417,15 +428,19 @@ mod tests {
                 StringFragment::Interpolation(Expression::Operation(Operation {
                     entity: create_test_entity(),
                     elements: vec![
-                        OperationElement::Operand(Expression::Literal(Literal::Integer(IntegerLiteral {
-                            entity: create_test_entity(),
-                            value: 21,
-                        }))),
+                        OperationElement::Operand(Expression::Literal(Literal::Integer(
+                            IntegerLiteral {
+                                entity: create_test_entity(),
+                                value: 21,
+                            },
+                        ))),
                         OperationElement::Operator("*".to_string()),
-                        OperationElement::Operand(Expression::Literal(Literal::Integer(IntegerLiteral {
-                            entity: create_test_entity(),
-                            value: 2,
-                        }))),
+                        OperationElement::Operand(Expression::Literal(Literal::Integer(
+                            IntegerLiteral {
+                                entity: create_test_entity(),
+                                value: 2,
+                            },
+                        ))),
                     ],
                 })),
                 StringFragment::Text(" and the value is ".to_string()),
@@ -436,7 +451,7 @@ mod tests {
                 StringFragment::Text(".".to_string()),
             ],
         };
-        
+
         assert_eq!(string_lit.fragments.len(), 5);
         let lit = Literal::String(string_lit);
         assert_eq!(lit.entity_id(), entity);
@@ -445,7 +460,7 @@ mod tests {
     #[test]
     fn test_grouped_expression() {
         let _entity = create_test_entity();
-        
+
         // Create a complex grouped expression
         let inner_op = Expression::Operation(Operation {
             entity: create_test_entity(),
@@ -461,19 +476,17 @@ mod tests {
                 })),
             ],
         });
-        
+
         let grouped = Expression::Grouped(Box::new(inner_op));
-        
+
         // Test that grouped expressions preserve the inner expression's entity
         match grouped {
-            Expression::Grouped(inner) => {
-                match inner.as_ref() {
-                    Expression::Operation(op) => {
-                        assert!(!op.elements.is_empty());
-                    }
-                    _ => panic!("Expected operation"),
+            Expression::Grouped(inner) => match inner.as_ref() {
+                Expression::Operation(op) => {
+                    assert!(!op.elements.is_empty());
                 }
-            }
+                _ => panic!("Expected operation"),
+            },
             _ => panic!("Expected grouped expression"),
         }
     }

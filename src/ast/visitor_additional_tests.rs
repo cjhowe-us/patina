@@ -29,7 +29,9 @@ mod tests {
         }
 
         fn visit_string_literal(&mut self, _ast: &Ast, lit: &StringLiteral) {
-            let text = lit.fragments.iter()
+            let text = lit
+                .fragments
+                .iter()
                 .filter_map(|f| match f {
                     StringFragment::Text(s) => Some(s.clone()),
                     _ => None,
@@ -46,11 +48,11 @@ mod tests {
         fn visit_module(&mut self, _ast: &Ast, module: &Module) {
             self.visits.push(format!("module:{}", module.name));
         }
-        
+
         fn visit_integer_literal(&mut self, _ast: &Ast, lit: &IntegerLiteral) {
             self.visits.push(format!("integer:{}", lit.value));
         }
-        
+
         fn visit_identifier(&mut self, _ast: &Ast, ident: &Identifier) {
             self.visits.push(format!("identifier:{}", ident.name));
         }
@@ -60,8 +62,10 @@ mod tests {
         }
 
         fn visit_let(&mut self, _ast: &Ast, let_stmt: &Let) {
-            self.visits.push(format!("let:is_static={},is_mutable={}", 
-                let_stmt.is_static, let_stmt.is_mutable));
+            self.visits.push(format!(
+                "let:is_static={},is_mutable={}",
+                let_stmt.is_static, let_stmt.is_mutable
+            ));
         }
 
         fn visit_return(&mut self, _ast: &Ast, ret: &Return) {
@@ -69,7 +73,8 @@ mod tests {
         }
 
         fn visit_while(&mut self, _ast: &Ast, while_stmt: &While) {
-            self.visits.push(format!("while:label={:?}", while_stmt.label));
+            self.visits
+                .push(format!("while:label={:?}", while_stmt.label));
         }
 
         fn visit_for(&mut self, _ast: &Ast, for_stmt: &For) {
@@ -77,7 +82,8 @@ mod tests {
         }
 
         fn visit_break(&mut self, _ast: &Ast, break_stmt: &Break) {
-            self.visits.push(format!("break:label={:?}", break_stmt.label));
+            self.visits
+                .push(format!("break:label={:?}", break_stmt.label));
         }
 
         fn visit_block(&mut self, _ast: &Ast, block: &Block) {
@@ -91,9 +97,10 @@ mod tests {
         fn visit_case(&mut self, _ast: &Ast, _case: &Case) {
             self.visits.push("case".to_string());
         }
-        
+
         fn visit_operation(&mut self, _ast: &Ast, op: &Operation) {
-            self.visits.push(format!("operation:elements={}", op.elements.len()));
+            self.visits
+                .push(format!("operation:elements={}", op.elements.len()));
         }
 
         fn visit_call(&mut self, _ast: &Ast, _call: &Call) {
@@ -121,7 +128,8 @@ mod tests {
         }
 
         fn visit_tuple_pattern(&mut self, _ast: &Ast, pattern: &TuplePattern) {
-            self.visits.push(format!("tuple_pattern:len={}", pattern.patterns.len()));
+            self.visits
+                .push(format!("tuple_pattern:len={}", pattern.patterns.len()));
         }
 
         fn visit_struct_pattern(&mut self, _ast: &Ast, pattern: &StructPattern) {
@@ -129,35 +137,34 @@ mod tests {
         }
 
         fn visit_case_branch(&mut self, _ast: &Ast, branch: &CaseBranch) {
-            self.visits.push(format!("case_branch:has_guard={}", branch.guard.is_some()));
+            self.visits
+                .push(format!("case_branch:has_guard={}", branch.guard.is_some()));
         }
     }
 
     #[test]
     fn test_walk_module() {
         let mut ast = Ast::new();
-        
+
         let func_entity = ast.create_entity();
         let module = Statement::Module(Module {
             entity: ast.create_entity(),
             name: "test_mod".to_string(),
-            statements: vec![
-                Statement::Function(Function {
-                    entity: func_entity,
-                    name: "inner_func".to_string(),
-                    parameters: vec![],
-                    return_type: None,
-                    body: None,
-                    is_static: false,
-                }),
-            ],
+            statements: vec![Statement::Function(Function {
+                entity: func_entity,
+                name: "inner_func".to_string(),
+                parameters: vec![],
+                return_type: None,
+                body: None,
+                is_static: false,
+            })],
         });
-        
+
         ast.root.statements.push(module);
-        
+
         let mut visitor = CountingVisitor::new();
         walk_ast(&mut visitor, &ast);
-        
+
         assert!(visitor.visits.contains(&"module:test_mod".to_string()));
         assert!(visitor.visits.contains(&"function:inner_func".to_string()));
     }
@@ -165,7 +172,7 @@ mod tests {
     #[test]
     fn test_walk_return() {
         let mut ast = Ast::new();
-        
+
         let ret = Statement::Return(Return {
             entity: ast.create_entity(),
             label: Some("loop1".to_string()),
@@ -174,20 +181,22 @@ mod tests {
                 value: 42,
             }))),
         });
-        
+
         ast.root.statements.push(ret);
-        
+
         let mut visitor = CountingVisitor::new();
         walk_ast(&mut visitor, &ast);
-        
-        assert!(visitor.visits.contains(&"return:label=Some(\"loop1\")".to_string()));
+
+        assert!(visitor
+            .visits
+            .contains(&"return:label=Some(\"loop1\")".to_string()));
         assert!(visitor.visits.contains(&"integer:42".to_string()));
     }
 
     #[test]
     fn test_walk_while() {
         let mut ast = Ast::new();
-        
+
         let while_stmt = Statement::While(While {
             entity: ast.create_entity(),
             label: Some("outer".to_string()),
@@ -198,31 +207,33 @@ mod tests {
             body: Block {
                 entity: ast.create_entity(),
                 label: None,
-                statements: vec![
-                    Statement::Break(Break {
-                        entity: ast.create_entity(),
-                        label: Some("outer".to_string()),
-                        value: None,
-                    }),
-                ],
+                statements: vec![Statement::Break(Break {
+                    entity: ast.create_entity(),
+                    label: Some("outer".to_string()),
+                    value: None,
+                })],
             },
         });
-        
+
         ast.root.statements.push(while_stmt);
-        
+
         let mut visitor = CountingVisitor::new();
         walk_ast(&mut visitor, &ast);
-        
-        assert!(visitor.visits.contains(&"while:label=Some(\"outer\")".to_string()));
+
+        assert!(visitor
+            .visits
+            .contains(&"while:label=Some(\"outer\")".to_string()));
         assert!(visitor.visits.contains(&"bool:true".to_string()));
         assert!(visitor.visits.contains(&"block:label=None".to_string()));
-        assert!(visitor.visits.contains(&"break:label=Some(\"outer\")".to_string()));
+        assert!(visitor
+            .visits
+            .contains(&"break:label=Some(\"outer\")".to_string()));
     }
 
     #[test]
     fn test_walk_for() {
         let mut ast = Ast::new();
-        
+
         let for_stmt = Statement::For(For {
             entity: ast.create_entity(),
             label: None,
@@ -248,10 +259,12 @@ mod tests {
                         name: "i".to_string(),
                     })),
                     OperationElement::Operator("<".to_string()),
-                    OperationElement::Operand(Expression::Literal(Literal::Integer(IntegerLiteral {
-                        entity: ast.create_entity(),
-                        value: 10,
-                    }))),
+                    OperationElement::Operand(Expression::Literal(Literal::Integer(
+                        IntegerLiteral {
+                            entity: ast.create_entity(),
+                            value: 10,
+                        },
+                    ))),
                 ],
             })),
             update: Some(Expression::Operation(Operation {
@@ -262,10 +275,12 @@ mod tests {
                         name: "i".to_string(),
                     })),
                     OperationElement::Operator("+=".to_string()),
-                    OperationElement::Operand(Expression::Literal(Literal::Integer(IntegerLiteral {
-                        entity: ast.create_entity(),
-                        value: 1,
-                    }))),
+                    OperationElement::Operand(Expression::Literal(Literal::Integer(
+                        IntegerLiteral {
+                            entity: ast.create_entity(),
+                            value: 1,
+                        },
+                    ))),
                 ],
             })),
             body: Block {
@@ -274,20 +289,22 @@ mod tests {
                 statements: vec![],
             },
         });
-        
+
         ast.root.statements.push(for_stmt);
-        
+
         let mut visitor = CountingVisitor::new();
         walk_ast(&mut visitor, &ast);
-        
+
         assert!(visitor.visits.contains(&"for:label=None".to_string()));
-        assert!(visitor.visits.contains(&"let:is_static=false,is_mutable=true".to_string()));
+        assert!(visitor
+            .visits
+            .contains(&"let:is_static=false,is_mutable=true".to_string()));
     }
 
     #[test]
     fn test_walk_call_and_index() {
         let mut ast = Ast::new();
-        
+
         let expr = Expression::Call(Call {
             entity: ast.create_entity(),
             function: Box::new(Expression::Field(Field {
@@ -315,12 +332,12 @@ mod tests {
                 })),
             ],
         });
-        
+
         ast.root.statements.push(Statement::Expression(expr));
-        
+
         let mut visitor = CountingVisitor::new();
         walk_ast(&mut visitor, &ast);
-        
+
         assert!(visitor.visits.contains(&"call".to_string()));
         assert!(visitor.visits.contains(&"field:method".to_string()));
         assert!(visitor.visits.contains(&"index".to_string()));
@@ -331,30 +348,36 @@ mod tests {
     #[test]
     fn test_walk_patterns() {
         let mut ast = Ast::new();
-        
+
         let let_stmt = Statement::Let(Let {
             entity: ast.create_entity(),
             pattern: Pattern::Struct(StructPattern {
                 entity: ast.create_entity(),
                 name: "Point".to_string(),
                 fields: vec![
-                    ("x".to_string(), Pattern::Identifier(Identifier {
-                        entity: ast.create_entity(),
-                        name: "px".to_string(),
-                    })),
-                    ("y".to_string(), Pattern::Tuple(TuplePattern {
-                        entity: ast.create_entity(),
-                        patterns: vec![
-                            Pattern::Identifier(Identifier {
-                                entity: ast.create_entity(),
-                                name: "py1".to_string(),
-                            }),
-                            Pattern::Identifier(Identifier {
-                                entity: ast.create_entity(),
-                                name: "py2".to_string(),
-                            }),
-                        ],
-                    })),
+                    (
+                        "x".to_string(),
+                        Pattern::Identifier(Identifier {
+                            entity: ast.create_entity(),
+                            name: "px".to_string(),
+                        }),
+                    ),
+                    (
+                        "y".to_string(),
+                        Pattern::Tuple(TuplePattern {
+                            entity: ast.create_entity(),
+                            patterns: vec![
+                                Pattern::Identifier(Identifier {
+                                    entity: ast.create_entity(),
+                                    name: "py1".to_string(),
+                                }),
+                                Pattern::Identifier(Identifier {
+                                    entity: ast.create_entity(),
+                                    name: "py2".to_string(),
+                                }),
+                            ],
+                        }),
+                    ),
                 ],
             }),
             type_expr: None,
@@ -362,13 +385,15 @@ mod tests {
             is_mutable: false,
             is_static: true,
         });
-        
+
         ast.root.statements.push(let_stmt);
-        
+
         let mut visitor = CountingVisitor::new();
         walk_ast(&mut visitor, &ast);
-        
-        assert!(visitor.visits.contains(&"let:is_static=true,is_mutable=false".to_string()));
+
+        assert!(visitor
+            .visits
+            .contains(&"let:is_static=true,is_mutable=false".to_string()));
         assert!(visitor.visits.contains(&"struct_pattern:Point".to_string()));
         assert!(visitor.visits.contains(&"tuple_pattern:len=2".to_string()));
     }
@@ -376,7 +401,7 @@ mod tests {
     #[test]
     fn test_walk_case_with_guards() {
         let mut ast = Ast::new();
-        
+
         let case_expr = Expression::Case(Box::new(Case {
             entity: ast.create_entity(),
             value: Box::new(Expression::Identifier(Identifier {
@@ -398,10 +423,12 @@ mod tests {
                                 name: "val".to_string(),
                             })),
                             OperationElement::Operator(">".to_string()),
-                            OperationElement::Operand(Expression::Literal(Literal::Integer(IntegerLiteral {
-                                entity: ast.create_entity(),
-                                value: 0,
-                            }))),
+                            OperationElement::Operand(Expression::Literal(Literal::Integer(
+                                IntegerLiteral {
+                                    entity: ast.create_entity(),
+                                    value: 0,
+                                },
+                            ))),
                         ],
                     })),
                     body: Expression::Identifier(Identifier {
@@ -423,72 +450,89 @@ mod tests {
                 },
             ],
         }));
-        
+
         ast.root.statements.push(Statement::Expression(case_expr));
-        
+
         let mut visitor = CountingVisitor::new();
         walk_ast(&mut visitor, &ast);
-        
+
         assert!(visitor.visits.contains(&"case".to_string()));
-        assert!(visitor.visits.contains(&"case_branch:has_guard=true".to_string()));
-        assert!(visitor.visits.contains(&"case_branch:has_guard=false".to_string()));
+        assert!(visitor
+            .visits
+            .contains(&"case_branch:has_guard=true".to_string()));
+        assert!(visitor
+            .visits
+            .contains(&"case_branch:has_guard=false".to_string()));
     }
 
     #[test]
     fn test_walk_nested_blocks() {
         let mut ast = Ast::new();
-        
+
         let block = Statement::Block(Block {
             entity: ast.create_entity(),
             label: Some("outer".to_string()),
-            statements: vec![
-                Statement::Block(Block {
+            statements: vec![Statement::Block(Block {
+                entity: ast.create_entity(),
+                label: Some("inner".to_string()),
+                statements: vec![Statement::Expression(Expression::Block(Block {
                     entity: ast.create_entity(),
-                    label: Some("inner".to_string()),
-                    statements: vec![
-                        Statement::Expression(Expression::Block(Block {
-                            entity: ast.create_entity(),
-                            label: None,
-                            statements: vec![],
-                        })),
-                    ],
-                }),
-            ],
+                    label: None,
+                    statements: vec![],
+                }))],
+            })],
         });
-        
+
         ast.root.statements.push(block);
-        
+
         let mut visitor = CountingVisitor::new();
         walk_ast(&mut visitor, &ast);
-        
-        assert_eq!(visitor.visits.iter().filter(|v| v.starts_with("block:")).count(), 3);
-        assert!(visitor.visits.contains(&"block:label=Some(\"outer\")".to_string()));
-        assert!(visitor.visits.contains(&"block:label=Some(\"inner\")".to_string()));
+
+        assert_eq!(
+            visitor
+                .visits
+                .iter()
+                .filter(|v| v.starts_with("block:"))
+                .count(),
+            3
+        );
+        assert!(visitor
+            .visits
+            .contains(&"block:label=Some(\"outer\")".to_string()));
+        assert!(visitor
+            .visits
+            .contains(&"block:label=Some(\"inner\")".to_string()));
         assert!(visitor.visits.contains(&"block:label=None".to_string()));
     }
 
     #[test]
     fn test_component_filter_with_multiple_nodes() {
         let mut ast = Ast::new();
-        
+
         // Create multiple nodes with different components
         let entities: Vec<_> = (0..5).map(|_| ast.create_entity()).collect();
-        
+
         // Add Stage component to some entities
         ast.add_component(entities[0], Stage { stage_number: 0 });
         ast.add_component(entities[2], Stage { stage_number: 1 });
         ast.add_component(entities[4], Stage { stage_number: 2 });
-        
+
         // Add TypeInfo component to some entities
-        ast.add_component(entities[1], TypeInfo {
-            type_name: "i32".to_string(),
-            is_resolved: true,
-        });
-        ast.add_component(entities[2], TypeInfo {
-            type_name: "String".to_string(),
-            is_resolved: true,
-        });
-        
+        ast.add_component(
+            entities[1],
+            TypeInfo {
+                type_name: "i32".to_string(),
+                is_resolved: true,
+            },
+        );
+        ast.add_component(
+            entities[2],
+            TypeInfo {
+                type_name: "String".to_string(),
+                is_resolved: true,
+            },
+        );
+
         // Create AST with these entities
         ast.root.statements = vec![
             Statement::Expression(Expression::Identifier(Identifier {
@@ -512,28 +556,30 @@ mod tests {
                 name: "e".to_string(),
             })),
         ];
-        
+
         // Test filter for Stage component
-        let stage_visitor = CollectingVisitor { identifiers: vec![], literals: vec![] };
-        let filter = |ast: &Ast, entity: Entity| {
-            ast.get_component::<Stage>(entity).is_some()
+        let stage_visitor = CollectingVisitor {
+            identifiers: vec![],
+            literals: vec![],
         };
+        let filter = |ast: &Ast, entity: Entity| ast.get_component::<Stage>(entity).is_some();
         let mut stage_filter = ComponentFilterWrapper::new(stage_visitor, filter);
         walk_ast(&mut stage_filter, &ast);
-        
+
         assert_eq!(stage_filter.inner.identifiers.len(), 3);
         assert!(stage_filter.inner.identifiers.contains(&"a".to_string()));
         assert!(stage_filter.inner.identifiers.contains(&"c".to_string()));
         assert!(stage_filter.inner.identifiers.contains(&"e".to_string()));
-        
+
         // Test filter for TypeInfo component
-        let type_visitor = CollectingVisitor { identifiers: vec![], literals: vec![] };
-        let filter = |ast: &Ast, entity: Entity| {
-            ast.get_component::<TypeInfo>(entity).is_some()
+        let type_visitor = CollectingVisitor {
+            identifiers: vec![],
+            literals: vec![],
         };
+        let filter = |ast: &Ast, entity: Entity| ast.get_component::<TypeInfo>(entity).is_some();
         let mut type_filter = ComponentFilterWrapper::new(type_visitor, filter);
         walk_ast(&mut type_filter, &ast);
-        
+
         assert_eq!(type_filter.inner.identifiers.len(), 2);
         assert!(type_filter.inner.identifiers.contains(&"b".to_string()));
         assert!(type_filter.inner.identifiers.contains(&"c".to_string()));

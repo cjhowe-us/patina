@@ -57,20 +57,23 @@ pub fn parse_file_with_name(
 ) -> Result<Ast, Box<dyn std::error::Error>> {
     let pairs = PatinaParser::parse(Rule::root, input)?;
     let mut ast = Ast::new();
-    
+
     // Update root entity with position
-    ast.add_component(ast.root.entity, Position {
-        filename: Some(filename.to_string()),
-        line: 1,
-        column: 1,
-        offset: 0,
-        length: input.len(),
-    });
-    
+    ast.add_component(
+        ast.root.entity,
+        Position {
+            filename: Some(filename.to_string()),
+            line: 1,
+            column: 1,
+            offset: 0,
+            length: input.len(),
+        },
+    );
+
     // Use parser visitor to build AST
     let mut visitor = ParserVisitor::new(filename);
     visitor.parse_root(&mut ast, pairs);
-    
+
     Ok(ast)
 }
 
@@ -85,7 +88,7 @@ impl ParserVisitor {
             filename: filename.to_string(),
         }
     }
-    
+
     pub fn parse_root(&mut self, ast: &mut Ast, pairs: Pairs<Rule>) {
         for pair in pairs {
             if pair.as_rule() == Rule::root {
@@ -93,7 +96,7 @@ impl ParserVisitor {
             }
         }
     }
-    
+
     fn parse_root_inner(&mut self, ast: &mut Ast, pair: Pair<Rule>) {
         for inner_pair in pair.into_inner() {
             if let Rule::decorated_statement = inner_pair.as_rule() {
@@ -103,12 +106,12 @@ impl ParserVisitor {
             }
         }
     }
-    
+
     fn parse_decorated_statement(&mut self, ast: &mut Ast, pair: Pair<Rule>) -> Option<Statement> {
         let mut comments = Vec::new();
         let mut annotations = Vec::new();
         let mut statement = None;
-        
+
         for inner_pair in pair.into_inner() {
             match inner_pair.as_rule() {
                 Rule::line_comment | Rule::block_comment => {
@@ -123,16 +126,16 @@ impl ParserVisitor {
                 _ => {}
             }
         }
-        
+
         // TODO: Attach comments and annotations to the statement entity
-        
+
         statement
     }
-    
+
     fn parse_annotation(&mut self, ast: &mut Ast, pair: Pair<Rule>) -> (String, Vec<Expression>) {
         let mut name = String::new();
         let mut args = Vec::new();
-        
+
         for inner_pair in pair.into_inner() {
             match inner_pair.as_rule() {
                 Rule::tag => {
@@ -144,21 +147,24 @@ impl ParserVisitor {
                 _ => {}
             }
         }
-        
+
         (name, args)
     }
-    
+
     pub fn add_position(&self, ast: &mut Ast, entity: Entity, pair: &Pair<Rule>) {
         let span = pair.as_span();
         let (line, column) = span.start_pos().line_col();
-        
-        ast.add_component(entity, Position {
-            filename: Some(self.filename.clone()),
-            line,
-            column,
-            offset: span.start(),
-            length: span.end() - span.start(),
-        });
+
+        ast.add_component(
+            entity,
+            Position {
+                filename: Some(self.filename.clone()),
+                line,
+                column,
+                offset: span.start(),
+                length: span.end() - span.start(),
+            },
+        );
     }
 }
 
@@ -166,21 +172,24 @@ impl ParserVisitor {
 fn add_position(ast: &mut Ast, entity: Entity, pair: &Pair<Rule>) {
     let span = pair.as_span();
     let (line, column) = span.start_pos().line_col();
-    
-    ast.add_component(entity, Position {
-        filename: None, // TODO: Thread filename through
-        line,
-        column,
-        offset: span.start(),
-        length: span.end() - span.start(),
-    });
+
+    ast.add_component(
+        entity,
+        Position {
+            filename: None, // TODO: Thread filename through
+            line,
+            column,
+            offset: span.start(),
+            length: span.end() - span.start(),
+        },
+    );
 }
 
 // Implement ParseNode for Statement
 impl ParseNode for Statement {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let inner = pair.into_inner().next().unwrap();
-        
+
         match inner.as_rule() {
             Rule::module_stmt => Statement::Module(Module::parse(ast, inner)),
             Rule::function_stmt => Statement::Function(Function::parse(ast, inner)),
@@ -204,10 +213,10 @@ impl ParseNode for Module {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let entity = ast.create_entity();
         add_position(ast, entity, &pair);
-        
+
         let mut name = String::new();
         let mut statements = Vec::new();
-        
+
         for inner_pair in pair.into_inner() {
             match inner_pair.as_rule() {
                 Rule::ident => name = inner_pair.as_str().to_string(),
@@ -217,7 +226,7 @@ impl ParseNode for Module {
                 _ => {}
             }
         }
-        
+
         Module {
             entity,
             name,
@@ -231,13 +240,13 @@ impl ParseNode for Function {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let entity = ast.create_entity();
         add_position(ast, entity, &pair);
-        
+
         let mut is_static = false;
         let mut name = String::new();
         let mut parameters = Vec::new();
         let mut return_type = None;
         let mut body = None;
-        
+
         for inner_pair in pair.into_inner() {
             match inner_pair.as_rule() {
                 Rule::static_kw => is_static = true,
@@ -254,7 +263,7 @@ impl ParseNode for Function {
                 _ => {}
             }
         }
-        
+
         Function {
             entity,
             name,
@@ -271,13 +280,13 @@ impl ParseNode for Let {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let entity = ast.create_entity();
         add_position(ast, entity, &pair);
-        
+
         let mut is_static = false;
         let mut is_mutable = false;
         let mut pattern = None;
         let mut type_expr = None;
         let mut value = None;
-        
+
         for inner_pair in pair.into_inner() {
             match inner_pair.as_rule() {
                 Rule::static_kw => is_static = true,
@@ -299,7 +308,7 @@ impl ParseNode for Let {
                 _ => {}
             }
         }
-        
+
         Let {
             entity,
             pattern: pattern.unwrap(),
@@ -316,10 +325,10 @@ impl ParseNode for Return {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let entity = ast.create_entity();
         add_position(ast, entity, &pair);
-        
+
         let mut label = None;
         let mut value = None;
-        
+
         for inner_pair in pair.into_inner() {
             match inner_pair.as_rule() {
                 Rule::label => {
@@ -331,7 +340,7 @@ impl ParseNode for Return {
                 _ => {}
             }
         }
-        
+
         Return {
             entity,
             label,
@@ -345,10 +354,10 @@ impl ParseNode for Break {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let entity = ast.create_entity();
         add_position(ast, entity, &pair);
-        
+
         let mut label = None;
         let mut value = None;
-        
+
         for inner_pair in pair.into_inner() {
             match inner_pair.as_rule() {
                 Rule::label => {
@@ -360,7 +369,7 @@ impl ParseNode for Break {
                 _ => {}
             }
         }
-        
+
         Break {
             entity,
             label,
@@ -374,10 +383,10 @@ impl ParseNode for While {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let entity = ast.create_entity();
         add_position(ast, entity, &pair);
-        
+
         let mut condition = None;
         let mut body = None;
-        
+
         for inner_pair in pair.into_inner() {
             match inner_pair.as_rule() {
                 Rule::expression => {
@@ -389,7 +398,7 @@ impl ParseNode for While {
                 _ => {}
             }
         }
-        
+
         While {
             entity,
             label: None, // TODO: Support labeled while loops
@@ -404,7 +413,7 @@ impl ParseNode for For {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let entity = ast.create_entity();
         add_position(ast, entity, &pair);
-        
+
         // TODO: Implement for loop parsing (it's complex with multiple forms)
         For {
             entity,
@@ -426,19 +435,16 @@ impl ParseNode for Static {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let entity = ast.create_entity();
         add_position(ast, entity, &pair);
-        
+
         let mut statements = Vec::new();
-        
+
         for inner_pair in pair.into_inner() {
             if inner_pair.as_rule() == Rule::block {
                 statements = parse_block_statements(ast, inner_pair);
             }
         }
-        
-        Static {
-            entity,
-            statements,
-        }
+
+        Static { entity, statements }
     }
 }
 
@@ -446,7 +452,7 @@ impl ParseNode for Static {
 impl ParseNode for Expression {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let mut inner_pairs = pair.into_inner();
-        
+
         // Handle empty expression
         let inner = match inner_pairs.next() {
             Some(inner) => inner,
@@ -456,7 +462,7 @@ impl ParseNode for Expression {
                 return Expression::Literal(Literal::Null(NullLiteral { entity }));
             }
         };
-        
+
         match inner.as_rule() {
             Rule::if_expression => Expression::If(Box::new(If::parse(ast, inner))),
             Rule::case_expression => Expression::Case(Box::new(Case::parse(ast, inner))),
@@ -477,19 +483,19 @@ impl ParseNode for If {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let entity = ast.create_entity();
         add_position(ast, entity, &pair);
-        
+
         let mut branches = Vec::new();
         let mut else_branch = None;
-        
+
         let mut pairs = pair.into_inner();
-        
+
         // First if branch
         if let Some(if_branch_pair) = pairs.next() {
             if if_branch_pair.as_rule() == Rule::if_branch {
                 branches.push(IfBranch::parse(ast, if_branch_pair));
             }
         }
-        
+
         // Check for else
         for inner_pair in pairs {
             match inner_pair.as_rule() {
@@ -506,7 +512,7 @@ impl ParseNode for If {
                 _ => {}
             }
         }
-        
+
         If {
             entity,
             branches,
@@ -520,10 +526,10 @@ impl ParseNode for IfBranch {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let entity = ast.create_entity();
         add_position(ast, entity, &pair);
-        
+
         let mut condition = None;
         let mut body = None;
-        
+
         for inner_pair in pair.into_inner() {
             match inner_pair.as_rule() {
                 Rule::expression => {
@@ -536,7 +542,7 @@ impl ParseNode for IfBranch {
                 _ => {}
             }
         }
-        
+
         IfBranch {
             entity,
             condition: condition.unwrap(),
@@ -550,7 +556,7 @@ impl ParseNode for Case {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let entity = ast.create_entity();
         add_position(ast, entity, &pair);
-        
+
         // TODO: Implement case expression parsing
         Case {
             entity,
@@ -567,20 +573,20 @@ impl ParseNode for Lambda {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let entity = ast.create_entity();
         add_position(ast, entity, &pair);
-        
+
         let mut parameters = Vec::new();
         let mut return_type = None;
         let mut body = None;
-        
+
         for inner_pair in pair.into_inner() {
             match inner_pair.as_rule() {
                 Rule::lambda_parameter => {
                     let param_entity = ast.create_entity();
                     add_position(ast, param_entity, &inner_pair);
-                    
+
                     let mut name = String::new();
                     let mut type_expr = None;
-                    
+
                     for param_inner in inner_pair.into_inner() {
                         match param_inner.as_rule() {
                             Rule::ident => name = param_inner.as_str().to_string(),
@@ -590,7 +596,7 @@ impl ParseNode for Lambda {
                             _ => {}
                         }
                     }
-                    
+
                     parameters.push(Parameter {
                         entity: param_entity,
                         name,
@@ -612,7 +618,7 @@ impl ParseNode for Lambda {
                 _ => {}
             }
         }
-        
+
         Lambda {
             entity,
             parameters,
@@ -627,9 +633,9 @@ impl ParseNode for Operation {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let entity = ast.create_entity();
         add_position(ast, entity, &pair);
-        
+
         let mut elements = Vec::new();
-        
+
         for inner_pair in pair.into_inner() {
             match inner_pair.as_rule() {
                 Rule::unary_operator => {
@@ -645,7 +651,7 @@ impl ParseNode for Operation {
                 _ => {}
             }
         }
-        
+
         Operation { entity, elements }
     }
 }
@@ -659,7 +665,7 @@ impl Operation {
                 return expr;
             }
         }
-        
+
         Expression::Operation(self)
     }
 }
@@ -669,10 +675,10 @@ impl ParseNode for Parameter {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let entity = ast.create_entity();
         add_position(ast, entity, &pair);
-        
+
         let mut name = String::new();
         let mut type_expr = None;
-        
+
         for inner_pair in pair.into_inner() {
             match inner_pair.as_rule() {
                 Rule::ident => name = inner_pair.as_str().to_string(),
@@ -682,7 +688,7 @@ impl ParseNode for Parameter {
                 _ => {}
             }
         }
-        
+
         Parameter {
             entity,
             name,
@@ -696,10 +702,10 @@ impl ParseNode for Block {
     fn parse(ast: &mut Ast, pair: Pair<Rule>) -> Self {
         let entity = ast.create_entity();
         add_position(ast, entity, &pair);
-        
+
         let mut label = None;
         let mut statements = Vec::new();
-        
+
         for inner_pair in pair.into_inner() {
             match inner_pair.as_rule() {
                 Rule::label => {
@@ -714,7 +720,7 @@ impl ParseNode for Block {
                 _ => {}
             }
         }
-        
+
         Block {
             entity,
             label,
@@ -728,7 +734,7 @@ impl ParseNode for Block {
 fn parse_operand(ast: &mut Ast, pair: Pair<Rule>) -> Expression {
     let mut expr = None;
     let mut postfixes = Vec::new();
-    
+
     for inner_pair in pair.into_inner() {
         match inner_pair.as_rule() {
             Rule::atom => {
@@ -740,14 +746,14 @@ fn parse_operand(ast: &mut Ast, pair: Pair<Rule>) -> Expression {
             _ => {}
         }
     }
-    
+
     let mut result = expr.unwrap();
-    
+
     // Apply postfix operations
     for postfix in postfixes {
         result = apply_postfix(ast, result, postfix);
     }
-    
+
     result
 }
 
@@ -757,25 +763,25 @@ fn apply_postfix(ast: &mut Ast, expr: Expression, postfix: Pair<Rule>) -> Expres
     // 1. Function call: (expr, expr, ...)
     // 2. Index: [expr]
     // 3. Field: .ident
-    
+
     // Check what kind of postfix by looking at the first inner element
     let mut inner_pairs = postfix.into_inner();
     let first = inner_pairs.next();
-    
+
     if let Some(first_pair) = first {
         match first_pair.as_rule() {
             Rule::left_paren => {
                 // This is a function call - collect the arguments
                 let entity = ast.create_entity();
                 let mut arguments = Vec::new();
-                
+
                 // Collect expressions (skipping commas and right paren)
                 for pair in inner_pairs {
                     if pair.as_rule() == Rule::expression {
                         arguments.push(Expression::parse(ast, pair));
                     }
                 }
-                
+
                 Expression::Call(Call {
                     entity,
                     function: Box::new(expr),
@@ -785,7 +791,7 @@ fn apply_postfix(ast: &mut Ast, expr: Expression, postfix: Pair<Rule>) -> Expres
             Rule::left_bracket => {
                 // This is an index operation - get the index expression
                 let entity = ast.create_entity();
-                
+
                 // The next element should be the expression
                 if let Some(expr_pair) = inner_pairs.next() {
                     if expr_pair.as_rule() == Rule::expression {
@@ -803,9 +809,9 @@ fn apply_postfix(ast: &mut Ast, expr: Expression, postfix: Pair<Rule>) -> Expres
                 }
             }
             Rule::field => {
-                // This is a field access - get the identifier  
+                // This is a field access - get the identifier
                 let entity = ast.create_entity();
-                
+
                 // The field rule should contain an ident
                 if let Some(ident_pair) = first_pair.into_inner().next() {
                     if ident_pair.as_rule() == Rule::ident {
@@ -822,7 +828,7 @@ fn apply_postfix(ast: &mut Ast, expr: Expression, postfix: Pair<Rule>) -> Expres
                     expr
                 }
             }
-            _ => expr
+            _ => expr,
         }
     } else {
         expr
@@ -831,11 +837,9 @@ fn apply_postfix(ast: &mut Ast, expr: Expression, postfix: Pair<Rule>) -> Expres
 
 fn parse_atom_as_expression(ast: &mut Ast, pair: Pair<Rule>) -> Expression {
     let inner = pair.into_inner().next().unwrap();
-    
+
     match inner.as_rule() {
-        Rule::grouped_expression => {
-            Expression::parse(ast, inner.into_inner().next().unwrap())
-        }
+        Rule::grouped_expression => Expression::parse(ast, inner.into_inner().next().unwrap()),
         Rule::atomic_value => parse_atomic_value(ast, inner),
         Rule::binding => {
             let entity = ast.create_entity();
@@ -848,14 +852,16 @@ fn parse_atom_as_expression(ast: &mut Ast, pair: Pair<Rule>) -> Expression {
             // Types are expressions in Patina
             parse_type_expression(ast, inner)
         }
-        _ => todo!("Unhandled atom type: {:?}", inner.as_rule())
+        _ => todo!("Unhandled atom type: {:?}", inner.as_rule()),
     }
 }
 
 fn parse_atomic_value(ast: &mut Ast, pair: Pair<Rule>) -> Expression {
-    let inner = pair.into_inner().next()
+    let inner = pair
+        .into_inner()
+        .next()
         .expect("Atomic value should have inner content");
-    
+
     match inner.as_rule() {
         Rule::integer => {
             let entity = ast.create_entity();
@@ -884,10 +890,13 @@ fn parse_atomic_value(ast: &mut Ast, pair: Pair<Rule>) -> Expression {
 fn parse_string_literal(ast: &mut Ast, pair: Pair<Rule>) -> Expression {
     let entity = ast.create_entity();
     add_position(ast, entity, &pair);
-    
+
     let mut fragments = Vec::new();
-    
-    if let Some(content_pair) = pair.into_inner().find(|p| p.as_rule() == Rule::string_content) {
+
+    if let Some(content_pair) = pair
+        .into_inner()
+        .find(|p| p.as_rule() == Rule::string_content)
+    {
         for inner_pair in content_pair.into_inner() {
             match inner_pair.as_rule() {
                 Rule::string_fragment => {
@@ -902,28 +911,28 @@ fn parse_string_literal(ast: &mut Ast, pair: Pair<Rule>) -> Expression {
             }
         }
     }
-    
+
     Expression::Literal(Literal::String(StringLiteral { entity, fragments }))
 }
 
 fn parse_array_literal(ast: &mut Ast, pair: Pair<Rule>) -> Expression {
     let entity = ast.create_entity();
     add_position(ast, entity, &pair);
-    
+
     let mut elements = Vec::new();
-    
+
     for inner_pair in pair.into_inner() {
         if inner_pair.as_rule() == Rule::expression {
             elements.push(Expression::parse(ast, inner_pair));
         }
     }
-    
+
     Expression::Literal(Literal::Array(ArrayLiteral { entity, elements }))
 }
 
 fn parse_type_expression(ast: &mut Ast, pair: Pair<Rule>) -> Expression {
     let type_expr = pair.into_inner().next().unwrap();
-    
+
     match type_expr.as_rule() {
         Rule::integer_type => {
             let entity = ast.create_entity();
@@ -954,7 +963,7 @@ fn parse_type_expression(ast: &mut Ast, pair: Pair<Rule>) -> Expression {
 
 fn parse_block_statements(ast: &mut Ast, block_pair: Pair<Rule>) -> Vec<Statement> {
     let mut statements = Vec::new();
-    
+
     for inner_pair in block_pair.into_inner() {
         if inner_pair.as_rule() == Rule::decorated_statement {
             let mut visitor = ParserVisitor::new("");
@@ -963,14 +972,14 @@ fn parse_block_statements(ast: &mut Ast, block_pair: Pair<Rule>) -> Vec<Statemen
             }
         }
     }
-    
+
     statements
 }
 
 #[cfg(test)]
 mod inline_tests {
     use super::*;
-    
+
     #[test]
     fn test_parse_empty() {
         let result = parse_file("");
@@ -978,14 +987,14 @@ mod inline_tests {
         let ast = result.unwrap();
         assert_eq!(ast.root.statements.len(), 0);
     }
-    
+
     #[test]
     fn test_parse_let_statement() {
         let result = parse_file("let x = 42");
         assert!(result.is_ok());
         let ast = result.unwrap();
         assert_eq!(ast.root.statements.len(), 1);
-        
+
         match &ast.root.statements[0] {
             Statement::Let(let_stmt) => {
                 assert!(!let_stmt.is_static);
@@ -999,14 +1008,14 @@ mod inline_tests {
             _ => panic!("Expected let statement"),
         }
     }
-    
+
     #[test]
     fn test_parse_function() {
         let result = parse_file("fun add(x: i32, y: i32): i32 { x }");
         assert!(result.is_ok());
         let ast = result.unwrap();
         assert_eq!(ast.root.statements.len(), 1);
-        
+
         match &ast.root.statements[0] {
             Statement::Function(func) => {
                 assert_eq!(func.name, "add");
@@ -1017,14 +1026,14 @@ mod inline_tests {
             _ => panic!("Expected function statement"),
         }
     }
-    
+
     #[test]
     fn test_parse_if_expression() {
         let result = parse_file("if x { 1 } else { 2 }");
         assert!(result.is_ok());
         let ast = result.unwrap();
         assert_eq!(ast.root.statements.len(), 1);
-        
+
         match &ast.root.statements[0] {
             Statement::Expression(Expression::If(if_expr)) => {
                 assert_eq!(if_expr.branches.len(), 1);
@@ -1033,32 +1042,35 @@ mod inline_tests {
             _ => panic!("Expected if expression"),
         }
     }
-    
+
     #[test]
     fn test_parse_string_with_interpolation() {
         let result = parse_file(r#""Hello \(name)!""#);
         assert!(result.is_ok());
         let ast = result.unwrap();
         assert_eq!(ast.root.statements.len(), 1);
-        
+
         match &ast.root.statements[0] {
             Statement::Expression(Expression::Literal(Literal::String(str_lit))) => {
                 assert_eq!(str_lit.fragments.len(), 3);
                 assert!(matches!(str_lit.fragments[0], StringFragment::Text(_)));
-                assert!(matches!(str_lit.fragments[1], StringFragment::Interpolation(_)));
+                assert!(matches!(
+                    str_lit.fragments[1],
+                    StringFragment::Interpolation(_)
+                ));
                 assert!(matches!(str_lit.fragments[2], StringFragment::Text(_)));
             }
             _ => panic!("Expected string literal"),
         }
     }
-    
+
     #[test]
     fn test_parse_operation() {
         let result = parse_file("a + b * c");
         assert!(result.is_ok());
         let ast = result.unwrap();
         assert_eq!(ast.root.statements.len(), 1);
-        
+
         match &ast.root.statements[0] {
             Statement::Expression(Expression::Operation(op)) => {
                 assert_eq!(op.elements.len(), 5); // a, +, b, *, c
@@ -1066,14 +1078,14 @@ mod inline_tests {
             _ => panic!("Expected operation"),
         }
     }
-    
+
     #[test]
     fn test_parse_module() {
         let result = parse_file("module math { let pi = 3.14 }");
         assert!(result.is_ok());
         let ast = result.unwrap();
         assert_eq!(ast.root.statements.len(), 1);
-        
+
         match &ast.root.statements[0] {
             Statement::Module(module) => {
                 assert_eq!(module.name, "math");
@@ -1082,14 +1094,14 @@ mod inline_tests {
             _ => panic!("Expected module statement"),
         }
     }
-    
+
     #[test]
     fn test_parse_static_let() {
         let result = parse_file("static let CONSTANT = 100");
         assert!(result.is_ok());
         let ast = result.unwrap();
         assert_eq!(ast.root.statements.len(), 1);
-        
+
         match &ast.root.statements[0] {
             Statement::Let(let_stmt) => {
                 assert!(let_stmt.is_static);
@@ -1098,14 +1110,14 @@ mod inline_tests {
             _ => panic!("Expected let statement"),
         }
     }
-    
+
     #[test]
     fn test_parse_call_chain() {
         let result = parse_file("obj.method(1, 2).field");
         assert!(result.is_ok());
         let ast = result.unwrap();
         assert_eq!(ast.root.statements.len(), 1);
-        
+
         match &ast.root.statements[0] {
             Statement::Expression(Expression::Field(field)) => {
                 assert_eq!(field.field, "field");
@@ -1119,14 +1131,14 @@ mod inline_tests {
             _ => panic!("Expected field expression"),
         }
     }
-    
+
     #[test]
     fn test_parse_lambda() {
         let result = parse_file("fun (x, y) { x + y }");
         assert!(result.is_ok());
         let ast = result.unwrap();
         assert_eq!(ast.root.statements.len(), 1);
-        
+
         match &ast.root.statements[0] {
             Statement::Expression(Expression::Lambda(lambda)) => {
                 assert_eq!(lambda.parameters.len(), 2);

@@ -1,6 +1,6 @@
 TestCase(
     name: "String with multiple interpolations",
     input: r#"
-let message = \
+let message = "User \(user.name) has \(user.points) points and \(user.achievements.count()) achievements"
 "#,
 )

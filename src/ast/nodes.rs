@@ -1,8 +1,8 @@
 //! AST node structures with child nodes stored directly
 //! Each node has an entity field for its ECS entity ID
 
-use hecs::Entity;
 use crate::ast::AstNode;
+use hecs::Entity;
 
 #[cfg(test)]
 #[path = "nodes_tests.rs"]

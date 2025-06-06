@@ -1,6 +1,6 @@
-use crate::parser::parse_file_with_name;
-use crate::test_shared::{run_parser_directory_tests, run_directory_tests};
 use crate::ast::*;
+use crate::parser::parse_file_with_name;
+use crate::test_shared::{run_directory_tests, run_parser_directory_tests};
 
 #[cfg(test)]
 mod tests {
@@ -90,5 +90,4 @@ mod tests {
             },
         );
     }
-
 }

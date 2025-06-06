@@ -33,7 +33,7 @@ pub trait Visitor {
     fn visit_call(&mut self, _ast: &Ast, _call: &Call) {}
     fn visit_index(&mut self, _ast: &Ast, _index: &Index) {}
     fn visit_field(&mut self, _ast: &Ast, _field: &Field) {}
-    
+
     // Literal visitors
     fn visit_integer_literal(&mut self, _ast: &Ast, _lit: &IntegerLiteral) {}
     fn visit_float_literal(&mut self, _ast: &Ast, _lit: &FloatLiteral) {}
@@ -41,11 +41,11 @@ pub trait Visitor {
     fn visit_boolean_literal(&mut self, _ast: &Ast, _lit: &BooleanLiteral) {}
     fn visit_array_literal(&mut self, _ast: &Ast, _lit: &ArrayLiteral) {}
     fn visit_null_literal(&mut self, _ast: &Ast, _lit: &NullLiteral) {}
-    
+
     // Pattern visitors
     fn visit_tuple_pattern(&mut self, _ast: &Ast, _pattern: &TuplePattern) {}
     fn visit_struct_pattern(&mut self, _ast: &Ast, _pattern: &StructPattern) {}
-    
+
     // Other visitors
     fn visit_parameter(&mut self, _ast: &Ast, _param: &Parameter) {}
     fn visit_if_branch(&mut self, _ast: &Ast, _branch: &IfBranch) {}
@@ -65,7 +65,7 @@ impl<T: 'static + Send + Sync> ComponentFilterVisitor<T> {
             visited_entities: HashSet::new(),
         }
     }
-    
+
     /// Visit only nodes that have the specified component type
     pub fn visit_if_has_component<N: AstNode>(&mut self, ast: &Ast, node: &N) {
         let entity = node.entity_id();
@@ -155,7 +155,7 @@ pub fn walk_statement<V: Visitor>(visitor: &mut V, ast: &Ast, stmt: &Statement) 
 /// Walk an expression and call visitor methods
 pub fn walk_expression<V: Visitor>(visitor: &mut V, ast: &Ast, expr: &Expression) {
     visitor.visit_expression(ast, expr);
-    
+
     match expr {
         Expression::Identifier(ident) => {
             visitor.visit_identifier(ast, ident);
@@ -303,9 +303,9 @@ pub fn walk_pattern<V: Visitor>(visitor: &mut V, ast: &Ast, pattern: &Pattern) {
 
 /// Generic traversal for any node implementing Traversable
 pub fn traverse_generic<C, V: GenericVisitor<C>, N: Traversable<C> + AstNode>(
-    visitor: &mut V, 
-    ast: &Ast<C>, 
-    node: &N
+    visitor: &mut V,
+    ast: &Ast<C>,
+    node: &N,
 ) {
     node.accept(visitor, ast);
 }
@@ -321,7 +321,7 @@ impl<T: 'static + Send + Sync> FilterTraverser<T> {
             component_type: std::marker::PhantomData,
         }
     }
-    
+
     pub fn traverse<F>(&self, ast: &Ast, mut visit_fn: F)
     where
         F: FnMut(Entity, &T),
@@ -330,7 +330,7 @@ impl<T: 'static + Send + Sync> FilterTraverser<T> {
             visit_fn(entity, component);
         }
     }
-    
+
     pub fn traverse_mut<F>(&self, ast: &mut Ast, mut visit_fn: F)
     where
         F: FnMut(Entity, &mut T),
@@ -347,7 +347,7 @@ pub struct ComponentFilterWrapper<V, F> {
     pub filter: F,
 }
 
-impl<V, F> ComponentFilterWrapper<V, F> 
+impl<V, F> ComponentFilterWrapper<V, F>
 where
     V: Visitor,
     F: Fn(&Ast, Entity) -> bool,

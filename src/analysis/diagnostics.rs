@@ -221,16 +221,16 @@ mod tests {
     #[test]
     fn test_error_collector_basic() {
         let mut collector = ErrorCollector::new();
-        let pos = Position { 
+        let pos = Position {
             filename: None,
-            line: 1, 
+            line: 1,
             column: 10,
             offset: 0,
             length: 0,
         };
 
         collector.error("Undefined variable".to_string(), pos);
-        
+
         assert!(collector.has_errors());
         assert_eq!(collector.error_count(), 1);
         assert_eq!(collector.warning_count(), 0);
@@ -240,23 +240,23 @@ mod tests {
     #[test]
     fn test_mixed_diagnostics() {
         let mut collector = ErrorCollector::new();
-        let pos1 = Position { 
+        let pos1 = Position {
             filename: None,
-            line: 1, 
+            line: 1,
             column: 10,
             offset: 0,
             length: 0,
         };
-        let pos2 = Position { 
+        let pos2 = Position {
             filename: None,
-            line: 2, 
+            line: 2,
             column: 5,
             offset: 0,
             length: 0,
         };
-        let pos3 = Position { 
+        let pos3 = Position {
             filename: None,
-            line: 3, 
+            line: 3,
             column: 1,
             offset: 0,
             length: 0,
@@ -274,16 +274,16 @@ mod tests {
 
     #[test]
     fn test_diagnostic_builder() {
-        let pos = Position { 
+        let pos = Position {
             filename: None,
-            line: 10, 
+            line: 10,
             column: 15,
             offset: 0,
             length: 0,
         };
-        let note_pos = Position { 
+        let note_pos = Position {
             filename: None,
-            line: 8, 
+            line: 8,
             column: 1,
             offset: 0,
             length: 0,
@@ -306,16 +306,16 @@ mod tests {
     fn test_collector_merge() {
         let mut collector1 = ErrorCollector::new();
         let mut collector2 = ErrorCollector::new();
-        let pos1 = Position { 
+        let pos1 = Position {
             filename: None,
-            line: 1, 
+            line: 1,
             column: 1,
             offset: 0,
             length: 0,
         };
-        let pos2 = Position { 
+        let pos2 = Position {
             filename: None,
-            line: 2, 
+            line: 2,
             column: 1,
             offset: 0,
             length: 0,
@@ -333,9 +333,9 @@ mod tests {
 
     #[test]
     fn test_diagnostic_display() {
-        let pos = Position { 
+        let pos = Position {
             filename: None,
-            line: 5, 
+            line: 5,
             column: 10,
             offset: 0,
             length: 0,
@@ -351,9 +351,9 @@ mod tests {
     #[test]
     fn test_clear_and_take() {
         let mut collector = ErrorCollector::new();
-        let pos = Position { 
+        let pos = Position {
             filename: None,
-            line: 1, 
+            line: 1,
             column: 1,
             offset: 0,
             length: 0,

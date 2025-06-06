@@ -94,11 +94,11 @@ mod tests {
 
         // This would not compile due to type mismatch:
         // assert_eq!(symbol_id, type_id);
-        
+
         // But we can compare their indices
         assert_eq!(symbol_id.index(), type_id.index());
     }
-    
+
     #[test]
     fn test_id_is_copy() {
         let id1: SymbolId = Id::new(1);
