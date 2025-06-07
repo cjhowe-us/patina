@@ -17,6 +17,12 @@ pub struct PrinterVisitor {
     indent_size: usize,
 }
 
+impl Default for PrinterVisitor {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl PrinterVisitor {
     pub fn new() -> Self {
         Self {
@@ -222,23 +228,20 @@ impl PrinterVisitor {
         self.write("for (");
 
         if let Some(init) = &for_stmt.init {
-            match init.as_ref() {
-                Statement::Let(l) => {
-                    if l.is_mutable {
-                        self.write("mut ");
-                    }
-                    self.write("let ");
-                    self.print_pattern(&l.pattern);
-                    if let Some(type_expr) = &l.type_expr {
-                        self.write(": ");
-                        self.print_expression(type_expr);
-                    }
-                    if let Some(value) = &l.value {
-                        self.write(" = ");
-                        self.print_expression(value);
-                    }
+            if let Statement::Let(l) = init.as_ref() {
+                if l.is_mutable {
+                    self.write("mut ");
                 }
-                _ => {}
+                self.write("let ");
+                self.print_pattern(&l.pattern);
+                if let Some(type_expr) = &l.type_expr {
+                    self.write(": ");
+                    self.print_expression(type_expr);
+                }
+                if let Some(value) = &l.value {
+                    self.write(" = ");
+                    self.print_expression(value);
+                }
             }
         }
         self.write("; ");

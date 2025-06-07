@@ -53,6 +53,12 @@ impl<C> std::fmt::Debug for Ast<C> {
     }
 }
 
+impl Default for Ast<()> {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Ast<()> {
     /// Create a new AST with no specific component types
     pub fn new() -> Self {

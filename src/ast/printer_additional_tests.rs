@@ -274,7 +274,7 @@ mod tests {
             .push(Statement::Expression(Expression::Literal(Literal::Float(
                 FloatLiteral {
                     entity: float_entity,
-                    value: 3.14159,
+                    value: std::f64::consts::PI,
                 },
             ))));
 

@@ -1,7 +1,7 @@
 //! Tests for the AST printer
 
 #[cfg(test)]
-mod tests {
+mod printer_tests {
     use crate::ast::*;
 
     fn print_ast(ast: &Ast) -> String {

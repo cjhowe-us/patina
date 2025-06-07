@@ -325,7 +325,7 @@ mod tests {
             arguments: vec![
                 Expression::Literal(Literal::Float(FloatLiteral {
                     entity: ast.create_entity(),
-                    value: 3.14,
+                    value: std::f64::consts::PI,
                 })),
                 Expression::Literal(Literal::Null(NullLiteral {
                     entity: ast.create_entity(),
@@ -341,7 +341,7 @@ mod tests {
         assert!(visitor.visits.contains(&"call".to_string()));
         assert!(visitor.visits.contains(&"field:method".to_string()));
         assert!(visitor.visits.contains(&"index".to_string()));
-        assert!(visitor.visits.contains(&"float:3.14".to_string()));
+        assert!(visitor.visits.contains(&format!("float:{}", std::f64::consts::PI)));
         assert!(visitor.visits.contains(&"null".to_string()));
     }
 

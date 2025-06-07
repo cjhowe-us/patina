@@ -58,6 +58,12 @@ pub struct ComponentFilterVisitor<T> {
     pub visited_entities: HashSet<Entity>,
 }
 
+impl<T: 'static + Send + Sync> Default for ComponentFilterVisitor<T> {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl<T: 'static + Send + Sync> ComponentFilterVisitor<T> {
     pub fn new() -> Self {
         Self {
@@ -313,6 +319,12 @@ pub fn traverse_generic<C, V: GenericVisitor<C>, N: Traversable<C> + AstNode>(
 /// Filter-based traversal that visits only nodes with specific components
 pub struct FilterTraverser<T> {
     component_type: std::marker::PhantomData<T>,
+}
+
+impl<T: 'static + Send + Sync> Default for FilterTraverser<T> {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl<T: 'static + Send + Sync> FilterTraverser<T> {

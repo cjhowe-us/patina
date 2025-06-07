@@ -267,21 +267,17 @@ impl SymbolTable {
         let mut results = Vec::new();
         let mut scope_id = self.current_scope;
 
-        loop {
-            if let Some(scope) = self.scopes.get(scope_id) {
-                if let Some(&symbol_id) = scope.symbols.get(name) {
-                    if let Some(symbol) = self.get_symbol(symbol_id) {
-                        if current_stage.can_see_symbol_at(symbol.stage) {
-                            results.push((symbol_id, symbol.stage));
-                        }
+        while let Some(scope) = self.scopes.get(scope_id) {
+            if let Some(&symbol_id) = scope.symbols.get(name) {
+                if let Some(symbol) = self.get_symbol(symbol_id) {
+                    if current_stage.can_see_symbol_at(symbol.stage) {
+                        results.push((symbol_id, symbol.stage));
                     }
                 }
+            }
 
-                if let Some(parent) = scope.parent {
-                    scope_id = parent;
-                } else {
-                    break;
-                }
+            if let Some(parent) = scope.parent {
+                scope_id = parent;
             } else {
                 break;
             }

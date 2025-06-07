@@ -1,7 +1,7 @@
 //! Tests for AST module
 
 #[cfg(test)]
-mod tests {
+mod ast_tests {
     use crate::ast::*;
 
     #[test]

@@ -409,9 +409,9 @@ mod tests {
 
         let float_lit = FloatLiteral {
             entity,
-            value: 3.14159,
+            value: std::f64::consts::PI,
         };
-        assert_eq!(float_lit.value, 3.14159);
+        assert_eq!(float_lit.value, std::f64::consts::PI);
 
         let lit = Literal::Float(float_lit);
         assert_eq!(lit.entity_id(), entity);

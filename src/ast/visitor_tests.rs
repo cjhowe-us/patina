@@ -1,7 +1,7 @@
 //! Tests for the visitor pattern implementation
 
 #[cfg(test)]
-mod tests {
+mod visitor_tests {
     use crate::ast::*;
 
     struct CollectingVisitor {

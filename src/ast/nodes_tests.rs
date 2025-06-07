@@ -1,7 +1,7 @@
 //! Tests for AST nodes
 
 #[cfg(test)]
-mod tests {
+mod nodes_tests {
     use crate::ast::*;
     use hecs::{Entity, World};
 
@@ -113,7 +113,7 @@ mod tests {
 
         let float_lit = Literal::Float(FloatLiteral {
             entity,
-            value: 3.14,
+            value: std::f64::consts::PI,
         });
         assert_eq!(float_lit.entity_id(), entity);
 
