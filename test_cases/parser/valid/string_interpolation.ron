@@ -1,6 +1,6 @@
 TestCase(
     name: "String interpolation",
     input: r#"
-let msg = \
+let msg = "Hello \(name), you have \(count) messages!"
 "#,
 )

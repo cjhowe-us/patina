@@ -13,17 +13,17 @@ use std::marker::PhantomData;
 #[path = "mod_tests.rs"]
 mod tests;
 
-pub mod nodes;
 pub mod components;
-pub mod visitor;
+pub mod nodes;
 pub mod printer;
 #[cfg(test)]
 pub mod test_utils;
+pub mod visitor;
 
-pub use nodes::*;
 pub use components::*;
-pub use visitor::*;
+pub use nodes::*;
 pub use printer::*;
+pub use visitor::*;
 
 /// Trait for all AST nodes to get their associated entity ID
 pub trait AstNode {
@@ -50,6 +50,12 @@ impl<C> std::fmt::Debug for Ast<C> {
             .field("component_entities", &self.component_entities)
             .field("root", &self.root)
             .finish()
+    }
+}
+
+impl Default for Ast<()> {
+    fn default() -> Self {
+        Self::new()
     }
 }
 
@@ -88,7 +94,10 @@ impl<C> Ast<C> {
     }
 
     /// Get a mutable component from an entity  
-    pub fn get_component_mut<T: 'static + Send + Sync>(&mut self, entity: Entity) -> Option<hecs::RefMut<T>> {
+    pub fn get_component_mut<T: 'static + Send + Sync>(
+        &mut self,
+        entity: Entity,
+    ) -> Option<hecs::RefMut<T>> {
         self.world.get::<&mut T>(entity).ok()
     }
 

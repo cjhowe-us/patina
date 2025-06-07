@@ -1,6 +1,6 @@
 TestCase(
     name: "Nested string fragments",
     input: r#"
-let x = \
+let x = "Hello, \(name)! You have \(count) messages."
 "#,
 )

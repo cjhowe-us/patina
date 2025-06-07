@@ -2,6 +2,9 @@ TestCase(
     name: "Static let with complex initialization",
     input: r#"
 static let config = {
-	let server = \
+	let server = "localhost"
+	let port = 8080
+	return server + ":" + port
+}
 "#,
 )

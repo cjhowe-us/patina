@@ -1,9 +1,9 @@
-use crate::parser::parse_file_with_name;
-use crate::test_shared::{run_parser_directory_tests, run_directory_tests};
 use crate::ast::*;
+use crate::parser::parse_file_with_name;
+use crate::test_shared::{run_directory_tests, run_parser_directory_tests};
 
 #[cfg(test)]
-mod tests {
+mod parser_tests {
     use super::*;
 
     #[test]
@@ -73,7 +73,7 @@ mod tests {
                     _ => {
                         // For other tests, just verify it parsed successfully
                         // The AST structure exists and has the root node
-                        assert!(ast.world.len() > 0);
+                        assert!(!ast.world.is_empty());
                     }
                 }
             },
@@ -90,5 +90,4 @@ mod tests {
             },
         );
     }
-
 }

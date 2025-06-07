@@ -11,5 +11,9 @@ pub use context::AnalysisContext;
 pub use diagnostics::{Diagnostic, DiagnosticLevel, ErrorCollector, Note, Suggestion};
 pub use id::{Id, ScopeId, SymbolId, TypeId};
 pub use stage::{Stage, StageError};
-pub use symbol_table::{ParamInfo, Scope, ScopeKind, Symbol, SymbolError, SymbolKind, SymbolTable, TypeDefinition};
-pub use types::{Field, PointerModifier, StagedType, Type, TypeChecker, TypeError, TypeRegistry, Variant};
+pub use symbol_table::{
+    ParamInfo, Scope, ScopeKind, Symbol, SymbolError, SymbolKind, SymbolTable, TypeDefinition,
+};
+pub use types::{
+    Field, PointerModifier, StagedType, Type, TypeChecker, TypeError, TypeRegistry, Variant,
+};

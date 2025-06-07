@@ -33,18 +33,19 @@ pub trait Visitor {
     fn visit_call(&mut self, _ast: &Ast, _call: &Call) {}
     fn visit_index(&mut self, _ast: &Ast, _index: &Index) {}
     fn visit_field(&mut self, _ast: &Ast, _field: &Field) {}
-    
+
     // Literal visitors
     fn visit_integer_literal(&mut self, _ast: &Ast, _lit: &IntegerLiteral) {}
     fn visit_float_literal(&mut self, _ast: &Ast, _lit: &FloatLiteral) {}
     fn visit_string_literal(&mut self, _ast: &Ast, _lit: &StringLiteral) {}
     fn visit_boolean_literal(&mut self, _ast: &Ast, _lit: &BooleanLiteral) {}
+    fn visit_array_literal(&mut self, _ast: &Ast, _lit: &ArrayLiteral) {}
     fn visit_null_literal(&mut self, _ast: &Ast, _lit: &NullLiteral) {}
-    
+
     // Pattern visitors
     fn visit_tuple_pattern(&mut self, _ast: &Ast, _pattern: &TuplePattern) {}
     fn visit_struct_pattern(&mut self, _ast: &Ast, _pattern: &StructPattern) {}
-    
+
     // Other visitors
     fn visit_parameter(&mut self, _ast: &Ast, _param: &Parameter) {}
     fn visit_if_branch(&mut self, _ast: &Ast, _branch: &IfBranch) {}
@@ -57,6 +58,12 @@ pub struct ComponentFilterVisitor<T> {
     pub visited_entities: HashSet<Entity>,
 }
 
+impl<T: 'static + Send + Sync> Default for ComponentFilterVisitor<T> {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl<T: 'static + Send + Sync> ComponentFilterVisitor<T> {
     pub fn new() -> Self {
         Self {
@@ -64,7 +71,7 @@ impl<T: 'static + Send + Sync> ComponentFilterVisitor<T> {
             visited_entities: HashSet::new(),
         }
     }
-    
+
     /// Visit only nodes that have the specified component type
     pub fn visit_if_has_component<N: AstNode>(&mut self, ast: &Ast, node: &N) {
         let entity = node.entity_id();
@@ -154,7 +161,7 @@ pub fn walk_statement<V: Visitor>(visitor: &mut V, ast: &Ast, stmt: &Statement) 
 /// Walk an expression and call visitor methods
 pub fn walk_expression<V: Visitor>(visitor: &mut V, ast: &Ast, expr: &Expression) {
     visitor.visit_expression(ast, expr);
-    
+
     match expr {
         Expression::Identifier(ident) => {
             visitor.visit_identifier(ast, ident);
@@ -240,6 +247,10 @@ pub fn walk_literal<V: Visitor>(visitor: &mut V, ast: &Ast, literal: &Literal) {
             walk_string_literal(visitor, ast, s);
         }
         Literal::Boolean(b) => visitor.visit_boolean_literal(ast, b),
+        Literal::Array(a) => {
+            visitor.visit_array_literal(ast, a);
+            walk_array_literal(visitor, ast, a);
+        }
         Literal::Null(n) => visitor.visit_null_literal(ast, n),
     }
 }
@@ -250,6 +261,13 @@ pub fn walk_string_literal<V: Visitor>(visitor: &mut V, ast: &Ast, string: &Stri
         if let StringFragment::Interpolation(expr) = fragment {
             walk_expression(visitor, ast, expr);
         }
+    }
+}
+
+/// Walk an array literal
+pub fn walk_array_literal<V: Visitor>(visitor: &mut V, ast: &Ast, array: &ArrayLiteral) {
+    for element in &array.elements {
+        walk_expression(visitor, ast, element);
     }
 }
 
@@ -291,9 +309,9 @@ pub fn walk_pattern<V: Visitor>(visitor: &mut V, ast: &Ast, pattern: &Pattern) {
 
 /// Generic traversal for any node implementing Traversable
 pub fn traverse_generic<C, V: GenericVisitor<C>, N: Traversable<C> + AstNode>(
-    visitor: &mut V, 
-    ast: &Ast<C>, 
-    node: &N
+    visitor: &mut V,
+    ast: &Ast<C>,
+    node: &N,
 ) {
     node.accept(visitor, ast);
 }
@@ -303,13 +321,19 @@ pub struct FilterTraverser<T> {
     component_type: std::marker::PhantomData<T>,
 }
 
+impl<T: 'static + Send + Sync> Default for FilterTraverser<T> {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl<T: 'static + Send + Sync> FilterTraverser<T> {
     pub fn new() -> Self {
         Self {
             component_type: std::marker::PhantomData,
         }
     }
-    
+
     pub fn traverse<F>(&self, ast: &Ast, mut visit_fn: F)
     where
         F: FnMut(Entity, &T),
@@ -318,7 +342,7 @@ impl<T: 'static + Send + Sync> FilterTraverser<T> {
             visit_fn(entity, component);
         }
     }
-    
+
     pub fn traverse_mut<F>(&self, ast: &mut Ast, mut visit_fn: F)
     where
         F: FnMut(Entity, &mut T),
@@ -335,7 +359,7 @@ pub struct ComponentFilterWrapper<V, F> {
     pub filter: F,
 }
 
-impl<V, F> ComponentFilterWrapper<V, F> 
+impl<V, F> ComponentFilterWrapper<V, F>
 where
     V: Visitor,
     F: Fn(&Ast, Entity) -> bool,
@@ -473,6 +497,12 @@ where
     fn visit_boolean_literal(&mut self, ast: &Ast, lit: &BooleanLiteral) {
         if (self.filter)(ast, lit.entity) {
             self.inner.visit_boolean_literal(ast, lit);
+        }
+    }
+
+    fn visit_array_literal(&mut self, ast: &Ast, lit: &ArrayLiteral) {
+        if (self.filter)(ast, lit.entity) {
+            self.inner.visit_array_literal(ast, lit);
         }
     }
 

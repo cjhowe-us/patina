@@ -17,6 +17,12 @@ pub struct PrinterVisitor {
     indent_size: usize,
 }
 
+impl Default for PrinterVisitor {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl PrinterVisitor {
     pub fn new() -> Self {
         Self {
@@ -222,23 +228,20 @@ impl PrinterVisitor {
         self.write("for (");
 
         if let Some(init) = &for_stmt.init {
-            match init.as_ref() {
-                Statement::Let(l) => {
-                    if l.is_mutable {
-                        self.write("mut ");
-                    }
-                    self.write("let ");
-                    self.print_pattern(&l.pattern);
-                    if let Some(type_expr) = &l.type_expr {
-                        self.write(": ");
-                        self.print_expression(type_expr);
-                    }
-                    if let Some(value) = &l.value {
-                        self.write(" = ");
-                        self.print_expression(value);
-                    }
+            if let Statement::Let(l) = init.as_ref() {
+                if l.is_mutable {
+                    self.write("mut ");
                 }
-                _ => {}
+                self.write("let ");
+                self.print_pattern(&l.pattern);
+                if let Some(type_expr) = &l.type_expr {
+                    self.write(": ");
+                    self.print_expression(type_expr);
+                }
+                if let Some(value) = &l.value {
+                    self.write(" = ");
+                    self.print_expression(value);
+                }
             }
         }
         self.write("; ");
@@ -323,12 +326,12 @@ impl PrinterVisitor {
     /// Print an if expression
     pub fn print_if(&mut self, if_expr: &If) {
         self.write("if ");
-        
+
         // First branch
         if let Some(branch) = if_expr.branches.first() {
             self.print_expression(&branch.condition);
             self.write(" ");
-            
+
             // Handle block body
             match &branch.body {
                 Expression::Block(b) => {
@@ -352,7 +355,7 @@ impl PrinterVisitor {
             self.write(" else if ");
             self.print_expression(&branch.condition);
             self.write(" ");
-            
+
             match &branch.body {
                 Expression::Block(b) => {
                     self.print_block(b);
@@ -493,6 +496,7 @@ impl PrinterVisitor {
             Literal::Float(f) => self.write(&f.value.to_string()),
             Literal::String(s) => self.print_string_literal(s),
             Literal::Boolean(b) => self.write(if b.value { "true" } else { "false" }),
+            Literal::Array(a) => self.print_array_literal(a),
             Literal::Null(_) => self.write("null"),
         }
     }
@@ -522,6 +526,18 @@ impl PrinterVisitor {
             }
         }
         self.write("\"");
+    }
+
+    /// Print an array literal
+    pub fn print_array_literal(&mut self, array: &ArrayLiteral) {
+        self.write("[");
+        for (i, element) in array.elements.iter().enumerate() {
+            if i > 0 {
+                self.write(", ");
+            }
+            self.print_expression(element);
+        }
+        self.write("]");
     }
 }
 

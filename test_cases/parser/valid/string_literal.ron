@@ -1,6 +1,6 @@
 TestCase(
     name: "String literal",
     input: r#"
-let msg = \
+let msg = "Hello, world!"
 "#,
 )

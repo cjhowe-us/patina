@@ -1,6 +1,8 @@
 TestCase(
     name: "Quoted label and tag",
     input: r#"
-\(:my_label { @my.tag break :my_label })
+:my_label { 
+    break :my_label 
+}
 "#,
 )
