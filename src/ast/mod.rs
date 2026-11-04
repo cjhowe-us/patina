@@ -89,7 +89,10 @@ impl<C> Ast<C> {
     }
 
     /// Get a component from an entity
-    pub fn get_component<T: 'static + Send + Sync>(&self, entity: Entity) -> Option<hecs::Ref<T>> {
+    pub fn get_component<T: 'static + Send + Sync>(
+        &self,
+        entity: Entity,
+    ) -> Option<hecs::Ref<'_, T>> {
         self.world.get::<&T>(entity).ok()
     }
 
@@ -97,12 +100,12 @@ impl<C> Ast<C> {
     pub fn get_component_mut<T: 'static + Send + Sync>(
         &mut self,
         entity: Entity,
-    ) -> Option<hecs::RefMut<T>> {
+    ) -> Option<hecs::RefMut<'_, T>> {
         self.world.get::<&mut T>(entity).ok()
     }
 
     /// Query entities with specific components
-    pub fn query_entities<Q: hecs::Query>(&self) -> hecs::QueryBorrow<Q> {
+    pub fn query_entities<Q: hecs::Query>(&self) -> hecs::QueryBorrow<'_, Q> {
         self.world.query::<Q>()
     }
 

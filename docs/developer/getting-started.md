@@ -1,185 +1,109 @@
-# Getting Started with Patina
+# Getting Started
 
-This guide will help you build, test, and start developing with the Patina programming language.
+This guide covers building and running the Patina compiler as it exists today. Today the compiler only parses: it reads one source file, builds an AST, and prints counts. For the pipeline and component status, see the [architecture overview](./architecture/overview.md). For the planned direction, see the [comptime-reflection plan](../plans/comptime-reflection/index.md).
 
 ## Prerequisites
 
-- Rust 1.70 or later
-- Cargo (comes with Rust)
-- Git
+- A stable Rust toolchain with `rustfmt` and `clippy`. CI installs the stable toolchain with both components.
+- The crate uses Rust edition 2021. The binary and the library are both named `patina`.
+- Dependencies come from crates.io: `hecs` 0.10.5, `pest` and `pest_derive` 2.7, `ron` 0.8, `serde` 1.0, and `thiserror` 1.0. The only dev-dependency is `tempfile` 3.8.
 
-## Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/patina.git
-cd patina
-```
-
-2. Build the project:
-```bash
-cargo build
-```
-
-3. Run tests to verify installation:
-```bash
-cargo test
-```
-
-## Project Structure
-
-```
-patina/
-├── src/
-│   ├── main.rs          # CLI entry point
-│   ├── lib.rs           # Library root
-│   ├── parser.rs        # Parser implementation
-│   ├── grammar.pest     # Language grammar
-│   ├── ast/             # AST definitions
-│   ├── analysis/        # Semantic analysis
-│   │   ├── arena.rs     # Memory arena
-│   │   ├── context.rs   # Analysis context
-│   │   ├── diagnostics.rs # Error reporting
-│   │   ├── stage.rs     # Stage analysis
-│   │   ├── symbol_table.rs # Symbol resolution
-│   │   └── types.rs     # Type system
-│   └── visitor.rs       # Visitor pattern
-├── test_cases/          # Test data files
-├── docs/               # Documentation
-└── Cargo.toml          # Project configuration
-```
-
-## Development Workflow
-
-### Building
+## Build, Run, and Check
 
 ```bash
-# Debug build (fast compilation)
-cargo build
-
-# Release build (optimized)
-cargo build --release
-
-# Check without building
-cargo check
+cargo build                         # build the library and the CLI
+cargo run -- path/to/file.pat       # parse one file
+cargo test                          # run all unit and fixture tests
+cargo fmt --all --check             # formatting check, as CI runs it
+cargo clippy --all-targets --all-features -- -D warnings   # lint, as CI runs it
 ```
 
-### Running the Compiler
+CI runs on pushes to `main` and `agent-development` and on pull requests to `main`. It runs the build, `cargo test`, `cargo test --release`, the formatting check, and clippy with warnings denied. See [testing.md](./testing.md) for the test layout.
 
-```bash
-# Run with a source file
-cargo run -- input.pat
+## The CLI
 
-# Run with additional options
-cargo run -- --help
+The CLI takes exactly one argument, the path of a source file:
+
+```text
+patina <input-file>
 ```
 
-### Code Quality
+| Situation | Output | Exit code |
+|---|---|---|
+| Wrong number of arguments | `Usage: <program> <input-file>` on stderr | 1 |
+| The file cannot be read | `Error reading file '<file>': <error>` on stderr | 1 |
+| The Pest grammar rejects the input | `Parse error: <Pest error>` on stderr | 1 |
+| The input parses | The five lines shown below, on stdout | 0 |
 
-```bash
-# Run linter
-cargo clippy
+There are no flags. The CLI does not run analysis, print the AST, or emit code.
 
-# Fix auto-fixable warnings
-cargo fix
+## Example
 
-# Format code
-cargo fmt
-
-# Check formatting
-cargo fmt -- --check
-```
-
-## Understanding the Codebase
-
-### Key Modules
-
-1. **Parser** (`src/parser.rs`): Converts source text to AST
-2. **AST** (`src/ast/`): Abstract syntax tree definitions
-3. **Analysis** (`src/analysis/`): Semantic analysis and type checking
-4. **Grammar** (`src/grammar.pest`): Language syntax rules
-
-### Important Files
-
-- `CLAUDE.md`: AI assistant instructions
-- `readme.md`: Project overview
-- Test files in `test_cases/`: Example Patina code
-
-## Writing Patina Code
-
-### Basic Syntax
+Save this as `example.pat`:
 
 ```patina
-// Variable binding
-let x = 42
-let mut y = "hello"
-
-// Functions
-fn add(a: i32, b: i32) -> i32 {
-    a + b
+// A small Patina program
+module math {
+    fun add(a: i32, b: i32): i32 {
+        return a + b
+    }
 }
 
-// Control flow
-if x > 0 {
-    print("positive")
-} else {
-    print("non-positive")
+let answer = 42
+let mut name = "world"
+let greeting = "hello \(name)"
+let numbers = [1, 2, 3]
+let double = fun(n: i32): i32 { n * 2 }
+let sign = if answer > 0 { 1 } else { 0 }
+
+@inline
+fun count_down(n: i32) {
+    while (n > 0) {
+        break
+    }
 }
 ```
 
-### Stage Annotations
+Running `cargo run -- example.pat` prints:
 
-```patina
-// Compile-time computation
-@[stage(0)]
-let size = 100
-
-// Runtime array with compile-time size
-let data: [i32; $(size)] = [0; $(size)]
+```text
+=== AST Structure ===
+AST created with 70 entities
+=== Parse Success ===
+File 'example.pat' parsed successfully!
+AST contains 8 top-level statements
 ```
 
-### Type System
+The entity count is the size of the AST's `hecs` side table, which holds one entity per node (see [ast.md](./ast.md#the-hecs-side-table)). It is not a measure of program size that other tools rely on.
 
-```patina
-// Pointer types
-let owned: *own i32 = alloc(42)
-let borrowed: *i32 = &value
-let mutable: *mut i32 = &mut value
-let raw: *raw i32 = unsafe_ptr
-```
+## Syntax the Parser Handles
 
-## Common Tasks
+The example uses forms that parse into meaningful AST nodes:
 
-### Adding a New AST Node
+- `module name { ... }` blocks.
+- `fun name(param: Type, ...): Return { ... }` functions and `fun(param: Type): Return { ... }` lambdas.
+- `let` and `let mut` bindings with an optional type and value.
+- Integer, float, string, boolean, and array literals. Strings interpolate with `\(expr)`.
+- `if` / `else` expressions, `while (condition) { ... }` loops, and `return`, `break`, and `continue`.
+- `//` and `/* */` comments, and `@name` or `@name(args)` annotations before a statement.
 
-1. Define the struct in appropriate `src/ast/*.rs` file
-2. Implement `SyntaxNode` trait
-3. Add parsing logic in grammar
-4. Update tests
+## Known Gaps
 
-### Adding a New Analysis Pass
+The grammar accepts more than the parser can represent. These are the gaps a new contributor is most likely to hit; [findings.md](../plans/comptime-reflection/findings.md) lists them all.
 
-1. Create new file in `src/analysis/`
-2. Implement visitor using walk functions
-3. Integrate with analysis context
-4. Add tests
+- Type syntax, such as `i32` or `*own T` in a parameter, becomes the identifier `_` (PARSE-2).
+- `struct`, `enum`, `interface`, and `impl` declarations reach `todo!` and panic. `x = 5` parses as an operation rather than an assignment (PARSE-3).
+- A parenthesized expression such as `(a + b)` becomes `null` (PARSE-1).
+- `for` loses its header and body, and `case` produces no branches (PARSE-4, PARSE-5).
+- Annotations and comments are parsed and then dropped, so `@inline` above has no effect (PARSE-8).
+- Binary operators are kept as a flat list, so precedence is never resolved (AST-3).
+- `PrinterVisitor` output is not valid Patina. For the example it prints `fn` instead of `fun`, `_` for every type, `${name}` for interpolation, and `\(n: _): _ =>` for the lambda, and it drops the `while` parentheses (PRINT-1).
+- The legacy `static` keyword forms still parse. The plan retires them in favor of inferred comptime/runtime modes (constraint C-2). Don't write new code or fixtures that use them.
 
-### Debugging Parser Issues
+## Where to Go Next
 
-1. Use `RUST_LOG=debug` for detailed output
-2. Check grammar rules in `src/grammar.pest`
-3. Examine test snapshots for expected output
-
-## Next Steps
-
-- Explore [Testing](../developer/testing.md) to understand the test infrastructure
-- Read [Architecture Overview](../developer/architecture/overview.md) for system design
-- Check [Current Status](../status/current.md) for ongoing work
-- Study [Stage Levels](../designs/stage-levels.md) for metaprogramming
-
-## Getting Help
-
-- Check existing tests for examples
-- Review documentation in `docs/`
-- Look at snapshot tests for expected behavior
-- Examine error messages in `src/analysis/diagnostics.rs`
+- [Architecture overview](./architecture/overview.md): the pipeline, components, and module layout.
+- [AST](./ast.md): node structures and the `hecs` side table.
+- [Visitor pattern](./architecture/visitor-pattern.md): traversing the AST.
+- [Testing](./testing.md): unit tests and RON fixtures.
+- [Step 1 of the plan](../plans/comptime-reflection/step-1.md): the design work that comes before new compiler features.

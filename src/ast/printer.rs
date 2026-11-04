@@ -115,13 +115,7 @@ impl PrinterVisitor {
         }
         self.write(&format!("fn {}(", func.name));
 
-        for (i, param) in func.parameters.iter().enumerate() {
-            if i > 0 {
-                self.write(", ");
-            }
-            self.write(&format!("{}: ", param.name));
-            self.print_expression(&param.type_expr);
-        }
+        self.print_parameters(&func.parameters);
 
         self.write(")");
 
@@ -136,6 +130,16 @@ impl PrinterVisitor {
             self.writeln("");
         } else {
             self.writeln(";");
+        }
+    }
+
+    fn print_parameters(&mut self, parameters: &[Parameter]) {
+        for (i, param) in parameters.iter().enumerate() {
+            if i > 0 {
+                self.write(", ");
+            }
+            self.write(&format!("{}: ", param.name));
+            self.print_expression(&param.type_expr);
         }
     }
 
@@ -333,21 +337,7 @@ impl PrinterVisitor {
             self.write(" ");
 
             // Handle block body
-            match &branch.body {
-                Expression::Block(b) => {
-                    self.print_block(b);
-                }
-                _ => {
-                    self.writeln("{");
-                    self.indent();
-                    self.write_indent();
-                    self.print_expression(&branch.body);
-                    self.writeln("");
-                    self.dedent();
-                    self.write_indent();
-                    self.write("}");
-                }
-            }
+            self.print_body(&branch.body);
         }
 
         // Remaining branches
@@ -356,21 +346,7 @@ impl PrinterVisitor {
             self.print_expression(&branch.condition);
             self.write(" ");
 
-            match &branch.body {
-                Expression::Block(b) => {
-                    self.print_block(b);
-                }
-                _ => {
-                    self.writeln("{");
-                    self.indent();
-                    self.write_indent();
-                    self.print_expression(&branch.body);
-                    self.writeln("");
-                    self.dedent();
-                    self.write_indent();
-                    self.write("}");
-                }
-            }
+            self.print_body(&branch.body);
         }
 
         // Else branch
@@ -393,6 +369,24 @@ impl PrinterVisitor {
                     self.write_indent();
                     self.write("}");
                 }
+            }
+        }
+    }
+
+    fn print_body(&mut self, body: &Expression) {
+        match body {
+            Expression::Block(b) => {
+                self.print_block(b);
+            }
+            _ => {
+                self.writeln("{");
+                self.indent();
+                self.write_indent();
+                self.print_expression(body);
+                self.writeln("");
+                self.dedent();
+                self.write_indent();
+                self.write("}");
             }
         }
     }
@@ -424,13 +418,7 @@ impl PrinterVisitor {
     /// Print a lambda
     pub fn print_lambda(&mut self, lambda: &Lambda) {
         self.write("\\(");
-        for (i, param) in lambda.parameters.iter().enumerate() {
-            if i > 0 {
-                self.write(", ");
-            }
-            self.write(&format!("{}: ", param.name));
-            self.print_expression(&param.type_expr);
-        }
+        self.print_parameters(&lambda.parameters);
         self.write(")");
 
         if let Some(ret_type) = &lambda.return_type {

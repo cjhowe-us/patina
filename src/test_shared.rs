@@ -3,7 +3,8 @@
 use ron;
 use serde::Deserialize;
 use std::fs;
-use std::path::Path;
+use std::fs::DirEntry;
+use std::path::{Path, PathBuf};
 
 #[derive(Debug, Deserialize)]
 pub struct TestCase {
@@ -22,17 +23,8 @@ where
 {
     let dir_path = Path::new("test_cases").join(directory);
 
-    let mut entries: Vec<_> = fs::read_dir(&dir_path)
-        .unwrap_or_else(|e| panic!("Failed to read directory {}: {}", directory, e))
-        .filter_map(|e| e.ok())
-        .filter(|e| {
-            e.path()
-                .extension()
-                .and_then(|s| s.to_str())
-                .map(|s| s == "ron")
-                .unwrap_or(false)
-        })
-        .collect();
+    let mut entries: Vec<_> = ron_files_in_dir(&dir_path)
+        .unwrap_or_else(|e| panic!("Failed to read directory {}: {}", directory, e));
 
     // Sort entries for consistent test order
     entries.sort_by_key(|e| e.path());
@@ -82,17 +74,8 @@ where
 {
     let dir_path = Path::new("test_cases").join(directory);
 
-    let mut entries: Vec<_> = fs::read_dir(&dir_path)
-        .unwrap_or_else(|e| panic!("Failed to read directory {}: {}", directory, e))
-        .filter_map(|e| e.ok())
-        .filter(|e| {
-            e.path()
-                .extension()
-                .and_then(|s| s.to_str())
-                .map(|s| s == "ron")
-                .unwrap_or(false)
-        })
-        .collect();
+    let mut entries: Vec<_> = ron_files_in_dir(&dir_path)
+        .unwrap_or_else(|e| panic!("Failed to read directory {}: {}", directory, e));
 
     // Sort entries for consistent test order
     entries.sort_by_key(|e| e.path());
@@ -141,4 +124,19 @@ where
             }
         }
     }
+}
+
+fn ron_files_in_dir(dir_path: &PathBuf) -> std::io::Result<Vec<DirEntry>> {
+    fs::read_dir(dir_path).map(|directory| {
+        directory
+            .filter_map(|e| e.ok())
+            .filter(|e| {
+                e.path()
+                    .extension()
+                    .and_then(|s| s.to_str())
+                    .map(|s| s == "ron")
+                    .unwrap_or(false)
+            })
+            .collect()
+    })
 }

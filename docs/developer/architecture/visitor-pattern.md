@@ -1,173 +1,134 @@
-# Visitor Pattern in Patina
+# Visitor Pattern
 
-The Patina compiler implements a generic visitor pattern for AST traversal, eliminating the need for repetitive match statements while maintaining type safety and extensibility.
+AST traversal lives in `src/ast/visitor.rs`, which `patina::ast` and the crate root re-export. It has three parts:
 
-## Overview
+1. The `Visitor` trait, with one no-op default method per node kind.
+2. Free `walk_*` functions that recurse through the node tree and call the visitor.
+3. Filtering helpers over the AST's `hecs` side table, which holds only `Position` today ([ast.md](../ast.md#the-hecs-side-table)): `ComponentFilterVisitor`, `FilterTraverser`, and `ComponentFilterWrapper`. None has a non-test caller.
 
-The visitor pattern leverages Rust's trait system to provide a clean interface for walking the AST:
+A separate `GenericVisitor`/`Traversable` pair in `src/ast/mod.rs` exists but is not used by any node (VIS-2).
 
-1. **SyntaxNode Trait**: Common interface for all AST nodes
-2. **Generic Walk Functions**: Reusable traversal utilities
-3. **Type-Safe Callbacks**: Visitor functions with full type information
+## `Visitor`
 
-## Core Components
+Every method takes `(&mut self, ast: &Ast, node: &NodeType)` and defaults to doing nothing, so a visitor overrides only what it needs:
 
-### SyntaxNode Trait
+| Group | Methods |
+|---|---|
+| Statements | `visit_module`, `visit_function`, `visit_let`, `visit_return`, `visit_while`, `visit_for`, `visit_break`, `visit_block`, `visit_static` |
+| Expressions | `visit_expression` (called for every expression), `visit_identifier`, `visit_literal`, `visit_operation`, `visit_if`, `visit_case`, `visit_lambda`, `visit_call`, `visit_index`, `visit_field` |
+| Literals | `visit_integer_literal`, `visit_float_literal`, `visit_string_literal`, `visit_boolean_literal`, `visit_array_literal`, `visit_null_literal` |
+| Patterns | `visit_tuple_pattern`, `visit_struct_pattern` (identifier patterns call `visit_identifier`) |
+| Other | `visit_parameter`, `visit_if_branch`, `visit_case_branch` |
 
-All AST nodes implement this trait:
+There is no `visit_statement` and no `visit_root`. Expression statements and block statements produce no statement-level callback; the walk goes straight to `walk_expression` or `walk_block`. `visit_static` covers the legacy `static { ... }` block, which the [comptime-reflection plan](../../plans/comptime-reflection/index.md) retires (constraint C-2).
+
+## Walk Functions
+
+| Function | Behavior |
+|---|---|
+| `walk_ast(visitor, ast)` | Calls `walk_statement` on each `ast.root.statements` entry. |
+| `walk_statement(visitor, ast, stmt)` | Calls the statement's `visit_*` method, then walks its children. |
+| `walk_expression(visitor, ast, expr)` | Calls `visit_expression`, then the specific method, then recurses. `Grouped` and `Block` expressions recurse without a specific callback. |
+| `walk_block(visitor, ast, block)` | Calls `visit_block`, then walks each statement. |
+| `walk_pattern(visitor, ast, pattern)` | Visits identifier, tuple, and struct patterns, then their sub-patterns. |
+| `walk_literal`, `walk_string_literal`, `walk_array_literal` | Dispatch to the literal callbacks, then walk interpolations or array elements. |
+| `traverse_generic(visitor, ast, node)` | Calls `node.accept(visitor, ast)` for the `GenericVisitor` API below. |
+
+Traversal is preorder: a parent's callback runs before its children's. Child order is:
+
+- `Function`: each parameter (`visit_parameter`, then its type expression), then the return type, then the body.
+- `Let`: the pattern, then the value, then the type annotation.
+- `For`: init, condition, update, then body.
+- `Case`: the scrutinee, then for each branch its pattern, body, and guard.
+
+For example, walking `let x = 1 + y` calls, in order: `visit_let`, `visit_identifier` (pattern `x`), `visit_expression` + `visit_operation`, `visit_expression` + `visit_literal` + `visit_integer_literal`, `visit_expression` + `visit_identifier` (`y`).
 
 ```rust
-pub trait SyntaxNode {
-    fn position(&self) -> &Position;
-    fn children(&self) -> Vec<&dyn SyntaxNode>;
+use patina::*;
+
+struct IdentCounter {
+    count: usize,
+}
+
+impl Visitor for IdentCounter {
+    fn visit_identifier(&mut self, _ast: &Ast, _ident: &Identifier) {
+        self.count += 1;
+    }
+}
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let ast = parse_file("let x = a + b")?;
+    let mut counter = IdentCounter { count: 0 };
+    walk_ast(&mut counter, &ast);
+    assert_eq!(counter.count, 3);
+    Ok(())
 }
 ```
 
-This provides:
-- Position information for error reporting
-- Access to child nodes for traversal
+## Component Filters
 
-### Walk Functions
+### `ComponentFilterVisitor<T>`
 
-Located in `src/ast/walk.rs`, these functions provide different traversal strategies:
+Records entities that carry a `T` component. It does not implement `Visitor`. Call `visit_if_has_component(ast, node)` on any `AstNode`, then read the public `visited_entities: HashSet<Entity>`.
 
-#### Basic Walk
-```rust
-pub fn walk_ast<F>(node: &dyn SyntaxNode, callback: &mut F)
-where
-    F: FnMut(&dyn SyntaxNode),
-```
-Simple depth-first traversal with a callback for each node.
+### `FilterTraverser<T>`
 
-#### Pre/Post Order Walk
-```rust
-pub fn walk_ast_with_callbacks<F, G>(
-    node: &dyn SyntaxNode,
-    pre_callback: &mut F,
-    post_callback: &mut G,
-)
-```
-Allows actions before and after visiting children.
+Iterates the side-table world directly rather than the node tree, so it never sees tree structure:
 
-#### Early Termination
-```rust
-pub fn walk_ast_until<F>(node: &dyn SyntaxNode, callback: &mut F) -> bool
-where
-    F: FnMut(&dyn SyntaxNode) -> bool,
-```
-Stops traversal when callback returns false.
-
-#### Collecting Results
-```rust
-pub fn walk_ast_map<F, T>(node: &dyn SyntaxNode, callback: &mut F) -> Vec<T>
-where
-    F: FnMut(&dyn SyntaxNode) -> Option<T>,
-```
-Collects values during traversal.
-
-## Usage Examples
-
-### Counting Nodes
 ```rust
 let mut count = 0;
-walk_ast(root, &mut |_node| {
+FilterTraverser::<Position>::new().traverse(&ast, |_entity, pos| {
     count += 1;
-});
-println!("Total nodes: {}", count);
-```
-
-### Finding Specific Nodes
-```rust
-let functions = walk_ast_map(root, &mut |node| {
-    if let Some(func) = node.downcast_ref::<FunctionStatement>() {
-        Some(func.name.clone())
-    } else {
-        None
-    }
+    let _ = (pos.line, pos.column);
 });
 ```
 
-### Validation
+`traverse_mut(&mut ast, |entity, &mut T| ...)` is the mutable form. Iteration order follows the `hecs` archetype layout, not source order.
+
+### `ComponentFilterWrapper<V, F>`
+
+Wraps an inner visitor and forwards a callback only when `filter(ast, node_entity)` returns `true`. `F: Fn(&Ast, Entity) -> bool`. The `inner` and `filter` fields are public.
+
 ```rust
-let mut errors = Vec::new();
-walk_ast_with_callbacks(
-    root,
-    &mut |node| {
-        // Pre-order: check node validity
-        if let Some(error) = validate_node(node) {
-            errors.push(error);
-        }
-    },
-    &mut |_node| {
-        // Post-order: cleanup if needed
-    },
+let mut wrapped = ComponentFilterWrapper::new(
+    IdentCounter { count: 0 },
+    |ast: &Ast, entity| ast.get_component::<Position>(entity).is_some(),
 );
+walk_ast(&mut wrapped, &ast);
+let count = wrapped.inner.count;
 ```
 
-### Early Exit
+The wrapper does not forward `visit_expression` or `visit_literal`, so an inner visitor never receives those callbacks (VIS-1).
+
+## `GenericVisitor` and `Traversable`
+
+`src/ast/mod.rs` declares:
+
 ```rust
-let found = walk_ast_until(root, &mut |node| {
-    if node.position().line == target_line {
-        println!("Found node at target line");
-        false // Stop traversal
-    } else {
-        true // Continue
-    }
-});
-```
-
-## Benefits
-
-1. **No Match Statements**: Generic traversal without node-specific code
-2. **Composability**: Combine different walk strategies
-3. **Type Safety**: Rust's type system ensures correctness
-4. **Performance**: Zero-cost abstractions, comparable to manual traversal
-5. **Maintainability**: New node types automatically work with existing visitors
-
-## Implementation Details
-
-- Uses `dyn SyntaxNode` trait objects for flexibility
-- Lifetime parameters ensure memory safety
-- Virtual dispatch overhead is minimal in practice
-- Stack-based traversal avoids heap allocations
-
-## Advanced Patterns
-
-### Context Threading
-```rust
-struct Context {
-    scope_depth: usize,
-    symbols: HashMap<String, Symbol>,
+pub trait GenericVisitor<C> {
+    fn visit_node<N: AstNode>(&mut self, ast: &Ast<C>, node: &N)
+    where
+        Self: Sized;
 }
 
-let mut ctx = Context::default();
-walk_ast(root, &mut |node| {
-    // Access and modify context during traversal
-    if let Some(block) = node.downcast_ref::<Block>() {
-        ctx.scope_depth += 1;
+pub trait Traversable<C> {
+    fn accept<V: GenericVisitor<C>>(&self, visitor: &mut V, ast: &Ast<C>)
+    where
+        Self: AstNode + Sized,
+    {
+        visitor.visit_node(ast, self);
     }
-});
+}
 ```
 
-### Multi-Pass Analysis
-```rust
-// First pass: collect symbols
-let symbols = walk_ast_map(root, &mut |node| {
-    extract_symbol(node)
-});
+No AST node implements `Traversable`, and the default `accept` visits only the node itself, without recursing (VIS-2). `C` here is the Rust marker type of `Ast<C>`; it is not a Patina language generic.
 
-// Second pass: resolve references
-walk_ast(root, &mut |node| {
-    if let Some(ref_node) = node.downcast_ref::<Reference>() {
-        resolve_reference(ref_node, &symbols);
-    }
-});
-```
+## Limitations
 
-## Future Extensions
+These are tracked in [findings.md](../../plans/comptime-reflection/findings.md):
 
-The visitor pattern can be extended for:
-- Mutable AST transformation
-- Parallel traversal
-- Incremental recompilation
-- Custom traversal orders
+- **VIS-1:** `ComponentFilterWrapper` drops `visit_expression` and `visit_literal`.
+- **VIS-2:** `GenericVisitor`/`Traversable` have no node implementations and do not recurse.
+- **VIS-3:** Traversal is preorder only, always recurses, has no enter/exit hooks, and receives only `&Ast`. Scoped name resolution and per-node fact storage cannot be built on it.
+
+The traversal and pass model that replaces this is a Step 1 design task in the [comptime-reflection plan](../../plans/comptime-reflection/step-1.md). If the AST's side table is removed (AST-9), the component filters go with it.

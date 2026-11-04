@@ -1,9 +1,9 @@
 // Patina Language Grammar
 WHITESPACE = _{ " " | "\t" }
-NEWLINE    = _{ "\n" | "\r\n" | "\r" }
+EOL    = _{ "\n" | "\r\n" | "\r" }
 
 // Comments
-line_comment  =  { "//" ~ (!NEWLINE ~ ANY)* }
+line_comment  =  { "//" ~ (!EOL ~ ANY)* }
 block_comment =  { "/*" ~ (block_comment | (!"*/" ~ ANY))* ~ "*/" }
 COMMENT       = _{ line_comment | block_comment }
 
@@ -240,9 +240,10 @@ value = { atomic_value }
 // Case arm alias
 case_arm = { case_branch }
 
-decorated_statement = { (line_comment | block_comment)* ~ NEWLINE* ~ annotation* ~ NEWLINE* ~ statement }
+decorated_statement = { (line_comment | block_comment)* ~ EOL* ~ annotation* ~ EOL* ~ statement }
 
 // Blocks and root
-block = { label? ~ left_brace ~ NEWLINE* ~ (decorated_statement ~ ((NEWLINE+ | semicolon) ~ decorated_statement)*)? ~ NEWLINE* ~ right_brace }
+block = { label? ~ left_brace ~ EOL* ~ (decorated_statement ~ ((EOL+ | semicolon) ~ decorated_statement)*)? ~
+EOL* ~ right_brace }
 
-root = { SOI ~ (decorated_statement ~ (NEWLINE+ ~ decorated_statement)* ~ NEWLINE*)? ~ EOI }
+root = { SOI ~ (decorated_statement ~ (EOL+ ~ decorated_statement)* ~ EOL*)? ~ EOI }

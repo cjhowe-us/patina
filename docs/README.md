@@ -2,65 +2,61 @@
 
 ## Compiler Architecture
 
-Patina uses a component-based AST with Entity-Component-System (ECS) architecture and plans for stage-based phase separation:
-- Component-based AST for extensibility
+Patina's AST is a plain owned Rust tree. It carries a vestigial `hecs` side table that holds only node positions, and it is not an Entity-Component-System structure (finding AST-9). The project is being redirected toward compile-time (`comptime`) metaprogramming and static reflection, with incremental compilation:
+- Plain owned AST, parsed with Pest
 - Semantic analysis infrastructure (not yet integrated)
-- Planned compile-time metaprogramming
-- Foundation for stage-based compilation
+- Planned `comptime` metaprogramming and static reflection, replacing generics
+- Planned incremental compilation and incremental reflection
+- Required RVSDG intermediate representation using `hecs` entities and components; the IR is the only structure required to use `hecs`
+
+> The active plan is [comptime-reflection](./plans/comptime-reflection/index.md). Several claims in the developer and status docs are under review; see [findings](./plans/comptime-reflection/findings.md).
 
 ## Documentation Structure
 
-### 📘 [User Documentation](./user/)
+### 📘 User Documentation
 **For Patina Language Users**
-- [**Getting Started**](./user/getting-started.md) - Installation and first program
+- User documentation has not been written yet. To build and run the compiler, see the developer [Getting Started](./developer/getting-started.md) guide.
 
 ### 👷 [Developer Documentation](./developer/)
 **For Compiler Contributors**
 - [**Architecture**](./developer/architecture/) - Compiler design
-  - [Overview](./developer/architecture/overview.md) - Component-based architecture
+  - [Overview](./developer/architecture/overview.md) - Current pipeline and component status
   - [Visitor Pattern](./developer/architecture/visitor-pattern.md) - AST traversal patterns
-- [**Component-Based AST**](./developer/component-based-ast.md) - ECS design guide
+- [**AST**](./developer/ast.md) - Node tree and its `hecs` position side table
 - [**Getting Started**](./developer/getting-started.md) - Development setup
 - [**Testing**](./developer/testing.md) - Test infrastructure
 
-### 📋 [Plans](./plans/)
+### 📋 [Plans](./plans/README.md)
 **Implementation Roadmaps**
-- [**Phase Separation**](./plans/phase-separation/) - Core compilation pipeline
-  - [Overview](./plans/phase-separation/index.md) - Stage-based design
-  - [Step 1](./plans/phase-separation/step-1.md) - Foundation
-  - [Step 2](./plans/phase-separation/step-2.md) - Stage analysis
-  - [Step 3](./plans/phase-separation/step-3.md) - Stage separation
-  - [Step 4](./plans/phase-separation/step-4.md) - Stage 0 evaluation
-  - [Step 5](./plans/phase-separation/step-5.md) - Type system
-  - [Step 6](./plans/phase-separation/step-6.md) - Integration
+- [**Plans README**](./plans/README.md) - Plan conventions, step format, and plan index
+- [**Comptime Reflection**](./plans/comptime-reflection/index.md) - **Active**: comptime metaprogramming, static reflection, and incremental compilation
+  - [Findings](./plans/comptime-reflection/findings.md) - Review findings and fixture audit
+  - [Step 1](./plans/comptime-reflection/step-1.md) - Design documents and review
+  - [Step 2](./plans/comptime-reflection/step-2.md) - Implementation planning
+  - Work on a step with the [`work-plan` skill](../.github/skills/work-plan/SKILL.md): `/work-plan comptime-reflection`
 
-### 🎨 [Designs](./designs/)
+### 🎨 Designs
 **Architectural Designs**
-- [**Stage Levels**](./designs/stage-levels.md) - Multi-stage programming
+- [Step 1](./plans/comptime-reflection/step-1.md) will create and review design documents in `docs/designs/`.
 
 ### 📝 [RFCs](./rfcs/)
 **Problem Statements**
+
+These remaining RFCs cover concerns that still apply. Their examples and implementation suggestions are not approved designs; the [active plan](./plans/comptime-reflection/index.md) governs scope and ordering. Conflicting RFCs were removed; see the [removal record](./plans/comptime-reflection/findings.md#removed-documentation).
+
 - [**Error Handling**](./rfcs/error-handling.md) - Robustness issues
 - [**Documentation**](./rfcs/documentation.md) - Documentation gaps
-- [**Performance**](./rfcs/performance.md) - Compilation speed
-- [**AST Visitors**](./rfcs/ast-visitors.md) - Visitor requirements
-- [**Type System**](./rfcs/type-system.md) - Type system limitations
-- [**Staging Features**](./rfcs/staging-features.md) - Advanced staging needs
 - [**Testing**](./rfcs/testing.md) - Test coverage gaps
 - [**Developer Experience**](./rfcs/developer-experience.md) - Tooling needs
 
 ### 📊 [Status](./status/)
 **Project Status**
-- [**Current Status**](./status/current.md) - Implementation progress
-- [**Component AST Status**](./status/component-based-ast-implementation.md) - AST implementation details
-- [**Implementation Complete**](./status/IMPLEMENTATION_COMPLETE.md) - Completed features
+- [**Current Status**](./status/current.md) - Implementation progress (*claims under review*)
 
 ## Core Concepts
 
-### Phase Separation
-- **Stage 0**: Compile-time execution
-- **Stage 1**: Runtime execution
-- **Stage n**: Generated by stage n-1
+### Comptime Reflection
+The [active plan's terminology](./plans/comptime-reflection/index.md#terminology) defines inferred comptime/runtime modes, sealing, reification order, reflection, reification, source ranges, incremental queries, and the RVSDG IR. The legacy "stage" concept is being split and renamed (finding ANL-10), and the detailed graph representation will be settled during design review.
 
 ### Key Benefits
 - Clear phase boundaries
@@ -71,19 +67,21 @@ Patina uses a component-based AST with Entity-Component-System (ECS) architectur
 ## Navigation by Task
 
 ### Using Patina
-→ [User Documentation](./user/) → [Getting Started](./user/getting-started.md)
+→ [Getting Started](./developer/getting-started.md) (user documentation is not written yet)
 
 ### Contributing
 1. [Architecture Overview](./developer/architecture/overview.md) - Understand the design
-2. [Component-Based AST](./developer/component-based-ast.md) - Learn the AST system
-3. [Current Status](./status/current.md) - Find work areas
-4. [RFCs](./rfcs/) - Identify problems to solve
+2. [AST](./developer/ast.md) - Learn the AST
+3. [Comptime Reflection Plan](./plans/comptime-reflection/index.md) - Active work and its status
+4. [Current Status](./status/current.md) - Implementation progress (claims under review)
+5. [RFCs](./rfcs/) - Identify problems to solve
 
 ### Understanding Design
-- [Phase Separation Plan](./plans/phase-separation/) - Core architecture
-- [Stage Levels](./designs/stage-levels.md) - Metaprogramming design
+- [Comptime Reflection Plan](./plans/comptime-reflection/index.md) - Active direction
+- [Design Documents and Guided Review](./plans/comptime-reflection/step-1.md) - Design scope and review process
+- [Phase-Separation Carry-over](./plans/comptime-reflection/index.md#phase-separation-carry-over) - Unfinished work retained from the removed plan
 
 ### Implementing Features
 1. Check [RFCs](./rfcs/) for problem definition
-2. Review [Plans](./plans/) for approach
+2. Review [Plans](./plans/README.md) for approach
 3. Follow [Architecture](./developer/architecture/) patterns

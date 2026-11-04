@@ -1,8 +1,10 @@
 # Current Implementation Status
 
+> **Claims under review.** Several statements on this page overstate the implementation. For example, the parser replaces grouped expressions and type syntax with placeholders, panics on `struct`, and drops annotations; analysis is not connected to the parser; and generics are planned for removal. See [findings.md](../plans/comptime-reflection/findings.md) (DOC-1 and the PARSE, GRAM, and ANL findings) and the [comptime-reflection plan](../plans/comptime-reflection/index.md). This page will be rewritten under work area WA-9. The AST statements below have already been corrected: the AST is a plain owned tree, not an ECS structure (AST-9).
+
 ## Overview
 
-Patina has implemented a component-based AST system and semantic analysis infrastructure. The compiler can parse Patina source code with comprehensive error reporting, though semantic analysis is not yet integrated with the parser.
+Patina has a Pest parser that builds a plain owned AST, plus standalone semantic analysis infrastructure. Semantic analysis is not yet integrated with the parser.
 
 ## Completed Features
 
@@ -13,13 +15,11 @@ Patina has implemented a component-based AST system and semantic analysis infras
 - Position tracking for all nodes
 - 100+ parser test cases passing
 
-### ✅ Component-Based AST (100%)
-- Entity-Component-System (ECS) architecture using `hecs`
-- Generic AST structure with compile-time type safety
-- Traditional and generic visitor patterns
-- Component queries and filtering
-- No runtime boxing overhead
-- Comprehensive test coverage
+### ✅ AST
+- Plain owned Rust tree: each node owns its children inline (`src/ast/nodes.rs`)
+- Not stored in `hecs`. A vestigial `hecs::World` side table, keyed by one entity per node, holds only `Position` (AST-9)
+- Preorder `Visitor` trait and `walk_*` functions; `GenericVisitor`/`Traversable` have no node implementations (VIS-2)
+- No nodes for `struct`, `enum`, `interface`, `impl`, or assignment
 
 ### ✅ Semantic Analysis Infrastructure (100%)
 - Arena-based memory management
@@ -42,12 +42,12 @@ Patina has implemented a component-based AST system and semantic analysis infras
 1. Implement name resolution visitor
 2. Implement type checking visitor  
 3. Create analysis pipeline in main.rs
-4. Populate AST components with analysis results
+4. Store analysis results as incremental query facts (the plan does not attach them to the AST)
 
 ### 🏗️ Stage System Integration
 - Stage infrastructure is complete in analysis module
 - Needs integration with parser and AST traversal
-- Full implementation planned (see docs/plans/phase-separation)
+- The [comptime-reflection plan](../plans/comptime-reflection/index.md) covers inferred modes, incremental queries, and an RVSDG IR backed by `hecs` entities and components; these are not implemented yet.
 
 ## Planned Features
 
@@ -86,15 +86,15 @@ All unit tests passing with snapshot verification.
 
 ### ✅ Stable and Complete
 - Parser infrastructure
-- Component-based AST with ECS
-- Visitor patterns (traditional + generic)
+- Plain owned AST (its `hecs` side table holds only positions)
+- Visitor pattern (preorder walk)
 - Semantic analysis infrastructure
 - Stage system types
 
 ### ❌ Missing Integration
 - Analysis visitors not implemented
 - No connection between parser and analysis
-- AST components never populated with analysis data
+- Analysis component types (`TypeInfo`, `SymbolInfo`) are never attached
 
 ## Contributing
 
@@ -103,7 +103,7 @@ The most impactful contributions would be:
 2. Connecting analysis to the compilation pipeline
 3. Type inference implementation
 4. Code generation backend
-5. Documentation for the component system
+5. Documentation for the AST and analysis infrastructure
 
 See [Getting Started](../developer/getting-started.md) for development setup.
 
@@ -111,7 +111,7 @@ See [Getting Started](../developer/getting-started.md) for development setup.
 
 Current characteristics:
 - Parser: Fast with minimal allocations
-- AST: Efficient ECS-based storage
+- AST: owned node tree; one `hecs` entity plus a `Position` per node
 - Analysis: Infrastructure ready but unused
 - Test suite: < 5 seconds for 200+ tests
 

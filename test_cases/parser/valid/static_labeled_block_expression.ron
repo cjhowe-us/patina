@@ -1,3 +1,4 @@
+/* @[crate::test_shared::TestCase] */
 TestCase(
     name: "Static labeled block expression",
     input: r#"
