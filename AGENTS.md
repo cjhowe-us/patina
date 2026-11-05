@@ -38,6 +38,10 @@ cargo clippy --all-targets --all-features -- -D warnings
 cargo fix
 ```
 
+## When in Doubt
+
+When the desired behavior is unclear, default to Rust-like behavior. This applies to language semantics, syntax details, diagnostics, and compiler design. Explicit project decisions take precedence, such as the plan's constraints in `docs/plans/comptime-reflection/index.md` and approved designs in `docs/designs/`.
+
 ## Architecture Overview
 
 Patina is a systems programming language with **planned phase-separated compilation**:

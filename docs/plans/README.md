@@ -41,7 +41,7 @@ The index status table and each step's `## Status` section use exactly one of th
 |---|---|
 | Not started | No work has begun. |
 | In progress | Work is underway. Some tasks may be checked. |
-| In review | All tasks are complete. The step is a review gate awaiting explicit user approval. |
+| In review | All tasks are complete and agent review has no unresolved High or Medium comments. The step is a review gate awaiting explicit user approval. |
 | Done | Acceptance criteria are met. For review gates, the user has explicitly approved. |
 | Blocked | A prerequisite or external decision is missing. The reason is recorded in the step. |
 | Superseded | Replaced by another plan or step, which is linked. |
@@ -58,9 +58,17 @@ Every step file uses these sections, in this order:
 6. `## Status`: one status value from the table above, optionally followed by a short note.
 7. `## Review log`: a dated, append-only list of decisions, approvals, and notable changes made while executing the step.
 
+### Agent review
+
+Every step is reviewed by a subagent running a **different model** from the one that executed it. This happens after validation and before any human review, and before the step is reported complete. The reviewer reports each comment as **High**, **Medium**, or **Low**.
+
+Every High and Medium comment must be resolved before human review is requested. A comment is resolved by fixing it in scope, by recording it in the plan when it is out of scope, or by recording evidence that it is wrong. After fixes, the same reviewer model reviews again.
+
+Each review round is recorded in the step's review log. The [`work-plan`](../../.github/skills/work-plan/SKILL.md) skill defines the full procedure.
+
 ### Review gates
 
-A step marked as a **review gate** in the index cannot be marked Done by the agent alone. When its tasks are complete, it moves to **In review**. The agent then walks the user through the outputs one document at a time and records each decision. The step becomes Done only after the user explicitly approves.
+A step marked as a **review gate** in the index cannot be marked Done by the agent alone. When its tasks are complete and [agent review](#agent-review) has no unresolved High or Medium comments, it moves to **In review**. The agent then walks the user through the outputs one document at a time and records each decision. The step becomes Done only after the user explicitly approves.
 
 ## Conventions
 
